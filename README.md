@@ -5,3 +5,4 @@
 * **Chapter 3** Higher-Order Differential Equations
 * **Chapter 4** The Laplace Transform
 * **Chapter 5** Series Solutions of Linear Differential Equations
+* **Chapter 8** Matrices
