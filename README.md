@@ -6,3 +6,4 @@
 * **Chapter 4** The Laplace Transform
 * **Chapter 5** Series Solutions of Linear Differential Equations
 * **Chapter 8** Matrices
+* **Chapter 10** Systems of Linear Differential Equations
