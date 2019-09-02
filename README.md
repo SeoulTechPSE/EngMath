@@ -16,3 +16,5 @@
 * **Chapter 13.** Boundary-Value Problems in Rectangular Coordinates
 * **Chapter 14.** Boundary-Value Problems in Other Coordinate Systems
 * **Chapter 15.** Integral Transform Method
+
+Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
