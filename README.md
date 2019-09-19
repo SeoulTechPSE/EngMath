@@ -18,4 +18,5 @@
 * **PDE 3** Elliptic-Type Problems
 
 Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
+
          S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
