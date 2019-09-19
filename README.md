@@ -11,11 +11,11 @@
 
 ---
 * **Chapter 07.** [Vectors](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch07.ipynb)
-* **Chapter 09.** Vector Calculus
-* **Chapter 12.** Orthogonal Functions and Fourier Series
+* **Chapter 09.** [Vector Calculus](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch09.ipynb)
+* **Chapter 12.** [Orthogonal Functions and Fourier Series](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch12.ipynb)
 
 ---
-* **PDE 1.** Diffusion-Type Problems
+* **PDE 1.** [Diffusion-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE01.ipynb)
 * **PDE 2.** Hyperbolic-Type Problems
 * **PDE 3.** Elliptic-Type Problems
 
