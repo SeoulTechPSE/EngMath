@@ -13,8 +13,9 @@
 * **Chapter 07.** Vectors
 * **Chapter 09.** Vector Calculus
 * **Chapter 12.** Orthogonal Functions and Fourier Series
-* **Chapter 13.** Boundary-Value Problems in Rectangular Coordinates
-* **Chapter 14.** Boundary-Value Problems in Other Coordinate Systems
-* **Chapter 15.** Integral Transform Method
 
 Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
+
+* **Partial Differential Equations**
+
+Bsed on S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
