@@ -1,4 +1,4 @@
-## Engineering Mathematics Lecture Note
+## Lecture Note: Engineering Mathematics 
 
 * **Chapter 01.** Introduction to Differential Equations
 * **Chapter 02.** First-Order Differential Equations
