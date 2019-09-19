@@ -13,6 +13,8 @@
 * **Chapter 07.** Vectors
 * **Chapter 09.** Vector Calculus
 * **Chapter 12.** Orthogonal Functions and Fourier Series
+
+---
 * **PDE 1.** Diffusion-Type Problems
 * **PDE 2.** Hyperbolic-Type Problems
 * **PDE 3.** Elliptic-Type Problems
