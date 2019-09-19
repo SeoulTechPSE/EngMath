@@ -10,7 +10,7 @@
 * **Chapter 11.** Systems of Nonlinear Differential Equations
 
 ---
-* **Chapter 07.** Vectors
+* **Chapter 07.** [Vectors](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch07.ipynb)
 * **Chapter 09.** Vector Calculus
 * **Chapter 12.** Orthogonal Functions and Fourier Series
 
