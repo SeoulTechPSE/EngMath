@@ -16,7 +16,7 @@
 
 ---
 * **PDE 1.** [Diffusion-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE01.ipynb)
-* **PDE 2.** Hyperbolic-Type Problems
+* **PDE 2.** [Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
 * **PDE 3.** Elliptic-Type Problems
 
 Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
