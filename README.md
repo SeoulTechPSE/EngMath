@@ -17,7 +17,7 @@
 ---
 * **PDE 1.** [Diffusion-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE01.ipynb)
 * **PDE 2.** [Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
-* **PDE 3.** Elliptic-Type Problems
+* **PDE 3.** [Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 
 Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
 and S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
