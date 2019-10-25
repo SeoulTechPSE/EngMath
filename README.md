@@ -13,13 +13,12 @@
 * **Chapter 07.** [Vectors](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch07.ipynb)
 * **Chapter 09.** [Vector Calculus](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch09.ipynb)
 * **Chapter 12.** [Orthogonal Functions and Fourier Series](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch12.ipynb)
-
 ---
 * **PDE 1.** [Diffusion-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE01.ipynb)
 * **PDE 2.** [Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
 * **PDE 3.** [Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 
-* [**Hydrogen Atom**](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/hydrogen.ipynb)
+* [**Appendix 1. The Hydrogen Atom**](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/hydrogen.ipynb)
 
 Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
 and S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
