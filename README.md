@@ -21,5 +21,5 @@
 * **App. 02.** [2019_2_FinalProject](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/etcs/2019_2_FinalProject.ipynb)
 
 Based on 
-* D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
-* S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
+* D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *Fourth eds.*, 2011.
+* S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**, *Reprint ed.*, 1993.
