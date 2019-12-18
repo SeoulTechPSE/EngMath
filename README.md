@@ -20,5 +20,6 @@
 * **App. 01.** [The Hydrogen Atom](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/etcs/hydrogen.ipynb)
 * **App. 02.** [2019_2_FinalProject](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/etcs/2019_2_FinalProject.ipynb)
 
-Based on D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
-and S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
+Based on 
+* D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**
+* S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**
