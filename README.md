@@ -1,4 +1,4 @@
-## EngMath Lecture Notes 
+## EngMath Notes 
 
 * [Introduction to Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch01.ipynb)
 * [First-Order Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch02.ipynb)
