@@ -1,6 +1,6 @@
-## Lecture Note: Engineering Mathematics 
+## EngMath Lecture Notes 
 
-* **Ch.01.** $\text{ }$[Introduction to Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch01.ipynb)
+* **Ch.01.** [Introduction to Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch01.ipynb)
 * **Ch.02.** [First-Order Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch02.ipynb)
 * **Ch.03.** [Higher-Order Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch03.ipynb)
 * **Ch.04.** [The Laplace Transform](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch04.ipynb)
