@@ -12,9 +12,9 @@
 * **Ch.07.** [Vectors](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch07.ipynb)
 * **Ch.09.** [Vector Calculus](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch09.ipynb)
 * **Ch.12.** [Orthogonal Functions and Fourier Series](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch12.ipynb)
-* **PDE01.** [Diffusion-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE01.ipynb)
-* **PDE02.** [Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
-* **PDE03.** [Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
+* **PDE1.** [Diffusion-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE01.ipynb)
+* **PDE2.** [Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
+* **PDE3.** [Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 ---
 Based on 
 * D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *Fourth eds.*, 2011.
