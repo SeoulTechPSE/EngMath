@@ -16,6 +16,8 @@
 * [PDE: Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
 * [PDE: Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 ---
+* [Exams](https://github.com/SeoulTechPSE/EngMath/blob/master/exams/README.md)
+
 Based on 
 * D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *Fourth eds.*, 2011.
 * S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**, *Reprint ed.*, 1993.
