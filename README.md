@@ -17,6 +17,8 @@
 * [PDE: Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 ---
 * [Exams](https://github.com/SeoulTechPSE/EngMath/blob/master/exams/README.md)
+* [Etcs](https://github.com/SeoulTechPSE/EngMath/blob/master/etcs/README.md)
+---
 
 Based on 
 * D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *Fourth eds.*, 2011.
