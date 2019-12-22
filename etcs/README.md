@@ -4,4 +4,4 @@
 ## EngMath Etcs.
 
 * [The Hydrogen Atom](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/etcs/hydrogen.ipynb)
-* [2019_2_FinalProject](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/etcs/2019_2_FinalProject.ipynb)
+* [Laplace & Poisson Equation in Sphere](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/etcs/L_and_P_Sphere.ipynb)
