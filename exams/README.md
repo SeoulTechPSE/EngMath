@@ -1,3 +1,6 @@
+## EngMath Quizs.
+* [2019_2_Quiz](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/Quiz_01.ipynb)
+
 ## EngMath Exams.
 * [2019_1_중간고사](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2019_1.ipynb)
 * [2019_2_중간고사_A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2019_2_A.ipynb)
