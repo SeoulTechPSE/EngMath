@@ -17,7 +17,7 @@
 * [PDE: Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 ---
 * [Exams](https://github.com/SeoulTechPSE/EngMath/blob/master/exams/README.md)
-* [Etcs](https://github.com/SeoulTechPSE/EngMath/blob/master/etcs/README.md)
+* [Supplemets](https://github.com/SeoulTechPSE/EngMath/blob/master/supplements/README.md)
 ---
 
 Based on 
