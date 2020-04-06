@@ -13300,7 +13300,7 @@ $$ W(y_1, y_2, \cdots, y_n)= \begin{vmatrix}
 <ul>
 <li><p>General solution of $n$-th order <em>homogeneous</em> linear DE is</p>
 <p>$y(x)=c_1 y_1(x) +c_2 y_2(x) + \cdots + c_n y_n(x)$</p>
-<p>where $y_1, y_2, \cdots, y_n$ is a fundamental set of solutions and $c_i, \;i=1,2,\cdots,n$ are arbitrary constants</p>
+<p>where $y_1, y_2, \cdots, y_n\;$ is a fundamental set of solutions and $c_i, \;i=1,2,\cdots,n\;$ are arbitrary constants</p>
 </li>
 </ul>
 
@@ -13313,7 +13313,7 @@ $$ W(y_1, y_2, \cdots, y_n)= \begin{vmatrix}
 <ul>
 <li><p>General solution of $n$-th order <em>nonhomogeneous</em> linear DE is</p>
 <p>$y(x)=c_1 y_1(x) +c_2 y_2(x) + \cdots + c_n y_n(x) +y_p(x)$</p>
-<p>where $y_1, y_2, \cdots, y_n$ is a fundamental set of solutions, $y_p$ is a particular solution, and $c_i, \;i=1,2,\cdots,n$ are arbitrary constants</p>
+<p>where $y_1, y_2, \cdots, y_n$ is a fundamental set of solutions, $y_p$ is a particular solution, and $c_i, \;i=1,2,\cdots,n\;$ are arbitrary constants</p>
 </li>
 </ul>
 
@@ -13420,12 +13420,13 @@ $$
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">init_printing</span>
-<span class="kn">from</span> <span class="nn">sympy.solvers</span> <span class="k">import</span> <span class="n">solve</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="kn">from</span> <span class="nn">sympy.solvers</span> <span class="kn">import</span> <span class="n">solve</span>
 <span class="n">init_printing</span><span class="p">()</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+ 
 </pre></div>
 
     </div>
@@ -13914,8 +13915,7 @@ $$r\displaystyle\frac{d^2 u}{dr^2} +\frac{du}{dr}=0,\; u(a)=u_0,\; u(b)=u_1$$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/supplements/Green&#39;s_Function.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <a href="./supplements/Green&#39;s_Function.ipynb"><img src="./figures/my_computer.jpg" alt="Open in My Computer"></a></p>
-<blockquote><p><strong>Example:</strong> $\text{ }$ Solve $\text{ } x^2y'' -3xy' +3y = 24x^5$, $\;\;y(1)=0, \;y(2)=0$</p>
-</blockquote>
+<p><strong>Example:</strong> $\text{ }$ Solve $\text{ } x^2y'' -3xy' +3y = 24x^5$, $\;\;y(1)=0, \;y(2)=0$</p>
 
 </div>
 </div>
