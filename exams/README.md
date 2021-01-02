@@ -9,4 +9,6 @@
 * [2019_2_기말고사_B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2019_2_B.ipynb)
 * [2020_1_중간고사](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2020_1.ipynb)
 * [2020_1_기말고사](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2020_1.ipynb)
+* [2020_2_기말고사_A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2020_2_A.ipynb)
+* [2020_2_기말고사_B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2020_2_B.ipynb)
 ---
