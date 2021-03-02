@@ -1,4 +1,4 @@
-## EngMath Notes 
+## Engineering Mathematics Lecture Notes 
 
 * [Introduction to Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch01.ipynb)
 * [First-Order Differential Equations](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/ch02.ipynb)
@@ -20,7 +20,8 @@
 * [Supplemets](https://github.com/SeoulTechPSE/EngMath/blob/master/supplements/README.md)
 ---
 
-Based on 
+## References 
+
 * D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *Fourth eds.*, 2011.
 * S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**, *Reprint ed.*, 1993.
 * H.F. Weinberger, **A First Course in Partial Differential Equations with Complex Variables and Transform Methods**, 1965.
