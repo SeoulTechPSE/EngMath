@@ -16,7 +16,6 @@
 * [PDE - Hyperbolic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE02.ipynb)
 * [PDE - Elliptic-Type Problems](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/PDE03.ipynb)
 ---
-* [Exams](https://github.com/SeoulTechPSE/EngMath/blob/master/exams/README.md)
 * [Supplemets](https://github.com/SeoulTechPSE/EngMath/blob/master/supplements/README.md)
 ---
 
