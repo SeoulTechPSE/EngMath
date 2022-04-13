@@ -12,4 +12,8 @@
 * [2020_2_기말고사_A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2020_2_A.ipynb)
 * [2020_2_기말고사_B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2020_2_B.ipynb)
 * [2021_2_중간고사 A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2021_2_A.ipynb)
+
 ---
+
+* [2022_1_중간고사 A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2022_1_A_solution.ipynb)
+* [2022_1_중간고사 B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2022_1_B_solution.ipynb)
