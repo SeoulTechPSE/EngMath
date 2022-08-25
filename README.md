@@ -21,6 +21,6 @@
 
 ## References 
 
-* D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *Fourth eds.*, 2011.
+* D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *7-th ed.*, 2020.
 * S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**, *Reprint ed.*, 1993.
 * H.F. Weinberger, **A First Course in Partial Differential Equations with Complex Variables and Transform Methods**, 1965.
