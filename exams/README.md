@@ -24,3 +24,6 @@
 * [2022_2_중간고사 B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2022_2_B_solution.ipynb)
 * [2022_2_기말고사 A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2022_2_A_solution.ipynb)
 * [2022_2_기말고사 B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2022_2_B_solution.ipynb)
+
+* [2023_1_중간고사 A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2023_1_A_solution.ipynb)
+* [2023_1_중간고사 B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2023_1_B_solution.ipynb)
