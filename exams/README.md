@@ -14,6 +14,8 @@
 * [2020_1_기말고사](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2020_1.ipynb)
 * [2022_1_기말고사 A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2022_1_A_solution.ipynb)
 * [2022_1_기말고사 B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2022_1_B_solution.ipynb)
+* [2023_1_기말고사 A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2023_1_A.ipynb)
+* [2023_1_기말고사 B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/final_2023_1_B.ipynb)
 ---
 * [2019_2_중간고사_A](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2019_2_A.ipynb)
 * [2019_2_중간고사_B](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/master/exams/mid_2019_2_B.ipynb)
