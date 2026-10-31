@@ -18,13 +18,17 @@ from scipy import linalg
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+import scipy
+print("numpy: ", np.__version__)
+print("scipy: ", scipy.__version__)
 ```
 
 ## Interpolation
 
 * One-dimensional interpolation can be formulated as follows:
 
-  For a given set of $n$ data point $\{ (x_i, y_i) \}_{i=1}^n$, find a function $f(x)$ such that $f(x_i) = y_i$ for $i \in [1, n]$. The function $f(x)$ is known as the interpolant, and it is not unique
+  For a given set of $n$ data points $\{ (x_i, y_i) \}_{i=1}^n$, find a function $f(x)$ such that $f(x_i) = y_i$ for $i \in [1, n]$. The function $f(x)$ is known as the interpolant, and it is not unique
 
 * In fact, there are an infinite number of functions that satisfy the interpolation criteria. Typically we can write the interpolant as a linear combination of some basis functions $\phi_j(x)$, such that
 
@@ -53,7 +57,7 @@ import matplotlib.pyplot as plt
 
 * Common choices of basis functions for interpolation are various types of polynomials, for example, the power basis $\phi_j(x_i) = x_i^{j-1}$, or orthogonal polynomials such as Legendre polynomials $\phi_j(x_i) = P_{j-1}(x_i)$, Chebyshev polynomials $\phi_j(x_i) = T_{j-1}(x_i)$, or piecewise polynomials
 
-* Note that in general $f(x)$ is not unique, but for $n$ data points there is a unique interpolating polynomial of order $n-1$, regardless of which polynomial basis we use. The structure of the matrix $\Phi(\mathbf{x})$ is different for different polynomial bases, and its condition number and the computational cost of solving the interpolation problem varies correspondingly
+* Note that in general $f(x)$ is not unique, but for $n$ data points there is a unique interpolating polynomial of degree $n-1$, regardless of which polynomial basis we use. The structure of the matrix $\Phi(\mathbf{x})$ is different for different polynomial bases, and its condition number and the computational cost of solving the interpolation problem vary correspondingly
 
 ## Polynomials
 
@@ -71,7 +75,7 @@ p1 = P.Polynomial([1,2,3])
 p1
 ```
 
-* In the examples above, the first of the lists `coef` is the coefficient array and the second and third lists are the `domain` and `window` attributes
+* A `Polynomial` object stores the coefficient array `coef` together with the `domain` and `window` attributes, $~$which define a linear map of the input $x$ before the polynomial is evaluated
 
 ```{python}
 p1.coef, p1.domain, p1.window
@@ -96,7 +100,7 @@ p1.roots()
 p2.roots()
 ```
 
-* To evaluate the polynomial `p1` at the points $x=[1.5, 2.5, 3.5]$, we simply call the `p1` class instance with a list of $x$ values as this argument:
+* To evaluate the polynomial `p1` at the points $x=[1.5, 2.5, 3.5]$, we simply call the `p1` class instance with an array of $x$ values as its argument:
 
 ```{python}
 p1(np.array([1.5, 2.5, 3.5]))
@@ -172,7 +176,7 @@ l1(np.array([-0.5, 0, 1]))
 
 ## Polynomial interpolation
 
-* To solve the interpolation problem, we need to first evaluate the matrix $\Phi(\mathbf{x})$ for a given basis, and then solve the resulting linear equation system $\Phi(\mathbf{x}) \mathbf{c} = \mathbf{y}$. Each of the polynomial classes in polynomial provides a function for computing the (generalized) Vandermonde matrix for the corresponding basis
+* To solve the interpolation problem, we need to first evaluate the matrix $\Phi(\mathbf{x})$ for a given basis, and then solve the resulting linear equation system $\Phi(\mathbf{x}) \mathbf{c} = \mathbf{y}$. Each of the polynomial classes in `polynomial` provides a function for computing the (generalized) Vandermonde matrix for the corresponding basis
 
 * For example, consider the data points $(1,1)$, $(2,3)$, $(3,5)$ and $(4,4)$
 
@@ -279,7 +283,7 @@ np.linalg.cond(P.chebyshev.chebvander(x, deg))
 np.linalg.cond(P.chebyshev.chebvander((2*x -5)/3.0, deg))
 ```
 
-* Note that with `fit` method, the domain attribute of the resulting instances are automatically set to the appropriate $x$ values of the data points (in this example, the input range is `[1, 4]`), and the coefficients are adjusted accordingly. To illustrate the problem, the values of the Chebyshev polynomials up to degree `5` are plotted below
+* Note that with the `fit` method, the domain attribute of the resulting instances is automatically set to the appropriate $x$ values of the data points (in this example, the input range is `[1, 4]`), and the coefficients are adjusted accordingly. To illustrate the problem, the values of the Chebyshev polynomials up to degree `5` are plotted below
 
 ```{python}
 #| fig-align: center
@@ -295,7 +299,7 @@ plt.ylim(-1, 1)
 plt.show()
 ```
 
-* In the range $-1 \geq x \geq 1$, they are nice, equiripple functions. The same plots over the range $-2 \geq x \geq 2$ look very different:
+* In the range $-1 \leq x \leq 1$, they are nice, equiripple functions. The same plots over the range $-2 \leq x \leq 2$ look very different:
 
 ```{python}
 #| fig-align: center
@@ -363,7 +367,7 @@ ax.tick_params(which='both', direction='in')
 
 ## Spline interpolation
 
-* For a set of $n$ data points $\{ x_i, y_i\}$, there are $n-1$ subintervals $[x_i, x_{i+1}]$ in the full range of the data $[x_0, x_n]$. To interpolate the $n$ data points using **piecewise polynomials of degree** $k$ on each of the subintervals, we must determine $(k+1)(n-1)$ unknown parameters. The values at the knots give $2(n-1)$ equations. Additional equations can be obtained by requiring also that derivatives and higher-order derivatives are continuous at the knots
+* For a set of $n$ data points $\{ x_i, y_i\}$, there are $n-1$ subintervals $[x_i, x_{i+1}]$ in the full range of the data $[x_1, x_n]$. To interpolate the $n$ data points using **piecewise polynomials of degree** $k$ on each of the subintervals, we must determine $(k+1)(n-1)$ unknown parameters. The values at the knots give $2(n-1)$ equations. Additional equations can be obtained by requiring also that derivatives and higher-order derivatives are continuous at the knots
 
 * **A spline is a special type of piecewise polynomial interpolant: a piecewise polynomial of degree $k$ is a spline if it is continuously differentiable $k-1$ times**. The most popular choice is the third-order spline, $k=3$, which requires $4(n-1)$ parameters
 
@@ -371,18 +375,20 @@ ax.tick_params(which='both', direction='in')
 
 * There are therefore two remaining undetermined parameters, which must be determined by other means. A common approach is to additionally require that the second order derivatives at the end points are zero (resulting in the natural spline). This gives two more equations, which closes the equation system
 
+* In current `scipy`, $~$cubic splines are constructed with `interpolate.CubicSpline`, $~$where the end conditions are chosen with `bc_type` (`'natural'`, `'clamped'`, or the default `'not-a-knot'`), $~$and splines of any degree $k$ with `interpolate.make_interp_spline`. $~$The older `interpolate.interp1d` is now a *legacy* function that is not recommended for new code
+
 ```{python}
 #| fig-align: center
 x = np.linspace(-1, 1, 11)
 xx = np.linspace(-1, 1, 100)
 y = runge(x)
-f_i = interpolate.interp1d(x, y, kind=3)
+f_i = interpolate.CubicSpline(x, y, bc_type='natural')
 
 fig, ax = plt.subplots(figsize=(6, 4))
 
 ax.plot(x, y, 'ro', label='Sample points')
 ax.plot(xx, runge(xx), 'k', lw=1, label="Runge's function")
-ax.plot(xx, f_i(xx), 'r--', lw=2, label='Spline order 3')
+ax.plot(xx, f_i(xx), 'r--', lw=2, label='Natural cubic spline')
 ax.legend()
 
 ax.set_xlim(-1, 1)
@@ -411,9 +417,9 @@ xx = np.linspace(x.min(), x.max(), 100)
 fig, ax = plt.subplots(figsize=(6, 4))
 
 ax.scatter(x, y)
-for n in [1, 2, 3, 7]:
-    f = interpolate.interp1d(x, y, kind=n)
-    ax.plot(xx, f(xx), label='order %d' % n)
+for k in [1, 2, 3, 7]:
+    f = interpolate.make_interp_spline(x, y, k=k)  # spline of degree k
+    ax.plot(xx, f(xx), label=f'degree {k}')
     
 ax.legend()
 ax.set_xlabel(r"$x$", fontsize=12)
@@ -433,21 +439,25 @@ x = y = np.linspace(-2, 2, 20)
 X, Y = np.meshgrid(x, y)
 
 # simulate noisy data at fixed grid points X, Y
-Z = f(X, Y) +0.01 *np.random.randn(*X.shape)
+rng = np.random.default_rng(2025)
+Z = f(X, Y) +0.01 *rng.standard_normal(X.shape)
 
-f_i = interpolate.RectBivariateSpline(x, y, Z)
+# meshgrid gives Z[j, i] = f(x_i, y_j), while RectBivariateSpline expects
+# z[i, j] = f(x_i, y_j) and returns its values in the same (x, y) order
+f_i = interpolate.RectBivariateSpline(x, y, Z.T)
 
 xx = yy = np.linspace(x.min(), x.max(), 100)
 XX, YY = np.meshgrid(xx, yy)
 
-ZZi = f_i(xx, yy)
+ZZi = f_i(xx, yy).T
 ```
 
 ```{python}
 #| fig-align: center
-fig, axes = plt.subplots(2, 1, figsize=(6, 10), sharex=True)
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
 
 c = axes[0].contourf(XX, YY, f(XX, YY), 10, cmap=plt.cm.RdBu)
+axes[0].set_xlabel(r"$x$", fontsize=12)
 axes[0].set_ylabel(r"$y$", fontsize=12)
 axes[0].set_title("Exact/High sampling")
 cb = fig.colorbar(c, ax=axes[0])
@@ -457,13 +467,12 @@ c = axes[1].contourf(XX, YY, ZZi, 10, cmap=plt.cm.RdBu)
 axes[1].set_ylim(-2, 2)
 axes[1].set_xlim(-2, 2)
 axes[1].set_xlabel(r"$x$", fontsize=12)
-axes[1].set_ylabel(r"$y$", fontsize=12)
 axes[1].set_title("Interpolation of noisy data/Low sampling")
 cb = fig.colorbar(c, ax=axes[1])
 cb.set_label(r"$z$", fontsize=12)
 ```
 
-* For higher-dimensional problems, there is a function `interpolate.interpnd`, which is a generalization to $n$-dimensional problems
+* For data on a regular grid in higher dimensions, $~$`interpolate.RegularGridInterpolator` (or the function `interpolate.interpn`) generalizes this to $n$-dimensional problems
 
 * Another typical situation that requires multivariate interpolation occurs when sampled data is given on an irregular coordinate grid. To be able to easily plot and analyze such data with existing tools, it may be desirable to interpolate it onto a regular coordinate grid. In `scipy`, we can use the `interpolate.griddata` for exactly this task
 
@@ -475,10 +484,10 @@ x = y = np.linspace(-1, 1, 100)
 X, Y = np.meshgrid(x, y)
 Z = f(X, Y)
 
-np.random.seed(115925231)
+rng = np.random.default_rng(115925231)
 N = 500
-xdata = np.random.uniform(-1, 1, N)
-ydata = np.random.uniform(-1, 1, N)
+xdata = rng.uniform(-1, 1, N)
+ydata = rng.uniform(-1, 1, N)
 zdata = f(xdata, ydata)
 ```
 
@@ -486,7 +495,7 @@ zdata = f(xdata, ydata)
 #| fig-align: center
 fig, ax = plt.subplots(figsize=(6, 5))
 
-c = ax.contourf(X, Y, Z, 15, cmap=plt.cm.RdBu);
+c = ax.contourf(X, Y, Z, 15, cmap=plt.cm.RdBu)
 ax.scatter(xdata, ydata, marker='.')
 ax.set_ylim(-1, 1)
 ax.set_xlim(-1, 1)
@@ -509,7 +518,7 @@ def z_interpolate(xdata, ydata, zdata):
                         zdata, (X, Y), method='cubic')
     return Zi_0, Zi_1, Zi_3
 
-fig, axes = plt.subplots(3, 3, figsize=(6, 6), 
+fig, axes = plt.subplots(3, 3, figsize=(8, 8), 
                          sharex=True, sharey=True)
 
 n_vec = [50, 150, 500]
