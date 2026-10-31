@@ -403,6 +403,8 @@ $$\begin{aligned}
     u(x,0) & = 1 + \cos\pi x +0.5\cos 3\pi x && 0 \leq x \leq 1
   \end{aligned}$$
 
+[Solution](files/solutions/sol_12_5.pdf){target="_blank"}
+
 $~$
 
 ## Solving More Complicated Problems by Separation of Variables {#sec-x1-6}
@@ -732,6 +734,8 @@ $$
     u(x,0) &= \sin\pi x +x && 0 \leq x \leq 1
   \end{aligned}$$
 
+[Solution](files/solutions/sol_12_7.pdf){target="_blank"}
+
 $~$
 
 ## Transforming Hard Equations into Easier Ones {#sec-x1-8}
@@ -953,6 +957,8 @@ $$
 
 where $h=1$ and $\lambda_1$ is the first root of the equation $\,$ $\tan\sqrt{\lambda}=-\sqrt{\lambda}$
 
+[Solution](files/solutions/sol_12_9.pdf){target="_blank"}
+
 $~$
 
 ## $~$The Finite Sine and Cosine Transforms {#sec-x1-10}
@@ -1038,6 +1044,8 @@ $$
     u(1,t) &= 0 && \\
     u(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned}$$
+
+[Solution](files/solutions/sol_12_10.pdf){target="_blank"}
 
 $~$
 
@@ -1139,6 +1147,8 @@ $$
     u(x,0) &= \phi(x) && 0 \leq x \leq 1
   \end{aligned}$$
 
+[Solution](files/solutions/sol_12_11a.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$Solve the problem
@@ -1150,6 +1160,8 @@ $$
     u(1,t) &= 1 && \\
     u(x,0) &= \sin \pi x && 0 \leq x \leq 1
   \end{aligned}$$
+
+[Solution](files/solutions/sol_12_11b.pdf){target="_blank"}
 
 $~$
 
@@ -1549,6 +1561,8 @@ $$
 \end{aligned}$$
 
 where $H(x)$ is the Heaviside function
+
+[Solution](files/solutions/sol_12_14.pdf){target="_blank"}
 
 $~$
 
