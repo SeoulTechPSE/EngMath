@@ -444,6 +444,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\displaystyle \left\{ \frac{1}{\sqrt{2\pi}}, \frac{\cos x}{\sqrt{\pi}}, \frac{\cos 2x}{\sqrt{\pi}},\cdots \right\}\)</span>, <span class="math inline">\(\;\; -\pi \leq x\leq \pi\)</span></p>
+<p><a href="files/solutions/sol_11_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p>Orthogonal Series Expansion</p>
@@ -499,18 +500,18 @@ f(x)&amp;= \frac{1}{2}
 +\sum_{m=1}^\infty \frac{2}{(2m -1)\pi} \sin{(2m -1)x}
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="a86c888f" class="cell" data-execution_count="1">
+<div id="73252a90" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> fourier_series, Piecewise, pi, plot</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.abc <span class="im">import</span> x</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> Piecewise((<span class="dv">0</span>, x <span class="op">&lt;</span> <span class="dv">0</span>), (<span class="dv">1</span>, <span class="va">True</span>))</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> fourier_series(f, (x, <span class="op">-</span>pi, pi))</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>s.truncate(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="64">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="1">
 <p><span class="math inline">\(\displaystyle \frac{2 \sin{\left(x \right)}}{\pi} + \frac{2 \sin{\left(3 x \right)}}{3 \pi} + \frac{2 \sin{\left(5 x \right)}}{5 \pi} + \frac{2 \sin{\left(7 x \right)}}{7 \pi} + \frac{1}{2}\)</span></p>
 </div>
 </div>
-<div id="b09b3eaa" class="cell" data-execution_count="2">
+<div id="31ff1e18" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> s.truncate(n <span class="op">=</span> <span class="dv">3</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s6 <span class="op">=</span> s.truncate(n <span class="op">=</span> <span class="dv">6</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>s9 <span class="op">=</span> s.truncate(n <span class="op">=</span> <span class="dv">9</span>)</span>
@@ -526,12 +527,12 @@ f(x)&amp;= \frac{1}{2}
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-3-output-1.png" width="662" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="80378b8a" class="cell" data-execution_count="3">
+<div id="73ea0a4a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.size'</span>] <span class="op">=</span> <span class="dv">10</span></span>
@@ -574,7 +575,7 @@ f(x)&amp;= \frac{1}{2}
 <div id="fig-ch12-fourier-series" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch12-fourier-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-ch12-fourier-series-output-1.png" class="img-fluid figure-img">
+<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-ch12-fourier-series-output-1.png" width="628" height="579" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-fourier-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.1: Fourier Series
@@ -585,7 +586,7 @@ Figure&nbsp;11.1: Fourier Series
 </div>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
-<li>The <font color="red"><em>overshooting</em></font> by the partial sums from the functional values near a point of discontinuity dose not smooth out but remains fairly constant. This behavior of a Fourier series near a point at which <span class="math inline">\(f\)</span> is discontinuous is known as the <font color="red"><em>Gibbs phenomenon</em></font></li>
+<li>The <font color="red"><em>overshooting</em></font> by the partial sums from the functional values near a point of discontinuity does not smooth out but remains fairly constant. This behavior of a Fourier series near a point at which <span class="math inline">\(f\)</span> is discontinuous is known as the <font color="red"><em>Gibbs phenomenon</em></font></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 </section>
@@ -593,7 +594,7 @@ Figure&nbsp;11.1: Fourier Series
 <h2 data-number="11.3" class="anchored" data-anchor-id="sec-12-3"><span class="header-section-number">11.3</span> Fourier Cosine and Sine Series</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch12_figure01_02.png" title="even and odd function" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="figures/ch12_figure01_02.svg" title="even and odd function" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 <ul>
@@ -621,7 +622,7 @@ Figure&nbsp;11.1: Fourier Series
       \frac{1}{(2m -1)^2} \cos{\frac{(2m -1)\pi}{2}x}
   \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="cd7568fe" class="cell" data-execution_count="5">
+<div id="19acbea9" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x_t1 <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y_t1 <span class="op">=</span> [ <span class="dv">0</span>, <span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -644,18 +645,18 @@ Figure&nbsp;11.1: Fourier Series
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-ch12-Sine-Series" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lamp_sin(x, n): </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ramp_sin(x, n): </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span><span class="dv">1</span>): </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> y <span class="op">+</span><span class="fl">4.0</span> <span class="op">/</span>np.pi <span class="op">*</span>(<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span>(m <span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>m <span class="op">*</span>np.sin(m <span class="op">*</span>np.pi <span class="op">/</span><span class="dv">2</span> <span class="op">*</span>x)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y </span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>example_plot2(lamp_sin, ns<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>example_plot2(ramp_sin, ns<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="fig-ch12-sine-series" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch12-sine-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-ch12-sine-series-output-1.png" class="img-fluid figure-img">
+<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-ch12-sine-series-output-1.png" width="610" height="579" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-sine-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.2: Sine Series
@@ -668,18 +669,18 @@ Figure&nbsp;11.2: Sine Series
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x_t1 <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y_t1 <span class="op">=</span> [ <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lamp_cos(x, m):  </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ramp_cos(x, n):  </span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, m <span class="op">+</span><span class="dv">1</span>): </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span><span class="dv">1</span>): </span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> y <span class="op">-</span><span class="fl">8.0</span> <span class="op">/</span>(np.pi <span class="op">*</span>(<span class="dv">2</span><span class="op">*</span>m <span class="op">-</span><span class="dv">1</span>))<span class="op">**</span><span class="fl">2.0</span> <span class="op">*</span>np.cos((<span class="dv">2</span><span class="op">*</span>m <span class="op">-</span><span class="dv">1</span>) <span class="op">*</span>np.pi <span class="op">/</span><span class="dv">2</span> <span class="op">*</span>x)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y </span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>example_plot2(lamp_cos, ns<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>example_plot2(ramp_cos, ns<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="fig-ch12-cosine-series" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch12-cosine-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-ch12-cosine-series-output-1.png" class="img-fluid figure-img">
+<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-ch12-cosine-series-output-1.png" width="612" height="579" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-cosine-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.3: Cosine Series
@@ -695,7 +696,7 @@ Figure&nbsp;11.3: Cosine Series
 <li><p>Throughout the preceding discussion, <span class="math inline">\(\,\)</span>it was understood that a function <span class="math inline">\(\,f\,\)</span> was defined on an interval with the origin as midpoint</p></li>
 <li><p>However, in many instances, <span class="math inline">\(\,\)</span>we are interested in representing a function that is defined only for <span class="math inline">\(\,0 &lt; x &lt; L~\)</span> by a trigonometric series</p></li>
 </ul></li>
-<li><p>This can be done in many different ways by supplying an arbitrary definition of the function on the interval <span class="math inline">\(-L &lt; x &lt; 0\)</span>. <span class="math inline">\(\,\)</span>For brevity we condider three most important cases:</p>
+<li><p>This can be done in many different ways by supplying an arbitrary definition of the function on the interval <span class="math inline">\(-L &lt; x &lt; 0\)</span>. <span class="math inline">\(\,\)</span>For brevity we consider the three most important cases:</p>
 <ul>
 <li><p>Reflect the graph of the function about the <span class="math inline">\(y\)</span>-axis onto <span class="math inline">\(-L &lt; x &lt; 0\)</span></p></li>
 <li><p>Reflect the graph of the function through the origin onto <span class="math inline">\(-L &lt; x &lt; 0\)</span></p></li>
@@ -704,7 +705,7 @@ Figure&nbsp;11.3: Cosine Series
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch12_figure03.png" title="Cosine, Sine and Fourier Series" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch12_figure03.svg" title="Cosine, Sine and Fourier Series" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </section>
@@ -717,7 +718,7 @@ Figure&nbsp;11.3: Cosine Series
 <p>where</p>
 <p><span class="math display">\[ c_n=\frac{1}{2p}\int_{-p}^p f(x) e^{-\frac{in\pi}{p}x}\,dx \]</span></p></li>
 <li><p>Fundamental Frequency</p>
-<p>The Fourier series define a periodic function and the fundamental period of that function is <span class="math inline">\(T=2p\)</span>. <span class="math inline">\(\,\)</span>Since <span class="math inline">\(p=T/2\)</span>,</p>
+<p>The Fourier series defines a periodic function and the fundamental period of that function is <span class="math inline">\(T=2p\)</span>. <span class="math inline">\(\,\)</span>Since <span class="math inline">\(p=T/2\)</span>,</p>
 <p><span class="math display">\[ \frac{a_0}{2} +\sum_{n=1}^\infty (a_n \cos n\omega x +b_n \sin n\omega x)\;\;\]</span></p>
 <p><span class="math display">\[\text{and}\]</span></p>
 <p><span class="math display">\[ \sum_{n=-\infty}^\infty c_n e^{in\omega x}\]</span></p>
@@ -727,6 +728,7 @@ Figure&nbsp;11.3: Cosine Series
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Expand <span class="math inline">\(\;f(x)=e^{-x}\)</span>, <span class="math inline">\(\;-\pi&lt;x&lt;\pi\;\)</span> in a complex Fourier series and find the frequency spectrum</p>
+<p><a href="files/solutions/sol_11_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-12-5" class="level2" data-number="11.5">
@@ -807,7 +809,7 @@ Figure&nbsp;11.3: Cosine Series
      \;\rightarrow \;c_2 \neq 0, \;\tan\sqrt{\lambda}=-\sqrt{\lambda}
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="b9b01fe0" class="cell" data-execution_count="8">
+<div id="f319a818" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">1000</span>)  </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.tan(x)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -815,7 +817,7 @@ Figure&nbsp;11.3: Cosine Series
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y[y <span class="op">&gt;</span> threshold] <span class="op">=</span> np.inf</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>y[y <span class="op">&lt;-</span>threshold] <span class="op">=</span> np.inf</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> examle_plot3(eigenvalues):</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_plot3(eigenvalues):</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, y, linewidth<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span><span class="st">"blue"</span>)</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    plt.plot(x,<span class="op">-</span>x, linewidth<span class="op">=</span><span class="fl">1.2</span>, color<span class="op">=</span><span class="st">"green"</span>)</span>
@@ -829,7 +831,7 @@ Figure&nbsp;11.3: Cosine Series
 <span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span>
 <span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b602cbec" class="cell" data-execution_count="9">
+<div id="1d663502" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> optimize</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sqrt_eigenvalues <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
@@ -844,17 +846,17 @@ Figure&nbsp;11.3: Cosine Series
 <pre><code>sqrt_eigenvalues =array([ 2.0288,  4.9132,  7.9787, 11.0855])</code></pre>
 </div>
 </div>
-<div id="8f0cadf8" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>examle_plot3(sqrt_eigenvalues)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4abc9784" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>example_plot3(sqrt_eigenvalues)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-11-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-11-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="534" height="427"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-fig-eigenfuctions-1" class="cell" data-execution_count="11">
+<div id="cell-fig-eigenfunctions-1" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_plot3_(x, n_eig, sqrt_eig, eigfunc):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
@@ -876,12 +878,12 @@ Figure&nbsp;11.3: Cosine Series
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">150</span>)</span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>example_plot3_(x, <span class="bu">len</span>(sqrt_eigenvalues), sqrt_eigenvalues, eigfunc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="fig-eigenfuctions-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-eigenfunctions-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-eigenfuctions-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-eigenfuctions-1-output-1.png" class="img-fluid figure-img">
+<div aria-describedby="fig-eigenfunctions-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-eigenfunctions-1-output-1.png" width="616" height="457" class="figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eigenfuctions-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eigenfunctions-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.4: Eigenfunctions
 </figcaption>
 </figure>
@@ -915,7 +917,8 @@ Figure&nbsp;11.4: Eigenfunctions
 <p><span class="math display">\[ \frac{d}{dx}\left[(1-x^2)y'\right] +n(n +1)y = 0 \]</span></p></li>
 <li><p>Consider <span class="math inline">\(\,y'' +\lambda y =0~\)</span> subject to the periodic boundary condition <span class="math inline">\(~y(-L)=y(L)\)</span>, <span class="math inline">\(\,y'(-L)=y'(L)\)</span>. <span class="math inline">\(\,\)</span>Show that the eigenfunctions are</p>
 <p><span class="math display">\[ \left\{ 1,\cos\frac{\pi}{L}x, \cos\frac{2\pi}{L}x, \cdots, \sin\frac{\pi}{L}x, \sin\frac{2\pi}{L}x, \,\cdots \right\}\]</span></p>
-<p>This set, <span class="math inline">\(\,\)</span>which is orthogonal on <span class="math inline">\(\,[-L,L]\)</span>, <span class="math inline">\(\,\)</span>is the basis for the Fourier Series</p></li>
+<p>This set, <span class="math inline">\(\,\)</span>which is orthogonal on <span class="math inline">\(\,[-L,L]\)</span>, <span class="math inline">\(\,\)</span>is the basis for the Fourier Series</p>
+<p><a href="files/solutions/sol_11_5.pdf" target="_blank">Solution</a></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 </section>
@@ -967,7 +970,7 @@ xJ_n'(x)&amp;=nJ_n(x)-xJ_{n+1}(x)\\
 \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="eb2c4b11" class="cell" data-execution_count="12">
+<div id="24821b22" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> jv, jn_zeros</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.axisartist.axislines <span class="im">import</span> SubplotZero</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1025,7 +1028,7 @@ xJ_n'(x)&amp;=nJ_n(x)-xJ_{n+1}(x)\\
 <span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>    ax2.legend(bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">"upper left"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5bdad338" class="cell" data-execution_count="13">
+<div id="e6786d4b" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eval_eigfn(x):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jv(<span class="dv">0</span>, x)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1058,13 +1061,13 @@ xJ_n'(x)&amp;=nJ_n(x)-xJ_{n+1}(x)\\
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-14-output-1.png" width="654" height="621" class="figure-img"></p>
 <figcaption>Case I: <span class="math inline">\(~n=0, A_2 = 1, B_2 = 0, b=1\)</span></figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div id="9fa4b642" class="cell" data-execution_count="14">
+<div id="04fa179d" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eval_eigfn(x):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jv(<span class="dv">1</span>, x)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1097,7 +1100,7 @@ xJ_n'(x)&amp;=nJ_n(x)-xJ_{n+1}(x)\\
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-15-output-1.png" width="654" height="621" class="figure-img"></p>
 <figcaption>Case I: <span class="math inline">\(~n=1, A_2 = 1, B_2 = 0, b=1\)</span></figcaption>
 </figure>
 </div>
@@ -1118,7 +1121,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
   \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="0bc28c6a" class="cell" data-execution_count="15">
+<div id="70ec54ae" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> j0, j1</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1159,7 +1162,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-16-output-1.png" width="694" height="621" class="figure-img"></p>
 <figcaption>Case II: <span class="math inline">\(~n=0, h = 1, b=1, \;J_0(\alpha) + \alpha J_0' (\alpha)=0\)</span></figcaption>
 </figure>
 </div>
@@ -1180,7 +1183,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
 \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="380907a0" class="cell" data-execution_count="16">
+<div id="ddae7865" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> jnp_zeros</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> eval_eigfn(x):</span>
@@ -1215,7 +1218,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-17-output-1.png" width="654" height="624" class="figure-img"></p>
 <figcaption>Case III: <span class="math inline">\(~n=0, h = 0, b=1, \;J_0'(\alpha)=0\)</span></figcaption>
 </figure>
 </div>
@@ -1223,7 +1226,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
 </div>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
-<li><p>The set <span class="math inline">\(\{J_n(\alpha_i x), \;i=0,1,2,\cdots\}\)</span> is orthogonal with respect to the weight function <span class="math inline">\(p(x)=x~\)</span> on <span class="math inline">\(~[0, b]\)</span></p>
+<li><p>The set <span class="math inline">\(\{J_n(\alpha_i x), \;i=1,2,3,\cdots\}\)</span> is orthogonal with respect to the weight function <span class="math inline">\(p(x)=x~\)</span> on <span class="math inline">\(~[0, b]\)</span></p>
 <p><font color="red"> <span class="math display">\[\int_{0}^b x\, J_n(\alpha_i x) \, J_n(\alpha_j x)\,dx=0,\; i\neq j\]</span> </font></p></li>
 <li><p>The Fourier-Bessel series of a function <span class="math inline">\(\,f\)</span> defined on the interval <span class="math inline">\((0, b)\)</span> is given by</p>
 <p><font color="red"> <span class="math display">\[ f(x)=\sum_{i=1}^\infty c_i J_n(\alpha_i x)\]</span> </font></p>
@@ -1240,7 +1243,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
 <p><span class="math display">\[\text{or}\]</span></p>
 <p><font color="red"> <span class="math display">\[\frac{d}{dx}\left[ (1-x^2)y' \right]+n(n+1)y=0\]</span> </font></p>
 <p>in which <span class="math inline">\(~r(x)=1-x^2, \,p(x)=1, \,\lambda=n(n+1),\)</span> and <span class="math inline">\(~q(x)=0\)</span></p></li>
-<li><p><font color="red"> The Legendre polymomials <span class="math inline">\(P_n(x)\)</span> are the only solutions that are bounded on the interval <span class="math inline">\([\text{-}1, \,1]\)</span> </font></p></li>
+<li><p><font color="red"> The Legendre polynomials <span class="math inline">\(P_n(x)\)</span> are the only solutions that are bounded on the interval <span class="math inline">\([\text{-}1, \,1]\)</span> </font></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <div id="cell-fig-Legendre" class="cell" data-execution_count="17">
@@ -1274,7 +1277,7 @@ h=0\; \text{ and } \; n=0 \]</span> </font></p>
 <div id="fig-legendre" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-legendre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-legendre-output-1.png" class="img-fluid figure-img">
+<img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/fig-legendre-output-1.png" width="478" height="419" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-legendre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.5: Legendre Polynomials
@@ -1304,7 +1307,7 @@ Figure&nbsp;11.5: Legendre Polynomials
 <li><p>Chebyshev</p>
 <p><span class="math display">\[(1-x^2) y'' -xy' +n^2y = 0\]</span></p></li>
 <li><p>Hypergeometric</p>
-<p><span class="math display">\[x(1-x)y'' +[c - (a + b +1)x y'] -ab y = 0\]</span></p></li>
+<p><span class="math display">\[x(1-x)y'' +[c - (a + b +1)x]\, y' -ab y = 0\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 </section>
@@ -1312,7 +1315,7 @@ Figure&nbsp;11.5: Legendre Polynomials
 <section id="worked-exercises" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="worked-exercises">Worked Exercises</h2>
 <p><strong>1.</strong> <span class="math inline">\(~\)</span> Suppose the function <span class="math inline">\(y=f(x)\)</span>, <span class="math inline">\(0 &lt; x &lt; L\)</span>, given in figure is expanded in a cosine series, in a sine series, and in a Fourier series. Sketch the periodic extension to which each series converges</p>
-<p><img src="./figures/ch12_ex01.jpg" class="img-fluid"></p>
+<p><img src="./figures/ch12_ex01.svg" class="img-fluid"></p>
 <p><span class="math display">\[f(x) = \begin{cases}
 0 &amp; 0 \displaystyle \leq x &lt; \frac{L}{2} \\
 \displaystyle -\sin \frac{2\pi x}{L} &amp; \displaystyle \frac{L}{2} \leq x \leq L
@@ -1350,7 +1353,7 @@ Figure&nbsp;11.5: Legendre Polynomials
 <li>The function is extended periodically with period <span class="math inline">\(L\)</span></li>
 </ul>
 <p>This shape repeats every <span class="math inline">\(L\)</span> units</p>
-<div id="c6a11c6c" class="cell" data-execution_count="18">
+<div id="96fc923f" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1425,7 +1428,7 @@ Figure&nbsp;11.5: Legendre Polynomials
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-19-output-1.png" width="566" height="756" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1751,7 +1754,7 @@ f(x) &amp;= \frac{\pi}{2} - \frac{4}{\pi} \sum_{\substack{n=1\\n\text{ odd}}}^\i
 \int_0^2 e^x y_m(x) y_n(x)\, dx = 0 \quad \text{if } m \ne n
 }\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong>7.</strong> <span class="math inline">\(~\)</span> Find the eigenfuctions and the equation that defines the eigenvalues for the given boundary-value problem:</p>
+<p><strong>7.</strong> <span class="math inline">\(~\)</span> Find the eigenfunctions and the equation that defines the eigenvalues for the given boundary-value problem:</p>
 <p><span class="math display">\[ y''+\lambda y = 0, \;y(0) +y'(0) = 0, \; y(1)=0\]</span></p>
 <p><strong>Solution</strong></p>
 <p><strong>Step 1:</strong> <span class="math inline">\(~\)</span> General Solution of the ODE</p>
@@ -1791,7 +1794,7 @@ y_\mu(x) = \sin(\mu x) - \mu \cos(\mu x)
 <li>Eigenfunctions:</li>
 </ul>
 <p><span class="math display">\[\boxed{ y(x) = \sin(\mu x) - \mu \cos(\mu x) }\]</span></p>
-<div id="0894d108" class="cell" data-execution_count="19">
+<div id="296a71b3" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
@@ -1828,7 +1831,7 @@ y_\mu(x) = \sin(\mu x) - \mu \cos(\mu x)
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-20-output-1.png" width="565" height="372" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1870,7 +1873,7 @@ P_4(x) &amp;= \frac{1}{8}(35x^4 - 30x^2 + 3) \\
 <p><span class="math display">\[\boxed{
 x^4 = \frac{1}{5} P_0(x) + \frac{4}{7} P_2(x) + \frac{8}{35} P_4(x)
 }\]</span></p>
-<div id="356296ad" class="cell" data-execution_count="20">
+<div id="69ec8f3e" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1896,7 +1899,7 @@ x^4 = \frac{1}{5} P_0(x) + \frac{4}{7} P_2(x) + \frac{8}{35} P_4(x)
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-21-output-1.png" width="515" height="376" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1952,7 +1955,7 @@ x^4 = \frac{1}{5} P_0(x) + \frac{4}{7} P_2(x) + \frac{8}{35} P_4(x)
 \;0, &amp; \dfrac{1}{2} &lt; x &lt; 1
 \end{cases} \]</span></p>
 <p><strong>Solution</strong></p>
-<div id="cf629f88" class="cell" data-execution_count="21">
+<div id="c2c96420" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2026,7 +2029,7 @@ x^4 = \frac{1}{5} P_0(x) + \frac{4}{7} P_2(x) + \frac{8}{35} P_4(x)
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_12_Orthogonal_Functions_and_Fourier_Series_files/figure-html/cell-22-output-1.png" width="1141" height="564" class="figure-img"></p>
 </figure>
 </div>
 </div>
