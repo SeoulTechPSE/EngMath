@@ -426,16 +426,7 @@ plot_direction_field(x, y(x), y(x)**2 /x, ax=axes[2])
 
   $$ \frac{d^2 y}{dt^2} +2\frac{dy}{dt} +10y =2\sin 3t$$
 
-* [_laplace_trabsform_expansion.py](_laplace_transform_expansion.py)
-
-  * `laplace_tranform_()` is the expanded version of `laplace_transform()`
-
-  * `subs_()` is the modified function of `sub()` method
-
-```{python}
-#| echo: false
-{{< include _laplace_transform_expansion.py >}}
-```  
+* In recent versions of sympy (1.13 and later), `sympy.laplace_transform` transforms derivatives of unknown functions directly. $~$`sympy.laplace_correspondence` writes $\mathcal{L}\{y(t)\}$ as $Y(s)$, $~$and `sympy.laplace_initial_conds` inserts the initial values (see @sec-sympy-Laplace-transform)
 
 ```{python}
 t = sympy.symbols("t", positive=True)
@@ -453,12 +444,12 @@ ode
 ```{python}
 s = sympy.symbols('s', real=True)
 Y = sympy.Function('Y')
-
-Ly = laplace_transform_(y(t), t, s)
 ```
 
 ```{python}
-Lode = subs_(laplace_transform_(ode, t, s), Ly, Y(s)).subs(ics)
+Lode = sympy.laplace_transform(ode, t, s, noconds=True)
+Lode = sympy.laplace_correspondence(Lode, {y: Y})
+Lode = sympy.laplace_initial_conds(Lode, t, {y: [1, 0]})   # y(0) = 1, y'(0) = 0
 Lode
 ```
 

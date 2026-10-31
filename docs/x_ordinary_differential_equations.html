@@ -416,7 +416,7 @@ window.Quarto = {
 <p>In this appendix, we will explore both symbolic and numerical approaches to solving ODE problems. For symbolic methods, we use the <code>sympy</code> module, and for numerical integration of ODEs, we use functions from the <code>integrate</code> module in <code>scipy</code></p>
 <section id="importing-modules" class="level2" data-number="22.1">
 <h2 data-number="22.1" class="anchored" data-anchor-id="importing-modules"><span class="header-section-number">22.1</span> Importing modules</h2>
-<div id="1f79c192" class="cell" data-execution_count="1">
+<div id="ac7851a4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> pi</span>
@@ -477,7 +477,7 @@ window.Quarto = {
 <p><span class="math display">\[\frac{dT(t)}{dt} = -k(T(t) -T_a)\]</span></p>
 <p>with the initial value <span class="math inline">\(T(0) = T_0\)</span></p></li>
 </ul>
-<div id="34f9e74a" class="cell" data-execution_count="2">
+<div id="358e0274" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t, k, T0, Ta <span class="op">=</span> sympy.symbols(<span class="st">'t, k, T_0, T_a'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> sympy.Function(<span class="st">'T'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -491,7 +491,7 @@ window.Quarto = {
 <p><span class="math inline">\(\displaystyle k \left(- T_{a} + T{\left(t \right)}\right) + \frac{d}{d t} T{\left(t \right)} = 0\)</span></p>
 </div>
 </div>
-<div id="41d7c43f" class="cell" data-execution_count="3">
+<div id="3dc316e3" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ode_sol <span class="op">=</span> sympy.dsolve(ode)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ode_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
@@ -501,7 +501,7 @@ window.Quarto = {
 <ul>
 <li>The return value from <code>sympy.dsolve</code> is an instance of <code>sympy.Eq</code>, which is a symbolic representation of an equality</li>
 </ul>
-<div id="4b7e430d" class="cell" data-execution_count="4">
+<div id="e457e223" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ode_sol.lhs, ode_sol.rhs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
 <p><span class="math inline">\(\displaystyle \left( T{\left(t \right)}, \  C_{1} e^{- k t} + T_{a}\right)\)</span></p>
@@ -511,7 +511,7 @@ window.Quarto = {
 <li><p>Once the general solution has been found, <span class="math inline">\(\,\)</span>we need to use the initial conditions to find the values of the yet-to-be-determined integration constants</p></li>
 <li><p>We first create a dictionary that describes the initial condition, <code>ics = {T(0): T0}</code>, which we can use with <code>sympy</code>’s <code>subs</code> method to apply the initial condition to the solution of the ODE. This results in an equation for the unknown integration constant <span class="math inline">\(C_1\)</span>:</p></li>
 </ul>
-<div id="81072295" class="cell" data-execution_count="5">
+<div id="dbeb8cc5" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ics <span class="op">=</span> {T(<span class="dv">0</span>): T0}</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>C_eq <span class="op">=</span> sympy.Eq(ode_sol.lhs.subs(t, <span class="dv">0</span>).subs(ics), </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                ode_sol.rhs.subs(t, <span class="dv">0</span>))</span>
@@ -523,14 +523,14 @@ window.Quarto = {
 <ul>
 <li>In the present example, the equation for <span class="math inline">\(C_1\)</span> is trivial to solve, but for the sake of generality, here we solve it using <code>sympy.solve</code>:</li>
 </ul>
-<div id="9e706789" class="cell" data-execution_count="6">
+<div id="81afb6fa" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>C_sol <span class="op">=</span> sympy.solve(C_eq)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>C_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
 <p><span class="math inline">\(\displaystyle \left[ \left\{ C_{1} : T_{0} - T_{a}\right\}\right]\)</span></p>
 </div>
 </div>
-<div id="3f2cd3db" class="cell" data-execution_count="7">
+<div id="150f0269" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ode_sol.subs(C_sol[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle T{\left(t \right)} = T_{a} + \left(T_{0} - T_{a}\right) e^{- k t}\)</span></p>
@@ -539,7 +539,7 @@ window.Quarto = {
 <ul>
 <li>Applying the initial conditions and solving for the undetermined integration constants can be slightly tedious, and it worth while to collect these steps in a reusable function. The following function <code>apply_ics</code> is a basic implementation that generalizes these steps to a differential equation of arbitrary order</li>
 </ul>
-<div id="779dedec" class="cell" data-execution_count="8">
+<div id="72628474" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_ics(sol, ics, x, known_params):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Apply the initial conditions (ics), </span></span>
@@ -564,14 +564,14 @@ window.Quarto = {
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sol.subs(sol_params)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a14a62f7" class="cell" data-execution_count="9">
+<div id="f1895568" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>T_sol <span class="op">=</span> apply_ics(ode_sol, ics, t, [k, Ta])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>T_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="9">
 <p><span class="math inline">\(\displaystyle T{\left(t \right)} = T_{a} + \left(T_{0} - T_{a}\right) e^{- k t}\)</span></p>
 </div>
 </div>
-<div id="c67db00c" class="cell" data-execution_count="10">
+<div id="2bc69196" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.lambdify((t, k), </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                   T_sol.rhs.subs({T0: <span class="dv">5</span>, Ta: <span class="dv">1</span>}), </span>
@@ -592,7 +592,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-11-output-1.png" width="528" height="382" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -602,7 +602,7 @@ window.Quarto = {
 <p><span class="math display">\[ \frac{d^2x(t)}{dt^2} +2\gamma \omega_0 \frac{dx(t)}{dt} +\omega_0^2 x(t) = 0\]</span></p>
 <p>where <span class="math inline">\(x(t)\)</span> is the position of the oscillator at time <span class="math inline">\(t\)</span>, <span class="math inline">\(\,\omega_0\)</span> is the frequency for the undamped case, and <span class="math inline">\(\,\gamma\)</span> is the damping ratio</p></li>
 </ul>
-<div id="ce927971" class="cell" data-execution_count="11">
+<div id="bf236be5" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>t, omega0, gamma <span class="op">=</span> sympy.symbols(<span class="st">'t, omega_0, gamma'</span>, </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                                 positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Function(<span class="st">"x"</span>)</span>
@@ -615,7 +615,7 @@ window.Quarto = {
 <p><span class="math inline">\(\displaystyle 2 \gamma \omega_{0} \frac{d}{d t} x{\left(t \right)} + \omega_{0}^{2} x{\left(t \right)} + \frac{d^{2}}{d t^{2}} x{\left(t \right)} = 0\)</span></p>
 </div>
 </div>
-<div id="fdd3d6f2" class="cell" data-execution_count="12">
+<div id="fe175930" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ode_sol <span class="op">=</span> sympy.dsolve(ode)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ode_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="12">
@@ -625,7 +625,7 @@ window.Quarto = {
 <ul>
 <li>Since this is a second-order ODE, there are two undetermined integration constants in the general solution. We need to specify initial conditions for both the position <span class="math inline">\(x(0)\)</span> and the velocity <span class="math inline">\(x'(0)\)</span> to single out a particular solution to the ODE</li>
 </ul>
-<div id="6bf5bdc8" class="cell" data-execution_count="13">
+<div id="c447bb91" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ics <span class="op">=</span> {x(<span class="dv">0</span>): <span class="dv">1</span>, x(t).diff(t).subs(t, <span class="dv">0</span>): <span class="dv">0</span>}</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>x_sol <span class="op">=</span> apply_ics(ode_sol, ics, t, [omega0, gamma])</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>C1 <span class="op">=</span> x_sol.rhs.args[<span class="dv">0</span>].args[<span class="dv">0</span>]</span>
@@ -634,7 +634,7 @@ window.Quarto = {
 <p><span class="math inline">\(\displaystyle \frac{\gamma}{2 \sqrt{\gamma - 1} \sqrt{\gamma + 1}} + \frac{1}{2}\)</span></p>
 </div>
 </div>
-<div id="cecbe02b" class="cell" data-execution_count="14">
+<div id="8c8f2abb" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>C2 <span class="op">=</span> x_sol.rhs.args[<span class="dv">1</span>].args[<span class="dv">0</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>C2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="14">
@@ -644,7 +644,7 @@ window.Quarto = {
 <ul>
 <li>This is the solution for the dynamics of the oscillator for arbitrary values of <span class="math inline">\(t\)</span>, <span class="math inline">\(\omega_0\)</span> and <span class="math inline">\(\gamma\)</span>. <span class="math inline">\(~\)</span>However, substituting <span class="math inline">\(\gamma = 1\)</span>, <span class="math inline">\(\,\)</span>which corresponds to critical damping, directly into this expression results in <em>a division by zero</em> error, and for this particular choice of <span class="math inline">\(\gamma\)</span>, we need to be careful and compute the limit where <span class="math inline">\(\gamma \rightarrow 1\)</span></li>
 </ul>
-<div id="eb5b8871" class="cell" data-execution_count="15">
+<div id="8b17c6d1" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x_critical <span class="op">=</span> sympy.limit(x_sol.rhs, gamma, <span class="dv">1</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x_critical</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="15">
@@ -654,7 +654,7 @@ window.Quarto = {
 <ul>
 <li>Finally, <span class="math inline">\(\,\)</span>we plot the solutions for <span class="math inline">\(\omega_0 = 2\pi\)</span> and a sequence of different values of the damping ratio <span class="math inline">\(\gamma\)</span></li>
 </ul>
-<div id="e16040f3" class="cell" data-execution_count="16">
+<div id="3e037181" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">250</span>)</span>
@@ -676,7 +676,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-17-output-1.png" width="539" height="363" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -685,7 +685,7 @@ window.Quarto = {
 <ul>
 <li>Even many first-order ODEs cannot be solved exactly in terms of elementary functions. For example, consider <span class="math inline">\(\displaystyle\frac{dy}{dx} = x +y^2\)</span>, <span class="math inline">\(\,\)</span>which is an example of an ODE that does not have any closed-form solution</li>
 </ul>
-<div id="6f3675d8" class="cell" data-execution_count="17">
+<div id="721b9961" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.symbols(<span class="st">'x'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> sympy.Function(<span class="st">'u'</span>)</span>
@@ -698,16 +698,16 @@ window.Quarto = {
 <p><span class="math inline">\(\displaystyle - x - y^{2}{\left(x \right)} + \frac{d}{d x} y{\left(x \right)}\)</span></p>
 </div>
 </div>
-<div id="5734916b" class="cell" data-execution_count="18">
+<div id="ec5322c1" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sympy.classify_ode(ode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>('1st_rational_riccati', '1st_power_series', 'lie_group')</code></pre>
 </div>
 </div>
 <ul>
-<li>See <a href="#sec-2-5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2-5</span></a></li>
+<li>See <a href="ch_02_First-Order_Differential_Equations.html#sec-2-5" class="quarto-xref"><span>Section 2.5</span></a></li>
 </ul>
-<div id="37fbfc5e" class="cell" data-execution_count="19">
+<div id="db94c0af" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sympy bug: '1st_rational_riccati' not working</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>q0 <span class="op">=</span> x</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>q1 <span class="op">=</span> sympy.Integer(<span class="st">'0'</span>)</span>
@@ -723,14 +723,14 @@ window.Quarto = {
 <p><span class="math inline">\(\displaystyle C_{1} Ai\left(- x\right) + C_{2} Bi\left(- x\right)\)</span></p>
 </div>
 </div>
-<div id="b9b4be26" class="cell" data-execution_count="20">
+<div id="d4cd71e0" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>y_sol <span class="op">=</span> <span class="op">-</span>u_sol.diff(x) <span class="op">/</span>(q2 <span class="op">*</span>u_sol)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="20">
 <p><span class="math inline">\(\displaystyle \frac{C_{1} Ai^\prime\left(- x\right) + C_{2} Bi^\prime\left(- x\right)}{C_{1} Ai\left(- x\right) + C_{2} Bi\left(- x\right)}\)</span></p>
 </div>
 </div>
-<div id="8dfdce71" class="cell" data-execution_count="21">
+<div id="a7636795" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>C1 <span class="op">=</span> sympy.Symbol(<span class="st">'C1'</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>C1_ <span class="op">=</span> sympy.solve(y_sol.subs({x: <span class="dv">0</span>}), C1)[<span class="dv">0</span>]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>C1_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -738,7 +738,7 @@ window.Quarto = {
 <p><span class="math inline">\(\displaystyle \sqrt{3} C_{2}\)</span></p>
 </div>
 </div>
-<div id="ff0dec56" class="cell" data-execution_count="22">
+<div id="39811e5a" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>y_sol <span class="op">=</span> y_sol.subs({C1: C1_}).cancel()</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="22">
@@ -750,13 +750,13 @@ window.Quarto = {
 <li><p>For many other types of equations, <code>sympy</code> outright fails to produce any solution at all. <span class="math inline">\(\,\)</span>For example, if we attempt to solve the second-order</p>
 <p><span class="math display">\[\frac{d^2y}{dx^2} =x +y^2\]</span></p></li>
 </ul>
-<div id="792efc64" class="cell" data-execution_count="23">
+<div id="358250a3" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sympy.Eq(y(x).diff(x, <span class="dv">2</span>), f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="23">
 <p><span class="math inline">\(\displaystyle \frac{d^{2}}{d x^{2}} y{\left(x \right)} = x + y^{2}{\left(x \right)}\)</span></p>
 </div>
 </div>
-<div id="2db47a5f" class="cell" data-execution_count="24">
+<div id="4f7e8e90" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  sympy.dsolve(y(x).diff(x, <span class="dv">2</span>) <span class="op">-</span>f)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
@@ -772,7 +772,7 @@ window.Quarto = {
 <p><span class="math display">\[\frac{dy}{dx}=f(x,y(x))\]</span></p>
 <p>The reason why the direction field graph is useful is that smooth and continuous curves that tangent the slope lines (at every point) in the direction field graph are possible solutions to the ODE</p></li>
 </ul>
-<div id="e3e7703d" class="cell" data-execution_count="25">
+<div id="988f9c85" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_direction_field(x, y_x, f_xy, </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>        x_lim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>), y_lim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>), ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -808,13 +808,13 @@ window.Quarto = {
 <ul>
 <li>With this function, we can produce the direction field graphs for the ODEs. The direction lines in the graphs suggest how the curves that are solutions to the corresponding ODE behave, and direction field graphs are therefore a useful tool for visualizing solutions to ODEs that cannot be solved analytically</li>
 </ul>
-<div id="4fa0dfd7" class="cell" data-execution_count="26">
+<div id="e6ec1d91" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.symbols(<span class="st">'x'</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> y(x)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="308c3928" class="cell" data-execution_count="27">
+<div id="b8f76258" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>))</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># left panel</span></span>
@@ -831,7 +831,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-28-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-28-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="416" height="432"></p>
 </figure>
 </div>
 </div>
@@ -842,7 +842,7 @@ window.Quarto = {
 <p><span class="math inline">\(f(x,y(x))=-x/y(x)\)</span></p>
 <p><span class="math inline">\(f(x,y(x))=y^2(x)/x\)</span></p></li>
 </ul>
-<div id="6eed46b8" class="cell" data-execution_count="28">
+<div id="5256f7a3" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.symbols(<span class="st">'x'</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -854,7 +854,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-29-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-29-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="341" height="1023"></p>
 </figure>
 </div>
 </div>
@@ -865,13 +865,9 @@ window.Quarto = {
 <ul>
 <li><p>A technique that can be used to solve certain ODE problems is to do Laplace transform on the ODE, which for many problems results in an algebraic equation that is easier to solve. The solution to the algebraic equation can then be transformed back to the original domain with an inverse Laplace transform, to obtain the solution to the original problem. For example, consider the following differential equation for a driven harmonic oscillator:</p>
 <p><span class="math display">\[ \frac{d^2 y}{dt^2} +2\frac{dy}{dt} +10y =2\sin 3t\]</span></p></li>
-<li><p><a href="_laplace_transform_expansion.py">_laplace_trabsform_expansion.py</a></p>
-<ul>
-<li><p><code>laplace_tranform_()</code> is the expanded version of <code>laplace_transform()</code></p></li>
-<li><p><code>subs_()</code> is the modified function of <code>sub()</code> method</p></li>
-</ul></li>
+<li><p>In recent versions of sympy (1.13 and later), <code>sympy.laplace_transform</code> transforms derivatives of unknown functions directly. <span class="math inline">\(~\)</span><code>sympy.laplace_correspondence</code> writes <span class="math inline">\(\mathcal{L}\{y(t)\}\)</span> as <span class="math inline">\(Y(s)\)</span>, <span class="math inline">\(~\)</span>and <code>sympy.laplace_initial_conds</code> inserts the initial values (see <a href="x_sympy_Laplace_transform.html" class="quarto-xref"><span>Chapter 17</span></a>)</p></li>
 </ul>
-<div id="65049636" class="cell" data-execution_count="30">
+<div id="e4c02b0d" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> sympy.symbols(<span class="st">"t"</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">"y"</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -882,41 +878,41 @@ window.Quarto = {
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>ics <span class="op">=</span> {y(<span class="dv">0</span>): <span class="dv">1</span>, y(t).diff(t).subs(t, <span class="dv">0</span>): <span class="dv">0</span>}</span>
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>ode</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="30">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="29">
 <p><span class="math inline">\(\displaystyle 10 y{\left(t \right)} - 2 \sin{\left(3 t \right)} + 2 \frac{d}{d t} y{\left(t \right)} + \frac{d^{2}}{d t^{2}} y{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="f679526b" class="cell" data-execution_count="31">
+<div id="43600774" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> sympy.symbols(<span class="st">'s'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> sympy.Function(<span class="st">'Y'</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>Ly <span class="op">=</span> laplace_transform_(y(t), t, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> sympy.Function(<span class="st">'Y'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1121c093" class="cell" data-execution_count="32">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> subs_(laplace_transform_(ode, t, s), Ly, Y(s)).subs(ics)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>Lode</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="32">
+<div id="2c8df4ce" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> sympy.laplace_transform(ode, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> sympy.laplace_correspondence(Lode, {y: Y})</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> sympy.laplace_initial_conds(Lode, t, {y: [<span class="dv">1</span>, <span class="dv">0</span>]})   <span class="co"># y(0) = 1, y'(0) = 0</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>Lode</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="31">
 <p><span class="math inline">\(\displaystyle s^{2} Y{\left(s \right)} + 2 s Y{\left(s \right)} - s + 10 Y{\left(s \right)} - 2 - \frac{6}{s^{2} + 9}\)</span></p>
 </div>
 </div>
-<div id="924a9f8b" class="cell" data-execution_count="33">
+<div id="6ea87f7e" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>Y_sol <span class="op">=</span> sympy.solve(Lode, Y(s))[<span class="dv">0</span>]</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>Y_sol </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="33">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="32">
 <p><span class="math inline">\(\displaystyle \frac{s^{3} + 2 s^{2} + 9 s + 24}{s^{4} + 2 s^{3} + 19 s^{2} + 18 s + 90}\)</span></p>
 </div>
 </div>
-<div id="d0681018" class="cell" data-execution_count="34">
+<div id="aac32946" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>y_sol <span class="op">=</span> sympy.inverse_laplace_transform(Y_sol, s, t)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>y_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="34">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="33">
 <p><span class="math inline">\(\displaystyle \frac{2 \sin{\left(3 t \right)}}{37} - \frac{12 \cos{\left(3 t \right)}}{37} + \frac{43 e^{- t} \sin{\left(3 t \right)}}{111} + \frac{49 e^{- t} \cos{\left(3 t \right)}}{37}\)</span></p>
 </div>
 </div>
-<div id="dfd73eaf" class="cell" data-execution_count="35">
+<div id="785268c5" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>y_t <span class="op">=</span> sympy.lambdify(t, y_sol, modules<span class="op">=</span>[<span class="st">'numpy'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="80586388" class="cell" data-execution_count="36">
+<div id="74a7f0f4" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">500</span>)</span>
@@ -927,7 +923,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-37-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-36-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="565" height="373"></p>
 </figure>
 </div>
 </div>
@@ -1005,7 +1001,7 @@ window.Quarto = {
 <li><p>For example, <span class="math inline">\(\,\)</span>consider again the scalar ODE</p>
 <p><span class="math display">\[y'(x) = f(x, y(x)) = x + y^2(x)\]</span></p></li>
 </ul>
-<div id="5a229e1c" class="cell" data-execution_count="37">
+<div id="86c2a8c0" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dydx(x, y):   </span>
@@ -1016,7 +1012,7 @@ window.Quarto = {
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>sol_p <span class="op">=</span> integrate.solve_ivp(dydx, [<span class="dv">0</span>, <span class="fl">1.9</span>], y0)</span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>sol_m <span class="op">=</span> integrate.solve_ivp(dydx, [<span class="dv">0</span>, <span class="op">-</span><span class="dv">5</span>], y0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f00f055d" class="cell" data-execution_count="38">
+<div id="818f5126" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>plot_direction_field(x, y(x), f, ax<span class="op">=</span>ax)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>ax.plot(sol_p.t, sol_p.y.T, <span class="st">'g'</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
@@ -1024,7 +1020,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-39-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-38-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="490" height="506"></p>
 </figure>
 </div>
 </div>
@@ -1039,13 +1035,13 @@ y'(t) = c x y - d y
 \]</span></p>
 <p>where <span class="math inline">\(x(t)\)</span> is the number of prey animals and <span class="math inline">\(y(t)\)</span> is the number of predator animals, and the coefficients <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> describe the rates of the processes in the model</p></li>
 </ul>
-<div id="a0c86af1" class="cell" data-execution_count="39">
+<div id="ef567ab1" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>a, b, c, d <span class="op">=</span> <span class="fl">0.4</span>, <span class="fl">0.002</span>, <span class="fl">0.001</span>, <span class="fl">0.7</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(t, xy):</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  x, y <span class="op">=</span> xy</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [a <span class="op">*</span>x <span class="op">-</span>b <span class="op">*</span>x <span class="op">*</span>y, c <span class="op">*</span>x <span class="op">*</span>y <span class="op">-</span>d <span class="op">*</span>y]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ed406624" class="cell" data-execution_count="40">
+<div id="82519854" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>xy0 <span class="op">=</span> [<span class="dv">600</span>, <span class="dv">400</span>]</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> integrate.solve_ivp(f, [<span class="dv">0</span>, <span class="dv">50</span>], xy0, </span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        t_eval<span class="op">=</span>np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">400</span>))</span>
@@ -1053,7 +1049,7 @@ y'(t) = c x y - d y
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> sol.t</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>xy_t <span class="op">=</span> sol.y.T</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7b79051e" class="cell" data-execution_count="41">
+<div id="f1227002" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">12</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(t, xy_t[:,<span class="dv">0</span>], <span class="st">'r'</span>, label<span class="op">=</span><span class="st">"Prey"</span>)</span>
@@ -1074,7 +1070,7 @@ y'(t) = c x y - d y
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-42-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-41-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="531" height="947"></p>
 </figure>
 </div>
 </div>
@@ -1089,14 +1085,14 @@ y'(t) = c x y - d y
   \end{aligned}
 \]</span></p></li>
 </ul>
-<div id="612370ef" class="cell" data-execution_count="42">
+<div id="f1c176a8" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>rho, sigma, beta <span class="op">=</span> <span class="dv">28</span>, <span class="dv">8</span>, <span class="dv">8</span><span class="op">/</span><span class="fl">3.0</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(t, xyz, rho, sigma, beta):</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  x, y, z <span class="op">=</span> xyz</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [sigma <span class="op">*</span>(y <span class="op">-</span>x), x <span class="op">*</span>(rho <span class="op">-</span>z) <span class="op">-</span>y, x <span class="op">*</span>y <span class="op">-</span>beta <span class="op">*</span>z]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="c64ae9d1" class="cell" data-execution_count="43">
+<div id="24f467dd" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>xyz0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.0</span>]</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>t_span <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">25</span>]</span>
@@ -1109,7 +1105,7 @@ y'(t) = c x y - d y
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>sol3 <span class="op">=</span> integrate.solve_ivp(f, t_span, xyz0, </span>
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>          t_eval<span class="op">=</span>t_eval, args<span class="op">=</span>(rho, <span class="dv">2</span><span class="op">*</span>sigma, <span class="fl">0.6</span><span class="op">*</span>beta))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8b33a145" class="cell" data-execution_count="44">
+<div id="31445aaa" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2, ax3) <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">15</span>), </span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'3d'</span>})</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1131,7 +1127,7 @@ y'(t) = c x y - d y
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-45-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-44-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="363" height="1134"></p>
 </figure>
 </div>
 </div>
@@ -1162,7 +1158,7 @@ m_2 x_2''(t) + \gamma_2 x_2'(t) + k_2 (x_2(t) - x_1(t)) &amp;= 0
   \end{bmatrix}
 \]</span></p></li>
 </ul>
-<div id="11601cd1" class="cell" data-execution_count="45">
+<div id="91bbab8e" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(t, y, args):</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  m1, k1, g1, m2, k2, g2 <span class="op">=</span> args</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -1171,7 +1167,7 @@ m_2 x_2''(t) + \gamma_2 x_2'(t) + k_2 (x_2(t) - x_1(t)) &amp;= 0
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>          y[<span class="dv">3</span>], </span>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> k2<span class="op">/</span>m2 <span class="op">*</span>(y[<span class="dv">2</span>] <span class="op">-</span>y[<span class="dv">0</span>]) <span class="op">-</span>g2<span class="op">/</span>m2 <span class="op">*</span>y[<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b9f51fa5" class="cell" data-execution_count="46">
+<div id="d637851d" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>m1, k1, g1, m2, k2, g2 <span class="op">=</span> <span class="fl">1.0</span>, <span class="fl">10.0</span>, <span class="fl">0.5</span>, <span class="fl">2.0</span>, <span class="fl">40.0</span>, <span class="fl">0.25</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (m1, k1, g1, m2, k2, g2)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1181,10 +1177,10 @@ m_2 x_2''(t) + \gamma_2 x_2'(t) + k_2 (x_2(t) - x_1(t)) &amp;= 0
 <ul>
 <li>Instead of calling the <code>solve_ivp</code> function, <span class="math inline">\(\,\)</span>we now need to create an instance of the class <code>integrate.ode</code>, <span class="math inline">\(\,\)</span>passing the ODE function <span class="math inline">\(f\)</span> as an argument:</li>
 </ul>
-<div id="59ba0d24" class="cell" data-execution_count="47">
+<div id="e414eab3" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> integrate.ode(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="16af7651" class="cell" data-execution_count="48">
+<div id="b660fc82" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the possible first argument: </span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vode, zvode, lsoda, dopri5 and dop853</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>r.set_integrator(<span class="st">'lsoda'</span>) </span>
@@ -1202,7 +1198,7 @@ m_2 x_2''(t) + \gamma_2 x_2'(t) + k_2 (x_2(t) - x_1(t)) &amp;= 0
 <ul>
 <li>This is arguably not as convenient as simply calling the <code>solive_ivp</code>, but it offers extra flexibility that sometimes is exactly what is needed</li>
 </ul>
-<div id="48cbb148" class="cell" data-execution_count="49">
+<div id="56ea09eb" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">10</span>))</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> plt.subplot2grid((<span class="dv">10</span>, <span class="dv">4</span>), (<span class="dv">0</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">4</span>, rowspan<span class="op">=</span><span class="dv">3</span>)</span>
@@ -1240,13 +1236,13 @@ m_2 x_2''(t) + \gamma_2 x_2'(t) + k_2 (x_2(t) - x_1(t)) &amp;= 0
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_ordinary_differential_equations_files/figure-html/cell-50-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_ordinary_differential_equations_files/figure-html/cell-49-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="470" height="949"></p>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li>Python functions for both <span class="math inline">\(f(t, y(t))\)</span> and its Jacobian can conveniently be generated using <code>sympy</code>’s <code>lambdify</code>, provided that the ODE problem first can be defined as a <code>sympy</code> expression. This symbolic-numeric hybrid approach is a powerful method to solving ODE problems(See <a href="#sec-double-pendulum" class="quarto-xref"><span class="quarto-unresolved-ref">sec-double-pendulum</span></a>)</li>
+<li>Python functions for both <span class="math inline">\(f(t, y(t))\)</span> and its Jacobian can conveniently be generated using <code>sympy</code>’s <code>lambdify</code>, provided that the ODE problem first can be defined as a <code>sympy</code> expression. This symbolic-numeric hybrid approach is a powerful method to solving ODE problems(See <a href="x_double_pendulum.html" class="quarto-xref"><span>Chapter 23</span></a>)</li>
 </ul>
 
 

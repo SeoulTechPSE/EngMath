@@ -8,7 +8,8 @@ jupyter: python3
 
 ```{python}
 import sympy
-from sympy import laplace_transform, inverse_laplace_transform, pi
+from sympy import (laplace_transform, inverse_laplace_transform,
+                   laplace_correspondence, laplace_initial_conds, pi)
 sympy.init_printing()
 
 from IPython.display import display
@@ -16,12 +17,13 @@ from IPython.display import display
 print("sympy: ", sympy.__version__)
 ```
 
-* [_laplace_trabsform_expansion.py](_laplace_transform_expansion.py)
+* In recent versions of sympy (1.13 and later), $~$`sympy.laplace_transform` can transform **derivatives of unknown functions**, $~$apply both **translation theorems**, $~$the **scaling** rule $f(at)$, $~$and the rule for $t^n f(t)$. $~$Two companion functions finish the job:
 
-  * `laplace_tranform_()` is the expanded version of `laplace_transform()`
+  * `laplace_correspondence(expr, {f: F})` $~$replaces $\mathcal{L}\{f(t)\}$ by $F(s)$
 
-  * `subs_()` is the modified function of `sub()` method
+  * `laplace_initial_conds(expr, t, {y: [y0, y1, ...]})` $~$substitutes the initial values $y(0)$, $y'(0)$, $\dots$
 
+* A few rules are still missing in sympy 1.14: $~$integrals $\int_0^t$, $~$convolution integrals, $~$and products such as $e^{ct}\, t^n f(t)$. $~$For these we use a small wrapper [_laplace_transform_expansion.py](_laplace_transform_expansion.py), $~$whose function `laplace_transform_()` adds only those rules and otherwise calls `sympy.laplace_transform`
 
 ```{python}
 #| echo: false
@@ -31,70 +33,53 @@ print("sympy: ", sympy.__version__)
 ## Symbols and Functions
 
 ```{python}
-a, b = sympy.symbols("a, b", positive=True, constant=True)
-n, m = sympy.symbols("n, m", positive=True, constant=True, integer=True)
+a, b = sympy.symbols("a, b", positive=True)
+n, m = sympy.symbols("n, m", positive=True, integer=True)
 
 t, tau, tau1, tau2 = sympy.symbols("t, tau, tau1, tau2", positive=True)
-
-y = sympy.Function("y")
-f = sympy.Function("f")
-g = sympy.Function("g")
-
 s = sympy.symbols("s")
 
-Y = sympy.Function("Y")
-F = sympy.Function("F")
-G = sympy.Function("G")
+y, f, g = sympy.symbols("y, f, g", cls=sympy.Function)
+Y, F, G = sympy.symbols("Y, F, G", cls=sympy.Function)
+```
 
-Ly = laplace_transform_(y(t), t, s)
-Lf = laplace_transform_(f(t), t, s)
-Lg = laplace_transform_(g(t), t, s)
+* A short helper: $~$transform and write $\mathcal{L}\{y\}$, $\mathcal{L}\{f\}$, $\mathcal{L}\{g\}$ as $Y(s)$, $F(s)$, $G(s)$
+
+```{python}
+def Lt(expr):
+    return laplace_correspondence(laplace_transform_(expr, t, s), {y: Y, f: F, g: G})
 ```
 
 ## Laplace transform
 
 ```{python}
-eq = 1
-Leq = laplace_transform_(eq, t, s)
-Leq
+laplace_transform(1, t, s, noconds=True)
 ```
 
 ```{python}
-eq = t
-Leq = laplace_transform_(eq, t, s)
-Leq
+laplace_transform(t, t, s, noconds=True)
 ```
 
 ```{python}
-eq = sympy.exp(-3 *t)
-Leq = laplace_transform_(eq, t, s)
-Leq
+laplace_transform(sympy.exp(-3 *t), t, s, noconds=True)
 ```
 
 ```{python}
-eq = 2 *sympy.Heaviside(t -3)
-Leq = laplace_transform_(eq, t, s)
-Leq
+laplace_transform(2 *sympy.Heaviside(t -3), t, s, noconds=True)
 ```
 
 ```{python}
-eq = sympy.sin(2 *t)**2
-Leq = laplace_transform_(eq, t, s)
-Leq
+laplace_transform(sympy.sin(2 *t)**2, t, s, noconds=True)
 ```
 
 ## Inverse Laplace transform
 
 ```{python}
-Leq = 1 / s**3
-eq = inverse_laplace_transform(Leq, s, t)
-eq
+inverse_laplace_transform(1 / s**3, s, t)
 ```
 
 ```{python}
-Leq = (-2 *s +6) / (s**2 + 4)
-eq = inverse_laplace_transform(Leq, s, t)
-eq
+inverse_laplace_transform((-2 *s +6) / (s**2 + 4), s, t)
 ```
 
 ## Laplace transform of derivatives
@@ -105,14 +90,12 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Ly, Y(s))
+Leq = laplace_correspondence(laplace_transform(eq, t, s, noconds=True), {y: Y})
 Leq
 ```
 
 ```{python}
-ics = {y(0): 1, y(t).diff(t).subs(t, 0): 1}
-
-Leq = Leq.subs(ics)
+Leq = laplace_initial_conds(Leq, t, {y: [1, 1]})   # y(0) = 1, y'(0) = 1
 Leq
 ```
 
@@ -128,10 +111,16 @@ eq = sympy.integrate(g(tau1), (tau1, 0, t)) +sympy.integrate(sympy.integrate(f(t
 eq
 ```
 
+* `sympy.laplace_transform` leaves these integrals unevaluated:
+
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq = subs_(Leq, Lg, G(s))
-Leq
+laplace_transform(eq, t, s, noconds=True)
+```
+
+* The wrapper uses $~\mathcal{L}\left\{\int_0^t h(\tau)\,d\tau\right\} = \frac{1}{s}\mathcal{L}\{h(t)\}$:
+
+```{python}
+Lt(eq)
 ```
 
 ## Convolution
@@ -142,9 +131,11 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq = subs_(Leq, Lg, G(s))
-Leq
+Lt(eq)
+```
+
+```{python}
+Lt(sympy.integrate(sympy.exp(tau) *sympy.sin(t -tau), (tau, 0, t)))  # e^t * sin t
 ```
 
 ## First translation theorem
@@ -155,8 +146,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Ly, Y(s))
-Leq
+Lt(eq)
 ```
 
 ## Second translation theorem
@@ -167,8 +157,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ```{python}
@@ -177,8 +166,7 @@ eq
 ```
 
 ```{python}
-Leq = laplace_transform_(eq, t, s)
-Leq
+Lt(eq)   # alternative form: exp(-a s) L{g(t + a)}
 ```
 
 ```{python}
@@ -187,8 +175,7 @@ eq
 ```
 
 ```{python}
-Leq = laplace_transform_(eq, t, s)
-Leq
+Lt(eq)
 ```
 
 ## Derivatives of Transforms
@@ -199,8 +186,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ```{python}
@@ -209,8 +195,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ---
@@ -221,8 +206,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ```{python}
@@ -231,8 +215,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq.doit()
+Lt(eq)
 ```
 
 ---
@@ -243,8 +226,16 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
+```
+
+* For this product, $~$`sympy.laplace_transform` itself (1.14) raises an error:
+
+```{python}
+try:
+    laplace_transform(eq, t, s)
+except ValueError as err:
+    print("ValueError:", err)
 ```
 
 ---
@@ -255,8 +246,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ## Various Transform Examples
@@ -267,8 +257,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ---
@@ -279,8 +268,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)
 ```
 
 ---
@@ -291,8 +279,7 @@ eq
 ```
 
 ```{python}
-Leq = subs_(laplace_transform_(eq, t, s), Lf, F(s))
-Leq
+Lt(eq)   # scaling: F(s/k)/k with k = 3a
 ```
 
 $~$
@@ -307,12 +294,8 @@ $~$
 
 ```{python}
 t = sympy.symbols('t', positive=True)
-y = sympy.Function('y')
-
-s = sympy.symbols('s', real=True)
-Y = sympy.Function('Y')
-
-Ly = laplace_transform_(y(t), t, s) 
+s = sympy.symbols('s')
+y, Y = sympy.symbols('y, Y', cls=sympy.Function)
 ```
 
 ```{python}
@@ -321,42 +304,41 @@ ode
 ```
 
 ```{python}
-Lode = subs_(laplace_transform_(ode, t, s), Ly, Y(s))
+Lode = laplace_correspondence(laplace_transform(ode, t, s, noconds=True), {y: Y})
 Lode
 ```
 
-* At this point, we need to specify the initial conditions for the ODE problem. Here we use 
-$y(0)=1$ and $y'(0)=0$, and after creating dictionary that contains these initial conditions, we use it to substitute the values into the Laplace-transformed ODE equation:
+* At this point, we need to specify the initial conditions for the ODE problem. Here we use
+$y(0)=1$ and $y'(0)=0$, and substitute them into the Laplace-transformed ODE with `laplace_initial_conds`:
 
 ```{python}
-ics = {y(0): 1, y(t).diff(t).subs(t, 0): 0}
-Lode = Lode.subs(ics)
+Lode = laplace_initial_conds(Lode, t, {y: [1, 0]})
 Lode
 ```
 
 * This is an algebraic equation that can be solved for $Y(s)$
 
 ```{python}
-
 Ysol = sympy.solve(Lode, Y(s))
 Ysol[0]
 ```
 
-* The result is a list of solutions, which in this case contains only one element. Performing the inverse Laplace transformation on this expression gives the solution to the original problem in the time domain:
+* The result is a list of solutions, which in this case contains only one element. Performing the inverse Laplace transformation on this expression gives the solution to the original problem in the time domain (older versions of sympy needed the partial fractions to be inverted one by one):
 
 ```{python}
-Yp = sympy.apart(Ysol[0])
-Yp
+ysol = inverse_laplace_transform(Ysol[0], s, t)
+ysol.expand().collect([sympy.exp(-t)])
 ```
 
+* The same result is obtained with `dsolve`:
+
 ```{python}
-ysol = sympy.inverse_laplace_transform(Yp.args[0], s, t) +sympy.inverse_laplace_transform(Yp.args[1], s, t)
-ysol
+sympy.dsolve(ode, y(t), ics={y(0): 1, y(t).diff(t).subs(t, 0): 0})
 ```
 
 ## **Example 2**
 
-In some instances, the Laplace transform can be used to solve linear differential equations with variable monomial coefficients 
+In some instances, the Laplace transform can be used to solve linear differential equations with variable monomial coefficients
 
 $$ty'' + y' +ty =0, \;\;y(0)=1, \;y'(0)=0$$
 
@@ -364,10 +346,7 @@ $~$
 
 ```{python}
 s, t = sympy.symbols('s, t', positive=True)
-
-y = sympy.Function('y')
-Y  = sympy.Function('Y')
-Ly = laplace_transform_(y(t), t, s)
+y, Y = sympy.symbols('y, Y', cls=sympy.Function)
 
 ode = t *y(t).diff(t, 2) +y(t).diff(t) +t *y(t)
 ode
@@ -375,19 +354,19 @@ ode
 
 $~$
 
-* Reduce the given differential equation to a linear first-order DE in the transformed function $Y(s)=\mathcal{L}_t\left[y(t)\right]$
+* Reduce the given differential equation to a linear first-order DE in the transformed function $Y(s)=\mathcal{L}_t\left[y(t)\right]$. $~$Since $\mathcal{L}\{t\,h(t)\} = -\frac{d}{ds}\mathcal{L}\{h(t)\}$, $~$the factor $t$ becomes a derivative with respect to $s$
 
 ```{python}
-ics={y(0): 1, y(t).diff(t).subs(t, 0): 0}
-
-Lode = subs_(laplace_transform_(ode, t, s).subs(ics), Ly, Y(s))
-Lode.doit().collect(Y(s).diff(s))
+Lode = laplace_transform(ode, t, s, noconds=True)
+Lode = laplace_initial_conds(laplace_correspondence(Lode, {y: Y}), t, {y: [1, 0]})
+Lode = Lode.doit().expand().collect(Y(s).diff(s))
+Lode
 ```
 
 * Solve the first-order ODE for $Y(s)$ and then find $y(t)=\mathcal{L}_t^{-1} \left[Y(s) \right]$
 
 ```{python}
-sol = sympy.dsolve(Lode, Y(s), hint='separable')
+sol = sympy.dsolve(Lode, Y(s))
 sol
 ```
 
@@ -396,12 +375,9 @@ y = inverse_laplace_transform(sol.rhs, s, t)
 y
 ```
 
-```{python}
-c = sympy.Eq(y.subs(t, 0), 1)
-c
-```
+* The constant follows from $y(0)=1$ $~$(note $J_0(0)=1$)
 
 ```{python}
-y = y.subs(c.lhs, c.rhs)
-y
+C1 = sympy.solve(sympy.Eq(y.subs(t, 0), 1))[0]
+y.subs(sympy.Symbol('C1'), C1)
 ```
