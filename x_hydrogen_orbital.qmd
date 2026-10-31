@@ -17,29 +17,35 @@ jupyter: python3
 
   $$ \color{red}{Y_l^{m}(\phi,\theta)=\epsilon \sqrt{\frac{(2l +1)}{4\pi} \frac{(l -|m|)!}{(l +|m|)!}} P_l^{|m|}(\cos\phi) e^{im\theta}} $$
 
-  where $\,\epsilon=(-1)^m\,$ for $\,m \geq 0\,$ and $\,\epsilon=1\,$ for $\,m < 0$
+  where $\,\epsilon=(-1)^m\,$ for $\,m \geq 0\,$ and $\,\epsilon=1\,$ for $\,m < 0$. $~$Here $\phi$ is the polar angle (measured from the $z$-axis), $\theta$ is the azimuthal angle, $\,a_0$ is the Bohr radius, $\,$and $L_{n-l-1}^{2l+1}$ is an associated Laguerre polynomial
+
+* In the code below, lengths are measured in units of $a_0$ (that is, $a_0 = 1$)
 
 * For arbitrary $\,n$, $\,$ the possible values of $\,l\,$ are
 
    $$ l=0,1,2,\cdots,n-1 $$ 
    and thus $\,l\,$ must be a nonnegative integer. $\,$For any given $\,l,$ $\,$then, $\,$there are $\,(2l +1)\,$ possible values of $\,m$:
 
-    $$m =-l, -1 +1, \cdots, -1, 0, 1, \cdots, l -1, l $$
+    $$m =-l, -l +1, \cdots, -1, 0, 1, \cdots, l -1, l $$
 
     For historical reasons, $\,l\,$ is called the azimuthal quantum number, $\,$and $\,m\,$ the magnetic quantum number
 
 ```{python}
-import warnings
 from pathlib import Path
 
 import numpy as np
-from scipy.special import sph_harm, assoc_laguerre, factorial
+import scipy
+from scipy.special import sph_harm_y, assoc_laguerre, factorial
 
 import plotly.graph_objects as go
 import plotly.subplots as sp
 import plotly.io as pio
 
 pio.renderers.default = "notebook"
+
+import plotly
+print("scipy: ", scipy.__version__)
+print("plotly:", plotly.__version__)
 
 # ------------------------------
 # Hydrogenic wavefunction ψ_nlm
@@ -50,9 +56,9 @@ def hydrogen_wavefunction(n, l, m, r, phi, theta):
   N = np.sqrt((2 /n)**3 *factorial(n -l -1) /(2 *n *factorial(n +l)))
   R = N *np.exp(-rho /2) *rho**l *assoc_laguerre(rho, n -l -1, 2 *l +1)
   
-  with warnings.catch_warnings():
-    warnings.filterwarnings('ignore', category=DeprecationWarning)
-    Y = sph_harm(m, l, theta, phi)
+  # scipy >= 1.15: sph_harm_y(l, m, polar angle, azimuthal angle)
+  # (replaces the deprecated sph_harm(m, l, azimuthal angle, polar angle))
+  Y = sph_harm_y(l, m, phi, theta)
   
   return R *Y
 
@@ -398,9 +404,9 @@ def hydrogen_orbital_gui(
   if n < 1:
     raise ValueError("n must satisfy n >= 1")
   if l > n -1:
-    raise ValueError("l must be =< n −1")
+    raise ValueError("l must satisfy 0 <= l <= n - 1")
   if not (-l <= m <= l):
-    raise ValueError("m must satisfy -l =< m =< l")
+    raise ValueError("m must satisfy -l <= m <= l")
 
   results_folder = Path("figures/orbital")
   results_folder.mkdir(exist_ok=True, parents=True)
