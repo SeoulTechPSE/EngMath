@@ -447,22 +447,21 @@ window.Quarto = {
 \]</span></p>
 <p>If <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, and the first-order partial derivatives <span class="math inline">\(\partial P/\partial x\)</span>, <span class="math inline">\(\partial P/\partial y\)</span>, <span class="math inline">\(\partial Q/\partial x\)</span>, and <span class="math inline">\(\partial Q/\partial y\)</span> are continuous in a region <span class="math inline">\(R\)</span> of the plane, then a solution to the plane autonomous system that satisfies <span class="math inline">\(\mathbf{x}(0)=\mathbf{x}_0\)</span> is unique and one of three basic types:</p>
 <ul>
-<li><p>A <strong>constant solution</strong>, <span class="math inline">\(\mathbf{x}(t)=\mathbf{x}_0\)</span> for all <span class="math inline">\(t\)</span>. A constant solution is called a <strong>critical</strong> or <strong>stationary point</strong></p>
+<li><p>A <strong>constant solution</strong>, <span class="math inline">\(\mathbf{x}(t)=\mathbf{x}_0\)</span> for all <span class="math inline">\(t\)</span>. A constant solution is called a <strong>critical</strong> or <strong>stationary point</strong>. Since <span class="math inline">\(\mathbf{x}'=\mathbf{0}\)</span>, a critical point is a solution of the system of algebraic equations</p>
 <p><span class="math display">\[\begin{aligned}
    P(x,y) &amp;= 0 \\
    Q(x,y) &amp;= 0
-\end{aligned}\]</span></p>
-<p>Note that since <span class="math inline">\(\mathbf{x}'=\mathbf{0}\)</span>, a critical point is a solution of the system of algebraic equations</p></li>
+\end{aligned}\]</span></p></li>
 <li><p>An <strong>arc</strong>, <span class="math inline">\(\mathbf{x}(t)\)</span> - a plane curve that does not cross itself</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+<p><img src="figures/ch11_figure01.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%"></p>
 </figure>
 </div></li>
 <li><p>A <strong>periodic solution</strong> or <strong>cycle</strong>, <span class="math inline">\(\mathbf{x}(t +p)=\mathbf{x}(t)\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:25.0%"></p>
+<p><img src="figures/ch11_figure02.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div></li>
 </ul></li>
@@ -473,13 +472,14 @@ window.Quarto = {
 x'&amp;= x^2 +y^2 -6\\
 y'&amp;= x^2 -y
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_8_1.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-11-2" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-11-2"><span class="header-section-number">8.2</span> Stability of Linear Systems</h2>
 <p>If <span class="math inline">\(\mathbf{x}_1\)</span> is a critical point of a plane autonomous system and <span class="math inline">\(\mathbf{x}=\mathbf{x}(t)\)</span> is a solution satisfying <span class="math inline">\(\mathbf{x}(0)=\mathbf{x}_0\)</span>, when <span class="math inline">\(\mathbf{x}_0\)</span> is placed near <span class="math inline">\(\mathbf{x}_1\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%"></p>
+<p><img src="figures/ch11_figure03.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 <ol class="example" type="1">
@@ -504,7 +504,7 @@ a &amp; b\\
 c &amp; d
 \end{pmatrix}
 \]</span></p>
-<p>drives the stabilty analysis</p></li>
+<p>drives the stability analysis</p></li>
 <li><p>To ensure that <span class="math inline">\(\mathbf{x}_0=(0,\,0)\)</span> is the only critical point, we will assume that the determinant <span class="math inline">\(\Delta = ad -bc \neq 0\)</span>. If <span class="math inline">\(\tau = a + d\)</span> is the trace of matrix <span class="math inline">\(\mathbf{A}\)</span>, then the characteristic equation, <span class="math inline">\(\mathrm{det}(\mathbf{A} -\lambda\mathbf{I})=0,\)</span> can be rewritten as</p>
 <p><span class="math display">\[\lambda^2 -\tau\lambda +\Delta =0\]</span></p>
 <p>Therefore the eigenvalues of <span class="math inline">\(\mathbf{A}\)</span> are</p>
@@ -522,7 +522,7 @@ c &amp; d
 <p>in terms of <span class="math inline">\(c\)</span>, and use a numerical solver to discover the shapes of solutions corresponding to the cases <span class="math inline">\(c=\frac{1}{4}\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(-9\)</span>. <span class="math inline">\(\mathbf{A}\)</span> has trace <span class="math inline">\(\tau=-2\)</span> and determinant <span class="math inline">\(\Delta=1 -c\)</span>, and so the eigenvalues are</p>
 <p><span class="math display">\[ \lambda =-1 \pm \sqrt{c} \]</span></p>
 <p>The nature of the eigenvalues is therefore determined by the value of <span class="math inline">\(c\)</span></p>
-<div id="06d386d1" class="cell" data-execution_count="1">
+<div id="daf39738" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sp.init_printing(use_unicode<span class="op">=</span><span class="va">True</span>)</span>
@@ -534,7 +534,7 @@ c &amp; d
 <p><span class="math inline">\(\displaystyle \left[ \left( - \sqrt{c} - 1, \  1, \  \left[ \left[\begin{matrix}\frac{- \sqrt{c} - 1}{c} + \frac{1}{c}\\1\end{matrix}\right]\right]\right), \  \left( \sqrt{c} - 1, \  1, \  \left[ \left[\begin{matrix}\frac{\sqrt{c} - 1}{c} + \frac{1}{c}\\1\end{matrix}\right]\right]\right)\right]\)</span></p>
 </div>
 </div>
-<div id="6d4ad8b8" class="cell" data-execution_count="2">
+<div id="aae8204d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
@@ -578,7 +578,7 @@ c &amp; d
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-3-output-1.png" width="522" height="520" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -601,14 +601,15 @@ c &amp; d
 <li><p><strong>Both eigenvalues positive</strong>, <span class="math inline">\(\tau^2 -4\Delta &gt; 0\)</span>, <span class="math inline">\(\tau&gt;0\)</span>, <span class="math inline">\(\Delta&gt;0\)</span></p>
 <p><strong>Unstable Node:</strong> <span class="math inline">\(\mathbf{x}(t)\)</span> becomes unbounded in the direction of <span class="math inline">\(\mathbf{k}_1\)</span> when <span class="math inline">\(c_1 \neq 0\)</span> or in the direction of <span class="math inline">\(\mathbf{k}_2\)</span> when <span class="math inline">\(c_1=0\)</span></p></li>
 <li><p><strong>Eigenvalues have opposite signs</strong>, <span class="math inline">\(\tau^2 -4\Delta &gt; 0\)</span>, <span class="math inline">\(\Delta&lt;0\)</span></p>
-<p><strong>Saddle Point:</strong> When <span class="math inline">\(c_1=0\)</span>, <span class="math inline">\(\mathbf{x}(t)\)</span> will approach <span class="math inline">\(\mathbf{0}\)</span> along the line determined by <span class="math inline">\(\mathbf{k}_2\)</span>. If <span class="math inline">\(\mathbf{x}(0)\)</span> does not lie on the line determined by <span class="math inline">\(\mathbf{k}_2\)</span>, the direction determined by <span class="math inline">\(\mathbf{k}_1\)</span> serves as an asymtote for <span class="math inline">\(\mathbf{x}(t)\)</span></p></li>
+<p><strong>Saddle Point:</strong> When <span class="math inline">\(c_1=0\)</span>, <span class="math inline">\(\mathbf{x}(t)\)</span> will approach <span class="math inline">\(\mathbf{0}\)</span> along the line determined by <span class="math inline">\(\mathbf{k}_2\)</span>. If <span class="math inline">\(\mathbf{x}(0)\)</span> does not lie on the line determined by <span class="math inline">\(\mathbf{k}_2\)</span>, the direction determined by <span class="math inline">\(\mathbf{k}_1\)</span> serves as an asymptote for <span class="math inline">\(\mathbf{x}(t)\)</span></p></li>
 </ul></li>
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> Classify the critical point <span class="math inline">\((0,0)\)</span> of each of the following linear system <span class="math inline">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span> as either a stable node, an unstable node, or a saddle point</p>
 <center>
 <span class="math inline">\((\text{a})\)</span> <span class="math inline">\(\begin{pmatrix} -2 &amp; -2\\ -2 &amp; -5 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{b})\)</span> <span class="math inline">\(\begin{pmatrix} -1 &amp; -2\\ \;\;3 &amp; \;\;4 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{c})\)</span> <span class="math inline">\(\begin{pmatrix} 2 &amp; -1\\ 3 &amp; -2 \end{pmatrix}\)</span>
 </center>
-<div id="7ee3a3c1" class="cell" data-execution_count="3">
+<p><a href="files/solutions/sol_8_2.pdf" target="_blank">Solution</a></p>
+<div id="14303e05" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
@@ -657,7 +658,7 @@ c &amp; d
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-4-output-1.png" width="348" height="964" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -671,7 +672,7 @@ c &amp; d
 <p><span class="math display">\[\mathbf{x}(t)=c_1\mathbf{k}_1 e^{\lambda_1 t} +c_2\mathbf{k}_2 e^{\lambda_1 t}=
 \left(c_1\mathbf{k}_1 + c_2\mathbf{k}_2 \right) e^{\lambda_1 t}\]</span></p>
 <p>If <span class="math inline">\(\lambda_1&lt;0\)</span>, the <span class="math inline">\(\mathbf{x}(t)\)</span> approaches <span class="math inline">\(\mathbf{0}\)</span> along the line determined by the vector <span class="math inline">\(c_1\mathbf{k}_1 + c_2\mathbf{k}_2\)</span> and the critical point is a <strong>degenerate stable node</strong>. The arrows are reversed when <span class="math inline">\(\lambda_1&gt;0\)</span>, and the critical point is a <strong>degenerate unstable node</strong></p></li>
-<li><p><strong>A single linearly independent eigenvectors</strong></p>
+<li><p><strong>A single linearly independent eigenvector</strong></p>
 <p>When only a single linearly independent eigenvector <span class="math inline">\(\mathbf{k}_{11}\)</span> exists, the general solution is given by</p>
 <p><span class="math display">\[\begin{aligned}
 \mathbf{x}(t)&amp;=c_1\mathbf{k}_{11} e^{\lambda_1 t} +c_2\left(\mathbf{k}_{11} te^{\lambda_1 t}
@@ -686,7 +687,8 @@ c &amp; d
 <center>
 <span class="math inline">\((\text{a})\)</span> <span class="math inline">\(\begin{pmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{b})\)</span> <span class="math inline">\(\begin{pmatrix} 3 &amp; -18\\ 2 &amp;\; -9 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{c})\)</span> <span class="math inline">\(\begin{pmatrix} \;\;2 &amp; 4\\ -1 &amp; 6 \end{pmatrix}\)</span>
 </center>
-<div id="985e407a" class="cell" data-execution_count="4">
+<p><a href="files/solutions/sol_8_2.pdf" target="_blank">Solution</a></p>
+<div id="22e94e25" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
@@ -731,7 +733,7 @@ c &amp; d
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-5-output-1.png" width="348" height="964" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -747,7 +749,7 @@ c &amp; d
 <ul>
 <li><p><strong>Pure imaginary roots</strong>, <span class="math inline">\(\tau^2 -4\Delta &lt; 0\)</span>, <span class="math inline">\(~\tau=0\)</span></p>
 <p><strong>Center:</strong> When <span class="math inline">\(\alpha=0\)</span>, all solutions are ellipses with center at the origin and are periodic with period <span class="math inline">\(p=2\pi/\beta\)</span>. The critical point is called a <strong>center</strong></p></li>
-<li><p><strong>Nonezero real part</strong>, <span class="math inline">\(\tau^2 -4\Delta &lt; 0\)</span>, <span class="math inline">\(~\tau\neq 0\)</span></p>
+<li><p><strong>Nonzero real part</strong>, <span class="math inline">\(\tau^2 -4\Delta &lt; 0\)</span>, <span class="math inline">\(~\tau\neq 0\)</span></p>
 <p><strong>Spiral Point:</strong> When <span class="math inline">\(\alpha&lt;0\)</span>, <span class="math inline">\(e^{\alpha t}\to 0\)</span>, and the elliptical-like solution spirals closer and closer to the origin. The critical point is called a <strong>stable spiral point</strong>. When <span class="math inline">\(\alpha&gt;0\)</span>, the effect is the opposite. An elliptical-like solution is driven farther and farther from the origin, and the critical point is now called an <strong>unstable spiral point</strong></p></li>
 </ul></li>
 </ul>
@@ -755,7 +757,8 @@ c &amp; d
 <center>
 <span class="math inline">\((\text{a})\)</span> <span class="math inline">\(\begin{pmatrix} -1 &amp; 2\\ -1 &amp; 1 \end{pmatrix}\)</span>,<span class="math inline">\(\;\)</span> <span class="math inline">\((\text{b})\)</span> <span class="math inline">\(\begin{pmatrix} -1 &amp; -4\\ \;\;1 &amp; -1 \end{pmatrix}\)</span>
 </center>
-<div id="cdad81a9" class="cell" data-execution_count="5">
+<p><a href="files/solutions/sol_8_2.pdf" target="_blank">Solution</a></p>
+<div id="617fb5f8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
@@ -793,14 +796,14 @@ c &amp; d
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-6-output-1.png" width="356" height="669" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+<p><img src="figures/ch11_figure04.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 <p>For a linear plane autonomous system <span class="math inline">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span> with <span class="math inline">\(\mathrm{det}\,\mathbf{A}\neq 0\)</span>, let <span class="math inline">\(\mathbf{x}\)</span> denote the solution that satisfies the initial condition <span class="math inline">\(\mathbf{x}(0)=\mathbf{x}_0\)</span>, where <span class="math inline">\(\mathbf{x}_0\neq\mathbf{0}\)</span></p>
@@ -812,7 +815,7 @@ c &amp; d
 </section>
 <section id="sec-11-3" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-11-3"><span class="header-section-number">8.3</span> Linearization and Local Stability</h2>
-<p>Here we will use linearization as a means of analyzing nonlinear DEs and nonlinear systems; the idea is to replace them by linear DEs and linear systems. Let <span class="math inline">\(\mathbf{x}_1\)</span> be a critical point of an autonomous system, and let <span class="math inline">\(\mathbf{x}=\mathbf{x}(t)\)</span> denote the solution that satisfies the initial condition <span class="math inline">\(\mathbf{x}(0)=\mathbf{x}_0\)</span>, where <span class="math inline">\(\mathbf{x}\neq\mathbf{x}_1\)</span>.</p>
+<p>Here we will use linearization as a means of analyzing nonlinear DEs and nonlinear systems; the idea is to replace them by linear DEs and linear systems. Let <span class="math inline">\(\mathbf{x}_1\)</span> be a critical point of an autonomous system, and let <span class="math inline">\(\mathbf{x}=\mathbf{x}(t)\)</span> denote the solution that satisfies the initial condition <span class="math inline">\(\mathbf{x}(0)=\mathbf{x}_0\)</span>, where <span class="math inline">\(\mathbf{x}_0\neq\mathbf{x}_1\)</span>.</p>
 <ul>
 <li><p><span class="math inline">\(\mathbf{x}_1\)</span> is a <strong>stable critical point</strong></p>
 <p>when, given any <span class="math inline">\(\rho &gt; 0\)</span>, there is a <span class="math inline">\(r&gt;0\)</span> such that if <span class="math inline">\(\mathbf{x}_0\)</span> satisfies <span class="math inline">\(|\mathbf{x}_0 -\mathbf{x}_1|&lt;r\)</span>, then <span class="math inline">\(\mathbf{x}(t)\)</span> satisfies <span class="math inline">\(|\mathbf{x}(t) -\mathbf{x}_1|&lt;\rho\)</span> <span class="math inline">\(\,\)</span> for all <span class="math inline">\(t&gt;0\)</span>. If, in addition, <span class="math inline">\(\lim_{t \to \infty} \mathbf{x}(t)=\mathbf{x}_1\)</span> whenever <span class="math inline">\(|\mathbf{x}_0 -\mathbf{x}_1|&lt;r\)</span>, we call <span class="math inline">\(\mathbf{x}_1\)</span> an <strong>asymptotically stable critical point</strong></p></li>
@@ -840,12 +843,12 @@ x' = -y -x\sqrt{x^2 +y^2}, \;\; y' = x -y\sqrt{x^2 +y^2}\]</span></p>
   \frac{d\theta}{dt} &amp;= -1
 \end{aligned}
 \]</span></p>
-<p>Show that <span class="math inline">\((x,y)=(0,0)\)</span> is unstable critical point</p>
+<p>Show that <span class="math inline">\((x,y)=(0,0)\)</span> is an unstable critical point</p>
 <p>We see that <span class="math inline">\(dr/dt=0\)</span> when <span class="math inline">\(r=0\)</span> and can conclude that <span class="math inline">\((x,y)=(0,0)\)</span> is a critical point. <span class="math inline">\(~\)</span> The differential equation can be solved using separation of variables. If <span class="math inline">\(r(0)=r_0\)</span> and <span class="math inline">\(r_0\neq 0,\)</span> then</p>
 <p><span class="math display">\[ r=\frac{3}{1 +c_0 e^{-0.15t}} \]</span></p>
 <p>where <span class="math inline">\(c_0=(3 -r_0)/r_0\)</span>. Since</p>
 <p><span class="math display">\[\lim_{t \to \infty}\frac{3}{1 +c_0 e^{-0.15t}}=3\]</span></p>
-<p>it follows that no matter how close to <span class="math inline">\((0,0)\)</span> a solution starts, the solution will leave a disk of radius <span class="math inline">\(\epsilon\)</span> about the origin. Therefore <span class="math inline">\((0,0)\)</span> is an unstable critical point</p>
+<p>it follows that no matter how close to <span class="math inline">\((0,0)\)</span> a solution starts, the solution will leave a disk of radius <span class="math inline">\(\rho\)</span> <span class="math inline">\((0&lt;\rho&lt;3)\)</span> about the origin. Therefore <span class="math inline">\((0,0)\)</span> is an unstable critical point</p>
 <ul>
 <li><strong>Linearization</strong></li>
 </ul>
@@ -877,10 +880,10 @@ y' &amp;= Q(x,y)\simeq \left.\frac{\partial Q}{\partial x}\right|_{(x_1,y_1)}(x 
 <li><strong>Stability Criteria for Plane Autonomous System</strong></li>
 </ul>
 <ol type="1">
-<li>If the eigenvalues of <span class="math inline">\(\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)\)</span> have negative real part, then <span class="math inline">\(\mathbf{x}_1\)</span> is an asymptotically stable critical point</li>
-<li>If the eigenvalues of <span class="math inline">\(\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)\)</span> have positive real part, then <span class="math inline">\(\mathbf{x}_1\)</span> is an unstable critical point</li>
+<li>If the eigenvalues of <span class="math inline">\(\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)\)</span> all have negative real parts, then <span class="math inline">\(\mathbf{x}_1\)</span> is an asymptotically stable critical point</li>
+<li>If <span class="math inline">\(\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)\)</span> has an eigenvalue with positive real part, then <span class="math inline">\(\mathbf{x}_1\)</span> is an unstable critical point</li>
 </ol>
-<p><strong>Example</strong> <span class="math inline">\(~\)</span> Classify the criticl points of the following plane autonomous system</p>
+<p><strong>Example</strong> <span class="math inline">\(~\)</span> Classify the critical points of the following plane autonomous system</p>
 <p><span class="math display">\[
 \begin{aligned}
 x'&amp;= x^2 +y^2 -6\\
@@ -915,7 +918,7 @@ y'&amp;= x^2 -y
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+<p><img src="figures/ch11_figure05.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> The second-order differential equation <span class="math inline">\(mx'' +kx +k_1x^3 =0\)</span>, for <span class="math inline">\(k&gt;0\)</span>, represents a general model for the free, undamped oscillations of a mass <span class="math inline">\(m\)</span> attached to a nonlinear spring. If <span class="math inline">\(k=1\)</span> and <span class="math inline">\(k_1=-1\)</span>, the spring is called soft and the plane autonomous system corresponding to the nonlinear second-order equation <span class="math inline">\(x'' +x -x^3=0\)</span> is</p>
@@ -957,7 +960,7 @@ y'&amp;= x^3 -x
 <p>If <span class="math inline">\(\mathbf{x}(0)=(x_0,0)\)</span>, where <span class="math inline">\(0&lt;x_0&lt;1\)</span>, then <span class="math inline">\(c=-\frac{x_0^4}{2} +x_0^2\)</span>, and so</p>
 <p><span class="math display">\[ y^2=\frac{(2 -x^2 -x_0^2)(x_0^2 -x^2)}{2} \]</span></p>
 <p>Note that <span class="math inline">\(y=0\)</span> when <span class="math inline">\(x=-x_0\)</span>. In addition, the right-hand side is positive when <span class="math inline">\(-x_0&lt;x&lt;x_0\)</span>, and so each <span class="math inline">\(x\)</span> has two corresponding values of <span class="math inline">\(y\)</span>. The solution <span class="math inline">\(\mathbf{x}(t)\)</span> that satisfies <span class="math inline">\(\mathbf{x}(0)=(x_0,0)\)</span> is therefore periodic, and so <span class="math inline">\((0,0)\)</span> is a center</p>
-<div id="157b841a" class="cell" data-execution_count="6">
+<div id="efbb6747" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myODE(t, y):</span>
@@ -1000,7 +1003,7 @@ y'&amp;= x^3 -x
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-7-output-1.png" width="531" height="521" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1034,7 +1037,7 @@ y'&amp;= x^3 -x
 <p><span class="math display">\[ y^2=\frac{2g}{l}(\cos x -\cos x_0)\]</span></p>
 <p>Note that <span class="math inline">\(y=0\)</span> when <span class="math inline">\(x=-x_0\)</span>, and that <span class="math inline">\((2g/l)(\cos x -\cos x_0)&gt;0\)</span> for <span class="math inline">\(|x|&lt;|x_0|&lt;\pi\)</span>. Thus each such <span class="math inline">\(x\)</span> has two corresponding values of <span class="math inline">\(y\)</span>, and so the solution <span class="math inline">\(\mathbf{x}(t)\)</span> that satisfies <span class="math inline">\(\mathbf{x}(0)=(x_0,0)\)</span> is periodic. We may conclude that <span class="math inline">\((0,0)\)</span> is a center. In the case of large initial velocities, the pendulum spins in complete circles about the pivot</p></li>
 </ul>
-<div id="c16e2f06" class="cell" data-execution_count="7">
+<div id="cdc5063a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>w1 <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>w2 <span class="op">=</span> np.pi</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w1, w1, <span class="dv">100</span>)</span>
@@ -1059,8 +1062,8 @@ y'&amp;= x^3 -x
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>, pad<span class="op">=</span><span class="dv">5</span>)     </span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_ticks(np.linspace(<span class="op">-</span>w1, w1, <span class="dv">5</span>))</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_ticklabels([<span class="vs">r'</span><span class="dv">$</span><span class="vs">-4</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">-2</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">0</span><span class="dv">$</span><span class="vs">'</span>,</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                         <span class="vs">r'</span><span class="dv">$</span><span class="vs">2</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">4</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>])</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_ticklabels([<span class="vs">r'</span><span class="dv">$</span><span class="vs">-2</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">-</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">0</span><span class="dv">$</span><span class="vs">'</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                         <span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">2</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>])</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)</span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>ax.yaxis.set_ticks(np.linspace(<span class="op">-</span>w2, w2, <span class="dv">3</span>))</span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>ax.yaxis.set_ticklabels([<span class="vs">r'</span><span class="dv">$</span><span class="vs">-</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">0</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">pi</span><span class="dv">$</span><span class="vs">'</span>])</span>
@@ -1070,17 +1073,17 @@ y'&amp;= x^3 -x
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-8-output-1.png" width="517" height="299" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><p>Periodic Solutions of the Pendulum DE</p>
+<li><p>Nonlinear Oscillations: The Sliding Bead</p>
 <p>Suppose a bead with mass <span class="math inline">\(m\)</span> slides along a thin wire whose shape is described by the function <span class="math inline">\(z=f(x)\)</span>. A wide variety of nonlinear oscillations can be obtained by changing the shape of the wire and by making different assumptions about the forces acting on the bead</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:55.0%"></p>
+<p><img src="figures/ch11_figure06.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%"></p>
 </figure>
 </div>
 <p>The tangential force <span class="math inline">\(\mathbf{F}\)</span> due to the weight <span class="math inline">\(W=mg\)</span> <span class="math inline">\(\,\)</span> has a magnitude <span class="math inline">\(mg\sin\theta\)</span>, and therefore the <span class="math inline">\(x\)</span>-component of <span class="math inline">\(\mathbf{F}\)</span> is <span class="math inline">\(F_x=-mg\sin\theta\cos\theta\)</span>. Since <span class="math inline">\(f'(x)=\tan\theta\)</span>, <span class="math inline">\(\,\)</span> we can use the identity <span class="math inline">\(1+\tan^2\theta=\sec^2\theta\)</span> to conclude that</p>
@@ -1091,7 +1094,7 @@ F_x &amp;= -mg\sin\theta\cos\theta
 &amp;=-mg\frac{f'(x)}{1 +\left[f'(x)\right]^2}
 \end{aligned}
 \]</span></p>
-<p>A damping force <span class="math inline">\(\mathbf{D}\)</span>, in the direction opposite to the motion, is a constant multiple of the velocitcy of the bead. The <span class="math inline">\(x\)</span>-component of <span class="math inline">\(\mathbf{D}\)</span> is therefore</p>
+<p>A damping force <span class="math inline">\(\mathbf{D}\)</span>, in the direction opposite to the motion, is a constant multiple of the velocity of the bead. The <span class="math inline">\(x\)</span>-component of <span class="math inline">\(\mathbf{D}\)</span> is therefore</p>
 <p><span class="math display">\[ D_x=-\beta\frac{dx}{dt} \]</span></p>
 <p>It follows from Newton’s second law that</p>
 <p><span class="math display">\[mx''=-mg\frac{f'(x)}{1 +\left[f'(x)\right]^2}-\beta x' \]</span></p>
@@ -1122,14 +1125,15 @@ F_x &amp;= -mg\sin\theta\cos\theta
 <p>We can make the following conclusions:</p>
 <ul>
 <li><p><span class="math inline">\(f''(x_1)&lt;0\)</span> : <span class="math inline">\(~\)</span> A relative maximum therefore occurs at <span class="math inline">\(x=x_1\)</span>, and since <span class="math inline">\(\Delta&lt;0\)</span>, <span class="math inline">\(\,\)</span> an unstable saddle point occurs at <span class="math inline">\(\mathbf{x}_1=(x_1,0)\)</span></p></li>
-<li><p><span class="math inline">\(f''(x_1)&gt;0\)</span> and <span class="math inline">\(\beta&gt;0\)</span>: <span class="math inline">\(~\)</span> A relative maximum therefore occurs at <span class="math inline">\(x=x_1\)</span>, and since <span class="math inline">\(\tau&lt;0\)</span> and <span class="math inline">\(\Delta&gt;0\)</span>, <span class="math inline">\(\,\mathbf{x}_1=(x_1,0)\)</span> is a stable critical point.</p>
+<li><p><span class="math inline">\(f''(x_1)&gt;0\)</span> and <span class="math inline">\(\beta&gt;0\)</span>: <span class="math inline">\(~\)</span> A relative minimum therefore occurs at <span class="math inline">\(x=x_1\)</span>, and since <span class="math inline">\(\tau&lt;0\)</span> and <span class="math inline">\(\Delta&gt;0\)</span>, <span class="math inline">\(\,\mathbf{x}_1=(x_1,0)\)</span> is a stable critical point.</p>
 <p>If <span class="math inline">\(\beta^2 &gt; 4gm^2f''(x_1)\)</span>, the system is <strong>overdamped</strong> and the critical point is a stable node. If <span class="math inline">\(\beta^2 &lt; 4gm^2f''(x_1)\)</span>, the system is <strong>underdamped</strong> and the critical point is a stable spiral point. The exact nature of the stable critical point is still in doubt if <span class="math inline">\(\beta^2 = 4gm^2f''(x_1)\)</span></p></li>
 <li><p><span class="math inline">\(f''(x_1)&gt;0\)</span> and the system is undamped (<span class="math inline">\(\beta=0\)</span>):</p>
 <p>In this case the eigenvalues are pure imaginary, but the phase-plane method can be used to show that the critical point is a center. Therefore solutions with <span class="math inline">\(\mathbf{x}(0)=(x(0),x'(0))\)</span> near <span class="math inline">\(\mathbf{x}_1=(x_1,0)\)</span> are periodic</p></li>
 </ul></li>
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> A bead is released from the position <span class="math inline">\(x(0)=x_0\)</span> on the curve <span class="math inline">\(z=\cosh(x)\)</span> with initial velocity <span class="math inline">\(x'(0)=\nu_0\)</span>. Use the phase-plane method to show that the resulting solution is periodic when the system is undamped</p>
-<div id="13e4fd65" class="cell" data-execution_count="8">
+<p><a href="files/solutions/sol_8_4.pdf" target="_blank">Solution</a></p>
+<div id="8597d207" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">200</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">200</span>)</span>
@@ -1172,7 +1176,7 @@ F_x &amp;= -mg\sin\theta\cos\theta
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-9-output-1.png" width="407" height="1187" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1186,7 +1190,7 @@ F_x &amp;= -mg\sin\theta\cos\theta
   y' &amp;= -cxy +dy = y(-cx +d)
   \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> are positive constants. The critical points of this plane autonomous system are <span class="math inline">\((0,0)\)</span> and <span class="math inline">\((d/c,a/b)\)</span>, and the corresponding Jocobian matrices are</p>
+<p>where <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(d\)</span> are positive constants. The critical points of this plane autonomous system are <span class="math inline">\((0,0)\)</span> and <span class="math inline">\((d/c,a/b)\)</span>, and the corresponding Jacobian matrices are</p>
 <p><span class="math display">\[
 \begin{aligned}
   \mathbf{A}_1 &amp;= \mathbf{g}'\left((0,0)\right)=
@@ -1204,10 +1208,10 @@ F_x &amp;= -mg\sin\theta\cos\theta
 <p>Typical graphs of the nonnegative functions <span class="math inline">\(F(x)=x^d e^{-cx}\)</span> and <span class="math inline">\(G(y)=y^a e^{-by}\)</span> are shown in</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure07.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="figures/ch11_figure07.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
-<p>It is not hard to show that <span class="math inline">\(F(x)\)</span> has an absolute maximum at <span class="math inline">\(x=d/c\)</span>, whereas <span class="math inline">\(G(y)\)</span> has an absolute maximum at <span class="math inline">\(y=a/b\)</span>. These graphs can be used to establish the following properties of a solution curve that orginates at a noncritical point <span class="math inline">\((x_0,y_0)\)</span> in the first quadrant</p>
+<p>It is not hard to show that <span class="math inline">\(F(x)\)</span> has an absolute maximum at <span class="math inline">\(x=d/c\)</span>, whereas <span class="math inline">\(G(y)\)</span> has an absolute maximum at <span class="math inline">\(y=a/b\)</span>. These graphs can be used to establish the following properties of a solution curve that originates at a noncritical point <span class="math inline">\((x_0,y_0)\)</span> in the first quadrant</p>
 <ul>
 <li><p>If <span class="math inline">\(y=a/b\)</span>, <span class="math inline">\(F(x)G(a/b)=c_0\)</span> has two solutions <span class="math inline">\(x_m\)</span> and <span class="math inline">\(x_M\)</span> that satisfy <span class="math inline">\(x_m&lt;d/c&lt;x_M\)</span></p></li>
 <li><p>If <span class="math inline">\(x_m&lt;x_1&lt;x_M\)</span> and <span class="math inline">\(x=x_1\)</span>, <span class="math inline">\(\,\)</span> then <span class="math inline">\(F(x_1)G(y)=c_0\)</span> has exactly two solutions <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> that satisfy <span class="math inline">\(y_1&lt;a/b&lt;y_2\)</span></p></li>
@@ -1215,7 +1219,7 @@ F_x &amp;= -mg\sin\theta\cos\theta
 </ul></li>
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> If we let <span class="math inline">\(a=0.1\)</span>, <span class="math inline">\(b=0.002\)</span>, <span class="math inline">\(c=0.0025\)</span>, and <span class="math inline">\(d=0.2\)</span> in the Lotka-Volterra predator-prey model, the critical point in the first quadrant is <span class="math inline">\((d/c,a/b)=(80,50)\)</span>, and we know that this critical point is a center. The eigenvalues of <span class="math inline">\(\mathbf{g}'((80,50))\)</span> are <span class="math inline">\(\lambda=\pm(\sqrt{2}/10)i\)</span>, and so the solutions near the critical point have period <span class="math inline">\(p\simeq 10\sqrt{2}\pi\)</span></p>
-<div id="904796bb" class="cell" data-execution_count="9">
+<div id="ce59f94b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">0.1</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.002</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">0.0025</span></span>
@@ -1253,22 +1257,22 @@ F_x &amp;= -mg\sin\theta\cos\theta
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-10-output-1.png" width="526" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <ul>
 <li><p>Lotka-Volterra Competition Model</p>
-<p>A <strong>competitive interaction</strong> occurs when two or more species compete for the food, water, light, and species resources of an ecosystem. A number of mathematical models have been constructed that offer insights into conditions that permit <em>coexistence</em>. If <span class="math inline">\(x\)</span> denotes the number in species I and <span class="math inline">\(y\)</span> denotes the number in species II, then the Lotka-Volterra model takes the form</p>
+<p>A <strong>competitive interaction</strong> occurs when two or more species compete for the food, water, light, and space resources of an ecosystem. A number of mathematical models have been constructed that offer insights into conditions that permit <em>coexistence</em>. If <span class="math inline">\(x\)</span> denotes the number in species I and <span class="math inline">\(y\)</span> denotes the number in species II, then the Lotka-Volterra model takes the form</p>
 <p><span class="math display">\[
   \begin{aligned}
   x' &amp;= \frac{r_1}{K_1} x(K_1 -x -\alpha_{12}y)\\
   y' &amp;= \frac{r_2}{K_2} y(K_2 -y -\alpha_{21}x)
   \end{aligned}
 \]</span></p>
-<p>Note that in the absence of species II (<span class="math inline">\(y=0\)</span>), <span class="math inline">\(x'=(r_1/K_1)x(K_1 -x)\)</span>, and so the first population grows logistically and approaches the steady-state population <span class="math inline">\(K_1\)</span>. A similar statement holds for species II growing in the absence of speices I. The term <span class="math inline">\(-\alpha_{21}xy\)</span> in the second equation stems from the competitive effect of species I on species II. The model therefore assumes that this rate of inhibition is directly proportional to the number of possible competitive pairs <span class="math inline">\(xy\)</span> at a particular <span class="math inline">\(t\)</span></p>
-<p>This plane autonomous system has critical points at <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((K_1,0)\)</span>, and <span class="math inline">\((0,K_2)\)</span>. When <span class="math inline">\(\alpha_{12}\alpha_{21}\neq 0\)</span>, the lines <span class="math inline">\(K_1 -x -\alpha_{12}y=0\)</span> and <span class="math inline">\(K_2 -y -\alpha_{21}x=0\)</span> intersect to produce a fourth critical point <span class="math inline">\(\hat{\mathbf{x}}=(\hat{x},\hat{y})\)</span></p>
+<p>Note that in the absence of species II (<span class="math inline">\(y=0\)</span>), <span class="math inline">\(x'=(r_1/K_1)x(K_1 -x)\)</span>, and so the first population grows logistically and approaches the steady-state population <span class="math inline">\(K_1\)</span>. A similar statement holds for species II growing in the absence of species I. The term <span class="math inline">\(-\alpha_{21}xy\)</span> in the second equation stems from the competitive effect of species I on species II. The model therefore assumes that this rate of inhibition is directly proportional to the number of possible competitive pairs <span class="math inline">\(xy\)</span> at a particular <span class="math inline">\(t\)</span></p>
+<p>This plane autonomous system has critical points at <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((K_1,0)\)</span>, and <span class="math inline">\((0,K_2)\)</span>. When <span class="math inline">\(\alpha_{12}\alpha_{21}\neq 1\)</span>, the lines <span class="math inline">\(K_1 -x -\alpha_{12}y=0\)</span> and <span class="math inline">\(K_2 -y -\alpha_{21}x=0\)</span> intersect to produce a fourth critical point <span class="math inline">\(\hat{\mathbf{x}}=(\hat{x},\hat{y})\)</span></p>
 <p><span class="math display">\[ \hat{x}=\frac{K_1 -\alpha_{12}K_2}{1 -\alpha_{12}\alpha_{21}},\;
 \hat{y}=\frac{K_2 -\alpha_{21}K_1}{1 -\alpha_{12}\alpha_{21}}\]</span></p></li>
 </ul>
@@ -1280,7 +1284,8 @@ y' &amp;= 0.001 y\,(100 -y -3.0x)
 \end{aligned}
 \]</span></p>
 <p>Find and classify all critical points of the system</p>
-<div id="8a2e7b27" class="cell" data-execution_count="10">
+<p><a href="files/solutions/sol_8_4.pdf" target="_blank">Solution</a></p>
+<div id="cf218d07" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">120</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="dv">0</span>, w, <span class="dv">200</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="dv">0</span>, w, <span class="dv">200</span>)</span>
@@ -1326,7 +1331,7 @@ y' &amp;= 0.001 y\,(100 -y -3.0x)
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-11-output-1.png" width="486" height="965" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1351,6 +1356,7 @@ y' &amp;= 0.001 y\,(100 -y -3.0x)
 \end{aligned}
 \]</span></p>
 <p>has no periodic solutions in the first quadrant</p>
+<p><a href="files/solutions/sol_8_5.pdf" target="_blank">Solution</a></p>
 <p>Another sometimes useful result can be formulated in terms of the divergence of the vector field</p>
 <p><span class="math display">\[ \mathbf{v}(x,y)=\left(P(x,y), Q(x,y)\right) \]</span></p>
 <ul>
@@ -1368,7 +1374,7 @@ y' &amp;= 0.001 y\,(100 -y -3.0x)
    &amp;= \int_0^p -QP +PQ \,dt = 0
 \end{aligned}
 \]</span></p>
-<p>Since <span class="math inline">\(\displaystyle\mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}\)</span> is continuous and does not change sign in <span class="math inline">\(\mathbb{R}\)</span>, it follows that either <span class="math inline">\(\mathrm{det}\,\mathbf{v}\geq 0\)</span> or <span class="math inline">\(\mathrm{det}\,\mathbf{v}\leq 0\)</span> in <span class="math inline">\(\mathbb{R}\)</span>, and so</p>
+<p>Since <span class="math inline">\(\displaystyle\mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}\)</span> is continuous and does not change sign in <span class="math inline">\(\mathbb{R}\)</span>, it follows that either <span class="math inline">\(\mathrm{div}\,\mathbf{v}\geq 0\)</span> or <span class="math inline">\(\mathrm{div}\,\mathbf{v}\leq 0\)</span> in <span class="math inline">\(\mathbb{R}\)</span>, and so</p>
 <p><span class="math display">\[
   \iint_{R_1} \left(\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}\right)\, dxdy \neq 0
 \]</span></p>
@@ -1384,7 +1390,7 @@ y' &amp;= 0.001 y\,(100 -y -3.0x)
 \end{aligned}
 \]</span></p>
 <p>and so <span class="math inline">\(\displaystyle
-  \mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}=-\frac{\beta}{m}&lt;0\)</span></p>
+  \mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}=-\frac{\beta}{m}&lt;0\)</span> <span class="math inline">\(\,(\beta&gt;0)\)</span></p>
 <ul>
 <li><strong>Dulac Negative Criterion</strong></li>
 </ul>
@@ -1407,15 +1413,15 @@ y' &amp;= \frac{r_2}{K_2} y(K_2 -y -\alpha_{21}x)
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch11_figure08.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+<p><img src="figures/ch11_figure08.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 <ul>
-<li><p><strong>Poincaré-Benedixon I</strong></p>
+<li><p><strong>Poincaré–Bendixson I</strong></p>
 <p>Let <span class="math inline">\(\mathbb{R}\)</span> be an invariant region for a plane autonomous system and suppose that <span class="math inline">\(\mathbb{R}\)</span> has no critical points on its boundary</p>
 <p><span class="math inline">\((\text{a})\)</span> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathbb{R}\)</span> is a type I region that has a single unstable node or an unstable spiral point in its interior, then there is at least one periodic solution in <span class="math inline">\(\mathbb{R}\)</span></p>
 <p><span class="math inline">\((\text{b})\)</span> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathbb{R}\)</span> is a type II region that contains no critical points of the system, then there is at least one periodic solution in <span class="math inline">\(\mathbb{R}\)</span></p>
-<p>In either of the two cases, if <span class="math inline">\(\mathbf{x}=\mathbf{x}(0)\)</span> is a nonperiodic solution in <span class="math inline">\(\mathbb{R}\)</span>, then <span class="math inline">\(\mathbf{x}(t)\)</span> spirals toward a cycle that is a solution to the system. This periodic solution is called a <strong>limit cycle</strong></p></li>
+<p>In either of the two cases, if <span class="math inline">\(\mathbf{x}=\mathbf{x}(t)\)</span> is a nonperiodic solution in <span class="math inline">\(\mathbb{R}\)</span>, then <span class="math inline">\(\mathbf{x}(t)\)</span> spirals toward a cycle that is a solution to the system. This periodic solution is called a <strong>limit cycle</strong></p></li>
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> The Van der Pol equation is a nonlinear second-order differential equation that arises in electronics, and as a plane autonomous system it takes the form</p>
 <p><span class="math display">\[\begin{aligned}
@@ -1423,7 +1429,7 @@ x' &amp;= y\\
 y' &amp;= -\mu (x^2 -1)y -x
 \end{aligned}\]</span></p>
 <p>Show that the Van der Pol DE has a periodic solution when <span class="math inline">\(\mu&gt;0\)</span></p>
-<div id="9985b3d8" class="cell" data-execution_count="11">
+<div id="481b25bb" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">100</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">100</span>)</span>
@@ -1460,12 +1466,12 @@ y' &amp;= -\mu (x^2 -1)y -x
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-12-output-1.png" width="404" height="817" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We will assumme that there is a Type I invariant region <span class="math inline">\(\mathbb{R}\)</span> for the corresponding plane autonomous system and that this region contains <span class="math inline">\((0,0)\)</span> in its interior. The only critical point is <span class="math inline">\((0,0)\)</span>, and the Jacobian matrix is given by</p>
+<p>We will assume that there is a Type I invariant region <span class="math inline">\(\mathbb{R}\)</span> for the corresponding plane autonomous system and that this region contains <span class="math inline">\((0,0)\)</span> in its interior. The only critical point is <span class="math inline">\((0,0)\)</span>, and the Jacobian matrix is given by</p>
 <p><span class="math display">\[
 \mathbf{g}'((0,0))=
 \begin{pmatrix}
@@ -1473,8 +1479,8 @@ y' &amp;= -\mu (x^2 -1)y -x
 -1 &amp; \mu
 \end{pmatrix}
 \]</span></p>
-<p>Therefore, <span class="math inline">\(\tau=\mu\)</span>, <span class="math inline">\(\Delta=1\)</span>, and <span class="math inline">\(\tau^2 -4\Delta=\mu^2-4\)</span>. Since <span class="math inline">\(\mu &gt;0\)</span>, the critical point is either an unstable spiral point or an unstable node. By part (a) of <strong>Poincaré-Benedixon I</strong>, the system has at least one periodic solution in <span class="math inline">\(\mathbb{R}\)</span></p>
-<div id="66fbf732" class="cell" data-execution_count="12">
+<p>Therefore, <span class="math inline">\(\tau=\mu\)</span>, <span class="math inline">\(\Delta=1\)</span>, and <span class="math inline">\(\tau^2 -4\Delta=\mu^2-4\)</span>. Since <span class="math inline">\(\mu &gt;0\)</span>, the critical point is either an unstable spiral point or an unstable node. By part (a) of <strong>Poincaré–Bendixson I</strong>, the system has at least one periodic solution in <span class="math inline">\(\mathbb{R}\)</span></p>
+<div id="ef8bf096" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>td <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>mu_ <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="fl">2.5</span>])</span>
@@ -1517,13 +1523,13 @@ y' &amp;= -\mu (x^2 -1)y -x
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_11_Systems_of_Nonlinear_Differential_Equations_files/figure-html/cell-13-output-1.png" width="436" height="817" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><p><strong>Poincaré-Benedixon II</strong></p>
+<li><p><strong>Poincaré–Bendixson II</strong></p>
 <p>Let <span class="math inline">\(\mathbb{R}\)</span> be a type I invariant region for a plane autonomous system that has no periodic solutions in <span class="math inline">\(\mathbb{R}\)</span></p>
 <p><span class="math inline">\((\text{a})\)</span> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathbb{R}\)</span> has a finite number of nodes or spiral points, then given any initial position <span class="math inline">\(\mathbf{x}_0\)</span> in <span class="math inline">\(\mathbb{R}\)</span>, <span class="math inline">\(\lim_{t \to \infty} \mathbf{x}(t)=\mathbf{x}_1\)</span> for some critical point <span class="math inline">\(\mathbf{x}_1\)</span></p>
 <p><span class="math inline">\((\text{b})\)</span> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathbb{R}\)</span> has a single stable node or stable spiral point <span class="math inline">\(\mathbf{x}_1\)</span> in its interior and no critical points on its boundary, then <span class="math inline">\(\lim_{t \to \infty} \mathbf{x}(t)=\mathbf{x}_1\)</span> for all initial positions <span class="math inline">\(\mathbf{x}_0\)</span> in <span class="math inline">\(\mathbb{R}\)</span>: <strong>globally stable</strong></p></li>
@@ -1535,9 +1541,10 @@ x' &amp;= x^2y -x +1\\
 y' &amp;= -x^2y +\frac{1}{2}
 \end{aligned}
 \]</span></p>
-<p>has a type I invariant region <span class="math inline">\(\mathbb{R}\)</span> that lies inside the reactangle defined by <span class="math inline">\(0\leq x \leq 2\)</span>, <span class="math inline">\(0 \leq y \leq 1\)</span></p>
-<p><span class="math inline">\((\text{a})\)</span> <span class="math inline">\(~\)</span> Use the Benedixson negative criterion to show that there are no periodic solutions in R</p>
-<p><span class="math inline">\((\text{b})\)</span> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathbf{x}_0\)</span> is in <span class="math inline">\(\mathbb{R}\)</span> and <span class="math inline">\(\mathbf{x}=\mathbf{x}(t)\)</span> is the solution satisfying <span class="math inline">\(\mathbf{x}(t)=\mathbf{x}_0\)</span>, use <strong>Poincaré-Benedixon II</strong> to find <span class="math inline">\(\lim_{t \to \infty}\mathbf{x}(t)\)</span></p>
+<p>has a type I invariant region <span class="math inline">\(\mathbb{R}\)</span> that lies inside the rectangle defined by <span class="math inline">\(0\leq x \leq 2\)</span>, <span class="math inline">\(0 \leq y \leq 1\)</span></p>
+<p><span class="math inline">\((\text{a})\)</span> <span class="math inline">\(~\)</span> Use the Bendixson negative criterion to show that there are no periodic solutions in R</p>
+<p><span class="math inline">\((\text{b})\)</span> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathbf{x}_0\)</span> is in <span class="math inline">\(\mathbb{R}\)</span> and <span class="math inline">\(\mathbf{x}=\mathbf{x}(t)\)</span> is the solution satisfying <span class="math inline">\(\mathbf{x}(0)=\mathbf{x}_0\)</span>, use <strong>Poincaré–Bendixson II</strong> to find <span class="math inline">\(\lim_{t \to \infty}\mathbf{x}(t)\)</span></p>
+<p><a href="files/solutions/sol_8_5.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="worked-exercises" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="worked-exercises">Worked Exercises</h2>

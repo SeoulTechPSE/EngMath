@@ -55,22 +55,20 @@ $$
   region $R$ of the plane, then a solution to the plane autonomous system that satisfies 
   $\mathbf{x}(0)=\mathbf{x}_0$ is unique and one of three basic types:
 
-  * A **constant solution**, $\mathbf{x}(t)=\mathbf{x}_0$ for all $t$. A constant solution is called a **critical** or **stationary point**
+  * A **constant solution**, $\mathbf{x}(t)=\mathbf{x}_0$ for all $t$. A constant solution is called a **critical** or **stationary point**. Since $\mathbf{x}'=\mathbf{0}$, a critical point is a solution of the system of algebraic equations
     
     $$\begin{aligned}
        P(x,y) &= 0 \\ 
        Q(x,y) &= 0
      \end{aligned}$$
     
-     Note that since $\mathbf{x}'=\mathbf{0}$, a critical point is a solution of the system of algebraic equations
-    
   * An **arc**, $\mathbf{x}(t)$ - a plane curve that does not cross itself
     
-    ![](figures/ch11_figure01.png){width="75%" fig-align="center"}
+    ![](figures/ch11_figure01.svg){width="85%" fig-align="center"}
     
   * A **periodic solution** or **cycle**, $\mathbf{x}(t +p)=\mathbf{x}(t)$
     
-    ![](figures/ch11_figure02.png){width="25%" fig-align="center"}
+    ![](figures/ch11_figure02.svg){width="40%" fig-align="center"}
     
  **Example** $~$Find all critical points of the following plane autonomous system
 
@@ -80,12 +78,14 @@ $$
  y'&= x^2 -y 
 \end{aligned}$$
 
+[Solution](files/solutions/sol_8_1.pdf){target="_blank"}
+
 ## Stability of Linear Systems {#sec-11-2}
 
 If $\mathbf{x}_1$ is a critical point of a plane autonomous system and $\mathbf{x}=\mathbf{x}(t)$ is a solution
 satisfying $\mathbf{x}(0)=\mathbf{x}_0$, when $\mathbf{x}_0$ is placed near $\mathbf{x}_1$
 
-![](figures/ch11_figure03.png){width="85%" fig-align="center"}
+![](figures/ch11_figure03.svg){width="100%" fig-align="center"}
 
 (@) It may return to the critical point 
 (@) It may remain close to the critical point without returning
@@ -111,7 +111,7 @@ satisfying $\mathbf{x}(0)=\mathbf{x}_0$, when $\mathbf{x}_0$ is placed near $\ma
     \end{pmatrix}
      $$
    
-    drives the stabilty analysis
+    drives the stability analysis
 
   * To ensure that $\mathbf{x}_0=(0,\,0)$ is the only critical point, we will assume that the determinant $\Delta = ad -bc \neq 0$. If $\tau = a + d$ is the trace of matrix $\mathbf{A}$,
   then the characteristic equation, $\mathrm{det}(\mathbf{A} -\lambda\mathbf{I})=0,$ can be rewritten as
@@ -223,7 +223,7 @@ for i in range(4):
     
         **Saddle Point:** When $c_1=0$, $\mathbf{x}(t)$ will approach $\mathbf{0}$ along the line determined by 
         $\mathbf{k}_2$. If $\mathbf{x}(0)$ does not lie on the line determined by $\mathbf{k}_2$, the direction
-        determined by $\mathbf{k}_1$ serves as an asymtote for $\mathbf{x}(t)$ 
+        determined by $\mathbf{k}_1$ serves as an asymptote for $\mathbf{x}(t)$ 
 
 **Example** $~$ Classify the critical point $(0,0)$ of each of the following linear system 
 $\mathbf{x}'=\mathbf{A}\mathbf{x}$ as either a stable node, an unstable node, or a saddle point
@@ -233,6 +233,8 @@ $\mathbf{x}'=\mathbf{A}\mathbf{x}$ as either a stable node, an unstable node, or
  $(\text{b})$ $\begin{pmatrix} -1 & -2\\ \;\;3 & \;\;4 \end{pmatrix}$, $\;$
  $(\text{c})$ $\begin{pmatrix} 2 & -1\\ 3 & -2 \end{pmatrix}$
  </center>
+
+[Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
 import numpy as np
@@ -297,9 +299,9 @@ for i in range(3):
     If $\lambda_1<0$, the $\mathbf{x}(t)$ approaches $\mathbf{0}$ along the line determined by the vector
     $c_1\mathbf{k}_1 + c_2\mathbf{k}_2$ and the critical point is a **degenerate stable node**. The arrows are reversed when $\lambda_1>0$, and the critical point is a **degenerate unstable node**
 
-  * **A single linearly independent eigenvectors**
+  * **A single linearly independent eigenvector**
   
-    When only a single linearly independent eigenvector $\mathbf{k}_{11}$ exists, the general solution is   given by
+    When only a single linearly independent eigenvector $\mathbf{k}_{11}$ exists, the general solution is given by
   
     $$\begin{aligned}
      \mathbf{x}(t)&=c_1\mathbf{k}_{11} e^{\lambda_1 t} +c_2\left(\mathbf{k}_{11} te^{\lambda_1 t} 
@@ -317,6 +319,8 @@ $(\text{a})$ $\begin{pmatrix} 1 & 0\\ 0 & 1 \end{pmatrix}$, $\;$
 $(\text{b})$ $\begin{pmatrix} 3 & -18\\ 2 &\; -9 \end{pmatrix}$, $\;$
 $(\text{c})$ $\begin{pmatrix} \;\;2 & 4\\ -1 & 6 \end{pmatrix}$
 </center>
+
+[Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
 w = 1
@@ -376,7 +380,7 @@ for i in range(3):
 
     **Center:** When $\alpha=0$, all solutions are ellipses with center at the origin and are periodic   with period $p=2\pi/\beta$. The critical point is called a **center**
   
-  * **Nonezero real part**, $\tau^2 -4\Delta < 0$, $~\tau\neq 0$
+  * **Nonzero real part**, $\tau^2 -4\Delta < 0$, $~\tau\neq 0$
 
     **Spiral Point:** When $\alpha<0$, $e^{\alpha t}\to 0$, and the elliptical-like solution spirals closer
   and closer to the origin. The critical point is called a **stable spiral point**. When $\alpha>0$, the 
@@ -389,6 +393,8 @@ $\mathbf{x}'=\mathbf{A}\mathbf{x}$
 $(\text{a})$ $\begin{pmatrix} -1 & 2\\ -1 & 1 \end{pmatrix}$,$\;$
 $(\text{b})$ $\begin{pmatrix} -1 & -4\\ \;\;1 & -1 \end{pmatrix}$
 </center>
+
+[Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
 w = 1
@@ -427,7 +433,7 @@ for i in range(2):
     if i == 1: ax.set_xlabel(r'$x$')
 ```
 
-![](figures/ch11_figure04.png){width="75%" fig-align="center"}
+![](figures/ch11_figure04.svg){width="90%" fig-align="center"}
 
 For a linear plane autonomous system $\mathbf{x}'=\mathbf{A}\mathbf{x}$ with $\mathrm{det}\,\mathbf{A}\neq 0$,
 let $\mathbf{x}$ denote the solution that satisfies the initial condition $\mathbf{x}(0)=\mathbf{x}_0$, where
@@ -441,7 +447,7 @@ $\mathbf{x}_0\neq\mathbf{0}$
 
 ## Linearization and Local Stability {#sec-11-3}
 
-Here we will use linearization as a means of analyzing nonlinear DEs and nonlinear systems; the idea is to replace them by linear DEs and linear systems. Let $\mathbf{x}_1$ be a critical point of an autonomous system, and let $\mathbf{x}=\mathbf{x}(t)$ denote the solution that satisfies the initial condition $\mathbf{x}(0)=\mathbf{x}_0$, where $\mathbf{x}\neq\mathbf{x}_1$.
+Here we will use linearization as a means of analyzing nonlinear DEs and nonlinear systems; the idea is to replace them by linear DEs and linear systems. Let $\mathbf{x}_1$ be a critical point of an autonomous system, and let $\mathbf{x}=\mathbf{x}(t)$ denote the solution that satisfies the initial condition $\mathbf{x}(0)=\mathbf{x}_0$, where $\mathbf{x}_0\neq\mathbf{x}_1$.
 
 * $\mathbf{x}_1$ is a **stable critical point**
   
@@ -489,7 +495,7 @@ $$
 \end{aligned}
 $$
 
-Show that $(x,y)=(0,0)$ is unstable critical point
+Show that $(x,y)=(0,0)$ is an unstable critical point
 
 We see that $dr/dt=0$ when $r=0$ and can conclude that $(x,y)=(0,0)$ is a critical point. $~$ The differential equation can be solved using separation of variables. If $r(0)=r_0$ and $r_0\neq 0,$ then
 
@@ -499,7 +505,7 @@ where $c_0=(3 -r_0)/r_0$. Since
 
 $$\lim_{t \to \infty}\frac{3}{1 +c_0 e^{-0.15t}}=3$$
 
-it follows that no matter how close to $(0,0)$ a solution starts, the solution will leave a disk of radius $\epsilon$ about the origin. Therefore $(0,0)$ is an unstable critical point
+it follows that no matter how close to $(0,0)$ a solution starts, the solution will leave a disk of radius $\rho$ $(0<\rho<3)$ about the origin. Therefore $(0,0)$ is an unstable critical point
 
 
 * **Linearization**
@@ -538,12 +544,12 @@ $$
 
 * **Stability Criteria for Plane Autonomous System**
 
-1. If the eigenvalues of $\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)$ have negative real part, then $\mathbf{x}_1$ is 
+1. If the eigenvalues of $\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)$ all have negative real parts, then $\mathbf{x}_1$ is 
    an asymptotically stable critical point
-1. If the eigenvalues of $\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)$ have positive real part, then $\mathbf{x}_1$ is 
+1. If $\mathbf{A}=\mathbf{g}'(\mathbf{x}_1)$ has an eigenvalue with positive real part, then $\mathbf{x}_1$ is 
    an unstable critical point
 
-**Example** $~$ Classify the criticl points of the following plane autonomous system
+**Example** $~$ Classify the critical points of the following plane autonomous system
 
 $$
 \begin{aligned}
@@ -585,7 +591,7 @@ stable critical point
 
 * **Classifying Critical Points**
 
-![](figures/ch11_figure05.png){width="75%" fig-align="center"}
+![](figures/ch11_figure05.svg){width="90%" fig-align="center"}
 
 **Example** $~$ The second-order differential equation $mx'' +kx +k_1x^3 =0$, for $k>0$, represents a general
 model for the free, undamped oscillations of a mass $m$ attached to a nonlinear spring.
@@ -761,8 +767,8 @@ ax.grid()
     
 ax.tick_params(axis='both', direction='in', pad=5)     
 ax.xaxis.set_ticks(np.linspace(-w1, w1, 5))
-ax.xaxis.set_ticklabels([r'$-4\pi$', r'$-2\pi$', r'$0$',
-                         r'$2\pi$', r'$4\pi$'])
+ax.xaxis.set_ticklabels([r'$-2\pi$', r'$-\pi$', r'$0$',
+                         r'$\pi$', r'$2\pi$'])
 ax.set_xlabel(r'$x$')
 ax.yaxis.set_ticks(np.linspace(-w2, w2, 3))
 ax.yaxis.set_ticklabels([r'$-\pi$', r'$0$', r'$\pi$'])
@@ -771,13 +777,13 @@ ax.set_ylabel(r'$y$')
 plt.show()
 ```
 
-* Periodic Solutions of the Pendulum DE
+* Nonlinear Oscillations: The Sliding Bead
 
   Suppose a bead with mass $m$ slides along a thin wire whose shape is described by the function $z=f(x)$.
   A wide variety of nonlinear oscillations can be obtained by changing the shape of the wire and by making
   different assumptions about the forces acting on the bead
 
-  ![](figures/ch11_figure06.png){width="55%" fig-align="center"}
+  ![](figures/ch11_figure06.svg){width="65%" fig-align="center"}
 
   The tangential force $\mathbf{F}$ due to the weight $W=mg$ $\,$ has a magnitude $mg\sin\theta$, and therefore
   the $x$-component of $\mathbf{F}$ is $F_x=-mg\sin\theta\cos\theta$. Since $f'(x)=\tan\theta$, $\,$ we can use the identity $1+\tan^2\theta=\sec^2\theta$ to conclude that
@@ -790,7 +796,7 @@ plt.show()
   \end{aligned} 
   $$
 
-  A damping force $\mathbf{D}$, in the direction opposite to the motion, is a constant multiple of the velocitcy 
+  A damping force $\mathbf{D}$, in the direction opposite to the motion, is a constant multiple of the velocity 
   of the bead. The $x$-component of $\mathbf{D}$ is therefore
 
   $$ D_x=-\beta\frac{dx}{dt} $$
@@ -835,7 +841,7 @@ plt.show()
 
   * $f''(x_1)<0$ : $~$ A relative maximum therefore occurs at $x=x_1$, and since $\Delta<0$, $\,$ an unstable saddle point occurs at $\mathbf{x}_1=(x_1,0)$  
 
-  * $f''(x_1)>0$ and $\beta>0$: $~$ A relative maximum therefore occurs at $x=x_1$, and since $\tau<0$ and $\Delta>0$, $\,\mathbf{x}_1=(x_1,0)$ is a stable critical point. 
+  * $f''(x_1)>0$ and $\beta>0$: $~$ A relative minimum therefore occurs at $x=x_1$, and since $\tau<0$ and $\Delta>0$, $\,\mathbf{x}_1=(x_1,0)$ is a stable critical point. 
 
     If $\beta^2 > 4gm^2f''(x_1)$, the system is **overdamped** and the critical point is a stable node. If $\beta^2 < 4gm^2f''(x_1)$, the system is **underdamped** and the critical point is a stable spiral point. The exact nature of the stable critical point is still in doubt if $\beta^2 = 4gm^2f''(x_1)$
 
@@ -844,6 +850,8 @@ plt.show()
     In this case the eigenvalues are pure imaginary, but the phase-plane method can be used to show that the critical point is a center. Therefore solutions with $\mathbf{x}(0)=(x(0),x'(0))$ near $\mathbf{x}_1=(x_1,0)$ are periodic
 
 **Example** $~$ A bead is released from the position $x(0)=x_0$ on the curve $z=\cosh(x)$ with initial velocity $x'(0)=\nu_0$. Use the phase-plane method to show that the resulting solution is periodic when the system is undamped
+
+[Solution](files/solutions/sol_8_4.pdf){target="_blank"}
 
 ```{python}
 w = 10
@@ -902,7 +910,7 @@ plt.show()
   $$
 
   where $a$, $b$, $c$, and $d$ are positive constants. The critical points of this plane autonomous system are
-  $(0,0)$ and $(d/c,a/b)$, and the corresponding Jocobian matrices are
+  $(0,0)$ and $(d/c,a/b)$, and the corresponding Jacobian matrices are
 
   $$
   \begin{aligned}
@@ -929,9 +937,9 @@ plt.show()
 
   Typical graphs of the nonnegative functions $F(x)=x^d e^{-cx}$ and $G(y)=y^a e^{-by}$ are shown in
 
-  ![](figures/ch11_figure07.png){width=85%" fig-align="center"}
+  ![](figures/ch11_figure07.svg){width="100%" fig-align="center"}
 
-  It is not hard to show that $F(x)$ has an absolute maximum at $x=d/c$, whereas $G(y)$ has an absolute maximum at $y=a/b$. These graphs can be used to establish the following properties of a solution curve that orginates at a noncritical point $(x_0,y_0)$ in the first quadrant
+  It is not hard to show that $F(x)$ has an absolute maximum at $x=d/c$, whereas $G(y)$ has an absolute maximum at $y=a/b$. These graphs can be used to establish the following properties of a solution curve that originates at a noncritical point $(x_0,y_0)$ in the first quadrant
 
   * If $y=a/b$, $F(x)G(a/b)=c_0$ has two solutions $x_m$ and $x_M$ that satisfy $x_m<d/c<x_M$
 
@@ -981,7 +989,7 @@ plt.show()
 
 * Lotka-Volterra Competition Model
 
-  A **competitive interaction** occurs when two or more species compete for the food, water, light, and species
+  A **competitive interaction** occurs when two or more species compete for the food, water, light, and space
   resources of an ecosystem. A number of mathematical models have been constructed that offer insights into conditions that permit *coexistence*. If $x$ denotes the number in species I and $y$ denotes the number in species II, then the Lotka-Volterra model takes the form
 
   $$
@@ -991,12 +999,12 @@ plt.show()
     \end{aligned}
   $$
 
-  Note that in the absence of species II ($y=0$), $x'=(r_1/K_1)x(K_1 -x)$, and so the first population grows logistically and approaches the steady-state population $K_1$. A similar statement holds for species II growing in the absence of speices I. The term $-\alpha_{21}xy$ in the second equation stems from the competitive effect
+  Note that in the absence of species II ($y=0$), $x'=(r_1/K_1)x(K_1 -x)$, and so the first population grows logistically and approaches the steady-state population $K_1$. A similar statement holds for species II growing in the absence of species I. The term $-\alpha_{21}xy$ in the second equation stems from the competitive effect
   of species I on species II. The model therefore assumes that this rate of inhibition is directly proportional to
   the number of possible competitive pairs $xy$ at a particular $t$
 
   This plane autonomous system has critical points at $(0,0)$, $(K_1,0)$, and $(0,K_2)$. When 
-  $\alpha_{12}\alpha_{21}\neq 0$, the lines $K_1 -x -\alpha_{12}y=0$ and $K_2 -y -\alpha_{21}x=0$ intersect to produce a fourth critical point $\hat{\mathbf{x}}=(\hat{x},\hat{y})$
+  $\alpha_{12}\alpha_{21}\neq 1$, the lines $K_1 -x -\alpha_{12}y=0$ and $K_2 -y -\alpha_{21}x=0$ intersect to produce a fourth critical point $\hat{\mathbf{x}}=(\hat{x},\hat{y})$
 
   $$ \hat{x}=\frac{K_1 -\alpha_{12}K_2}{1 -\alpha_{12}\alpha_{21}},\;
   \hat{y}=\frac{K_2 -\alpha_{21}K_1}{1 -\alpha_{12}\alpha_{21}}$$
@@ -1011,6 +1019,8 @@ $$
 $$
 
 Find and classify all critical points of the system
+
+[Solution](files/solutions/sol_8_4.pdf){target="_blank"}
 
 ```{python}
 w = 120
@@ -1094,6 +1104,8 @@ $$
 
 has no periodic solutions in the first quadrant
 
+[Solution](files/solutions/sol_8_5.pdf){target="_blank"}
+
 Another sometimes useful result can be formulated in terms of the divergence of the vector field 
 
 $$ \mathbf{v}(x,y)=\left(P(x,y), Q(x,y)\right) $$
@@ -1119,8 +1131,8 @@ $$
 \end{aligned}
 $$
 
-Since $\displaystyle\mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}$ is continuous and does not change sign in $\mathbb{R}$, it follows that either $\mathrm{det}\,\mathbf{v}\geq 0$
-or $\mathrm{det}\,\mathbf{v}\leq 0$ in $\mathbb{R}$, and so
+Since $\displaystyle\mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}$ is continuous and does not change sign in $\mathbb{R}$, it follows that either $\mathrm{div}\,\mathbf{v}\geq 0$
+or $\mathrm{div}\,\mathbf{v}\leq 0$ in $\mathbb{R}$, and so
 
 $$
   \iint_{R_1} \left(\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}\right)\, dxdy \neq 0
@@ -1144,7 +1156,7 @@ $$
 $$
 
 and so $\displaystyle
-  \mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}=-\frac{\beta}{m}<0$
+  \mathrm{div}\,\mathbf{v}=\frac{\partial P}{\partial x} +\frac{\partial Q}{\partial y}=-\frac{\beta}{m}<0$ $\,(\beta>0)$
 
 * **Dulac Negative Criterion**
 
@@ -1174,9 +1186,9 @@ in the first quadrant
 
   A region $\mathbb{R}$ is called an **invariant region** for a plane autonomous system if, whenever $\mathbf{x}_0$ is in $\mathbb{R}$, the solution $\mathbf{x}=\mathbf{x}(t)$ remains in $\mathbb{R}$. If $\mathbf{n}(x,y)$ denotes a normal vector on the boundary that points inside the region, then $\mathbb{R}$ will be an invariant region for the plane autonomous system provided $\mathbf{v}(x,y)\cdot\mathbf{n}(x,y)\geq 0$ for all points $(x,y)$ in the boundary
 
- ![](figures/ch11_figure08.png){width="45%" fig-align="center"}
+ ![](figures/ch11_figure08.svg){width="90%" fig-align="center"}
 
-* **Poincar&eacute;-Benedixon I**
+* **Poincar&eacute;&ndash;Bendixson I**
 
   Let $\mathbb{R}$ be an invariant region for a plane autonomous system and suppose that $\mathbb{R}$ has no
   critical points on its boundary
@@ -1186,7 +1198,7 @@ in the first quadrant
   $(\text{b})$ $~$ If $\mathbb{R}$ is a type II region that contains no critical points of the system, 
    then there is at least one periodic solution in $\mathbb{R}$
     
-  In either of the two cases, if $\mathbf{x}=\mathbf{x}(0)$ is a nonperiodic solution in $\mathbb{R}$, then
+  In either of the two cases, if $\mathbf{x}=\mathbf{x}(t)$ is a nonperiodic solution in $\mathbb{R}$, then
   $\mathbf{x}(t)$ spirals toward a cycle that is a solution to the system. This periodic solution is called a **limit cycle**
 
 **Example** $~$ The Van der Pol equation is a nonlinear second-order differential equation that arises in electronics, and as a plane autonomous system it takes the form
@@ -1234,7 +1246,7 @@ for i in range(2):
 plt.show()
 ```
 
-We will assumme that there is a Type I invariant region $\mathbb{R}$ for the corresponding plane autonomous system and that this region contains $(0,0)$ in its interior. The only critical point is $(0,0)$, and the Jacobian matrix is given by
+We will assume that there is a Type I invariant region $\mathbb{R}$ for the corresponding plane autonomous system and that this region contains $(0,0)$ in its interior. The only critical point is $(0,0)$, and the Jacobian matrix is given by
 
 $$
 \mathbf{g}'((0,0))=
@@ -1244,7 +1256,7 @@ $$
 \end{pmatrix}
 $$
 
-Therefore, $\tau=\mu$, $\Delta=1$, and $\tau^2 -4\Delta=\mu^2-4$. Since $\mu >0$, the critical point is either an unstable spiral point or an unstable node. By part (a) of **Poincar&eacute;-Benedixon I**, the system has at least one periodic solution in $\mathbb{R}$
+Therefore, $\tau=\mu$, $\Delta=1$, and $\tau^2 -4\Delta=\mu^2-4$. Since $\mu >0$, the critical point is either an unstable spiral point or an unstable node. By part (a) of **Poincar&eacute;&ndash;Bendixson I**, the system has at least one periodic solution in $\mathbb{R}$
 
 ```{python}
 td = 15
@@ -1288,7 +1300,7 @@ for i in range(2):
 plt.show()
 ```
 
-* **Poincar&eacute;-Benedixon II**
+* **Poincar&eacute;&ndash;Bendixson II**
 
   Let $\mathbb{R}$ be a type I invariant region for a plane autonomous system that has no periodic solutions in $\mathbb{R}$
 
@@ -1307,11 +1319,13 @@ $$
 \end{aligned}
 $$
 
-has a type I invariant region $\mathbb{R}$ that lies inside the reactangle defined by $0\leq x \leq 2$, $0 \leq y \leq 1$
+has a type I invariant region $\mathbb{R}$ that lies inside the rectangle defined by $0\leq x \leq 2$, $0 \leq y \leq 1$
 
-$(\text{a})$ $~$ Use the Benedixson negative criterion to show that there are no periodic solutions in R
+$(\text{a})$ $~$ Use the Bendixson negative criterion to show that there are no periodic solutions in R
 
 $(\text{b})$ $~$ If $\mathbf{x}_0$ is in $\mathbb{R}$ and $\mathbf{x}=\mathbf{x}(t)$ is the solution satisfying 
-$\mathbf{x}(t)=\mathbf{x}_0$, use **Poincar&eacute;-Benedixon II** to find $\lim_{t \to \infty}\mathbf{x}(t)$
+$\mathbf{x}(0)=\mathbf{x}_0$, use **Poincar&eacute;&ndash;Bendixson II** to find $\lim_{t \to \infty}\mathbf{x}(t)$
+
+[Solution](files/solutions/sol_8_5.pdf){target="_blank"}
 
 ## Worked Exercises {.unnumbered}
