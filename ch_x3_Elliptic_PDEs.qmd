@@ -161,9 +161,13 @@ $~$
 
 **Example** $\,$ What is the wave equation $\,u_{tt}=c^2\nabla^2 u\,$ in polar coordinates if you know that the solution $\,u\,$ depends only on $\,r\,$ and $\,t$
 
+[Solution](files/solutions/sol_14_1a.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ What is Laplace equation in spherical coordinates if the solution $\,u\,$ depends only on $\,r$? $\,$Can you find the solutions of this equation? These are the spherically symmetric potentials in three dimensions
+
+[Solution](files/solutions/sol_14_1b.pdf){target="_blank"}
 
 $~$
 
@@ -244,6 +248,8 @@ $$ \nabla^2 u = 0, \quad 0 < r < 1$$
 
 $$ \frac{\partial u}{\partial r} =\sin^2\theta, \quad r=1, \;\; 0 \leq \theta < 2\pi$$
 
+[Solution](files/solutions/sol_14_2a.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ For different values of $h$, $~$imagine the solution $u(r,\theta)\,$ to
@@ -251,6 +257,8 @@ $~$
 $$ \nabla^2 u = 0, \quad 0 < r < 1$$
 
 $$ \frac{\partial u}{\partial r} +h(u -\sin\theta)=0, \quad r=1, \;\; 0 \leq \theta < 2\pi$$
+
+[Solution](files/solutions/sol_14_2b.pdf){target="_blank"}
 
 $~$
 
@@ -1324,8 +1332,8 @@ This, $\,$then, $\,$is the Green's function for $\,r > \rho$. $\,$It is already 
 
 | Dimension - Domain | Object | Formula | Purpose |
 |-------------------|---------|----------|----------|
-| **2D** - Unit disk $\scriptsize D=\{\mathbf{x}\in\mathbb{R}^2:|\mathbf{x}|<1\}$ | **Green Function** | $\scriptsize\displaystyle G(\mathbf{x},\mathbf{y})=\frac{1}{2\pi}\left(\ln \frac{1}{|\mathbf{x}-\mathbf{y}|} -\ln\frac{1}{|\mathbf{x} -\mathbf{y}^*|} \right),\quad \mathbf{y}^*=\frac{\mathbf{y}}{|\mathbf{y}|^2}$ | Solve **Poisson equation** $\scriptsize\Delta u = -f$: $\scriptsize\displaystyle u(\mathbf{x})=\int_{D} G(\mathbf{x},\mathbf{y})f(\mathbf{y})d\mathbf{y}$ |
-| **3D** - Unit ball $\scriptsize B=\{\mathbf{x}\in\mathbb{R}^3:|\mathbf{x}|<1\}$ | **Green Function** | $\scriptsize \displaystyle G(\mathbf{x},\mathbf{y})=\frac{1}{4\pi}\left( \frac{1}{|\mathbf{x}-\mathbf{y}|}-\frac{|\mathbf{y}|}{|\mathbf{x}-\mathbf{y}^*|} \right),\quad \mathbf{y}^*=\frac{\mathbf{y}}{|\mathbf{y}|^2}$ | Solve **Poisson equation** $\scriptsize\Delta u=-f$: $\scriptsize\displaystyle u(\mathbf{x})=\int_{B} G(\mathbf{x},\mathbf{y})f(\mathbf{y})d\mathbf{y}$|
+| **2D** - Unit disk $\scriptsize D=\{\mathbf{x}\in\mathbb{R}^2:|\mathbf{x}|<1\}$ | **Green Function** | $\scriptsize\displaystyle G(\mathbf{x},\mathbf{y})=\frac{1}{2\pi}\left(\ln \frac{1}{|\mathbf{x}-\mathbf{y}|} -\ln\frac{1}{|\mathbf{y}|\,|\mathbf{x} -\mathbf{y}^*|} \right),\quad \mathbf{y}^*=\frac{\mathbf{y}}{|\mathbf{y}|^2}$ | Solve **Poisson equation** $\scriptsize\Delta u = -f$: $\scriptsize\displaystyle u(\mathbf{x})=\int_{D} G(\mathbf{x},\mathbf{y})f(\mathbf{y})d\mathbf{y}$ |
+| **3D** - Unit ball $\scriptsize B=\{\mathbf{x}\in\mathbb{R}^3:|\mathbf{x}|<1\}$ | **Green Function** | $\scriptsize \displaystyle G(\mathbf{x},\mathbf{y})=\frac{1}{4\pi}\left( \frac{1}{|\mathbf{x}-\mathbf{y}|}-\frac{1}{|\mathbf{y}|\,|\mathbf{x}-\mathbf{y}^*|} \right),\quad \mathbf{y}^*=\frac{\mathbf{y}}{|\mathbf{y}|^2}$ | Solve **Poisson equation** $\scriptsize\Delta u=-f$: $\scriptsize\displaystyle u(\mathbf{x})=\int_{B} G(\mathbf{x},\mathbf{y})f(\mathbf{y})d\mathbf{y}$|
 
 $~$
 
