@@ -103,7 +103,7 @@ d, e, f = sympy.symbols('d, e, f', positive=True)
 * We cannot directly use the built-in Python objects for integers, `int`, and floating-point numbers, `float`, and so on. Instead, `sympy` provides the classes `sympy.Integer` and `sympy.Float` for representing integers and floating-point numbers within the `sympy` framework
 
 * This distinction is important to be aware of when working with `sympy`, but fortunately we rarely
-need to concern ourselves with creating objects of type `sympy.Integer` and `sympy.Float` to representing
+need to concern ourselves with creating objects of type `sympy.Integer` and `sympy.Float` to represent
 specific numbers, $~$since `sympy` automatically promotes Python numbers to instances of these classes when they occur in `sympy` expressions
 
 ```{python}
@@ -158,7 +158,7 @@ sympy.Integer('12_345_678'), sympy.Integer(12_345_678)
 ```
 
 ```{python}
-# great common division, leat common multiple
+# greatest common divisor, least common multiple
 sympy.igcd(36, 15), sympy.ilcm(7, 34)
 ```
 
@@ -328,7 +328,7 @@ expr.args[2].args[1].args[1].args
 
 ## Manipulating expressions
 
-### Simplication
+### Simplification
 
 ```{python}
 expr = 2 * (x**2 - x) - x * (x + 1)
@@ -619,7 +619,7 @@ expr.diff(x)
 ---
 
 ```{python}
-expr = sympy.functions.special.polynomials.hermite(x, 0)
+expr = sympy.hermite(3, x)  # Hermite polynomial H_3(x)
 expr
 ```
 
@@ -703,7 +703,7 @@ sympy.integrate(expr, x, y)
 sympy.integrate(expr, (x, 0, 1), (y, 0, 1))
 ```
 
-### Series
+### Limits
 
 ```{python}
 sympy.limit(sympy.sin(x) / x, x, 0)
@@ -740,6 +740,26 @@ q = sympy.limit(expr - p*x, x, sympy.oo)
 
 ```{python}
 p, q
+```
+
+* Hence the oblique asymptote of the curve is $y = px + q$
+
+### Series
+
+```{python}
+sympy.series(sympy.exp(x), x)  # Taylor series about x = 0, up to O(x**6)
+```
+
+```{python}
+sympy.series(sympy.sin(x) / x, x, 0, n=8)
+```
+
+```{python}
+sympy.series(sympy.cos(x), x, pi / 2, n=6)  # about x = pi/2
+```
+
+```{python}
+sympy.series(sympy.exp(x), x).removeO()  # drop the order term
 ```
 
 ### Sums and products
@@ -806,12 +826,18 @@ for i in range(5):
     display(sols[i])
 ```
 
+* Transcendental equations such as $\tan x + x = 0$ have no closed-form solution, $~$and `solve` raises an error. $~$Such equations must be solved numerically, e.g. with `sympy.nsolve` or the root finders in `scipy.optimize`
+
 ```{python}
-#sympy.solve(sympy.tan(x) + x, x)
+try:
+    sympy.solve(sympy.tan(x) + x, x)
+except NotImplementedError as err:
+    print("NotImplementedError:", err)
 ```
 
-`NotImplementedError: multiple generators [x, tan(x)]`
-`No algorithms are implemented to solve equation x + tan(x)`
+```{python}
+sympy.nsolve(sympy.tan(x) + x, x, 2)  # numerical root near x = 2
+```
 
 ---
 
@@ -969,7 +995,7 @@ from sympy.plotting import plot_parametric
 
 u = sympy.symbols('u')
 p2 = plot_parametric((sympy.cos(u), sympy.sin(u)), 
-                     (u, sympy.cos(u)), (u, -3, 3))
+                     (u, sympy.cos(u)), (u, -3, 3), aspect_ratio=(1, 1))
 ```
 
 ```{python}
@@ -1017,7 +1043,7 @@ p6 = plot3d_parametric_surface(sympy.cos(u + v),
 from sympy import plot_implicit, Eq, And
 
 p7 = plot_implicit(
-    Eq(x**2 + y**2, 3), (x, -3, 3), (y, -3, 3))
+    Eq(x**2 + y**2, 3), (x, -3, 3), (y, -3, 3), aspect_ratio=(1, 1))
 ```
 
 ```{python}
