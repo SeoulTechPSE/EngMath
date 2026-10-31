@@ -62,7 +62,6 @@ for n, z in enumerate(sequence(c=-1)):
 
 ```{python}
 import numpy as np
-#np.warnings.filterwarnings('ignore')
 
 def complex_matrix(xmin, xmax, ymin, ymax, pixel_density):
     
@@ -75,9 +74,12 @@ def complex_matrix(xmin, xmax, ymin, ymax, pixel_density):
 ```{python}
 def is_stable(c, num_iterations):
   z = 0
-  for _ in range(num_iterations):
-    z = z**2 +c
-  return abs(z) <= 2
+  # for points outside the set, |z| grows without bound and eventually overflows
+  # to inf/nan; this is expected, so the floating-point warnings are silenced
+  with np.errstate(over='ignore', invalid='ignore'):
+    for _ in range(num_iterations):
+      z = z**2 +c
+    return abs(z) <= 2
 ```
 
 ### Low-Resolution Scatter Plot
@@ -292,7 +294,7 @@ class MandelbrotSet:
     value = self.escape_count(c, smooth) /self.max_iterations
     return max(0.0, min(value, 1.0)) if clamp else value    
 
-  def escape_count(self, c: complex, smooth=False) -> int or float:
+  def escape_count(self, c: complex, smooth=False) -> int | float:
     z = 0
     for iteration in range(self.max_iterations):
       z = z**2 +c
@@ -432,7 +434,7 @@ display(enhancer.enhance(1.4))
 
 * From now on, $\,$`Pillow` will represent every pixel as a tuple comprised of the red, green, and blue (RGB) color channels
 
-* `Matplotlib` library includes [several colormaps](https://matplotlib.org/3.5.0/tutorials/colors/colormaps.html) with normalized color channels. $\,$Some colormaps are fixed lists of colors, $\,$while others are able to interpolate values given as a parameter
+* `Matplotlib` library includes [several colormaps](https://matplotlib.org/stable/users/explain/colors/colormaps.html) with normalized color channels. $\,$Some colormaps are fixed lists of colors, $\,$while others are able to interpolate values given as a parameter
 
 ```{python}
 import matplotlib as mpl
@@ -523,15 +525,17 @@ display(image)
 
 ### Color Gradient
 
+* Each color channel is interpolated between the given colors with a spline of degree `k` (`interp1d`, used in older versions of this example, is a legacy function in current `scipy`)
+
 ```{python}
-import numpy as np
-from scipy.interpolate import interp1d
+from scipy.interpolate import make_interp_spline
 
 def make_gradient(colors, interpolation='linear'):
 
+  k = {'linear': 1, 'quadratic': 2, 'cubic': 3}[interpolation]
   X = [i /(len(colors) -1) for i in range(len(colors))]
   Y = [[color[i] for color in colors] for i in range(3)]
-  channels = [interp1d(X, y, kind=interpolation) for y in Y]
+  channels = [make_interp_spline(X, y, k=k) for y in Y]
   
   return lambda x: [np.clip(channel(x), 0, 1) for channel in channels]
 ```

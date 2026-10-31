@@ -439,14 +439,14 @@ z_{n+1} &amp;= z_n^2 + c
 <ul>
 <li>The entire Mandelbrot set fits in a circle with a radius of two when depicted on the complex plane. This is a handy fact that’ll let you skip many unnecessary calculations for points that certainly don’t belong to the set</li>
 </ul>
-<div id="adca0189" class="cell" data-execution_count="1">
+<div id="b6fdd7a3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sequence(c):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  z <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> z</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cf0b1c30" class="cell" data-execution_count="2">
+<div id="07e7e757" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, z <span class="kw">in</span> <span class="bu">enumerate</span>(sequence(c<span class="op">=</span><span class="dv">1</span>)):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'z(</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>z<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">9</span>:</span>
@@ -467,7 +467,7 @@ z(9) = 1947270476915296449559703445493848930452791205</code></pre>
 <ul>
 <li>Most numbers will make this sequence diverge to infinity. <span class="math inline">\(\,\)</span>However, <span class="math inline">\(\,\)</span>some will keep it <strong>stable</strong> by either converging the sequence to a single value or staying within a bounded range. Others will make the sequence <strong>periodically stable</strong> by cycling back and forth between the same few values. <font color="blue">Stable and periodically stable values make up the Mandelbrot set</font></li>
 </ul>
-<div id="5727821b" class="cell" data-execution_count="3">
+<div id="ba09cb3b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, z <span class="kw">in</span> <span class="bu">enumerate</span>(sequence(c<span class="op">=</span><span class="dv">0</span>)):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'z(</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>z<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">9</span>:</span>
@@ -485,7 +485,7 @@ z(8) = 0
 z(9) = 0</code></pre>
 </div>
 </div>
-<div id="9d0bb38e" class="cell" data-execution_count="4">
+<div id="1f4adb71" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, z <span class="kw">in</span> <span class="bu">enumerate</span>(sequence(c<span class="op">=-</span><span class="dv">1</span>)):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'z(</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>z<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">9</span>:</span>
@@ -513,27 +513,29 @@ z(9) = -1</code></pre>
 <ul>
 <li>To generate the initial set of candidate values, <span class="math inline">\(~\)</span>you can take advantage of <code>np.linspace()</code>, <span class="math inline">\(\,\)</span>which creates evenly spaced numbers in a given range:</li>
 </ul>
-<div id="5f2d96b3" class="cell" data-execution_count="5">
+<div id="66849d3b" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#np.warnings.filterwarnings('ignore')</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> complex_matrix(xmin, xmax, ymin, ymax, pixel_density):</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  re <span class="op">=</span> np.linspace(xmin, xmax, <span class="bu">int</span>((xmax <span class="op">-</span>xmin) <span class="op">*</span>pixel_density))</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  im <span class="op">=</span> np.linspace(ymin, ymax, <span class="bu">int</span>((ymax <span class="op">-</span>ymin) <span class="op">*</span>pixel_density))</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> re[np.newaxis, :] <span class="op">+</span> im[:, np.newaxis] <span class="op">*</span><span class="ot">1j</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> complex_matrix(xmin, xmax, ymin, ymax, pixel_density):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  re <span class="op">=</span> np.linspace(xmin, xmax, <span class="bu">int</span>((xmax <span class="op">-</span>xmin) <span class="op">*</span>pixel_density))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  im <span class="op">=</span> np.linspace(ymin, ymax, <span class="bu">int</span>((ymax <span class="op">-</span>ymin) <span class="op">*</span>pixel_density))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> re[np.newaxis, :] <span class="op">+</span> im[:, np.newaxis] <span class="op">*</span><span class="ot">1j</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="797b3635" class="cell" data-execution_count="6">
+<div id="2316181c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_stable(c, num_iterations):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  z <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_iterations):</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">abs</span>(z) <span class="op">&lt;=</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for points outside the set, |z| grows without bound and eventually overflows</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># to inf/nan; this is expected, so the floating-point warnings are silenced</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> np.errstate(over<span class="op">=</span><span class="st">'ignore'</span>, invalid<span class="op">=</span><span class="st">'ignore'</span>):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_iterations):</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">abs</span>(z) <span class="op">&lt;=</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="low-resolution-scatter-plot" class="level3" data-number="25.2.1">
 <h3 data-number="25.2.1" class="anchored" data-anchor-id="low-resolution-scatter-plot"><span class="header-section-number">25.2.1</span> Low-Resolution Scatter Plot</h3>
-<div id="99177579" class="cell" data-execution_count="7">
+<div id="ddf77da4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> complex_matrix(<span class="op">-</span><span class="dv">2</span>, <span class="fl">0.5</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>, pixel_density<span class="op">=</span><span class="dv">21</span>)</span>
@@ -549,19 +551,13 @@ z(9) = -1</code></pre>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/4x/8kn2nym12cn7x7qmg_6s4b8h0000gn/T/ipykernel_76102/2353567406.py:4: RuntimeWarning: overflow encountered in square
-  z = z**2 +c
-/var/folders/4x/8kn2nym12cn7x7qmg_6s4b8h0000gn/T/ipykernel_76102/2353567406.py:4: RuntimeWarning: invalid value encountered in square
-  z = z**2 +c</code></pre>
 </div>
-</div>
-<div id="79e6c3cd" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plot_low_resolution_scatter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2e0bc122" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_low_resolution_scatter()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_Mandelbrot_set_files/figure-html/cell-9-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_Mandelbrot_set_files/figure-html/cell-9-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="566" height="438"></p>
 </figure>
 </div>
 </div>
@@ -569,32 +565,26 @@ z(9) = -1</code></pre>
 </section>
 <section id="high-resolution-black-and-white-visualization" class="level3" data-number="25.2.2">
 <h3 data-number="25.2.2" class="anchored" data-anchor-id="high-resolution-black-and-white-visualization"><span class="header-section-number">25.2.2</span> High-Resolution Black-and-White Visualization</h3>
-<div id="2ff7228b" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> complex_matrix(<span class="op">-</span><span class="dv">2</span>, <span class="fl">0.5</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>, pixel_density<span class="op">=</span><span class="dv">512</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_high_resolution_black_and_white():</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">8</span>))</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  plt.imshow(is_stable(c, num_iterations<span class="op">=</span><span class="dv">20</span>), cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  plt.gca().set_aspect(<span class="st">'equal'</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2fa45794" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> complex_matrix(<span class="op">-</span><span class="dv">2</span>, <span class="fl">0.5</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>, pixel_density<span class="op">=</span><span class="dv">512</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_high_resolution_black_and_white():</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">8</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  plt.imshow(is_stable(c, num_iterations<span class="op">=</span><span class="dv">20</span>), cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  plt.gca().set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fa71f466" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_high_resolution_black_and_white()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/4x/8kn2nym12cn7x7qmg_6s4b8h0000gn/T/ipykernel_76102/2353567406.py:4: RuntimeWarning: overflow encountered in square
-  z = z**2 +c
-/var/folders/4x/8kn2nym12cn7x7qmg_6s4b8h0000gn/T/ipykernel_76102/2353567406.py:4: RuntimeWarning: invalid value encountered in square
-  z = z**2 +c</code></pre>
-</div>
+<div id="9e1da308" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_high_resolution_black_and_white()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_Mandelbrot_set_files/figure-html/cell-11-output-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_Mandelbrot_set_files/figure-html/cell-11-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="566" height="676"></p>
 </figure>
 </div>
 </div>
@@ -605,61 +595,61 @@ z(9) = -1</code></pre>
 <h2 data-number="25.3" class="anchored" data-anchor-id="drawing-the-mandelbrot-set-with-pillow"><span class="header-section-number">25.3</span> Drawing the Mandelbrot Set With Pillow</h2>
 <ul>
 <li><p>By replacing Matplotlib’s <code>plt.imshow()</code> with a very similar call to <code>Pillow</code>’s factory method:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>   image <span class="op">=</span> Image.fromarray(<span class="op">~</span>is_stable(c, num_iterations<span class="op">=</span><span class="dv">20</span>))</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># image.show()  # for console</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>   display(image)  <span class="co"># for jupyter notebook</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>   image <span class="op">=</span> Image.fromarray(<span class="op">~</span>is_stable(c, num_iterations<span class="op">=</span><span class="dv">20</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># image.show()  # for console</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>   display(image)  <span class="co"># for jupyter notebook</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Notice the use of the bitwise not operator (<code>~</code>) in front of your stability matrix, <span class="math inline">\(\,\)</span>which inverts all of the Boolean values. <span class="math inline">\(\,\)</span>This is so that the Mandelbrot set appears in black on a white background since <code>Pillow</code> assumes a black background by default</p></li>
 </ul>
 <section id="finding-convergent-elements-of-the-set" class="level3" data-number="25.3.1">
 <h3 data-number="25.3.1" class="anchored" data-anchor-id="finding-convergent-elements-of-the-set"><span class="header-section-number">25.3.1</span> Finding Convergent Elements of the Set</h3>
-<div id="929c113c" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MandelbrotSet:</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  max_iterations: <span class="bu">int</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__contains__</span>(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.max_iterations):</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">abs</span>(z) <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span>     </span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ea604926" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MandelbrotSet:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  max_iterations: <span class="bu">int</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__contains__</span>(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.max_iterations):</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">abs</span>(z) <span class="op">&gt;</span> <span class="dv">2</span>:</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span>     </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="872e589d" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="09637217" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5e69507b" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.26</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="25be94c3" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.26</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="e088209e" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.25</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0af4c6d3" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.25</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>True</code></pre>
 </div>
 </div>
 <hr>
-<div id="8050ff0f" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>width, height <span class="op">=</span> <span class="dv">512</span>, <span class="dv">512</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="fl">0.0055</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>BLACK_AND_WHITE <span class="op">=</span> <span class="st">'1'</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span>BLACK_AND_WHITE, size<span class="op">=</span>(width, height))</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(height):</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(width):</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scale <span class="op">*</span><span class="bu">complex</span>(x <span class="op">-</span>width <span class="op">/</span><span class="fl">1.35</span>, height <span class="op">/</span><span class="dv">2</span> <span class="op">-</span>y)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    image.putpixel((x, y), c <span class="kw">not</span> <span class="kw">in</span> mandelbrot_set)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="62125a56" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>width, height <span class="op">=</span> <span class="dv">512</span>, <span class="dv">512</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="fl">0.0055</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>BLACK_AND_WHITE <span class="op">=</span> <span class="st">'1'</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span>BLACK_AND_WHITE, size<span class="op">=</span>(width, height))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(height):</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(width):</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scale <span class="op">*</span><span class="bu">complex</span>(x <span class="op">-</span>width <span class="op">/</span><span class="fl">1.35</span>, height <span class="op">/</span><span class="dv">2</span> <span class="op">-</span>y)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    image.putpixel((x, y), c <span class="kw">not</span> <span class="kw">in</span> mandelbrot_set)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cf5952eb" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e6de55f7" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -675,61 +665,61 @@ z(9) = -1</code></pre>
 <li><p>The number of iterations it takes to detect divergence is known as the <font color="green">escape count</font>. <span class="math inline">\(\,\)</span>We can use the escape count to introduce <font color="green">multiple levels of gray</font></p></li>
 <li><p>However, <span class="math inline">\(\,\)</span>it’s usually more convenient to deal with <font color="green">normalized escape counts</font> so that their values are on a scale from zero to one regardless of the maximum number of iterations</p></li>
 </ul>
-<div id="aea334a5" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MandelbrotSet:</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  max_iterations: <span class="bu">int</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__contains__</span>(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.stability(c) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> stability(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.escape_count(c) <span class="op">/</span><span class="va">self</span>.max_iterations</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> escape_count(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.max_iterations):</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">abs</span>(z) <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iteration</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.max_iterations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="1df58274" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MandelbrotSet:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  max_iterations: <span class="bu">int</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__contains__</span>(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.stability(c) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> stability(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.escape_count(c) <span class="op">/</span><span class="va">self</span>.max_iterations</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> escape_count(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.max_iterations):</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">abs</span>(z) <span class="op">&gt;</span> <span class="dv">2</span>:</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iteration</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.max_iterations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="83ad878b" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ea720ac1" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9cd2e337" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.escape_count(<span class="fl">0.25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b5d45a67" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.escape_count(<span class="fl">0.25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>30</code></pre>
 </div>
 </div>
-<div id="6db3dd1a" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.stability(<span class="fl">0.25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="69a844d0" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.stability(<span class="fl">0.25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>1.0</code></pre>
 </div>
 </div>
-<div id="72c8785e" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.25</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="800f819b" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.25</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="e091393f" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.escape_count(<span class="fl">0.26</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4a1c4a68" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.escape_count(<span class="fl">0.26</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>29</code></pre>
 </div>
 </div>
-<div id="4df87bdc" class="cell" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.stability(<span class="fl">0.26</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a5f8f019" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set.stability(<span class="fl">0.26</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>0.9666666666666667</code></pre>
 </div>
 </div>
-<div id="80c37909" class="cell" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.26</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="04a1bf42" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.26</span> <span class="kw">in</span> mandelbrot_set</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>False</code></pre>
 </div>
@@ -738,21 +728,21 @@ z(9) = -1</code></pre>
 <li><p>The updated implementation of the <code>MandelbrotSet</code> class allows for a grayscale visualization, which ties pixel intensity with stability</p></li>
 <li><p>But you’ll need to change the pixel mode to <code>L</code>, <span class="math inline">\(\,\)</span>which stands for <em>luminance</em>. <span class="math inline">\(\,\)</span>In this mode, <span class="math inline">\(\,\)</span>each pixel takes an integer value between <code>0</code> and <code>255</code>, <span class="math inline">\(\,\)</span>so you’ll also need to scale the fractional stability appropriately:</p></li>
 </ul>
-<div id="0795e325" class="cell" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>width, height <span class="op">=</span> <span class="dv">512</span>, <span class="dv">512</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="fl">0.0055</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>GRAYSCALE <span class="op">=</span> <span class="st">'L'</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span>GRAYSCALE, size<span class="op">=</span>(width, height))</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(height):</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(width):</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scale <span class="op">*</span><span class="bu">complex</span>(x <span class="op">-</span>width <span class="op">/</span><span class="fl">1.35</span>, height <span class="op">/</span><span class="dv">2</span> <span class="op">-</span>y)</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c)</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    image.putpixel((x, y), <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="1da4cfc3" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>width, height <span class="op">=</span> <span class="dv">512</span>, <span class="dv">512</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="fl">0.0055</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>GRAYSCALE <span class="op">=</span> <span class="st">'L'</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span>GRAYSCALE, size<span class="op">=</span>(width, height))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(height):</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(width):</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scale <span class="op">*</span><span class="bu">complex</span>(x <span class="op">-</span>width <span class="op">/</span><span class="fl">1.35</span>, height <span class="op">/</span><span class="dv">2</span> <span class="op">-</span>y)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    image.putpixel((x, y), <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8bc5db07" class="cell" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="66f621f1" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -768,48 +758,48 @@ z(9) = -1</code></pre>
 <li><p>Getting rid of <em>color banding</em> from the Mandelbrot set’s exterior boils down to using <font color="green">fractional escape counts</font>.</p></li>
 <li><p>One way to interpolate their intermediate values is to use <a href="https://linas.org/art-gallery/escape/smooth.html">logarithms</a></p></li>
 </ul>
-<div id="01f93a35" class="cell" data-execution_count="27">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MandelbrotSet:</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  max_iterations: <span class="bu">int</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  escape_radius: <span class="bu">float</span> <span class="op">=</span> <span class="fl">2.0</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__contains__</span>(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.stability(c) <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> stability(<span class="va">self</span>, c: <span class="bu">complex</span>, smooth<span class="op">=</span><span class="va">False</span>, clamp<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="va">self</span>.escape_count(c, smooth) <span class="op">/</span><span class="va">self</span>.max_iterations</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">max</span>(<span class="fl">0.0</span>, <span class="bu">min</span>(value, <span class="fl">1.0</span>)) <span class="cf">if</span> clamp <span class="cf">else</span> value    </span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> escape_count(<span class="va">self</span>, c: <span class="bu">complex</span>, smooth<span class="op">=</span><span class="va">False</span>) <span class="op">-&gt;</span> <span class="bu">int</span> <span class="kw">or</span> <span class="bu">float</span>:</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.max_iterations):</span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">abs</span>(z) <span class="op">&gt;</span> <span class="va">self</span>.escape_radius:</span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> smooth:</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>          <span class="cf">return</span> iteration <span class="op">+</span><span class="dv">1</span> <span class="op">-</span>log(log(<span class="bu">abs</span>(z))) <span class="op">/</span>log(<span class="dv">2</span>)</span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iteration</span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.max_iterations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="81aca9cf" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MandelbrotSet:</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  max_iterations: <span class="bu">int</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  escape_radius: <span class="bu">float</span> <span class="op">=</span> <span class="fl">2.0</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__contains__</span>(<span class="va">self</span>, c: <span class="bu">complex</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.stability(c) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> stability(<span class="va">self</span>, c: <span class="bu">complex</span>, smooth<span class="op">=</span><span class="va">False</span>, clamp<span class="op">=</span><span class="va">True</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="va">self</span>.escape_count(c, smooth) <span class="op">/</span><span class="va">self</span>.max_iterations</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">max</span>(<span class="fl">0.0</span>, <span class="bu">min</span>(value, <span class="fl">1.0</span>)) <span class="cf">if</span> clamp <span class="cf">else</span> value    </span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> escape_count(<span class="va">self</span>, c: <span class="bu">complex</span>, smooth<span class="op">=</span><span class="va">False</span>) <span class="op">-&gt;</span> <span class="bu">int</span> <span class="op">|</span> <span class="bu">float</span>:</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.max_iterations):</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>      z <span class="op">=</span> z<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>c</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">abs</span>(z) <span class="op">&gt;</span> <span class="va">self</span>.escape_radius:</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> smooth:</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>          <span class="cf">return</span> iteration <span class="op">+</span><span class="dv">1</span> <span class="op">-</span>log(log(<span class="bu">abs</span>(z))) <span class="op">/</span>log(<span class="dv">2</span>)</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> iteration</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.max_iterations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="dcba1ff3" class="cell" data-execution_count="28">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>width, height <span class="op">=</span> <span class="dv">512</span>, <span class="dv">512</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="fl">0.0055</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>GRAYSCALE <span class="op">=</span> <span class="st">'L'</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span>GRAYSCALE, size<span class="op">=</span>(width, height))</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(height):</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(width):</span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scale <span class="op">*</span><span class="bu">complex</span>(x <span class="op">-</span>width <span class="op">/</span><span class="fl">1.35</span>, height <span class="op">/</span><span class="dv">2</span> <span class="op">-</span>y)</span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    image.putpixel((x, y), <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7c5cc056" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>width, height <span class="op">=</span> <span class="dv">512</span>, <span class="dv">512</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="fl">0.0055</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>GRAYSCALE <span class="op">=</span> <span class="st">'L'</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span>GRAYSCALE, size<span class="op">=</span>(width, height))</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(height):</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(width):</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scale <span class="op">*</span><span class="bu">complex</span>(x <span class="op">-</span>width <span class="op">/</span><span class="fl">1.35</span>, height <span class="op">/</span><span class="dv">2</span> <span class="op">-</span>y)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    image.putpixel((x, y), <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="49f0ea67" class="cell" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b8752312" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -825,64 +815,64 @@ z(9) = -1</code></pre>
 <li><p>Unlike the logarithms before, <span class="math inline">\(\,\)</span>the math for scaling and translating the image isn’t terribly difficult. However, <span class="math inline">\(\,\)</span>it adds a bit of code complexity</p></li>
 <li><p>You can build a smart pixel data type that’ll encapsulate the conversion between the coordinate systems, account for scaling, and handle the colors</p></li>
 </ul>
-<div id="ec34f266" class="cell" data-execution_count="30">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Viewport:</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  image: Image.Image</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  center: <span class="bu">complex</span></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  width: <span class="bu">float</span></span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> scale(<span class="va">self</span>):</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.width <span class="op">/</span><span class="va">self</span>.image.width        </span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
-<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> height(<span class="va">self</span>):</span>
-<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.scale <span class="op">*</span><span class="va">self</span>.image.height</span>
-<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
-<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> offset(<span class="va">self</span>):</span>
-<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.center <span class="op">+</span><span class="bu">complex</span>(<span class="op">-</span><span class="va">self</span>.width, <span class="va">self</span>.height) <span class="op">/</span><span class="dv">2</span></span>
-<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__iter__</span>(<span class="va">self</span>):</span>
-<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.image.height):</span>
-<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.image.width):</span>
-<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> Pixel(<span class="va">self</span>, x, y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ba557311" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Viewport:</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  image: Image.Image</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  center: <span class="bu">complex</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  width: <span class="bu">float</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> scale(<span class="va">self</span>):</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.width <span class="op">/</span><span class="va">self</span>.image.width        </span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> height(<span class="va">self</span>):</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.scale <span class="op">*</span><span class="va">self</span>.image.height</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> offset(<span class="va">self</span>):</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.center <span class="op">+</span><span class="bu">complex</span>(<span class="op">-</span><span class="va">self</span>.width, <span class="va">self</span>.height) <span class="op">/</span><span class="dv">2</span></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__iter__</span>(<span class="va">self</span>):</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.image.height):</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.image.width):</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> Pixel(<span class="va">self</span>, x, y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f387e60e" class="cell" data-execution_count="31">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Pixel:</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  viewport: Viewport</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  x: <span class="bu">int</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  y: <span class="bu">int</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> color(<span class="va">self</span>):</span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.viewport.image.getpixel((<span class="va">self</span>.x, <span class="va">self</span>.y))</span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">@color.setter</span></span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> color(<span class="va">self</span>, value):</span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.viewport.image.putpixel((<span class="va">self</span>.x, <span class="va">self</span>.y), value)</span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__complex__</span>(<span class="va">self</span>):</span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">complex</span>(<span class="va">self</span>.x, <span class="op">-</span><span class="va">self</span>.y) <span class="op">*</span><span class="va">self</span>.viewport.scale <span class="op">+</span><span class="va">self</span>.viewport.offset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="726cb290" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Pixel:</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  viewport: Viewport</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  x: <span class="bu">int</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  y: <span class="bu">int</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">@property</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> color(<span class="va">self</span>):</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">self</span>.viewport.image.getpixel((<span class="va">self</span>.x, <span class="va">self</span>.y))</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">@color.setter</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> color(<span class="va">self</span>, value):</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.viewport.image.putpixel((<span class="va">self</span>.x, <span class="va">self</span>.y), value)</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__complex__</span>(<span class="va">self</span>):</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">complex</span>(<span class="va">self</span>.x, <span class="op">-</span><span class="va">self</span>.y) <span class="op">*</span><span class="va">self</span>.viewport.scale <span class="op">+</span><span class="va">self</span>.viewport.offset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5be28b25" class="cell" data-execution_count="32">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">256</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'L'</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>))</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pixel <span class="kw">in</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.7435</span> <span class="op">+</span><span class="ot">0.1314j</span>, width<span class="op">=</span><span class="fl">0.002</span>):</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> <span class="bu">complex</span>(pixel)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  pixel.color <span class="op">=</span> <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9aca9bb8" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">256</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'L'</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>))</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pixel <span class="kw">in</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.7435</span> <span class="op">+</span><span class="ot">0.1314j</span>, width<span class="op">=</span><span class="fl">0.002</span>):</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> <span class="bu">complex</span>(pixel)</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  pixel.color <span class="op">=</span> <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>The <code>viewport</code> spans <code>0.002</code> world units and is centered at <code>-0.7435 +0.1314j</code>, <span class="math inline">\(\,\)</span>which is close to <font color="red">a Misiurewicz point</font> that produces a beautiful spiral</li>
 </ul>
-<div id="87c810a6" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cb334b5e" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -891,11 +881,11 @@ z(9) = -1</code></pre>
 </div>
 </div>
 </div>
-<div id="4fcb99af" class="cell" data-execution_count="34">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> ImageEnhance</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>enhancer <span class="op">=</span> ImageEnhance.Brightness(image)</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>display(enhancer.enhance(<span class="fl">1.4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="657a0e8a" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> ImageEnhance</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>enhancer <span class="op">=</span> ImageEnhance.Brightness(image)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>display(enhancer.enhance(<span class="fl">1.4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -907,18 +897,18 @@ z(9) = -1</code></pre>
 <ul>
 <li>We can find many more unique points producing such spectacular results. <span class="math inline">\(\,\)</span>Wikipedia hosts an entire <a href="https://en.wikipedia.org/wiki/Mandelbrot_set#Image_gallery_of_a_zoom_sequence">image gallery</a> of various details of the Mandelbrot set that are worth exploring</li>
 </ul>
-<div id="2a2dc3d8" class="cell" data-execution_count="35">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">256</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'L'</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>))</span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pixel <span class="kw">in</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.74364990</span> <span class="op">+</span><span class="ot">0.13188204j</span>, width<span class="op">=</span><span class="fl">0.00073801</span>):</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> <span class="bu">complex</span>(pixel)</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  pixel.color <span class="op">=</span> <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6ac525b7" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">256</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'L'</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>))</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pixel <span class="kw">in</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.74364990</span> <span class="op">+</span><span class="ot">0.13188204j</span>, width<span class="op">=</span><span class="fl">0.00073801</span>):</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  c <span class="op">=</span> <span class="bu">complex</span>(pixel)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  instability <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>mandelbrot_set.stability(c, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  pixel.color <span class="op">=</span> <span class="bu">int</span>(instability <span class="op">*</span><span class="dv">255</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="43a6a380" class="cell" data-execution_count="36">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>enhancer <span class="op">=</span> ImageEnhance.Brightness(image)</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>display(enhancer.enhance(<span class="fl">1.4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0500217c" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>enhancer <span class="op">=</span> ImageEnhance.Brightness(image)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>display(enhancer.enhance(<span class="fl">1.4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -938,16 +928,16 @@ z(9) = -1</code></pre>
 <h3 data-number="25.4.1" class="anchored" data-anchor-id="color-palette"><span class="header-section-number">25.4.1</span> Color Palette</h3>
 <ul>
 <li><p>To use more colors, <span class="math inline">\(\,\)</span>you’ll need to create your image in the RGB mode first, <span class="math inline">\(\,\)</span>which will allocate 24 bits per pixel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>   image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(width, height))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>   image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(width, height))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>From now on, <span class="math inline">\(\,\)</span><code>Pillow</code> will represent every pixel as a tuple comprised of the red, green, and blue (RGB) color channels</p></li>
-<li><p><code>Matplotlib</code> library includes <a href="https://matplotlib.org/3.5.0/tutorials/colors/colormaps.html">several colormaps</a> with normalized color channels. <span class="math inline">\(\,\)</span>Some colormaps are fixed lists of colors, <span class="math inline">\(\,\)</span>while others are able to interpolate values given as a parameter</p></li>
+<li><p><code>Matplotlib</code> library includes <a href="https://matplotlib.org/stable/users/explain/colors/colormaps.html">several colormaps</a> with normalized color channels. <span class="math inline">\(\,\)</span>Some colormaps are fixed lists of colors, <span class="math inline">\(\,\)</span>while others are able to interpolate values given as a parameter</p></li>
 </ul>
-<div id="a01ba624" class="cell" data-execution_count="37">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mpl.colormaps[<span class="st">'twilight'</span>]</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> cmap(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">256</span>))</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>colormap[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="15ca56bc" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mpl.colormaps[<span class="st">'twilight'</span>]</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> cmap(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">256</span>))</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>colormap[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>array([[0.88575016, 0.85000925, 0.88797365, 1.        ],
        [0.88172231, 0.85127594, 0.88638057, 1.        ],
@@ -959,12 +949,12 @@ z(9) = -1</code></pre>
 <ul>
 <li><code>Pillow</code> only understands integers in the range of <code>0</code> through <code>255</code> for the color channels. <span class="math inline">\(\,\)</span>We need another function that’ll reverse the normalization process to make the Pillow library happy:</li>
 </ul>
-<div id="44ac5c2a" class="cell" data-execution_count="38">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> denormalize(colormap):</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [<span class="bu">tuple</span>(<span class="bu">int</span>(channel <span class="op">*</span><span class="dv">255</span>) <span class="cf">for</span> channel <span class="kw">in</span> color) <span class="cf">for</span> color <span class="kw">in</span> colormap]</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(colormap)</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>palette[:<span class="dv">5</span>] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="1bbecf76" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> denormalize(colormap):</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [<span class="bu">tuple</span>(<span class="bu">int</span>(channel <span class="op">*</span><span class="dv">255</span>) <span class="cf">for</span> channel <span class="kw">in</span> color) <span class="cf">for</span> color <span class="kw">in</span> colormap]</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(colormap)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>palette[:<span class="dv">5</span>] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>[(225, 216, 226, 255),
  (224, 217, 226, 255),
@@ -977,23 +967,23 @@ z(9) = -1</code></pre>
 <li><p>The <code>twilight</code> colormap is a list of 510 colors. <span class="math inline">\(\,\)</span>After calling <code>denormalize()</code> on it, <span class="math inline">\(\,\)</span>you’ll get a color palette suitable for your painting function</p></li>
 <li><p>If you’d like to test out a couple of different palettes, <span class="math inline">\(\,\)</span>then it might be convenient to introduce a helper function to avoid retyping the same commands over and over again:</p></li>
 </ul>
-<div id="11dee6c3" class="cell" data-execution_count="39">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> paint(mandelbrot_set, viewport, palette, smooth):</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> pixel <span class="kw">in</span> viewport:</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    stability <span class="op">=</span> mandelbrot_set.stability(<span class="bu">complex</span>(pixel), smooth)</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> <span class="bu">int</span>(<span class="bu">min</span>(stability <span class="op">*</span><span class="bu">len</span>(palette), <span class="bu">len</span>(palette) <span class="op">-</span><span class="dv">1</span>))</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    pixel.color <span class="op">=</span> palette[index <span class="op">%</span> <span class="bu">len</span>(palette)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="86ac013b" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> paint(mandelbrot_set, viewport, palette, smooth):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> pixel <span class="kw">in</span> viewport:</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    stability <span class="op">=</span> mandelbrot_set.stability(<span class="bu">complex</span>(pixel), smooth)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> <span class="bu">int</span>(<span class="bu">min</span>(stability <span class="op">*</span><span class="bu">len</span>(palette), <span class="bu">len</span>(palette) <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    pixel.color <span class="op">=</span> palette[index <span class="op">%</span> <span class="bu">len</span>(palette)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>The number of colors in your palette doesn’t necessarily have to equal the maximum number of iterations. <span class="math inline">\(\,\)</span>After all, it’s unknown how many stability values there’ll be until we run the recursive formula. <span class="math inline">\(\,\)</span>When we enable smoothing, <span class="math inline">\(\,\)</span>the number of fractional escape counts can be greater than the number of iterations!</li>
 </ul>
-<div id="6af41855" class="cell" data-execution_count="40">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">512</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>))</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.7435</span> <span class="op">+</span><span class="ot">0.1314j</span>, width<span class="op">=</span><span class="fl">0.002</span>)</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="8930c524" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">512</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>))</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.7435</span> <span class="op">+</span><span class="ot">0.1314j</span>, width<span class="op">=</span><span class="fl">0.002</span>)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1005,14 +995,14 @@ z(9) = -1</code></pre>
 <ul>
 <li>Feel free to try other color palettes included in <code>Matplotlib</code> or one of the third-party libraries that they mention in the documentation. <span class="math inline">\(\,\)</span>Additionally, <span class="math inline">\(\,\)</span><code>Matplotlib</code> lets you reverse the color order by appending the <code>_r</code> suffix to a colormap’s name</li>
 </ul>
-<div id="fa0f039a" class="cell" data-execution_count="41">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mpl.colormaps[<span class="st">'twilight_r'</span>]</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> cmap(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">256</span>))</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(colormap)</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="64d85913" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mpl.colormaps[<span class="st">'twilight_r'</span>]</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> cmap(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">256</span>))</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(colormap)</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1021,17 +1011,17 @@ z(9) = -1</code></pre>
 </div>
 </div>
 </div>
-<div id="42422a0d" class="cell" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">768</span>, <span class="dv">768</span>))</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.743643135</span> <span class="op">+</span><span class="ot">0.131825963j</span>, width<span class="op">=</span> <span class="fl">0.000014628</span>)</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mpl.colormaps[<span class="st">'plasma'</span>]</span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> cmap(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">256</span>))</span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(colormap)</span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2a682932" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">768</span>, <span class="dv">768</span>))</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.743643135</span> <span class="op">+</span><span class="ot">0.131825963j</span>, width<span class="op">=</span> <span class="fl">0.000014628</span>)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mpl.colormaps[<span class="st">'plasma'</span>]</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> cmap(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">256</span>))</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(colormap)</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1043,18 +1033,18 @@ z(9) = -1</code></pre>
 <ul>
 <li>Suppose you wanted to emphasize the fractal’s edge. In such a case, you can divide the fractal into three parts and assign different colors to each:</li>
 </ul>
-<div id="653d0a9c" class="cell" data-execution_count="43">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>exterior <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">50</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>interior <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">5</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>gray_area <span class="op">=</span> [(<span class="dv">1</span> <span class="op">-</span> i <span class="op">/</span><span class="dv">44</span>,) <span class="op">*</span><span class="dv">3</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">45</span>)]</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(exterior <span class="op">+</span>gray_area <span class="op">+</span>interior)</span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.75</span>, width<span class="op">=</span><span class="fl">2.5</span>)</span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e59ae702" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>exterior <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">50</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>interior <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">5</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>gray_area <span class="op">=</span> [(<span class="dv">1</span> <span class="op">-</span> i <span class="op">/</span><span class="dv">44</span>,) <span class="op">*</span><span class="dv">3</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">45</span>)]</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize(exterior <span class="op">+</span>gray_area <span class="op">+</span>interior)</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.75</span>, width<span class="op">=</span><span class="fl">2.5</span>)</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1066,40 +1056,43 @@ z(9) = -1</code></pre>
 </section>
 <section id="color-gradient" class="level3" data-number="25.4.2">
 <h3 data-number="25.4.2" class="anchored" data-anchor-id="color-gradient"><span class="header-section-number">25.4.2</span> Color Gradient</h3>
-<div id="c3d0a1cc" class="cell" data-execution_count="44">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.interpolate <span class="im">import</span> interp1d</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_gradient(colors, interpolation<span class="op">=</span><span class="st">'linear'</span>):</span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>  X <span class="op">=</span> [i <span class="op">/</span>(<span class="bu">len</span>(colors) <span class="op">-</span><span class="dv">1</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(colors))]</span>
-<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>  Y <span class="op">=</span> [[color[i] <span class="cf">for</span> color <span class="kw">in</span> colors] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]</span>
-<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>  channels <span class="op">=</span> [interp1d(X, y, kind<span class="op">=</span>interpolation) <span class="cf">for</span> y <span class="kw">in</span> Y]</span>
-<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">lambda</span> x: [np.clip(channel(x), <span class="dv">0</span>, <span class="dv">1</span>) <span class="cf">for</span> channel <span class="kw">in</span> channels]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Each color channel is interpolated between the given colors with a spline of degree <code>k</code> (<code>interp1d</code>, used in older versions of this example, is a legacy function in current <code>scipy</code>)</li>
+</ul>
+<div id="c5906eff" class="cell" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.interpolate <span class="im">import</span> make_interp_spline</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_gradient(colors, interpolation<span class="op">=</span><span class="st">'linear'</span>):</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  k <span class="op">=</span> {<span class="st">'linear'</span>: <span class="dv">1</span>, <span class="st">'quadratic'</span>: <span class="dv">2</span>, <span class="st">'cubic'</span>: <span class="dv">3</span>}[interpolation]</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>  X <span class="op">=</span> [i <span class="op">/</span>(<span class="bu">len</span>(colors) <span class="op">-</span><span class="dv">1</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(colors))]</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>  Y <span class="op">=</span> [[color[i] <span class="cf">for</span> color <span class="kw">in</span> colors] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)]</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>  channels <span class="op">=</span> [make_interp_spline(X, y, k<span class="op">=</span>k) <span class="cf">for</span> y <span class="kw">in</span> Y]</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">lambda</span> x: [np.clip(channel(x), <span class="dv">0</span>, <span class="dv">1</span>) <span class="cf">for</span> channel <span class="kw">in</span> channels]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b82b5b35" class="cell" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>black  <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>blue   <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>maroon <span class="op">=</span> (<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>navy   <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>red    <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<div id="31f3ec3f" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>black  <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>blue   <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>maroon <span class="op">=</span> (<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>navy   <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>red    <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [black, navy, blue, maroon, red, black]</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> make_gradient(colors, interpolation<span class="op">=</span><span class="st">'cubic'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="02a71193" class="cell" data-execution_count="46">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>num_colors <span class="op">=</span> <span class="dv">256</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize([gradient(i <span class="op">/</span>num_colors) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_colors)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="54fd708a" class="cell" data-execution_count="47">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">768</span>, <span class="dv">768</span>))</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.75</span>, width<span class="op">=</span><span class="fl">2.5</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [black, navy, blue, maroon, red, black]</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> make_gradient(colors, interpolation<span class="op">=</span><span class="st">'cubic'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="687505df" class="cell" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>num_colors <span class="op">=</span> <span class="dv">256</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>palette <span class="op">=</span> denormalize([gradient(i <span class="op">/</span>num_colors) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_colors)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="33d8be5a" class="cell" data-execution_count="47">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">768</span>, <span class="dv">768</span>))</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="dv">1000</span>)</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>viewport <span class="op">=</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.75</span>, width<span class="op">=</span><span class="fl">2.5</span>)</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>paint(mandelbrot_set, viewport, palette, smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>display(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1129,28 +1122,28 @@ z(9) = -1</code></pre>
 </ul>
 <p>To use such coordinates in <code>Pillow</code>, <span class="math inline">\(~\)</span>we must translate them to a tuple of RGB values in the familiar range of <code>0</code> to <code>255</code>:</p></li>
 </ul>
-<div id="9b30c3db" class="cell" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL.ImageColor <span class="im">import</span> getrgb</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hsb(hue_degrees: <span class="bu">int</span>, saturation: <span class="bu">float</span>, brightness: <span class="bu">float</span>):</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> getrgb( </span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"hsv(</span><span class="sc">{</span>hue_degrees <span class="op">%</span> <span class="dv">360</span><span class="sc">}</span><span class="ss">,"</span></span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>saturation <span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%,"</span></span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>brightness <span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%)"</span></span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">768</span>, <span class="dv">768</span>))</span>
-<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
-<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pixel <span class="kw">in</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.75</span>, width<span class="op">=</span><span class="fl">2.5</span>):</span>
-<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a>  stability <span class="op">=</span> mandelbrot_set.stability(<span class="bu">complex</span>(pixel), smooth<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a>  pixel.color <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="cf">if</span> stability <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> hsb(</span>
-<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a>    hue_degrees<span class="op">=</span><span class="bu">int</span>((<span class="dv">1</span> <span class="op">-</span> stability) <span class="op">*</span> <span class="dv">360</span>),</span>
-<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a>    saturation<span class="op">=</span><span class="dv">1</span> <span class="op">-</span> stability,</span>
-<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a>    brightness<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a>display(image) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="df83156a" class="cell" data-execution_count="48">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL.ImageColor <span class="im">import</span> getrgb</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hsb(hue_degrees: <span class="bu">int</span>, saturation: <span class="bu">float</span>, brightness: <span class="bu">float</span>):</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> getrgb( </span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"hsv(</span><span class="sc">{</span>hue_degrees <span class="op">%</span> <span class="dv">360</span><span class="sc">}</span><span class="ss">,"</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>saturation <span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%,"</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>brightness <span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%)"</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> Image.new(mode<span class="op">=</span><span class="st">'RGB'</span>, size<span class="op">=</span>(<span class="dv">768</span>, <span class="dv">768</span>))</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>mandelbrot_set <span class="op">=</span> MandelbrotSet(max_iterations<span class="op">=</span><span class="dv">20</span>, escape_radius<span class="op">=</span><span class="fl">1000.0</span>)</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pixel <span class="kw">in</span> Viewport(image, center<span class="op">=-</span><span class="fl">0.75</span>, width<span class="op">=</span><span class="fl">2.5</span>):</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>  stability <span class="op">=</span> mandelbrot_set.stability(<span class="bu">complex</span>(pixel), smooth<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>  pixel.color <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="cf">if</span> stability <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> hsb(</span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>    hue_degrees<span class="op">=</span><span class="bu">int</span>((<span class="dv">1</span> <span class="op">-</span> stability) <span class="op">*</span> <span class="dv">360</span>),</span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>    saturation<span class="op">=</span><span class="dv">1</span> <span class="op">-</span> stability,</span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>    brightness<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>display(image) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
