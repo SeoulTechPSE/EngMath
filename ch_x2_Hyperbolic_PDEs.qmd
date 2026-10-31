@@ -12,7 +12,7 @@ We will now begin to study the second major class of PDEs, $\,$<font color="red"
 
   We consider the small vibrations of a string that is fastened at each end
 
-  ![](figures/pde02_figure01.jpg "vibrating string"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure01.svg "vibrating string"){width="80%" fig-align="center"}
 
 * To mathematically describe the vibrations of this string, $\,$we consider all the forces acting on a small section $\Delta x$ of the string 
 
@@ -138,7 +138,7 @@ This is what we were aiming for, $\,$and it is called the **D'Alembert solution*
     u_t(x,0)&=0 
   \end{aligned}$$ 
 
-  ![](figures/pde02_figure03.jpg "Initial Wave Decomposed into Two Traveling Waves"){width="60%" fig-align="center"}
+  ![](figures/pde02_figure03.svg "Initial Wave Decomposed into Two Traveling Waves"){width="60%" fig-align="center"}
 
 * **Initial Velocity Given**
 
@@ -183,7 +183,7 @@ plt.close()
 ```
 
 ```{python}
-# | fig-cap: '<center><font size="3px">Initial Velocity Given: $\;u_t(x,0)=\sin t$</font></center>'
+# | fig-cap: '<center><font size="3px">Initial Velocity Given: $\;u_t(x,0)=\sin x$</font></center>'
 time_text = ax.text(-1.5, 1.3, '')
 line, = ax.plot([], [], lw=2)
 def init():
@@ -251,7 +251,7 @@ $~$
    x +ct&= x_0 +ct_0 
   \end{aligned}\quad\color{red}{\text{characteristic curves}}$$
 
-  ![](figures/pde02_figure04.jpg "xt-plane interpretation"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure04.svg "xt-plane interpretation"){width="80%" fig-align="center"}
 
 * For example, $\,$using this interpretation, $\,$the initial condition
 
@@ -266,7 +266,7 @@ $~$
 
   would give us the solution in the $\,xt$-plane shown in figure
 
-  ![](figures/pde02_figure05.jpg "solution in xt-plane"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure05.svg "solution in xt-plane"){width="80%" fig-align="center"}
 
 **CASE 2** <font color="red">$\,$Initial Displacement Zero; $\,$ Velocity Arbitrary</font>
 
@@ -291,9 +291,9 @@ $~$
     \end{cases}
   \end{aligned}$$
 
-  has a solution in the $\,tx$-plane in figure
+  has a solution in the $\,xt$-plane in figure
 
-  ![](figures/pde02_figure07.jpg "solution of initial velocity in xt-plane"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure07.svg "solution of initial velocity in xt-plane"){width="80%" fig-align="center"}
 
 * To find the displacement, $\,$we compute the D'Alembert solution
 
@@ -404,7 +404,7 @@ $~$
           g(\xi)\,d\xi +\frac{C}{2c} \\
       \end{aligned}} \tag{IM}\label{eq:IM}$$ 
 
-  * We now have a problem we didn't encounter when dealing with the infinite string. $\,$Since we are looking for the solution $\,u(x,t)\,$ <font color="blue">everywhere in the first quadrant $(x>0,\;t>0)\,$ of the $\,tx$ plane</font>, $\,$it is obvious that we must find
+  * We now have a problem we didn't encounter when dealing with the infinite string. $\,$Since we are looking for the solution $\,u(x,t)\,$ <font color="blue">everywhere in the first quadrant $(x>0,\;t>0)\,$ of the $\,xt$-plane</font>, $\,$it is obvious that we must find
 
     $$\begin{aligned}
       \phi(x -ct)
@@ -445,7 +445,7 @@ $~$
 
     are known as <font color="red">**characteristics**</font>, $\,$and it is along these lines that disturbances are propagated. $\,$<font color="red">Characteristics are generally associated with hyperbolic equations</font>
 
-![](figures/pde02_figure08.jpg "solution of semi-infinite string in xt-plane"){width="80%" fig-align="center"}
+![](figures/pde02_figure08.svg "solution of semi-infinite string in xt-plane"){width="80%" fig-align="center"}
 
 $~$
 
@@ -468,7 +468,7 @@ $$
     \end{array} && 0 < x <\infty 
   \end{aligned}$$
 
-![](figures/pde02_figure09.jpg "Example initial condition"){width="70%" fig-align="center"}
+![](figures/pde02_figure09.svg "Example initial condition"){width="70%" fig-align="center"}
 
 $~$
 
@@ -914,7 +914,7 @@ $\,$The differential equation then becomes
       &\color{blue}
       {\left.\begin{matrix}
         u = 0\\ 
-        u_\xi = u_\eta
+        u_\xi = u_\eta = 0
         \end{matrix} \;\;\right\} \;\text{ at } \xi=\eta \;\; \leftarrow 
        \left.\begin{matrix}
          u = 0 \\
@@ -926,28 +926,16 @@ $\,$The differential equation then becomes
   \begin{aligned}
    \\[5pt]
    &\Downarrow 
-     {\scriptstyle\text{ integrating with respect to } 
-      \xi \text{ and } \eta, \text{ respectively} }\\[5pt] 
-   u_\eta \;&{\scriptsize= -\frac{1}{4c^2} 
+     {\scriptstyle\text{ integrating with respect to } \xi \text{ from } \eta \text{ to } \xi}\\[5pt] 
+   u_\eta(\xi,\eta) \;&{\scriptsize= -\frac{1}{4c^2} 
     \int_\eta^\xi F\left(\bar{\xi}, \eta \right) 
-     \,d\bar{\xi} +c_1}, \:\:
-   u_\xi \;{\scriptsize= -\frac{1}{4c^2} 
-     \int_\xi^\eta F\left(\xi, \bar{\eta} \right) 
-      \,d\bar{\eta}  +c_1} \\[5pt] 
+     \,d\bar{\xi} +\underbrace{u_\eta(\eta,\eta)}_{=\,0}} \\[5pt] 
    &\Downarrow 
-   {\scriptstyle\text{ integrating with respect to } 
-    \eta \text{ and } \xi, \text{ respectively}}\\[5pt]
-    u \;&{\scriptsize= -\frac{1}{4c^2} \int_\eta^\xi 
+   {\scriptstyle\;\; u(\xi,\eta) = u(\xi,\xi) -\int_\eta^\xi u_\eta(\xi,\bar{\eta})\,d\bar{\eta}, \;\; u(\xi,\xi)=0}\\[5pt]
+    u \;&{\scriptsize= \frac{1}{4c^2} \int_\eta^\xi 
       \left[ \int_{\bar{\eta}}^\xi F\left( \bar{\xi}, 
        \bar{\eta} \right) \,d\bar{\xi} \right ] 
-        \,d\bar{\eta} +c_1 \eta +c_2} \\ 
-        \;&{\scriptsize= -\frac{1}{4c^2} \int_\xi^\eta 
-         \left[ \int_{\bar{\xi}}^\eta F\left( 
-          \bar{\xi}, \bar{\eta} \right) 
-          \,d\bar{\eta} \right ] \,d\bar{\xi}
-          +c_1 \xi +c_3} \\[5pt] 
-   &\Downarrow {\scriptstyle\text{Applying the initial conditions}} \\
-   {\scriptsize c_1} &{\scriptsize= c_2 = c_3}
+        \,d\bar{\eta}}
    \end{aligned}$$
 
   * We let $\,\bar{\xi}=\beta +c\tau\;$ and $\,\bar{\eta}=\beta -c\tau$, $\,$($t \ge \tau$, $\,\beta=x$). $\,$The domain of integration $\,\eta \leq \bar{\eta} \leq \bar{\xi} \leq \xi\;$ becomes
@@ -964,13 +952,13 @@ $\,$The differential equation then becomes
 
     $$
     \begin{aligned}
-     u &= -\frac{1}{4c^2} \int_\eta^\xi 
+     u &= \frac{1}{4c^2} \int_\eta^\xi 
      \left[ \int_{\bar{\eta}}^\xi F\left( \bar{\xi}, \bar{\eta} \right) 
      \,d\bar{\xi} \right ] \,d\bar{\eta} \\[5pt]
-    &\big\Downarrow {\scriptstyle \;\;d\bar{\xi}\,d\bar{\eta} \,=\,  \begin{vmatrix}
+    &\big\Downarrow {\scriptstyle \;\;d\bar{\xi}\,d\bar{\eta} \,=\,  \left|\begin{vmatrix}
     \frac{\partial \bar{\xi}}{\partial \beta}& \frac{\partial \bar{\xi}}{\partial \tau} \\ 
     \frac{\partial \bar{\eta}}{\partial \beta}& \frac{\partial \bar{\eta}}{\partial \tau} 
-    \end{vmatrix}  \,d\beta\,d\tau \,=\, -2c \,d\beta\,d\tau}\\[5pt]
+    \end{vmatrix}\right|  \,d\beta\,d\tau \,=\, \left|-2c\right| \,d\beta\,d\tau = 2c\,d\beta\,d\tau}\\[5pt]
     &=\frac{1}{2c} \int_0^{(\xi -\eta)/2c} \left[ \int_{\eta +c\tau}^{\xi -c\tau} F\left( \beta,\tau \right) \,d\beta \right ] \,d\tau \\[5pt]
     &\Downarrow {\scriptstyle  \;\xi=x +ct, \;\eta=x -ct} \\
     {\color{red}{u}}\; &{\color{red}{= \frac{1}{2c} \int_0^t \left[ \int_{x -c(t -\tau)}^{x +c(t -\tau)} F\left( \beta,\tau \right) \,d\beta \right ] \,d\tau}}
@@ -1121,7 +1109,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
       \,r\,\sin\phi \,d\phi\,d\theta  \right) }_{g(r)} dr \right] d\varrho } \\ 
       &= {\tiny \frac{1}{2\pi^2 c} \frac{\pi}{2} \int_0^\infty \sin ct \varrho \;\underbrace{\left[\frac{2}{\pi} \int_0^\infty 
       \sin r\varrho \,g(r)\,dr \right]}_{G(\varrho)} d\varrho  
-      = \frac{1}{4\pi c} \underbrace{\int_0^\infty \sin ct \varrho \;G(\rho)\,d\varrho}_{g(ct)} } \\ 
+      = \frac{1}{4\pi c} \underbrace{\int_0^\infty \sin ct \varrho \;G(\varrho)\,d\varrho}_{g(ct)} } \\ 
       &= {\tiny \frac{t}{4\pi (ct)^2} \int_0^{2\pi}\int_0^\pi  \psi(x +ct\sin\phi\cos\theta,y +ct\sin\phi\sin\theta, z+ct\cos\phi) 
       \,(ct)^2\sin\phi \,d\phi \,d\theta  }
       = {\normalsize\color{red}{t\bar{\psi}}}
@@ -1131,7 +1119,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
   * The interpretation of this solution is that the initial disturbance $\,\psi\,$ radiates outward spherically (velocity $c$) at each point, $\,$so that after so many seconds, $\,$the point $\,(x,y,z)$ will be influenced by those initial disturbances on a sphere (of radius $\,ct$) around that point
 
-    ![](figures/pde02_figure19.jpg "solution as the average of initial disturbances on a sphere"){width="80%" fig-align="center"}
+    ![](figures/pde02_figure19.svg "solution as the average of initial disturbances on a sphere"){width="80%" fig-align="center"}
 
   * Now, $\,$to finish the problem, $\,$what about the other half; $\,$that is
 
@@ -1141,9 +1129,9 @@ The problem of this section is to generalize the D'Alembert solution to two and 
     u_t(&x,y,z,0)=0 
     \end{aligned}} \tag{3Dp}\label{eq:3Dp}$$
 
-    This is easy: $\,$A famous theorem developed by *Stokes* says all we have to do to solve this problem is to change the ICs to $\,v=0$, $\,v_t=\phi$, $\,$and then differentiate this solution with respect to time:
+    This is easy: $\,$A famous theorem developed by *Stokes* says all we have to do to solve this problem is to change the ICs to $\,v=0$, $\,v_t=\phi$, $\,$and then differentiate this solution with respect to time. $\,$Indeed, $\,$if $\,v\,$ solves the wave equation with $\,v=0,\ v_t=\phi\,$ at $\,t=0$, $\,$then $\,u=v_t\,$ also solves the wave equation and
 
-    $$ v=\int_0^t u\,dt,\;v_t=u, \;u_{tt}=\frac{\partial}{\partial t} v_{tt}, \;u_{xx}=\frac{\partial}{\partial t} v_{xx}$$
+    $$ u(x,y,z,0)=v_t(x,y,z,0)=\phi, \qquad u_t(x,y,z,0)=v_{tt}(x,y,z,0)=c^2\nabla^2 v(x,y,z,0)=0 $$
 
   * In other words, $\,$we solve
 
@@ -1167,7 +1155,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
     $~$
 
-    ![](figures/pde02_figure20.jpg "diagram showing how initial disturbances affect a point"){width="60%" fig-align="center"}
+    ![](figures/pde02_figure20.svg "diagram showing how initial disturbances affect a point"){width="60%" fig-align="center"}
 
   * Suppose now the initial disturbances $\,\phi\,$ and $\,\psi\,$ are zero except for a small sphere. $\,$As time increases, $\,$the radius of the sphere around $(x,y,z)$ increases with velocity $\,c$
 
@@ -1175,7 +1163,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
   * For $\,t_2 < t < t_3$, $\,$the solution at $\,(x,y,z)\,$ will be nonzero, $\,$since the sphere intersects the disturbance region
 
-  * but when $\,t=t_3$, $\,$the solution at $\,(x,y,z)\,$ abruptly becomes zero again. $\,$In other words, $\,$the wave disturbance originating from the initial-disturbance region has a sharp trailing edge. $\,$This general principle is known as **Huygen's principle** for the three dimensions, $\,$and $\,$it is the reason why sound waves in three dimensions stimulate our ears but die off instantaneously when the wave has passed
+  * but when $\,t=t_3$, $\,$the solution at $\,(x,y,z)\,$ abruptly becomes zero again. $\,$In other words, $\,$the wave disturbance originating from the initial-disturbance region has a sharp trailing edge. $\,$This general principle is known as **Huygens' principle** for the three dimensions, $\,$and $\,$it is the reason why sound waves in three dimensions stimulate our ears but die off instantaneously when the wave has passed
 
 $~$
 
@@ -1229,7 +1217,7 @@ $~$
     \phi(x +r\cos\theta, y+r\sin\theta)\,\frac{1}{\sqrt{(ct)^2 -r^2}}\,\color{red}{r\,dr\,d\theta}
     \end{aligned}$$
 
-    Note that in this solution, $\,$the two integrals of the initial conditions $\,\phi\,$ and $\,\psi\,$ are integrated over the interior of a circle with center $\,(x,y)\,$ and radius $\,ct$. $\,$We see that initial disturbances give rise to sharp leading waves, $\,$but not to sharp trailing waves. $\,$Thus, Huygen's principle doesn't hold in two dimensions
+    Note that in this solution, $\,$the two integrals of the initial conditions $\,\phi\,$ and $\,\psi\,$ are integrated over the interior of a circle with center $\,(x,y)\,$ and radius $\,ct$. $\,$We see that initial disturbances give rise to sharp leading waves, $\,$but not to sharp trailing waves. $\,$Thus, Huygens' principle doesn't hold in two dimensions
 
 * **One-Dimensional Wave Equation**
 
@@ -1245,7 +1233,7 @@ $~$
   \bar{\phi}(x,t) &= \frac{1}{2ct} \int_{x-ct}^{x+ct} \phi(x)\,dx
   \end{aligned}$$
 
-  to the well-known D'Alembert solution. $\,$Note in the D'Alembert solution, $\,$the initial position $\,\phi\,$ gives rise to sharp trailing edges, $\,$but the initial velocity $\,\psi\,$ does not. $\,$In other words, $\,$one dimension is a little unusual in that the initial position satisfies Huygen's principle, $\,$but the initial velocity does not
+  to the well-known D'Alembert solution. $\,$Note in the D'Alembert solution, $\,$the initial position $\,\phi\,$ gives rise to sharp trailing edges, $\,$but the initial velocity $\,\psi\,$ does not. $\,$In other words, $\,$one dimension is a little unusual in that the initial position satisfies Huygens' principle, $\,$but the initial velocity does not
 
 $~$
 
@@ -1303,7 +1291,7 @@ $~$
 
 ## Boundary Conditions Associated with the Wave Equation {#sec-x2-22}
 
-The purpose of this section is to discuss some of the various types of BCs that are associated with physical problems of wave motions. $\,$Here, $\,$we will stick to one-dimensional problems where the BCs (linear ones) are generally groupded into one of three kinds
+The purpose of this section is to discuss some of the various types of BCs that are associated with physical problems of wave motions. $\,$Here, $\,$we will stick to one-dimensional problems where the BCs (linear ones) are generally grouped into one of three kinds
 
 * **First Kind: $\,$Controlled End Points**
 
@@ -1332,22 +1320,22 @@ The purpose of this section is to discuss some of the various types of BCs that 
 
   where we control the end points so that they move in a given manner
 
-  ![](figures/pde02_figure10.jpg "1st kind BC"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure10.svg "1st kind BC"){width="70%" fig-align="center"}
 
-  A typical problem of this kind would involve suddenly twisting (at $t=1$) the right end of a fastened rod so many degrees and observing the resulting tortional vibration
+  A typical problem of this kind would involve suddenly twisting (at $t=1$) the right end of a fastened rod so many degrees and observing the resulting torsional vibration
 
-  ![](figures/pde02_figure11.jpg "tortional vibration"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure11.svg "torsional vibration"){width="80%" fig-align="center"}
 
 * **Second Kind: $\,$Force Given on the Boundaries** 
 
-  In as much as the vertical forces on the string at the left and right ends are given by $\,Tu_x(0,t)\,$ and $\,Tu_x(1,t)$, $\,$respectively, $\,$by allowing the ends of the string to slide vertically on frictionless sleeves, $\,$the boundary conditions become
+  Inasmuch as the vertical forces on the string at the left and right ends are given by $\,-Tu_x(0,t)\,$ and $\,Tu_x(1,t)$, $\,$respectively, $\,$by allowing the ends of the string to slide vertically on frictionless sleeves, $\,$the boundary conditions become
 
   $$\begin{aligned}
   u_x(0,t)&=0 \\ 
   u_x(1,t)&=0
   \end{aligned}, \quad 0 < t < \infty$$
 
-  ![](figures/pde02_figure12.jpg "free BC"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure12.svg "free BC"){width="70%" fig-align="center"}
 
   If a vertical force $f(t)$ is applied at the end $x=1$, $\,$then the BC would be 
 
@@ -1357,7 +1345,7 @@ The purpose of this section is to discuss some of the various types of BCs that 
 
   Consider finally a violin string whose ends are attached to an elastic arrangement like the one shown in figure
 
-  ![](figures/pde02_figure13.jpg "elastic attachment"){width="60%" fig-align="center"}
+  ![](figures/pde02_figure13.svg "elastic attachment"){width="60%" fig-align="center"}
 
   Here, $\,$the spring attachments at each end give rise to vertical forces proportional to the displacements $\,-u(0,t)\,$ and $\,-u(1,t)$
 
@@ -1382,7 +1370,7 @@ The purpose of this section is to discuss some of the various types of BCs that 
   u_x(1,t) &=-\frac{h}{T} \left[u(1,t) -\theta_2(t) \right] 
   \end{aligned}$$
 
-  ![](figures/pde02_figure14.jpg "nonhomogeneous elastic attachment"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure14.svg "nonhomogeneous elastic attachment"){width="80%" fig-align="center"}
 
 $~$
 
@@ -1425,9 +1413,9 @@ $~$
     && 0 \leq x \leq L
   \end{aligned} \tag{FS}\label{eq:FS}$$
 
-  * What happens is that the traveling wave solution to the PDE and IC keeps reflecting from the boundaries in such a way that the wave motion does not to be moving, $\,$but, $\,$in fact, appears to be vibrating in one position:
+  * What happens is that the traveling wave solution to the PDE and IC keeps reflecting from the boundaries in such a way that the wave motion does not appear to be moving, $\,$but, $\,$in fact, appears to be vibrating in one position:
 
-    ![](figures/pde02_figure15.jpg "Standing Waves"){width="60%" fig-align="center"}
+    ![](figures/pde02_figure15.svg "Standing Waves"){width="60%" fig-align="center"}
 
   * We start by seeking standing-wave solutions to the PDE; $\,$that is solutions of the form
 
@@ -1499,7 +1487,7 @@ $$\scriptsize\begin{aligned}
 \normalsize u(x,t) \;&\normalsize= \sum_{n=1}^\infty \left[ a_n \cos\frac{n\pi c t}{L} +b_n \sin \frac{n\pi c t}{L} \right]\,\sin \frac{n\pi x}{L}\\[5pt]
  &= \frac{1}{2} \sum_{n=1}^\infty a_n\left[\sin \frac{n\pi}{L} (x+ct) +\sin \frac{n\pi}{L} (x-ct)\right ] 
 \\&\quad-\frac{1}{2} \sum_{n=1}^\infty b_n\left[\cos \frac{n\pi}{L} (x+ct) -\cos \frac{n\pi}{L} (x-ct)\right ]\\[5pt] 
- &\;\;\Big\Downarrow \;\; {\tiny\sum_{n=1}^\infty a_n \sin \frac{n\pi x}{L}=f(x), \;\;\sum_{n=1}^\infty b_n \frac{n\pi c}{L}\sin\frac{n\pi x}{L}=g(x) \;\rightarrow\, -\sum_{n=1}^\infty b_n\, c\cos \frac{n\pi x}{L} +\sum_{n=1}^\infty b_n c=\int^x_0 g(\alpha) d\alpha} \\[5pt]
+ &\;\;\Big\Downarrow \;\; {\tiny f,\,g \text{ extended as odd } 2L\text{-periodic functions}, \;\; \sum_{n=1}^\infty a_n \sin \frac{n\pi x}{L}=f(x), \;\;\sum_{n=1}^\infty b_n \frac{n\pi c}{L}\sin\frac{n\pi x}{L}=g(x) \;\rightarrow\, -\sum_{n=1}^\infty b_n\, c\cos \frac{n\pi x}{L} +\sum_{n=1}^\infty b_n c=\int^x_0 g(\alpha) d\alpha} \\[5pt]
  &\normalsize= \frac{1}{2}\left[ f(x+ct) +f(x-ct)\right] +\frac{1}{2c} \int_{x-ct}^{x+ct} g(\alpha)\,d\alpha 
 \end{aligned}$$
 
@@ -1609,7 +1597,7 @@ $$\begin{aligned}
 So, $\,$solving our new initial-value problem, $\,$we have
 
 $$\begin{aligned}
- U_1(t)&= \left( \frac{4}{\pi} -\frac{1}{\pi^2} \right) \,\cos\pi c t +\frac{1}{\pi^2}\\ 
+ U_1(t)&= \left( \frac{4}{\pi} -\frac{1}{\pi^2 c^2} \right) \,\cos\pi c t +\frac{1}{\pi^2 c^2}\\ 
  U_n(t) &= \begin{cases}
  \quad\;\; 0 & n=2,4,\cdots \\ 
  \displaystyle \frac{4}{n\pi}\cos n\pi c t & n=3,5,\cdots 
@@ -1618,8 +1606,10 @@ $$\begin{aligned}
 
 Hence, $\,$the solution $\,u(x,t)$ of the problem is
 
-$$ u(x,t)=\left[ \left( \frac{4}{\pi} -\frac{1}{\pi^2} \right) \,\cos\pi c t +\frac{1}{\pi^2} \right]\,\sin \pi x 
-+\frac{4}{\pi} \sum_{n=1}^\infty \frac{1}{2n +1} \cos(2n +1)\pi c t \, \sin(2n +1)\pi x$$
+$$\begin{aligned}
+u(x,t)&=\left[ \left( \frac{4}{\pi} -\frac{1}{\pi^2 c^2} \right) \,\cos\pi c t +\frac{1}{\pi^2 c^2} \right]\,\sin \pi x \\
+&\quad +\frac{4}{\pi} \sum_{n=1}^\infty \frac{1}{2n +1} \cos(2n +1)\pi c t \, \sin(2n +1)\pi x
+\end{aligned}$$
 
 ## The Vibrating Drumhead (Wave Equation in Polar Coordinates) {#sec-x2-25}
 
@@ -1677,7 +1667,7 @@ $~$
     &\Downarrow {\scriptsize U(r,\theta)=R(r)\Theta(\theta)}\\
     R''\Theta +\frac{1}{r}R' \Theta &+\frac{1}{r^2}R \Theta'' +\lambda R\Theta = 0 \\
     &\Downarrow \\
-    -\frac{r^2 R'' +rR' +\lambda r^2R}{R} &= \frac{\;\Theta''}{\Theta} = -\mu <0 \\
+    -\frac{r^2 R'' +rR' +\lambda r^2R}{R} &= \frac{\;\Theta''}{\Theta} = -\mu \leq 0 \\
     &\Downarrow \\
     \color{red}{\Theta'' +\mu \Theta} &\color{red}{=0} \\
     \color{red}{r^2 R'' +rR'} &\color{red}{+(\lambda r^2 -\mu) R =0}
@@ -1775,7 +1765,7 @@ ncols = 4
 nrows = 4
     
 fig, axs = plt.subplots(ncols=ncols, 
-    nrows=ncols, figsize=(7, 7), 
+    nrows=nrows, figsize=(7, 7), 
     subplot_kw=dict(projection='polar'))
 
 for ax in axs.flat:
@@ -1807,7 +1797,7 @@ $~$
 
   and add the products in such a way that the initial conditions are satisfied. $\,$That is, $\,$the solution to our problem will be
 
-  $$ \color{red}{u(r,\theta,t) = \sum_{n=0}^\infty \sum_{m=1}^\infty J_n(\alpha_{nm}r) \cos n\theta \left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]}$$
+  $$ \color{red}{u(r,\theta,t) = \sum_{n=0}^\infty \sum_{m=1}^\infty J_n(\alpha_{nm}r) \cos (n\theta -\phi_{nm}) \left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]}$$
 
   Rather than going through the complicated process of finding $\,A_{nm}\,$ and $\,B_{nm}\,$ for the general case, $\,$<font color="blue">we will find the solution for the situation where $\,u\,$ is independent of $\,\theta$ (very common, $\,n=0$). $\,$In other words, $\,$we will assume that the initial position of the drumhead depends only on $\,r$</font>
 
@@ -1818,7 +1808,7 @@ $~$
   u_t(r,\theta,0) &= 0 
   \end{aligned}$$
 
-  (It's just easy to do the case where $\,u_t \neq 0$). $\,$With these assumptions, $\,$the solution now becomes
+  (It's just as easy to do the case where $\,u_t \neq 0$). $\,$With these assumptions, $\,$the solution now becomes
 
   $$ u(r,t) = \sum_{m=1}^\infty A_{\color{red}{0}m} J_{\color{red}{0}}(\alpha_{\color{red}{0}m}r) \cos c\alpha_{\color{red}{0}m}t$$
 
@@ -2055,11 +2045,11 @@ $~$
 
     1. Try a transformation of the form $\tau=ct$, $\,$where $c$ is an unknown constant
     2. Compute $U_t=U_\tau\tau_t=cU_\tau$
-    3. Substitute this derivative into the the PDE to obtain
+    3. Substitute this derivative into the PDE to obtain
 
        $$cU_\tau =\frac{\alpha}{L^2} U_{\xi\xi}$$
 
-    and, $\,$hence, $\,$pick $\displaystyle c=\frac{\alpha}{L^2}$. This give us our new time
+    and, $\,$hence, $\,$pick $\displaystyle c=\frac{\alpha}{L^2}$. This gives us our new time
    
   $$ \tau=\frac{\alpha}{L^2} t $$
 
@@ -2074,7 +2064,7 @@ $~$
       &
       \begin{array}{l}
         = 0 \\ = 1
-      \end{array} && 0 < t < \infty \\[5pt]
+      \end{array} && 0 < \tau < \infty \\[5pt]
       U(\xi,0) &= \frac{\sin\pi\xi -T_1}{T_2 -T_1} && 0 \leq \xi \leq 1  
     \end{aligned}$$ 
 
@@ -2103,7 +2093,7 @@ $~$
     \end{array} && 0 < x < L
   \end{aligned}$$
 
-* By transforming the independent variables (no need to transform $u$) into a new ones
+* By transforming the independent variables (no need to transform $u$) into new ones
 
   $$ \xi=\frac{x}{L}\; \text{ and } \;\tau=\frac{c}{L} t $$ 
 
@@ -2140,7 +2130,7 @@ $$ u_t +vu_x=0 $$
 
 $~$
 
-## $~$Classification of PDEs (Cannonical Form of the Hyperbolic Equation) {#sec-x2-27}
+## $~$Classification of PDEs (Canonical Form of the Hyperbolic Equation) {#sec-x2-27}
 
 * The purpose here is to classify the second-order linear PDE 
 
@@ -2154,7 +2144,7 @@ $~$
 
   * <font color="red">Elliptic $~~~~~\,$ if $\,B^2 -4AC < 0~$ at $\,(x,y)$ </font>  
 
-* and depending on which is true, $\,$<font color="blue">the equation can be transformed into a corresponding cannonical (simple) form by introducing new coordinates $\,\xi=\xi(x,y)$ $\,$and $\,\eta=\eta(x,y)$</font>
+* and depending on which is true, $\,$<font color="blue">the equation can be transformed into a corresponding canonical (simple) form by introducing new coordinates $\,\xi=\xi(x,y)$ $\,$and $\,\eta=\eta(x,y)$</font>
 
   $$\begin{aligned}
     u_{\xi\eta} = \Phi(\xi,\eta,u,u_\xi,u_\eta) 
@@ -2239,7 +2229,7 @@ $~$
 
   in which $\,J\,$ is the Jacobian of the transformation and we select the transformation $\,(\xi,\eta)\,$ such that $\,J \neq 0$
 
-* <font color="blue">The next step in our process is to set the coefficients $\,\bar{A}\,$ and $\,\bar{C}\,$ to zero and solve for the tranformation $\,\xi\,$ and $\,\eta\,$</font>. $\,$This will give us the coordinates that reduce the original PDE to canonical form:
+* <font color="blue">The next step in our process is to set the coefficients $\,\bar{A}\,$ and $\,\bar{C}\,$ to zero and solve for the transformation $\,\xi\,$ and $\,\eta\,$</font>. $\,$This will give us the coordinates that reduce the original PDE to canonical form:
 
   $$\begin{aligned}
   \bar{A}=&\;A\xi_x^2 +B\xi_x \xi_y +C\xi_y^2 =0\\
@@ -2254,7 +2244,7 @@ $~$
 
 * We have now reduced the problem to finding the two functions $\,\xi(x,y)\,$ and $\,\eta(x,y)\,$ so that their ratio $\,[\xi_x/\xi_y]\,$ and $\,[\eta_x/\eta_y]\,$ satisfy the above equation. $\,$Finding functions satisfying these conditions is really quite easy once we look for a few moments at figure
 
-  ![](figures/pde02_figure16.jpg "characteristic curves"){width="65%" fig-align="center"}
+  ![](figures/pde02_figure16.svg "characteristic curves"){width="65%" fig-align="center"}
 
   $$\begin{aligned}
     &\big\Downarrow \;\;{\scriptsize \xi = \text{constant}, \eta = \text{constant}}\\
@@ -2293,7 +2283,7 @@ $$\begin{array}{l}
    \eta =y-2x=c_2
  \end{array}$$
 
-![](figures/pde02_figure17.jpg "Characteristic Curves2"){width="50%" fig-align="center"}
+![](figures/pde02_figure17.svg "Characteristic Curves2"){width="50%" fig-align="center"}
 
 $~$
 
@@ -2306,21 +2296,21 @@ which is a hyperbolic equation in the first quadrant. $\,$We consider the proble
 **STEP 1** $\,$ Solve the two characteristic equations
 
 $$\begin{aligned}
- \frac{dy}{dx} &=-\left[ \frac{\xi_x}{\xi_y} \right]=\frac{B -\sqrt{B^2-4AC}}{2A} =-\frac{x}{y}\\
- \frac{dy}{dx} &=-\left[ \frac{\eta_x}{\eta_y} \right]=\frac{B +\sqrt{B^2-4AC}}{2A} =\frac{x}{y}\\
+ \frac{dy}{dx} &=-\left[ \frac{\eta_x}{\eta_y} \right]=\frac{B -\sqrt{B^2-4AC}}{2A} =-\frac{x}{y}\\
+ \frac{dy}{dx} &=-\left[ \frac{\xi_x}{\xi_y} \right]=\frac{B +\sqrt{B^2-4AC}}{2A} =\frac{x}{y}\\
 \end{aligned}$$
 
 Integrating these two equations by the ODE technique of separating variables gives the implicit relationship
 
 $$\begin{aligned}
- y^2 &-x^2 = c_1 \\ 
  y^2 &+x^2 = c_2 \\ 
+ y^2 &-x^2 = c_1 \\ 
  &\Downarrow \\ 
  \xi= \,&y^2 -x^2 \\
  \eta = \,&y^2 +x^2
 \end{aligned}$$
 
-![](figures/pde02_figure18.jpg "Characteristic Curves3"){width="70%" fig-align="center"}
+![](figures/pde02_figure18.svg "Characteristic Curves3"){width="70%" fig-align="center"}
 
 
 We substitute this new coordinate into the equation to find the new equation
@@ -2374,11 +2364,11 @@ $~$
   Suppose $\,\xi\,$ is calculated. $\,$What could be the possible choice for $\,\eta\,$? 
  $\,$We can select $\,\eta\,$ as any arbitrary function of $\,x\,$ and $\,y\,$ such that $\,\eta\,$ is independent of $\,\xi\,$ ($J \neq 0$)
 
-* In the general elliptic case, $\,A\lambda^2 +B\lambda +C=0\,$ leads to complex conjugate canonical tramsformation $\,\xi\,$ and $\,\eta$. $\,$Since $\,\xi\,$ and $\,\eta\,$ are complex, $\,$we introduce new real variables
+* In the general elliptic case, $\,A\lambda^2 +B\lambda +C=0\,$ leads to complex conjugate canonical transformation $\,\xi\,$ and $\,\eta$. $\,$Since $\,\xi\,$ and $\,\eta\,$ are complex, $\,$we introduce new real variables
 
   $$\begin{aligned}
      \alpha &= \frac{1}{2}(\xi +\eta)\\ 
-     \beta &= \frac{1}{2i}(\xi -i\eta)
+     \beta &= \frac{1}{2i}(\xi -\eta)
     \end{aligned}$$
 
   Under the transformation $\,(x, y)\to (\alpha, \beta)$, $\,$the canonical form is given by
@@ -2397,7 +2387,7 @@ $~$
 
 ## $~$First-Order Equations (Method of Characteristics) {#sec-x2-28}
 
-* If the student recalls, $\,$when we solved the diffusion equation
+* If the student recalls, $\,$when we solved the diffusion-convection equation
 
   $$ u_t=\alpha u_{xx} - vu_x, \quad -\infty < x < \infty, \;\; 0 < t < \infty$$
 
@@ -2423,9 +2413,9 @@ $~$
 
   $$u(x,0)=\phi(x), \;\; {-\infty<x<\infty,\;\; 0< t < \infty}$$
 
-  The solution to this equation is based on a physical fact, $\,$that <font color="blue">an initial disturbance at some point $\,x\,$ propagates along a line (curve) in the $\,tx$-plane (called a characteristic)</font>
+  The solution to this equation is based on a physical fact, $\,$that <font color="blue">an initial disturbance at some point $\,x\,$ propagates along a line (curve) in the $\,xt$-plane (called a characteristic)</font>
 
-  ![](figures/pde02_figure22.jpg "characteristics"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure22.svg "characteristics"){width="70%" fig-align="center"}
 
 * With this in mind, $\,$the idea is to introduce two new coordinates $\,s\,$ and $\,\tau$ (to replace $\,x\,$ and $\,t$) that have the properties
 
@@ -2468,7 +2458,7 @@ $$\begin{aligned}
   x - t = \tau, \;\;\;&-\infty < \tau < \infty
 \end{aligned}$$
 
-![](figures/pde02_figure23.jpg "new coordinates"){width="60%" fig-align="center"}
+![](figures/pde02_figure23.svg "new coordinates"){width="60%" fig-align="center"}
 
 **STEP 2** $\,$ Using this coordinate system, $\,$we change the PDE to the ODE
 
@@ -2482,7 +2472,7 @@ $$\begin{aligned}
 
 $$u(x,t) = \sin(x -t) \cdot e^{-2t}$$
 
-![](figures/pde02_figure24.jpg "solution"){width="60%" fig-align="center"}
+![](figures/pde02_figure24.svg "solution"){width="60%" fig-align="center"}
 
 $~$
 
@@ -2571,7 +2561,7 @@ $~$
 
   If we carried out a similar analysis in two or three dimensions, $\,$we would have
 
-  $$u_t +f_x +f_y=0, \;\; u_t +f_x +f_y +f_z=0$$
+  $$u_t +\nabla\cdot\mathbf{f}=0: \quad u_t +(f_1)_x +(f_2)_y=0, \;\; u_t +(f_1)_x +(f_2)_y +(f_3)_z=0$$
 
 $~$
 
@@ -2587,19 +2577,19 @@ $~$
 
     $$ u_t +\frac{df}{du}u_x=u_t+g(u)u_x=0$$
 
-    where we can imagine a car moving upstream or downstream with velocity $\,g(u)$
+    where we can imagine a disturbance (wave) in the traffic density moving upstream or downstream with velocity $\,g(u)$
 
-  * Hence, after $\,t\,$ minutes, the position $\,x\,$ of the car will be
+  * Hence, after $\,t\,$ minutes, the position $\,x\,$ of the disturbance will be
 
     $$x = x_0 +g(u)t, \quad\text{characteristic equation}$$
 
-   * Remembering that <font color="blue">the concentration $\,u(x,t)\,$ will not change along each characteristic</font>, $\,$if we know the initial density $\,u(x_0,0)$, then the characteristic equation for $\,x\,$ can be written
+   * Remembering that <font color="blue">the density $\,u(x,t)\,$ will not change along each characteristic</font>, $\,$if we know the initial density $\,u(x_0,0)$, then the characteristic equation for $\,x\,$ can be written
 
     $$x=x_0+g[u(x_0,0)]t$$
 
   * It is clear that by knowing these characteristic curves starting from each point (and knowing the solution doesn't change along these curves), $\,$we can piece together the solution $\,u(x,t)\,$ for all time $\,t$. $\,$We won't actually find the explicit equation for the solution $\,u(x,t)\,$ in terms of $\,x\,$ and $\,t\,$ but will use our knowledge of the characteristics of the equation to solve some interesting problems
 
-![](figures/pde02_figure25.jpg "characteristic curves"){width="40%" fig-align="center"}
+![](figures/pde02_figure25.svg "characteristic curves"){width="40%" fig-align="center"}
 
 $~$
 
@@ -2613,11 +2603,11 @@ $~$
   $$u(x,0) = 
   \begin{cases}
   \;\;\; 1 & x \leq 0\\ 
-  1 -x     & 0 < x < 1, \;-\infty < x <\infty \\ 
+  1 -x     & 0 < x < 1 \\ 
   \;\;\; 0 & 1 \leq x 
   \end{cases}$$
 
-![](figures/pde02_figure26.jpg "initial density"){width="60%" fig-align="center"}
+![](figures/pde02_figure26.svg "initial density"){width="60%" fig-align="center"}
 
 **STEP 1**
 
@@ -2652,7 +2642,7 @@ $$\begin{aligned}
 
 which represents vertical lines starting at $\,x_0$
 
-![](figures/pde02_figure27.jpg "characteristics"){width="80%" fig-align="center"}
+![](figures/pde02_figure27.svg "characteristics"){width="80%" fig-align="center"}
 
 The solution remains constant along each characteristic line. $\,$Now the solution for $\,x \in \mathbb{R}$, $\,0 \leq t <\textstyle\frac{1}{2}\,$ is given by
 
@@ -2667,17 +2657,17 @@ $$u(x,t)=
 The difficulty in this example is
 that some characteristic lines will intersect each other. $\,$In other words, $\,$<font color="red">at the intersection point $\,(1,\textstyle \frac{1}{2})\,$ of the two characteristic lines, $\,$the solution becomes multi-valued</font>. $\,$This pathology means that the solution in the usual sense fails to exist after $\,t \geq \textstyle \frac{1}{2}$
 
-![](figures/pde02_figure28.jpg "density of traffic at different values of time"){width="50%" fig-align="center"}
+![](figures/pde02_figure28.svg "density of traffic at different values of time"){width="50%" fig-align="center"}
 
 **STEP 2**
 
-* Hence, $\,$to find the solution past $\,t=\textstyle \frac{1}{2}$, $\,$we must use another type of analysis. $\,$<font color="red">When characteristics run together, $\,$we have the phenomenon of shock waves (discontinuous solutions)</font>, $\,$and what we must ask is, $\,$how fast does the leading edge of the shork wave propagate along the road?
+* Hence, $\,$to find the solution past $\,t=\textstyle \frac{1}{2}$, $\,$we must use another type of analysis. $\,$<font color="red">When characteristics run together, $\,$we have the phenomenon of shock waves (discontinuous solutions)</font>, $\,$and what we must ask is, $\,$how fast does the leading edge of the shock wave propagate along the road?
 
 * Before proceeding further, $\,$it is necessary to introduce the concept of <font color="red">a jump condition: a condition that holds at a discontinuity or abrupt change</font>. $\,$Consider one dimensional problem where there is a jump in the conserved quantity $\,u$:
 
   $$u_t +f_x=0$$
 
-  Let the solution exhibit a jump (or shork) at $\,x=x_s(t)\,$ and integrate over the partial domain, $\,x \in (x_1, x_2)$, $\,$where $\,x_1 < x_s(t) < x_2$,
+  Let the solution exhibit a jump (or shock) at $\,x=x_s(t)\,$ and integrate over the partial domain, $\,x \in (x_1, x_2)$, $\,$where $\,x_1 < x_s(t) < x_2$,
 
   $$\scriptsize \begin{aligned}
   \frac{d}{dt} \left( \int_{x_1}^{x_s(t)}u\,dx +\int_{x_s(t)}^{x_2}u \,dx\right)&= -\int_{x_1}^{x_2} 
@@ -2691,13 +2681,13 @@ that some characteristic lines will intersect each other. $\,$In other words, $\
   s=\frac{d x_s}{dt} &=\frac{f(u^-(x_s(t),t)) -f(u^+(x_s(t),t))}{ u^-(x_s(t),t) -u^+(x_s(t),t)}
   \end{aligned}$$
 
-  in which $\,s\,$ is the speed of the discontinuity and represents the jump condition for conservation eqaution 
+  in which $\,s\,$ is the speed of the discontinuity and represents the jump condition for the conservation equation 
 
-* A shork situation arises in a system where its characteristics intersect, $\,$and under these conditions a requirement for a unique single-valued solution is that the solution should satisfy the Lax entropy condition
+* A shock situation arises in a system where its characteristics intersect, $\,$and under these conditions a requirement for a unique single-valued solution is that the solution should satisfy the Lax entropy condition
 
   $$f'(u^+(x_s(t),t)) < s < f'(u^-(x_s(t),t))$$
 
-  where $f'(u^+(x_s(t),t))\,$ and $\,f'(u^-(x_s(t),t))\,$ represent characteristic speeds at upstream and downstream conditions, respectively
+  where $f'(u^+(x_s(t),t))\,$ and $\,f'(u^-(x_s(t),t))\,$ represent characteristic speeds at downstream and upstream conditions, respectively
 
 * So, $\,$in our example, $\,$the speed of the wave front would be(remembering that $\,f(u)=u^2$)
 

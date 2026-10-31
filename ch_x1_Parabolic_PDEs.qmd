@@ -17,12 +17,12 @@ jupyter: python3
   $$
   \begin{aligned}
      u_t &= u_{xx}, &&\scriptsize\text{heat equation in one dimension} \\[5pt]
-     u_t &= u_{xx}+u_{yy}, &&\scriptsize\text{heat equation in two dimension} \\[5pt]
-     u_{tt} &= u_{xx}+u_{yy}+u_{zz}, &&\scriptsize\text{wave equation in three dimension} \\
+     u_t &= u_{xx}+u_{yy}, &&\scriptsize\text{heat equation in two dimensions} \\[5pt]
+     u_{tt} &= u_{xx}+u_{yy}+u_{zz}, &&\scriptsize\text{wave equation in three dimensions} \\
      u_{rr} &+\frac{1}{r}u_r+\frac{1}{r^2}u_{\theta\theta}=0, &&\scriptsize\text{Laplace's equation in polar coordinates}
   \end{aligned}$$
 
-* The unknown function $u$ always depends on more than one variable. $\,$The variable $u$ (which we differentiate) is called the <font color="blue">**dependent** variable</font>, $\,$whereas the ones differentiate *with respect to* are called the <font color="blue">**independent** variables</font>
+* The unknown function $u$ always depends on more than one variable. $\,$The variable $u$ (which we differentiate) is called the <font color="blue">**dependent** variable</font>, $\,$whereas the ones we differentiate *with respect to* are called the <font color="blue">**independent** variables</font>
 
 * **Classification** is an important concept because the general theory and methods of solution apply only to a given class of equations. $\,$<font color="blue">Six basic classifications are</font>:
 
@@ -93,11 +93,11 @@ jupyter: python3
   
     $yu_{xx}+u_{yy}=0$
 
-![](figures/pde_classification.jpg "PDE classification"){width="60%," fig-align="center"}    
+![](figures/pde_classification.svg "PDE classification"){width="60%" fig-align="center"}    
 
 ## Diffusion-Type Problems (Parabolic Equations) {#sec-x1-2}
 
-![](figures/pde01_figure01.jpg "heat flow experiment"){width="90%" fig-align="center"}
+![](figures/pde01_figure01.svg "heat flow experiment"){width="90%" fig-align="center"}
 
 * **The Mathematical Model of the Heat-Flow**
 
@@ -134,7 +134,7 @@ jupyter: python3
 
   $$ u(x,0) = T_0, \;\; 0 \leq x \leq L \tag{IC}\label{eq:IC}$$
 
-  By writing \eqref{eq:HE}, \eqref{eq:BCs}, and \eqref{eq:IC} together, $\,$we have what is called an <font color="red">*initial-boundary-value problem*</font>. The interesting here, which is not at all obvious, is that there is only one function $u(x,t)$ that satisfies the problem
+  By writing \eqref{eq:HE}, \eqref{eq:BCs}, and \eqref{eq:IC} together, $\,$we have what is called an <font color="red">*initial-boundary-value problem*</font>. The interesting thing here, which is not at all obvious, is that there is only one function $u(x,t)$ that satisfies the problem
 
 * **More Diffusion-Type Equations**
 
@@ -166,7 +166,7 @@ jupyter: python3
 
 $~$
 
-![](figures/pde01_figure05.jpg "thin conducting rod"){width="70%" fig-align="center"}
+![](figures/pde01_figure05.svg "thin conducting rod"){width="70%" fig-align="center"}
 
 * Suppose we have a one-dimension rod of length $L$ for which we make the following assumptions:
 
@@ -208,13 +208,13 @@ $~$
 
 ## Boundary Conditions for Diffusion-Type Problems {#sec-x1-4}
 
-* When describing the various types of boundary conditions that can occur for heat-flow problems, <font colkor="blue">three basic types generally come to mind</font>
+* When describing the various types of boundary conditions that can occur for heat-flow problems, <font color="blue">three basic types generally come to mind</font>
 
 * **Type 1 BC (Temperature specified on the boundary)** 
 
-  ![](figures/pde01_figure02.jpg "type 1 BC"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure02.svg "type 1 BC"){width="70%" fig-align="center"}
 
-  ![](figures/pde01_figure03.jpg "oscillating BC"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure03.svg "oscillating BC"){width="70%" fig-align="center"}
 
   * Of course, we'd have an initial temperature to get this experiment started, but in this case, the effects of our IC would vanish after a short period of time, and the resulting temperature inside the circle would depend on the boundary temperature
 
@@ -240,11 +240,11 @@ For example, if the circular disc insulated on the boundary, then the BC would b
 
 * **Type 3 BC (Temperature of the surrounding medium specified)**
 
-  ![](figures/pde01_figure04.jpg "convective cooling at boundary"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure04.svg "convective cooling at boundary"){width="60%" fig-align="center"}
 
   * By specifying these types of BCs, $\,$we cannot say the boundary temperatures of the rod will be the same as the liquid temperature $g_1(t)$ and $g_2(t)$,
 
-  * but we do know (Newton's law of cooling) that whenever the rod temperature at one of the boundaries is less than the respective liquid temperatures, $\,$then heat will flow into the rod at a rate proportional to this differance
+  * but we do know (Newton's law of cooling) that whenever the rod temperature at one of the boundaries is less than the respective liquid temperatures, $\,$then heat will flow into the rod at a rate proportional to this difference
 
   * In other words, for the one-dimensional rod with boundaries at $x=0$ and $L$, $\,$Newton's law of cooling states:
 
@@ -262,7 +262,7 @@ For example, if the circular disc insulated on the boundary, then the BC would b
 
     where $k$ is the thermal conductivity of the material
 
-  * Finally if we use the two experssions for heat flux, $\,$we have our desired BCs in purely mathematical terms;
+  * Finally if we use the two expressions for heat flux, $\,$we have our desired BCs in purely mathematical terms;
 
     $$\begin{array}{l}
     \displaystyle\frac{\partial u(0,t)}{\partial x} 
@@ -301,7 +301,7 @@ For example, if the circular disc insulated on the boundary, then the BC would b
       u(x, 0) &= \phi(x) && 0 \leq x \leq L
   \end{aligned}$$
 
-  ![](figures/pde01_figure06.jpg "diffusion problem"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure06.svg "diffusion problem"){width="70%" fig-align="center"}
 
 **STEP 1** $\,$ To begin, $\,$we look for solutions of the form $u(x,t)=X(x)T(t)$ by substituting $X(x)T(t)$ into the PDE
 
@@ -405,109 +405,13 @@ $$\begin{aligned}
 
 $~$
 
-## Transforming Nonhomogeneous BCs into Homogeneous Ones {#sec-x1-6}
-
-* Consider heat flow in an insulated rod where the two ends are kept at constant temperatures $k_1$ and $k_2$:
-
-  $$\begin{array} {r} u(0,t) = k_1\\ u(L,t) = k_2 \end{array}, \qquad\quad 0<t<\infty$$ {#eq-Heat_nh} 
-
-* The difficulty here is that since the BCs are not homogeneous, $\,$we cannot solve this problem by separation of variables
-
-* However, $\,$it is obvious that the solution will have a steady-state solution (when $t=\infty$) that varies linearly between the boundary temperatures $k_1$ and $k_2$
-
-  ![](figures/pde01_figure07.jpg "nonhomogeneous BCa"){width="70%" fig-align="center"}
-
-* In other words, $\,$it seems reasonable to think of our temperature $u(x,t)$ as the sum of two parts
-
-  $$
-  \begin{aligned}
-    u(x,t) &=\underbrace{\text{steady state}}_{\text{Eventual Solution for Large Time}} 
-        +\underbrace{\text{transient}}_{\underset{\text{(and will go to zero)}}{\text{Part of the Solution that depends on the IC}}}\\ 
-        &\Downarrow \\ 
-        &= \left[ k_1 +\frac{x}{L}(k_2 -k_1) \right] +U(x,t)
-  \end{aligned}$$
-
-* By substituting the above relation in the original problem @eq-Heat_nh, $\text{ }$we arrive at a new problem in $U(x,t)$:
-
-  $${U_t = \alpha U_{xx},\quad 0 < x < L,\; 0 < t < \infty} $$
-
-  $${\scriptsize\color{blue}{\begin{array}{r}
-    U(0,t)=0 \\ 
-    U(L,t)=0 
-  \end{array}, \;\; 0<t<\infty}, \;\;
-  U(x,0)=\phi(x)
-  -\left[ k_1 +\displaystyle\frac{x}{L}(k_2 -k_1) \right]
-  =\bar{\phi}(x), \;\; 0\leq x \leq L}$$
-
-* **Transforming Time Varying BCs to Zero BCs**
-
-  * What about more realistic-type derivative BCs with time-varying right-hand sides? Consider the typical problem
-
-    $$
-    \begin{aligned}
-      u_t &= \alpha u_{xx} && 0 < x < L, \;0 < t <\infty \\
-      u(0,t) &= g_1(t) && 0 < t < \infty \\
-      u_x(L,t) +hu(L,t) &= g_2(t) && \\
-      u(x,0) &=\phi(x) && 0 \leq x \leq L 
-    \end{aligned}$$ {#eq-Heat_nh2}
-
-  * To change these nonezero BCs to homogeneous ones, $\,$we (after some trial and error) seek a solution of the form:
-
-    $$ u(x,t)=\underbrace{A(t)\left[1-\frac{x}{L}\right] +B(t)\frac{x}{L}}_{S(x,t)}+U(x,t)$$
-
-    where $A(t)$ and $B(t)$ are chosen so that $S(x,t)$ satisfies the BCs and thus
-
-    $$\begin{array}{r} U(0,t) = 0\\ U_x(L,t)+hU(L,t) = 0 \end{array}, \quad 0<t<\infty$$
-
-  * Substituting $S(x,t)$ into the BCs gives
-
-    $$ \begin{aligned} 
-        S(0,t) &= g_1(t)\\ 
-        S_x(L,t)+hS(L,t) &= g_2(t) 
-      \end{aligned}, \quad 0<t<\infty $$
-
-    in which we get
-
-    $$\begin{aligned} 
-       A(t)&= g_1(t)\\ 
-       B(t)&= \frac{g_1(t) +Lg_2(t)}{1+Lh} 
-      \end{aligned}, \quad 0<t<\infty$$
-
-  * So if we substitute this into the original problem @eq-Heat_nh2, $\,$we get the transformed problem in $U(x,t)$:
-
-    $$
-    \begin{aligned}
-      U_t &= \alpha U_{xx} -\color{red}{S_t} && 0 < x <L, \;0 < t <\infty \\
-      U(0,t) &= 0 && 0 < t < \infty\\ 
-      U_x(L,t) +hU(L,t) &= 0 && \\
-      U(x,0) &= \phi(x)-S(x,0) && 0 \leq x \leq L
-    \end{aligned}$$
-
-    * We now have our new problem with zero BCs but unfortunately the PDE is nonhomogeneous
-
-    * We cannot solve this problem by separation of variables, $\,$but we will solve it  by integral transforms and eigenfuction expansions
-
-$~$
-
-**Example** $\,$Solve the initial-boundary-value problem
-
-$$
-  \begin{aligned}
-    u_t &= \alpha u_{xx} && 0 < x < 1, \;0 < t <\infty \\
-    u(0,t) &= 1 && 0 < t < \infty\\ 
-    u_x(1,t) +hu(1,t) &= 1 && \\
-    u(x,0) &= \sin\pi x +x && 0 \leq x \leq 1
-  \end{aligned}$$
-
-$~$
-
-## Solving More Complicated Problems by Separation of Variables {#sec-x1-7}
+## Solving More Complicated Problems by Separation of Variables {#sec-x1-6}
 
 * We start with a one-dimensional heat-flow problem where one of the BCs contains derivatives
 
 * **Heat-Flow Problem with 3^rd^ kind BC**
 
-  ![](figures/pde01_figure08.jpg "Heat-Flow Problem with 3^rd^ kind BC"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure08.svg "Heat-Flow Problem with 3^rd^ kind BC"){width="60%" fig-align="center"}
 
 * We fix the temperature at the top of the rod at $u(0,t)=0$ and immerse the bottom of the rod in a solution of water fixed at the same temperature of zero. The natural flow of heat says that the BC at $x=1$ is
 
@@ -578,16 +482,16 @@ def example_plot(h, n_eig, sqrt_eig):
     plt.figure(figsize=(7, 4))
 
     plt.plot(x, y, linewidth=1.2, color="blue")
-    plt.plot(x,-x, linewidth=1.2, color="green")
-    plt.scatter(sqrt_eig,-sqrt_eig, color='red')
+    plt.plot(x,-x/h, linewidth=1.2, color="green")
+    plt.scatter(sqrt_eig,-sqrt_eig/h, color='red')
     
     plt.xticks([0, np.pi, 2*np.pi, 3*np.pi, 4*np.pi, 5*np.pi], 
             ['0',r'$\pi$',r'$2\pi$',r'$3\pi$',r'$4\pi$',r'$5\pi$'])
     plt.xlim(0, 5.0*np.pi)
     plt.ylim(-20, 20)
     
-    plt.xlabel(r'$\sqrt{\lambda}/h$')
-    plt.ylabel(r'$\\tan \sqrt{\lambda}$, $-\sqrt{\lambda}/h$')
+    plt.xlabel(r'$\sqrt{\lambda}$')
+    plt.ylabel(r'$\tan \sqrt{\lambda}$, $-\sqrt{\lambda}/h$')
     plt.title(r'$h=%3.1f$' % h)
     plt.grid()
     
@@ -613,7 +517,7 @@ example_plot(h, n_eig, sqrt_eig)
 ```{python}
 #| output: asis
 for i in range(n_eig):
-  print(rf'$$ \lambda_{i +1} = {np.round(sqrt_eig[i], 2)} $$')
+  print(rf'$$ \lambda_{i +1} = {np.round(sqrt_eig[i]**2, 2)} $$')
 ```
 
 $~$
@@ -696,7 +600,7 @@ def cal_c_n(sqrt_eig):
            /(sqrt_eig -sin_sqrt_eig *cos_sqrt_eig))
 
 c_n = cal_c_n(sqrt_eig)
-print('$,\;\;$'.join([rf'$c_{i} = {c_i: 6.4f}$' 
+print(r'$,\;\;$'.join([rf'$c_{i} = {c_i: 6.4f}$' 
               for i, c_i in enumerate(c_n, 1)]))
 ```
 
@@ -734,9 +638,105 @@ t = np.linspace(0.1, 0.5, 4)
 example_plot3(alpha, t, x, n_eig, sqrt_eig, eigfunc, u_solution)
 ```
 
+## Transforming Nonhomogeneous BCs into Homogeneous Ones {#sec-x1-7}
+
+* Consider heat flow in an insulated rod where the two ends are kept at constant temperatures $k_1$ and $k_2$:
+
+  $$\begin{array} {r} u(0,t) = k_1\\ u(L,t) = k_2 \end{array}, \qquad\quad 0<t<\infty$$ {#eq-Heat_nh} 
+
+* The difficulty here is that since the BCs are not homogeneous, $\,$we cannot solve this problem by separation of variables
+
+* However, $\,$it is obvious that the solution will have a steady-state solution (when $t=\infty$) that varies linearly between the boundary temperatures $k_1$ and $k_2$
+
+  ![](figures/pde01_figure07.svg "nonhomogeneous BCa"){width="70%" fig-align="center"}
+
+* In other words, $\,$it seems reasonable to think of our temperature $u(x,t)$ as the sum of two parts
+
+  $$
+  \begin{aligned}
+    u(x,t) &=\underbrace{\text{steady state}}_{\text{Eventual Solution for Large Time}} 
+        +\underbrace{\text{transient}}_{\underset{\text{(and will go to zero)}}{\text{Part of the Solution that depends on the IC}}}\\ 
+        &\Downarrow \\ 
+        &= \left[ k_1 +\frac{x}{L}(k_2 -k_1) \right] +U(x,t)
+  \end{aligned}$$
+
+* By substituting the above relation in the original problem @eq-Heat_nh, $\text{ }$we arrive at a new problem in $U(x,t)$:
+
+  $${U_t = \alpha U_{xx},\quad 0 < x < L,\; 0 < t < \infty} $$
+
+  $${\scriptsize\color{blue}{\begin{array}{r}
+    U(0,t)=0 \\ 
+    U(L,t)=0 
+  \end{array}, \;\; 0<t<\infty}, \;\;
+  U(x,0)=\phi(x)
+  -\left[ k_1 +\displaystyle\frac{x}{L}(k_2 -k_1) \right]
+  =\bar{\phi}(x), \;\; 0\leq x \leq L}$$
+
+* **Transforming Time Varying BCs to Zero BCs**
+
+  * What about more realistic-type derivative BCs with time-varying right-hand sides? Consider the typical problem
+
+    $$
+    \begin{aligned}
+      u_t &= \alpha u_{xx} && 0 < x < L, \;0 < t <\infty \\
+      u(0,t) &= g_1(t) && 0 < t < \infty \\
+      u_x(L,t) +hu(L,t) &= g_2(t) && \\
+      u(x,0) &=\phi(x) && 0 \leq x \leq L 
+    \end{aligned}$$ {#eq-Heat_nh2}
+
+  * To change these nonzero BCs to homogeneous ones, $\,$we (after some trial and error) seek a solution of the form:
+
+    $$ u(x,t)=\underbrace{A(t)\left[1-\frac{x}{L}\right] +B(t)\frac{x}{L}}_{S(x,t)}+U(x,t)$$
+
+    where $A(t)$ and $B(t)$ are chosen so that $S(x,t)$ satisfies the BCs and thus
+
+    $$\begin{array}{r} U(0,t) = 0\\ U_x(L,t)+hU(L,t) = 0 \end{array}, \quad 0<t<\infty$$
+
+  * Substituting $S(x,t)$ into the BCs gives
+
+    $$ \begin{aligned} 
+        S(0,t) &= g_1(t)\\ 
+        S_x(L,t)+hS(L,t) &= g_2(t) 
+      \end{aligned}, \quad 0<t<\infty $$
+
+    in which we get
+
+    $$\begin{aligned} 
+       A(t)&= g_1(t)\\ 
+       B(t)&= \frac{g_1(t) +Lg_2(t)}{1+Lh} 
+      \end{aligned}, \quad 0<t<\infty$$
+
+  * So if we substitute this into the original problem @eq-Heat_nh2, $\,$we get the transformed problem in $U(x,t)$:
+
+    $$
+    \begin{aligned}
+      U_t &= \alpha U_{xx} -\color{red}{S_t} && 0 < x <L, \;0 < t <\infty \\
+      U(0,t) &= 0 && 0 < t < \infty\\ 
+      U_x(L,t) +hU(L,t) &= 0 && \\
+      U(x,0) &= \phi(x)-S(x,0) && 0 \leq x \leq L
+    \end{aligned}$$
+
+    * We now have our new problem with zero BCs but unfortunately the PDE is nonhomogeneous
+
+    * We cannot solve this problem by separation of variables, $\,$but we will solve it  by integral transforms and eigenfunction expansions
+
+$~$
+
+**Example** $\,$Solve the initial-boundary-value problem
+
+$$
+  \begin{aligned}
+    u_t &= \alpha u_{xx} && 0 < x < 1, \;0 < t <\infty \\
+    u(0,t) &= 1 && 0 < t < \infty\\ 
+    u_x(1,t) +hu(1,t) &= 1 && \\
+    u(x,0) &= \sin\pi x +x && 0 \leq x \leq 1
+  \end{aligned}$$
+
+$~$
+
 ## Transforming Hard Equations into Easier Ones {#sec-x1-8}
 
-![](figures/pde01_figure09.jpg "heat flow with lateral heat loss"){width="75%" fig-align="center"}
+![](figures/pde01_figure09.svg "heat flow with lateral heat loss"){width="75%" fig-align="center"}
 
 * Consider the following problem:
 
@@ -760,7 +760,7 @@ example_plot3(alpha, t, x, n_eig, sqrt_eig, eigfunc, u_solution)
   2. **heat flow** across the lateral boundary due to $-\beta u$
 
 * The important point is that if there were no diffusion within the rod ($\alpha=0$) then the temperature at each point $x_0$ would
-dump exponentially to zero according to 
+decay exponentially to zero according to 
 
   $$u(x_0,t)=u(x_0,0) e^{-\beta t}$$
 
@@ -951,7 +951,7 @@ $$
     u(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned}$$
 
-where $\lambda_1$ is the first root of the equation $\,$ $\tan\sqrt{\lambda}=-\sqrt{\lambda}$
+where $h=1$ and $\lambda_1$ is the first root of the equation $\,$ $\tan\sqrt{\lambda}=-\sqrt{\lambda}$
 
 $~$
 
@@ -972,7 +972,7 @@ the major ingredient that distinguishes one transform from another; $\,$ it is c
 
 * In other words, integral transformations change problems into easier ones. $\,$The transformed problem is then solved, and its inverse is obtained to find the solution to the original problem
 
-![](figures/pde01_figure10alt.svg "general philosopy of tranforms"){width="90%" fig-align="center"}
+![](figures/pde01_figure10alt.svg "general philosophy of transforms"){width="90%" fig-align="center"}
 
 * We first start with a function $f(x)$ defined on an interval $[0,L]$. $\,$The finite sine and cosine transforms of this function are defined by
 
@@ -988,7 +988,7 @@ the major ingredient that distinguishes one transform from another; $\,$ it is c
     f(x) &= \frac{a_0}{2} +\sum_{n=1}^\infty a_n \cos \frac{n\pi x}{L} &&\;{\scriptsize\text{Inverse Cosine Transform}}
     \end{aligned}$$
 
-  Note that the summation in the inverse cosine starts at $n=0$, $\,$while the inverse sine starts at $n=1$
+  Note that the inverse cosine transform includes the $n=0$ term $a_0/2$, $\,$while the inverse sine starts at $n=1$
 
 $~$
 
@@ -1006,7 +1006,7 @@ $$\begin{aligned}
    f(x)&=\frac{4}{\pi} \sum_{n=1}^\infty \left[ \frac{1}{2n-1} \right] \sin (2n-1)\pi x
   \end{aligned}$$
 
-![](figures/pde02_figure21.jpg "Finite Sine Transform"){width="65%" fig-align="center"}
+![](figures/pde02_figure21.svg "Finite Sine Transform"){width="65%" fig-align="center"}
 
 $~$
 
@@ -1023,7 +1023,7 @@ $~$
        &\color{red}{\:= -\left( \frac{n\pi}{L} \right)^2 \mathcal{F}_s [u] +\frac{2n\pi}{L^2} 
      \left[ u(0,t) -(-1)^n u(L,t) \right]}\\ 
     \mathcal{F}_c [u_x] 
-       &= -\frac{n\pi}{L} \mathcal{F}_s [u] +\frac{2}{L} \left[(-1)^n u(L,t) -u(0,t) \right] \\ 
+       &= \frac{n\pi}{L} \mathcal{F}_s [u] +\frac{2}{L} \left[(-1)^n u(L,t) -u(0,t) \right] \\ 
     \color{red}{\mathcal{F}_c [u_{xx}]} & \color{red}{\:= -\left(\frac{n\pi}{L}\right)^2 \mathcal{F}_c [u] +\frac{2}{L} \left[(-1)^n u_x(L,t) -u_x(0,t) \right]} \\ 
   \end{aligned}$$
 
@@ -1049,7 +1049,7 @@ $~$
   2.  Find the system response $u_k$ to $f_k$
   3.  Add(superimpose) the simple responses $u_k$ to get $\,u=\sum u_k$
 
-* It turns out if the system is *linear*, $\,$then the sum $u$ is the response we get if the function $\,f$ were imputted directly; $\,$this is the <font color="red">**principle of superposition**</font>
+* It turns out if the system is *linear*, $\,$then the sum $u$ is the response we get if the function $\,f$ were input directly; $\,$this is the <font color="red">**principle of superposition**</font>
 
 * **Superposition Used to Break an IBVP into Two Simpler Problems**
 
@@ -1063,7 +1063,7 @@ $~$
     u(x,0) &= \sin 2\pi x && 0 \leq x \leq 1
   \end{aligned}\tag{P}\label{eq:P}$$
 
-  Here, $\,$we have an *nonhomogeneous* heat equation, $\,$so separation of variables is not a viable method of attack
+  Here, $\,$we have a *nonhomogeneous* heat equation, $\,$so separation of variables is not a viable method of attack
 
   * We could, $\,$of course, $\,$use the finite sine transform on the variable $x$ or the Laplace transform on $t$, $\,$but still another idea would be to consider two subproblems
 
@@ -1088,7 +1088,7 @@ $~$
       &= \color{red}{\sin 2\pi x} && 0 \leq x \leq 1
     \end{aligned}\tag{B}\label{eq:B}$$
 
-  * There two problems can be solved individually with a little effort, $\,$and it should be clear here that the *sum* of the solutions to \eqref{eq:A} and \eqref{eq:B} is the solution to the original problem \eqref{eq:P}; $\,$that is
+  * These two problems can be solved individually with a little effort, $\,$and it should be clear here that the *sum* of the solutions to \eqref{eq:A} and \eqref{eq:B} is the solution to the original problem \eqref{eq:P}; $\,$that is
 
     $$u(x,t)=\underbrace{\frac{1}{\pi^2} (1 -e^{-\pi^2 t}) \sin\pi x}_{\text{Solution to \eqref{eq:A}}} +\underbrace{e^{-(2\pi)^2 t} \sin 2\pi x}_{\text{Solution to \eqref{eq:B}}}$$
 
@@ -1136,7 +1136,7 @@ $$
     u_t &= u_{xx} +f(x,t) && 0 < x < 1, \;0 < t <\infty \\
     u(0,t) &= g_1(t) && 0 < t < \infty\\ 
     u(1,t) &= g_2(t) && \\
-    u(x,0) &= \pi(x) && 0 \leq x \leq 1
+    u(x,0) &= \phi(x) && 0 \leq x \leq 1
   \end{aligned}$$
 
 $~$
@@ -1161,7 +1161,7 @@ $~$
 
   $$ f(x)= \frac{a_0}{2} +\sum_{n=1}^\infty \left[ a_n\cos \frac{n\pi x}{L} +b_n \sin \frac{n\pi x}{L} \right] $$
 
-* Here the coefficients $a_n$ and $b_n$ represent the amount of the function $f(x)$ made up $\displaystyle\cos \frac{n\pi x}{L}$ and $\displaystyle\sin \frac{n\pi x}{L}$, $\,$respectively
+* Here the coefficients $a_n$ and $b_n$ represent the amount of the function $f(x)$ made up of $\displaystyle\cos \frac{n\pi x}{L}$ and $\displaystyle\sin \frac{n\pi x}{L}$, $\,$respectively
 
 * While the square root
 
@@ -1169,7 +1169,7 @@ $~$
 
   (called the spectrum of the function) measures the amount of $\,f(x)$ with frequency $\displaystyle\frac{n\pi}{L}$
 
-* Functions that are *periodic* can be resolved into *infinite series* (they have discrete spectrums)
+* Functions that are *periodic* can be resolved into *infinite series* (they have discrete spectra)
 
 * Of course, $\,$if a function is defined only on a *finite interval*, $\,$we could extend the function outside the interval in a periodic way, $\,$so that a Fourier series representation could be obtained for the function inside the interval
 
@@ -1197,11 +1197,11 @@ $~$
 
   $$\color{red}{\sqrt{a^2(\omega) +b^2(\omega)}}$$
 
-  measures the $\omega$ frequency component of $f(x)$ and is called <font color="red">the spectrum of $f(x)$</font>. $\,$With this intutive explanation of the spectrum of a function, $\,$we now get to the nuts and bolts of integral transforms
+  measures the $\omega$ frequency component of $f(x)$ and is called <font color="red">the spectrum of $f(x)$</font>. $\,$With this intuitive explanation of the spectrum of a function, $\,$we now get to the nuts and bolts of integral transforms
 
 * **The Exponential Fourier Transform**
 
-  We are now in a position to define what is generally known as the exponential Fourier transfrom:
+  We are now in a position to define what is generally known as the exponential Fourier transform:
 
   $${\scriptsize
    \begin{aligned}
@@ -1209,7 +1209,7 @@ $~$
      &=\frac{1}{\pi} \int_0^\infty \int_{-\infty}^\infty f(\xi)\left[ \cos\omega\xi \cos\omega x +\sin\omega \xi \sin\omega x \right]\,d\xi\,d\omega \\
      &={\scriptsize \frac{1}{\pi} \int_0^\infty \int_{-\infty}^\infty f(\xi) \underbrace{\color{blue}{\cos\omega(\xi -x)}}_{\cos\omega(x-\xi) \; - \;\text{even function w.r.t. }\omega } \,d\xi\,d\omega }\\
      &{\tiny = \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty f(\xi) \cos\omega(x -\xi) \,d\xi\,d\omega }
-    {\tiny = \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty f(\xi) \left[ \cos\omega(x -\xi) +\color{blue}{i\sin\omega(x -\xi)} \right]\,d\xi\,d\omega }\\
+    {\tiny = \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty f(\xi) \left[ \cos\omega(x -\xi) +\underbrace{\color{blue}{i\sin\omega(x -\xi)}}_{\text{odd in }\omega\text{: integrates to 0}} \right]\,d\xi\,d\omega }\\
      &={\scriptsize \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty f(\xi) e^{i\omega (x -\xi)} \,d\xi\,d\omega }\\
      &=\frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \left[ \color{red}{\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(\xi) e^{-i\omega \xi} \,d\xi} \right] \,e^{i\omega x}\,d\omega  \\
    \end{aligned}}$$
@@ -1307,13 +1307,13 @@ $$\begin{aligned}
 Note that the integrand is made up of two terms:
 
 1. $\,$The initial temperature $\phi(x)$  
-1. $\,$the Green's function or impulse-response function 
+1. $\,$The Green's function or impulse-response function 
 
-$$ G(x-\xi,t)=\frac{1}{2\sqrt{\alpha\pi t}}e^{-(x -\xi)^2/4\alpha t}, \;\;\lim_{t\to 0}G(x-\xi,t) = \underbrace{\delta(x-\xi)}_{\text{Dirac delta function}}$$
+$$ G(x-\xi,t)=\frac{1}{2\sqrt{\alpha\pi t}}e^{-(x -\xi)^2/4\alpha t}, \;\;\lim_{t\to 0^+}G(x-\xi,t) = \underbrace{\delta(x-\xi)}_{\text{Dirac delta function}}$$
 
 It can be shown that this impulse-response function $G(x-\xi,t)$ $\,$is the temperature response to an initial temperature impulse at $\,x=\xi$
 
-![](figures/pde01_figure12.png "impulse response G(x-\xi,t)"){width="75%" fig-align="center"}
+![](figures/pde01_figure12.svg "impulse response G(x-\xi,t)"){width="75%" fig-align="center"}
 
 <font color="blue">Hence, $\,$the interpretation of solution is that the initial temperature $\,u(x,0)=\phi(x)\,$ is decomposed into a continuum of impulses of $\,\phi(\xi)\,$ at each point $x=\xi$ and the resulting temperature $\,\phi(\xi)G(x-\xi,t)\,$ is found.</font> <font color="red">$\,$These resulting temperatures are then added (integrated) to obtain the solution. This general idea is also superposition</font>
 
@@ -1358,7 +1358,7 @@ example_plot5(alpha, xi, t, x)
 
 **NOTES**
 
-The major drawback of the Fourier transform is that all functions can not be transformed. $\,$For example, $\,$even simple functions like
+The major drawback of the Fourier transform is that not all functions can be transformed. $\,$For example, $\,$even simple functions like
 
 $$
 \begin{aligned}
@@ -1445,7 +1445,7 @@ does not exist. $\,$Only functions that damp to zero sufficiently fast as $|x| \
      \omega^2\mathcal{F}_c\left[ f(x) \right]}
   \end{aligned}}$$
 
-* **Solution of an Semi-infinite-Diffusion Problem via the Sine Transform**
+* **Solution of a Semi-infinite Diffusion Problem via the Sine Transform**
 
   The problem we are interested in is the *semi-infinite diffusion problem*
 
@@ -1458,7 +1458,7 @@ does not exist. $\,$Only functions that damp to zero sufficiently fast as $|x| \
     u(x,0) &= 0 && 0 \leq x < \infty
   \end{aligned}$$
 
-  ![](figures/pde01_figure11.jpg "diffusion problem in a semi-infinite medium"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure11.svg "diffusion problem in a semi-infinite medium"){width="60%" fig-align="center"}
 
   To solve this, $\,$we break into three simple steps. $\,$First our strategy is to transform the <font color="blue">$x$-variable via Fourier sine transform</font> so that we get an ODE in time
 
@@ -1556,12 +1556,10 @@ $~$
 #| label: fig-semi-infinite-domain-2
 #| fig-cap: "Heat conduction in semi-infinite domain insulated at the boundary"
 #| fig-align: center
-from scipy import integrate
-
 x0 = [0, 1, 1, 8]
 u0 = [1, 1, 0, 0]
 
-def example_plot6(alpha, t, x, u_solution):
+def example_plot6b(alpha, t, x, u_solution):
     plt.figure(figsize=(7, 5))
     plt.plot(x0, u0, 'r:', label='$t=0.0$')
     for tt in t:
@@ -1585,13 +1583,11 @@ t = [0.1, 0.2, 0.4, 0.8, 1.6, 3.2, 6.4]
 x = np.linspace(0, 8)
 
 def u_solution(alpha, t, x):   
-    u = np.zeros_like(x)
-    for i, xx in enumerate(x):
-        f = lambda w : np.sin(w) /w *np.exp(-alpha*w*w*t) *np.cos(w*xx) 
-        u[i], _ = integrate.quad(f, 0, np.inf) 
-    return 2.0 /np.pi *u
+    # closed form of the cosine-transform integral
+    s = 2.0 *np.sqrt(alpha *t)
+    return 0.5 *(erf((1.0 +x) /s) +erf((1.0 -x) /s))
 
-example_plot6(alpha, t, x, u_solution)      
+example_plot6b(alpha, t, x, u_solution)      
 ```
 
 $~$
@@ -1602,7 +1598,7 @@ $~$
 
   $$ \mathcal{L}[f(t)]= \int_0^\infty f(t) e^{-st}\,dt $$
 
-  is probably the only integral transform the student has seen before, $\,$since it is a very powerful tool for transforming initial-value problems in ODE into algebraic equations
+  is probably the only integral transform the student has seen before, $\,$since it is a very powerful tool for transforming initial-value problems in ODEs into algebraic equations
 
 * Not only is the Laplace transform useful in transforming ODEs into algebraic equations, $\,$but now we will use the Laplace transform to transform PDEs into ODEs
 
@@ -1623,7 +1619,7 @@ $~$
 
 * <font color="blue">The Laplace transform has one major advantage over the Fourier transform in that the damping factor $e^{-st}$ in the integrand allows us to transform a wider class of functions (the factor $e^{-i\omega x}$ in the Fourier transform doesn't do any damping since its absolute value is one)</font> 
 
-* In fact, $\,$the exact conditions that insure that a function $f(t)$ has a Laplace transform are given by the following theorem:
+* In fact, $\,$the exact conditions that ensure that a function $f(t)$ has a Laplace transform are given by the following theorem:
 
   $\,$
 
@@ -1699,7 +1695,7 @@ $~$
 
 * **Heat Conduction in a Semi-infinite Medium**
 
-  ![](figures/pde01_figure13.jpg "deep container"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure13.svg "deep container"){width="60%" fig-align="center"}
 
   * Consider a large (deep) container of liquid that is insulated on the sides. Suppose the liquid has an initial temperature of $u_0$ and that the temperature of the air above liquid is zero. Our goal is to find the temperature of the liquid at various depths of the container at different $t$ values:
 
@@ -1788,13 +1784,13 @@ $~$
 
 * To get an idea of what solutions look like or how they behave with the convection term included, $\,$let's first work a problem that is pure convection (the diffusion term is zero)
 
-* A typical problem would be dumping a substance into a clean air (moving with upward velocity $V$) and observing the concentration of the substance at the upperside. $\,$Then the concentration of substance $u(x,t)$ can be found by solving the following mathematical model:
+* A typical problem would be dumping a substance into clean air (moving with upward velocity $V$) and observing the concentration of the substance at the upperside. $\,$Then the concentration of substance $u(x,t)$ can be found by solving the following mathematical model:
 
   $$
   \begin{aligned}
      u_t &= -Vu_x && \phantom{xx}\color{red}{0 < x < \infty}, \; 0 < t < \infty \\ \\
      u(0,t) &= P &&\longleftarrow\; \text{Constant Input of the Substance} \\
-     u(x,0) &= 0 &&\longleftarrow\; \text{Initially a Clean Air}
+     u(x,0) &= 0 &&\longleftarrow\; \text{Initially Clean Air}
   \end{aligned} \tag{CV}\label{eq:CV}$$
 
 * Since the $x$-variable is unbounded, $\,$we use the Laplace transform on $t$
@@ -1875,7 +1871,7 @@ $~$
 
 ```{python}
 #| label: fig-diffusion-convection
-#| fig-cap: "Diffusion-convection Heat transfer in semi-infinite domain"
+#| fig-cap: "Diffusion-convection on the infinite domain"
 #| fig-align: center
 
 def example_plot8(D, V, t, x, u_solution):
@@ -1968,14 +1964,14 @@ $~$
        &= \int_0^t w(x,t-\tau) f'(\tau)\,d\tau +w(x,t) \, f(0)
   \end{aligned}$$
 
-  We have found the solution $u(x,t)$ to the time-varying problem in terms of the solution to the ease problem (constant BCs).
+  We have found the solution $u(x,t)$ to the time-varying problem in terms of the solution to the easy problem (constant BCs).
 $\,$The above result is known as <font color="red">Duhamel's principle</font>
 
 $~$
 
 **NOTES**
 
-* <font color="red">There are another interesting version of Duhamel's principle</font> that gives the answer to \eqref{eq:D1} in terms of the solution $\,v(x,t)$ of the alternative simple 
+* <font color="red">There is another interesting version of Duhamel's principle</font> that gives the answer to \eqref{eq:D1} in terms of the solution $\,v(x,t)$ of the alternative simple problem
 
   $$
   \begin{aligned}

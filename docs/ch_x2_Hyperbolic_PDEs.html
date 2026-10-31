@@ -391,7 +391,7 @@ window.Quarto = {
   <li><a href="#sec-x2-24" id="toc-sec-x2-24" class="nav-link" data-scroll-target="#sec-x2-24"><span class="header-section-number">13.7</span> Solution of Nonhomogeneous Wave Equation via the Finite Transform</a></li>
   <li><a href="#sec-x2-25" id="toc-sec-x2-25" class="nav-link" data-scroll-target="#sec-x2-25"><span class="header-section-number">13.8</span> The Vibrating Drumhead (Wave Equation in Polar Coordinates)</a></li>
   <li><a href="#sec-x2-26" id="toc-sec-x2-26" class="nav-link" data-scroll-target="#sec-x2-26"><span class="header-section-number">13.9</span> Dimensionless Problems</a></li>
-  <li><a href="#sec-x2-27" id="toc-sec-x2-27" class="nav-link" data-scroll-target="#sec-x2-27"><span class="header-section-number">13.10</span> <span class="math inline">\(~\)</span>Classification of PDEs (Cannonical Form of the Hyperbolic Equation)</a></li>
+  <li><a href="#sec-x2-27" id="toc-sec-x2-27" class="nav-link" data-scroll-target="#sec-x2-27"><span class="header-section-number">13.10</span> <span class="math inline">\(~\)</span>Classification of PDEs (Canonical Form of the Hyperbolic Equation)</a></li>
   <li><a href="#sec-x2-28" id="toc-sec-x2-28" class="nav-link" data-scroll-target="#sec-x2-28"><span class="header-section-number">13.11</span> <span class="math inline">\(~\)</span>First-Order Equations (Method of Characteristics)</a></li>
   <li><a href="#sec-x2-29" id="toc-sec-x2-29" class="nav-link" data-scroll-target="#sec-x2-29"><span class="header-section-number">13.12</span> <span class="math inline">\(~\)</span>Nonlinear First-Order Equations (Conservation Equations)</a></li>
   <li><a href="#sec-x2-30" id="toc-sec-x2-30" class="nav-link" data-scroll-target="#sec-x2-30"><span class="header-section-number">13.13</span> <span class="math inline">\(~\)</span>Systems of PDEs</a></li>
@@ -429,7 +429,7 @@ window.Quarto = {
 <p>We consider the small vibrations of a string that is fastened at each end</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure01.jpg" title="vibrating string" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure01.svg" title="vibrating string" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 <li><p>To mathematically describe the vibrations of this string, <span class="math inline">\(\,\)</span>we consider all the forces acting on a small section <span class="math inline">\(\Delta x\)</span> of the string</p>
@@ -545,7 +545,7 @@ u(x,t) =\frac{1}{2} \left[ f(x -ct)\right. &amp;+ \left. f(x +ct) \right]
 \end{aligned}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure03.jpg" title="Initial Wave Decomposed into Two Traveling Waves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure03.svg" title="Initial Wave Decomposed into Two Traveling Waves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 <li><p><strong>Initial Velocity Given</strong></p>
@@ -562,7 +562,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="88f45d6a" class="cell" data-execution_count="1">
+<div id="7acc1d88" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> animation, rc</span>
@@ -572,7 +572,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'xtick.direction'</span>] <span class="op">=</span> <span class="st">'in'</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'ytick.direction'</span>] <span class="op">=</span> <span class="st">'in'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e65d6b0d" class="cell" data-execution_count="2">
+<div id="691e893a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="op">-</span><span class="fl">6.0</span><span class="op">*</span>np.pi, <span class="fl">6.0</span><span class="op">*</span>np.pi), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -584,7 +584,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ac030202" class="cell" data-execution_count="3">
+<div id="b3456e5e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>time_text <span class="op">=</span> ax.text(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.3</span>, <span class="st">''</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>line, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> init():</span>
@@ -604,7 +604,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> animation.FuncAnimation(fig, animate, </span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        init_func<span class="op">=</span>init, frames<span class="op">=</span>tt, interval<span class="op">=</span><span class="dv">200</span>, blit<span class="op">=</span><span class="va">True</span>) </span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>HTML(<span class="st">'&lt;center&gt;'</span> <span class="op">+</span> anim.to_html5_video() <span class="op">+</span> <span class="st">'&lt;/center&gt;'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <center><video width="576" height="384" controls="" autoplay="" loop="">
   <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQACEcNtZGF0AAACrgYF//+q
 3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2NSByMzIyMiBiMzU2MDVhIC0gSC4yNjQvTVBF
@@ -3022,7 +3022,7 @@ AQAAAABMYXZmNjIuMy4xMDA=
   Your browser does not support the video tag.
 </video></center>
 <center>
-<font size="3px">Initial Velocity Given: <span class="math inline">\(\;u_t(x,0)=\sin t\)</span></font>
+<font size="3px">Initial Velocity Given: <span class="math inline">\(\;u_t(x,0)=\sin x\)</span></font>
 </center>
 </div>
 </div>
@@ -3065,7 +3065,7 @@ x +ct&amp;= x_0 +ct_0
 \end{aligned}\quad\color{red}{\text{characteristic curves}}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure04.jpg" title="xt-plane interpretation" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure04.svg" title="xt-plane interpretation" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 <li><p>For example, <span class="math inline">\(\,\)</span>using this interpretation, <span class="math inline">\(\,\)</span>the initial condition</p>
@@ -3080,7 +3080,7 @@ u_t(x,0) &amp;=0
 <p>would give us the solution in the <span class="math inline">\(\,xt\)</span>-plane shown in figure</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure05.jpg" title="solution in xt-plane" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure05.svg" title="solution in xt-plane" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 </ul>
@@ -3100,10 +3100,10 @@ u_t(x,0) &amp;=g(x)
    u_t(x,0) &amp;= \begin{cases} 1 &amp; \;-1 &lt; x &lt; 1 \\ 0 &amp; \text{everywhere else}
   \end{cases}
 \end{aligned}\]</span></p>
-<p>has a solution in the <span class="math inline">\(\,tx\)</span>-plane in figure</p>
+<p>has a solution in the <span class="math inline">\(\,xt\)</span>-plane in figure</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure07.jpg" title="solution of initial velocity in xt-plane" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure07.svg" title="solution of initial velocity in xt-plane" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 <li><p>To find the displacement, <span class="math inline">\(\,\)</span>we compute the D’Alembert solution</p></li>
@@ -3118,7 +3118,7 @@ u(x,t) &amp;=\frac{1}{2c}\int_{x-ct}^{x+ct} g(\xi)\,d\xi &amp; \\
 &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} 1\, d\xi=t, &amp; (x,t) \in \text{Region 6}
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="8349825b" class="cell" data-execution_count="4">
+<div id="f9f5a691" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.5</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3136,7 +3136,7 @@ u(x,t) &amp;=\frac{1}{2c}\int_{x-ct}^{x+ct} g(\xi)\,d\xi &amp; \\
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    line.set_data([], [])</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="07dd9be6" class="cell" data-execution_count="5">
+<div id="7f68328a" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> animate(t):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    time_text.set_text(<span class="ss">f't = </span><span class="sc">{</span>t<span class="sc">:3.1f}</span><span class="ss">'</span>)    </span>
@@ -3166,13 +3166,13 @@ u(x,t) &amp;=\frac{1}{2c}\int_{x-ct}^{x+ct} g(\xi)\,d\xi &amp; \\
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    line.set_data(xx, uu)</span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a07836a4" class="cell" data-execution_count="6">
+<div id="af55cea6" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> <span class="bu">list</span>(np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">50</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> animation.FuncAnimation(fig, animate, init_func<span class="op">=</span>init, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    frames<span class="op">=</span>tt, interval<span class="op">=</span><span class="dv">300</span>, blit<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>HTML(<span class="st">'&lt;center&gt;'</span> <span class="op">+</span> anim.to_html5_video() <span class="op">+</span> <span class="st">'&lt;/center&gt;'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <center><video width="576" height="384" controls="" autoplay="" loop="">
   <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQAAUyRtZGF0AAACrgYF//+q
 3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2NSByMzIyMiBiMzU2MDVhIC0gSC4yNjQvTVBF
@@ -3608,7 +3608,7 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
    \psi(x +ct)=\frac{1}{2}f(x +ct) \,+\,&amp;\frac{1}{2c}\int_{x_0}^{x +ct}
       g(\xi)\,d\xi +\frac{C}{2c} \\
   \end{aligned}} \tag{IM}\label{eq:IM}\]</span></p></li>
-<li><p>We now have a problem we didn’t encounter when dealing with the infinite string. <span class="math inline">\(\,\)</span>Since we are looking for the solution <span class="math inline">\(\,u(x,t)\,\)</span> <font color="blue">everywhere in the first quadrant <span class="math inline">\((x&gt;0,\;t&gt;0)\,\)</span> of the <span class="math inline">\(\,tx\)</span> plane</font>, <span class="math inline">\(\,\)</span>it is obvious that we must find</p>
+<li><p>We now have a problem we didn’t encounter when dealing with the infinite string. <span class="math inline">\(\,\)</span>Since we are looking for the solution <span class="math inline">\(\,u(x,t)\,\)</span> <font color="blue">everywhere in the first quadrant <span class="math inline">\((x&gt;0,\;t&gt;0)\,\)</span> of the <span class="math inline">\(\,xt\)</span>-plane</font>, <span class="math inline">\(\,\)</span>it is obvious that we must find</p>
 <p><span class="math display">\[\begin{aligned}
   \phi(x -ct)
     &amp;\;\;\; \color{red}{\text{for all }
@@ -3636,7 +3636,7 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure08.jpg" title="solution of semi-infinite string in xt-plane" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure08.svg" title="solution of semi-infinite string in xt-plane" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
@@ -3658,11 +3658,11 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
   \end{aligned}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure09.jpg" title="Example initial condition" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/pde02_figure09.svg" title="Example initial condition" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
-<div id="11cb9dd6" class="cell" data-execution_count="7">
+<div id="6e995515" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.5</span>))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3680,7 +3680,7 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    line.set_data([], [])</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ddb60148" class="cell" data-execution_count="8">
+<div id="2f94d1ef" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_i(x):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;=</span> <span class="dv">1</span> <span class="kw">and</span> x <span class="op">&lt;=</span> <span class="dv">2</span>:</span>
@@ -3705,12 +3705,12 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    line.set_data(xx, uu)</span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ab70d29d" class="cell" data-execution_count="9">
+<div id="a915445b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> <span class="bu">list</span>(np.linspace(<span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">100</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> animation.FuncAnimation(fig, animate, </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        init_func<span class="op">=</span>init, frames<span class="op">=</span>tt, interval<span class="op">=</span><span class="dv">750</span>, blit<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>HTML(<span class="st">'&lt;center&gt;'</span> <span class="op">+</span> anim.to_html5_video() <span class="op">+</span> <span class="st">'&lt;/center&gt;'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <center><video width="576" height="384" controls="" autoplay="" loop="">
   <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQAAsCNtZGF0AAACrgYF//+q
 3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2NSByMzIyMiBiMzU2MDVhIC0gSC4yNjQvTVBF
@@ -4571,7 +4571,7 @@ LjMuMTAw
   u(x,0)&amp;=\exp\left[-\frac{(x-3^2)}{0.5}\right] \\
   u_t(x,0)&amp;=0
   \end{aligned}\]</span></p>
-<div id="8d9753c0" class="cell" data-execution_count="10">
+<div id="3dd90752" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.animation <span class="im">import</span> FuncAnimation</span>
@@ -4828,7 +4828,7 @@ u_{tt} &amp;\, =c^2 u_{xx} +\color{red}{F(x, t)}
   &amp;\color{blue}
   {\left.\begin{matrix}
     u = 0\\
-    u_\xi = u_\eta
+    u_\xi = u_\eta = 0
     \end{matrix} \;\;\right\} \;\text{ at } \xi=\eta \;\; \leftarrow
    \left.\begin{matrix}
      u = 0 \\
@@ -4840,28 +4840,16 @@ u_{tt} &amp;\, =c^2 u_{xx} +\color{red}{F(x, t)}
   \begin{aligned}
    \\[5pt]
    &amp;\Downarrow
-     {\scriptstyle\text{ integrating with respect to }
-      \xi \text{ and } \eta, \text{ respectively} }\\[5pt]
-   u_\eta \;&amp;{\scriptsize= -\frac{1}{4c^2}
+     {\scriptstyle\text{ integrating with respect to } \xi \text{ from } \eta \text{ to } \xi}\\[5pt]
+   u_\eta(\xi,\eta) \;&amp;{\scriptsize= -\frac{1}{4c^2}
     \int_\eta^\xi F\left(\bar{\xi}, \eta \right)
-     \,d\bar{\xi} +c_1}, \:\:
-   u_\xi \;{\scriptsize= -\frac{1}{4c^2}
-     \int_\xi^\eta F\left(\xi, \bar{\eta} \right)
-      \,d\bar{\eta}  +c_1} \\[5pt]
+     \,d\bar{\xi} +\underbrace{u_\eta(\eta,\eta)}_{=\,0}} \\[5pt]
    &amp;\Downarrow
-   {\scriptstyle\text{ integrating with respect to }
-    \eta \text{ and } \xi, \text{ respectively}}\\[5pt]
-    u \;&amp;{\scriptsize= -\frac{1}{4c^2} \int_\eta^\xi
+   {\scriptstyle\;\; u(\xi,\eta) = u(\xi,\xi) -\int_\eta^\xi u_\eta(\xi,\bar{\eta})\,d\bar{\eta}, \;\; u(\xi,\xi)=0}\\[5pt]
+    u \;&amp;{\scriptsize= \frac{1}{4c^2} \int_\eta^\xi
       \left[ \int_{\bar{\eta}}^\xi F\left( \bar{\xi},
        \bar{\eta} \right) \,d\bar{\xi} \right ]
-        \,d\bar{\eta} +c_1 \eta +c_2} \\
-        \;&amp;{\scriptsize= -\frac{1}{4c^2} \int_\xi^\eta
-         \left[ \int_{\bar{\xi}}^\eta F\left(
-          \bar{\xi}, \bar{\eta} \right)
-          \,d\bar{\eta} \right ] \,d\bar{\xi}
-          +c_1 \xi +c_3} \\[5pt]
-   &amp;\Downarrow {\scriptstyle\text{Applying the initial conditions}} \\
-   {\scriptsize c_1} &amp;{\scriptsize= c_2 = c_3}
+        \,d\bar{\eta}}
    \end{aligned}\]</span></p>
 <ul>
 <li><p>We let <span class="math inline">\(\,\bar{\xi}=\beta +c\tau\;\)</span> and <span class="math inline">\(\,\bar{\eta}=\beta -c\tau\)</span>, <span class="math inline">\(\,\)</span>(<span class="math inline">\(t \ge \tau\)</span>, <span class="math inline">\(\,\beta=x\)</span>). <span class="math inline">\(\,\)</span>The domain of integration <span class="math inline">\(\,\eta \leq \bar{\eta} \leq \bar{\xi} \leq \xi\;\)</span> becomes</p>
@@ -4875,13 +4863,13 @@ u_{tt} &amp;\, =c^2 u_{xx} +\color{red}{F(x, t)}
 <li><p>The transformation from <span class="math inline">\(\,(\bar{\xi}, \,\bar{\eta})\,\)</span> to <span class="math inline">\(\,(\beta, \,\tau)\,\)</span> gives the solution formula</p>
 <p><span class="math display">\[
 \begin{aligned}
-u &amp;= -\frac{1}{4c^2} \int_\eta^\xi
+u &amp;= \frac{1}{4c^2} \int_\eta^\xi
 \left[ \int_{\bar{\eta}}^\xi F\left( \bar{\xi}, \bar{\eta} \right)
 \,d\bar{\xi} \right ] \,d\bar{\eta} \\[5pt]
-&amp;\big\Downarrow {\scriptstyle \;\;d\bar{\xi}\,d\bar{\eta} \,=\,  \begin{vmatrix}
+&amp;\big\Downarrow {\scriptstyle \;\;d\bar{\xi}\,d\bar{\eta} \,=\,  \left|\begin{vmatrix}
 \frac{\partial \bar{\xi}}{\partial \beta}&amp; \frac{\partial \bar{\xi}}{\partial \tau} \\
 \frac{\partial \bar{\eta}}{\partial \beta}&amp; \frac{\partial \bar{\eta}}{\partial \tau}
-\end{vmatrix}  \,d\beta\,d\tau \,=\, -2c \,d\beta\,d\tau}\\[5pt]
+\end{vmatrix}\right|  \,d\beta\,d\tau \,=\, \left|-2c\right| \,d\beta\,d\tau = 2c\,d\beta\,d\tau}\\[5pt]
 &amp;=\frac{1}{2c} \int_0^{(\xi -\eta)/2c} \left[ \int_{\eta +c\tau}^{\xi -c\tau} F\left( \beta,\tau \right) \,d\beta \right ] \,d\tau \\[5pt]
 &amp;\Downarrow {\scriptstyle  \;\xi=x +ct, \;\eta=x -ct} \\
 {\color{red}{u}}\; &amp;{\color{red}{= \frac{1}{2c} \int_0^t \left[ \int_{x -c(t -\tau)}^{x +c(t -\tau)} F\left( \beta,\tau \right) \,d\beta \right ] \,d\tau}}
@@ -5009,7 +4997,7 @@ u(x,y,z,t)= \frac{1}{(2\pi)^{3/2}}
   \,r\,\sin\phi \,d\phi\,d\theta  \right) }_{g(r)} dr \right] d\varrho } \\
   &amp;= {\tiny \frac{1}{2\pi^2 c} \frac{\pi}{2} \int_0^\infty \sin ct \varrho \;\underbrace{\left[\frac{2}{\pi} \int_0^\infty
   \sin r\varrho \,g(r)\,dr \right]}_{G(\varrho)} d\varrho  
-  = \frac{1}{4\pi c} \underbrace{\int_0^\infty \sin ct \varrho \;G(\rho)\,d\varrho}_{g(ct)} } \\
+  = \frac{1}{4\pi c} \underbrace{\int_0^\infty \sin ct \varrho \;G(\varrho)\,d\varrho}_{g(ct)} } \\
   &amp;= {\tiny \frac{t}{4\pi (ct)^2} \int_0^{2\pi}\int_0^\pi  \psi(x +ct\sin\phi\cos\theta,y +ct\sin\phi\sin\theta, z+ct\cos\phi)
   \,(ct)^2\sin\phi \,d\phi \,d\theta  }
   = {\normalsize\color{red}{t\bar{\psi}}}
@@ -5018,7 +5006,7 @@ u(x,y,z,t)= \frac{1}{(2\pi)^{3/2}}
 <li><p>The interpretation of this solution is that the initial disturbance <span class="math inline">\(\,\psi\,\)</span> radiates outward spherically (velocity <span class="math inline">\(c\)</span>) at each point, <span class="math inline">\(\,\)</span>so that after so many seconds, <span class="math inline">\(\,\)</span>the point <span class="math inline">\(\,(x,y,z)\)</span> will be influenced by those initial disturbances on a sphere (of radius <span class="math inline">\(\,ct\)</span>) around that point</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure19.jpg" title="solution as the average of initial disturbances on a sphere" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure19.svg" title="solution as the average of initial disturbances on a sphere" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 <li><p>Now, <span class="math inline">\(\,\)</span>to finish the problem, <span class="math inline">\(\,\)</span>what about the other half; <span class="math inline">\(\,\)</span>that is</p>
@@ -5027,8 +5015,8 @@ u_{tt}&amp;=c^2(u_{xx} +u_{yy} +u_{zz}),\quad (x,y,z) \in \mathbb{R}^3 \\
 u(&amp;x,y,z,0)=\phi(x,y,z) \\
 u_t(&amp;x,y,z,0)=0
 \end{aligned}} \tag{3Dp}\label{eq:3Dp}\]</span></p>
-<p>This is easy: <span class="math inline">\(\,\)</span>A famous theorem developed by <em>Stokes</em> says all we have to do to solve this problem is to change the ICs to <span class="math inline">\(\,v=0\)</span>, <span class="math inline">\(\,v_t=\phi\)</span>, <span class="math inline">\(\,\)</span>and then differentiate this solution with respect to time:</p>
-<p><span class="math display">\[ v=\int_0^t u\,dt,\;v_t=u, \;u_{tt}=\frac{\partial}{\partial t} v_{tt}, \;u_{xx}=\frac{\partial}{\partial t} v_{xx}\]</span></p></li>
+<p>This is easy: <span class="math inline">\(\,\)</span>A famous theorem developed by <em>Stokes</em> says all we have to do to solve this problem is to change the ICs to <span class="math inline">\(\,v=0\)</span>, <span class="math inline">\(\,v_t=\phi\)</span>, <span class="math inline">\(\,\)</span>and then differentiate this solution with respect to time. <span class="math inline">\(\,\)</span>Indeed, <span class="math inline">\(\,\)</span>if <span class="math inline">\(\,v\,\)</span> solves the wave equation with <span class="math inline">\(\,v=0,\ v_t=\phi\,\)</span> at <span class="math inline">\(\,t=0\)</span>, <span class="math inline">\(\,\)</span>then <span class="math inline">\(\,u=v_t\,\)</span> also solves the wave equation and</p>
+<p><span class="math display">\[ u(x,y,z,0)=v_t(x,y,z,0)=\phi, \qquad u_t(x,y,z,0)=v_{tt}(x,y,z,0)=c^2\nabla^2 v(x,y,z,0)=0 \]</span></p></li>
 <li><p>In other words, <span class="math inline">\(\,\)</span>we solve</p>
 <p><span class="math display">\[\begin{aligned}
 v_{tt}&amp;=c^2(v_{xx} +v_{yy} +v_{zz}),\quad (x,y,z) \in \mathbb{R}^3 \\
@@ -5044,13 +5032,13 @@ v_t(&amp;x,y,z,0)=\phi(x,y,z)
 <p><span class="math inline">\(~\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure20.jpg" title="diagram showing how initial disturbances affect a point" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure20.svg" title="diagram showing how initial disturbances affect a point" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 <li><p>Suppose now the initial disturbances <span class="math inline">\(\,\phi\,\)</span> and <span class="math inline">\(\,\psi\,\)</span> are zero except for a small sphere. <span class="math inline">\(\,\)</span>As time increases, <span class="math inline">\(\,\)</span>the radius of the sphere around <span class="math inline">\((x,y,z)\)</span> increases with velocity <span class="math inline">\(\,c\)</span></p></li>
 <li><p>and so after <span class="math inline">\(\,t_2\)</span> seconds, <span class="math inline">\(\,\)</span>it will finally intersect the initial disturbance region, <span class="math inline">\(\,\)</span>and, <span class="math inline">\(\,\)</span>hence, <span class="math inline">\(\,u(x,y,z,t)\,\)</span> becomes nonzero</p></li>
 <li><p>For <span class="math inline">\(\,t_2 &lt; t &lt; t_3\)</span>, <span class="math inline">\(\,\)</span>the solution at <span class="math inline">\(\,(x,y,z)\,\)</span> will be nonzero, <span class="math inline">\(\,\)</span>since the sphere intersects the disturbance region</p></li>
-<li><p>but when <span class="math inline">\(\,t=t_3\)</span>, <span class="math inline">\(\,\)</span>the solution at <span class="math inline">\(\,(x,y,z)\,\)</span> abruptly becomes zero again. <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span>the wave disturbance originating from the initial-disturbance region has a sharp trailing edge. <span class="math inline">\(\,\)</span>This general principle is known as <strong>Huygen’s principle</strong> for the three dimensions, <span class="math inline">\(\,\)</span>and <span class="math inline">\(\,\)</span>it is the reason why sound waves in three dimensions stimulate our ears but die off instantaneously when the wave has passed</p></li>
+<li><p>but when <span class="math inline">\(\,t=t_3\)</span>, <span class="math inline">\(\,\)</span>the solution at <span class="math inline">\(\,(x,y,z)\,\)</span> abruptly becomes zero again. <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span>the wave disturbance originating from the initial-disturbance region has a sharp trailing edge. <span class="math inline">\(\,\)</span>This general principle is known as <strong>Huygens’ principle</strong> for the three dimensions, <span class="math inline">\(\,\)</span>and <span class="math inline">\(\,\)</span>it is the reason why sound waves in three dimensions stimulate our ears but die off instantaneously when the wave has passed</p></li>
 </ul></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
@@ -5095,7 +5083,7 @@ u_t(&amp;x,y,z,0)=
 \bar{\phi}(x,y,t) &amp;= \frac{1}{2\pi ct} \, \color{red}{\int_0^{2\pi} \int_0^{ct}}
 \phi(x +r\cos\theta, y+r\sin\theta)\,\frac{1}{\sqrt{(ct)^2 -r^2}}\,\color{red}{r\,dr\,d\theta}
 \end{aligned}\]</span></p>
-<p>Note that in this solution, <span class="math inline">\(\,\)</span>the two integrals of the initial conditions <span class="math inline">\(\,\phi\,\)</span> and <span class="math inline">\(\,\psi\,\)</span> are integrated over the interior of a circle with center <span class="math inline">\(\,(x,y)\,\)</span> and radius <span class="math inline">\(\,ct\)</span>. <span class="math inline">\(\,\)</span>We see that initial disturbances give rise to sharp leading waves, <span class="math inline">\(\,\)</span>but not to sharp trailing waves. <span class="math inline">\(\,\)</span>Thus, Huygen’s principle doesn’t hold in two dimensions</p></li>
+<p>Note that in this solution, <span class="math inline">\(\,\)</span>the two integrals of the initial conditions <span class="math inline">\(\,\phi\,\)</span> and <span class="math inline">\(\,\psi\,\)</span> are integrated over the interior of a circle with center <span class="math inline">\(\,(x,y)\,\)</span> and radius <span class="math inline">\(\,ct\)</span>. <span class="math inline">\(\,\)</span>We see that initial disturbances give rise to sharp leading waves, <span class="math inline">\(\,\)</span>but not to sharp trailing waves. <span class="math inline">\(\,\)</span>Thus, Huygens’ principle doesn’t hold in two dimensions</p></li>
 </ul></li>
 <li><p><strong>One-Dimensional Wave Equation</strong></p>
 <p>Finally, <span class="math inline">\(\,\)</span>if we assume the initial conditions <span class="math inline">\(\,\phi\,\)</span> and <span class="math inline">\(\,\psi\,\)</span> depend only on one variable, <span class="math inline">\(\,\)</span>this gives rise to plane waves and, <span class="math inline">\(\,\)</span>hence, <span class="math inline">\(\,\)</span>the preceding equation descends one more dimension</p>
@@ -5108,7 +5096,7 @@ u_t(&amp;x,y,z,0)=
 = \frac{1}{2ct} \int_{x-ct}^{x+ct} \psi(x)\,dx \\
 \bar{\phi}(x,t) &amp;= \frac{1}{2ct} \int_{x-ct}^{x+ct} \phi(x)\,dx
 \end{aligned}\]</span></p>
-<p>to the well-known D’Alembert solution. <span class="math inline">\(\,\)</span>Note in the D’Alembert solution, <span class="math inline">\(\,\)</span>the initial position <span class="math inline">\(\,\phi\,\)</span> gives rise to sharp trailing edges, <span class="math inline">\(\,\)</span>but the initial velocity <span class="math inline">\(\,\psi\,\)</span> does not. <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span>one dimension is a little unusual in that the initial position satisfies Huygen’s principle, <span class="math inline">\(\,\)</span>but the initial velocity does not</p></li>
+<p>to the well-known D’Alembert solution. <span class="math inline">\(\,\)</span>Note in the D’Alembert solution, <span class="math inline">\(\,\)</span>the initial position <span class="math inline">\(\,\phi\,\)</span> gives rise to sharp trailing edges, <span class="math inline">\(\,\)</span>but the initial velocity <span class="math inline">\(\,\psi\,\)</span> does not. <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span>one dimension is a little unusual in that the initial position satisfies Huygens’ principle, <span class="math inline">\(\,\)</span>but the initial velocity does not</p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span>What is the two dimensional solution of the analogous cylindrical-wave problem</p>
@@ -5219,7 +5207,7 @@ u_t(&amp;x,y,0)=
 </section>
 <section id="sec-x2-22" class="level2" data-number="13.5">
 <h2 data-number="13.5" class="anchored" data-anchor-id="sec-x2-22"><span class="header-section-number">13.5</span> Boundary Conditions Associated with the Wave Equation</h2>
-<p>The purpose of this section is to discuss some of the various types of BCs that are associated with physical problems of wave motions. <span class="math inline">\(\,\)</span>Here, <span class="math inline">\(\,\)</span>we will stick to one-dimensional problems where the BCs (linear ones) are generally groupded into one of three kinds</p>
+<p>The purpose of this section is to discuss some of the various types of BCs that are associated with physical problems of wave motions. <span class="math inline">\(\,\)</span>Here, <span class="math inline">\(\,\)</span>we will stick to one-dimensional problems where the BCs (linear ones) are generally grouped into one of three kinds</p>
 <ul>
 <li><p><strong>First Kind: <span class="math inline">\(\,\)</span>Controlled End Points</strong></p>
 <p>We are now involved with problems like</p>
@@ -5246,24 +5234,24 @@ u_t(&amp;x,y,0)=
 <p>where we control the end points so that they move in a given manner</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure10.jpg" title="1st kind BC" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/pde02_figure10.svg" title="1st kind BC" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
-<p>A typical problem of this kind would involve suddenly twisting (at <span class="math inline">\(t=1\)</span>) the right end of a fastened rod so many degrees and observing the resulting tortional vibration</p>
+<p>A typical problem of this kind would involve suddenly twisting (at <span class="math inline">\(t=1\)</span>) the right end of a fastened rod so many degrees and observing the resulting torsional vibration</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure11.jpg" title="tortional vibration" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure11.svg" title="torsional vibration" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 <li><p><strong>Second Kind: <span class="math inline">\(\,\)</span>Force Given on the Boundaries</strong></p>
-<p>In as much as the vertical forces on the string at the left and right ends are given by <span class="math inline">\(\,Tu_x(0,t)\,\)</span> and <span class="math inline">\(\,Tu_x(1,t)\)</span>, <span class="math inline">\(\,\)</span>respectively, <span class="math inline">\(\,\)</span>by allowing the ends of the string to slide vertically on frictionless sleeves, <span class="math inline">\(\,\)</span>the boundary conditions become</p>
+<p>Inasmuch as the vertical forces on the string at the left and right ends are given by <span class="math inline">\(\,-Tu_x(0,t)\,\)</span> and <span class="math inline">\(\,Tu_x(1,t)\)</span>, <span class="math inline">\(\,\)</span>respectively, <span class="math inline">\(\,\)</span>by allowing the ends of the string to slide vertically on frictionless sleeves, <span class="math inline">\(\,\)</span>the boundary conditions become</p>
 <p><span class="math display">\[\begin{aligned}
 u_x(0,t)&amp;=0 \\
 u_x(1,t)&amp;=0
 \end{aligned}, \quad 0 &lt; t &lt; \infty\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure12.jpg" title="free BC" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/pde02_figure12.svg" title="free BC" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 <p>If a vertical force <span class="math inline">\(f(t)\)</span> is applied at the end <span class="math inline">\(x=1\)</span>, <span class="math inline">\(\,\)</span>then the BC would be</p>
@@ -5272,7 +5260,7 @@ u_x(1,t)&amp;=0
 <p>Consider finally a violin string whose ends are attached to an elastic arrangement like the one shown in figure</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure13.jpg" title="elastic attachment" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure13.svg" title="elastic attachment" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p>Here, <span class="math inline">\(\,\)</span>the spring attachments at each end give rise to vertical forces proportional to the displacements <span class="math inline">\(\,-u(0,t)\,\)</span> and <span class="math inline">\(\,-u(1,t)\)</span></p>
@@ -5293,7 +5281,7 @@ u_x(1,t) &amp;=-\frac{h}{T} \left[u(1,t) -\theta_2(t) \right]
 \end{aligned}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure14.jpg" title="nonhomogeneous elastic attachment" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure14.svg" title="nonhomogeneous elastic attachment" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 </ul>
@@ -5331,10 +5319,10 @@ u_x(1,t) &amp;=-\frac{h}{T} \left[u(1,t) -\theta_2(t) \right]
   &amp;&amp; 0 \leq x \leq L
 \end{aligned} \tag{FS}\label{eq:FS}\]</span></p>
 <ul>
-<li><p>What happens is that the traveling wave solution to the PDE and IC keeps reflecting from the boundaries in such a way that the wave motion does not to be moving, <span class="math inline">\(\,\)</span>but, <span class="math inline">\(\,\)</span>in fact, appears to be vibrating in one position:</p>
+<li><p>What happens is that the traveling wave solution to the PDE and IC keeps reflecting from the boundaries in such a way that the wave motion does not appear to be moving, <span class="math inline">\(\,\)</span>but, <span class="math inline">\(\,\)</span>in fact, appears to be vibrating in one position:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure15.jpg" title="Standing Waves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure15.svg" title="Standing Waves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div></li>
 <li><p>We start by seeking standing-wave solutions to the PDE; <span class="math inline">\(\,\)</span>that is solutions of the form</p>
@@ -5387,7 +5375,7 @@ b_n&amp;= \frac{2}{n\pi c} \int_0^L g(x)\, \sin \frac{n\pi x}{L}\,dx
 \normalsize u(x,t) \;&amp;\normalsize= \sum_{n=1}^\infty \left[ a_n \cos\frac{n\pi c t}{L} +b_n \sin \frac{n\pi c t}{L} \right]\,\sin \frac{n\pi x}{L}\\[5pt]
 &amp;= \frac{1}{2} \sum_{n=1}^\infty a_n\left[\sin \frac{n\pi}{L} (x+ct) +\sin \frac{n\pi}{L} (x-ct)\right ]
 \\&amp;\quad-\frac{1}{2} \sum_{n=1}^\infty b_n\left[\cos \frac{n\pi}{L} (x+ct) -\cos \frac{n\pi}{L} (x-ct)\right ]\\[5pt]
-&amp;\;\;\Big\Downarrow \;\; {\tiny\sum_{n=1}^\infty a_n \sin \frac{n\pi x}{L}=f(x), \;\;\sum_{n=1}^\infty b_n \frac{n\pi c}{L}\sin\frac{n\pi x}{L}=g(x) \;\rightarrow\, -\sum_{n=1}^\infty b_n\, c\cos \frac{n\pi x}{L} +\sum_{n=1}^\infty b_n c=\int^x_0 g(\alpha) d\alpha} \\[5pt]
+&amp;\;\;\Big\Downarrow \;\; {\tiny f,\,g \text{ extended as odd } 2L\text{-periodic functions}, \;\; \sum_{n=1}^\infty a_n \sin \frac{n\pi x}{L}=f(x), \;\;\sum_{n=1}^\infty b_n \frac{n\pi c}{L}\sin\frac{n\pi x}{L}=g(x) \;\rightarrow\, -\sum_{n=1}^\infty b_n\, c\cos \frac{n\pi x}{L} +\sum_{n=1}^\infty b_n c=\int^x_0 g(\alpha) d\alpha} \\[5pt]
 &amp;\normalsize= \frac{1}{2}\left[ f(x+ct) +f(x-ct)\right] +\frac{1}{2c} \int_{x-ct}^{x+ct} g(\alpha)\,d\alpha
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
@@ -5478,15 +5466,17 @@ u_t(x,0)&amp;= \sin\frac{3\pi x}{L}
 \end{aligned}\]</span></p>
 <p>So, <span class="math inline">\(\,\)</span>solving our new initial-value problem, <span class="math inline">\(\,\)</span>we have</p>
 <p><span class="math display">\[\begin{aligned}
-U_1(t)&amp;= \left( \frac{4}{\pi} -\frac{1}{\pi^2} \right) \,\cos\pi c t +\frac{1}{\pi^2}\\
+U_1(t)&amp;= \left( \frac{4}{\pi} -\frac{1}{\pi^2 c^2} \right) \,\cos\pi c t +\frac{1}{\pi^2 c^2}\\
 U_n(t) &amp;= \begin{cases}
 \quad\;\; 0 &amp; n=2,4,\cdots \\
 \displaystyle \frac{4}{n\pi}\cos n\pi c t &amp; n=3,5,\cdots
 \end{cases}
 \end{aligned}\]</span></p>
 <p>Hence, <span class="math inline">\(\,\)</span>the solution <span class="math inline">\(\,u(x,t)\)</span> of the problem is</p>
-<p><span class="math display">\[ u(x,t)=\left[ \left( \frac{4}{\pi} -\frac{1}{\pi^2} \right) \,\cos\pi c t +\frac{1}{\pi^2} \right]\,\sin \pi x
-+\frac{4}{\pi} \sum_{n=1}^\infty \frac{1}{2n +1} \cos(2n +1)\pi c t \, \sin(2n +1)\pi x\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+u(x,t)&amp;=\left[ \left( \frac{4}{\pi} -\frac{1}{\pi^2 c^2} \right) \,\cos\pi c t +\frac{1}{\pi^2 c^2} \right]\,\sin \pi x \\
+&amp;\quad +\frac{4}{\pi} \sum_{n=1}^\infty \frac{1}{2n +1} \cos(2n +1)\pi c t \, \sin(2n +1)\pi x
+\end{aligned}\]</span></p>
 </section>
 <section id="sec-x2-25" class="level2" data-number="13.8">
 <h2 data-number="13.8" class="anchored" data-anchor-id="sec-x2-25"><span class="header-section-number">13.8</span> The Vibrating Drumhead (Wave Equation in Polar Coordinates)</h2>
@@ -5532,7 +5522,7 @@ U_{rr} +\frac{1}{r}U_r &amp;+\frac{1}{r^2}U_{\theta\theta} +\lambda U=0\\
 &amp;\Downarrow {\scriptsize U(r,\theta)=R(r)\Theta(\theta)}\\
 R''\Theta +\frac{1}{r}R' \Theta &amp;+\frac{1}{r^2}R \Theta'' +\lambda R\Theta = 0 \\
 &amp;\Downarrow \\
--\frac{r^2 R'' +rR' +\lambda r^2R}{R} &amp;= \frac{\;\Theta''}{\Theta} = -\mu &lt;0 \\
+-\frac{r^2 R'' +rR' +\lambda r^2R}{R} &amp;= \frac{\;\Theta''}{\Theta} = -\mu \leq 0 \\
 &amp;\Downarrow \\
 \color{red}{\Theta'' +\mu \Theta} &amp;\color{red}{=0} \\
 \color{red}{r^2 R'' +rR'} &amp;\color{red}{+(\lambda r^2 -\mu) R =0}
@@ -5624,7 +5614,7 @@ Figure&nbsp;13.1: Bessel’s functions
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span>ncols, </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    nrows<span class="op">=</span>ncols, figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>), </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    nrows<span class="op">=</span>nrows, figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>), </span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span><span class="st">'polar'</span>))</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs.flat:</span>
@@ -5664,14 +5654,14 @@ Figure&nbsp;13.2: Helmholtz Eigenfunctions: <span class="math inline">\(\,U_{nm}
 <li><p>Now that we have solved the Helmholtz equation for the basic shapes <span class="math inline">\(\,U_{nm}(r,\theta)\)</span>, <span class="math inline">\(\,\)</span>the final step is to multiply by the time factor</p>
 <p><span class="math display">\[\color{red}{T_{nm}(t)=A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm} t}\]</span></p>
 <p>and add the products in such a way that the initial conditions are satisfied. <span class="math inline">\(\,\)</span>That is, <span class="math inline">\(\,\)</span>the solution to our problem will be</p>
-<p><span class="math display">\[ \color{red}{u(r,\theta,t) = \sum_{n=0}^\infty \sum_{m=1}^\infty J_n(\alpha_{nm}r) \cos n\theta \left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]}\]</span></p>
+<p><span class="math display">\[ \color{red}{u(r,\theta,t) = \sum_{n=0}^\infty \sum_{m=1}^\infty J_n(\alpha_{nm}r) \cos (n\theta -\phi_{nm}) \left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]}\]</span></p>
 <p>Rather than going through the complicated process of finding <span class="math inline">\(\,A_{nm}\,\)</span> and <span class="math inline">\(\,B_{nm}\,\)</span> for the general case, <span class="math inline">\(\,\)</span><font color="blue">we will find the solution for the situation where <span class="math inline">\(\,u\,\)</span> is independent of <span class="math inline">\(\,\theta\)</span> (very common, <span class="math inline">\(\,n=0\)</span>). <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span>we will assume that the initial position of the drumhead depends only on <span class="math inline">\(\,r\)</span></font></p></li>
 <li><p>In particular, <span class="math inline">\(\,\)</span>we consider</p>
 <p><span class="math display">\[\begin{aligned}
 u(r,\theta,0) &amp;= \color{red}{f(r)}\\
 u_t(r,\theta,0) &amp;= 0
 \end{aligned}\]</span></p>
-<p>(It’s just easy to do the case where <span class="math inline">\(\,u_t \neq 0\)</span>). <span class="math inline">\(\,\)</span>With these assumptions, <span class="math inline">\(\,\)</span>the solution now becomes</p>
+<p>(It’s just as easy to do the case where <span class="math inline">\(\,u_t \neq 0\)</span>). <span class="math inline">\(\,\)</span>With these assumptions, <span class="math inline">\(\,\)</span>the solution now becomes</p>
 <p><span class="math display">\[ u(r,t) = \sum_{m=1}^\infty A_{\color{red}{0}m} J_{\color{red}{0}}(\alpha_{\color{red}{0}m}r) \cos c\alpha_{\color{red}{0}m}t\]</span></p>
 <p>and our goal is to find <span class="math inline">\(\,A_{0m}\,\)</span> so that</p>
 <p><span class="math display">\[ \color{blue}{f(r) = \sum_{m=1}^\infty \color{red}{A_{0m}} J_0(\alpha_{0m}r)} \tag{IC}\label{eq:IC}\]</span></p></li>
@@ -5697,7 +5687,7 @@ u_t(r,\theta,0) &amp;= 0
 <p>we rescale the <span class="math inline">\(\,r\)</span>-axis so that <span class="math inline">\(\,m\)</span>-th root passes through <span class="math inline">\(\,r=1\)</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="84e5533f" class="cell" data-execution_count="13">
+<div id="76f0daf1" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.axisartist.axislines <span class="im">import</span> SubplotZero</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">8</span>))</span>
@@ -5756,7 +5746,7 @@ u_t(r,\theta,0) &amp;= 0
 <ul>
 <li>In general, <span class="math inline">\(\,\)</span>what we would do is to expand the initial position <span class="math inline">\(\,f(r)\,\)</span> into the sum of these basic shapes <span class="math inline">\(\,J_0(\alpha_{0m} r)\)</span>, <span class="math inline">\(\,\)</span>observe the vibration for each one and then add them up</li>
 </ul>
-<div id="e6a4b7ae" class="cell" data-execution_count="14">
+<div id="6e8f8a80" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5768,7 +5758,7 @@ u_t(r,\theta,0) &amp;= 0
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="608e465a" class="cell" data-execution_count="15">
+<div id="4927e2aa" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>line1, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">1</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>line2, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">1</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>line_sum, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">4</span>)</span>
@@ -5803,7 +5793,7 @@ u_t(r,\theta,0) &amp;= 0
 <span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>         init_func<span class="op">=</span>init, frames<span class="op">=</span>tt, interval<span class="op">=</span><span class="dv">200</span>, blit<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>HTML(<span class="st">'&lt;center&gt;'</span> <span class="op">+</span> anim.to_html5_video() <span class="op">+</span> <span class="st">'&lt;/center&gt;'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <center><video width="672" height="480" controls="" autoplay="" loop="">
   <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQAFleJtZGF0AAACrgYF//+q
 3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2NSByMzIyMiBiMzU2MDVhIC0gSC4yNjQvTVBF
@@ -12343,10 +12333,10 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
 <ol type="1">
 <li><p>Try a transformation of the form <span class="math inline">\(\tau=ct\)</span>, <span class="math inline">\(\,\)</span>where <span class="math inline">\(c\)</span> is an unknown constant</p></li>
 <li><p>Compute <span class="math inline">\(U_t=U_\tau\tau_t=cU_\tau\)</span></p></li>
-<li><p>Substitute this derivative into the the PDE to obtain</p>
+<li><p>Substitute this derivative into the PDE to obtain</p>
 <p><span class="math display">\[cU_\tau =\frac{\alpha}{L^2} U_{\xi\xi}\]</span></p></li>
 </ol>
-<p>and, <span class="math inline">\(\,\)</span>hence, <span class="math inline">\(\,\)</span>pick <span class="math inline">\(\displaystyle c=\frac{\alpha}{L^2}\)</span>. This give us our new time</p>
+<p>and, <span class="math inline">\(\,\)</span>hence, <span class="math inline">\(\,\)</span>pick <span class="math inline">\(\displaystyle c=\frac{\alpha}{L^2}\)</span>. This gives us our new time</p>
 <p><span class="math display">\[ \tau=\frac{\alpha}{L^2} t \]</span></p></li>
 <li><p>We now have the completely dimensionless problem</p>
 <p><span class="math display">\[
@@ -12358,7 +12348,7 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
     &amp;
     \begin{array}{l}
       = 0 \\ = 1
-    \end{array} &amp;&amp; 0 &lt; t &lt; \infty \\[5pt]
+    \end{array} &amp;&amp; 0 &lt; \tau &lt; \infty \\[5pt]
     U(\xi,0) &amp;= \frac{\sin\pi\xi -T_1}{T_2 -T_1} &amp;&amp; 0 \leq \xi \leq 1  
   \end{aligned}\]</span></p></li>
 </ul>
@@ -12384,7 +12374,7 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
     = \sin \frac{\pi x}{L} +0.5\sin \frac{3\pi x}{L} \\ = 0
   \end{array} &amp;&amp; 0 &lt; x &lt; L
 \end{aligned}\]</span></p></li>
-<li><p>By transforming the independent variables (no need to transform <span class="math inline">\(u\)</span>) into a new ones</p>
+<li><p>By transforming the independent variables (no need to transform <span class="math inline">\(u\)</span>) into new ones</p>
 <p><span class="math display">\[ \xi=\frac{x}{L}\; \text{ and } \;\tau=\frac{c}{L} t \]</span></p>
 <p>we get the new problem</p>
 <p><span class="math display">\[
@@ -12414,7 +12404,7 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-x2-27" class="level2" data-number="13.10">
-<h2 data-number="13.10" class="anchored" data-anchor-id="sec-x2-27"><span class="header-section-number">13.10</span> <span class="math inline">\(~\)</span>Classification of PDEs (Cannonical Form of the Hyperbolic Equation)</h2>
+<h2 data-number="13.10" class="anchored" data-anchor-id="sec-x2-27"><span class="header-section-number">13.10</span> <span class="math inline">\(~\)</span>Classification of PDEs (Canonical Form of the Hyperbolic Equation)</h2>
 <ul>
 <li><p>The purpose here is to classify the second-order linear PDE</p>
 <p><span class="math display">\[ \color{red}{A}u_{xx} +\color{red}{B}u_{xy} +\color{red}{C} u_{yy} +Du_x +Eu_y +Fu = G \tag{SL}\label{eq:SL}\]</span></p>
@@ -12424,7 +12414,7 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
 <li><p><font color="red">Parabolic <span class="math inline">\(~\,\)</span> if <span class="math inline">\(\,B^2 -4AC = 0~\)</span> at <span class="math inline">\(\,(x,y)\)</span> </font></p></li>
 <li><p><font color="red">Elliptic <span class="math inline">\(~~~~~\,\)</span> if <span class="math inline">\(\,B^2 -4AC &lt; 0~\)</span> at <span class="math inline">\(\,(x,y)\)</span> </font></p></li>
 </ul></li>
-<li><p>and depending on which is true, <span class="math inline">\(\,\)</span><font color="blue">the equation can be transformed into a corresponding cannonical (simple) form by introducing new coordinates <span class="math inline">\(\,\xi=\xi(x,y)\)</span> <span class="math inline">\(\,\)</span>and <span class="math inline">\(\,\eta=\eta(x,y)\)</span></font></p>
+<li><p>and depending on which is true, <span class="math inline">\(\,\)</span><font color="blue">the equation can be transformed into a corresponding canonical (simple) form by introducing new coordinates <span class="math inline">\(\,\xi=\xi(x,y)\)</span> <span class="math inline">\(\,\)</span>and <span class="math inline">\(\,\eta=\eta(x,y)\)</span></font></p>
 <p><span class="math display">\[\begin{aligned}
   u_{\xi\eta} = \Phi(\xi,\eta,u,u_\xi,u_\eta)
   \; &amp;\text{ or } \;
@@ -12501,7 +12491,7 @@ u_{yy} =\;u_{\xi\xi}&amp; \xi_y^2
   =&amp; \; J^2(B^2 -4AC)
 \end{aligned}\]</span></p>
 <p>in which <span class="math inline">\(\,J\,\)</span> is the Jacobian of the transformation and we select the transformation <span class="math inline">\(\,(\xi,\eta)\,\)</span> such that <span class="math inline">\(\,J \neq 0\)</span></p></li>
-<li><p><font color="blue">The next step in our process is to set the coefficients <span class="math inline">\(\,\bar{A}\,\)</span> and <span class="math inline">\(\,\bar{C}\,\)</span> to zero and solve for the tranformation <span class="math inline">\(\,\xi\,\)</span> and <span class="math inline">\(\,\eta\,\)</span></font>. <span class="math inline">\(\,\)</span>This will give us the coordinates that reduce the original PDE to canonical form:</p>
+<li><p><font color="blue">The next step in our process is to set the coefficients <span class="math inline">\(\,\bar{A}\,\)</span> and <span class="math inline">\(\,\bar{C}\,\)</span> to zero and solve for the transformation <span class="math inline">\(\,\xi\,\)</span> and <span class="math inline">\(\,\eta\,\)</span></font>. <span class="math inline">\(\,\)</span>This will give us the coordinates that reduce the original PDE to canonical form:</p>
 <p><span class="math display">\[\begin{aligned}
 \bar{A}=&amp;\;A\xi_x^2 +B\xi_x \xi_y +C\xi_y^2 =0\\
 \bar{C}=&amp;\;A\eta_x^2 +B\eta_x \eta_y +C\eta_y^2 =0\\
@@ -12515,7 +12505,7 @@ A\left[ \frac{\eta_x}{\eta_y} \right]^2 +B\left[ \frac{\eta_x}{\eta_y} \right] +
 <li><p>We have now reduced the problem to finding the two functions <span class="math inline">\(\,\xi(x,y)\,\)</span> and <span class="math inline">\(\,\eta(x,y)\,\)</span> so that their ratio <span class="math inline">\(\,[\xi_x/\xi_y]\,\)</span> and <span class="math inline">\(\,[\eta_x/\eta_y]\,\)</span> satisfy the above equation. <span class="math inline">\(\,\)</span>Finding functions satisfying these conditions is really quite easy once we look for a few moments at figure</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure16.jpg" title="characteristic curves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%"></p>
+<p><img src="figures/pde02_figure16.svg" title="characteristic curves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%"></p>
 </figure>
 </div>
 <p><span class="math display">\[\begin{aligned}
@@ -12550,7 +12540,7 @@ A\left[ \frac{\eta_x}{\eta_y} \right]^2 +B\left[ \frac{\eta_x}{\eta_y} \right] +
 \end{array}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure17.jpg" title="Characteristic Curves2" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="figures/pde02_figure17.svg" title="Characteristic Curves2" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
@@ -12559,20 +12549,20 @@ A\left[ \frac{\eta_x}{\eta_y} \right]^2 +B\left[ \frac{\eta_x}{\eta_y} \right] +
 <p>which is a hyperbolic equation in the first quadrant. <span class="math inline">\(\,\)</span>We consider the problem of finding new coordinates that will change the original equation to canonical form for <span class="math inline">\(\,x\,\)</span> and <span class="math inline">\(\,y\,\)</span> in the first quadrant</p>
 <p><strong>STEP 1</strong> <span class="math inline">\(\,\)</span> Solve the two characteristic equations</p>
 <p><span class="math display">\[\begin{aligned}
-\frac{dy}{dx} &amp;=-\left[ \frac{\xi_x}{\xi_y} \right]=\frac{B -\sqrt{B^2-4AC}}{2A} =-\frac{x}{y}\\
-\frac{dy}{dx} &amp;=-\left[ \frac{\eta_x}{\eta_y} \right]=\frac{B +\sqrt{B^2-4AC}}{2A} =\frac{x}{y}\\
+\frac{dy}{dx} &amp;=-\left[ \frac{\eta_x}{\eta_y} \right]=\frac{B -\sqrt{B^2-4AC}}{2A} =-\frac{x}{y}\\
+\frac{dy}{dx} &amp;=-\left[ \frac{\xi_x}{\xi_y} \right]=\frac{B +\sqrt{B^2-4AC}}{2A} =\frac{x}{y}\\
 \end{aligned}\]</span></p>
 <p>Integrating these two equations by the ODE technique of separating variables gives the implicit relationship</p>
 <p><span class="math display">\[\begin{aligned}
-y^2 &amp;-x^2 = c_1 \\
 y^2 &amp;+x^2 = c_2 \\
+y^2 &amp;-x^2 = c_1 \\
 &amp;\Downarrow \\
 \xi= \,&amp;y^2 -x^2 \\
 \eta = \,&amp;y^2 +x^2
 \end{aligned}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure18.jpg" title="Characteristic Curves3" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/pde02_figure18.svg" title="Characteristic Curves3" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 <p>We substitute this new coordinate into the equation to find the new equation</p>
@@ -12609,10 +12599,10 @@ y^2 &amp;+x^2 = c_2 \\
 <li><p>In the general parabolic equation, <span class="math inline">\(\,\)</span>we obtain only a single canonical transformation as</p>
 <p><span class="math display">\[ \bar{A}=0, \;\;\frac{dy}{dx}=-\left [ \frac{\xi_x}{\xi_y} \right ],\;\;\;\text{or}\;\;\; \bar{C}=0, \;\;\frac{dy}{dx}=-\left [ \frac{\eta_x}{\eta_y} \right ]\]</span></p>
 <p>Suppose <span class="math inline">\(\,\xi\,\)</span> is calculated. <span class="math inline">\(\,\)</span>What could be the possible choice for <span class="math inline">\(\,\eta\,\)</span>? <span class="math inline">\(\,\)</span>We can select <span class="math inline">\(\,\eta\,\)</span> as any arbitrary function of <span class="math inline">\(\,x\,\)</span> and <span class="math inline">\(\,y\,\)</span> such that <span class="math inline">\(\,\eta\,\)</span> is independent of <span class="math inline">\(\,\xi\,\)</span> (<span class="math inline">\(J \neq 0\)</span>)</p></li>
-<li><p>In the general elliptic case, <span class="math inline">\(\,A\lambda^2 +B\lambda +C=0\,\)</span> leads to complex conjugate canonical tramsformation <span class="math inline">\(\,\xi\,\)</span> and <span class="math inline">\(\,\eta\)</span>. <span class="math inline">\(\,\)</span>Since <span class="math inline">\(\,\xi\,\)</span> and <span class="math inline">\(\,\eta\,\)</span> are complex, <span class="math inline">\(\,\)</span>we introduce new real variables</p>
+<li><p>In the general elliptic case, <span class="math inline">\(\,A\lambda^2 +B\lambda +C=0\,\)</span> leads to complex conjugate canonical transformation <span class="math inline">\(\,\xi\,\)</span> and <span class="math inline">\(\,\eta\)</span>. <span class="math inline">\(\,\)</span>Since <span class="math inline">\(\,\xi\,\)</span> and <span class="math inline">\(\,\eta\,\)</span> are complex, <span class="math inline">\(\,\)</span>we introduce new real variables</p>
 <p><span class="math display">\[\begin{aligned}
    \alpha &amp;= \frac{1}{2}(\xi +\eta)\\
-   \beta &amp;= \frac{1}{2i}(\xi -i\eta)
+   \beta &amp;= \frac{1}{2i}(\xi -\eta)
   \end{aligned}\]</span></p>
 <p>Under the transformation <span class="math inline">\(\,(x, y)\to (\alpha, \beta)\)</span>, <span class="math inline">\(\,\)</span>the canonical form is given by</p>
 <p><span class="math display">\[ u_{\alpha\alpha} +u_{\beta\beta}=\Phi(\alpha,\beta,u,u_\alpha,u_\beta)\]</span></p></li>
@@ -12629,7 +12619,7 @@ y^2 &amp;+x^2 = c_2 \\
 <section id="sec-x2-28" class="level2" data-number="13.11">
 <h2 data-number="13.11" class="anchored" data-anchor-id="sec-x2-28"><span class="header-section-number">13.11</span> <span class="math inline">\(~\)</span>First-Order Equations (Method of Characteristics)</h2>
 <ul>
-<li><p>If the student recalls, <span class="math inline">\(\,\)</span>when we solved the diffusion equation</p>
+<li><p>If the student recalls, <span class="math inline">\(\,\)</span>when we solved the diffusion-convection equation</p>
 <p><span class="math display">\[ u_t=\alpha u_{xx} - vu_x, \quad -\infty &lt; x &lt; \infty, \;\; 0 &lt; t &lt; \infty\]</span></p>
 <p>the constant <span class="math inline">\(\,\alpha\,\)</span> stood for the amount of diffusion, <span class="math inline">\(\,\)</span>while <span class="math inline">\(v\)</span> stood for the velocity of the medium</p></li>
 <li><p>Hence if <span class="math inline">\(\,\alpha=0\)</span> (no diffusion), <span class="math inline">\(\,\)</span>it is clear (since we only have convection) that the solution will travel along the <span class="math inline">\(\,x\)</span>-axis with velocity <span class="math inline">\(\,v\)</span>. <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span>if the initial solution is <span class="math inline">\(\,u(x,0)=\phi(x)\)</span>, <span class="math inline">\(\,\)</span>then the solution to</p>
@@ -12642,10 +12632,10 @@ y^2 &amp;+x^2 = c_2 \\
 <li><p>The purpose of this section is to introduce the notion of first-order partial differential equations and <font color="red">method of characteristics</font>. <span class="math inline">\(\,\)</span>The problem we will solve is the initial-value problem</p>
 <p><span class="math display">\[ a(x,t) u_x +b(x,t) u_t +c(x,t)u=0 \]</span></p>
 <p><span class="math display">\[u(x,0)=\phi(x), \;\; {-\infty&lt;x&lt;\infty,\;\; 0&lt; t &lt; \infty}\]</span></p>
-<p>The solution to this equation is based on a physical fact, <span class="math inline">\(\,\)</span>that <font color="blue">an initial disturbance at some point <span class="math inline">\(\,x\,\)</span> propagates along a line (curve) in the <span class="math inline">\(\,tx\)</span>-plane (called a characteristic)</font></p>
+<p>The solution to this equation is based on a physical fact, <span class="math inline">\(\,\)</span>that <font color="blue">an initial disturbance at some point <span class="math inline">\(\,x\,\)</span> propagates along a line (curve) in the <span class="math inline">\(\,xt\)</span>-plane (called a characteristic)</font></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure22.jpg" title="characteristics" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/pde02_figure22.svg" title="characteristics" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div></li>
 <li><p>With this in mind, <span class="math inline">\(\,\)</span>the idea is to introduce two new coordinates <span class="math inline">\(\,s\,\)</span> and <span class="math inline">\(\,\tau\)</span> (to replace <span class="math inline">\(\,x\,\)</span> and <span class="math inline">\(\,t\)</span>) that have the properties</p>
@@ -12686,7 +12676,7 @@ y^2 &amp;+x^2 = c_2 \\
 \end{aligned}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure23.jpg" title="new coordinates" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure23.svg" title="new coordinates" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p><strong>STEP 2</strong> <span class="math inline">\(\,\)</span> Using this coordinate system, <span class="math inline">\(\,\)</span>we change the PDE to the ODE</p>
@@ -12699,7 +12689,7 @@ u(s,\tau) &amp;=\sin \tau \cdot e^{-2s}
 <p><span class="math display">\[u(x,t) = \sin(x -t) \cdot e^{-2t}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure24.jpg" title="solution" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure24.svg" title="solution" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
@@ -12765,7 +12755,7 @@ u(s,\tau) &amp;=\sin \tau \cdot e^{-2s}
 <p>Finally, <span class="math inline">\(\,\)</span>since the integral <span class="math inline">\(\,[a,b]\,\)</span> was arbitrary, <span class="math inline">\(\,\)</span>we have the one-dimensional conservation equation</p>
 <p><span class="math display">\[u_t +f_x=0\]</span></p>
 <p>If we carried out a similar analysis in two or three dimensions, <span class="math inline">\(\,\)</span>we would have</p>
-<p><span class="math display">\[u_t +f_x +f_y=0, \;\; u_t +f_x +f_y +f_z=0\]</span></p></li>
+<p><span class="math display">\[u_t +\nabla\cdot\mathbf{f}=0: \quad u_t +(f_1)_x +(f_2)_y=0, \;\; u_t +(f_1)_x +(f_2)_y +(f_3)_z=0\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
@@ -12776,10 +12766,10 @@ u(s,\tau) &amp;=\sin \tau \cdot e^{-2s}
 <p><span class="math display">\[f_x = \frac{df}{du} u_x,\;\;\text{chain rule}\]</span></p>
 <p>and substitute it in the conservation equation. <span class="math inline">\(\,\)</span>Doing this, <span class="math inline">\(\,\)</span>we arrive at</p>
 <p><span class="math display">\[ u_t +\frac{df}{du}u_x=u_t+g(u)u_x=0\]</span></p>
-<p>where we can imagine a car moving upstream or downstream with velocity <span class="math inline">\(\,g(u)\)</span></p></li>
-<li><p>Hence, after <span class="math inline">\(\,t\,\)</span> minutes, the position <span class="math inline">\(\,x\,\)</span> of the car will be</p>
+<p>where we can imagine a disturbance (wave) in the traffic density moving upstream or downstream with velocity <span class="math inline">\(\,g(u)\)</span></p></li>
+<li><p>Hence, after <span class="math inline">\(\,t\,\)</span> minutes, the position <span class="math inline">\(\,x\,\)</span> of the disturbance will be</p>
 <p><span class="math display">\[x = x_0 +g(u)t, \quad\text{characteristic equation}\]</span></p></li>
-<li><p>Remembering that <font color="blue">the concentration <span class="math inline">\(\,u(x,t)\,\)</span> will not change along each characteristic</font>, <span class="math inline">\(\,\)</span>if we know the initial density <span class="math inline">\(\,u(x_0,0)\)</span>, then the characteristic equation for <span class="math inline">\(\,x\,\)</span> can be written</p></li>
+<li><p>Remembering that <font color="blue">the density <span class="math inline">\(\,u(x,t)\,\)</span> will not change along each characteristic</font>, <span class="math inline">\(\,\)</span>if we know the initial density <span class="math inline">\(\,u(x_0,0)\)</span>, then the characteristic equation for <span class="math inline">\(\,x\,\)</span> can be written</p></li>
 </ul>
 <p><span class="math display">\[x=x_0+g[u(x_0,0)]t\]</span></p>
 <ul>
@@ -12788,7 +12778,7 @@ u(s,\tau) &amp;=\sin \tau \cdot e^{-2s}
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure25.jpg" title="characteristic curves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+<p><img src="figures/pde02_figure25.svg" title="characteristic curves" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
@@ -12802,13 +12792,13 @@ u(s,\tau) &amp;=\sin \tau \cdot e^{-2s}
 <p><span class="math display">\[u(x,0) =
 \begin{cases}
 \;\;\; 1 &amp; x \leq 0\\
-1 -x     &amp; 0 &lt; x &lt; 1, \;-\infty &lt; x &lt;\infty \\
+1 -x     &amp; 0 &lt; x &lt; 1 \\
 \;\;\; 0 &amp; 1 \leq x
 \end{cases}\]</span></p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure26.jpg" title="initial density" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/pde02_figure26.svg" title="initial density" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p><strong>STEP 1</strong></p>
@@ -12837,7 +12827,7 @@ x &amp;= x_0 +g[u(x_0,0)] t \\
 <p>which represents vertical lines starting at <span class="math inline">\(\,x_0\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure27.jpg" title="characteristics" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/pde02_figure27.svg" title="characteristics" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p>The solution remains constant along each characteristic line. <span class="math inline">\(\,\)</span>Now the solution for <span class="math inline">\(\,x \in \mathbb{R}\)</span>, <span class="math inline">\(\,0 \leq t &lt;\textstyle\frac{1}{2}\,\)</span> is given by</p>
@@ -12851,15 +12841,15 @@ x &amp;= x_0 +g[u(x_0,0)] t \\
 <p>The difficulty in this example is that some characteristic lines will intersect each other. <span class="math inline">\(\,\)</span>In other words, <span class="math inline">\(\,\)</span><font color="red">at the intersection point <span class="math inline">\(\,(1,\textstyle \frac{1}{2})\,\)</span> of the two characteristic lines, <span class="math inline">\(\,\)</span>the solution becomes multi-valued</font>. <span class="math inline">\(\,\)</span>This pathology means that the solution in the usual sense fails to exist after <span class="math inline">\(\,t \geq \textstyle \frac{1}{2}\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/pde02_figure28.jpg" title="density of traffic at different values of time" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="figures/pde02_figure28.svg" title="density of traffic at different values of time" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 <p><strong>STEP 2</strong></p>
 <ul>
-<li><p>Hence, <span class="math inline">\(\,\)</span>to find the solution past <span class="math inline">\(\,t=\textstyle \frac{1}{2}\)</span>, <span class="math inline">\(\,\)</span>we must use another type of analysis. <span class="math inline">\(\,\)</span><font color="red">When characteristics run together, <span class="math inline">\(\,\)</span>we have the phenomenon of shock waves (discontinuous solutions)</font>, <span class="math inline">\(\,\)</span>and what we must ask is, <span class="math inline">\(\,\)</span>how fast does the leading edge of the shork wave propagate along the road?</p></li>
+<li><p>Hence, <span class="math inline">\(\,\)</span>to find the solution past <span class="math inline">\(\,t=\textstyle \frac{1}{2}\)</span>, <span class="math inline">\(\,\)</span>we must use another type of analysis. <span class="math inline">\(\,\)</span><font color="red">When characteristics run together, <span class="math inline">\(\,\)</span>we have the phenomenon of shock waves (discontinuous solutions)</font>, <span class="math inline">\(\,\)</span>and what we must ask is, <span class="math inline">\(\,\)</span>how fast does the leading edge of the shock wave propagate along the road?</p></li>
 <li><p>Before proceeding further, <span class="math inline">\(\,\)</span>it is necessary to introduce the concept of <font color="red">a jump condition: a condition that holds at a discontinuity or abrupt change</font>. <span class="math inline">\(\,\)</span>Consider one dimensional problem where there is a jump in the conserved quantity <span class="math inline">\(\,u\)</span>:</p>
 <p><span class="math display">\[u_t +f_x=0\]</span></p>
-<p>Let the solution exhibit a jump (or shork) at <span class="math inline">\(\,x=x_s(t)\,\)</span> and integrate over the partial domain, <span class="math inline">\(\,x \in (x_1, x_2)\)</span>, <span class="math inline">\(\,\)</span>where <span class="math inline">\(\,x_1 &lt; x_s(t) &lt; x_2\)</span>,</p>
+<p>Let the solution exhibit a jump (or shock) at <span class="math inline">\(\,x=x_s(t)\,\)</span> and integrate over the partial domain, <span class="math inline">\(\,x \in (x_1, x_2)\)</span>, <span class="math inline">\(\,\)</span>where <span class="math inline">\(\,x_1 &lt; x_s(t) &lt; x_2\)</span>,</p>
 <p><span class="math display">\[\scriptsize \begin{aligned}
 \frac{d}{dt} \left( \int_{x_1}^{x_s(t)}u\,dx +\int_{x_s(t)}^{x_2}u \,dx\right)&amp;= -\int_{x_1}^{x_2}
   \frac{\partial } {\partial x} f(u)\,dx\\
@@ -12871,10 +12861,10 @@ x_1 \to x_s(t),\;x_2 \to x_s(t) \;\; &amp;\Downarrow \\
 &amp;\Downarrow \\
 s=\frac{d x_s}{dt} &amp;=\frac{f(u^-(x_s(t),t)) -f(u^+(x_s(t),t))}{ u^-(x_s(t),t) -u^+(x_s(t),t)}
 \end{aligned}\]</span></p>
-<p>in which <span class="math inline">\(\,s\,\)</span> is the speed of the discontinuity and represents the jump condition for conservation eqaution</p></li>
-<li><p>A shork situation arises in a system where its characteristics intersect, <span class="math inline">\(\,\)</span>and under these conditions a requirement for a unique single-valued solution is that the solution should satisfy the Lax entropy condition</p>
+<p>in which <span class="math inline">\(\,s\,\)</span> is the speed of the discontinuity and represents the jump condition for the conservation equation</p></li>
+<li><p>A shock situation arises in a system where its characteristics intersect, <span class="math inline">\(\,\)</span>and under these conditions a requirement for a unique single-valued solution is that the solution should satisfy the Lax entropy condition</p>
 <p><span class="math display">\[f'(u^+(x_s(t),t)) &lt; s &lt; f'(u^-(x_s(t),t))\]</span></p>
-<p>where <span class="math inline">\(f'(u^+(x_s(t),t))\,\)</span> and <span class="math inline">\(\,f'(u^-(x_s(t),t))\,\)</span> represent characteristic speeds at upstream and downstream conditions, respectively</p></li>
+<p>where <span class="math inline">\(f'(u^+(x_s(t),t))\,\)</span> and <span class="math inline">\(\,f'(u^-(x_s(t),t))\,\)</span> represent characteristic speeds at downstream and upstream conditions, respectively</p></li>
 <li><p>So, <span class="math inline">\(\,\)</span>in our example, <span class="math inline">\(\,\)</span>the speed of the wave front would be(remembering that <span class="math inline">\(\,f(u)=u^2\)</span>)</p>
 <p><span class="math display">\[ s = \frac{1 -0}{1 -0}=1\]</span></p></li>
 <li><p><font color="red">Therefore, <span class="math inline">\(\,\)</span>a shock is formed at <span class="math inline">\((x,t)=(1,\textstyle\frac{1}{2})\)</span>: </font></p>
@@ -13132,7 +13122,7 @@ u(x, y, t) = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} &amp;\left[ A_{n,m} \cos(c\
     +\cos\left(c \sqrt{13}\, t\right) \sin(3x) \sin(2y)\]</span></p>
 <p>where <span class="math inline">\(c = \sqrt{\rho/T}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="26ee96b8" class="cell" data-execution_count="16">
+<div id="bb4d96c4" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -13154,7 +13144,7 @@ u(x, y, t) = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} &amp;\left[ A_{n,m} \cos(c\
 <span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b0d52445" class="cell" data-execution_count="17">
+<div id="a6dd3d79" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot_rectangle_membrane_normal_modes(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -13196,7 +13186,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 \]</span></p>
 <p>where <span class="math inline">\(c = \sqrt{\frac{\rho}{T}}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="18b53d10" class="cell" data-execution_count="18">
+<div id="e253e414" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plot_rectangle_membrane_normal_modes(<span class="dv">1</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -13222,7 +13212,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 </div>
 <p>Assuming the initial velocity <span class="math inline">\(u_t(x,0)=0\)</span>, describe the solution of this problem in the <span class="math inline">\(xt\)</span>-plane and plot the solution at <span class="math inline">\(t=4\)</span> in the <span class="math inline">\(xu\)</span>-plane</p>
 <p><strong>Solution</strong></p>
-<div id="2cc1b162" class="cell" data-execution_count="19">
+<div id="41135113" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-import libraries due to code state reset</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -13252,7 +13242,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 <span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># result is already 0 elsewhere</span></span>
 <span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="02c3b793" class="cell" data-execution_count="20">
+<div id="b791c507" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create meshgrid</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">200</span>)</span>
@@ -13295,7 +13285,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 </div>
 </div>
 </div>
-<div id="94f06639" class="cell" data-execution_count="21">
+<div id="97e7c2a6" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define u(x, t) = 1/2 [f(x -t) +f(x +t)] at t = 4</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">4</span></span>
@@ -13329,7 +13319,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 </div>
 </div>
 </div>
-<div id="d2f567f8" class="cell" data-execution_count="22">
+<div id="908e2834" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>t_vals_light <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">40</span>)</span>
@@ -13372,7 +13362,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 <span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>                              init_func<span class="op">=</span>init, blit<span class="op">=</span><span class="va">True</span>, interval<span class="op">=</span><span class="dv">400</span>)</span>
 <span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>HTML(<span class="st">'&lt;center&gt;'</span> <span class="op">+</span> ani.to_html5_video() <span class="op">+</span> <span class="st">'&lt;/center&gt;'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <center><video width="672" height="576" controls="" autoplay="" loop="">
   <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQAA6RhtZGF0AAACrgYF//+q
 3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2NSByMzIyMiBiMzU2MDVhIC0gSC4yNjQvTVBF
@@ -14562,7 +14552,7 @@ u_t(x, 0) &amp;= (1-x)^2
 </tr>
 </tbody>
 </table>
-<div id="ad913b40" class="cell" data-execution_count="23">
+<div id="3df66d67" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
