@@ -470,6 +470,9 @@ $$
 
 ![](figures/pde02_figure09.svg "Example initial condition"){width="70%" fig-align="center"}
 
+[Solution](files/solutions/sol_13_3a.pdf){target="_blank"}
+
+
 $~$
 
 ```{python}
@@ -558,7 +561,7 @@ $~$
 **Example** $\,$Simulate the semi-infinite string problem with the initial conditions:
 
 $$\begin{aligned}
-  u(x,0)&=\exp\left[-\frac{(x-3^2)}{0.5}\right] \\
+  u(x,0)&=\exp\left[-\frac{(x-3)^2}{0.5}\right] \\
   u_t(x,0)&=0
   \end{aligned}$$
 
@@ -1007,6 +1010,9 @@ $~$
     \end{array} && -\infty < x <\infty 
     \end{aligned}$$
 
+[Solution](files/solutions/sol_13_3b.pdf){target="_blank"}
+
+
 ## The Wave Equation in Two and Three Dimensions (Free Space) {#sex-x2-21}
 
 The problem of this section is to generalize the D'Alembert solution to two and three dimensions
@@ -1184,6 +1190,9 @@ $$\begin{aligned}
 \end{cases} 
 \end{aligned}$$
 
+[Solution](files/solutions/sol_13_4a.pdf){target="_blank"}
+
+
 $~$
 
 * **Two-Dimensional Wave Equation**
@@ -1253,6 +1262,9 @@ $$\begin{aligned}
 \end{cases} 
 \end{aligned}$$
 
+[Solution](files/solutions/sol_13_4b.pdf){target="_blank"}
+
+
 **The Dimensional Geometry Summary**
 
 | Dimension | Region of Influence | Type of Surface | Formula Name | Behavior |
@@ -1278,7 +1290,7 @@ $$\partial_t^2 G(x,t) - c^2 \Delta_x G(x,t) = \delta(x)\delta(t),
 
 | Dimension | Green's function $G$ | Support / where nonzero | Key properties / remarks |
 |:---:|---|-----|-----|
-| **1D** | $\displaystyle G(x,t)=\frac{1}{2c}\big[\delta(x-ct)+\delta(x+ct)\big]\,H(t)$ | On the two characteristic lines $x=\pm ct$ (for $t\ge0$) | Two undistorted pulses propagating left and right with speed $c$ |
+| **1D** | $\displaystyle G(x,t)=\frac{1}{2c}\,H\!\left(t-\tfrac{|x|}{c}\right)$ | Inside the characteristic cone $|x|\le ct$ | Constant $\frac{1}{2c}$ behind both fronts: no Huygens' principle. $\partial_t G=\frac12\big[\delta(x-ct)+\delta(x+ct)\big]$ gives two undistorted pulses |
 | **2D** | $\displaystyle G(r,t)=\frac{H\!\big(t-\tfrac{r}{c}\big)}{2\pi\,c\,\sqrt{c^2t^2-r^2}}$, $\;r=|x|$ | Inside the light cone: $t>r/c$ | Wave influence fills the interior of the light cone; singularity at $t=r/c$ |
 | **3D** | $\displaystyle G(r,t)=\frac{1}{4\pi c^2 r}\,\delta\!\big(t-\tfrac{r}{c}\big)$, $\;r=|x|$ | On the light-cone surface $t=r/c$ | Huygens’ principle: response lies exactly on the spherical wavefront; amplitude $\,\propto \,1/r$ |
 
@@ -1500,6 +1512,9 @@ $$\begin{aligned}
  u_t(x,0) &= 0
 \end{aligned}$$
 
+[Solution](files/solutions/sol_13_6a.pdf){target="_blank"}
+
+
 $~$
 
 **Example** $\,$What is the solution of the vibrating-string problem \eqref{eq:FS} if the ICs are
@@ -1508,6 +1523,9 @@ $$\begin{aligned}
  u(x,0)&= 0\\ 
  u_t(x,0)&= \sin\frac{3\pi x}{L}
 \end{aligned}$$
+
+[Solution](files/solutions/sol_13_6b.pdf){target="_blank"}
+
 
 $~$
 
@@ -1533,6 +1551,9 @@ $$
   \end{array}
   && 0 \leq x \leq 1
 \end{aligned}$$
+
+[Solution](files/solutions/sol_13_6c.pdf){target="_blank"}
+
 
 $~$
 
@@ -1973,6 +1994,9 @@ $$
   \end{array} && 0 \leq r \leq 1
 \end{aligned}$$
 
+[Solution](files/solutions/sol_13_8.pdf){target="_blank"}
+
+
 $~$
 
 ## Dimensionless Problems {#sec-x2-26}
@@ -2127,6 +2151,9 @@ $~$
 **Example** $\,$How could you pick a new space variable $\,\xi\,$ so that $\,v$ is eliminated in the equation
 
 $$ u_t +vu_x=0 $$
+
+[Solution](files/solutions/sol_13_9.pdf){target="_blank"}
+
 
 $~$
 
@@ -2331,7 +2358,10 @@ $~$
 
 $$u_{xx} + 4u_{xy} = 0$$
 
+
 Solve the transformed equation in the new coordinate system and then transform back to the original coordinates to find the solution to the original problem
+
+[Solution](files/solutions/sol_13_10.pdf){target="_blank"}
 
 $~$
 
@@ -2518,6 +2548,9 @@ $$
    a u_x +b u_y +c u_t +du &=0 && \scriptsize -\infty < x < \infty, \;-\infty < y < \infty, \; 0< t < \infty \\
    u(x,y,0) &=e^{-(x^2 +y^2)} && \scriptsize -\infty < x < \infty, \;-\infty < y < \infty
 \end{aligned}$$
+
+[Solution](files/solutions/sol_13_11.pdf){target="_blank"}
+
 
 $~$
 
@@ -2720,6 +2753,9 @@ $$
     \end{cases}  
 \end{aligned}$$
 
+[Solution](files/solutions/sol_13_12a.pdf){target="_blank"}
+
+
 $~$
 
 **Example** $\,$ Verify that $\,u=\phi[x-g(u)t]\,$ is an implicit solution of the nonlinear problem
@@ -2729,6 +2765,9 @@ $$
   u_t +g(u)u_x &=0 \quad -\infty < x < \infty, \; 0 < t < \infty \\
   u(x,0) &= \phi(x)
 \end{aligned}$$
+
+[Solution](files/solutions/sol_13_12b.pdf){target="_blank"}
+
 
 $~$
 
@@ -2865,6 +2904,9 @@ $$\begin{aligned}
  &\frac{\partial u_1}{\partial t} +\frac{\partial u_1}{\partial x} +\frac{\partial u_2}{\partial x} = 0\\ 
  &\frac{\partial u_2}{\partial t} +4\frac{\partial u_1}{\partial x} +\frac{\partial u_2}{\partial x} = 0 
 \end{aligned}$$
+
+[Solution](files/solutions/sol_13_13.pdf){target="_blank"}
+
 
 $~$
 

@@ -562,7 +562,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="7acc1d88" class="cell" data-execution_count="1">
+<div id="12377fd4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> animation, rc</span>
@@ -572,7 +572,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'xtick.direction'</span>] <span class="op">=</span> <span class="st">'in'</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'ytick.direction'</span>] <span class="op">=</span> <span class="st">'in'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="691e893a" class="cell" data-execution_count="2">
+<div id="6774158b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="op">-</span><span class="fl">6.0</span><span class="op">*</span>np.pi, <span class="fl">6.0</span><span class="op">*</span>np.pi), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -584,7 +584,7 @@ u(x,t) &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b3456e5e" class="cell" data-execution_count="3">
+<div id="68b31789" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>time_text <span class="op">=</span> ax.text(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.3</span>, <span class="st">''</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>line, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> init():</span>
@@ -3118,7 +3118,7 @@ u(x,t) &amp;=\frac{1}{2c}\int_{x-ct}^{x+ct} g(\xi)\,d\xi &amp; \\
 &amp;= \frac{1}{2c} \int_{x-ct}^{x+ct} 1\, d\xi=t, &amp; (x,t) \in \text{Region 6}
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="f9f5a691" class="cell" data-execution_count="4">
+<div id="83ca1127" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.5</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3136,7 +3136,7 @@ u(x,t) &amp;=\frac{1}{2c}\int_{x-ct}^{x+ct} g(\xi)\,d\xi &amp; \\
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    line.set_data([], [])</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7f68328a" class="cell" data-execution_count="5">
+<div id="3c421cff" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> animate(t):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    time_text.set_text(<span class="ss">f't = </span><span class="sc">{</span>t<span class="sc">:3.1f}</span><span class="ss">'</span>)    </span>
@@ -3166,7 +3166,7 @@ u(x,t) &amp;=\frac{1}{2c}\int_{x-ct}^{x+ct} g(\xi)\,d\xi &amp; \\
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    line.set_data(xx, uu)</span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="af55cea6" class="cell" data-execution_count="6">
+<div id="d93bb0b7" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> <span class="bu">list</span>(np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">50</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> animation.FuncAnimation(fig, animate, init_func<span class="op">=</span>init, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    frames<span class="op">=</span>tt, interval<span class="op">=</span><span class="dv">300</span>, blit<span class="op">=</span><span class="va">True</span>)</span>
@@ -3661,8 +3661,9 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
 <p><img src="figures/pde02_figure09.svg" title="Example initial condition" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
+<p><a href="files/solutions/sol_13_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="6e995515" class="cell" data-execution_count="7">
+<div id="852e98b1" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.5</span>))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3680,7 +3681,7 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    line.set_data([], [])</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2f94d1ef" class="cell" data-execution_count="8">
+<div id="d902c161" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_i(x):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;=</span> <span class="dv">1</span> <span class="kw">and</span> x <span class="op">&lt;=</span> <span class="dv">2</span>:</span>
@@ -3705,7 +3706,7 @@ HGRhdGEAAAABAAAAAExhdmY2Mi4zLjEwMA==
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    line.set_data(xx, uu)</span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (line,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a915445b" class="cell" data-execution_count="9">
+<div id="e74ad77a" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> <span class="bu">list</span>(np.linspace(<span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">100</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>anim <span class="op">=</span> animation.FuncAnimation(fig, animate, </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        init_func<span class="op">=</span>init, frames<span class="op">=</span>tt, interval<span class="op">=</span><span class="dv">750</span>, blit<span class="op">=</span><span class="va">True</span>)</span>
@@ -4568,10 +4569,10 @@ LjMuMTAw
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span>Simulate the semi-infinite string problem with the initial conditions:</p>
 <p><span class="math display">\[\begin{aligned}
-  u(x,0)&amp;=\exp\left[-\frac{(x-3^2)}{0.5}\right] \\
+  u(x,0)&amp;=\exp\left[-\frac{(x-3)^2}{0.5}\right] \\
   u_t(x,0)&amp;=0
   \end{aligned}\]</span></p>
-<div id="3dd90752" class="cell" data-execution_count="10">
+<div id="c25b5804" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.animation <span class="im">import</span> FuncAnimation</span>
@@ -4904,6 +4905,7 @@ u &amp;= \frac{1}{4c^2} \int_\eta^\xi
       = 0
     \end{array} &amp;&amp; -\infty &lt; x &lt;\infty
     \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_3b.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sex-x2-21" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="sex-x2-21"><span class="header-section-number">13.4</span> The Wave Equation in Two and Three Dimensions (Free Space)</h2>
@@ -5057,6 +5059,7 @@ u_t(&amp;x,y,z,0)=
 \;0 &amp; \text{elsewhere}
 \end{cases}
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_4a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><strong>Two-Dimensional Wave Equation</strong></p>
@@ -5113,6 +5116,7 @@ u_t(&amp;x,y,0)=
 \;0 &amp; \text{elsewhere}
 \end{cases}
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_4b.pdf" target="_blank">Solution</a></p>
 <p><strong>The Dimensional Geometry Summary</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -5184,9 +5188,9 @@ u_t(&amp;x,y,0)=
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><strong>1D</strong></td>
-<td><span class="math inline">\(\displaystyle G(x,t)=\frac{1}{2c}\big[\delta(x-ct)+\delta(x+ct)\big]\,H(t)\)</span></td>
-<td>On the two characteristic lines <span class="math inline">\(x=\pm ct\)</span> (for <span class="math inline">\(t\ge0\)</span>)</td>
-<td>Two undistorted pulses propagating left and right with speed <span class="math inline">\(c\)</span></td>
+<td><span class="math inline">\(\displaystyle G(x,t)=\frac{1}{2c}\,H\!\left(t-\tfrac{|x|}{c}\right)\)</span></td>
+<td>Inside the characteristic cone <span class="math inline">\(|x|\le ct\)</span></td>
+<td>Constant <span class="math inline">\(\frac{1}{2c}\)</span> behind both fronts: no Huygens’ principle. <span class="math inline">\(\partial_t G=\frac12\big[\delta(x-ct)+\delta(x+ct)\big]\)</span> gives two undistorted pulses</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><strong>2D</strong></td>
@@ -5384,12 +5388,14 @@ b_n&amp;= \frac{2}{n\pi c} \int_0^L g(x)\, \sin \frac{n\pi x}{L}\,dx
 u(x,0) &amp;= \sin \frac{\pi x}{L} +0.5 \sin\frac{3\pi x}{L}\\
 u_t(x,0) &amp;= 0
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_6a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span>What is the solution of the vibrating-string problem <span class="math inline">\(\eqref{eq:FS}\)</span> if the ICs are</p>
 <p><span class="math display">\[\begin{aligned}
 u(x,0)&amp;= 0\\
 u_t(x,0)&amp;= \sin\frac{3\pi x}{L}
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_6b.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span>Solve the damped vibrating-string problem</p>
 <p><span class="math display">\[
@@ -5412,6 +5418,7 @@ u_t(x,0)&amp;= \sin\frac{3\pi x}{L}
   \end{array}
   &amp;&amp; 0 \leq x \leq 1
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_6c.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-x2-24" class="level2" data-number="13.7">
@@ -5687,7 +5694,7 @@ u_t(r,\theta,0) &amp;= 0
 <p>we rescale the <span class="math inline">\(\,r\)</span>-axis so that <span class="math inline">\(\,m\)</span>-th root passes through <span class="math inline">\(\,r=1\)</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="76f0daf1" class="cell" data-execution_count="13">
+<div id="98eaae60" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.axisartist.axislines <span class="im">import</span> SubplotZero</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">8</span>))</span>
@@ -5746,7 +5753,7 @@ u_t(r,\theta,0) &amp;= 0
 <ul>
 <li>In general, <span class="math inline">\(\,\)</span>what we would do is to expand the initial position <span class="math inline">\(\,f(r)\,\)</span> into the sum of these basic shapes <span class="math inline">\(\,J_0(\alpha_{0m} r)\)</span>, <span class="math inline">\(\,\)</span>observe the vibration for each one and then add them up</li>
 </ul>
-<div id="6e8f8a80" class="cell" data-execution_count="14">
+<div id="2998ab5b" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.axes(xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5758,7 +5765,7 @@ u_t(r,\theta,0) &amp;= 0
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4927e2aa" class="cell" data-execution_count="15">
+<div id="b62067b2" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>line1, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">1</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>line2, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">1</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>line_sum, <span class="op">=</span> ax.plot([], [], lw<span class="op">=</span><span class="dv">4</span>)</span>
@@ -12271,6 +12278,7 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
     = 1 -r^2 \\ =0 \phantom{-r^2}
   \end{array} &amp;&amp; 0 \leq r \leq 1
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-x2-26" class="level2" data-number="13.9">
@@ -12401,6 +12409,7 @@ AAAcZGF0YQAAAAEAAAAATGF2ZjYyLjMuMTAw
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span>How could you pick a new space variable <span class="math inline">\(\,\xi\,\)</span> so that <span class="math inline">\(\,v\)</span> is eliminated in the equation</p>
 <p><span class="math display">\[ u_t +vu_x=0 \]</span></p>
+<p><a href="files/solutions/sol_13_9.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-x2-27" class="level2" data-number="13.10">
@@ -12577,6 +12586,7 @@ y^2 &amp;-x^2 = c_1 \\
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span>Find the new characteristic coordinates for</p>
 <p><span class="math display">\[u_{xx} + 4u_{xy} = 0\]</span></p>
 <p>Solve the transformed equation in the new coordinate system and then transform back to the original coordinates to find the solution to the original problem</p>
+<p><a href="files/solutions/sol_13_10.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>NOTES</strong></p>
 <ul>
@@ -12725,6 +12735,7 @@ u(s,\tau) &amp;=\sin \tau \cdot e^{-2s}
    a u_x +b u_y +c u_t +du &amp;=0 &amp;&amp; \scriptsize -\infty &lt; x &lt; \infty, \;-\infty &lt; y &lt; \infty, \; 0&lt; t &lt; \infty \\
    u(x,y,0) &amp;=e^{-(x^2 +y^2)} &amp;&amp; \scriptsize -\infty &lt; x &lt; \infty, \;-\infty &lt; y &lt; \infty
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_11.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-x2-29" class="level2" data-number="13.12">
@@ -12890,6 +12901,7 @@ s=\frac{d x_s}{dt} &amp;=\frac{f(u^-(x_s(t),t)) -f(u^+(x_s(t),t))}{ u^-(x_s(t),t
       \quad\; 0 &amp; |x| &gt; 1
     \end{cases}  
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_12a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Verify that <span class="math inline">\(\,u=\phi[x-g(u)t]\,\)</span> is an implicit solution of the nonlinear problem</p>
 <p><span class="math display">\[
@@ -12897,6 +12909,7 @@ s=\frac{d x_s}{dt} &amp;=\frac{f(u^-(x_s(t),t)) -f(u^+(x_s(t),t))}{ u^-(x_s(t),t
   u_t +g(u)u_x &amp;=0 \quad -\infty &lt; x &lt; \infty, \; 0 &lt; t &lt; \infty \\
   u(x,0) &amp;= \phi(x)
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_12b.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-x2-30" class="level2" data-number="13.13">
@@ -13007,6 +13020,7 @@ s=\frac{d x_s}{dt} &amp;=\frac{f(u^-(x_s(t),t)) -f(u^+(x_s(t),t))}{ u^-(x_s(t),t
 &amp;\frac{\partial u_1}{\partial t} +\frac{\partial u_1}{\partial x} +\frac{\partial u_2}{\partial x} = 0\\
 &amp;\frac{\partial u_2}{\partial t} +4\frac{\partial u_1}{\partial x} +\frac{\partial u_2}{\partial x} = 0
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_13_13.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="worked-exercises" class="level2 unnumbered">
@@ -13122,7 +13136,7 @@ u(x, y, t) = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} &amp;\left[ A_{n,m} \cos(c\
     +\cos\left(c \sqrt{13}\, t\right) \sin(3x) \sin(2y)\]</span></p>
 <p>where <span class="math inline">\(c = \sqrt{\rho/T}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="bb4d96c4" class="cell" data-execution_count="16">
+<div id="d65db1b5" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -13144,7 +13158,7 @@ u(x, y, t) = \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} &amp;\left[ A_{n,m} \cos(c\
 <span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a6dd3d79" class="cell" data-execution_count="17">
+<div id="432e173d" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot_rectangle_membrane_normal_modes(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -13186,7 +13200,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 \]</span></p>
 <p>where <span class="math inline">\(c = \sqrt{\frac{\rho}{T}}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="e253e414" class="cell" data-execution_count="18">
+<div id="797242dc" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plot_rectangle_membrane_normal_modes(<span class="dv">1</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -13212,7 +13226,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 </div>
 <p>Assuming the initial velocity <span class="math inline">\(u_t(x,0)=0\)</span>, describe the solution of this problem in the <span class="math inline">\(xt\)</span>-plane and plot the solution at <span class="math inline">\(t=4\)</span> in the <span class="math inline">\(xu\)</span>-plane</p>
 <p><strong>Solution</strong></p>
-<div id="41135113" class="cell" data-execution_count="19">
+<div id="9aae980e" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-import libraries due to code state reset</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -13242,7 +13256,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 <span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># result is already 0 elsewhere</span></span>
 <span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b791c507" class="cell" data-execution_count="20">
+<div id="14ef541e" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create meshgrid</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">200</span>)</span>
@@ -13285,7 +13299,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 </div>
 </div>
 </div>
-<div id="97e7c2a6" class="cell" data-execution_count="21">
+<div id="d6c6a8ea" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define u(x, t) = 1/2 [f(x -t) +f(x +t)] at t = 4</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">4</span></span>
@@ -13319,7 +13333,7 @@ u(x, y, t) = \cos(c\sqrt{17} \, t) \left[ \sin x \sin 4y + \sin 4x \sin y \right
 </div>
 </div>
 </div>
-<div id="908e2834" class="cell" data-execution_count="22">
+<div id="87baf688" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>t_vals_light <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">40</span>)</span>
@@ -14552,7 +14566,7 @@ u_t(x, 0) &amp;= (1-x)^2
 </tr>
 </tbody>
 </table>
-<div id="3df66d67" class="cell" data-execution_count="23">
+<div id="b3772e01" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
