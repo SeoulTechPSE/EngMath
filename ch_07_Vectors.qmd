@@ -13,20 +13,20 @@ jupyter: python3
 * Equal, Scalar Multiplication
 
   $~$
-  ![](figures/ch07_figure00.png "Equal"){width="30%" fig-align="center"}
+  ![](figures/ch07_figure00.svg "Equal"){width="30%" fig-align="center"}
 
-  ![](figures/ch07_figure01.png "Parallel_Vectors"){width="30%" fig-align="center"}
+  ![](figures/ch07_figure01.svg "Parallel_Vectors"){width="30%" fig-align="center"}
 
 * Addition and Subtraction
 
   $~$
-  ![](figures/ch07_figure02_03.png "Addition"){width="60%" fig-align="center"}
+  ![](figures/ch07_figure02_03.svg "Addition"){width="60%" fig-align="center"}
 
 * Vectors in a Coordinate Plane
 
   $$\mathbf{a}=\left \langle a_1, a_2 \right \rangle$$
 
-  ![](figures/ch07_figure04.png "Components"){width="25%" fig-align="center"}
+  ![](figures/ch07_figure04.svg "Components"){width="25%" fig-align="center"}
 
 * Let $~$$\mathbf{a}=\left \langle a_1, a_2 \right \rangle~$ and $~$$\mathbf{b}=\left \langle b_1, b_2 \right \rangle~$ 
  be vectors in $\mathbb{R}^2$
@@ -79,7 +79,9 @@ $~$
 $$\mathbf{a} +\mathbf{b} +\mathbf{c}=\mathbf{0}\;~\text{and}\;~\mathbf{a} +\mathbf{b} +\mathbf{c} +\mathbf{d}=\mathbf{0}$$
 
 
-![](figures/ch07_figure_ex1.jpg "example7_1"){width="60%" fig-align="center"}
+![](figures/ch07_figure_ex1.svg "example7_1"){width="60%" fig-align="center"}
+
+[Solution](files/solutions/sol_9_1.pdf){target="_blank"}
 
 $~$
 
@@ -87,7 +89,7 @@ $~$
 
 $~$
 
-![](figures/ch07_figure06.png "3_space"){width="40%" fig-align="center"}
+![](figures/ch07_figure06.svg "3_space"){width="40%" fig-align="center"}
 
 * $\mathbf{i}$, $~\mathbf{j}$, and $~\mathbf{k}$ vectors
 
@@ -102,7 +104,7 @@ $~$
 
 * Octants
 
-![](figures/ch07_figure05.png "Octants"){width="40%" fig-align="center"}
+![](figures/ch07_figure05.svg "Octants"){width="40%" fig-align="center"}
 
 :::: {.columns}
 
@@ -150,6 +152,8 @@ $~$
   
 * $x=y=z$
 
+[Solution](files/solutions/sol_9_2.pdf){target="_blank"}
+
 $~$
 
 ## Dot Product (Inner or Scalar Product) {#sec-7-3}
@@ -181,7 +185,7 @@ $~$
 
   * Direction cosines
 
-  ![](figures/ch07_figure07.png "Direction_Cosines"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure07.svg "Direction_Cosines"){width="50%" fig-align="center"}
   
   $\phantom{xx}\displaystyle\cos\alpha=\frac{a_1}{\left\|\mathbf{a}\right\|}$, 
   $~\displaystyle\cos\beta=\frac{a_2}{\left\|\mathbf{a}\right\|}$,
@@ -195,7 +199,7 @@ $~$
 
   To find the component of $\mathbf{a}$ on a vector $\mathbf{b}$, $~$we dot $\mathbf{a}$ with a unit vector in the direction of $\mathbf{b}$
   
-  ![](figures/ch07_figure08.png "Component_of_a_on_b"){width="35%" fig-align="center"}
+  ![](figures/ch07_figure08.svg "Component_of_a_on_b"){width="35%" fig-align="center"}
     
   $$\text{comp}_{\mathbf{b}} \mathbf{a} =\left\| \mathbf{a} \right\| \cos\theta
    =\left\| \mathbf{a} \right\| \cos\theta \frac{\left\| \mathbf{b} \right\|}{\left\| \mathbf{b} \right\|}
@@ -204,7 +208,7 @@ $~$
 
 * Projection of $\mathbf{a}$ onto $\mathbf{b}$
 
-  ![](figures/ch07_figure09.png "Projection_of_a_onto_b"){width="30%" fig-align="center"}
+  ![](figures/ch07_figure09.svg "Projection_of_a_onto_b"){width="30%" fig-align="center"}
     
   $$\text{proj}_{\mathbf{b}} \mathbf{a} = \left(\text{comp}_{\mathbf{b}} \mathbf{a} \right) \left(\frac{\mathbf{b}}{\left\| \mathbf{b} \right\|} \right)=\color{red}{\left(\frac{\mathbf{a}\cdot\mathbf{b}}{\mathbf{b}\cdot\mathbf{b}}\right) \mathbf{b}}$$
 
@@ -213,9 +217,13 @@ $~$
 **Example** $\,$ Verify that the vector
   $\displaystyle \mathbf{c}=\mathbf{b} - \left(\frac{\mathbf{a} \cdot \mathbf{b}}{\mathbf{a} \cdot \mathbf{a}}\right) \mathbf{a}\,$ is orthogonal to the vector $\mathbf{a}$
 
+[Solution](files/solutions/sol_9_3a.pdf){target="_blank"}
+
 $~$
   
 **Example** $\,$ In the methane molecule $\mathrm{CH}_4$, the hydrogen atoms are located at the four vertices of a regular tetrahedron. The distance between the center of a hydrogen atom and the center of a carbon atom is 1.10 angstroms, and the hydrogen-carbon-hydrogen bond angle is $\,\theta=109.5^\circ$. Using vector methods only, find the distance between two hydrogen atoms
+
+[Solution](files/solutions/sol_9_3b.pdf){target="_blank"}
 
 $~$
 
@@ -237,7 +245,7 @@ $~$
 
   The vectors $\mathbf{a}$, $\mathbf{b}$, and $~\mathbf{a}\times\mathbf{b}~$ form a right-hand system:
   
-  ![](figures/ch07_figure10.png "right_hand_rule"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure10.svg "right_hand_rule"){width="50%" fig-align="center"}
 
 * Parallel Vectors
 
@@ -254,7 +262,7 @@ $~$
   * $\mathbf{a}\cdot(\mathbf{a}\times\mathbf{b})=0$
   * $\mathbf{b}\cdot(\mathbf{a}\times\mathbf{b})=0$  
 
-* Areas of a parallelogram and a Trianlge 
+* Areas of a Parallelogram and a Triangle 
 
    $\text{(a)}$ $~A =\left\|\mathbf{a} \times \mathbf{b} \right\|$
    
@@ -262,7 +270,7 @@ $~$
 
    $~$
    
-   ![](figures/ch07_figure11.png "area_parallelogram"){width=2.5in fig-align="center"}
+   ![](figures/ch07_figure11.svg "area_parallelogram"){width=2.5in fig-align="center"}
 
 * Volume of a Parallelepiped 
  
@@ -270,7 +278,7 @@ $~$
 
   $~$
  
-  ![](figures/ch07_figure12.png "volume_parallelepiped"){width=2.5in fig-align="center"}
+  ![](figures/ch07_figure12.svg "volume_parallelepiped"){width=2.5in fig-align="center"}
 
 * Special Products
 
@@ -301,13 +309,15 @@ $~$
 * Lagrange's identity
   $\| \mathbf{a}\times\mathbf{b}\|^2 = \|\mathbf{a}\|^2 \|\mathbf{b}\|^2 - (\mathbf{a}\cdot\mathbf{b})^2$
 
+[Solution](files/solutions/sol_9_4.pdf){target="_blank"}
+
 $~$
 
 ## Lines and Planes in 3-Space {#sec-7-5}
 
 * Lines
 
-  ![](figures/ch07_figure13.png "Lines"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure13.svg "Lines"){width="50%" fig-align="center"}
 
   $$
   \begin{aligned}
@@ -327,14 +337,16 @@ $~$
     \end{aligned}
   $$
 
-  ![](figures/ch07_figure14.png "Planes_1"){width="40%" fig-align="center"}
+  ![](figures/ch07_figure14.svg "Planes_1"){width="40%" fig-align="center"}
 
-  ![](figures/ch07_figure15.png "Planes_2"){width="40%" fig-align="center"}
+  ![](figures/ch07_figure15.svg "Planes_2"){width="40%" fig-align="center"}
 
 $~$
 
 **Example** $\,$ Find parametric equation for the line that contains $(-4, 1, 7)$ and is perpendicular to the plane 
 $$-7x+2y+3z=1$$
+
+[Solution](files/solutions/sol_9_5a.pdf){target="_blank"}
 
 $~$
 
@@ -346,11 +358,15 @@ $$
   x + 4y +3z &= 4 
 \end{aligned}$$
 
+[Solution](files/solutions/sol_9_5b.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find an equation of the plane that contains the given line and is orthogonal to the indicated plane
 
 $$\frac{2-x}{3}=\frac{y+2}{5}=\frac{z-8}{2}; \quad 2x - 4y-z + 16=0$$
+
+[Solution](files/solutions/sol_9_5c.pdf){target="_blank"}
 
 $~$
 
@@ -385,9 +401,9 @@ $~$
 
   * For all $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$ in $V$, $~$$\mathbf{x} +(\mathbf{y} +\mathbf{z}) = (\mathbf{x} +\mathbf{y}) +\mathbf{z}$
 
-  * There is a unique vector $\mathbf{0}$ in $V$ such that $~$$\mathbf{0} +\mathbf{x} = \mathbf{x} +\mathbf{0}$
+  * There is a unique vector $\mathbf{0}$ in $V$ such that $~$$\mathbf{0} +\mathbf{x} = \mathbf{x} +\mathbf{0} =\mathbf{x}$
    
-  * For each $\mathbf{x}$ in $V$, $~$there exists a vector $=\mathbf{x}~$ such that 
+  * For each $\mathbf{x}$ in $V$, $~$there exists a vector $-\mathbf{x}~$ such that 
    $\mathbf{x} +(-\mathbf{x}) = (-\mathbf{x}) +\mathbf{x} =\mathbf{0}$
 
 * **Axioms for Scalar Multiplication**
@@ -398,7 +414,7 @@ $~$
 
   * $(k_1 +k_2)\mathbf{x} =k_1\mathbf{x} + k_2\mathbf{x}$
 
-  * $k_1(k_2\mathbf{x})=(k_2k_2)\mathbf{x}$
+  * $k_1(k_2\mathbf{x})=(k_1k_2)\mathbf{x}$
 
   * $1\mathbf{x}=\mathbf{x}$
 
@@ -438,6 +454,8 @@ $~$
 
   Determine whether $V$ is a vector space
 
+[Solution](files/solutions/sol_9_6a.pdf){target="_blank"}
+
 $~$
 
 * **Subspace**
@@ -449,12 +467,12 @@ $~$
 
 * **Linear Independence**
 
-  A set of vectors $\left\{ \mathbf{x}_1, \mathbf{x}_2, \cdots, \mathbf{x}_n \right\}$ is said to be **linearly indpenedent** 
+  A set of vectors $\left\{ \mathbf{x}_1, \mathbf{x}_2, \cdots, \mathbf{x}_n \right\}$ is said to be **linearly independent** 
   if the only constants satisfying the equation
   
   $$k_1\mathbf{x}_1 +k_2\mathbf{x}_2 +\cdots +k_n\mathbf{x}_n=\mathbf{0}$$
   
-  are $k_1=k_2=\cdots=k_n=0$. If the set of vectors is not linearly indpenedent, $~$then it is said to be **linearly dependent** 
+  are $k_1=k_2=\cdots=k_n=0$. If the set of vectors is not linearly independent, $~$then it is said to be **linearly dependent** 
 
 * **Basis**
 
@@ -466,7 +484,7 @@ $~$
 
 * **Span**
 
-  If $S$ denotes any set of vectors $\left\{\mathbf{x}_1, \mathbf{x}_2,\cdots,\mathbf{x}_n\right\}$ in a vector space $V$, $\,$then the set of all linear combinations of the vector $\mathbf{x}_1,\mathbf{x}_2,\cdots,\mathbf{x}_n$ in $S$,
+  If $S$ denotes any set of vectors $\left\{\mathbf{x}_1, \mathbf{x}_2,\cdots,\mathbf{x}_n\right\}$ in a vector space $V$, $\,$then the set of all linear combinations of the vectors $\mathbf{x}_1,\mathbf{x}_2,\cdots,\mathbf{x}_n$ in $S$,
   
   $$\left\{ k_1\mathbf{x}_1 +k_2\mathbf{x}_2+ \cdots+k_n\mathbf{x}_n\right\}$$
   
@@ -518,6 +536,8 @@ $~$
       \end{pmatrix}
   \end{aligned}$$
 
+[Solution](files/solutions/sol_9_6b.pdf){target="_blank"}
+
 $~$
 
 ## Gram-Schmidt Orthogonalization Process {#sec-7-7}
@@ -547,7 +567,7 @@ $~$
   
   $$\begin{aligned} \mathbf{v}_1 &= \mathbf{u}_1 \\ \mathbf{v}_2 &= \mathbf{u}_2 -\left( \frac{\mathbf{u}_2 \cdot \mathbf{v}_1}{\mathbf{v}_1 \cdot \mathbf{v}_1}\right) \mathbf{v}_1\end{aligned}$$
 
-  ![](figures/ch07_figure16.png "constructing_an_orthogonal_basis_R2"){width="40%" fig-align="center"}
+  ![](figures/ch07_figure16.svg "constructing_an_orthogonal_basis_R2"){width="60%" fig-align="center"}
 
 * Constructing an Orthogonal Basis for $\mathbb{R}^3$
   
@@ -556,7 +576,7 @@ $~$
    \mathbf{v}_3 &= \mathbf{u}_3 -\left( \frac{\mathbf{u}_3 \cdot \mathbf{v}_1}{\mathbf{v}_1 \cdot \mathbf{v}_1}\right) \mathbf{v}_1
    -\left( \frac{\mathbf{u}_3 \cdot \mathbf{v}_2}{\mathbf{v}_2 \cdot \mathbf{v}_2}\right) \mathbf{v}_2 \end{aligned}$$
 
-![](figures/ch07_figure17.png "constructing_an_orthogonal_basis_R3"){width="45%" fig-align="center"}
+![](figures/ch07_figure17.svg "constructing_an_orthogonal_basis_R3"){width="45%" fig-align="center"}
 
 * **Gram-Schmidt Orthogonalization Process**
 
@@ -591,6 +611,8 @@ $~$
   Use the Gram-Schmidt orthogonalization process to transform the given basis for $P_2$ into an orthogonal basis $B'$
   
   $$B = \{1, x, x^2\}$$
+
+[Solution](files/solutions/sol_9_7.pdf){target="_blank"}
 
 $~$
 
