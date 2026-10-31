@@ -21,6 +21,8 @@ import sympy
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 mpl.rcParams['font.size'] = 12.0
+
+rng = np.random.default_rng(2025)  # random data for the examples below
 ```
 
 ```{python}
@@ -103,7 +105,7 @@ ax.set_yticks([-20, -10, 0, 10, 20, 30, 40])
 ax.set_xlabel("$x$", fontsize=14)
 ax.set_ylabel("$y$", fontsize=14)
 
-ax.legend(loc=2, ncol=3, fontsize=14, frameon=False)
+ax.legend(loc=2, ncols=3, fontsize=14, frameon=False)
 
 plt.show()
 ```
@@ -157,16 +159,16 @@ managers:
 generate new `Figure` and `Axes` objects <font color='green'>in one function call</font>
 
 * However, $\,$the `plt.subplots` function is also
-capable of filling a figure with a grid of `Axes` instances, which is specified using the first and the second arguments, or alternatively with the `nrows` and `ncols` arguments, which, as the names implies, creates a grid of `Axes` objects, $\,$with the given number of rows and columns
+capable of filling a figure with a grid of `Axes` instances, which is specified using the first and the second arguments, or alternatively with the `nrows` and `ncols` arguments, which, as the names imply, create a grid of `Axes` objects, $\,$with the given number of rows and columns
 
   ```python
      fig, axes = plt.subplots(nrows=3, ncols=2)
   ```
 
-* Here, the function `plt.subplots` returns a tuple `(fig, axes)`, where `fig` is a `figure` and `axes` is a `numpy` array of size `(ncols, nrows)`, $\,$in which each element is an `Axes` instance that has been appropriately placed in the corresponding `figure` canvas. $\,$At this point we can also specify that columns and/or rows should share x and y axes, using the `sharex` and `sharey` arguments, which can be set to `True` or `False`
+* Here, the function `plt.subplots` returns a tuple `(fig, axes)`, where `fig` is a `figure` and `axes` is a `numpy` array of shape `(nrows, ncols)`, $\,$in which each element is an `Axes` instance that has been appropriately placed in the corresponding `figure` canvas. $\,$At this point we can also specify that columns and/or rows should share x and y axes, using the `sharex` and `sharey` arguments, which can be set to `True` or `False`
 
-* The `plt.subplots` function also takes two special keyword arguments `fig_kw` and `subplot_kw`, which
-are dictionaries with keyword arguments that are used when creating the `Figure` and `Axes` instances,
+* The `plt.subplots` function also passes any extra keyword arguments (`**fig_kw`, for example `figsize`) on to the `Figure`, and it takes the special keyword arguments `subplot_kw` and `gridspec_kw`, which
+are dictionaries with keyword arguments that are used when creating the `Axes` instances and the grid layout,
 respectively. This allows us to set and retain full control of the properties of the `Figure` and `Axes` objects with `plt.subplots`, $\,$a similar way is possible when directly using `plt.figure` and the `add_axes` method
 
 ## Plot types
@@ -274,8 +276,8 @@ fig, ax = plt.subplots(figsize=(6, 4))
 
 x = np.linspace(0, 5, 50)
 
-ax.scatter(x, -1 +x +0.25*x**2 +2*np.random.rand(len(x)))
-ax.scatter(x, np.sqrt(x) +2*np.random.rand(len(x)), color="green")
+ax.scatter(x, -1 +x +0.25*x**2 +2*rng.random(len(x)))
+ax.scatter(x, np.sqrt(x) +2*rng.random(len(x)), color="green")
 
 hide_labels(fig, ax, 8)
 ```
@@ -305,15 +307,13 @@ hide_labels(fig, ax, 9)
 
 ```{python}
 #| fig-align: center
-plt.style.use('_mpl-gallery')
-
 # make data:
-np.random.seed(10)
-D = np.random.normal((3, 5, 4), (1.25, 1.00, 1.25), (100, 3))
+D = rng.normal((3, 5, 4), (1.25, 1.00, 1.25), (100, 3))
 
-# plot
-fig, ax = plt.subplots(figsize=(5, 5))
-VP = ax.boxplot(D, 
+# plot with the gallery style, only for this figure
+with plt.style.context('_mpl-gallery'):
+  fig, ax = plt.subplots(figsize=(5, 5))
+  VP = ax.boxplot(D, 
                 positions=[2, 4, 6], 
                 widths=1.5, 
                 patch_artist=True,
@@ -325,29 +325,28 @@ VP = ax.boxplot(D,
                 whiskerprops={"color": "C0", "linewidth": 1.5},
                 capprops={"color": "C0", "linewidth": 1.5})
 
-ax.set(xlim=(0, 8), xticks=[],
-       ylim=(0, 8), yticks=[])
+  ax.set(xlim=(0, 8), xticks=[],
+         ylim=(0, 8), yticks=[])
 
-plt.show()
+  plt.show()
 ```
 
 ```{python}
 #| fig-align: center
-plt.style.use('_mpl-gallery-nogrid')
-
 # make data
 x = [1, 2, 3, 4]
 colors = plt.get_cmap('Blues')(np.linspace(0.2, 0.7, len(x)))
 
 # plot
-fig, ax = plt.subplots(figsize=(5, 5))
-ax.pie(x, colors=colors, radius=3, center=(4, 4),
-       wedgeprops={"linewidth": 1, "edgecolor": "white"}, frame=True)
+with plt.style.context('_mpl-gallery-nogrid'):
+  fig, ax = plt.subplots(figsize=(5, 5))
+  ax.pie(x, colors=colors, radius=3, center=(4, 4),
+         wedgeprops={"linewidth": 1, "edgecolor": "white"}, frame=True)
 
-ax.set(xlim=(0, 8), xticks=[],
-       ylim=(0, 8), yticks=[])
+  ax.set(xlim=(0, 8), xticks=[],
+         ylim=(0, 8), yticks=[])
 
-plt.show()
+  plt.show()
 ```
 
 
@@ -429,7 +428,7 @@ axes_settings(fig, ax, "marker size/color", len(markersizeandcolors))
 ---
 
 ```{python}
-# a symboloc variable for x, and a numerical array with specific values of x
+# a symbolic variable for x, and a numerical array with specific values of x
 sym_x = sympy.Symbol("x")
 x = np.linspace(-2*np.pi, 2*np.pi, 100)
 
@@ -468,10 +467,10 @@ ax.legend(bbox_to_anchor=(1.02, 1), loc=2, borderaxespad=0.0)
 
 ```{python}
 #| fig-align: center
-data1 = np.random.randn(200, 2) *np.array([3, 1])
-data2 = np.random.randn(200, 2) *np.array([1, 3])
+data1 = rng.standard_normal((200, 2)) *np.array([3, 1])
+data2 = rng.standard_normal((200, 2)) *np.array([1, 3])
 
-fig, axes = plt.subplots(2, 1, figsize=(6, 8), sharey=True)
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
 
 axes[0].scatter(data1[:, 0], data1[:, 1], color="g", marker="s", s=30, alpha=0.5)
 axes[0].scatter(data2[:, 0], data2[:, 1], color="b", marker="o", s=30, alpha=0.5)
@@ -488,7 +487,7 @@ plt.show()
 ## Legends
 
 * See `help(plt.legend)` for details. $\,$The `loc` argument allows us to specify where in the `Axes` area the `legend` is to be added: `loc=1` for upper right corner, `loc=2` for
-upper left corner, `loc=3` for the lower-left corner, and `loc=4` for lower right corner
+upper left corner, `loc=3` for the lower-left corner, and `loc=4` for lower right corner (or, equivalently, the strings `'upper right'`, `'upper left'`, `'lower left'`, `'lower right'`; `'best'` lets `matplotlib` choose)
 
 * In the example of the previous section, $\,$we used the `bbox_to_anchor`, $\,$which helps the `legend` be
 placed at an arbitrary location within the `figure` canvas. The `bbox_to_anchor` argument takes the value of a
@@ -501,13 +500,16 @@ possible to split the `legend` labels into multiple columns
 #| fig-align: center
 x = np.linspace(0, 1, 100)
 
-fig, axes = plt.subplots(4, 1, figsize=(6, 12), sharex=True)
+fig, axes = plt.subplots(2, 2, figsize=(10, 6.5), sharex=True)
+axes = axes.ravel()
 
 for n in range(4):
   axes[n].plot(x, x, label="$y(x) = x$")
   axes[n].plot(x, x +x**2, label="$y(x) = x + x^2$")
   axes[n].legend(loc=n + 1)
   axes[n].set_title(f'legend: loc={n + 1}')
+
+fig.tight_layout()
 ```
 
 ```{python}
@@ -533,12 +535,12 @@ ax.set_ylim(-8, 8)
 
 ax.tick_params(axis='x', pad=10)
     
-ax.legend(bbox_to_anchor=(-0.01, 1.05), ncol=4, loc=3, borderaxespad=0.0)
+ax.legend(bbox_to_anchor=(-0.01, 1.05), ncols=4, loc=3, borderaxespad=0.0)
 ```
 
 ## Text formatting and annotations
 
-* `Matplotlib` provides several ways of configuring fonts properties. $\,$The default values can be set in the `matplotlib` resource file. $\,$To display where the currently active `matplotlib` file is loaded from, $\,$one can do the following: 
+* `Matplotlib` provides several ways of configuring font properties. $\,$The default values can be set in the `matplotlib` resource file. $\,$To display where the currently active `matplotlib` file is loaded from, $\,$one can do the following: 
 
     ```python
     mpl.matplotlib_fname()
@@ -606,28 +608,21 @@ ax.text(2, 0.1,
 plt.show()
 ```
 
-```{python}
-mpl.rc('font', family='NanumGothic')
-mpl.rcParams['axes.unicode_minus'] = False
-```
+* To display Korean text, $~$a font that contains Hangul glyphs (here `NanumGothic`) must be selected. $~$Using `mpl.rc_context`, $~$the setting applies only inside the `with` block, $~$so the other figures keep the default font. $~$Setting `axes.unicode_minus` to `False` avoids a missing-glyph box for the minus sign in some Korean fonts
 
 ```{python}
 #| fig-align: center
-data = 1000 +np.random.randint(-100, 100, 50).cumsum()
+data = 1000 +rng.integers(-100, 100, 50).cumsum()
 
-fig, ax = plt.subplots(figsize=(6, 4))
+with mpl.rc_context({'font.family': 'NanumGothic', 'axes.unicode_minus': False}):
+  fig, ax = plt.subplots(figsize=(6, 4))
 
-ax.plot(range(50), data, 'r')
+  ax.plot(range(50), data, 'r')
 
-ax.set_title('시간대별 가격 추이')
-ax.set_ylabel('주식 가격, [원]')
-ax.set_xlabel('시간, [분]')
-plt.show()
-```
-
-```{python}
-mpl.rc('font', family='serif')
-mpl.rcParams['axes.unicode_minus'] = True
+  ax.set_title('시간대별 가격 추이')
+  ax.set_ylabel('주식 가격, [원]')
+  ax.set_xlabel('시간, [분]')
+  plt.show()
 ```
 
 ## Axis properties
@@ -662,8 +657,9 @@ plt.show()
 x = np.linspace(0, 30, 500)
 y = np.sin(x) *np.exp(-x /10)
 
-fig, axes = plt.subplots(4, 1, figsize=(6, 12), 
+fig, axes = plt.subplots(2, 2, figsize=(10, 6.5), 
                          subplot_kw={'facecolor': '#ebf5ff'})
+axes = axes.ravel()
 
 axes[0].plot(x, y, lw=2)
 axes[0].set_xlim(-5, 35)
@@ -682,6 +678,7 @@ axes[3].plot(x, y, lw=2)
 axes[3].autoscale(True)
 axes[3].set_title("autoscale(True)")
 
+fig.tight_layout()
 plt.show()
 ```
 
@@ -728,7 +725,7 @@ plt.show()
 x = np.linspace(-2*np.pi, 2*np.pi, 500)
 y = np.sin(x) *np.exp(-x**2/20)
 
-fig, axes = plt.subplots(2, 1, figsize=(6, 8))
+fig, axes = plt.subplots(1, 2, figsize=(11, 4))
 
 axes[0].plot(x, y, lw=2)
 axes[0].set_title("default ticks")
@@ -743,7 +740,7 @@ axes[1].tick_params(which='both', direction='in')
 
 ```{python}
 # | fig-align: center
-fig, axes = plt.subplots(2, 1, figsize=(6, 8))
+fig, axes = plt.subplots(1, 2, figsize=(11, 4))
 
 axes[0].plot(x, y, lw=2)
 axes[0].set_title("set_major/minor_locator")
@@ -756,7 +753,7 @@ axes[0].tick_params(which='both', direction='in')
 axes[1].plot(x, y, lw=2)
 axes[1].set_title("set_[x/y]ticklabels")
 axes[1].set_xticks([-2*np.pi, -np.pi, 0, np.pi, 2*np.pi])
-axes[1].set_xticklabels(['$-2\pi$', '$-\pi$', '$0$', '$\pi$', '$2\pi$'])
+axes[1].set_xticklabels([r'$-2\pi$', r'$-\pi$', r'$0$', r'$\pi$', r'$2\pi$'])
 axes[1].xaxis.set_minor_locator(
   mpl.ticker.FixedLocator([-3*np.pi/2, -np.pi/2, 0, np.pi/2, 3*np.pi/2]))
 axes[1].set_yticks([-1, 0, 1])
@@ -766,7 +763,7 @@ axes[1].tick_params(which='both', direction='in')
 
 ```{python}
 # | fig-align: center
-fig, axes = plt.subplots(3, 1, figsize=(6, 12))
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 
 for ax in axes:
   ax.plot(x, y, lw=2)
@@ -792,7 +789,7 @@ axes[2].grid(color="gray", which="major", axis='y', ls='-', lw=0.5)
 x = np.linspace(0, 1e5, 100)
 y = x**2
 
-fig, axes = plt.subplots(2, 1, figsize=(6, 8))
+fig, axes = plt.subplots(1, 2, figsize=(11, 4))
 
 axes[0].plot(x, y, 'b.')
 axes[0].set_title("default labels", loc='right')
@@ -807,14 +804,14 @@ axes[1].xaxis.set_major_formatter(formatter)
 axes[1].yaxis.set_major_formatter(formatter)
 ```
 
-### Log lots
+### Log plots
 
 ```{python}
 # | fig-align: center
 x = np.linspace(0, 1e3, 100)
 y1, y2 = x**3, x**4
 
-fig, axes = plt.subplots(3, 1, figsize=(6, 12))
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 
 axes[0].set_title('loglog')
 axes[0].loglog(x, y1, 'b', x, y2, 'r')
@@ -838,7 +835,7 @@ volume = (4 *np.pi /3) *radius**3  # volume
 
 ```{python}
 # | fig-align: center
-ig, ax1 = plt.subplots(figsize=(6, 4))
+fig, ax1 = plt.subplots(figsize=(6, 4))
 
 ax1.set_title("Surface area and Volume of a sphere", fontsize=16)
 ax1.set_xlabel("radius, [m]", fontsize=16)
@@ -933,8 +930,8 @@ plot_and_format_axes(ax1, x, f, 10)
 
 ```{python}
 # | fig-align: center
-x1 = np.random.randn(100)
-x2 = np.random.randn(100)
+x1 = rng.standard_normal(100)
+x2 = rng.standard_normal(100)
 
 # squeeze=False, the axes is always a two-dimensional array
 fig, axes = plt.subplots(2, 2, figsize=(7, 7), 
@@ -1171,7 +1168,7 @@ def plot_and_format_axes(fig, ax, p):
 
 ```{python}
 # | fig-align: center
-fig, axes = plt.subplots(2, 1, figsize=(7, 12))
+fig, axes = plt.subplots(1, 2, figsize=(13, 5))
 
 p = axes[0].pcolor(X, Y, P, norm=norm, cmap=mpl.cm.bwr)
 plot_and_format_axes(fig, axes[0], p)
@@ -1179,7 +1176,7 @@ plot_and_format_axes(fig, axes[0], p)
 axes[1].contour(X, Y, Z, np.linspace(-1.0, 1.0, 20), norm=norm, cmap=mpl.cm.bwr)
 plot_and_format_axes(fig, axes[1], p)
 
-plt.subplots_adjust(hspace=0.15)
+fig.tight_layout()
 ```
 
 ---
@@ -1195,7 +1192,7 @@ Z1 = np.exp(-X**2 -Y**2)
 Z2 = np.exp(-(10 *X)**2 -(10 *Y)**2)
 Z = Z1 +50 *Z2
 
-fig, axes = plt.subplots(2, 1, figsize=(7, 12))
+fig, axes = plt.subplots(1, 2, figsize=(13, 5))
 
 c = axes[0].pcolor(X, Y, Z, 
       norm=mpl.colors.LogNorm(vmin=Z.min(), vmax=Z.max()), cmap='PuBu_r')
@@ -1205,7 +1202,9 @@ fig.colorbar(c, ax=axes[0])
 c = axes[1].pcolor(X, Y, Z, cmap='PuBu_r') 
 fig.colorbar(c, ax=axes[1])
 
-plt.subplots_adjust(hspace=0.1)
+axes[0].set_title('LogNorm color scale')
+axes[1].set_title('linear color scale')
+fig.tight_layout()
 ```
 
 * `Matplotlib` has a number of built-in colormaps accessible via [`matplotlib.colormaps`](https://matplotlib.org/stable/users/explain/colors/colormaps.html). To get a list of all registered colormaps, you can do:
@@ -1217,13 +1216,7 @@ plt.subplots_adjust(hspace=0.1)
 
 ## 3D plots
 
-* In `matplotlib`, $\,$drawing 3D graphs requires using a different axes object, namely the `Axes3D` object that is available from the `mpl_toolkits.mplot3d.axes3d` module. $\,$We can create a 3D-ware axes instance explicitly using the constructor of the `Axes3D` class, $\,$by passing a `Figure` instance as argument: 
-
-  ```python
-     ax = Axes3D(fig)
-  ```
-
-* Alternatively, $\,$we can use the `add_subplot` function with the `projection='3d'` argument:
+* In `matplotlib`, $\,$drawing 3D graphs requires using a different axes object, namely the `Axes3D` object from the `mpl_toolkits.mplot3d` module. $\,$It is created by requesting the `'3d'` projection; $~$no explicit import is needed. $~$(Calling the constructor `Axes3D(fig)` directly no longer adds the axes to the figure in recent versions of `matplotlib`.) $~$We can use the `add_subplot` function with the `projection='3d'` argument:
 
   ```python
      ax = fig.add_subplot(1, 1, 1, projection='3d')
@@ -1237,8 +1230,6 @@ plt.subplots_adjust(hspace=0.1)
   ```
 
 ```{python}
-from mpl_toolkits.mplot3d.axes3d import Axes3D
-
 x = y = np.linspace(-3, 3, 74)
 X, Y = np.meshgrid(x, y)
 R = np.sqrt(X**2 +Y**2)
@@ -1258,7 +1249,7 @@ def title_and_labels(ax, title):
 
 ```{python}
 # | fig-align: center
-fig, axes = plt.subplots(3, 1, figsize=(6, 16), subplot_kw={'projection': '3d'})
+fig, axes = plt.subplots(1, 3, figsize=(15, 5), subplot_kw={'projection': '3d'})
 
 p = axes[0].plot_surface(X, Y, Z, rstride=1, cstride=1, lw=0, 
                   antialiased=False, norm=norm, cmap=mpl.cm.Blues)
@@ -1271,12 +1262,12 @@ axes[2].contour(X, Y, Z, zdir='z', offset=0, norm=norm, cmap=mpl.cm.Blues)
 axes[2].contour(X, Y, Z, zdir='y', offset=3, norm=norm, cmap=mpl.cm.Blues)
 title_and_labels(axes[2], "contour") 
 
-plt.subplots_adjust(left=0.05, right=0.95, bottom=0.1, top=0.95, hspace=0.1) 
+plt.subplots_adjust(left=0.02, right=0.98, bottom=0.05, top=0.95, wspace=0.1)
 ```
 
 ```{python}
 # | fig-align: center
-fig, axes = plt.subplots(3, 1, figsize=(6, 16), subplot_kw={'projection': '3d'})
+fig, axes = plt.subplots(1, 3, figsize=(15, 5), subplot_kw={'projection': '3d'})
 
 r = np.linspace(0, 10, 100)
 
@@ -1292,7 +1283,7 @@ p = axes[2].bar3d(np.cos(r), np.sin(r), np.zeros_like(r),
                   0.05*np.ones_like(r), 0.05*np.ones_like(r), 6 -r)
 title_and_labels(axes[2], "bar3d")
 
-plt.subplots_adjust(left=0.05, right=0.95, bottom=0.1, top=0.95, hspace=0.1)
+plt.subplots_adjust(left=0.02, right=0.98, bottom=0.05, top=0.95, wspace=0.1)
 ```
 
 ## [CheatSheets and Handouts](https://matplotlib.org/cheatsheets)
