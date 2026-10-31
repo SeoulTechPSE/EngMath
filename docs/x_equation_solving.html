@@ -424,7 +424,7 @@ window.Quarto = {
 </ul>
 <section id="importing-modules" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="importing-modules"><span class="header-section-number">18.1</span> Importing modules</h2>
-<div id="cadac6fa" class="cell" data-execution_count="1">
+<div id="1ad8170c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sympy.init_printing()</span>
@@ -435,7 +435,7 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="3f7cc6bd" class="cell" data-execution_count="2">
+<div id="ee05286d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'numpy: '</span>, np.__version__)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'sympy: '</span>, sympy.__version__)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -484,7 +484,7 @@ matplotlib:  3.10.0</code></pre>
 5 x_1 + 4 x_2 &amp;= 3
 \end{aligned}
 \]</span></p>
-<div id="8dc5f5e3" class="cell" data-execution_count="3">
+<div id="775abfe4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">5</span>, <span class="dv">4</span>]])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">3</span>])</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> la.solve(A, b)</span>
@@ -493,13 +493,13 @@ matplotlib:  3.10.0</code></pre>
 <pre><code>array([-1.,  2.])</code></pre>
 </div>
 </div>
-<div id="b1d83e9c" class="cell" data-execution_count="4">
+<div id="53ab16dc" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x2_1 <span class="op">=</span> (<span class="dv">4</span> <span class="op">-</span><span class="dv">2</span> <span class="op">*</span>x1) <span class="op">/</span><span class="dv">3</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x2_2 <span class="op">=</span> (<span class="dv">3</span> <span class="op">-</span><span class="dv">5</span> <span class="op">*</span>x1) <span class="op">/</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8de64446" class="cell" data-execution_count="5">
+<div id="1ab525dc" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ax.plot(x1, x2_1, <span class="st">'r'</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">2x_1</span><span class="op">+</span><span class="vs">3x_2=4</span><span class="dv">$</span><span class="vs">"</span>)</span>
@@ -525,40 +525,40 @@ matplotlib:  3.10.0</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-6-output-1.png" width="521" height="364" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <section id="symbolic-approach" class="level4" data-number="18.2.1.1">
 <h4 data-number="18.2.1.1" class="anchored" data-anchor-id="symbolic-approach"><span class="header-section-number">18.2.1.1</span> Symbolic approach</h4>
-<div id="5f9f50b4" class="cell" data-execution_count="6">
+<div id="d6a9e848" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> sympy.Matrix([[<span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">5</span>, <span class="dv">4</span>]])</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sympy.Matrix([<span class="dv">4</span>, <span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ff36af51" class="cell" data-execution_count="7">
+<div id="2f237dd4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>A.condition_number()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle \frac{\sqrt{2 \sqrt{170} + 27}}{\sqrt{27 - 2 \sqrt{170}}}\)</span></p>
 </div>
 </div>
-<div id="a4cb9029" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sympy.N(_)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="8653bbbf" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sympy.N(A.condition_number())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
 <p><span class="math inline">\(\displaystyle 7.58240137440151\)</span></p>
 </div>
 </div>
 <hr>
-<div id="8a2a8e7c" class="cell" data-execution_count="9">
+<div id="ac1e72cb" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>L, U, _ <span class="op">=</span> A.LUdecomposition()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="29f688d4" class="cell" data-execution_count="10">
+<div id="5294644f" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>L, U, L <span class="op">*</span> U</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="10">
 <p><span class="math inline">\(\displaystyle \left( \left[\begin{matrix}1 &amp; 0\\\frac{5}{2} &amp; 1\end{matrix}\right], \  \left[\begin{matrix}2 &amp; 3\\0 &amp; - \frac{7}{2}\end{matrix}\right], \  \left[\begin{matrix}2 &amp; 3\\5 &amp; 4\end{matrix}\right]\right)\)</span></p>
 </div>
 </div>
-<div id="a3c5c4cf" class="cell" data-execution_count="11">
+<div id="9355cbe4" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> A.solve(b)<span class="op">;</span> x  <span class="co"># equivalent to A.LUsolve(b)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}-1\\2\end{matrix}\right]\)</span></p>
@@ -567,20 +567,20 @@ matplotlib:  3.10.0</code></pre>
 </section>
 <section id="numerical-approach" class="level4" data-number="18.2.1.2">
 <h4 data-number="18.2.1.2" class="anchored" data-anchor-id="numerical-approach"><span class="header-section-number">18.2.1.2</span> Numerical approach</h4>
-<div id="05b56528" class="cell" data-execution_count="12">
+<div id="4155f3e7" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">5</span>, <span class="dv">4</span>]])</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0f8b34bc" class="cell" data-execution_count="13">
+<div id="43ea4356" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.linalg.cond(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="13">
 <p><span class="math inline">\(\displaystyle 7.58240137440151\)</span></p>
 </div>
 </div>
-<div id="3fbe76a8" class="cell" data-execution_count="14">
+<div id="5c4e2656" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>P, L, U <span class="op">=</span> la.lu(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d529df47" class="cell" data-execution_count="15">
+<div id="306b86cf" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>P, L, U, P <span class="op">@</span> (L <span class="op">@</span> U)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>(array([[0., 1.],
@@ -593,7 +593,7 @@ matplotlib:  3.10.0</code></pre>
         [5., 4.]]))</code></pre>
 </div>
 </div>
-<div id="1acb8da1" class="cell" data-execution_count="16">
+<div id="f7730d8d" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>la.solve(A, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>array([-1.,  2.])</code></pre>
@@ -603,7 +603,7 @@ matplotlib:  3.10.0</code></pre>
 <ul>
 <li><p>The advantage of using <code>sympy</code> is of course that we may obtain exact results and we can also include symbolic variables in the matrices. However, not all problems are solvable symbolically, or it may give exceedingly lengthy results</p></li>
 <li><p>The advantage of using a numerical approach with <code>numpy/scipy</code>, on the other hand, is that we are guaranteed to obtain a result, although it will be an approximate solution due to floating-point errors</p></li>
-<li><p>See the code below for an example that illustrates the differences between the symbolic and numerical approaches, and for an example that show the numerical approaches can be sensitive for equation systems with large condition numbers</p></li>
+<li><p>See the code below for an example that illustrates the differences between the symbolic and numerical approaches, and for an example that shows the numerical approaches can be sensitive for equation systems with large condition numbers</p></li>
 <li><p>In this example, we solve the equation system</p>
 <p><span class="math display">\[
   \begin{pmatrix}
@@ -620,7 +620,7 @@ matplotlib:  3.10.0</code></pre>
 <p>which for <span class="math inline">\(p=1\)</span> is singular and for <span class="math inline">\(p\)</span> in the vicinity of one is ill-conditioned</p></li>
 <li><p>A comparison between this symbolic solution and the numerical solution is shown in Figure below. Here the errors in the numerical solution are due to numerical floating-point errors, and the numerical errors are significantly larger in the vicinity of <span class="math inline">\(p=1\)</span>, where the system has a large condition number. Also, if there are other sources of errors in either <span class="math inline">\(\mathbf{A}\)</span> or <span class="math inline">\(\mathbf{b}\)</span>, the corresponding errors in <span class="math inline">\(\mathbf{x}\)</span> can be even more severe</p></li>
 </ul>
-<div id="fe4ae007" class="cell" data-execution_count="17">
+<div id="25e93e97" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Symbolic problem specification</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> sympy.symbols(<span class="st">"p"</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> sympy.Matrix([[<span class="dv">1</span>, sympy.sqrt(p)], [<span class="dv">1</span>, <span class="dv">1</span><span class="op">/</span>sympy.sqrt(p)]])</span>
@@ -634,20 +634,20 @@ matplotlib:  3.10.0</code></pre>
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}\frac{2 p - 1}{p - 1}\\- \frac{\sqrt{p}}{p - 1}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="6826a8e8" class="cell" data-execution_count="18">
+<div id="fd691ddb" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Acond <span class="op">=</span> A.condition_number().simplify()</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Acond</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="18">
 <p><span class="math inline">\(\displaystyle \frac{\max\left(\frac{\sqrt{2} \sqrt{\left(p + 1\right)^{2} - \sqrt{p^{4} + 14 p^{2} + 1}}}{2 \sqrt{p}}, \frac{\sqrt{2} \sqrt{\left(p + 1\right)^{2} + \sqrt{p^{4} + 14 p^{2} + 1}}}{2 \sqrt{p}}\right)}{\min\left(\frac{\sqrt{2} \sqrt{\left(p + 1\right)^{2} - \sqrt{p^{4} + 14 p^{2} + 1}}}{2 \sqrt{p}}, \frac{\sqrt{2} \sqrt{\left(p + 1\right)^{2} + \sqrt{p^{4} + 14 p^{2} + 1}}}{2 \sqrt{p}}\right)}\)</span></p>
 </div>
 </div>
-<div id="885517d0" class="cell" data-execution_count="19">
+<div id="4416f6b6" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function for solving numerically</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>AA <span class="op">=</span> <span class="kw">lambda</span> p: np.array([[<span class="dv">1</span>, np.sqrt(p)], [<span class="dv">1</span>, <span class="dv">1</span><span class="op">/</span>np.sqrt(p)]])</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>bb <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>])</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>x_num_sol <span class="op">=</span> <span class="kw">lambda</span> p: np.linalg.solve(AA(p), bb)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9fdd7243" class="cell" data-execution_count="20">
+<div id="2da9e9eb" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph the difference between the symbolic (exact) </span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and numerical results.</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>p_vec <span class="op">=</span> np.linspace(<span class="fl">0.9</span>, <span class="fl">1.1</span>, <span class="dv">200</span>)</span>
@@ -683,7 +683,7 @@ matplotlib:  3.10.0</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-21-output-1.png" width="519" height="692" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -710,7 +710,7 @@ matplotlib:  3.10.0</code></pre>
   \end{pmatrix}
 \]</span></p></li>
 </ul>
-<div id="49d3f1fd" class="cell" data-execution_count="21">
+<div id="68f5bf52" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x_vars <span class="op">=</span> sympy.symbols(<span class="st">"x_1, x_2, x_3"</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Matrix(x_vars)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> sympy.Matrix([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
@@ -733,20 +733,20 @@ matplotlib:  3.10.0</code></pre>
   1 &amp; x_m &amp; x_m^2
   \end{pmatrix}
   \begin{pmatrix}
-  a_0 \\[4pt] a_1 \\[4pt] a_3
+  a_0 \\[4pt] a_1 \\[4pt] a_2
   \end{pmatrix}=
   \begin{pmatrix}
   y_1 \\ \vdots \\ y_m
   \end{pmatrix}
 \]</span></p></li>
-<li><p>For <span class="math inline">\(m &gt; 3\)</span>, there is in general no exact solution, and we need to introduce an approximate solution that give a best fit for the over-determined system</p></li>
+<li><p>For <span class="math inline">\(m &gt; 3\)</span>, there is in general no exact solution, and we need to introduce an approximate solution that gives a best fit for the over-determined system</p></li>
 <li><p>A natural definition of best fit for the over-determined system <span class="math inline">\(\mathbf{Ax} \approx \mathbf{b}\)</span>, is to minimize the sum of square error,</p>
 <p><span class="math display">\[ \min_x \sum_{i=1}^m r_i^2 \]</span></p>
 <p>where <span class="math inline">\(\mathbf{r} = \mathbf{b} -\mathbf{Ax}\)</span> is the residual vector. This leads to the least square solution of the problem <span class="math inline">\(\mathbf{Ax} \approx \mathbf{b}\)</span>, which minimizes the distances between the data points</p></li>
 <li><p>In <code>sympy</code>, we can solve for the least square solution of an over-determined system using the <code>solve_least_squares</code> method, and for numerical problems we can use the <code>scipy</code> function <code>la.lstsq</code></p></li>
 </ul>
-<div id="f9d7fb5d" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1234</span>)</span>
+<div id="d0af1d75" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">1234</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># define true model parameters</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="dv">100</span></span>
@@ -755,8 +755,8 @@ matplotlib:  3.10.0</code></pre>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>y_exact <span class="op">=</span> a <span class="op">+</span>b<span class="op">*</span>x <span class="op">+</span>c<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># simulate noisy data points</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.random.rand(m)</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> a <span class="op">+</span>b<span class="op">*</span>X <span class="op">+</span>c<span class="op">*</span>X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>np.random.randn(m)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>rng.random(m)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> a <span class="op">+</span>b<span class="op">*</span>X <span class="op">+</span>c<span class="op">*</span>X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>rng.standard_normal(m)</span>
 <span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co"># fit the data to the model using linear least square</span></span>
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># see np.vander for alternative</span></span>
@@ -764,7 +764,7 @@ matplotlib:  3.10.0</code></pre>
 <span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>sol, r, rank, sv <span class="op">=</span> la.lstsq(A.T, Y)</span>
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>y_fit <span class="op">=</span> sol[<span class="dv">0</span>] <span class="op">+</span>sol[<span class="dv">1</span>] <span class="op">*</span>x <span class="op">+</span>sol[<span class="dv">2</span>] <span class="op">*</span>x<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5177877b" class="cell" data-execution_count="23">
+<div id="d68188fe" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>ax.plot(X, Y, <span class="st">'go'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, </span>
@@ -779,12 +779,12 @@ matplotlib:  3.10.0</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-24-output-1.png" width="515" height="358" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="54b248a2" class="cell" data-execution_count="24">
+<div id="9841ee54" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit the data to the model using linear least square: </span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st order polynomial</span></span>
@@ -797,7 +797,7 @@ matplotlib:  3.10.0</code></pre>
 <span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>sol, r, rank, sv <span class="op">=</span> la.lstsq(A.T, Y)</span>
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>y_fit15 <span class="op">=</span> <span class="bu">sum</span>([s<span class="op">*</span>x<span class="op">**</span>n <span class="cf">for</span> n, s <span class="kw">in</span> <span class="bu">enumerate</span>(sol)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="3712cb67" class="cell" data-execution_count="25">
+<div id="264b18d5" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ax.plot(X, Y, <span class="st">'go'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, </span>
@@ -814,7 +814,7 @@ matplotlib:  3.10.0</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-26-output-1.png" width="515" height="358" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -824,7 +824,7 @@ matplotlib:  3.10.0</code></pre>
 </section>
 <section id="eigenvalue-problems" class="level2" data-number="18.3">
 <h2 data-number="18.3" class="anchored" data-anchor-id="eigenvalue-problems"><span class="header-section-number">18.3</span> Eigenvalue problems</h2>
-<div id="3f50ca2a" class="cell" data-execution_count="26">
+<div id="a909ea75" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>eps, delta <span class="op">=</span> sympy.symbols(<span class="st">"epsilon, Delta"</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> sympy.Matrix([[eps, delta], [delta, <span class="op">-</span>eps]])</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>H </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -832,28 +832,28 @@ matplotlib:  3.10.0</code></pre>
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}\epsilon &amp; \Delta\\\Delta &amp; - \epsilon\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="13840f41" class="cell" data-execution_count="27">
+<div id="5864e91b" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>H.eigenvals()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="27">
 <p><span class="math inline">\(\displaystyle \left\{ - \sqrt{\Delta^{2} + \epsilon^{2}} : 1, \  \sqrt{\Delta^{2} + \epsilon^{2}} : 1\right\}\)</span></p>
 </div>
 </div>
-<div id="e886fbfb" class="cell" data-execution_count="28">
+<div id="56c30788" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>H.eigenvects()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="28">
 <p><span class="math inline">\(\displaystyle \left( - \sqrt{\Delta^{2} + \epsilon^{2}}, \  1, \  \left[ \left[\begin{matrix}\frac{\epsilon}{\Delta} - \frac{\sqrt{\Delta^{2} + \epsilon^{2}}}{\Delta}\\1\end{matrix}\right]\right]\right)\)</span></p>
 </div>
 </div>
-<div id="89330d70" class="cell" data-execution_count="29">
+<div id="eebf9808" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>H.eigenvects()[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="29">
 <p><span class="math inline">\(\displaystyle \left( \sqrt{\Delta^{2} + \epsilon^{2}}, \  1, \  \left[ \left[\begin{matrix}\frac{\epsilon}{\Delta} + \frac{\sqrt{\Delta^{2} + \epsilon^{2}}}{\Delta}\\1\end{matrix}\right]\right]\right)\)</span></p>
 </div>
 </div>
-<div id="be830fc9" class="cell" data-execution_count="30">
+<div id="ae3e836c" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(_, _, evec1), (_, _, evec2) <span class="op">=</span> H.eigenvects()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1f9c47f8" class="cell" data-execution_count="31">
+<div id="60f9bea0" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sympy.simplify(evec1[<span class="dv">0</span>].T<span class="op">*</span>evec2[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="31">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}0\end{matrix}\right]\)</span></p>
@@ -862,9 +862,9 @@ matplotlib:  3.10.0</code></pre>
 <ul>
 <li><p>Obtaining analytical expressions for eigenvalues and eigenvectors using these methods is often very desirable indeed, but unfortunately it only works for small matrices</p></li>
 <li><p>Thus, for larger systems we must resort to a fully numerical approach. For this, we can use the <code>la.eigvals</code> and <code>la.eig</code> functions in the <code>scipy</code> linear algebra package</p></li>
-<li><p>Matrices that are either Hermitian or real symmetric have real-valued eigenvalues, and for such matrices, it is advantageous to instead use the functions <code>la.eigvalsh</code> and <code>la.eigh</code>, which guarantees that the eigenvalues returned by the function is stored in a <code>numpy</code> array with real values</p></li>
+<li><p>Matrices that are either Hermitian or real symmetric have real-valued eigenvalues, and for such matrices, it is advantageous to instead use the functions <code>la.eigvalsh</code> and <code>la.eigh</code>, which guarantee that the eigenvalues returned by the function are stored in a <code>numpy</code> array with real values</p></li>
 </ul>
-<div id="8d47e730" class="cell" data-execution_count="32">
+<div id="d34901d1" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>], [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">3</span>], [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">9</span>]])</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
@@ -873,16 +873,16 @@ matplotlib:  3.10.0</code></pre>
        [5, 3, 9]])</code></pre>
 </div>
 </div>
-<div id="dc361e09" class="cell" data-execution_count="33">
+<div id="372e39b3" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>la.eigvals(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>array([13.35310908+0.j, -1.75902942+0.j,  3.40592034+0.j])</code></pre>
 </div>
 </div>
-<div id="f4bb81e2" class="cell" data-execution_count="34">
+<div id="acf3f39e" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>evals, evecs <span class="op">=</span> la.eig(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7fdd7b60" class="cell" data-execution_count="35">
+<div id="6ca0eae0" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>evecs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>array([[ 0.42663918,  0.90353276, -0.04009445],
@@ -890,16 +890,16 @@ matplotlib:  3.10.0</code></pre>
        [ 0.79155671, -0.35158534,  0.49982569]])</code></pre>
 </div>
 </div>
-<div id="6d84a18b" class="cell" data-execution_count="36">
+<div id="22ca7def" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>la.eigvalsh(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>array([-1.75902942,  3.40592034, 13.35310908])</code></pre>
 </div>
 </div>
-<div id="a855d034" class="cell" data-execution_count="37">
+<div id="64ba09ee" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>evals, evecs <span class="op">=</span> la.eigh(A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0a8ac6e4" class="cell" data-execution_count="38">
+<div id="f2ea303a" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>evecs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>array([[ 0.90353276, -0.04009445, -0.42663918],
@@ -918,66 +918,75 @@ matplotlib:  3.10.0</code></pre>
 <ul>
 <li>In <code>sympy</code>, we can solve many analytically solvable univariate and nonlinear equations using the <code>sympy.solve</code> function. For example,</li>
 </ul>
-<div id="cc5c06aa" class="cell" data-execution_count="39">
+<div id="bdd4ab9d" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x, a, b, c <span class="op">=</span> sympy.symbols(<span class="st">"x, a, b, c"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4d347a7c" class="cell" data-execution_count="40">
+<div id="08238892" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>sympy.solve(a <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span>, x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="40">
 <p><span class="math inline">\(\displaystyle \left[ \frac{- b - \sqrt{- 4 a c + b^{2}}}{2 c}, \  \frac{- b + \sqrt{- 4 a c + b^{2}}}{2 c}\right]\)</span></p>
 </div>
 </div>
-<div id="ff35b3d4" class="cell" data-execution_count="41">
+<div id="4fc7caaa" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sympy.solve(a<span class="op">*</span>sympy.cos(x) <span class="op">-</span> b<span class="op">*</span>sympy.sin(x), x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="41">
 <p><span class="math inline">\(\displaystyle \left[ - 2 \operatorname{atan}{\left(\frac{b - \sqrt{a^{2} + b^{2}}}{a} \right)}, \  - 2 \operatorname{atan}{\left(\frac{b + \sqrt{a^{2} + b^{2}}}{a} \right)}\right]\)</span></p>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>sympy.solve(sympy.sin(x)<span class="op">-</span>x, x)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>NotImplementedError: multiple generators <span class="co">[</span><span class="ot">x, sin(x)</span><span class="co">]</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>No algorithms are implemented to solve equation -x + sin(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Transcendental equations such as <span class="math inline">\(\sin x - x = 0\)</span> cannot be solved this way:</li>
+</ul>
+<div id="907010e5" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    sympy.solve(sympy.sin(x) <span class="op">-</span> x, x)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">NotImplementedError</span> <span class="im">as</span> err:</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"NotImplementedError:"</span>, err)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NotImplementedError: multiple generators [x, sin(x)]
+No algorithms are implemented to solve equation -x + sin(x)</code></pre>
+</div>
+</div>
 <ul>
 <li>In this type of situation, we need to resort to various numerical techniques. As a first step, it is often very useful to graph the function. This can give important clues about the number of solutions to the equation, and their approximate locations</li>
 </ul>
-<div id="31ed1dc2" class="cell" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">400</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co"># four examples of nonlinear functions</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>x <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>np.sin(x)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> np.exp(x) <span class="op">-</span><span class="dv">2</span></span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>np.sin(<span class="dv">50</span> <span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span>x<span class="op">**</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3238a19c" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">400</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co"># four examples of nonlinear functions</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>np.sin(x)</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> np.exp(x) <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>f4 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>np.sin(<span class="dv">50</span> <span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span>x<span class="op">**</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ae7b8405" class="cell" data-execution_count="43">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot each function</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">4</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">12</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, f <span class="kw">in</span> <span class="bu">enumerate</span>([f1, f2, f3, f4]):</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    axes[n].plot(x, f, lw<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    axes[n].axhline(<span class="dv">0</span>, ls<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span><span class="st">'k'</span>)</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    axes[n].set_xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    axes[n].set_ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    axes[n].set_xticks([<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    axes[n].tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    axes[n].set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> [<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = x</span><span class="dv">^</span><span class="vs">2 -x -1</span><span class="dv">$</span><span class="vs">'</span>, </span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>          <span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = x</span><span class="dv">^</span><span class="vs">3 -3 </span><span class="dv">\s</span><span class="vs">in</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>,</span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>          <span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = </span><span class="er">\</span><span class="vs">exp</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> -2</span><span class="dv">$</span><span class="vs">'</span>, </span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>          <span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\s</span><span class="vs">in</span><span class="er">\</span><span class="vs">left</span><span class="kw">(</span><span class="vs"> 50/</span><span class="kw">(</span><span class="vs">1 </span><span class="op">+</span><span class="vs">x</span><span class="dv">^</span><span class="vs">2</span><span class="kw">)</span><span class="vs"> </span><span class="ch">\r</span><span class="vs">ight</span><span class="kw">)</span><span class="vs"> </span><span class="op">+</span><span class="vs">1 -x</span><span class="dv">^</span><span class="vs">2</span><span class="dv">$</span><span class="vs">'</span>]</span>
-<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, title <span class="kw">in</span> <span class="bu">enumerate</span>(titles):</span>
-<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>    axes[n].set_title(title)</span>
-<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="509249e0" class="cell" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot each function</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">6</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.ravel()</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, f <span class="kw">in</span> <span class="bu">enumerate</span>([f1, f2, f3, f4]):</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    axes[n].plot(x, f, lw<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    axes[n].axhline(<span class="dv">0</span>, ls<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    axes[n].set_xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    axes[n].set_ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    axes[n].set_xticks([<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    axes[n].tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    axes[n].set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes[<span class="dv">2</span>:]:</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> [<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = x</span><span class="dv">^</span><span class="vs">2 -x -1</span><span class="dv">$</span><span class="vs">'</span>, </span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>          <span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = x</span><span class="dv">^</span><span class="vs">3 -3 </span><span class="dv">\s</span><span class="vs">in</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>,</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>          <span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = </span><span class="er">\</span><span class="vs">exp</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> -2</span><span class="dv">$</span><span class="vs">'</span>, </span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>          <span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\s</span><span class="vs">in</span><span class="er">\</span><span class="vs">left</span><span class="kw">(</span><span class="vs"> 50/</span><span class="kw">(</span><span class="vs">1 </span><span class="op">+</span><span class="vs">x</span><span class="dv">^</span><span class="vs">2</span><span class="kw">)</span><span class="vs"> </span><span class="ch">\r</span><span class="vs">ight</span><span class="kw">)</span><span class="vs"> </span><span class="op">+</span><span class="vs">1 -x</span><span class="dv">^</span><span class="vs">2</span><span class="dv">$</span><span class="vs">'</span>]</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n, title <span class="kw">in</span> <span class="bu">enumerate</span>(titles):</span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    axes[n].set_title(title)</span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-44-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-45-output-1.png" width="852" height="565" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -985,67 +994,68 @@ matplotlib:  3.10.0</code></pre>
 </section>
 <section id="bisection-method" class="level3" data-number="18.4.2">
 <h3 data-number="18.4.2" class="anchored" data-anchor-id="bisection-method"><span class="header-section-number">18.4.2</span> Bisection method</h3>
-<div id="4071d526" class="cell" data-execution_count="44">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define a function, desired tolerance </span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and starting interval [a, b]</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">2.1</span>, <span class="fl">2.1</span>, <span class="dv">1000</span>)</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(x) <span class="op">-</span> <span class="dv">2</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0858e9ce" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define a function, desired tolerance </span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and starting interval [a, b]</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">2.1</span>, <span class="fl">2.1</span>, <span class="dv">1000</span>)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(x) <span class="op">-</span> <span class="dv">2</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0781b2dd" class="cell" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graph the function f</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">6.8</span>, <span class="dv">4</span>))</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>ax.plot(x, f(x), lw<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, ls<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span><span class="st">'k'</span>)</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co"># find the root using the bisection method and visualize</span></span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the steps in the method in the graph</span></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>fa, fb <span class="op">=</span> f(a), f(b)</span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>ax.plot(a, fa, <span class="st">'ko'</span>), ax.vlines(a, <span class="dv">0</span>, fa, ls<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>ax.plot(b, fb, <span class="st">'ko'</span>), ax.vlines(b, <span class="dv">0</span>, fb, ls<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>ax.text(a, fa <span class="op">-</span> <span class="fl">0.8</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">a</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>ax.text(b, fb <span class="op">+</span> <span class="fl">0.5</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">b</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> b <span class="op">-</span> a <span class="op">&gt;</span> tol:</span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> a <span class="op">+</span> (b <span class="op">-</span> a)<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>    fm <span class="op">=</span> f(m)</span>
-<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>    ax.plot(m, fm, <span class="st">'ko'</span>)</span>
-<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>    ax.plot([m, m], [<span class="dv">0</span>, fm], color<span class="op">=</span><span class="st">'g'</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>    ax.text(m, fm <span class="op">-</span><span class="fl">0.5</span>, <span class="vs">rf"</span><span class="dv">$</span><span class="vs">m_</span><span class="sc">{</span>n<span class="sc">}</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.sign(fa) <span class="op">==</span> np.sign(fm):</span>
-<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a>        a, fa <span class="op">=</span> m, fm</span>
-<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a>        b, fb <span class="op">=</span> m, fm</span>
-<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a>ax.plot(m, fm, <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f"Root approximately at </span><span class="sc">{</span>m<span class="sc">: .3f}</span><span class="ss">"</span>,</span>
-<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, </span>
-<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a>            family<span class="op">=</span><span class="st">"serif"</span>,</span>
-<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(a, fm), </span>
-<span id="cb55-41"><a href="#cb55-41" aria-hidden="true" tabindex="-1"></a>            xycoords<span class="op">=</span><span class="st">'data'</span>,</span>
-<span id="cb55-42"><a href="#cb55-42" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(<span class="op">-</span><span class="dv">150</span>, <span class="op">+</span><span class="dv">50</span>), </span>
-<span id="cb55-43"><a href="#cb55-43" aria-hidden="true" tabindex="-1"></a>            textcoords<span class="op">=</span><span class="st">'offset points'</span>, </span>
-<span id="cb55-44"><a href="#cb55-44" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, </span>
-<span id="cb55-45"><a href="#cb55-45" aria-hidden="true" tabindex="-1"></a>            connectionstyle<span class="op">=</span><span class="st">"arc3, rad=-.5"</span>))</span>
-<span id="cb55-46"><a href="#cb55-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-47"><a href="#cb55-47" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Bisection method"</span>)</span>
-<span id="cb55-48"><a href="#cb55-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5b358f83" class="cell" data-execution_count="46">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graph the function f</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">6.8</span>, <span class="dv">4</span>))</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>ax.plot(x, f(x), lw<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, ls<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="co"># find the root using the bisection method and visualize</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the steps in the method in the graph</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>fa, fb <span class="op">=</span> f(a), f(b)</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>ax.plot(a, fa, <span class="st">'ko'</span>), ax.vlines(a, <span class="dv">0</span>, fa, ls<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>ax.plot(b, fb, <span class="st">'ko'</span>), ax.vlines(b, <span class="dv">0</span>, fb, ls<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>ax.text(a, fa <span class="op">-</span> <span class="fl">0.8</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">a</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a>ax.text(b, fb <span class="op">+</span> <span class="fl">0.5</span>, <span class="vs">r"</span><span class="dv">$</span><span class="vs">b</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> b <span class="op">-</span> a <span class="op">&gt;</span> tol:</span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> a <span class="op">+</span> (b <span class="op">-</span> a)<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>    fm <span class="op">=</span> f(m)</span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>    ax.plot(m, fm, <span class="st">'ko'</span>)</span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>    ax.plot([m, m], [<span class="dv">0</span>, fm], color<span class="op">=</span><span class="st">'g'</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">3</span>:  <span class="co"># later midpoints crowd near the root</span></span>
+<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>        ax.text(m, fm <span class="op">-</span><span class="fl">0.5</span>, <span class="vs">rf"</span><span class="dv">$</span><span class="vs">m_</span><span class="sc">{</span>n<span class="sc">}</span><span class="dv">$</span><span class="vs">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.sign(fa) <span class="op">==</span> np.sign(fm):</span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>        a, fa <span class="op">=</span> m, fm</span>
+<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a>        b, fb <span class="op">=</span> m, fm</span>
+<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a>ax.plot(m, fm, <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f"Root approximately at </span><span class="sc">{</span>m<span class="sc">: .3f}</span><span class="ss">"</span>,</span>
+<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, </span>
+<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a>            family<span class="op">=</span><span class="st">"serif"</span>,</span>
+<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(a, fm), </span>
+<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a>            xycoords<span class="op">=</span><span class="st">'data'</span>,</span>
+<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(<span class="op">-</span><span class="dv">150</span>, <span class="op">+</span><span class="dv">50</span>), </span>
+<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a>            textcoords<span class="op">=</span><span class="st">'offset points'</span>, </span>
+<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, </span>
+<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a>            connectionstyle<span class="op">=</span><span class="st">"arc3, rad=-.5"</span>))</span>
+<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Bisection method"</span>)</span>
+<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-47-output-1.png" width="571" height="373" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1053,63 +1063,63 @@ matplotlib:  3.10.0</code></pre>
 </section>
 <section id="newtons-method" class="level3" data-number="18.4.3">
 <h3 data-number="18.4.3" class="anchored" data-anchor-id="newtons-method"><span class="header-section-number">18.4.3</span> Newton’s method</h3>
-<div id="ee1bc778" class="cell" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>s_x <span class="op">=</span> sympy.symbols(<span class="st">"x"</span>)</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>s_f <span class="op">=</span> sympy.exp(s_x) <span class="op">-</span><span class="dv">2</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: sympy.lambdify(s_x, s_f, <span class="st">'numpy'</span>)(x)</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>fp <span class="op">=</span> <span class="kw">lambda</span> x: sympy.lambdify(s_x, sympy.diff(s_f, s_x), <span class="st">'numpy'</span>)(x)</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">1.9</span>, <span class="fl">2.1</span>, <span class="dv">1000</span>)</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="co"># define a function, desired tolerance and starting point xk</span></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">0.01</span></span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>xk <span class="op">=</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="c16fb00a" class="cell" data-execution_count="47">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup a graph for visualizing the root finding steps</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">6.8</span>, <span class="dv">4</span>))</span>
+<div id="01ca7973" class="cell" data-execution_count="47">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>s_x <span class="op">=</span> sympy.symbols(<span class="st">"x"</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>s_f <span class="op">=</span> sympy.exp(s_x) <span class="op">-</span><span class="dv">2</span></span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>ax.plot(x, f(x))</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, ls<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span><span class="st">'k'</span>)</span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a><span class="co"># repeat Newton's method </span></span>
-<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a><span class="co"># until convergence to the desired tolerance has been reached</span></span>
-<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> f(xk) <span class="op">&gt;</span> tol:</span>
-<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>    xk_new <span class="op">=</span> xk <span class="op">-</span>f(xk) <span class="op">/</span>fp(xk)</span>
-<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>    ax.plot([xk, xk], [<span class="dv">0</span>, f(xk)], color<span class="op">=</span><span class="st">'k'</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>    ax.plot(xk, f(xk), <span class="st">'ko'</span>)</span>
-<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>    ax.text(xk, <span class="op">-</span><span class="fl">.5</span>, <span class="vs">rf'</span><span class="dv">$</span><span class="vs">x_</span><span class="sc">{</span>n<span class="sc">}</span><span class="dv">$</span><span class="vs">'</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
-<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>    ax.plot([xk, xk_new], [f(xk), <span class="dv">0</span>], <span class="st">'g:'</span>)</span>
-<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>    xk <span class="op">=</span> xk_new</span>
-<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a>ax.plot(xk, f(xk), <span class="st">'ro'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f"Root approximately at </span><span class="sc">{</span>xk<span class="sc">: .3f}</span><span class="ss">"</span>,</span>
-<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, </span>
-<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a>            family<span class="op">=</span><span class="st">"serif"</span>,</span>
-<span id="cb57-31"><a href="#cb57-31" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(xk, f(xk)), </span>
-<span id="cb57-32"><a href="#cb57-32" aria-hidden="true" tabindex="-1"></a>            xycoords<span class="op">=</span><span class="st">'data'</span>,</span>
-<span id="cb57-33"><a href="#cb57-33" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(<span class="op">-</span><span class="dv">150</span>, <span class="op">+</span><span class="dv">50</span>), </span>
-<span id="cb57-34"><a href="#cb57-34" aria-hidden="true" tabindex="-1"></a>            textcoords<span class="op">=</span><span class="st">'offset points'</span>, </span>
-<span id="cb57-35"><a href="#cb57-35" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, </span>
-<span id="cb57-36"><a href="#cb57-36" aria-hidden="true" tabindex="-1"></a>            connectionstyle<span class="op">=</span><span class="st">"arc3, rad=-.5"</span>))</span>
-<span id="cb57-37"><a href="#cb57-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-38"><a href="#cb57-38" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Newton's method"</span>)</span>
-<span id="cb57-39"><a href="#cb57-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: sympy.lambdify(s_x, s_f, <span class="st">'numpy'</span>)(x)</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>fp <span class="op">=</span> <span class="kw">lambda</span> x: sympy.lambdify(s_x, sympy.diff(s_f, s_x), <span class="st">'numpy'</span>)(x)</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">1.9</span>, <span class="fl">2.1</span>, <span class="dv">1000</span>)</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="co"># define a function, desired tolerance and starting point xk</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>xk <span class="op">=</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="9210904e" class="cell" data-execution_count="48">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup a graph for visualizing the root finding steps</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="fl">6.8</span>, <span class="dv">4</span>))</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>ax.plot(x, f(x))</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, ls<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="co"># repeat Newton's method </span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="co"># until convergence to the desired tolerance has been reached</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">abs</span>(f(xk)) <span class="op">&gt;</span> tol:</span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>    xk_new <span class="op">=</span> xk <span class="op">-</span>f(xk) <span class="op">/</span>fp(xk)</span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>    ax.plot([xk, xk], [<span class="dv">0</span>, f(xk)], color<span class="op">=</span><span class="st">'k'</span>, ls<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>    ax.plot(xk, f(xk), <span class="st">'ko'</span>)</span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>    ax.text(xk, <span class="op">-</span><span class="fl">.5</span>, <span class="vs">rf'</span><span class="dv">$</span><span class="vs">x_</span><span class="sc">{</span>n<span class="sc">}</span><span class="dv">$</span><span class="vs">'</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>    ax.plot([xk, xk_new], [f(xk), <span class="dv">0</span>], <span class="st">'g:'</span>)</span>
+<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>    xk <span class="op">=</span> xk_new</span>
+<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a>ax.plot(xk, f(xk), <span class="st">'ro'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f"Root approximately at </span><span class="sc">{</span>xk<span class="sc">: .3f}</span><span class="ss">"</span>,</span>
+<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, </span>
+<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a>            family<span class="op">=</span><span class="st">"serif"</span>,</span>
+<span id="cb58-31"><a href="#cb58-31" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(xk, f(xk)), </span>
+<span id="cb58-32"><a href="#cb58-32" aria-hidden="true" tabindex="-1"></a>            xycoords<span class="op">=</span><span class="st">'data'</span>,</span>
+<span id="cb58-33"><a href="#cb58-33" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(<span class="op">-</span><span class="dv">150</span>, <span class="op">+</span><span class="dv">50</span>), </span>
+<span id="cb58-34"><a href="#cb58-34" aria-hidden="true" tabindex="-1"></a>            textcoords<span class="op">=</span><span class="st">'offset points'</span>, </span>
+<span id="cb58-35"><a href="#cb58-35" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, </span>
+<span id="cb58-36"><a href="#cb58-36" aria-hidden="true" tabindex="-1"></a>            connectionstyle<span class="op">=</span><span class="st">"arc3, rad=-.5"</span>))</span>
+<span id="cb58-37"><a href="#cb58-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-38"><a href="#cb58-38" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Newton's method"</span>)</span>
+<span id="cb58-39"><a href="#cb58-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-48-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-49-output-1.png" width="571" height="373" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1117,49 +1127,49 @@ matplotlib:  3.10.0</code></pre>
 <ul>
 <li>The <code>scipy optimize</code> module provides multiple functions for numerical root finding. The <code>optimize.bisect</code> and <code>optimize.newton</code> functions implement variants of bisection and Newton methods</li>
 </ul>
-<div id="baa87860" class="cell" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(x) <span class="op">-</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3921fc17" class="cell" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(x) <span class="op">-</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="78336b06" class="cell" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>optimize.bisect(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="49">
+<div id="11b41036" class="cell" data-execution_count="50">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>optimize.bisect(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="50">
 <p><span class="math inline">\(\displaystyle 0.693147180560118\)</span></p>
 </div>
 </div>
-<div id="e916b2bc" class="cell" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>x_root_guess <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>fprime <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="98403e98" class="cell" data-execution_count="51">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>x_root_guess <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>fprime <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="13d2adc4" class="cell" data-execution_count="51">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>optimize.newton(f, x_root_guess)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="51">
+<div id="74e94e4c" class="cell" data-execution_count="52">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>optimize.newton(f, x_root_guess)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="52">
 <p><span class="math inline">\(\displaystyle 0.693147180559946\)</span></p>
 </div>
 </div>
-<div id="30a79b1f" class="cell" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>optimize.newton(f, x_root_guess, fprime<span class="op">=</span>fprime)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="52">
+<div id="ee7c644b" class="cell" data-execution_count="53">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>optimize.newton(f, x_root_guess, fprime<span class="op">=</span>fprime)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="53">
 <p><span class="math inline">\(\displaystyle 0.693147180559945\)</span></p>
 </div>
 </div>
 <ul>
 <li>The <code>scipy</code> <code>optimize</code> module provides additional functions for root finding. In particular, the <code>optimize.brentq</code> and <code>optimize.brenth</code> functions, which are variants of the bisection method, and also work on an interval where the function changes sign</li>
 </ul>
-<div id="65232e32" class="cell" data-execution_count="53">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>optimize.brentq(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="53">
+<div id="3bb56d5d" class="cell" data-execution_count="54">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>optimize.brentq(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="54">
 <p><span class="math inline">\(\displaystyle 0.693147180559945\)</span></p>
 </div>
 </div>
-<div id="172762b4" class="cell" data-execution_count="54">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>optimize.brenth(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="54">
+<div id="0c06bcd2" class="cell" data-execution_count="55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>optimize.brenth(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="55">
 <p><span class="math inline">\(\displaystyle 0.693147180559938\)</span></p>
 </div>
 </div>
-<div id="92457e4a" class="cell" data-execution_count="55">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>optimize.ridder(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="55">
+<div id="fee50620" class="cell" data-execution_count="56">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>optimize.ridder(f, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="56">
 <p><span class="math inline">\(\displaystyle 0.69314718055904\)</span></p>
 </div>
 </div>
@@ -1176,130 +1186,129 @@ matplotlib:  3.10.0</code></pre>
   \end{aligned}
 \]</span></p></li>
 </ul>
-<div id="d5fc9f2f" class="cell" data-execution_count="56">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [x[<span class="dv">1</span>] <span class="op">-</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">3</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">1</span>, x[<span class="dv">1</span>] <span class="op">+</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="676d5949" class="cell" data-execution_count="57">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [x[<span class="dv">1</span>] <span class="op">-</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">3</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">1</span>, x[<span class="dv">1</span>] <span class="op">+</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5ecbd4be" class="cell" data-execution_count="57">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>optimize.fsolve(f, [<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="57">
+<div id="e2e865a0" class="cell" data-execution_count="58">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>optimize.fsolve(f, [<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>array([0.73205081, 0.46410162])</code></pre>
 </div>
 </div>
-<div id="f6936399" class="cell" data-execution_count="58">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>optimize.broyden1(f, [<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div id="317801b6" class="cell" data-execution_count="59">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>optimize.broyden1(f, [<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>array([0.73205046, 0.46410254])</code></pre>
 </div>
 </div>
-<div id="5848973b" class="cell" data-execution_count="59">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>optimize.broyden2(f, [<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div id="32af150e" class="cell" data-execution_count="60">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>optimize.broyden2(f, [<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
 <pre><code>array([0.73205083, 0.4641017 ])</code></pre>
 </div>
 </div>
 <hr>
-<div id="5b8dbec6" class="cell" data-execution_count="60">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> sympy.symbols(<span class="st">"x, y"</span>)</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>f_mat <span class="op">=</span> sympy.Matrix([y <span class="op">-</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span>, y <span class="op">+</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>])</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>f_mat.jacobian(sympy.Matrix([x, y]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="60">
+<div id="ae6768db" class="cell" data-execution_count="61">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> sympy.symbols(<span class="st">"x, y"</span>)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>f_mat <span class="op">=</span> sympy.Matrix([y <span class="op">-</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span>, y <span class="op">+</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>])</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>f_mat.jacobian(sympy.Matrix([x, y]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="61">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}- 3 x^{2} - 4 x &amp; 1\\2 x &amp; 1\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="6be2d4df" class="cell" data-execution_count="61">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_jacobian(x):</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [[<span class="op">-</span><span class="dv">3</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>], <span class="dv">1</span>], [<span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>], <span class="dv">1</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7445cdcd" class="cell" data-execution_count="62">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_jacobian(x):</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [[<span class="op">-</span><span class="dv">3</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>], <span class="dv">1</span>], [<span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>], <span class="dv">1</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="def3f887" class="cell" data-execution_count="62">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>optimize.fsolve(f, [<span class="dv">1</span>, <span class="dv">1</span>], fprime<span class="op">=</span>f_jacobian)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div id="691f8768" class="cell" data-execution_count="63">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>optimize.fsolve(f, [<span class="dv">1</span>, <span class="dv">1</span>], fprime<span class="op">=</span>f_jacobian)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
 <pre><code>array([0.73205081, 0.46410162])</code></pre>
 </div>
 </div>
 <hr>
-<div id="041e774f" class="cell" data-execution_count="63">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co">#def f(x):</span></span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  return [x[1] -x[0]**3 -2*x[0]**2 +1, x[1] +x[0]**2 -1]</span></span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5000</span>)</span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">1</span></span>
-<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y1, <span class="st">'b'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y = x</span><span class="dv">^</span><span class="vs">3 </span><span class="op">+</span><span class="vs">2x</span><span class="dv">^</span><span class="vs">2 -1</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y2, <span class="st">'g'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y =-x</span><span class="dv">^</span><span class="vs">2 </span><span class="op">+</span><span class="vs">1</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb77-12"><a href="#cb77-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-13"><a href="#cb77-13" aria-hidden="true" tabindex="-1"></a>x_guesses <span class="op">=</span> [[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">5</span>]]</span>
-<span id="cb77-14"><a href="#cb77-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x_guess <span class="kw">in</span> x_guesses:</span>
-<span id="cb77-15"><a href="#cb77-15" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> optimize.fsolve(f, x_guess)</span>
-<span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a>    ax.plot(sol[<span class="dv">0</span>], sol[<span class="dv">1</span>], <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a>    ax.plot(x_guess[<span class="dv">0</span>], x_guess[<span class="dv">1</span>], <span class="st">'ko'</span>)</span>
-<span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="st">""</span>, </span>
-<span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a>                xy<span class="op">=</span>(sol[<span class="dv">0</span>], sol[<span class="dv">1</span>]), </span>
-<span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a>                xytext<span class="op">=</span>(x_guess[<span class="dv">0</span>], x_guess[<span class="dv">1</span>]),</span>
-<span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, </span>
-<span id="cb77-23"><a href="#cb77-23" aria-hidden="true" tabindex="-1"></a>                linewidth<span class="op">=</span><span class="fl">1.5</span>, linestyle<span class="op">=</span><span class="st">':'</span>))</span>
-<span id="cb77-24"><a href="#cb77-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb77-25"><a href="#cb77-25" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb77-26"><a href="#cb77-26" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb77-27"><a href="#cb77-27" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">y</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb77-28"><a href="#cb77-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-29"><a href="#cb77-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="978b8ab6" class="cell" data-execution_count="64">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5000</span>)</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">1</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y1, <span class="st">'b'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y = x</span><span class="dv">^</span><span class="vs">3 </span><span class="op">+</span><span class="vs">2x</span><span class="dv">^</span><span class="vs">2 -1</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y2, <span class="st">'g'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y =-x</span><span class="dv">^</span><span class="vs">2 </span><span class="op">+</span><span class="vs">1</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>x_guesses <span class="op">=</span> [[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">5</span>]]</span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x_guess <span class="kw">in</span> x_guesses:</span>
+<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> optimize.fsolve(f, x_guess)</span>
+<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>    ax.plot(sol[<span class="dv">0</span>], sol[<span class="dv">1</span>], <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a>    ax.plot(x_guess[<span class="dv">0</span>], x_guess[<span class="dv">1</span>], <span class="st">'ko'</span>)</span>
+<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="st">""</span>, </span>
+<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a>                xy<span class="op">=</span>(sol[<span class="dv">0</span>], sol[<span class="dv">1</span>]), </span>
+<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a>                xytext<span class="op">=</span>(x_guess[<span class="dv">0</span>], x_guess[<span class="dv">1</span>]),</span>
+<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, </span>
+<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a>                linewidth<span class="op">=</span><span class="fl">1.5</span>, linestyle<span class="op">=</span><span class="st">':'</span>))</span>
+<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">y</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-64-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-65-output-1.png" width="524" height="358" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="69b7a514" class="cell" data-execution_count="64">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"error"</span>)</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="co">#def f(x):</span></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    return [x[1] -x[0]**3 -2*x[0]**2 +1, x[1] +x[0]**2 -1]</span></span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y1, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y = x</span><span class="dv">^</span><span class="vs">3 </span><span class="op">+</span><span class="vs">2x</span><span class="dv">^</span><span class="vs">2 -1</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y2, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y = -x</span><span class="dv">^</span><span class="vs">2 </span><span class="op">+</span><span class="vs">1</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>sol1 <span class="op">=</span> optimize.fsolve(f, [<span class="op">-</span><span class="dv">2</span>,  <span class="dv">2</span>])</span>
-<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>sol2 <span class="op">=</span> optimize.fsolve(f, [ <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>sol3 <span class="op">=</span> optimize.fsolve(f, [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">5</span>])</span>
-<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'r'</span>, <span class="st">'b'</span>, <span class="st">'g'</span>]</span>
-<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">80</span>):</span>
-<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">40</span>):</span>
-<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a>        x_guess <span class="op">=</span> [m, n]</span>
-<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>: </span>
-<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a>            sol <span class="op">=</span> optimize.fsolve(f, x_guess)</span>
-<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> idx, s <span class="kw">in</span> <span class="bu">enumerate</span>([sol1, sol2, sol3]):</span>
-<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="bu">abs</span>(s <span class="op">-</span>sol).<span class="bu">max</span>() <span class="op">&lt;</span> <span class="fl">1e-8</span>:</span>
-<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a>                    ax.plot(sol[<span class="dv">0</span>], sol[<span class="dv">1</span>], </span>
-<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a>                            colors[idx]<span class="op">+</span><span class="st">'*'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a>                    ax.plot(x_guess[<span class="dv">0</span>], x_guess[<span class="dv">1</span>], </span>
-<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a>                            colors[idx]<span class="op">+</span><span class="st">'.'</span>)</span>
-<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
-<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
-<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>)</span>
-<span id="cb78-35"><a href="#cb78-35" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>)</span>
-<span id="cb78-36"><a href="#cb78-36" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb78-37"><a href="#cb78-37" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">y</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb78-38"><a href="#cb78-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-39"><a href="#cb78-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Which root <code>fsolve</code> converges to depends on the initial guess. <span class="math inline">\(~\)</span>In the figure below, each initial guess is colored by the root it converges to (the basins of attraction). <span class="math inline">\(~\)</span>Guesses for which <code>fsolve</code> does not converge, signaled by a <code>RuntimeWarning</code>, are left blank</li>
+</ul>
+<div id="2117f17c" class="cell" data-execution_count="65">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y1, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, zorder<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y = x</span><span class="dv">^</span><span class="vs">3 </span><span class="op">+</span><span class="vs">2x</span><span class="dv">^</span><span class="vs">2 -1</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y2, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">1.5</span>, zorder<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">y = -x</span><span class="dv">^</span><span class="vs">2 </span><span class="op">+</span><span class="vs">1</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>sol1 <span class="op">=</span> optimize.fsolve(f, [<span class="op">-</span><span class="dv">2</span>,  <span class="dv">2</span>])</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>sol2 <span class="op">=</span> optimize.fsolve(f, [ <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>sol3 <span class="op">=</span> optimize.fsolve(f, [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">5</span>])</span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'r'</span>, <span class="st">'b'</span>, <span class="st">'g'</span>]</span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">80</span>):</span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">40</span>):</span>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a>        x_guess <span class="op">=</span> [m, n]</span>
+<span id="cb79-16"><a href="#cb79-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-17"><a href="#cb79-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> warnings.catch_warnings():</span>
+<span id="cb79-18"><a href="#cb79-18" aria-hidden="true" tabindex="-1"></a>            warnings.simplefilter(<span class="st">"error"</span>, <span class="pp">RuntimeWarning</span>)  <span class="co"># treat non-convergence as an error</span></span>
+<span id="cb79-19"><a href="#cb79-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb79-20"><a href="#cb79-20" aria-hidden="true" tabindex="-1"></a>                sol <span class="op">=</span> optimize.fsolve(f, x_guess)</span>
+<span id="cb79-21"><a href="#cb79-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span> <span class="pp">RuntimeWarning</span>:</span>
+<span id="cb79-22"><a href="#cb79-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb79-23"><a href="#cb79-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-24"><a href="#cb79-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> idx, s <span class="kw">in</span> <span class="bu">enumerate</span>([sol1, sol2, sol3]):</span>
+<span id="cb79-25"><a href="#cb79-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">abs</span>(s <span class="op">-</span>sol).<span class="bu">max</span>() <span class="op">&lt;</span> <span class="fl">1e-8</span>:</span>
+<span id="cb79-26"><a href="#cb79-26" aria-hidden="true" tabindex="-1"></a>                ax.plot(x_guess[<span class="dv">0</span>], x_guess[<span class="dv">1</span>], colors[idx]<span class="op">+</span><span class="st">'.'</span>, markersize<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb79-27"><a href="#cb79-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-28"><a href="#cb79-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, s <span class="kw">in</span> <span class="bu">enumerate</span>([sol1, sol2, sol3]):</span>
+<span id="cb79-29"><a href="#cb79-29" aria-hidden="true" tabindex="-1"></a>    ax.plot(s[<span class="dv">0</span>], s[<span class="dv">1</span>], colors[idx]<span class="op">+</span><span class="st">'*'</span>, markersize<span class="op">=</span><span class="dv">14</span>,</span>
+<span id="cb79-30"><a href="#cb79-30" aria-hidden="true" tabindex="-1"></a>            markeredgecolor<span class="op">=</span><span class="st">'k'</span>, zorder<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb79-31"><a href="#cb79-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-32"><a href="#cb79-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-33"><a href="#cb79-33" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>)</span>
+<span id="cb79-34"><a href="#cb79-34" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>)</span>
+<span id="cb79-35"><a href="#cb79-35" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb79-36"><a href="#cb79-36" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">y</span><span class="dv">$</span><span class="vs">'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb79-37"><a href="#cb79-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-38"><a href="#cb79-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="x_equation_solving_files/figure-html/cell-65-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="x_equation_solving_files/figure-html/cell-66-output-1.png" width="528" height="363" class="figure-img"></p>
 </figure>
 </div>
 </div>

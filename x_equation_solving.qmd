@@ -122,7 +122,7 @@ A.condition_number()
 ```
 
 ```{python}
-sympy.N(_)
+sympy.N(A.condition_number())
 ```
 
 ---
@@ -168,7 +168,7 @@ la.solve(A, b)
 
 * The advantage of using a numerical approach with `numpy/scipy`, on the other hand, is that we are guaranteed to obtain a result, although it will be an approximate solution due to floating-point errors
 
-* See the code below for an example that illustrates the differences between the symbolic and numerical approaches, and for an example that show the numerical approaches can be sensitive for equation systems with large condition numbers
+* See the code below for an example that illustrates the differences between the symbolic and numerical approaches, and for an example that shows the numerical approaches can be sensitive for equation systems with large condition numbers
 
 * In this example, we solve the equation system
 
@@ -292,14 +292,14 @@ sympy.solve(A*x - b, x_vars)
     1 & x_m & x_m^2
     \end{pmatrix}
     \begin{pmatrix}
-    a_0 \\[4pt] a_1 \\[4pt] a_3
+    a_0 \\[4pt] a_1 \\[4pt] a_2
     \end{pmatrix}=
     \begin{pmatrix}
     y_1 \\ \vdots \\ y_m
     \end{pmatrix}
   $$
 
-* For $m > 3$, there is in general no exact solution, and we need to introduce an approximate solution that give a best fit for the over-determined system
+* For $m > 3$, there is in general no exact solution, and we need to introduce an approximate solution that gives a best fit for the over-determined system
 
 * A natural definition of best fit for the over-determined system $\mathbf{Ax} \approx \mathbf{b}$, is to minimize the sum of square error,
 
@@ -310,7 +310,7 @@ sympy.solve(A*x - b, x_vars)
 * In `sympy`, we can solve for the least square solution of an over-determined system using the `solve_least_squares` method, and for numerical problems we can use the `scipy` function `la.lstsq`
 
 ```{python}
-np.random.seed(1234)
+rng = np.random.default_rng(1234)
 
 # define true model parameters
 m = 100
@@ -319,8 +319,8 @@ a, b, c = 1, 2, 3
 y_exact = a +b*x +c*x**2
 
 # simulate noisy data points
-X = 1 -2*np.random.rand(m)
-Y = a +b*X +c*X**2 +np.random.randn(m)
+X = 1 -2*rng.random(m)
+Y = a +b*X +c*X**2 +rng.standard_normal(m)
 
 # fit the data to the model using linear least square
 # see np.vander for alternative
@@ -405,7 +405,7 @@ sympy.simplify(evec1[0].T*evec2[0])
 
 * Thus, for larger systems we must resort to a fully numerical approach. For this, we can use the `la.eigvals` and `la.eig` functions in the `scipy` linear algebra package
 
-* Matrices that are either Hermitian or real symmetric have real-valued eigenvalues, and for such matrices, it is advantageous to instead use the functions `la.eigvalsh` and `la.eigh`, which guarantees that the eigenvalues returned by the function is stored in a `numpy` array with real values
+* Matrices that are either Hermitian or real symmetric have real-valued eigenvalues, and for such matrices, it is advantageous to instead use the functions `la.eigvalsh` and `la.eigh`, which guarantee that the eigenvalues returned by the function are stored in a `numpy` array with real values
 
 ```{python}
 A = np.array([[1, 3, 5], [3, 5, 3], [5, 3, 9]])
@@ -456,14 +456,14 @@ sympy.solve(a + b*x + c*x**2, x)
 sympy.solve(a*sympy.cos(x) - b*sympy.sin(x), x)
 ```
 
-````
-```{{python}}
-sympy.solve(sympy.sin(x)-x, x)
-```
+* Transcendental equations such as $\sin x - x = 0$ cannot be solved this way:
 
-NotImplementedError: multiple generators [x, sin(x)]
-No algorithms are implemented to solve equation -x + sin(x)
-````
+```{python}
+try:
+    sympy.solve(sympy.sin(x) - x, x)
+except NotImplementedError as err:
+    print("NotImplementedError:", err)
+```
 
 * In this type of situation, we need to resort to various numerical techniques. As a first step, it is often very useful to graph the function. This can give important clues about the number of solutions to the equation, and their approximate locations
 
@@ -478,9 +478,9 @@ f4 = 1 -x**2 +np.sin(50 /(1 +x**2))
 ```
 
 ```{python}
-
 # plot each function
-fig, axes = plt.subplots(4, 1, figsize=(4, 12), sharex=True)
+fig, axes = plt.subplots(2, 2, figsize=(9, 6), sharex=True)
+axes = axes.ravel()
 
 for n, f in enumerate([f1, f2, f3, f4]):
     axes[n].plot(x, f, lw=1.5)
@@ -490,8 +490,9 @@ for n, f in enumerate([f1, f2, f3, f4]):
     axes[n].set_xticks([-2, -1, 0, 1, 2])
     axes[n].tick_params(which='both', direction='in')
     axes[n].set_ylabel(r'$f(x)$', fontsize=12)
-    
-axes[0].set_xlabel(r'$x$', fontsize=12)
+
+for ax in axes[2:]:
+    ax.set_xlabel(r'$x$', fontsize=12)
 
 titles = [r'$f(x) = x^2 -x -1$', 
           r'$f(x) = x^3 -3 \sin(x)$',
@@ -542,7 +543,8 @@ while b - a > tol:
 
     ax.plot(m, fm, 'ko')
     ax.plot([m, m], [0, fm], color='g', ls=':')
-    ax.text(m, fm -0.5, rf"$m_{n}$", ha='center', fontsize=8)
+    if n <= 3:  # later midpoints crowd near the root
+        ax.text(m, fm -0.5, rf"$m_{n}$", ha='center', fontsize=10)
     n += 1
     
     if np.sign(fa) == np.sign(fm):
@@ -597,7 +599,7 @@ ax.tick_params(which='both', direction='in')
 # until convergence to the desired tolerance has been reached
 
 n = 0
-while f(xk) > tol:
+while abs(f(xk)) > tol:
     xk_new = xk -f(xk) /fp(xk)
 
     ax.plot([xk, xk], [0, f(xk)], color='k', ls=':')
@@ -708,9 +710,6 @@ optimize.fsolve(f, [1, 1], fprime=f_jacobian)
 ---
 
 ```{python}
-#def f(x):
-#  return [x[1] -x[0]**3 -2*x[0]**2 +1, x[1] +x[0]**2 -1]
-
 x = np.linspace(-3, 2, 5000)
 y1 = x**3 +2*x**2 -1
 y2 = -x**2 +1
@@ -739,17 +738,15 @@ ax.set_ylabel(r'$y$', fontsize=12)
 plt.show()
 ```
 
+* Which root `fsolve` converges to depends on the initial guess. $~$In the figure below, each initial guess is colored by the root it converges to (the basins of attraction). $~$Guesses for which `fsolve` does not converge, signaled by a `RuntimeWarning`, are left blank
+
 ```{python}
 import warnings
-warnings.filterwarnings("error")
-
-#def f(x):
-#    return [x[1] -x[0]**3 -2*x[0]**2 +1, x[1] +x[0]**2 -1]
 
 fig, ax = plt.subplots(figsize=(6, 4))
 
-ax.plot(x, y1, 'k', lw=1.5, label=r'$y = x^3 +2x^2 -1$')
-ax.plot(x, y2, 'k', lw=1.5, label=r'$y = -x^2 +1$')
+ax.plot(x, y1, 'k', lw=1.5, zorder=3, label=r'$y = x^3 +2x^2 -1$')
+ax.plot(x, y2, 'k', lw=1.5, zorder=3, label=r'$y = -x^2 +1$')
 
 sol1 = optimize.fsolve(f, [-2,  2])
 sol2 = optimize.fsolve(f, [ 1, -1])
@@ -760,17 +757,20 @@ for m in np.linspace(-4, 3, 80):
     for n in np.linspace(-15, 15, 40):
         x_guess = [m, n]
 
-        try: 
-            sol = optimize.fsolve(f, x_guess)
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)  # treat non-convergence as an error
+            try:
+                sol = optimize.fsolve(f, x_guess)
+            except RuntimeWarning:
+                continue
 
-            for idx, s in enumerate([sol1, sol2, sol3]):
-                if abs(s -sol).max() < 1e-8:
-                    ax.plot(sol[0], sol[1], 
-                            colors[idx]+'*', markersize=10)
-                    ax.plot(x_guess[0], x_guess[1], 
-                            colors[idx]+'.')
-        except:
-            pass
+        for idx, s in enumerate([sol1, sol2, sol3]):
+            if abs(s -sol).max() < 1e-8:
+                ax.plot(x_guess[0], x_guess[1], colors[idx]+'.', markersize=4)
+
+for idx, s in enumerate([sol1, sol2, sol3]):
+    ax.plot(s[0], s[1], colors[idx]+'*', markersize=14,
+            markeredgecolor='k', zorder=4)
 
 
 ax.set_xlim(-4, 3)
