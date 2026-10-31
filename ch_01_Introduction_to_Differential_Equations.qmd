@@ -27,7 +27,7 @@ jupyter: python3
 
 ### Classification by Order
 
-* The order of an ODE or PDE is the order of the <font color="blue">highest derivatives</font> in the equation
+* The order of an ODE or PDE is the order of the <font color="blue">highest derivative</font> in the equation
 
   $$\underbrace{\color{blue}{\frac{d^2y}{dx^2}}}_{\mathrm{highest\; order}} +5\left ( \frac{dy}{dx} \right )^3 - 4y = e^x$$
 
@@ -44,7 +44,7 @@ jupyter: python3
 
 ### Solution of an ODE
 
-* Any function $\phi$, defined on an interval $I$ and possessing at least $n$ derivatives that are continuous on $I$, which when substituted into an   ODE reduces the equation to an identity, is **a solution**
+* Any function $\phi$, defined on an interval $I$ and possessing at least $n$ derivatives that are continuous on $I$, which when substituted into an ODE reduces the equation to an identity, is **a solution**
 * Interval $I$ can be an open interval $(a,b)$, a closed interval $[a,b]$, an infinite interval $(a,\infty)$, etc.
 * A solution of a differential equation that is identically zero on an interval $I$ is a **trivial solution**
 * The graph of a solution $\phi$ of an ODE is a **solution curve** and it is continuous on its interval $I$ while the domain of $\phi$ may differ from the interval $I$
@@ -62,7 +62,7 @@ jupyter: python3
 
 ### Systems of Differential Equations
 
-* Two or more equations involving the derivatives of two or more unknown functions of a single independent variable are called the **system of differential equations**
+* Two or more equations involving the derivatives of two or more unknown functions of a single independent variable are called a **system of differential equations**
 
   $$
   \begin{aligned}
@@ -84,7 +84,7 @@ In an <font color="red">**IVP**</font>, we seek a solution $y(x)$ of a different
     y(x_0) &= y_0, \;y'(x_0) = y_1, \cdots, \;y^{(n-1)}(x_0) = y_{n-1} \\ \\
     &\Downarrow \\ \\
     \frac{d\mathbf{y}}{dx} &= \mathbf{f}(x, \mathbf{y}), 
-       \;\;\mathbf{y}=\mathbf{y}_0
+       \;\;\mathbf{y}(x_0)=\mathbf{y}_0
   \end{aligned}$$
 
 When solving an IVP, consider whether a solution exists and whether the solution is unique
@@ -95,9 +95,9 @@ When solving an IVP, consider whether a solution exists and whether the solution
 :::{#thm-existence-and-uniqueness} 
 gives conditions that are sufficient to guarantee the existence and uniqueness of a solution $y(x)$ to a first-order IVP
 
-![](figures/ch01_figure01.png "Rectangular Region R"){width="35%" fig-align="center"}
+![](figures/ch01_figure01.svg "Rectangular Region R"){width="45%" fig-align="center"}
 
-* <font color="blue">$f(x,y)$ and $\displaystyle\frac{\partial f}{\partial y}$ are continuous on the region $\,R\,$ for the interval $\,I_0$</font>
+Let $R$ be a rectangular region in the $xy$-plane defined by $a\le x\le b$, $c\le y\le d$ that contains the point $(x_0,y_0)$ in its interior. If $f(x,y)$ and $\partial f/\partial y$ are continuous on $R$, then there exists some interval $I_0$: $(x_0-h,\,x_0+h)$, $h>0$, contained in $[a,b]$, and a unique function $y(x)$, defined on $I_0$, that is a solution of the IVP $\;dy/dx=f(x,y)$, $y(x_0)=y_0$
 :::
 
 **Example** $\,$ First-order IVP
@@ -136,11 +136,11 @@ $~x\left( \frac{\pi}{2} \right) =-2, \;x'\left (\frac{\pi}{2} \right)=1$
  
 * Steps of the modeling process
 
-![](figures/ch01_figure02.png "modeling process"){width="60%" fig-align="center"}
+![](figures/ch01_figure02.svg "modeling process"){width="90%" fig-align="center"}
 
 **Example** $\,$ Radioactive Decay
 
-* In modeling the phenomenon, it is assumed that the rate $\displaystyle\frac{dA}{dt}$ at which the nuclei of a substance decays is proportional to the amount $A(t)$ remaining at time $t$ given an initial amount of radioactive substance on hand $A_0$
+* In modeling the phenomenon, it is assumed that the rate $\displaystyle\frac{dA}{dt}$ at which the nuclei of a substance decay is proportional to the amount $A(t)$ remaining at time $t$ given an initial amount of radioactive substance on hand $A_0$
    
   $$\frac{dA}{dt} = -kA, \;A(0)=A_0$$
     
@@ -148,11 +148,11 @@ $~x\left( \frac{\pi}{2} \right) =-2, \;x'\left (\frac{\pi}{2} \right)=1$
 
 **Example** $\,$ Draining Tank
 
-![](figures/ch01_figure03.png "Water draining from a tank"){width="20%" fig-align="center"}
+![](figures/ch01_figure03.svg "Water draining from a tank"){width="35%" fig-align="center"}
 
-* Toricelli's law states that the exit speed $v$ of water through a sharp-edged hole at the bottom of a tank filled to a depth $h$ is the same as the speed it would acquire falling from a height $h$, $\,$$v=\sqrt{2gh}$
+* Torricelli's law states that the exit speed $v$ of water through a sharp-edged hole at the bottom of a tank filled to a depth $h$ is the same as the speed it would acquire falling from a height $h$, $\,$$v=\sqrt{2gh}$
 
-* Volume $V$ leaving the tank per second is proportional to the area of the hole $A_h$
+* The volume $V$ of water leaving the tank per second is the area of the hole $A_h$ times the exit speed
   $$\frac{dV}{dt}=-A_h\sqrt{2gh}$$    
 
 * The volume in the tank at $t$ $\,$is$\,$ $V(t)=A_w h$, $\,$ in which  $\,$ $A_w$ is the *constant* area of the upper water surface
@@ -260,8 +260,9 @@ $$\frac{\partial f}{\partial y} = \frac{2}{3} y^{-1/3}$$
 
 **Step 3:** $~$Apply the Existence and Uniqueness Theorem
 
-* The Existence and Uniqueness Theorem requires both $f(x, y)$ and $\frac{\partial f}{\partial y}$ to be continuous in a neighborhood of the initial point $(x_0, y_0)$
-* So, a unique solution exists through $(x_0, y_0)$ only if $y_0 \ne 0$
+* Both $f$ and $\partial f/\partial y$ are continuous in the half-plane $y>0$ and in the half-plane $y<0$
+* Hence the theorem guarantees a unique solution through every point $(x_0, y_0)$ with $y_0\neq 0$: $\,$the region can be taken as either half-plane $y>0$ or $y<0$
+* The theorem gives only a sufficient condition, so it says nothing at $y_0=0$. $\,$There uniqueness actually fails: $\,$both $y=0$ and $y=(x-x_0)^3/27$ satisfy $y'=y^{2/3}$ and $y(x_0)=0$
 
 $~$
 
@@ -280,54 +281,11 @@ $~$
 
 **Solution**
 
-**Step 1:** $~$Solve by Inspection
+1. By inspection, $\,y=cx$ satisfies $xy'=x\cdot c=y$ for every constant $c$. $\,$Every member satisfies $y(0)=c\cdot 0=0$, $\,$so the IVP $xy'=y$, $y(0)=0$ has infinitely many solutions
 
-Let’s try separating variables or guessing solutions:
+2. In normal form $\,y'=f(x,y)=y/x$, $\,$and $f$ and $\partial f/\partial y=1/x$ are continuous wherever $x\neq 0$. $\,$So a region $R$ is either half-plane $x>0$ or $x<0$; $\,$through any point $(x_0,y_0)$ with $x_0\neq 0$ there is a unique solution. $\,$The initial point $(0,0)$ lies in no such region, $\,$so the theorem does not apply there, $\,$which is consistent with part 1
 
-Given:
-$$xy’ = y \quad \Rightarrow \quad y’ = \frac{y}{x}$$
-
-This is separable:
-
-$$\frac{dy}{y} = \frac{dx}{x}$$
-
-Integrate both sides:
-
-$$\ln |y| = \ln |x| + C_1$$
-
-Exponentiate:
-
-$$|y| = C_2|x| \quad \Rightarrow \quad y = Cx$$
-
-for some constant $C \in \mathbb{R}$, because the sign of $C_2$ absorbs the absolute values. So the one-parameter family of solutions is:
-
-$$y = Cx$$
-
-**Step 2:** $~$Verify with the Initial Condition
-
-We are given the initial value problem:
-
-$$xy’ = y, \quad y(0) = 0$$
-
-Let’s plug $x = 0$ into the general solution:
-
-$$y = Cx \Rightarrow y(0) = C \cdot 0 = 0$$
-
-So for any value of $C$, the condition $y(0) = 0$ is satisfied.
-
-❗ But Wait – What About Uniqueness?
-
-Let’s look back at the original differential equation:
-
-$$y’ = \frac{y}{x}$$
-
-This function $f(x, y) = \frac{y}{x}$ is not defined at $x = 0$, so the existence and uniqueness theorem does not apply at $x = 0$
-
-That means:
-
-* Infinitely many solutions of the form $y = Cx$ pass through $(0, 0)$,
-* But there is no unique solution to the initial value problem,
-* So although each $y = Cx$ satisfies both the differential equation and the initial condition, the IVP does not have a unique solution
+3. The piecewise function satisfies $y(0)=0$, $\,$and it satisfies $xy'=y$ for $x<0$ ($0=0$) and for $x>0$ ($x\cdot 1=x$). $\,$However, $\,$its left derivative at $x=0$ is $0$ and its right derivative is $1$, $\,$so $y'(0)$ does not exist. $\,$Therefore it is **not** a solution of the IVP on any interval containing $x=0$
 
 $~$
 
@@ -335,66 +293,36 @@ $~$
 
 $$ \frac{dT}{dt}=k(T -T_m), \;\;T(0)=T_0 $$
 
-![](figures/ch01_exer01.png "Newton's law of cooling"){width="30%" fig-align="center"}
+![](figures/ch01_exer01.svg "Newton's law of cooling"){width="50%" fig-align="center"}
 
 **Solution**
 
-$$
-\begin{aligned}
- \frac{dT}{dt} &=k(T -T_m), \;\;T(0)=T_0 \\ 
-    &\Downarrow \\ 
- T(0) &= T_0 \\
- T(\infty) &= T_m \\
- \ln \left( \frac{T -T_m}{T_0 -T_m} \right) &= k t \\
-    &\Downarrow \\  
-    k \text{ is the slope of the graph of }\, & t \text{ vs. } \ln \left( \frac{T -T_m}{T_0 -T_m}\right) 
-\end{aligned}$$
+* The solution of the IVP is $\,T(t)=T_m+(T_0-T_m)e^{kt}$
 
-**[-@sec-1-3]: 19.** After a mass $m$ is attached to a spring, it stretches $s$ units and then hangs at rest in the equilibrium position as shown in Figure (b). After the spring/mass system has been set in motion, let $x(t)$ denote the directed distance of the mass beyond the equilibrium position. As indicated in Figure (c), assume that the downward direction is positive, that the motion takes place in a vertical straight line through the center of gravitiy of the mass, and that the only forces acting on the system are the weight of the mass and the restoring force of the stretched spring. Use Hooke's law: The restoring force of a spring is proportional to its total elongation. Determine a differential equation for the displacement $x(t)$ a time $t$
+* $T_0=T(0)$ is read at $t=0$: $\,T_0\approx 175$
+* $T_m=\lim_{t\to\infty}T(t)$ is the level the curve approaches: $\,T_m\approx 75$
+* $k$ follows from one more point on the curve. $\,$The curve reaches $T\approx 100$ at $t\approx 17$ min, $\,$so
 
-![](figures/ch01_exer03.png "spring mass system"){width="60%" fig-align="center"}
+  $$ k=\frac{1}{t}\ln\frac{T-T_m}{T_0-T_m}\approx \frac{1}{17}\ln\frac{100-75}{175-75}=\frac{\ln 0.25}{17}\approx -0.08\ \text{min}^{-1} $$
+
+  (equivalently, $\,k$ is the slope of $\ln\left[(T-T_m)/(T_0-T_m)\right]$ plotted against $t$)
+
+**[-@sec-1-3]: 19.** After a mass $m$ is attached to a spring, it stretches $s$ units and then hangs at rest in the equilibrium position as shown in Figure (b). After the spring/mass system has been set in motion, let $x(t)$ denote the directed distance of the mass beyond the equilibrium position. As indicated in Figure (c), assume that the downward direction is positive, that the motion takes place in a vertical straight line through the center of gravity of the mass, and that the only forces acting on the system are the weight of the mass and the restoring force of the stretched spring. Use Hooke's law: The restoring force of a spring is proportional to its total elongation. Determine a differential equation for the displacement $x(t)$ at time $t$
+
+![](figures/ch01_exer03.svg "spring mass system"){width="75%" fig-align="center"}
 
 **Solution**
 
-To model the vertical motion of a spring-mass system as described, we need to:
+* **Equilibrium (Figure (b)):** $\,$the spring is stretched by $s$ and the weight is balanced by the spring force (Hooke's law, spring constant $k$)
 
-* Use Newton’s Second Law: $~F = ma$,
-* Use Hooke’s Law: The restoring force is proportional to the total elongation of the spring,
-* Let $y(t)$ denote the displacement from equilibrium (positive downward),
-* Assume only gravity and the spring’s restoring force act
+  $$ mg=ks $$
 
-**Step 1:** $~$Define the Forces
+* **In motion (Figure (c)):** $\,$the total elongation is $s+x$ (downward positive), $\,$so the forces on the mass are the weight $mg$ (down) and the restoring force $-k(s+x)$. $\,$Newton's second law gives
 
-Let:
+  $$ m\frac{d^2x}{dt^2}=mg-k(s+x)=\underbrace{mg-ks}_{0}-kx $$
 
-* $m =$ mass (kg),
-* $g =$ acceleration due to gravity (m/s²),
-* $k =$ spring constant (N/m),
-* $y(t) =$ displacement from equilibrium (m), with positive direction downward
+* Hence
 
-From equilibrium condition:
+  $$ m\frac{d^2x}{dt^2}+kx=0 $$
 
-* When the mass is at rest (before any motion), gravity is balanced by the spring force:
-
-$$mg = k \Delta l \quad \text{(equilibrium stretch)}$$
-
-**Step 2:** $~$After the System is Set in Motion
-
-When displaced by $y(t)$ from equilibrium:
-
-* Weight (constant force downward): $~F_g = mg$
-* Spring force (upward restoring force): $~F_s = -k(\Delta l + y)$
-
-But since we’re measuring $y(t)$ from equilibrium, the net restoring force becomes:
-
-$$F_{\text{net}} = -k y(t)$$
-
-Thus, from Newton’s second law:
-
-$$m \ddot{y}(t) = -k y(t)$$
-
-**Step 3:** $~$Final Differential Equation
-
-$$m \ddot{y} + k y = 0$$
-
-This is a second-order linear differential equation that governs the vertical motion of the mass from equilibrium
+  Measuring $x$ from the equilibrium position removes the weight from the equation
