@@ -132,13 +132,19 @@ If $~\mathbf{A}=
     
 find $~$(a) $\mathbf{AB}$, $~$(b) $\mathbf{BA}$, $~$(c) $\mathbf{A}^2$, $~$(d) $\mathbf{B}^2$
 
+[Solution](files/solutions/sol_6_1.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Show that if $\mathbf{A}$ is an $m\times n$ matrix, $~$then $\mathbf{AA}^T$ is symmetric
 
+[Solution](files/solutions/sol_6_1.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ In matrix theory, $~$many of the familiar properties of the real number system are not valid. $~$If $a$ and $b$ are real numbers, then $ab=0\;$ implies that $a=0$ or $b=0$. $~$Find two matrices such that $\mathbf{AB}=\mathbf{0}~$ but $\mathbf{A}\neq\mathbf{0}$ and $\mathbf{B}\neq \mathbf{0}$
+
+[Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
 $~$
 
@@ -146,10 +152,14 @@ $~$
 
 $$(\mathbf{A} + \mathbf{B})^2 = \mathbf{A}^2 + 2\mathbf{A}\mathbf{B} +\mathbf{B}^2$$
 
+[Solution](files/solutions/sol_6_1.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find the resulting vector $\mathbf{b}$ if the given vector $\mathbf{a} = \langle 1, 1 \rangle$ is rotated through the indicated angle
  $\theta=\pi/2$
+
+[Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
 $~$
 
@@ -165,6 +175,8 @@ $$\begin{pmatrix}
     \begin{pmatrix}
       x \\ y 
 \end{pmatrix}$$
+
+[Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
 $~$
 
@@ -216,7 +228,7 @@ $~$
 
 $~$
 
-![](figures/ch08_figure01.png "Equal"){width="80%" fig-align="center"}
+![](figures/ch08_figure01.svg "Equal"){width="95%" fig-align="center"}
 
 * **Augmented Matrix**
 
@@ -328,7 +340,7 @@ $${\scriptsize
     0 & 0 & 1 & 5
   \end{array}\right)   
   \overset{\begin{matrix}
-           -4R_3 +R_1 \\
+           4R_3 +R_1 \\
           -\frac{3}{2}R_3 +R_2 
            \end{matrix}}{\Longrightarrow}
   \left(\begin{array}{rrr|r}
@@ -385,7 +397,7 @@ $${\scriptsize
            -\frac{1}{11}R_2 
            \end{matrix}}
   {\Longrightarrow}
-  \left(\begin{array}{rr|r|r}
+  \left(\begin{array}{rrr|r}
     1 & 3 & -2 & -7\\ 
     0 & 1 & -1 & -3\\ \hline
     0 & 0 & 0 & {\color{Red}0 }
@@ -396,7 +408,7 @@ In this case, $~$the last matrix implies that the original system of three equat
 $${
   \overset{-3R_2 +R_1}
   {\Longrightarrow}
-  \left(\begin{array}{rr|r|r}
+  \left(\begin{array}{rrr|r}
     1 & 0 & 1 & 2\\ 
     0 & 1 & -1 & -3\\ 
     \hline
@@ -494,7 +506,7 @@ $${\scriptsize
     2 & 0 & -1 &  0 & 0  
   \end{array}\right) 
   \overset{\;\,\text{ row } \\ \text{operations}}{\Longrightarrow}
-  \left(\begin{array}{rrr|r|r} 
+  \left(\begin{array}{rrrr|r} 
     1 & 0 & 0 & -\frac{1}{3} & 0\\   
     0 & 1 & 0 & -\frac{7}{6} & 0\\
     0 & 0 & 1 & -\frac{2}{3} & 0
@@ -538,6 +550,8 @@ $$
     -&x_1 +x_2 +x_3 = 4 
 \end{aligned}$$
 
+[Solution](files/solutions/sol_6_2.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Balance the given chemical equation:
@@ -545,6 +559,8 @@ $~$
 $$\mathrm{C}_5\mathrm{H}_8 +\mathrm{O}_2 \rightarrow \mathrm{CO}_2 + \mathrm{H}_2\mathrm{O}$$
 
 $$\mathrm{Cu} + \mathrm{HNO}_3 \rightarrow \mathrm{Cu(NO}_3\mathrm{)}_2 + \mathrm{H}_2\mathrm{O} +\mathrm{NO}$$
+
+[Solution](files/solutions/sol_6_2.pdf){target="_blank"}
 
 $~$
 
@@ -561,16 +577,18 @@ $$\begin{pmatrix}
  0 & c & 1
 \end{pmatrix} \mathbf{A}$$
 
+[Solution](files/solutions/sol_6_2.pdf){target="_blank"}
+
 $~$
 
 ## Rank of a Matrix {#sec-8-3}
 
 * The **rank** of an $m \times n$ matrix $\mathbf{A}$, $~\mathrm{rank}(\mathbf{A})$, $\,$ is 
-  **the maximum number of linearly independent row vectors**. If a matrix $\mathbf{A}$ is now equivalent to
+  **the maximum number of linearly independent row vectors**. If a matrix $\mathbf{A}$ is row equivalent to
   a row-echelon form $\mathbf{B}$, $~$then
 
   * the row space of $\mathbf{A}$ = the row space of $\mathbf{B}$
-  * the nonezero rows of $\mathbf{B}$ form a basis for the row space of $\mathbf{A}$, $~$and
+  * the nonzero rows of $\mathbf{B}$ form a basis for the row space of $\mathbf{A}$, $~$and
   * $\mathrm{rank}(\mathbf{A})$ = the number of nonzero rows in $\mathbf{B}$
 
 * <font color='red'>**Consistency of** $~\mathbf{A}\mathbf{x}=\mathbf{b}$</font>
@@ -624,6 +642,8 @@ $${\scriptsize\begin{pmatrix}
     6 & 6 & 6 & 12 & 0 
    \end{pmatrix}}$$
 
+[Solution](files/solutions/sol_6_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Determine whether the given set of vectors is linearly dependent or linearly independent
@@ -632,9 +652,13 @@ $$\mathbf{u}_1 = \langle 1, 2, 3 \rangle, \;\mathbf{u}_2 = \langle 1, 0, 1 \rang
 
 $$\mathbf{u}_1 = \langle 1, -1, 3, -1 \rangle, \;\mathbf{u}_2 = \langle 1, -1, 4, 2 \rangle, \; \mathbf{u}_3 = \langle 1, -1, 5, 7 \rangle$$
 
+[Solution](files/solutions/sol_6_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Suppose the system $\mathbf{Ax}=\mathbf{b}~$ is consistent and $~\mathbf{A}$ is a $5\times 8~$ matrix and $~\mathrm{rank}\,\mathbf{A}=3.$ $~$How many parameters does the solution of the system have?
+
+[Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
 $~$
 
@@ -650,6 +674,8 @@ $~$
 
 | **3.** $~$ If $\mathrm{rank}(\mathbf{A})=3$, $~$then how many parameters does the solution of the system $~\mathbf{Ax}=\mathbf{0}~$ have?
 
+[Solution](files/solutions/sol_6_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Let $\mathbf{v}_1$, $\mathbf{v}_2$, and $~\mathbf{v}_3~$ be the first, second, and third column vectors, respectively, of the matrix
@@ -662,6 +688,8 @@ $$\mathbf{A} =
 \end{pmatrix}$$
 
   What can we conclude about $\mathrm{rank} (\mathbf{A})$ from the observation $2\mathbf{v}_1 +3\mathbf{v}_2 -\mathbf{v}_3=\mathbf{0}$?
+
+[Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
 $~$
 
@@ -738,6 +766,8 @@ $$\mathbf{A} = \begin{pmatrix}
    Evaluate the indicated minor determinant or cofactor
    
 | **1.** $~M_{12}~$ **2.** $~M_{32}~$ **3.** $~C_{13}~$ **4.** $~C_{22}$
+
+[Solution](files/solutions/sol_6_4.pdf){target="_blank"}
    
 $~$
 
@@ -752,6 +782,8 @@ $$\begin{pmatrix}
  1 - \lambda & 3 \\ 
  2 & 2 - \lambda 
 \end{pmatrix}$$
+
+[Solution](files/solutions/sol_6_4.pdf){target="_blank"}
 
 $~$
 
@@ -768,6 +800,8 @@ $$\begin{pmatrix}
  x & y & z\\ 
  2 & 3 & 4
 \end{pmatrix}$$
+
+[Solution](files/solutions/sol_6_4.pdf){target="_blank"}
 
 $~$
 
@@ -923,6 +957,8 @@ $${\begin{vmatrix}
  5 & 9 & -4
 \end{vmatrix}}$$
 
+[Solution](files/solutions/sol_6_5.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate the determinant of the given matrix using the result
@@ -954,6 +990,8 @@ $$\begin{vmatrix}
  2c_1 -c_3 & \frac{1}{2}c_2 & \frac{1}{2}c_3
 \end{pmatrix}}$
 
+[Solution](files/solutions/sol_6_5.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Consider the matrix
@@ -967,6 +1005,8 @@ $${\mathbf{A} =
 
 Without expanding, $~$show that $\mathrm{det}\, \mathbf{A}=0$
 
+[Solution](files/solutions/sol_6_5.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate 
@@ -977,6 +1017,8 @@ $${\begin{vmatrix}
  a^2 & b^2 & c^2 & d^2\\ 
  a^3 & b^3 & c^3 & d^3
 \end{vmatrix}}$$
+
+[Solution](files/solutions/sol_6_5.pdf){target="_blank"}
 
 $~$
 
@@ -1021,7 +1063,7 @@ $~$
 
   or
 
-  ![](figures/ch08_figure03.png "Inverse"){width="50%" fig-align="center"}
+  ![](figures/ch08_figure03.svg "Inverse"){width="80%" fig-align="center"}
 
 * **Using the Inverse to Solve Systems**
 
@@ -1049,6 +1091,8 @@ $$\mathbf{A}=\begin{pmatrix}
  -4 & \phantom{-}2
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Determine whether the given matrix is singular or nonsingular. $\,$If it is nonsingular, find the inverse using $\mathbf{A}^{-1}=\frac{\mathrm{adj}\,\mathbf{A}}{\mathrm{det}\,\mathbf{A}}$
@@ -1071,6 +1115,8 @@ $$\begin{pmatrix}
  0 & -3 & 0 & 1
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find the inverse of the given matrix or show that no inverse exists
@@ -1086,6 +1132,8 @@ $$\begin{pmatrix}
  -1 & -2 & 0
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ If $\mathbf{A}$ is nonsingular, then $\left( \mathbf{A}^T\right)^{-1}=\left( \mathbf{A}^{-1}\right)^T$, $~$verify this for
@@ -1094,6 +1142,8 @@ $$\mathbf{A}=\begin{pmatrix}
  1 & 4\\ 
  2 & 10 
 \end{pmatrix}$$
+
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 $~$
 
@@ -1104,13 +1154,15 @@ $$\mathbf{M}=\begin{pmatrix}
  \sin\theta & \phantom{-}\cos\theta 
 \end{pmatrix}$$
   
-What does $\mathbf{A}=\mathbf{M}^{-1}\mathbf{B}$ represents?
+What does $\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$ represent?
+
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ A nonsingular matrix $\mathbf{A}$ is said to be **orthogonal** if $\mathbf{A}^{-1}=\mathbf{A}^T$ 
 
-**1.** $~$ Verify tha the rotation matrix is orthogonal
+**1.** $~$ Verify that the rotation matrix is orthogonal
   
 **2.** $~$ Verify that 
 $${\scriptsize\mathbf{A}=\frac{1}{\sqrt{6}}\begin{pmatrix}
@@ -1118,6 +1170,8 @@ $${\scriptsize\mathbf{A}=\frac{1}{\sqrt{6}}\begin{pmatrix}
  \sqrt{2} & \phantom{-}\sqrt{3} & \phantom{-}1\\ 
  \sqrt{2} &  -\sqrt{3} & \phantom{-}1
 \end{pmatrix}}~$$ is an orthogonal matrix
+
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 $~$
 
@@ -1143,6 +1197,8 @@ $\mathbf{AB}=\mathbf{0}$. $~$Then show that $\mathbf{B}=\mathbf{0}$
 * Suppose $\mathbf{A}~$ is a nonsingular matrix. $~$Then show that $\mathbf{A}^T~$ is nonsingular
 
 * Suppose $\mathbf{A}$ and $\mathbf{B}~$ are $~n\times n~$ nonzero matrices and $\mathbf{AB}=\mathbf{0}$. $~$Then show that both $\mathbf{A}~$ and $~\mathbf{B~}$ are singular
+
+[Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 
 ## Cramer's Rule {#sec-8-7}
@@ -1175,6 +1231,8 @@ $$
     3x +2y &=-2
   \end{aligned}$$
 
+[Solution](files/solutions/sol_6_7.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Consider the system
@@ -1191,7 +1249,9 @@ When $\epsilon$ is close to $1$, $~$the lines that make up the system are almost
   
   $${\scriptsize x_1 = 1 -\frac{1}{\epsilon -1}, \;\;x_2 = \frac{1}{\epsilon - 1}}$$
   
-**2.** The system is said to be ill-conditioned since small changes in the input data(for example, the coefficients) causes a significant or large change in the output or solution. $~$Verify this by finding the solution of the system for $\epsilon=1.01$ and then for $\epsilon=0.99$
+**2.** The system is said to be ill-conditioned since small changes in the input data(for example, the coefficients) cause a significant or large change in the output or solution. $~$Verify this by finding the solution of the system for $\epsilon=1.01$ and then for $\epsilon=0.99$
+
+[Solution](files/solutions/sol_6_7.pdf){target="_blank"}
 
 $~$
 
@@ -1205,7 +1265,7 @@ $~$
   and the solution vector $\mathbf{k}$ is said to be an **eigenvector** corresponding to the eigenvalue $\lambda$
   
 * The problem of solving $~\mathbf{A}\mathbf{k}=\lambda\mathbf{k}~$ for nonzero vectors $\mathbf{k}$ is
-  called to be the **eigenvalue problem** for $\mathbf{A}$
+  called the **eigenvalue problem** for $\mathbf{A}$
 
 * We must solve the **characteristic equation** 
   $~\mathrm{det}(\mathbf{A} -\lambda\mathbf{I})=0~$ to find an eigenvalue $\lambda$
@@ -1514,7 +1574,7 @@ A1.pinv_solve(k1)
 
 $~$
 
-* Let $\mathbf{A}$ be a square matrix with real entries. If $\lambda=\alpha +i\beta$, $~\beta \neq 0$, $~$is a complex eigenvalue of $\mathbf{A}$,
+* Let $\mathbf{A}$ be a square matrix with real entries. If $\lambda=\alpha +i\beta$, $~\beta \neq 0$, $~$is a complex eigenvalue of $\mathbf{A}$ with eigenvector $\mathbf{k}$, $~$then $\bar{\lambda}$ is also an eigenvalue, $~$with eigenvector $\bar{\mathbf{k}}$:
   
   $$\mathbf{A}\bar{\mathbf{k}}=\bar{\lambda}\bar{\mathbf{k}}$$
 
@@ -1542,6 +1602,8 @@ $$\begin{pmatrix}
  1 & 1 & -1 
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_8.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find the eigenvalues and eigenvectors of the given nonsingular matrix $\mathbf{A}$. $~$Then without finding $\mathbf{A}^{-1}$, $~$find its eigenvalues and corresponding eigenvectors
@@ -1556,9 +1618,13 @@ $$\begin{pmatrix}
  0 & 0 & \phantom{-}5 
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_8.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ True or False: $~$ If $\lambda$ is an eigenvalue of an $n \times n~$ matrix $\mathbf{A}$, $~$ then the matrix $\mathbf{A}-\lambda\mathbf{I}~$ is singular. Justify your answer
+
+[Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
 $~$
 
@@ -1575,13 +1641,19 @@ $$\mathbf{A}=\begin{pmatrix}
 
 **3.** Generalize the result in part 1
 
+[Solution](files/solutions/sol_6_8.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Let $\mathbf{A}$ and $\mathbf{B}$ be $n \times n~$ matrices. The matrix $\mathbf{B}$ is said to be **similar** to the matrix $\mathbf{A}~$ if there exists a nonsingular matrix $\mathbf{S}$ such that $\mathbf{B}=\mathbf{S}^{-1}\mathbf{AS}$. $~$If $\mathbf{B}$ is similar to $\mathbf{A}$, $~$then show that $\mathbf{A}$ is similar to $\mathbf{B}$
 
+[Solution](files/solutions/sol_6_8.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Suppose $\mathbf{A}$ and $\mathbf{B}$ are similar matrices. Show that $\mathbf{A}$ and $\mathbf{B}$ have the same eigenvalues
+
+[Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
 $~$
 
@@ -1613,6 +1685,8 @@ $$~\mathbf{A}=\begin{pmatrix}
  4 & \phantom{-}5
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_9.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Compute $\mathbf{A}^m$
@@ -1627,6 +1701,8 @@ $$\mathbf{A}=\begin{pmatrix}
  0 & 1 & 0
 \end{pmatrix}; \;\;m=10$$
 
+[Solution](files/solutions/sol_6_9.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Show that the given matrix has an eigenvalue $\lambda_1$ of multiplicity two. $~$ As a consequence, $~$the equation $\lambda^m=c_0+c_1\lambda$ does not yield enough independent equations to form a system for determining the coefficients $c_i$. $~$Use the derivative (with respect to $\lambda$) of this equation evaluated at $\lambda_1$ as the extra needed equation to form a system. $~$Compute $\mathbf{A}^m$ and use this result to compute the indicated power of the matrix $\mathbf{A}$
@@ -1636,13 +1712,15 @@ $$\mathbf{A}=\begin{pmatrix}
  -3 & 1
 \end{pmatrix}; \;\;m=6$$
 
+[Solution](files/solutions/sol_6_9.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ $\lambda=0~$ is an eigenvalue of each matrix. $~$In this case, $~$ show that the coefficient $c_0$ in the characteristic equation
 
 $$(-1)^n\mathbf{A}^n + c_{n-1}\mathbf{A}^{n-1}+\cdots+c_1\mathbf{A}+c_0\mathbf{I}=\mathbf{0}$$
   
-  is $0$. $~$Compute $\mathbf{A}^m$ in each case. $~$In part (a), $~$explain why we do not have to solve any system for the coefficients $c_1$ in determining $\mathbf{A}^m$
+  is $0$. $~$Compute $\mathbf{A}^m$ in each case. $~$In part (a), $~$explain why we do not have to solve any system for the coefficients $c_i$ in determining $\mathbf{A}^m$
   
 $$(a)\;\;\mathbf{A}=\begin{pmatrix}
  1 & 1\\ 
@@ -1654,6 +1732,8 @@ $$(a)\;\;\mathbf{A}=\begin{pmatrix}
  1 & 1 & \phantom{-}3
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_9.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ A non-zero $n \times n$ matrix $\mathbf{A}~$ is said to be **nilpotent of index $m$** $~$if $m$ is the smallest positive integer for which $\mathbf{A}^m=\mathbf{0}$. 
@@ -1661,6 +1741,8 @@ $~$
 **1.** $~$Explain why any nilpotent matrix $~\mathbf{A}$ is singular
 
 **2.** $~$Show that all the eigenvalues of a nilpotent matrix $~\mathbf{A}$ are $0$ 
+
+[Solution](files/solutions/sol_6_9.pdf){target="_blank"}
 
 
 ## Orthogonal Matrices {#sec-8-10}
@@ -1677,11 +1759,11 @@ $~$
   when some of eigenvalues are repeated (defective matrix)
   
 * <font color='red'>But a symmetric matrix is an exception. $~$It can be proved that a set of 
-  $n$ linearly independent eigenvectors can always be found for an $n \times n$ symmetric matrix $\mathbf{A}$ even
+  $n$ linearly independent eigenvectors can always be found for an $n \times n$ symmetric matrix $\mathbf{A}$ even if
   there is some repetition of the eigenvalues</font>
 
 * However, $~$this does not mean that all eigenvectors are mutually orthogonal for an $n \times n$ symmetric matrix $\mathbf{A}$.
-  The set of eigenvectors corresponding to distinct eigenvalues are orthogonal; $~$but different eigenvectors corresponding to 
+  Eigenvectors corresponding to distinct eigenvalues are orthogonal; $~$but different eigenvectors corresponding to 
   a repeated eigenvalue may not be orthogonal
   
 * But it is always possible to *find* or *construct* a set of $n$ mutually orthogonal eigenvectors by using Gram-Schmidt orthogonalization. See @sec-7-7
@@ -1732,6 +1814,8 @@ $$\begin{pmatrix}
  \phantom{-}\frac{5}{13}&  \frac{12}{13}& 0
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_10.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ (a)$~$ Verify that the indicated column vectors are eigenvectors of the given symmetric matrix and $~$(b)$~$ identify the corresponding eigenvalues. $~$(c)$~$ Use Gram-Schmidt process to construct an orthogonal matrix $\mathbf{P}$ from the eigenvectors
@@ -1749,19 +1833,23 @@ $$\mathbf{A}=
 1 \\ 1 \\ 1
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_10.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Answer the questions based on the supposition
 
 * Suppose $\mathbf{A}$ and $\mathbf{B}~$ are $~n\times n$ orthogonal matrices. Then show that $\mathbf{AB}~$ is orthogonal
 
-* Suppose $\mathbf{A}$ is an orthogonal matrix. $~$Is $\mathbf{A}^2~$ is orthogonal
+* Suppose $\mathbf{A}$ is an orthogonal matrix. $~$Is $\mathbf{A}^2~$ orthogonal?
 
 * Suppose $\mathbf{A}~$ is an orthogonal matrix. $~$Then show that $\mathbf{A}^{-1}$ is orthogonal
 
 * Suppose $\mathbf{A}~$ is an orthogonal matrix such that $~\mathbf{A}^2=\mathbf{I}~$. $~$Then show that $\mathbf{A}^T=\mathbf{A}$
 
 * Show that the rotation matrix is orthogonal
+
+[Solution](files/solutions/sol_6_10.pdf){target="_blank"}
 
 $~$
 
@@ -1870,7 +1958,7 @@ print('Dominant Eigenvalue:', np.around(lambda_1, 3))
   
     $$ \mathbf{A}_1 =\mathbf{A} -\lambda_1\mathbf{k}_1\mathbf{k}_1^T $$
   
-    has eigenvalues $0$, $|\lambda_2|$, $|\lambda_3|$, $\cdots$, $|\lambda_n|$ and that eigenvectors of $\mathbf{A}_1$ are also eigenvectors of $\mathbf{A}$. $~$ Note that $\lambda_2$ is now the dominant eigenvalue of $\mathbf{A}_1$
+    has eigenvalues $0$, $\lambda_2$, $\lambda_3$, $\cdots$, $\lambda_n$ and that eigenvectors of $\mathbf{A}_1$ are also eigenvectors of $\mathbf{A}$. $~$ Note that $\lambda_2$ is now the dominant eigenvalue of $\mathbf{A}_1$
 
 ```{python}
 # | echo: true
@@ -1912,7 +2000,7 @@ print('lambda_3 =', np.around(Lambda[2], 3))
 
 * **Inverse Power Method**
 
-  If we want to find the smallest eigenvalue instead of the largest one, then we perform power iteration for $\mathbf{A}^{−1}$ (since the eigenvalues of $\mathbf{A}^{-1}$ are the reciprocals of the eigenvalues of $\mathbf{A}$). Of course, $~$we do not want to compute $\mathbf{A}^{-1}$
+  If we want to find the smallest eigenvalue instead of the largest one, then we perform power iteration for $\mathbf{A}^{-1}$ (since the eigenvalues of $\mathbf{A}^{-1}$ are the reciprocals of the eigenvalues of $\mathbf{A}$). Of course, $~$we do not want to compute $\mathbf{A}^{-1}$
 
 ```{python}
 # | echo: true
@@ -1959,7 +2047,7 @@ $\mathbf{P}^{-1}\mathbf{A}\mathbf{P}=\mathbf{D}$ is a diagonal matrix?</font>
     \mathbf{k}_1 & \mathbf{k}_2 & \cdots & \mathbf{k}_n
   \end{pmatrix}}$$</font>
   
-  We can wrtie the product $\mathbf{A}\mathbf{P}$ as
+  We can write the product $\mathbf{A}\mathbf{P}$ as
   
   $$
   \begin{aligned}
@@ -2110,7 +2198,7 @@ p1 = plot_implicit(Eq(2*x**2 +4*x*y -y**2, 1),
   $${\mathbf{k}_1=\left(\begin{array}{r} \frac{1}{\sqrt{5}}\\ -\frac{2}{\sqrt{5}} \end{array}\right) \;\text{and}
   \; \mathbf{k}_2=\left(\begin{array}{r} \frac{2}{\sqrt{5}}\\ \frac{1}{\sqrt{5}} \end{array}\right)}$$
   
-  are orthogonal. $\,$Hence, $\,$the matrix
+  are orthonormal. $\,$Hence, $\,$the matrix
   
   $${\mathbf{P}=
      \left(\begin{array}{rr} \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}\\ 
@@ -2153,7 +2241,7 @@ $~$
 # | fig-align: center
 bar_x, bar_y = symbols('bar_x bar_y')
 
-p1 = plot_implicit(Eq(-bar_x**2 +3*bar_y**2, 1), 
+p1 = plot_implicit(Eq(-2*bar_x**2 +3*bar_y**2, 1), 
                    (bar_x, -3, 3), (bar_y, -3, 3), 
                    aspect_ratio=(1, 1), size=(5, 5),
                    xlabel=r'$\bar{x}$', ylabel=r'$\bar{y}$')
@@ -2162,7 +2250,7 @@ p1 = plot_implicit(Eq(-bar_x**2 +3*bar_y**2, 1),
 
 $~$
 
-**Example** $\,$ Determine whether the given matrix $\mathbf{A}$ is diagonalizable. $~$ If so, find the matrix $\mathbf{P}$ that diagonalizes $\mathbf{A}$ and the disgonal matrix $\mathbf{D}$ such that $\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}$
+**Example** $\,$ Determine whether the given matrix $\mathbf{A}$ is diagonalizable. $~$ If so, find the matrix $\mathbf{P}$ that diagonalizes $\mathbf{A}$ and the diagonal matrix $\mathbf{D}$ such that $\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}$
 
 $$\begin{pmatrix}
  -9 & 13\\ 
@@ -2176,6 +2264,8 @@ $$\begin{pmatrix}
  2 & -1 & 0\\ 
  0 & \phantom{-}0 & 1
 \end{pmatrix}$$
+
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
 
@@ -2194,6 +2284,8 @@ $$\begin{pmatrix}
  7 & 0 & 1
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Identify the given conic section
@@ -2201,6 +2293,8 @@ $~$
 $$\phantom{-}5x^2 -2xy +5y^2 =24$$
   
 $$-3x^2 +8xy +3y^2 =20$$
+
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
   
 $~$
 
@@ -2216,9 +2310,13 @@ $$\mathbf{k}_1 = \begin{pmatrix}
   1 \\ 2 \\ 1
 \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ If $\mathbf{A}$ is an $n\times n~$ diagonalizable matrix, then $\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}$, $~$ where $\mathbf{D}$ is a diagonal matrix. $~$ Show that if $m$ is a positive integer,  then $\mathbf{A}^m=\mathbf{PD}^m\mathbf{P}^{-1}$
+
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
   
@@ -2236,13 +2334,19 @@ $$
   \end{pmatrix},\;\;\mathbf{A}^{10}
 \end{aligned}$$
 
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Suppose $\mathbf{A}$ is a nonsingular diagonalizable matrix. Then show that $\mathbf{A}^{-1}$ is diagonalizable
 
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
+
 $~$
   
 **Example** $\,$ Suppose $\mathbf{A}$ is a diagonalizable matrix. $~$Is the matrix $\mathbf{P}$ unique?
+
+[Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
 
@@ -2270,7 +2374,7 @@ $~$
 
     $$\mathbf{A}^{(0)}=\mathbf{A}$$
 
-  * We eliminate the matrix elements below the main diagonal in the $k$-th column of $\mathbf{A}^{(k -1)}$ by adding to the $i$-th row of this matrix the $k$-th row multiplied by
+  * We eliminate the matrix elements below the main diagonal in the $k$-th column of $\mathbf{A}^{(k -1)}$ by subtracting from the $i$-th row of this matrix the $k$-th row multiplied by
   
     $$l_{i,k}=\frac{a_{i,k}^{(k-1)}}{a_{k,k}^{(k-1)}} \;\text{ for }\; i=k+1, \cdots, n$$
 
@@ -2326,7 +2430,7 @@ $~$
   
     We obtain $\mathbf{A}=\mathbf{L}\mathbf{U}$
 
-**NOTE** $\,$It is clear that in order for this algorithm to work, one needs to have $a_{k,k}^{(k-1)}$ at each step (see the definition of $l_{i,k}$). If this assumption fails at some point, one needs to interchange $k$-th row with another row below it before continuing. This is why an LU decomposition in general looks like   $\mathbf{P}\mathbf{A}=\mathbf{L}\mathbf{U}$
+**NOTE** $\,$It is clear that in order for this algorithm to work, one needs to have $a_{k,k}^{(k-1)}\neq 0$ at each step (see the definition of $l_{i,k}$). If this assumption fails at some point, one needs to interchange $k$-th row with another row below it before continuing. This is why an LU decomposition in general looks like   $\mathbf{P}\mathbf{A}=\mathbf{L}\mathbf{U}$
 
 $~$
 
@@ -2517,6 +2621,8 @@ $$
    12 & 1 & 3
   \end{pmatrix}$$
 
+[Solution](files/solutions/sol_6_13.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Use the LU factorization to solve the given linear system of equations
@@ -2530,6 +2636,8 @@ $$\begin{pmatrix}
   \end{pmatrix}
   \begin{pmatrix} x_1 \\ x_2 \\x_3 \end{pmatrix} = 
   \begin{pmatrix} 7 \\ 7\\28 \end{pmatrix}$$
+
+[Solution](files/solutions/sol_6_13.pdf){target="_blank"}
 
 
 ## Applications {#sec-8-14}
@@ -2706,7 +2814,7 @@ print('Decoding message =', message_decoded.upper())
 
   We are going to examine briefly the concept of digital communication between a satellite and a computer. As a result, we will deal only with matrices whose entries are binary digits, namely $0$s and $1$s
 
-* When addng and multipying such matrices,
+* When adding and multiplying such matrices,
   $\,$we will use arithmetic modulo 2. This arithmetic is defined by the addition and multiplication tables
 
 :::: {.columns}
@@ -2761,7 +2869,7 @@ $~$
     c_3 & = w_2 +w_3 +w_4
   \end{aligned} \tag{C1}\label{eq:C1}$$ 
   
-  We first observe that in modulo 2 arithmatic there are no negative numbers; $\,$the additive inverse is $1$, not $-1$. $\,$With this in mind, $\,$we can write the system \eqref{eq:C1} in the equivalent form
+  We first observe that in modulo 2 arithmetic there are no negative numbers; $\,$the additive inverse of $1$ is $1$, not $-1$. $\,$With this in mind, $\,$we can write the system \eqref{eq:C1} in the equivalent form
   
   $$
   \begin{aligned}
@@ -2791,7 +2899,7 @@ $~$
   
   $$\mathbf{S}=\mathbf{H}\mathbf{R}^T$$
   
-  is called the **syndome** of $\mathbf{R}$. $\,$If $\mathbf{S}=\mathbf{0}$, $\,$it is assumed that the transmission is correct and that $\mathbf{R}$ is the same as the original encoded message $\mathbf{C}$. $\,$The decoding of the message is accomplished by simply dropping the 
+  is called the **syndrome** of $\mathbf{R}$. $\,$If $\mathbf{S}=\mathbf{0}$, $\,$it is assumed that the transmission is correct and that $\mathbf{R}$ is the same as the original encoded message $\mathbf{C}$. $\,$The decoding of the message is accomplished by simply dropping the 
   three check bits in $\mathbf{R}$
 
 * Let 
@@ -2822,7 +2930,7 @@ $~$
 
 ### **Method of Least Squares**
 
-![](figures/ch08_figure06.png){width="40%" fig-align="center"}
+![](figures/ch08_figure06.svg){width="40%" fig-align="center"}
 
   When performing experiments we often tabulate data in the form of ordered pairs $(x_1, y_1),$ $(x_2, y_2),$ $\cdots,$ $(x_n, y_n),$ with each $x_i$ distinct. Given the data, it is then often desirable to predict $y$ from $x$ by finding a mathematical model, that is, a function $f(x)$ that approximates or fits the data
 
@@ -2898,7 +3006,7 @@ $~$
   Unless the data points all lie on the same vertical line, the matrix $\mathbf{A}^T\mathbf{A}$ is nonsingular. Thus \eqref{eq:C3} has the unique solution
   
   $$
-    \mathbf{x} =\left(\mathbf{A}^T \mathbf{A} \right)^T \mathbf{A}^T \mathbf{b}
+    \mathbf{x} =\left(\mathbf{A}^T \mathbf{A} \right)^{-1} \mathbf{A}^T \mathbf{b}
   $$
 
 $~$  
@@ -2934,12 +3042,12 @@ $~$
 
 * Strontium 90 is deposited into pastureland by rainfall. To study how this material is cycled through the ecosystem, $~$we divide the system into the compartments:
 
-  ![](figures/ch08_figure07.png){width="60%" fig-align="center"}
+  ![](figures/ch08_figure07.svg){width="75%" fig-align="center"}
   
   Suppose that $\Delta t=1$ month and the transfer coefficients shown in the figure are measured in fraction/month
 
 * Suppose that rainfall has
-  deposited the strotium 90 into the compartments so that
+  deposited the strontium 90 into the compartments so that
   
   $${\mathbf{x}_0=
    \begin{pmatrix}

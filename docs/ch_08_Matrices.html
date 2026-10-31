@@ -429,8 +429,8 @@ window.Quarto = {
 <section id="prerequisites" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">6.1</span> Prerequisites</h2>
 <ul>
-<li>Vector Spaces (<a href="#sec-7-6" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7-6</span></a>)</li>
-<li>Gram-Schmidt Orthogonalization Process (<a href="#sec-7-7" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7-7</span></a>)</li>
+<li>Vector Spaces (<a href="ch_07_Vectors.html#sec-7-6" class="quarto-xref"><span>Section 9.6</span></a>)</li>
+<li>Gram-Schmidt Orthogonalization Process (<a href="ch_07_Vectors.html#sec-7-7" class="quarto-xref"><span>Section 9.7</span></a>)</li>
 </ul>
 </section>
 <section id="sec-8-1" class="level2" data-number="6.2">
@@ -528,15 +528,20 @@ window.Quarto = {
        \phantom{-}3 &amp; 2
     \end{pmatrix}\)</span>,</p>
 <p>find <span class="math inline">\(~\)</span>(a) <span class="math inline">\(\mathbf{AB}\)</span>, <span class="math inline">\(~\)</span>(b) <span class="math inline">\(\mathbf{BA}\)</span>, <span class="math inline">\(~\)</span>(c) <span class="math inline">\(\mathbf{A}^2\)</span>, <span class="math inline">\(~\)</span>(d) <span class="math inline">\(\mathbf{B}^2\)</span></p>
+<p><a href="files/solutions/sol_6_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Show that if <span class="math inline">\(\mathbf{A}\)</span> is an <span class="math inline">\(m\times n\)</span> matrix, <span class="math inline">\(~\)</span>then <span class="math inline">\(\mathbf{AA}^T\)</span> is symmetric</p>
+<p><a href="files/solutions/sol_6_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> In matrix theory, <span class="math inline">\(~\)</span>many of the familiar properties of the real number system are not valid. <span class="math inline">\(~\)</span>If <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are real numbers, then <span class="math inline">\(ab=0\;\)</span> implies that <span class="math inline">\(a=0\)</span> or <span class="math inline">\(b=0\)</span>. <span class="math inline">\(~\)</span>Find two matrices such that <span class="math inline">\(\mathbf{AB}=\mathbf{0}~\)</span> but <span class="math inline">\(\mathbf{A}\neq\mathbf{0}\)</span> and <span class="math inline">\(\mathbf{B}\neq \mathbf{0}\)</span></p>
+<p><a href="files/solutions/sol_6_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Let <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> be <span class="math inline">\(n\times n\)</span> matrices. Explain why, in general, the given formula is not valid</p>
 <p><span class="math display">\[(\mathbf{A} + \mathbf{B})^2 = \mathbf{A}^2 + 2\mathbf{A}\mathbf{B} +\mathbf{B}^2\]</span></p>
+<p><a href="files/solutions/sol_6_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the resulting vector <span class="math inline">\(\mathbf{b}\)</span> if the given vector <span class="math inline">\(\mathbf{a} = \langle 1, 1 \rangle\)</span> is rotated through the indicated angle <span class="math inline">\(\theta=\pi/2\)</span></p>
+<p><a href="files/solutions/sol_6_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Verify that the quadratic form <span class="math inline">\(ax^2 +bxy +cy^2\)</span> is the same as</p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -549,6 +554,7 @@ window.Quarto = {
     \begin{pmatrix}
       x \\ y
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-2" class="level2" data-number="6.3">
@@ -597,7 +603,7 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch08_figure01.png" title="Equal" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="figures/ch08_figure01.svg" title="Equal" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 <ul>
@@ -712,7 +718,7 @@ window.Quarto = {
     0 &amp; 0 &amp; 1 &amp; 5
   \end{array}\right)   
   \overset{\begin{matrix}
-           -4R_3 +R_1 \\
+           4R_3 +R_1 \\
           -\frac{3}{2}R_3 +R_2
            \end{matrix}}{\Longrightarrow}
   \left(\begin{array}{rrr|r}
@@ -762,7 +768,7 @@ window.Quarto = {
            -\frac{1}{11}R_2
            \end{matrix}}
   {\Longrightarrow}
-  \left(\begin{array}{rr|r|r}
+  \left(\begin{array}{rrr|r}
     1 &amp; 3 &amp; -2 &amp; -7\\
     0 &amp; 1 &amp; -1 &amp; -3\\ \hline
     0 &amp; 0 &amp; 0 &amp; {\color{Red}0 }
@@ -771,7 +777,7 @@ window.Quarto = {
 <p><span class="math display">\[{
   \overset{-3R_2 +R_1}
   {\Longrightarrow}
-  \left(\begin{array}{rr|r|r}
+  \left(\begin{array}{rrr|r}
     1 &amp; 0 &amp; 1 &amp; 2\\
     0 &amp; 1 &amp; -1 &amp; -3\\
     \hline
@@ -871,7 +877,7 @@ window.Quarto = {
     2 &amp; 0 &amp; -1 &amp;  0 &amp; 0  
   \end{array}\right)
   \overset{\;\,\text{ row } \\ \text{operations}}{\Longrightarrow}
-  \left(\begin{array}{rrr|r|r}
+  \left(\begin{array}{rrrr|r}
     1 &amp; 0 &amp; 0 &amp; -\frac{1}{3} &amp; 0\\   
     0 &amp; 1 &amp; 0 &amp; -\frac{7}{6} &amp; 0\\
     0 &amp; 0 &amp; 1 &amp; -\frac{2}{3} &amp; 0
@@ -906,10 +912,12 @@ window.Quarto = {
     &amp;x_1 -x_2 +x_3 = 3\\
     -&amp;x_1 +x_2 +x_3 = 4
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_6_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Balance the given chemical equation:</p>
 <p><span class="math display">\[\mathrm{C}_5\mathrm{H}_8 +\mathrm{O}_2 \rightarrow \mathrm{CO}_2 + \mathrm{H}_2\mathrm{O}\]</span></p>
 <p><span class="math display">\[\mathrm{Cu} + \mathrm{HNO}_3 \rightarrow \mathrm{Cu(NO}_3\mathrm{)}_2 + \mathrm{H}_2\mathrm{O} +\mathrm{NO}\]</span></p>
+<p><a href="files/solutions/sol_6_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Compute the given product for an arbitrary <span class="math inline">\(~3 \times 3\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span></p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -922,15 +930,16 @@ window.Quarto = {
 0 &amp; 1 &amp; 0\\
 0 &amp; c &amp; 1
 \end{pmatrix} \mathbf{A}\]</span></p>
+<p><a href="files/solutions/sol_6_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-3" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-8-3"><span class="header-section-number">6.4</span> Rank of a Matrix</h2>
 <ul>
-<li><p>The <strong>rank</strong> of an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(~\mathrm{rank}(\mathbf{A})\)</span>, <span class="math inline">\(\,\)</span> is <strong>the maximum number of linearly independent row vectors</strong>. If a matrix <span class="math inline">\(\mathbf{A}\)</span> is now equivalent to a row-echelon form <span class="math inline">\(\mathbf{B}\)</span>, <span class="math inline">\(~\)</span>then</p>
+<li><p>The <strong>rank</strong> of an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(~\mathrm{rank}(\mathbf{A})\)</span>, <span class="math inline">\(\,\)</span> is <strong>the maximum number of linearly independent row vectors</strong>. If a matrix <span class="math inline">\(\mathbf{A}\)</span> is row equivalent to a row-echelon form <span class="math inline">\(\mathbf{B}\)</span>, <span class="math inline">\(~\)</span>then</p>
 <ul>
 <li>the row space of <span class="math inline">\(\mathbf{A}\)</span> = the row space of <span class="math inline">\(\mathbf{B}\)</span></li>
-<li>the nonezero rows of <span class="math inline">\(\mathbf{B}\)</span> form a basis for the row space of <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(~\)</span>and</li>
+<li>the nonzero rows of <span class="math inline">\(\mathbf{B}\)</span> form a basis for the row space of <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(~\)</span>and</li>
 <li><span class="math inline">\(\mathrm{rank}(\mathbf{A})\)</span> = the number of nonzero rows in <span class="math inline">\(\mathbf{B}\)</span></li>
 </ul></li>
 <li><p><font color="red"><strong>Consistency of</strong> <span class="math inline">\(~\mathbf{A}\mathbf{x}=\mathbf{b}\)</span></font></p>
@@ -980,12 +989,15 @@ window.Quarto = {
     2 &amp; 1 &amp; \frac{2}{3} &amp; 3 &amp; \frac{1}{3} \\
     6 &amp; 6 &amp; 6 &amp; 12 &amp; 0
    \end{pmatrix}}\]</span></p>
+<p><a href="files/solutions/sol_6_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Determine whether the given set of vectors is linearly dependent or linearly independent</p>
 <p><span class="math display">\[\mathbf{u}_1 = \langle 1, 2, 3 \rangle, \;\mathbf{u}_2 = \langle 1, 0, 1 \rangle, \; \mathbf{u}_3 = \langle 1, -1, 5 \rangle\]</span></p>
 <p><span class="math display">\[\mathbf{u}_1 = \langle 1, -1, 3, -1 \rangle, \;\mathbf{u}_2 = \langle 1, -1, 4, 2 \rangle, \; \mathbf{u}_3 = \langle 1, -1, 5, 7 \rangle\]</span></p>
+<p><a href="files/solutions/sol_6_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Suppose the system <span class="math inline">\(\mathbf{Ax}=\mathbf{b}~\)</span> is consistent and <span class="math inline">\(~\mathbf{A}\)</span> is a <span class="math inline">\(5\times 8~\)</span> matrix and <span class="math inline">\(~\mathrm{rank}\,\mathbf{A}=3.\)</span> <span class="math inline">\(~\)</span>How many parameters does the solution of the system have?</p>
+<p><a href="files/solutions/sol_6_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Let <span class="math inline">\(\mathbf{A}\)</span> be a nonzero <span class="math inline">\(4 \times 6~\)</span> matrix</p>
 <div class="line-block"><strong>1.</strong> <span class="math inline">\(~\)</span> What is the maximum rank that <span class="math inline">\(~\mathbf{A}\)</span> can have?</div>
@@ -993,6 +1005,7 @@ window.Quarto = {
 <div class="line-block"><strong>2.</strong> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathrm{rank}(\mathbf{A}|\mathbf{b})=2\)</span>, <span class="math inline">\(~\)</span>then for what value(s) of <span class="math inline">\(\mathrm{rank}(\mathbf{A})\)</span> is the system <span class="math inline">\(~\mathbf{Ax}=\mathbf{b}\)</span>, <span class="math inline">\(~\mathbf{b}\neq \mathbf{0}\)</span>, inconsistent? Consistent?</div>
 <p><span class="math inline">\(~\)</span></p>
 <div class="line-block"><strong>3.</strong> <span class="math inline">\(~\)</span> If <span class="math inline">\(\mathrm{rank}(\mathbf{A})=3\)</span>, <span class="math inline">\(~\)</span>then how many parameters does the solution of the system <span class="math inline">\(~\mathbf{Ax}=\mathbf{0}~\)</span> have?</div>
+<p><a href="files/solutions/sol_6_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Let <span class="math inline">\(\mathbf{v}_1\)</span>, <span class="math inline">\(\mathbf{v}_2\)</span>, and <span class="math inline">\(~\mathbf{v}_3~\)</span> be the first, second, and third column vectors, respectively, of the matrix</p>
 <p><span class="math display">\[\mathbf{A} =
@@ -1002,6 +1015,7 @@ window.Quarto = {
 -1 &amp; 5 &amp; 13
 \end{pmatrix}\]</span></p>
 <p>What can we conclude about <span class="math inline">\(\mathrm{rank} (\mathbf{A})\)</span> from the observation <span class="math inline">\(2\mathbf{v}_1 +3\mathbf{v}_2 -\mathbf{v}_3=\mathbf{0}\)</span>?</p>
+<p><a href="files/solutions/sol_6_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-4" class="level2" data-number="6.5">
@@ -1062,6 +1076,7 @@ window.Quarto = {
    \end{pmatrix}\]</span></p>
 <p>Evaluate the indicated minor determinant or cofactor</p>
 <div class="line-block"><strong>1.</strong> <span class="math inline">\(~M_{12}~\)</span> <strong>2.</strong> <span class="math inline">\(~M_{32}~\)</span> <strong>3.</strong> <span class="math inline">\(~C_{13}~\)</span> <strong>4.</strong> <span class="math inline">\(~C_{22}\)</span></div>
+<p><a href="files/solutions/sol_6_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate the determinant of the matrix</p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -1072,6 +1087,7 @@ window.Quarto = {
 1 - \lambda &amp; 3 \\
 2 &amp; 2 - \lambda
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate the determinant of the given matrix by cofactor expansion</p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -1084,6 +1100,7 @@ window.Quarto = {
 x &amp; y &amp; z\\
 2 &amp; 3 &amp; 4
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-5" class="level2" data-number="6.6">
@@ -1212,6 +1229,7 @@ a_{31} &amp; a_{32} &amp; a_{33}
 2 &amp; 1 &amp; \phantom{-}3\\
 5 &amp; 9 &amp; -4
 \end{vmatrix}}\]</span></p>
+<p><a href="files/solutions/sol_6_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate the determinant of the given matrix using the result</p>
 <p><span class="math display">\[\begin{vmatrix}
@@ -1237,6 +1255,7 @@ c_3 &amp; c_2 &amp; c_1
 4b_1 -2b_3 &amp; b_2 &amp; b_3\\
 2c_1 -c_3 &amp; \frac{1}{2}c_2 &amp; \frac{1}{2}c_3
 \end{pmatrix}}\)</span></p>
+<p><a href="files/solutions/sol_6_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Consider the matrix</p>
 <p><span class="math display">\[{\mathbf{A} =
@@ -1246,6 +1265,7 @@ x &amp; y &amp; z\\
 y+z &amp; x+z &amp; x+y
 \end{pmatrix}}\]</span></p>
 <p>Without expanding, <span class="math inline">\(~\)</span>show that <span class="math inline">\(\mathrm{det}\, \mathbf{A}=0\)</span></p>
+<p><a href="files/solutions/sol_6_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate</p>
 <p><span class="math display">\[{\begin{vmatrix}
@@ -1254,6 +1274,7 @@ a &amp; b &amp; c &amp; d\\
 a^2 &amp; b^2 &amp; c^2 &amp; d^2\\
 a^3 &amp; b^3 &amp; c^3 &amp; d^3
 \end{vmatrix}}\]</span></p>
+<p><a href="files/solutions/sol_6_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-6" class="level2" data-number="6.7">
@@ -1285,7 +1306,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <p>or</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch08_figure03.png" title="Inverse" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="figures/ch08_figure03.svg" title="Inverse" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div></li>
 <li><p><strong>Using the Inverse to Solve Systems</strong></p>
@@ -1307,6 +1328,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 \phantom{-}3 &amp; -1 \\
 -4 &amp; \phantom{-}2
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Determine whether the given matrix is singular or nonsingular. <span class="math inline">\(\,\)</span>If it is nonsingular, find the inverse using <span class="math inline">\(\mathbf{A}^{-1}=\frac{\mathrm{adj}\,\mathbf{A}}{\mathrm{det}\,\mathbf{A}}\)</span></p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -1326,6 +1348,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 0 &amp; -2 &amp; 1 &amp; 0\\
 0 &amp; -3 &amp; 0 &amp; 1
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the inverse of the given matrix or show that no inverse exists</p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -1338,27 +1361,31 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 \phantom{-}2 &amp; \phantom{-}1 &amp; 0\\
 -1 &amp; -2 &amp; 0
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> If <span class="math inline">\(\mathbf{A}\)</span> is nonsingular, then <span class="math inline">\(\left( \mathbf{A}^T\right)^{-1}=\left( \mathbf{A}^{-1}\right)^T\)</span>, <span class="math inline">\(~\)</span>verify this for</p>
 <p><span class="math display">\[\mathbf{A}=\begin{pmatrix}
 1 &amp; 4\\
 2 &amp; 10
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the inverse of the rotation matrix</p>
 <p><span class="math display">\[\mathbf{M}=\begin{pmatrix}
 \cos\theta &amp; -\sin\theta\\
 \sin\theta &amp; \phantom{-}\cos\theta
 \end{pmatrix}\]</span></p>
-<p>What does <span class="math inline">\(\mathbf{A}=\mathbf{M}^{-1}\mathbf{B}\)</span> represents?</p>
+<p>What does <span class="math inline">\(\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}\)</span> represent?</p>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> A nonsingular matrix <span class="math inline">\(\mathbf{A}\)</span> is said to be <strong>orthogonal</strong> if <span class="math inline">\(\mathbf{A}^{-1}=\mathbf{A}^T\)</span></p>
-<p><strong>1.</strong> <span class="math inline">\(~\)</span> Verify tha the rotation matrix is orthogonal</p>
+<p><strong>1.</strong> <span class="math inline">\(~\)</span> Verify that the rotation matrix is orthogonal</p>
 <p><strong>2.</strong> <span class="math inline">\(~\)</span> Verify that <span class="math display">\[{\scriptsize\mathbf{A}=\frac{1}{\sqrt{6}}\begin{pmatrix}
 \sqrt{2} &amp; \phantom{-}0 &amp; -2 \\
 \sqrt{2} &amp; \phantom{-}\sqrt{3} &amp; \phantom{-}1\\
 \sqrt{2} &amp;  -\sqrt{3} &amp; \phantom{-}1
 \end{pmatrix}}~\]</span> is an orthogonal matrix</p>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Answer the questions based on the supposition</p>
 <ul>
@@ -1373,6 +1400,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <li><p>Suppose <span class="math inline">\(\mathbf{A}~\)</span> is a nonsingular matrix. <span class="math inline">\(~\)</span>Then show that <span class="math inline">\(\mathbf{A}^T~\)</span> is nonsingular</p></li>
 <li><p>Suppose <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}~\)</span> are <span class="math inline">\(~n\times n~\)</span> nonzero matrices and <span class="math inline">\(\mathbf{AB}=\mathbf{0}\)</span>. <span class="math inline">\(~\)</span>Then show that both <span class="math inline">\(\mathbf{A}~\)</span> and <span class="math inline">\(~\mathbf{B~}\)</span> are singular</p></li>
 </ul>
+<p><a href="files/solutions/sol_6_6.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-8-7" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="sec-8-7"><span class="header-section-number">6.8</span> Cramer’s Rule</h2>
@@ -1397,6 +1425,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
     2x + y &amp;=1\\
     3x +2y &amp;=-2
   \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_6_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Consider the system</p>
 <p><span class="math display">\[
@@ -1407,7 +1436,8 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <p>When <span class="math inline">\(\epsilon\)</span> is close to <span class="math inline">\(1\)</span>, <span class="math inline">\(~\)</span>the lines that make up the system are almost parallel</p>
 <p><strong>1.</strong> Use Cramer’s rule to show that a solution of the system is</p>
 <p><span class="math display">\[{\scriptsize x_1 = 1 -\frac{1}{\epsilon -1}, \;\;x_2 = \frac{1}{\epsilon - 1}}\]</span></p>
-<p><strong>2.</strong> The system is said to be ill-conditioned since small changes in the input data(for example, the coefficients) causes a significant or large change in the output or solution. <span class="math inline">\(~\)</span>Verify this by finding the solution of the system for <span class="math inline">\(\epsilon=1.01\)</span> and then for <span class="math inline">\(\epsilon=0.99\)</span></p>
+<p><strong>2.</strong> The system is said to be ill-conditioned since small changes in the input data(for example, the coefficients) cause a significant or large change in the output or solution. <span class="math inline">\(~\)</span>Verify this by finding the solution of the system for <span class="math inline">\(\epsilon=1.01\)</span> and then for <span class="math inline">\(\epsilon=0.99\)</span></p>
+<p><a href="files/solutions/sol_6_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-8" class="level2" data-number="6.9">
@@ -1416,7 +1446,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <li><p>Let <span class="math inline">\(\mathbf{A}\)</span> be an <span class="math inline">\(n \times n~\)</span> matrix. <span class="math inline">\(~\)</span>A number <span class="math inline">\(\lambda\)</span> is said to be an <strong>eigenvalue</strong> of <span class="math inline">\(\mathbf{A}\)</span> if there exists a nonzero solution vector <span class="math inline">\(\mathbf{k}\)</span> of the linear system</p>
 <p><span class="math display">\[\mathbf{A}\mathbf{k}=\lambda\mathbf{k}\]</span></p>
 <p>and the solution vector <span class="math inline">\(\mathbf{k}\)</span> is said to be an <strong>eigenvector</strong> corresponding to the eigenvalue <span class="math inline">\(\lambda\)</span></p></li>
-<li><p>The problem of solving <span class="math inline">\(~\mathbf{A}\mathbf{k}=\lambda\mathbf{k}~\)</span> for nonzero vectors <span class="math inline">\(\mathbf{k}\)</span> is called to be the <strong>eigenvalue problem</strong> for <span class="math inline">\(\mathbf{A}\)</span></p></li>
+<li><p>The problem of solving <span class="math inline">\(~\mathbf{A}\mathbf{k}=\lambda\mathbf{k}~\)</span> for nonzero vectors <span class="math inline">\(\mathbf{k}\)</span> is called the <strong>eigenvalue problem</strong> for <span class="math inline">\(\mathbf{A}\)</span></p></li>
 <li><p>We must solve the <strong>characteristic equation</strong> <span class="math inline">\(~\mathrm{det}(\mathbf{A} -\lambda\mathbf{I})=0~\)</span> to find an eigenvalue <span class="math inline">\(\lambda\)</span></p></li>
 <li><p>To find an eigenvector <span class="math inline">\(\mathbf{k}\)</span> corresponding to an eigenvalue <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(~\)</span>we solve <span class="math inline">\(~(\mathbf{A} -\lambda\mathbf{I})\mathbf{k}=\mathbf{0}~\)</span> by applying Gauss elimination to <span class="math inline">\(~(\mathbf{A} -\lambda\mathbf{I}|\mathbf{0})\)</span></p></li>
 </ul>
@@ -1503,7 +1533,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
    -\frac{3}{2}\\
     1
   \end{array}\right)\]</span></p>
-<div id="f8bc4f57" class="cell" data-execution_count="1">
+<div id="2c3d0c8c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sympy.init_printing()</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1594,7 +1624,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
     1\\
    -1
   \end{array}\right)\]</span></p>
-<div id="8d130718" class="cell" data-execution_count="2">
+<div id="fa2a8ab2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> sympy.Matrix([[<span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">9</span>]])</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>A.eigenvects()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="2">
@@ -1650,14 +1680,14 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <p><span class="math display">\[\mathbf{k}_2=\begin{pmatrix}
      -1 \\ \;\;0
    \end{pmatrix}\]</span></p>
-<div id="c2e3ae5b" class="cell" data-execution_count="3">
+<div id="5a2ef84f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> sympy.Matrix([[<span class="dv">3</span>, <span class="dv">4</span>], [<span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>]])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>A.eigenvects()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
 <p><span class="math inline">\(\displaystyle \left[ \left( 5, \  2, \  \left[ \left[\begin{matrix}2\\1\end{matrix}\right]\right]\right)\right]\)</span></p>
 </div>
 </div>
-<div id="f604e690" class="cell" data-execution_count="4">
+<div id="e163f202" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lambda1 <span class="op">=</span> A.eigenvects()[<span class="dv">0</span>][<span class="dv">0</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>k1 <span class="op">=</span> A.eigenvects()[<span class="dv">0</span>][<span class="dv">2</span>][<span class="dv">0</span>]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>A1 <span class="op">=</span> A <span class="op">-</span>lambda1 <span class="op">*</span>sympy.eye(<span class="dv">2</span>)</span>
@@ -1668,7 +1698,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 </div>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
-<li><p>Let <span class="math inline">\(\mathbf{A}\)</span> be a square matrix with real entries. If <span class="math inline">\(\lambda=\alpha +i\beta\)</span>, <span class="math inline">\(~\beta \neq 0\)</span>, <span class="math inline">\(~\)</span>is a complex eigenvalue of <span class="math inline">\(\mathbf{A}\)</span>,</p>
+<li><p>Let <span class="math inline">\(\mathbf{A}\)</span> be a square matrix with real entries. If <span class="math inline">\(\lambda=\alpha +i\beta\)</span>, <span class="math inline">\(~\beta \neq 0\)</span>, <span class="math inline">\(~\)</span>is a complex eigenvalue of <span class="math inline">\(\mathbf{A}\)</span> with eigenvector <span class="math inline">\(\mathbf{k}\)</span>, <span class="math inline">\(~\)</span>then <span class="math inline">\(\bar{\lambda}\)</span> is also an eigenvalue, <span class="math inline">\(~\)</span>with eigenvector <span class="math inline">\(\bar{\mathbf{k}}\)</span>:</p>
 <p><span class="math display">\[\mathbf{A}\bar{\mathbf{k}}=\bar{\lambda}\bar{\mathbf{k}}\]</span></p></li>
 <li><p><span class="math inline">\(\lambda=0~\)</span> is an eigenvalue of <span class="math inline">\(~\mathbf{A}\)</span> if and only if <span class="math inline">\(~\mathbf{A}\)</span> is singular</p></li>
 <li><p>If <span class="math inline">\(~\lambda~\)</span> is an eigenvalue of nonsingular <span class="math inline">\(~\mathbf{A}\)</span> with eigenvector <span class="math inline">\(~\mathbf{k}\)</span>, <span class="math inline">\(~1/\lambda\)</span> is an eigenvalue of <span class="math inline">\(~\mathbf{A}^{-1}\)</span> with the same eigenvector <span class="math inline">\(~\mathbf{k}\)</span></p></li>
@@ -1689,6 +1719,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 1 &amp; 0 &amp; \phantom{-}0 \\
 1 &amp; 1 &amp; -1
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the eigenvalues and eigenvectors of the given nonsingular matrix <span class="math inline">\(\mathbf{A}\)</span>. <span class="math inline">\(~\)</span>Then without finding <span class="math inline">\(\mathbf{A}^{-1}\)</span>, <span class="math inline">\(~\)</span>find its eigenvalues and corresponding eigenvectors</p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -1700,8 +1731,10 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 0 &amp; 3 &amp; -2 \\
 0 &amp; 0 &amp; \phantom{-}5
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> True or False: <span class="math inline">\(~\)</span> If <span class="math inline">\(\lambda\)</span> is an eigenvalue of an <span class="math inline">\(n \times n~\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(~\)</span> then the matrix <span class="math inline">\(\mathbf{A}-\lambda\mathbf{I}~\)</span> is singular. Justify your answer</p>
+<p><a href="files/solutions/sol_6_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Suppose <span class="math inline">\(\lambda\)</span> is an eigenvalue with corresponding eigenvector <span class="math inline">\(~\mathbf{k}~\)</span> of an <span class="math inline">\(n\times n~\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span></p>
 <p><strong>1.</strong> If <span class="math inline">\(\mathbf{A}^2=\mathbf{AA}\)</span>, <span class="math inline">\(~\)</span> then show that <span class="math inline">\(\mathbf{A}^2\mathbf{k}=\lambda^2\mathbf{k}\)</span>. <span class="math inline">\(~\)</span> Explain the meaning of the last equation</p>
@@ -1711,10 +1744,13 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 5 &amp; 4
 \end{pmatrix}\]</span></p>
 <p><strong>3.</strong> Generalize the result in part 1</p>
+<p><a href="files/solutions/sol_6_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Let <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> be <span class="math inline">\(n \times n~\)</span> matrices. The matrix <span class="math inline">\(\mathbf{B}\)</span> is said to be <strong>similar</strong> to the matrix <span class="math inline">\(\mathbf{A}~\)</span> if there exists a nonsingular matrix <span class="math inline">\(\mathbf{S}\)</span> such that <span class="math inline">\(\mathbf{B}=\mathbf{S}^{-1}\mathbf{AS}\)</span>. <span class="math inline">\(~\)</span>If <span class="math inline">\(\mathbf{B}\)</span> is similar to <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(~\)</span>then show that <span class="math inline">\(\mathbf{A}\)</span> is similar to <span class="math inline">\(\mathbf{B}\)</span></p>
+<p><a href="files/solutions/sol_6_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Suppose <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> are similar matrices. Show that <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> have the same eigenvalues</p>
+<p><a href="files/solutions/sol_6_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-9" class="level2" data-number="6.10">
@@ -1735,6 +1771,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 1 &amp; -2\\
 4 &amp; \phantom{-}5
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_9.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Compute <span class="math inline">\(\mathbf{A}^m\)</span></p>
 <p><span class="math display">\[\mathbf{A}=\begin{pmatrix}
@@ -1746,16 +1783,18 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 0 &amp; 1 &amp; 2\\
 0 &amp; 1 &amp; 0
 \end{pmatrix}; \;\;m=10\]</span></p>
+<p><a href="files/solutions/sol_6_9.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Show that the given matrix has an eigenvalue <span class="math inline">\(\lambda_1\)</span> of multiplicity two. <span class="math inline">\(~\)</span> As a consequence, <span class="math inline">\(~\)</span>the equation <span class="math inline">\(\lambda^m=c_0+c_1\lambda\)</span> does not yield enough independent equations to form a system for determining the coefficients <span class="math inline">\(c_i\)</span>. <span class="math inline">\(~\)</span>Use the derivative (with respect to <span class="math inline">\(\lambda\)</span>) of this equation evaluated at <span class="math inline">\(\lambda_1\)</span> as the extra needed equation to form a system. <span class="math inline">\(~\)</span>Compute <span class="math inline">\(\mathbf{A}^m\)</span> and use this result to compute the indicated power of the matrix <span class="math inline">\(\mathbf{A}\)</span></p>
 <p><span class="math display">\[\mathbf{A}=\begin{pmatrix}
 \phantom{-}7 &amp; 3\\
 -3 &amp; 1
 \end{pmatrix}; \;\;m=6\]</span></p>
+<p><a href="files/solutions/sol_6_9.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> <span class="math inline">\(\lambda=0~\)</span> is an eigenvalue of each matrix. <span class="math inline">\(~\)</span>In this case, <span class="math inline">\(~\)</span> show that the coefficient <span class="math inline">\(c_0\)</span> in the characteristic equation</p>
 <p><span class="math display">\[(-1)^n\mathbf{A}^n + c_{n-1}\mathbf{A}^{n-1}+\cdots+c_1\mathbf{A}+c_0\mathbf{I}=\mathbf{0}\]</span></p>
-<p>is <span class="math inline">\(0\)</span>. <span class="math inline">\(~\)</span>Compute <span class="math inline">\(\mathbf{A}^m\)</span> in each case. <span class="math inline">\(~\)</span>In part (a), <span class="math inline">\(~\)</span>explain why we do not have to solve any system for the coefficients <span class="math inline">\(c_1\)</span> in determining <span class="math inline">\(\mathbf{A}^m\)</span></p>
+<p>is <span class="math inline">\(0\)</span>. <span class="math inline">\(~\)</span>Compute <span class="math inline">\(\mathbf{A}^m\)</span> in each case. <span class="math inline">\(~\)</span>In part (a), <span class="math inline">\(~\)</span>explain why we do not have to solve any system for the coefficients <span class="math inline">\(c_i\)</span> in determining <span class="math inline">\(\mathbf{A}^m\)</span></p>
 <p><span class="math display">\[(a)\;\;\mathbf{A}=\begin{pmatrix}
 1 &amp; 1\\
 3 &amp; 3
@@ -1765,10 +1804,12 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 1 &amp; 0 &amp; -2\\
 1 &amp; 1 &amp; \phantom{-}3
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_9.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> A non-zero <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(\mathbf{A}~\)</span> is said to be <strong>nilpotent of index <span class="math inline">\(m\)</span></strong> <span class="math inline">\(~\)</span>if <span class="math inline">\(m\)</span> is the smallest positive integer for which <span class="math inline">\(\mathbf{A}^m=\mathbf{0}\)</span>.</p>
 <p><strong>1.</strong> <span class="math inline">\(~\)</span>Explain why any nilpotent matrix <span class="math inline">\(~\mathbf{A}\)</span> is singular</p>
 <p><strong>2.</strong> <span class="math inline">\(~\)</span>Show that all the eigenvalues of a nilpotent matrix <span class="math inline">\(~\mathbf{A}\)</span> are <span class="math inline">\(0\)</span></p>
+<p><a href="files/solutions/sol_6_9.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-8-10" class="level2" data-number="6.11">
 <h2 data-number="6.11" class="anchored" data-anchor-id="sec-8-10"><span class="header-section-number">6.11</span> Orthogonal Matrices</h2>
@@ -1778,9 +1819,9 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <li><p><font color="red">An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span> is <em>orthogonal</em> (<span class="math inline">\(\mathbf{A}^{-1}=\mathbf{A}^T\)</span>) <span class="math inline">\(~\)</span>if and only if its columns <span class="math inline">\(\mathbf{x}_1,\)</span> <span class="math inline">\(\mathbf{x}_2,\)</span> <span class="math inline">\(\cdots,\)</span> <span class="math inline">\(\mathbf{x}_n\)</span> form an orthonormal set</font></p>
 <p><span class="math display">\[\mathbf{x}_i \cdot \mathbf{x}_j=0, \;i \neq j \; \text{and} \;\mathbf{x}_i \cdot \mathbf{x}_i=1\]</span></p></li>
 <li><p>It may not be possible to find <span class="math inline">\(n\)</span> linearly independent eigenvectors for an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span> when some of eigenvalues are repeated (defective matrix)</p></li>
-<li><p><font color="red">But a symmetric matrix is an exception. <span class="math inline">\(~\)</span>It can be proved that a set of <span class="math inline">\(n\)</span> linearly independent eigenvectors can always be found for an <span class="math inline">\(n \times n\)</span> symmetric matrix <span class="math inline">\(\mathbf{A}\)</span> even there is some repetition of the eigenvalues</font></p></li>
-<li><p>However, <span class="math inline">\(~\)</span>this does not mean that all eigenvectors are mutually orthogonal for an <span class="math inline">\(n \times n\)</span> symmetric matrix <span class="math inline">\(\mathbf{A}\)</span>. The set of eigenvectors corresponding to distinct eigenvalues are orthogonal; <span class="math inline">\(~\)</span>but different eigenvectors corresponding to a repeated eigenvalue may not be orthogonal</p></li>
-<li><p>But it is always possible to <em>find</em> or <em>construct</em> a set of <span class="math inline">\(n\)</span> mutually orthogonal eigenvectors by using Gram-Schmidt orthogonalization. See <a href="#sec-7-7" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7-7</span></a></p></li>
+<li><p><font color="red">But a symmetric matrix is an exception. <span class="math inline">\(~\)</span>It can be proved that a set of <span class="math inline">\(n\)</span> linearly independent eigenvectors can always be found for an <span class="math inline">\(n \times n\)</span> symmetric matrix <span class="math inline">\(\mathbf{A}\)</span> even if there is some repetition of the eigenvalues</font></p></li>
+<li><p>However, <span class="math inline">\(~\)</span>this does not mean that all eigenvectors are mutually orthogonal for an <span class="math inline">\(n \times n\)</span> symmetric matrix <span class="math inline">\(\mathbf{A}\)</span>. Eigenvectors corresponding to distinct eigenvalues are orthogonal; <span class="math inline">\(~\)</span>but different eigenvectors corresponding to a repeated eigenvalue may not be orthogonal</p></li>
+<li><p>But it is always possible to <em>find</em> or <em>construct</em> a set of <span class="math inline">\(n\)</span> mutually orthogonal eigenvectors by using Gram-Schmidt orthogonalization. See <a href="ch_07_Vectors.html#sec-7-7" class="quarto-xref"><span>Section 9.7</span></a></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Construct an orthogonal matrix from the eigenvectors of</p>
@@ -1790,14 +1831,14 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
     4 &amp;-8 &amp; -1\\
    -4 &amp;-1 &amp; -8
   \end{array}\right)\]</span></p>
-<div id="8abf66fc" class="cell" data-execution_count="5">
+<div id="1b0e9a77" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> sympy.Matrix([[<span class="dv">7</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">4</span>], [<span class="dv">4</span>, <span class="op">-</span><span class="dv">8</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">8</span>]])</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>A.eigenvects()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="5">
 <p><span class="math inline">\(\displaystyle \left[ \left( -9, \  2, \  \left[ \left[\begin{matrix}- \frac{1}{4}\\1\\0\end{matrix}\right], \  \left[\begin{matrix}\frac{1}{4}\\0\\1\end{matrix}\right]\right]\right), \  \left( 9, \  1, \  \left[ \left[\begin{matrix}-4\\-1\\1\end{matrix}\right]\right]\right)\right]\)</span></p>
 </div>
 </div>
-<div id="3651b1ec" class="cell" data-execution_count="6">
+<div id="57eda208" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> A.eigenvects()[<span class="dv">0</span>][<span class="dv">2</span>][<span class="dv">0</span>].T</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> A.eigenvects()[<span class="dv">0</span>][<span class="dv">2</span>][<span class="dv">1</span>].T</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>v3 <span class="op">=</span> A.eigenvects()[<span class="dv">1</span>][<span class="dv">2</span>][<span class="dv">0</span>].T</span>
@@ -1807,7 +1848,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}- \frac{\sqrt{17}}{17} &amp; \frac{2 \sqrt{34}}{51} &amp; - \frac{2 \sqrt{2}}{3}\\\frac{4 \sqrt{17}}{17} &amp; \frac{\sqrt{34}}{102} &amp; - \frac{\sqrt{2}}{6}\\0 &amp; \frac{\sqrt{34}}{6} &amp; \frac{\sqrt{2}}{6}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="d268240e" class="cell" data-execution_count="7">
+<div id="5f93715b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>B.T <span class="op">*</span>B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{matrix}\right]\)</span></p>
@@ -1825,6 +1866,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 -\frac{12}{13}&amp; \frac{5}{13} &amp; 0\\
 \phantom{-}\frac{5}{13}&amp;  \frac{12}{13}&amp; 0
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_10.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> (a)<span class="math inline">\(~\)</span> Verify that the indicated column vectors are eigenvectors of the given symmetric matrix and <span class="math inline">\(~\)</span>(b)<span class="math inline">\(~\)</span> identify the corresponding eigenvalues. <span class="math inline">\(~\)</span>(c)<span class="math inline">\(~\)</span> Use Gram-Schmidt process to construct an orthogonal matrix <span class="math inline">\(\mathbf{P}\)</span> from the eigenvectors</p>
 <p><span class="math display">\[\mathbf{A}=
@@ -1839,15 +1881,17 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 \end{pmatrix}, \;\; \mathbf{k}_3 = \begin{pmatrix}
 1 \\ 1 \\ 1
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_10.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Answer the questions based on the supposition</p>
 <ul>
 <li><p>Suppose <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}~\)</span> are <span class="math inline">\(~n\times n\)</span> orthogonal matrices. Then show that <span class="math inline">\(\mathbf{AB}~\)</span> is orthogonal</p></li>
-<li><p>Suppose <span class="math inline">\(\mathbf{A}\)</span> is an orthogonal matrix. <span class="math inline">\(~\)</span>Is <span class="math inline">\(\mathbf{A}^2~\)</span> is orthogonal</p></li>
+<li><p>Suppose <span class="math inline">\(\mathbf{A}\)</span> is an orthogonal matrix. <span class="math inline">\(~\)</span>Is <span class="math inline">\(\mathbf{A}^2~\)</span> orthogonal?</p></li>
 <li><p>Suppose <span class="math inline">\(\mathbf{A}~\)</span> is an orthogonal matrix. <span class="math inline">\(~\)</span>Then show that <span class="math inline">\(\mathbf{A}^{-1}\)</span> is orthogonal</p></li>
 <li><p>Suppose <span class="math inline">\(\mathbf{A}~\)</span> is an orthogonal matrix such that <span class="math inline">\(~\mathbf{A}^2=\mathbf{I}~\)</span>. <span class="math inline">\(~\)</span>Then show that <span class="math inline">\(\mathbf{A}^T=\mathbf{A}\)</span></p></li>
 <li><p>Show that the rotation matrix is orthogonal</p></li>
 </ul>
+<p><a href="files/solutions/sol_6_10.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-11" class="level2" data-number="6.12">
@@ -1889,7 +1933,7 @@ a^3 &amp; b^3 &amp; c^3 &amp; d^3
 \mathbf{x}_m \leftarrow
   \frac{\mathbf{x}_m}{\left \| \mathbf{x}_m \right \|}\]</span></p></li>
 </ul>
-<div id="eca37e28" class="cell" data-execution_count="8">
+<div id="028602a0" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1942,10 +1986,10 @@ Dominant Eigenvalue: 5.0</code></pre>
 <p><span class="math display">\[ |\lambda_1| &gt; |\lambda_2| &gt; |\lambda_3| &gt; \cdots &gt; |\lambda_n| \]</span></p>
 <p>In this case, the matrix</p>
 <p><span class="math display">\[ \mathbf{A}_1 =\mathbf{A} -\lambda_1\mathbf{k}_1\mathbf{k}_1^T \]</span></p>
-<p>has eigenvalues <span class="math inline">\(0\)</span>, <span class="math inline">\(|\lambda_2|\)</span>, <span class="math inline">\(|\lambda_3|\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(|\lambda_n|\)</span> and that eigenvectors of <span class="math inline">\(\mathbf{A}_1\)</span> are also eigenvectors of <span class="math inline">\(\mathbf{A}\)</span>. <span class="math inline">\(~\)</span> Note that <span class="math inline">\(\lambda_2\)</span> is now the dominant eigenvalue of <span class="math inline">\(\mathbf{A}_1\)</span></p></li>
+<p>has eigenvalues <span class="math inline">\(0\)</span>, <span class="math inline">\(\lambda_2\)</span>, <span class="math inline">\(\lambda_3\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(\lambda_n\)</span> and that eigenvectors of <span class="math inline">\(\mathbf{A}_1\)</span> are also eigenvectors of <span class="math inline">\(\mathbf{A}\)</span>. <span class="math inline">\(~\)</span> Note that <span class="math inline">\(\lambda_2\)</span> is now the dominant eigenvalue of <span class="math inline">\(\mathbf{A}_1\)</span></p></li>
 </ul></li>
 </ul>
-<div id="532d0ce3" class="cell" data-execution_count="9">
+<div id="b89e7177" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deflation_method(A, n_iteration):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> A.shape[<span class="dv">1</span>]</span>
@@ -1985,8 +2029,8 @@ array([[ 1,  2, -1],
        [ 2,  1,  1],
        [-1,  1,  0]])
 
-k_1 = [0.707 0.707 0.   ]
-k_2 = [-0.578  0.577 -0.577]
+k_1 = [ 0.707  0.707 -0.   ]
+k_2 = [ 0.577 -0.577  0.577]
 k_3 = [-0.408  0.408  0.816]
 
 lambda_1 = 3.0
@@ -1996,9 +2040,9 @@ lambda_3 = 1.0</code></pre>
 </div>
 <ul>
 <li><p><strong>Inverse Power Method</strong></p>
-<p>If we want to find the smallest eigenvalue instead of the largest one, then we perform power iteration for <span class="math inline">\(\mathbf{A}^{−1}\)</span> (since the eigenvalues of <span class="math inline">\(\mathbf{A}^{-1}\)</span> are the reciprocals of the eigenvalues of <span class="math inline">\(\mathbf{A}\)</span>). Of course, <span class="math inline">\(~\)</span>we do not want to compute <span class="math inline">\(\mathbf{A}^{-1}\)</span></p></li>
+<p>If we want to find the smallest eigenvalue instead of the largest one, then we perform power iteration for <span class="math inline">\(\mathbf{A}^{-1}\)</span> (since the eigenvalues of <span class="math inline">\(\mathbf{A}^{-1}\)</span> are the reciprocals of the eigenvalues of <span class="math inline">\(\mathbf{A}\)</span>). Of course, <span class="math inline">\(~\)</span>we do not want to compute <span class="math inline">\(\mathbf{A}^{-1}\)</span></p></li>
 </ul>
-<div id="ef80db6b" class="cell" data-execution_count="10">
+<div id="9900f1a2" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> inverse_power_method(A, n_iteration):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ideally choose a random vector</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># To decrease the chance that </span></span>
@@ -2045,7 +2089,7 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 \mathbf{P}= \begin{pmatrix}
   \mathbf{k}_1 &amp; \mathbf{k}_2 &amp; \cdots &amp; \mathbf{k}_n
 \end{pmatrix}}\]</span></font></p>
-<p>We can wrtie the product <span class="math inline">\(\mathbf{A}\mathbf{P}\)</span> as</p>
+<p>We can write the product <span class="math inline">\(\mathbf{A}\mathbf{P}\)</span> as</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathbf{A}\mathbf{P}
@@ -2164,7 +2208,7 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 \,\mathbf{k}_2=\left(\begin{array}{r} 2\\ 1 \end{array}\right)\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="d7ef6be7" class="cell" data-execution_count="11">
+<div id="b3c5cf9e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols, Eq, plot_implicit</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> symbols(<span class="st">'x y'</span>)</span>
@@ -2175,7 +2219,7 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_08_Matrices_files/figure-html/cell-12-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="ch_08_Matrices_files/figure-html/cell-12-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="470" height="469"></p>
 </figure>
 </div>
 </div>
@@ -2184,7 +2228,7 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 <li><p>Observe that <span class="math inline">\(\mathbf{k}_1\)</span> and <span class="math inline">\(\mathbf{k}_2\)</span> are orthogonal. <span class="math inline">\(~\)</span>Moreover, <span class="math inline">\(~\left \| \mathbf{k}_1 \right \| =\left \| \mathbf{k}_2 \right \| =\sqrt{5}\)</span>, <span class="math inline">\(~\)</span> and so the vectors</p>
 <p><span class="math display">\[{\mathbf{k}_1=\left(\begin{array}{r} \frac{1}{\sqrt{5}}\\ -\frac{2}{\sqrt{5}} \end{array}\right) \;\text{and}
 \; \mathbf{k}_2=\left(\begin{array}{r} \frac{2}{\sqrt{5}}\\ \frac{1}{\sqrt{5}} \end{array}\right)}\]</span></p>
-<p>are orthogonal. <span class="math inline">\(\,\)</span>Hence, <span class="math inline">\(\,\)</span>the matrix</p>
+<p>are orthonormal. <span class="math inline">\(\,\)</span>Hence, <span class="math inline">\(\,\)</span>the matrix</p>
 <p><span class="math display">\[{\mathbf{P}=
    \left(\begin{array}{rr} \frac{1}{\sqrt{5}} &amp; \frac{2}{\sqrt{5}}\\
   -\frac{2}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}}
@@ -2215,23 +2259,23 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 <p>This last equation is recognized as the standard form of a hyperbola</p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="3f71e68f" class="cell" data-execution_count="12">
+<div id="8d3dbde2" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>bar_x, bar_y <span class="op">=</span> symbols(<span class="st">'bar_x bar_y'</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> plot_implicit(Eq(<span class="op">-</span>bar_x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">3</span><span class="op">*</span>bar_y<span class="op">**</span><span class="dv">2</span>, <span class="dv">1</span>), </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> plot_implicit(Eq(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>bar_x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">3</span><span class="op">*</span>bar_y<span class="op">**</span><span class="dv">2</span>, <span class="dv">1</span>), </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                   (bar_x, <span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), (bar_y, <span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), </span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                   aspect_ratio<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), size<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>),</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                   xlabel<span class="op">=</span><span class="vs">r'</span><span class="dv">$\b</span><span class="vs">ar{x}</span><span class="dv">$</span><span class="vs">'</span>, ylabel<span class="op">=</span><span class="vs">r'</span><span class="dv">$\b</span><span class="vs">ar{y}</span><span class="dv">$</span><span class="vs">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_08_Matrices_files/figure-html/cell-13-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="ch_08_Matrices_files/figure-html/cell-13-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="470" height="469"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Determine whether the given matrix <span class="math inline">\(\mathbf{A}\)</span> is diagonalizable. <span class="math inline">\(~\)</span> If so, find the matrix <span class="math inline">\(\mathbf{P}\)</span> that diagonalizes <span class="math inline">\(\mathbf{A}\)</span> and the disgonal matrix <span class="math inline">\(\mathbf{D}\)</span> such that <span class="math inline">\(\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}\)</span></p>
+<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Determine whether the given matrix <span class="math inline">\(\mathbf{A}\)</span> is diagonalizable. <span class="math inline">\(~\)</span> If so, find the matrix <span class="math inline">\(\mathbf{P}\)</span> that diagonalizes <span class="math inline">\(\mathbf{A}\)</span> and the diagonal matrix <span class="math inline">\(\mathbf{D}\)</span> such that <span class="math inline">\(\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}\)</span></p>
 <p><span class="math display">\[\begin{pmatrix}
 -9 &amp; 13\\
 -2 &amp; 6
@@ -2244,6 +2288,7 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 2 &amp; -1 &amp; 0\\
 0 &amp; \phantom{-}0 &amp; 1
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The given matrix <span class="math inline">\(\mathbf{A}\)</span> is symmetric. <span class="math inline">\(~\)</span> Find an orthogonal matrix <span class="math inline">\(\mathbf{P}\)</span> that diagonalizes <span class="math inline">\(\mathbf{A}\)</span> and the diagonal matrix <span class="math inline">\(\mathbf{D }\)</span> such that <span class="math inline">\(\mathbf{D}=\mathbf{P}^T\mathbf{AP}\)</span></p>
 <p><span class="math display">\[\begin{pmatrix}
@@ -2258,10 +2303,12 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 0 &amp; 1 &amp; 0\\
 7 &amp; 0 &amp; 1
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Identify the given conic section</p>
 <p><span class="math display">\[\phantom{-}5x^2 -2xy +5y^2 =24\]</span></p>
 <p><span class="math display">\[-3x^2 +8xy +3y^2 =20\]</span></p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find <span class="math inline">\(3 \times 3~\)</span> symmetric matrix that has eigenvalues <span class="math inline">\(~\lambda_1=1\)</span>, <span class="math inline">\(~\lambda_2=3\)</span>, and <span class="math inline">\(~\lambda_3=5\)</span> and corresponding eigenvectors</p>
 <p><span class="math display">\[\mathbf{k}_1 = \begin{pmatrix}
@@ -2273,8 +2320,10 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 \mathbf{k}_3 = \begin{pmatrix}
   1 \\ 2 \\ 1
 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> If <span class="math inline">\(\mathbf{A}\)</span> is an <span class="math inline">\(n\times n~\)</span> diagonalizable matrix, then <span class="math inline">\(\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}\)</span>, <span class="math inline">\(~\)</span> where <span class="math inline">\(\mathbf{D}\)</span> is a diagonal matrix. <span class="math inline">\(~\)</span> Show that if <span class="math inline">\(m\)</span> is a positive integer, then <span class="math inline">\(\mathbf{A}^m=\mathbf{PD}^m\mathbf{P}^{-1}\)</span></p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the indicated power of the given matrix</p>
 <p><span class="math display">\[
@@ -2288,10 +2337,13 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
      3 &amp; -5
   \end{pmatrix},\;\;\mathbf{A}^{10}
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Suppose <span class="math inline">\(\mathbf{A}\)</span> is a nonsingular diagonalizable matrix. Then show that <span class="math inline">\(\mathbf{A}^{-1}\)</span> is diagonalizable</p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Suppose <span class="math inline">\(\mathbf{A}\)</span> is a diagonalizable matrix. <span class="math inline">\(~\)</span>Is the matrix <span class="math inline">\(\mathbf{P}\)</span> unique?</p>
+<p><a href="files/solutions/sol_6_12.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-8-13" class="level2" data-number="6.14">
@@ -2311,7 +2363,7 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 <ul>
 <li><p>We define</p>
 <p><span class="math display">\[\mathbf{A}^{(0)}=\mathbf{A}\]</span></p></li>
-<li><p>We eliminate the matrix elements below the main diagonal in the <span class="math inline">\(k\)</span>-th column of <span class="math inline">\(\mathbf{A}^{(k -1)}\)</span> by adding to the <span class="math inline">\(i\)</span>-th row of this matrix the <span class="math inline">\(k\)</span>-th row multiplied by</p>
+<li><p>We eliminate the matrix elements below the main diagonal in the <span class="math inline">\(k\)</span>-th column of <span class="math inline">\(\mathbf{A}^{(k -1)}\)</span> by subtracting from the <span class="math inline">\(i\)</span>-th row of this matrix the <span class="math inline">\(k\)</span>-th row multiplied by</p>
 <p><span class="math display">\[l_{i,k}=\frac{a_{i,k}^{(k-1)}}{a_{k,k}^{(k-1)}} \;\text{ for }\; i=k+1, \cdots, n\]</span></p>
 <p>This can be done by multiplying <span class="math inline">\(\mathbf{A}^{(k -1)}\)</span> to the left with the lower triangular matrix</p>
 <p><span class="math display">\[{\scriptsize
@@ -2355,9 +2407,9 @@ Eigenvalue of Least Magnitude = -2.0</code></pre>
 <p>We obtain <span class="math inline">\(\mathbf{A}=\mathbf{L}\mathbf{U}\)</span></p></li>
 </ul></li>
 </ul>
-<p><strong>NOTE</strong> <span class="math inline">\(\,\)</span>It is clear that in order for this algorithm to work, one needs to have <span class="math inline">\(a_{k,k}^{(k-1)}\)</span> at each step (see the definition of <span class="math inline">\(l_{i,k}\)</span>). If this assumption fails at some point, one needs to interchange <span class="math inline">\(k\)</span>-th row with another row below it before continuing. This is why an LU decomposition in general looks like <span class="math inline">\(\mathbf{P}\mathbf{A}=\mathbf{L}\mathbf{U}\)</span></p>
+<p><strong>NOTE</strong> <span class="math inline">\(\,\)</span>It is clear that in order for this algorithm to work, one needs to have <span class="math inline">\(a_{k,k}^{(k-1)}\neq 0\)</span> at each step (see the definition of <span class="math inline">\(l_{i,k}\)</span>). If this assumption fails at some point, one needs to interchange <span class="math inline">\(k\)</span>-th row with another row below it before continuing. This is why an LU decomposition in general looks like <span class="math inline">\(\mathbf{P}\mathbf{A}=\mathbf{L}\mathbf{U}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="2f7086c7" class="cell" data-execution_count="13">
+<div id="d52d4a57" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lu_factor(A):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">        LU factorization with partial pivoting</span></span>
@@ -2424,7 +2476,7 @@ array([[ 7.        ,  3.        , -1.        ,  2.        ],
 </div>
 </div>
 <p><span class="math inline">\(~\)</span></p>
-<div id="ecab26c8" class="cell" data-execution_count="14">
+<div id="df0d051a" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.linalg <span class="im">import</span> lu</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">7</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">4</span>], [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>],</span>
@@ -2457,7 +2509,7 @@ array([[ 7.        ,  3.        , -1.        ,  2.        ],
        [ 0.        ,  0.        ,  0.        ,  1.88622754]])</code></pre>
 </div>
 </div>
-<div id="c3e8d86f" class="cell" data-execution_count="15">
+<div id="e3236b27" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>A_ <span class="op">=</span> sympy.Matrix([[<span class="dv">7</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">4</span>], [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>],</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>             [<span class="dv">2</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>]])</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>L_, U_, _ <span class="op">=</span> A_.LUdecomposition()</span>
@@ -2485,7 +2537,7 @@ array([[ 7.        ,  3.        , -1.        ,  2.        ],
 </ul></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="3a85ffca" class="cell" data-execution_count="16">
+<div id="a2545511" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ufsub(L, b):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Unit row oriented forward substitution """</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> b.copy()</span>
@@ -2527,7 +2579,7 @@ b = array([1., 2., 3., 4.])
 x = array([-1.27619048,  1.87619048,  0.57142857,  2.43809524])</code></pre>
 </div>
 </div>
-<div id="8dfbfcca" class="cell" data-execution_count="17">
+<div id="105bf4b0" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>A_ <span class="op">=</span> sympy.Matrix([[<span class="dv">7</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">4</span>], </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>              [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">2</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>]])</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>b_ <span class="op">=</span> sympy.Matrix([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -2544,7 +2596,7 @@ x = array([-1.27619048,  1.87619048,  0.57142857,  2.43809524])</code></pre>
 <p><span class="math display">\[\mathbf{L}\mathbf{U}\mathbf{X}=\mathbf{I}_n\]</span></p>
 <p>We can use the same algorithm presented earlier to solve for each column of matrix <span class="math inline">\(\mathbf{X}\)</span></p></li>
 </ul>
-<div id="dfa86377" class="cell" data-execution_count="18">
+<div id="5a313bf5" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>A_.inv(method<span class="op">=</span><span class="st">'LU'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="18">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}\frac{122}{315} &amp; - \frac{101}{315} &amp; \frac{2}{21} &amp; - \frac{103}{315}\\- \frac{101}{315} &amp; \frac{143}{315} &amp; - \frac{2}{21} &amp; \frac{124}{315}\\\frac{2}{21} &amp; - \frac{2}{21} &amp; \frac{2}{7} &amp; - \frac{1}{21}\\- \frac{103}{315} &amp; \frac{124}{315} &amp; - \frac{1}{21} &amp; \frac{167}{315}\end{matrix}\right]\)</span></p>
@@ -2573,6 +2625,7 @@ x = array([-1.27619048,  1.87619048,  0.57142857,  2.43809524])</code></pre>
    -4 &amp; 1 &amp; 2\\
    12 &amp; 1 &amp; 3
   \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_13.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the LU factorization to solve the given linear system of equations</p>
 <p><span class="math display">\[\begin{pmatrix} 2 &amp; -2 \\ 1 &amp; \phantom{-}2\end{pmatrix}
@@ -2583,6 +2636,7 @@ x = array([-1.27619048,  1.87619048,  0.57142857,  2.43809524])</code></pre>
   \end{pmatrix}
   \begin{pmatrix} x_1 \\ x_2 \\x_3 \end{pmatrix} =
   \begin{pmatrix} 7 \\ 7\\28 \end{pmatrix}\]</span></p>
+<p><a href="files/solutions/sol_6_13.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-8-14" class="level2" data-number="6.15">
 <h2 data-number="6.15" class="anchored" data-anchor-id="sec-8-14"><span class="header-section-number">6.15</span> Applications</h2>
@@ -2661,7 +2715,7 @@ x = array([-1.27619048,  1.87619048,  0.57142857,  2.43809524])</code></pre>
 <p><strong>UTKFT N IXYGEAVDAYRMNSDM</strong></p>
 </center></li>
 </ul>
-<div id="576103c3" class="cell" data-execution_count="19">
+<div id="3f0483bd" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#-- Data for Encoding and Decoding------------------------------------</span></span>
@@ -2687,7 +2741,7 @@ x = array([-1.27619048,  1.87619048,  0.57142857,  2.43809524])</code></pre>
 det_A = -1.0</code></pre>
 </div>
 </div>
-<div id="cf2ee4d2" class="cell" data-execution_count="20">
+<div id="72986831" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_numeric(message):   </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([inv_cp[m] <span class="cf">for</span> m <span class="kw">in</span> message])</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2706,7 +2760,7 @@ det_A = -1.0</code></pre>
 <span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> convert_to_letter(numeric_message_encoded)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1779e8e8" class="cell" data-execution_count="21">
+<div id="4e0b2122" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">'dr john is a double spy'</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>message_encoded <span class="op">=</span> encoding_message(message)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2721,7 +2775,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <li><p>You should try to imagine the difficulty of decoding the encoded message without prior knowledge. <span class="math inline">\(\,\)</span>Using the original correspondence and <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(\,\)</span>the decoding is the straightforward computation</p>
 <p><span class="math display">\[\mathbf{M}=\mathbf{A}^{-1}\mathbf{B}'\]</span></p></li>
 </ul>
-<div id="746a87d5" class="cell" data-execution_count="22">
+<div id="b564b454" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decoding_message(message_encoded):</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    B_ <span class="op">=</span> convert_to_numeric(message_encoded).reshape(<span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>)</span>
@@ -2743,7 +2797,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <h3 data-number="6.15.2" class="anchored" data-anchor-id="an-error-correcting-code"><span class="header-section-number">6.15.2</span> <strong>An Error-Correcting Code</strong></h3>
 <p>We are going to examine briefly the concept of digital communication between a satellite and a computer. As a result, we will deal only with matrices whose entries are binary digits, namely <span class="math inline">\(0\)</span>s and <span class="math inline">\(1\)</span>s</p>
 <ul>
-<li>When addng and multipying such matrices, <span class="math inline">\(\,\)</span>we will use arithmetic modulo 2. This arithmetic is defined by the addition and multiplication tables</li>
+<li>When adding and multiplying such matrices, <span class="math inline">\(\,\)</span>we will use arithmetic modulo 2. This arithmetic is defined by the addition and multiplication tables</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:15%;">
@@ -2811,7 +2865,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
   c_2 &amp; = w_1 +w_3 +w_4 \\
   c_3 &amp; = w_2 +w_3 +w_4
 \end{aligned} \tag{C1}\label{eq:C1}\]</span></p>
-<p>We first observe that in modulo 2 arithmatic there are no negative numbers; <span class="math inline">\(\,\)</span>the additive inverse is <span class="math inline">\(1\)</span>, not <span class="math inline">\(-1\)</span>. <span class="math inline">\(\,\)</span>With this in mind, <span class="math inline">\(\,\)</span>we can write the system <span class="math inline">\(\eqref{eq:C1}\)</span> in the equivalent form</p>
+<p>We first observe that in modulo 2 arithmetic there are no negative numbers; <span class="math inline">\(\,\)</span>the additive inverse of <span class="math inline">\(1\)</span> is <span class="math inline">\(1\)</span>, not <span class="math inline">\(-1\)</span>. <span class="math inline">\(\,\)</span>With this in mind, <span class="math inline">\(\,\)</span>we can write the system <span class="math inline">\(\eqref{eq:C1}\)</span> in the equivalent form</p>
 <p><span class="math display">\[
 \begin{aligned}
    c_3 &amp; + w_2 +w_3 +w_4 = 0\\
@@ -2831,7 +2885,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <p>is called the <strong>parity check matrix</strong>. <span class="math inline">\(~\)</span>A closer inspection of <span class="math inline">\(\mathbf{H}\)</span> shows a surprising fact: The columns of <span class="math inline">\(\mathbf{H}\)</span>, left to right, are the numbers <span class="math inline">\(1\)</span> through <span class="math inline">\(7\)</span> written in binary</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{R}\)</span> be a <span class="math inline">\(1 \times 7\)</span> matrix representing the received message. The product</p>
 <p><span class="math display">\[\mathbf{S}=\mathbf{H}\mathbf{R}^T\]</span></p>
-<p>is called the <strong>syndome</strong> of <span class="math inline">\(\mathbf{R}\)</span>. <span class="math inline">\(\,\)</span>If <span class="math inline">\(\mathbf{S}=\mathbf{0}\)</span>, <span class="math inline">\(\,\)</span>it is assumed that the transmission is correct and that <span class="math inline">\(\mathbf{R}\)</span> is the same as the original encoded message <span class="math inline">\(\mathbf{C}\)</span>. <span class="math inline">\(\,\)</span>The decoding of the message is accomplished by simply dropping the three check bits in <span class="math inline">\(\mathbf{R}\)</span></p></li>
+<p>is called the <strong>syndrome</strong> of <span class="math inline">\(\mathbf{R}\)</span>. <span class="math inline">\(\,\)</span>If <span class="math inline">\(\mathbf{S}=\mathbf{0}\)</span>, <span class="math inline">\(\,\)</span>it is assumed that the transmission is correct and that <span class="math inline">\(\mathbf{R}\)</span> is the same as the original encoded message <span class="math inline">\(\mathbf{C}\)</span>. <span class="math inline">\(\,\)</span>The decoding of the message is accomplished by simply dropping the three check bits in <span class="math inline">\(\mathbf{R}\)</span></p></li>
 <li><p>Let</p>
 <p><span class="math display">\[{\mathbf{E}=\begin{bmatrix} e_1 &amp; e_2 &amp; e_3 &amp; e_4 &amp; e_5 &amp; e_6 &amp; e_7 \end{bmatrix}}\]</span></p>
 <p>be a <em>single-error noise</em> word added to <span class="math inline">\(\mathbf{C}\)</span> during its transmission</p></li>
@@ -2856,7 +2910,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <h3 data-number="6.15.3" class="anchored" data-anchor-id="method-of-least-squares"><span class="header-section-number">6.15.3</span> <strong>Method of Least Squares</strong></h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch08_figure06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+<p><img src="figures/ch08_figure06.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div>
 <p>When performing experiments we often tabulate data in the form of ordered pairs <span class="math inline">\((x_1, y_1),\)</span> <span class="math inline">\((x_2, y_2),\)</span> <span class="math inline">\(\cdots,\)</span> <span class="math inline">\((x_n, y_n),\)</span> with each <span class="math inline">\(x_i\)</span> distinct. Given the data, it is then often desirable to predict <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span> by finding a mathematical model, that is, a function <span class="math inline">\(f(x)\)</span> that approximates or fits the data</p>
@@ -2912,12 +2966,12 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 \]</span></p>
 <p>Unless the data points all lie on the same vertical line, the matrix <span class="math inline">\(\mathbf{A}^T\mathbf{A}\)</span> is nonsingular. Thus <span class="math inline">\(\eqref{eq:C3}\)</span> has the unique solution</p>
 <p><span class="math display">\[
-  \mathbf{x} =\left(\mathbf{A}^T \mathbf{A} \right)^T \mathbf{A}^T \mathbf{b}
+  \mathbf{x} =\left(\mathbf{A}^T \mathbf{A} \right)^{-1} \mathbf{A}^T \mathbf{b}
 \]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Nonlinear Least Squares: <span class="math inline">\(\text{ } f(x) = 2.5e^{-1.3x}\)</span></p>
-<div id="d26081c1" class="cell" data-execution_count="23">
+<div id="575ffeb4" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2940,7 +2994,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_08_Matrices_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_08_Matrices_files/figure-html/cell-24-output-1.png" width="589" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2953,11 +3007,11 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <li><p>Strontium 90 is deposited into pastureland by rainfall. To study how this material is cycled through the ecosystem, <span class="math inline">\(~\)</span>we divide the system into the compartments:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch08_figure07.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch08_figure07.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
 <p>Suppose that <span class="math inline">\(\Delta t=1\)</span> month and the transfer coefficients shown in the figure are measured in fraction/month</p></li>
-<li><p>Suppose that rainfall has deposited the strotium 90 into the compartments so that</p>
+<li><p>Suppose that rainfall has deposited the strontium 90 into the compartments so that</p>
 <p><span class="math display">\[{\mathbf{x}_0=
 \begin{pmatrix}
   20 &amp;
@@ -2979,7 +3033,7 @@ Encoded message = UTKFT N IXYGEAVDAYRMNSDM</code></pre>
 <p>We must compute <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(\mathbf{x}_{12}\)</span> by using the recursion formula <span class="math inline">\(~\mathbf{x}_{n+1}=\mathbf{T}\mathbf{x}_n\)</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="a365443d" class="cell" data-execution_count="24">
+<div id="0eacbb93" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> np.array([[<span class="fl">0.85</span>, <span class="fl">0.01</span>, <span class="fl">0.00</span>, <span class="fl">0.00</span>], </span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.05</span>, <span class="fl">0.98</span>, <span class="fl">0.20</span>, <span class="fl">0.00</span>],</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.10</span>, <span class="fl">0.00</span>, <span class="fl">0.80</span>, <span class="fl">0.00</span>], </span>
@@ -3292,7 +3346,7 @@ x_1 \\ x_2 \\ x_3
 <p>So, the full rotated equation becomes:</p>
 <p><span class="math display">\[\color{red}{5v^2 - u = 0}\]</span></p>
 <p>This is a parabola that opens along the <span class="math inline">\(u\)</span>-axis with its vertex at the origin in the <span class="math inline">\((u, v)\)</span> coordinate system</p>
-<div id="ed87f809" class="cell" data-execution_count="25">
+<div id="058460b9" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3317,12 +3371,12 @@ x_1 \\ x_2 \\ x_3
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_08_Matrices_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_08_Matrices_files/figure-html/cell-26-output-1.png" width="662" height="199" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="5d2308b2" class="cell" data-execution_count="26">
+<div id="0c5dce31" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Define the (u, v) parabola</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>v_vals <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">400</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>u_vals <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span>v_vals<span class="op">**</span><span class="dv">2</span>  <span class="co"># From u = 5v^2</span></span>
@@ -3354,7 +3408,7 @@ x_1 \\ x_2 \\ x_3
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ch_08_Matrices_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_08_Matrices_files/figure-html/cell-27-output-1.png" width="483" height="523" class="figure-img"></p>
 </figure>
 </div>
 </div>
