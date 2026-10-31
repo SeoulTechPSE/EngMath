@@ -38,11 +38,11 @@ print("scipy: ", __version__)
 
 * Quadrature rules can be derived from interpolations of $f(x)$ on the interval $[a,b]$. If the points $x_i$ are evenly spaced in the interval $[a,b]$, and a polynomial interpolation is used, then the resulting quadrature rule is known as a *Newton-Cotes quadrature rule*
 
-* For instance, approximating $f(x)$ with a zeroth order polynomial (constant value) using the midpoint value $x_0 = (a +b) /2$, $\,$we obtain
+* For instance, approximating $f(x)$ with a polynomial of degree zero (constant value) using the midpoint value $x_0 = (a +b) /2$, $\,$we obtain
 
-  $$ I(f) \approx f \left( \frac{b -a}{2} \right)  \int_a^b dx = (b -a) f \left( \frac{b -a}{2} \right) $$
+  $$ I(f) \approx f \left( \frac{a +b}{2} \right)  \int_a^b dx = (b -a) f \left( \frac{a +b}{2} \right) $$
 
-  This is known as the *midpoint rule*, and it integrates polynomials up to order one (linear functions) exactly, and it is therefore said to be of polynomial degree one
+  This is known as the *midpoint rule*, and it integrates polynomials up to degree one (linear functions) exactly, and it is therefore said to be of polynomial degree one
 
 * Approximating $f(x)$ by a polynomial of degree one, evaluated at the endpoints of the interval, results in
 
@@ -50,11 +50,11 @@ print("scipy: ", __version__)
 
   This is known as the *trapezoidal rule*, and it is also of polynomial degree one
 
-* Using an interpolation polynomial of second order results in *Simpson’s rule*,
+* Using an interpolation polynomial of degree two results in *Simpson’s rule*,
 
   $$ I(f) \approx \frac{b -a}{6} \left[ f(a) +4 f \left( \frac{a +b}{2} \right) +f(b) \right] $$
 
-  which uses function evaluations at the endpoints and the midpoint. This method is of polynomial degree three, meaning that it integrates exactly polynomials up to order three
+  which uses function evaluations at the endpoints and the midpoint. This method is of polynomial degree three, meaning that it integrates exactly polynomials up to degree three
 
 ```{python}
 a, b, X = sympy.symbols("a, b, x")
@@ -96,9 +96,9 @@ q_rule.subs(w_sol).simplify()
 
 * Rather than using higher-order quadrature rules, it is therefore often better to divide the integration interval $[a,b]$ into subintervals $[a=x_0, x_1], [x_1, x_2], \cdots, [x_{n-1},x_n = b]$ and use a low-order quadrature rule in each of these sub-intervals. Such methods are known as *composite quadrature rules*
 
-* An important parameter that characterize composite quadrature rules is the sub-interval length $h=(b-a)/N$. Estimates for the errors in an approximate quadrature rule, and the scaling of the error with respect to $h$, can be obtained from Taylor series expansions of the integrand and the analytical integration of the term in the resulting series
+* An important parameter that characterizes composite quadrature rules is the sub-interval length $h=(b-a)/N$. Estimates for the errors in an approximate quadrature rule, and the scaling of the error with respect to $h$, can be obtained from Taylor series expansions of the integrand and the analytical integration of the term in the resulting series
 
-* We have seen that the Newton-Cotes quadrature rules uses evenly spaced sample points of the integrand $f(x)$. However, this is not necessarily the most efficient choice of quadrature nodes, and then it can be advantageous to use quadrature rules that do not use evenly spaced sample points
+* We have seen that the Newton-Cotes quadrature rules use evenly spaced sample points of the integrand $f(x)$. However, this is not necessarily the most efficient choice of quadrature nodes, and then it can be advantageous to use quadrature rules that do not use evenly spaced sample points
 
 * An example of such a method is a *Gaussian quadrature*, which also uses polynomial interpolation to determine the values of the weight factors in the quadrature rule, but where the quadrature nodes $x_i$ are chosen to maximize the order of polynomials that can be integrated exactly (the polynomial degree) given a fixed number of quadrature points
 
@@ -107,7 +107,9 @@ q_rule.subs(w_sol).simplify()
 
 * The numerical quadrature routines in the `scipy` `integrate` module can be categorized into two types: routines that take the integrand as a python function, and routines that take arrays with samples of the integrand at given points
 
-* The functions of the first type use Gaussian quadrature (`quad`, `quadrature`, `fixed_quad`), while functions of the second type use Newton-Cotes methods (`trapz`, `simps`, and `romb`)
+* The functions of the first type use Gaussian-type quadrature: $~$`quad` (adaptive Gauss–Kronrod rules from the QUADPACK library), $~$`fixed_quad` (fixed-order Gauss–Legendre), $~$and `quad_vec` (for vector-valued integrands). $~$The functions of the second type use Newton-Cotes methods: $~$`trapezoid`, `simpson`, and `romb`
+
+* The older names `trapz` and `simps`, $~$and the functions `quadrature` and `romberg`, $~$have been removed from recent versions of `scipy` (1.14–1.15); $~$use `trapezoid`, `simpson`, and `quad` instead
 
 * As a concrete example, consider the numerical evaluation of the integral
 
@@ -181,21 +183,15 @@ val, err
 
 * Consider the integral $$ \int_{-1}^1 \frac{1}{\sqrt{|x|}} \,dx $$
 
-* The integrand diverges at $x=0$, but the value of the integral does not diverge, and its value is $4$. Naively trying to compute this integral using `quad` may fail because of the diverging integrand:
-
+* The integrand diverges at $x=0$, but the value of the integral does not diverge, and its value is $4$. Naively trying to compute this integral using `quad` fails because of the diverging integrand: $~$the result is `inf` (and `numpy` warns about a division by zero)
 
 ```{python}
-import warnings
-warnings.filterwarnings("error")
-
+#| warning: false
 f = lambda x: 1/np.sqrt(abs(x))
 
 a, b = -1, 1
 
-try:
-  integrate.quad(f, a, b)
-except Exception as e:
-  print(e)
+integrate.quad(f, a, b)
 ```
 
 ```{python}
@@ -213,7 +209,7 @@ ax.set_ylim(0, 25)
 ax.tick_params(which='both', direction='in')
 ```
 
-* In this case, the evaluation of the integral fails because the integrand diverges exactly at one of the sample points in the Gaussian quadrature rule (the midpoint). We can guide the `quad` routine by specifying a list of points that should be avoided using the `points` keyword arguments, and using `points=[0]` in the current example allows quad to correctly evaluate the integral:
+* In this case, the evaluation of the integral fails because the integrand diverges exactly at one of the sample points in the Gaussian quadrature rule (the midpoint). We can guide the `quad` routine by specifying a list of points that should be avoided using the `points` keyword argument, and using `points=[0]` in the current example allows quad to correctly evaluate the integral:
 
 ```{python}
 val, err = integrate.quad(f, a, b, points=[0])
@@ -459,7 +455,7 @@ determines the type of integral transform. The inverse of the integral transform
 
   where $K^{-1} (u,t)$ is the kernel of the inverse transform
 
-* `Sympy` provides functions for several types of integral transform, but here we focus on the Laplace transform
+* `Sympy` provides functions for several types of integral transform, but here we focus on the Laplace transform (see also @sec-sympy-Laplace-transform)
 
   $$ L_f(s) = \int_0^{\infty} e^{-st} f(t) \,dt $$
 
@@ -467,13 +463,15 @@ determines the type of integral transform. The inverse of the integral transform
 
   $$ f(t) = \frac{1}{2\pi i} \int_{\gamma -i\infty}^{\gamma +i \infty} e^{st} L_f(s)\,ds$$
 
-  and the Fourier transform
+  and the Fourier transform. $~$`sympy` uses the convention
 
-  $$ F_f(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-i\omega t} f(t)\,dt$$
+  $$ F_f(k) = \int_{-\infty}^{\infty} e^{-2\pi i k x} f(x)\,dx$$
 
   with the inverse transform
 
-  $$ f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{i\omega t} F_f(\omega)\,d\omega$$
+  $$ f(x) = \int_{-\infty}^{\infty} e^{2\pi i k x} F_f(k)\,dk$$
+
+  where $k$ is the ordinary frequency (the angular frequency is $\omega = 2\pi k$)
 
 * With `sympy`, we can perform these transforms with the 
 
@@ -521,13 +519,13 @@ sympy.laplace_transform((1 -a*t) *sympy.exp(-a*t), t, s, noconds=True)
 ---
 
 ```{python}
-x, w = sympy.symbols("x, omega")
+x, k = sympy.symbols("x, k")
 f = sympy.exp(-x**2)
 
-F = sympy.fourier_transform(f, x, w)
+F = sympy.fourier_transform(f, x, k)
 F
 ```
 
 ```{python}
-sympy.inverse_fourier_transform(F, w, x)
+sympy.inverse_fourier_transform(F, k, x)
 ```

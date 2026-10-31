@@ -423,7 +423,7 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <section id="importing-modules" class="level2" data-number="21.1">
 <h2 data-number="21.1" class="anchored" data-anchor-id="importing-modules"><span class="header-section-number">21.1</span> Importing modules</h2>
-<div id="10c3949d" class="cell" data-execution_count="1">
+<div id="6433a8be" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
@@ -433,7 +433,7 @@ window.Quarto = {
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="3a16287f" class="cell" data-execution_count="2">
+<div id="fd841644" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> __version__</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"numpy: "</span>, np.__version__)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sympy: "</span>, sympy.__version__)</span>
@@ -453,17 +453,17 @@ scipy:  1.16.0</code></pre>
 <p>with given integration limits <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. The interval <span class="math inline">\([a,b]\)</span> can be finite, semi-infinite (where either <span class="math inline">\(a=-\infty\)</span> or <span class="math inline">\(b=\infty\)</span>), or infinite (where <span class="math inline">\(a=-\infty\)</span> and <span class="math inline">\(b=\infty\)</span>)</p>
 <p><span class="math display">\[ I(f) \approx \sum_{i=0}^{n-1} \omega_i f(x_i) +r_n\]</span></p></li>
 <li><p>Quadrature rules can be derived from interpolations of <span class="math inline">\(f(x)\)</span> on the interval <span class="math inline">\([a,b]\)</span>. If the points <span class="math inline">\(x_i\)</span> are evenly spaced in the interval <span class="math inline">\([a,b]\)</span>, and a polynomial interpolation is used, then the resulting quadrature rule is known as a <em>Newton-Cotes quadrature rule</em></p></li>
-<li><p>For instance, approximating <span class="math inline">\(f(x)\)</span> with a zeroth order polynomial (constant value) using the midpoint value <span class="math inline">\(x_0 = (a +b) /2\)</span>, <span class="math inline">\(\,\)</span>we obtain</p>
-<p><span class="math display">\[ I(f) \approx f \left( \frac{b -a}{2} \right)  \int_a^b dx = (b -a) f \left( \frac{b -a}{2} \right) \]</span></p>
-<p>This is known as the <em>midpoint rule</em>, and it integrates polynomials up to order one (linear functions) exactly, and it is therefore said to be of polynomial degree one</p></li>
+<li><p>For instance, approximating <span class="math inline">\(f(x)\)</span> with a polynomial of degree zero (constant value) using the midpoint value <span class="math inline">\(x_0 = (a +b) /2\)</span>, <span class="math inline">\(\,\)</span>we obtain</p>
+<p><span class="math display">\[ I(f) \approx f \left( \frac{a +b}{2} \right)  \int_a^b dx = (b -a) f \left( \frac{a +b}{2} \right) \]</span></p>
+<p>This is known as the <em>midpoint rule</em>, and it integrates polynomials up to degree one (linear functions) exactly, and it is therefore said to be of polynomial degree one</p></li>
 <li><p>Approximating <span class="math inline">\(f(x)\)</span> by a polynomial of degree one, evaluated at the endpoints of the interval, results in</p>
 <p><span class="math display">\[ I(f) \approx \frac{b -a}{2} \left[ f(a) +f(b) \right] \]</span></p>
 <p>This is known as the <em>trapezoidal rule</em>, and it is also of polynomial degree one</p></li>
-<li><p>Using an interpolation polynomial of second order results in <em>Simpson’s rule</em>,</p>
+<li><p>Using an interpolation polynomial of degree two results in <em>Simpson’s rule</em>,</p>
 <p><span class="math display">\[ I(f) \approx \frac{b -a}{6} \left[ f(a) +4 f \left( \frac{a +b}{2} \right) +f(b) \right] \]</span></p>
-<p>which uses function evaluations at the endpoints and the midpoint. This method is of polynomial degree three, meaning that it integrates exactly polynomials up to order three</p></li>
+<p>which uses function evaluations at the endpoints and the midpoint. This method is of polynomial degree three, meaning that it integrates exactly polynomials up to degree three</p></li>
 </ul>
-<div id="1dcbef06" class="cell" data-execution_count="3">
+<div id="fd2b4088" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a, b, X <span class="op">=</span> sympy.symbols(<span class="st">"a, b, x"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sympy.Function(<span class="st">"f"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -479,14 +479,14 @@ scipy:  1.16.0</code></pre>
 <ul>
 <li>To compute the appropriate values of the weight factors <span class="math inline">\(w_i\)</span>, we choose the polynomial basis functions <span class="math inline">\(\{ \phi_n(x) = x^n \}_{n=0}^2\)</span> for the interpolation of <span class="math inline">\(f(x)\)</span></li>
 </ul>
-<div id="5e57ba84" class="cell" data-execution_count="4">
+<div id="26016edc" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>phi <span class="op">=</span> [sympy.Lambda(X, X<span class="op">**</span>n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x))]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>phi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
 <p><span class="math inline">\(\displaystyle \left[ \left( x \mapsto 1 \right), \  \left( x \mapsto x \right), \  \left( x \mapsto x^{2} \right)\right]\)</span></p>
 </div>
 </div>
-<div id="ede41730" class="cell" data-execution_count="5">
+<div id="0b200a90" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>eqs <span class="op">=</span> [q_rule.subs(f, phi[n]) </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span>sympy.integrate(phi[n](X), (X, a, b)) </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(phi))]</span>
@@ -495,14 +495,14 @@ scipy:  1.16.0</code></pre>
 <p><span class="math inline">\(\displaystyle \left[ a - b + w_{0} + w_{1} + w_{2}, \  \frac{a^{2}}{2} + a w_{0} - \frac{b^{2}}{2} + b w_{2} + w_{1} \left(\frac{a}{2} + \frac{b}{2}\right), \  \frac{a^{3}}{3} + a^{2} w_{0} - \frac{b^{3}}{3} + b^{2} w_{2} + w_{1} \left(\frac{a}{2} + \frac{b}{2}\right)^{2}\right]\)</span></p>
 </div>
 </div>
-<div id="0f45004f" class="cell" data-execution_count="6">
+<div id="6ee55f11" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>w_sol <span class="op">=</span> sympy.solve(eqs, w)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>w_sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
 <p><span class="math inline">\(\displaystyle \left\{ w_{0} : - \frac{a}{6} + \frac{b}{6}, \  w_{1} : - \frac{2 a}{3} + \frac{2 b}{3}, \  w_{2} : - \frac{a}{6} + \frac{b}{6}\right\}\)</span></p>
 </div>
 </div>
-<div id="85419537" class="cell" data-execution_count="7">
+<div id="23f0c447" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>q_rule.subs(w_sol).simplify()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle \frac{\left(a - b\right) \left(- f{\left(a \right)} - f{\left(b \right)} - 4 f{\left(\frac{a}{2} + \frac{b}{2} \right)}\right)}{6}\)</span></p>
@@ -512,8 +512,8 @@ scipy:  1.16.0</code></pre>
 <li><p>We recognize this result as Simpson’s quadrature rule given above. Choosing different sample points (the <span class="math inline">\(x\)</span> tuple in this code), results in different quadrature rules</p></li>
 <li><p>Higher-order quadrature rules can similarly be derived using higher-order polynomial interpolation (more sample points in the <span class="math inline">\([a,b]\)</span>). However, high-order polynomial interpolation can have undesirable behavior between the sample points</p></li>
 <li><p>Rather than using higher-order quadrature rules, it is therefore often better to divide the integration interval <span class="math inline">\([a,b]\)</span> into subintervals <span class="math inline">\([a=x_0, x_1], [x_1, x_2], \cdots, [x_{n-1},x_n = b]\)</span> and use a low-order quadrature rule in each of these sub-intervals. Such methods are known as <em>composite quadrature rules</em></p></li>
-<li><p>An important parameter that characterize composite quadrature rules is the sub-interval length <span class="math inline">\(h=(b-a)/N\)</span>. Estimates for the errors in an approximate quadrature rule, and the scaling of the error with respect to <span class="math inline">\(h\)</span>, can be obtained from Taylor series expansions of the integrand and the analytical integration of the term in the resulting series</p></li>
-<li><p>We have seen that the Newton-Cotes quadrature rules uses evenly spaced sample points of the integrand <span class="math inline">\(f(x)\)</span>. However, this is not necessarily the most efficient choice of quadrature nodes, and then it can be advantageous to use quadrature rules that do not use evenly spaced sample points</p></li>
+<li><p>An important parameter that characterizes composite quadrature rules is the sub-interval length <span class="math inline">\(h=(b-a)/N\)</span>. Estimates for the errors in an approximate quadrature rule, and the scaling of the error with respect to <span class="math inline">\(h\)</span>, can be obtained from Taylor series expansions of the integrand and the analytical integration of the term in the resulting series</p></li>
+<li><p>We have seen that the Newton-Cotes quadrature rules use evenly spaced sample points of the integrand <span class="math inline">\(f(x)\)</span>. However, this is not necessarily the most efficient choice of quadrature nodes, and then it can be advantageous to use quadrature rules that do not use evenly spaced sample points</p></li>
 <li><p>An example of such a method is a <em>Gaussian quadrature</em>, which also uses polynomial interpolation to determine the values of the weight factors in the quadrature rule, but where the quadrature nodes <span class="math inline">\(x_i\)</span> are chosen to maximize the order of polynomials that can be integrated exactly (the polynomial degree) given a fixed number of quadrature points</p></li>
 </ul>
 </section>
@@ -521,17 +521,18 @@ scipy:  1.16.0</code></pre>
 <h2 data-number="21.3" class="anchored" data-anchor-id="numerical-integration-with-scipy"><span class="header-section-number">21.3</span> Numerical integration with Scipy</h2>
 <ul>
 <li><p>The numerical quadrature routines in the <code>scipy</code> <code>integrate</code> module can be categorized into two types: routines that take the integrand as a python function, and routines that take arrays with samples of the integrand at given points</p></li>
-<li><p>The functions of the first type use Gaussian quadrature (<code>quad</code>, <code>quadrature</code>, <code>fixed_quad</code>), while functions of the second type use Newton-Cotes methods (<code>trapz</code>, <code>simps</code>, and <code>romb</code>)</p></li>
+<li><p>The functions of the first type use Gaussian-type quadrature: <span class="math inline">\(~\)</span><code>quad</code> (adaptive Gauss–Kronrod rules from the QUADPACK library), <span class="math inline">\(~\)</span><code>fixed_quad</code> (fixed-order Gauss–Legendre), <span class="math inline">\(~\)</span>and <code>quad_vec</code> (for vector-valued integrands). <span class="math inline">\(~\)</span>The functions of the second type use Newton-Cotes methods: <span class="math inline">\(~\)</span><code>trapezoid</code>, <code>simpson</code>, and <code>romb</code></p></li>
+<li><p>The older names <code>trapz</code> and <code>simps</code>, <span class="math inline">\(~\)</span>and the functions <code>quadrature</code> and <code>romberg</code>, <span class="math inline">\(~\)</span>have been removed from recent versions of <code>scipy</code> (1.14–1.15); <span class="math inline">\(~\)</span>use <code>trapezoid</code>, <code>simpson</code>, and <code>quad</code> instead</p></li>
 <li><p>As a concrete example, consider the numerical evaluation of the integral</p>
 <p><span class="math display">\[ \int_{-1}^1 \, e^{-x^2}\, dx\]</span></p></li>
 </ul>
-<div id="d4c3dfa7" class="cell" data-execution_count="8">
+<div id="1d06fcd5" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>val, err <span class="op">=</span> integrate.quad(f, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="003d8b43" class="cell" data-execution_count="9">
+<div id="308edcd9" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>val, err</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="9">
 <p><span class="math inline">\(\displaystyle \left( 1.49364826562485, \  1.65828269518814 \cdot 10^{-14}\right)\)</span></p>
@@ -544,13 +545,13 @@ scipy:  1.16.0</code></pre>
 <p><span class="math display">\[ \int_{-1}^1 \, a e^{-(x -b)^2/c^2} \,dx \]</span></p>
 <p>for the specific values of the parameters <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>, and <span class="math inline">\(c=3\)</span></p></li>
 </ul>
-<div id="616ce370" class="cell" data-execution_count="10">
+<div id="504b6e95" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, a, b, c):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">*</span>np.exp(<span class="op">-</span>((x <span class="op">-</span>b)<span class="op">/</span>c)<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>val, err <span class="op">=</span> integrate.quad(f, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, args<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a1ef5e2c" class="cell" data-execution_count="11">
+<div id="4ddfed95" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>val, err</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
 <p><span class="math inline">\(\displaystyle \left( 1.27630683510222, \  1.41698523481695 \cdot 10^{-14}\right)\)</span></p>
@@ -564,14 +565,14 @@ scipy:  1.16.0</code></pre>
 <p><span class="math display">\[\int_{0}^5 J_0(x) \,dx\]</span></p>
 <p>where the integrand <span class="math inline">\(J_0(x)\)</span> is the zero-th order Bessel function of the first kind,</p></li>
 </ul>
-<div id="9c705556" class="cell" data-execution_count="12">
+<div id="948403de" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> jv</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: jv(<span class="dv">0</span>, x)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>val, err <span class="op">=</span> integrate.quad(f, <span class="dv">0</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="44b03ef7" class="cell" data-execution_count="13">
+<div id="409abc27" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>val, err</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="13">
 <p><span class="math inline">\(\displaystyle \left( 0.715311917784768, \  2.47260738289741 \cdot 10^{-14}\right)\)</span></p>
@@ -583,12 +584,12 @@ scipy:  1.16.0</code></pre>
 <ul>
 <li>Consider the integral <span class="math display">\[ \int_{-\infty}^\infty e^{-x^2} \,dx \]</span></li>
 </ul>
-<div id="3c47c4ed" class="cell" data-execution_count="14">
+<div id="d29043b7" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>val, err <span class="op">=</span> integrate.quad(f, <span class="op">-</span>np.inf, np.inf, epsabs<span class="op">=</span><span class="fl">1.49e-14</span>, epsrel<span class="op">=</span><span class="fl">1.49e-14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="51b63c9f" class="cell" data-execution_count="15">
+<div id="f4516c94" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>val, err</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="15">
 <p><span class="math inline">\(\displaystyle \left( 1.77245385090552, \  2.04282393124645 \cdot 10^{-14}\right)\)</span></p>
@@ -599,52 +600,46 @@ scipy:  1.16.0</code></pre>
 <h3 data-number="21.3.4" class="anchored" data-anchor-id="singularity"><span class="header-section-number">21.3.4</span> Singularity</h3>
 <ul>
 <li><p>Consider the integral <span class="math display">\[ \int_{-1}^1 \frac{1}{\sqrt{|x|}} \,dx \]</span></p></li>
-<li><p>The integrand diverges at <span class="math inline">\(x=0\)</span>, but the value of the integral does not diverge, and its value is <span class="math inline">\(4\)</span>. Naively trying to compute this integral using <code>quad</code> may fail because of the diverging integrand:</p></li>
+<li><p>The integrand diverges at <span class="math inline">\(x=0\)</span>, but the value of the integral does not diverge, and its value is <span class="math inline">\(4\)</span>. Naively trying to compute this integral using <code>quad</code> fails because of the diverging integrand: <span class="math inline">\(~\)</span>the result is <code>inf</code> (and <code>numpy</code> warns about a division by zero)</p></li>
 </ul>
-<div id="5a505547" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"error"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="bu">abs</span>(x))</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  integrate.quad(f, a, b)</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>divide by zero encountered in scalar divide</code></pre>
+<div id="7278faed" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="bu">abs</span>(x))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>integrate.quad(f, a, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="16">
+<p><span class="math inline">\(\displaystyle \left( \infty, \  \infty\right)\)</span></p>
 </div>
 </div>
-<div id="817df504" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(a, b, <span class="dv">10000</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ax.plot(x, f(x), lw<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.fill_between(x, f(x), color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"$x$"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"$f(x)$"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">25</span>)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b7bdba74" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(a, b, <span class="dv">10000</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>ax.plot(x, f(x), lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>ax.fill_between(x, f(x), color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"$x$"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"$f(x)$"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">25</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_integration_files/figure-html/cell-18-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_integration_files/figure-html/cell-18-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="523" height="358"></p>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li>In this case, the evaluation of the integral fails because the integrand diverges exactly at one of the sample points in the Gaussian quadrature rule (the midpoint). We can guide the <code>quad</code> routine by specifying a list of points that should be avoided using the <code>points</code> keyword arguments, and using <code>points=[0]</code> in the current example allows quad to correctly evaluate the integral:</li>
+<li>In this case, the evaluation of the integral fails because the integrand diverges exactly at one of the sample points in the Gaussian quadrature rule (the midpoint). We can guide the <code>quad</code> routine by specifying a list of points that should be avoided using the <code>points</code> keyword argument, and using <code>points=[0]</code> in the current example allows quad to correctly evaluate the integral:</li>
 </ul>
-<div id="6685089c" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>val, err <span class="op">=</span> integrate.quad(f, a, b, points<span class="op">=</span>[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e4af298c" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>val, err <span class="op">=</span> integrate.quad(f, a, b, points<span class="op">=</span>[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="c8b67cc2" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>val, err</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3163218d" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>val, err</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="19">
 <p><span class="math inline">\(\displaystyle \left( 4.0, \  2.04281036531029 \cdot 10^{-14}\right)\)</span></p>
 </div>
@@ -655,82 +650,82 @@ scipy:  1.16.0</code></pre>
 <ul>
 <li>Let’s evaluate the integral <span class="math inline">\(\displaystyle\int_0^2 \sqrt{x}\, dx\)</span> by taking <span class="math inline">\(25\)</span> samples of the integrand in the integration interval <span class="math inline">\([0, 2]\)</span>,</li>
 </ul>
-<div id="81e569ae" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.sqrt(x)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">2</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(a, b, <span class="dv">25</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, <span class="st">'bo'</span>)</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>xx <span class="op">=</span> np.linspace(a, b, <span class="dv">500</span>)</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>ax.plot(xx, f(xx), <span class="st">'b-'</span>)</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>ax.fill_between(xx, f(xx), color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">2</span>)</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="fl">1.6</span>)</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r"</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r"</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="580c41da" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.sqrt(x)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">2</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(a, b, <span class="dv">25</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, <span class="st">'bo'</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>xx <span class="op">=</span> np.linspace(a, b, <span class="dv">500</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>ax.plot(xx, f(xx), <span class="st">'b-'</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>ax.fill_between(xx, f(xx), color<span class="op">=</span><span class="st">'green'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="fl">1.6</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r"</span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r"</span><span class="dv">$</span><span class="vs">f</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">'both'</span>, direction<span class="op">=</span><span class="st">'in'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="x_integration_files/figure-html/cell-21-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="x_integration_files/figure-html/cell-21-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="528" height="358"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="d7f5c7c2" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>val_trapz <span class="op">=</span> integrate.trapezoid(y, x)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>val_trapz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="52f46dee" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>val_trapz <span class="op">=</span> integrate.trapezoid(y, x)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>val_trapz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="21">
 <p><span class="math inline">\(\displaystyle 1.88082171605085\)</span></p>
 </div>
 </div>
-<div id="32f5f614" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>val_simps <span class="op">=</span> integrate.simpson(y, x)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>val_simps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b822e8df" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>val_simps <span class="op">=</span> integrate.simpson(y, x)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>val_simps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="22">
 <p><span class="math inline">\(\displaystyle 1.88366510244871\)</span></p>
 </div>
 </div>
-<div id="99a075b7" class="cell" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">=</span> <span class="fl">2.0</span><span class="op">/</span><span class="fl">3.0</span> <span class="op">*</span>(b<span class="op">-</span>a)<span class="op">**</span>(<span class="fl">3.0</span><span class="op">/</span><span class="fl">2.0</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>val_exact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b9be7dea" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">=</span> <span class="fl">2.0</span><span class="op">/</span><span class="fl">3.0</span> <span class="op">*</span>(b<span class="op">-</span>a)<span class="op">**</span>(<span class="fl">3.0</span><span class="op">/</span><span class="fl">2.0</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>val_exact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="23">
 <p><span class="math inline">\(\displaystyle 1.88561808316413\)</span></p>
 </div>
 </div>
-<div id="cc804ca8" class="cell" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>val_trapz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6ba72ac5" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>val_trapz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="24">
 <p><span class="math inline">\(\displaystyle 0.00479636711327625\)</span></p>
 </div>
 </div>
-<div id="c3a852e1" class="cell" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>val_simps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5530efbf" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>val_simps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="25">
 <p><span class="math inline">\(\displaystyle 0.00195298071541172\)</span></p>
 </div>
 </div>
 <hr>
-<div id="809ae2e7" class="cell" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(a, b, <span class="dv">1</span> <span class="op">+</span><span class="dv">2</span><span class="op">**</span><span class="dv">6</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> x[<span class="dv">1</span>] <span class="op">-</span>x[<span class="dv">0</span>]</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>integrate.romb(y, dx<span class="op">=</span>dx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="38479395" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(a, b, <span class="dv">1</span> <span class="op">+</span><span class="dv">2</span><span class="op">**</span><span class="dv">6</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> x[<span class="dv">1</span>] <span class="op">-</span>x[<span class="dv">0</span>]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>integrate.romb(y, dx<span class="op">=</span>dx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="26">
 <p><span class="math inline">\(\displaystyle 0.000378798422913107\)</span></p>
 </div>
 </div>
-<div id="3cda7709" class="cell" data-execution_count="27">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>integrate.simpson(y, dx<span class="op">=</span>dx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="77709977" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>val_exact <span class="op">-</span>integrate.simpson(y, dx<span class="op">=</span>dx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="27">
 <p><span class="math inline">\(\displaystyle 0.000448485554158218\)</span></p>
 </div>
@@ -745,16 +740,16 @@ scipy:  1.16.0</code></pre>
 <p>and it has the function signature <code>dblquad(f, a, b, g, h)</code>, <span class="math inline">\(~\)</span>where <code>f</code> is a python function for the integrand, <code>a</code> and <code>b</code> are constant integration limits along the <span class="math inline">\(y\)</span> dimension, and <code>g</code> and <code>h</code> are python functions (taking <span class="math inline">\(y\)</span> as argument) that specify the integration limits along the <span class="math inline">\(x\)</span> dimension</p></li>
 <li><p>Consider the integral <span class="math inline">\(\displaystyle\int_0^1 \int_0^1 e^{-(x^2+y^2)}\,dxdy\)</span>,</p></li>
 </ul>
-<div id="d86dff2a" class="cell" data-execution_count="28">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y):</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="kw">lambda</span> y: <span class="dv">0</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="kw">lambda</span> y: <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e2ac2ef2" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="kw">lambda</span> y: <span class="dv">0</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="kw">lambda</span> y: <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="04b31dd4" class="cell" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>integrate.dblquad(f, a, b, g, h)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b3032236" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>integrate.dblquad(f, a, b, g, h)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="29">
 <p><span class="math inline">\(\displaystyle \left( 0.557746285351034, \  8.29137438153541 \cdot 10^{-15}\right)\)</span></p>
 </div>
@@ -765,15 +760,15 @@ scipy:  1.16.0</code></pre>
 <li><p>Consider the generalization of the previous integral to three variables:</p>
 <p><span class="math display">\[\int_0^1 \int_0^1 \int_0^1 e^{-(x^2+y^2+z^2)}\,dxdydz\]</span></p></li>
 </ul>
-<div id="cff54dcb" class="cell" data-execution_count="30">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y, z):</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>z<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>g, h <span class="op">=</span> <span class="kw">lambda</span> z: <span class="dv">0</span>, <span class="kw">lambda</span> z: <span class="dv">1</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>q, r <span class="op">=</span> <span class="kw">lambda</span> y, z: <span class="dv">0</span>, <span class="kw">lambda</span> y, z: <span class="dv">1</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>integrate.tplquad(f, <span class="dv">0</span>, <span class="dv">1</span>, g, h, q, r)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5926d3a9" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y, z):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>z<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>g, h <span class="op">=</span> <span class="kw">lambda</span> z: <span class="dv">0</span>, <span class="kw">lambda</span> z: <span class="dv">1</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>q, r <span class="op">=</span> <span class="kw">lambda</span> y, z: <span class="dv">0</span>, <span class="kw">lambda</span> y, z: <span class="dv">1</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>integrate.tplquad(f, <span class="dv">0</span>, <span class="dv">1</span>, g, h, q, r)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="30">
 <p><span class="math inline">\(\displaystyle \left( 0.416538385886638, \  8.29133528731443 \cdot 10^{-15}\right)\)</span></p>
 </div>
@@ -781,52 +776,52 @@ scipy:  1.16.0</code></pre>
 <ul>
 <li>For arbitrary number of integrations, we can use the <code>nquad</code> function</li>
 </ul>
-<div id="7185ec7a" class="cell" data-execution_count="31">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fdfd5e78" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="31">
 <p><span class="math inline">\(\displaystyle \left( 0.416538385886638, \  8.29133528731443 \cdot 10^{-15}\right)\)</span></p>
 </div>
 </div>
 <hr>
-<div id="8b610ae7" class="cell" data-execution_count="32">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(<span class="op">*</span>args):</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>np.<span class="bu">sum</span>(np.array(args)<span class="op">**</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="df66f893" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(<span class="op">*</span>args):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> np.exp(<span class="op">-</span>np.<span class="bu">sum</span>(np.array(args)<span class="op">**</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e1c80de9" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="422ed376" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 115 μs, sys: 65 μs, total: 180 μs
-Wall time: 183 μs</code></pre>
+<pre><code>CPU times: user 108 μs, sys: 55 μs, total: 163 μs
+Wall time: 166 μs</code></pre>
 </div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="33">
 <p><span class="math inline">\(\displaystyle \left( 0.746824132812427, \  8.29141347594073 \cdot 10^{-15}\right)\)</span></p>
 </div>
 </div>
-<div id="92eaa9b0" class="cell" data-execution_count="34">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="44575721" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 1.18 ms, sys: 67 μs, total: 1.25 ms
-Wall time: 1.25 ms</code></pre>
+<pre><code>CPU times: user 1.17 ms, sys: 66 μs, total: 1.23 ms
+Wall time: 1.23 ms</code></pre>
 </div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="34">
 <p><span class="math inline">\(\displaystyle \left( 0.557746285351034, \  8.29137438153541 \cdot 10^{-15}\right)\)</span></p>
 </div>
 </div>
-<div id="9cb6ea23" class="cell" data-execution_count="35">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="624fab88" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 24.8 ms, sys: 416 μs, total: 25.2 ms
-Wall time: 25.3 ms</code></pre>
+<pre><code>CPU times: user 23.6 ms, sys: 298 μs, total: 23.9 ms
+Wall time: 23.9 ms</code></pre>
 </div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="35">
 <p><span class="math inline">\(\displaystyle \left( 0.416538385886638, \  8.29133528731443 \cdot 10^{-15}\right)\)</span></p>
 </div>
 </div>
-<div id="6d8784a3" class="cell" data-execution_count="36">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7420a0ef" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.nquad(f, [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 504 ms, sys: 2.55 ms, total: 507 ms
-Wall time: 507 ms</code></pre>
+<pre><code>CPU times: user 501 ms, sys: 3.59 ms, total: 504 ms
+Wall time: 504 ms</code></pre>
 </div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="36">
 <p><span class="math inline">\(\displaystyle \left( 0.311080918822877, \  8.29129619327777 \cdot 10^{-15}\right)\)</span></p>
@@ -838,13 +833,13 @@ Wall time: 507 ms</code></pre>
 <ul>
 <li>For example, to compute the integral <span class="math inline">\(\displaystyle\int_{-1}^{1} 2\sqrt{1-x^2}\,dx\)</span>, <span class="math inline">\(~\)</span>we first create a symbol for <span class="math inline">\(x\)</span>, and define expressions for the integrand and the integration</li>
 </ul>
-<div id="063dc048" class="cell" data-execution_count="37">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.symbols(<span class="st">"x"</span>)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span>sympy.sqrt(<span class="dv">1</span> <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>val_sym <span class="op">=</span> sympy.integrate(f, (x, a, b))</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>val_sym</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="24763f9c" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.symbols(<span class="st">"x"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span>sympy.sqrt(<span class="dv">1</span> <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>val_sym <span class="op">=</span> sympy.integrate(f, (x, a, b))</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>val_sym</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="37">
 <p><span class="math inline">\(\displaystyle \pi\)</span></p>
 </div>
@@ -854,42 +849,42 @@ Wall time: 507 ms</code></pre>
 <li><p>However, the <code>mpmath</code> library, which comes bundled with sympy, <span class="math inline">\(~\)</span>provides an alternative implementation of numerical quadrature, using multiple-precision computations. With this library, we can evaluate an integral to arbitrary precision, without being restricted to the limitations of floating-point numbers</p></li>
 <li><p>For example, if we require 75 accurate decimal places, we set:</p></li>
 </ul>
-<div id="62cfc02a" class="cell" data-execution_count="38">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mpmath</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="bde194f7" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mpmath</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="90be97b9" class="cell" data-execution_count="39">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>mpmath.mp.dps <span class="op">=</span> <span class="dv">75</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>f_mpmath <span class="op">=</span> sympy.lambdify(x, f, <span class="st">'mpmath'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="223a4dfb" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mpmath.mp.dps <span class="op">=</span> <span class="dv">75</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>f_mpmath <span class="op">=</span> sympy.lambdify(x, f, <span class="st">'mpmath'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8d1ac0ac" class="cell" data-execution_count="40">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>val <span class="op">=</span> mpmath.quad(f_mpmath, (a, b))</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>sympy.sympify(val)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="79e6f5c5" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>val <span class="op">=</span> mpmath.quad(f_mpmath, (a, b))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>sympy.sympify(val)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="40">
 <p><span class="math inline">\(\displaystyle 3.14159265358979323846264338327950288419716939937510582097494459230781640629\)</span></p>
 </div>
 </div>
-<div id="b5b11803" class="cell" data-execution_count="41">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>sympy.N(val_sym, mpmath.mp.dps <span class="op">+</span><span class="dv">1</span>) <span class="op">-</span>val</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="71c9d591" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>sympy.N(val_sym, mpmath.mp.dps <span class="op">+</span><span class="dv">1</span>) <span class="op">-</span>val</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="41">
 <p><span class="math inline">\(\displaystyle 6.90893484407555570030908149024031965689280029154902510801896277613487344253 \cdot 10^{-77}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="964e2a7d" class="cell" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time mpmath.quad(f_mpmath, [a, b])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9518068e" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time mpmath.quad(f_mpmath, [a, b])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 1.22 ms, sys: 237 μs, total: 1.46 ms
-Wall time: 1.46 ms</code></pre>
+<pre><code>CPU times: user 1.22 ms, sys: 127 μs, total: 1.34 ms
+Wall time: 1.35 ms</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>mpf('3.14159265358979323846264338327950288419716939937510582097494459230781640628613')</code></pre>
 </div>
 </div>
-<div id="27ddf087" class="cell" data-execution_count="43">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>f_numpy <span class="op">=</span> sympy.lambdify(x, f, <span class="st">'numpy'</span>)</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.quad(f_numpy, a, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2224f389" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>f_numpy <span class="op">=</span> sympy.lambdify(x, f, <span class="st">'numpy'</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time integrate.quad(f_numpy, a, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: user 253 μs, sys: 16 μs, total: 269 μs
+<pre><code>CPU times: user 248 μs, sys: 21 μs, total: 269 μs
 Wall time: 271 μs</code></pre>
 </div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="43">
@@ -906,24 +901,24 @@ Wall time: 271 μs</code></pre>
 <p><span class="math display">\[ \int_0^1 \int_0^1 \int_0^1 \cos(x) \cos(y) \cos(z)\, e^{-(x^2+y^2+z^2)}\, dx dy dz \]</span></p>
 <p>to 30 significant decimals (this example cannot be solved symbolically with <code>sympy</code>)</p></li>
 </ul>
-<div id="6c189f96" class="cell" data-execution_count="44">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> sympy.symbols(<span class="st">'x, y, z'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="228fe994" class="cell" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> sympy.symbols(<span class="st">'x, y, z'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="dac0164c" class="cell" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> sympy.cos(x) <span class="op">*</span>sympy.cos(y) <span class="op">*</span>sympy.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> sympy.cos(x) <span class="op">*</span>sympy.cos(y) <span class="op">*</span>sympy.cos(z) <span class="op">*</span>sympy.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>z<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>f2_mpmath <span class="op">=</span> sympy.lambdify((x, y), f2, <span class="st">'mpmath'</span>)</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>f3_mpmath <span class="op">=</span> sympy.lambdify((x, y, z), f3, <span class="st">'mpmath'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="65a6c210" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> sympy.cos(x) <span class="op">*</span>sympy.cos(y) <span class="op">*</span>sympy.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> sympy.cos(x) <span class="op">*</span>sympy.cos(y) <span class="op">*</span>sympy.cos(z) <span class="op">*</span>sympy.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>y<span class="op">**</span><span class="dv">2</span> <span class="op">-</span>z<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>f2_mpmath <span class="op">=</span> sympy.lambdify((x, y), f2, <span class="st">'mpmath'</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>f3_mpmath <span class="op">=</span> sympy.lambdify((x, y, z), f3, <span class="st">'mpmath'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e9f1feb6" class="cell" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>mpmath.mp.dps <span class="op">=</span> <span class="dv">30</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>res2 <span class="op">=</span> mpmath.quad(f2_mpmath, (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>res3 <span class="op">=</span> mpmath.quad(f3_mpmath, (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="05d550f8" class="cell" data-execution_count="46">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>mpmath.mp.dps <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>res2 <span class="op">=</span> mpmath.quad(f2_mpmath, (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>res3 <span class="op">=</span> mpmath.quad(f3_mpmath, (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d6958500" class="cell" data-execution_count="47">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>sympy.sympify(res2), sympy.sympify(res3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d730e66d" class="cell" data-execution_count="47">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>sympy.sympify(res2), sympy.sympify(res3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="47">
 <p><span class="math inline">\(\displaystyle \left( 0.430564794306099099242308990196, \  0.282525579518426896867622772405\right)\)</span></p>
 </div>
@@ -938,14 +933,15 @@ Wall time: 271 μs</code></pre>
 <p>where <span class="math inline">\(T_f(u)\)</span> is the transformed function. The choice of the kernel <span class="math inline">\(K(t, u)\)</span> and the integration limits determines the type of integral transform. The inverse of the integral transform is given by</p>
 <p><span class="math display">\[ f(t)=\int_{u_1}^{u_2} K^{-1}(u, t) \, T_f(u) \, du\]</span></p>
 <p>where <span class="math inline">\(K^{-1} (u,t)\)</span> is the kernel of the inverse transform</p></li>
-<li><p><code>Sympy</code> provides functions for several types of integral transform, but here we focus on the Laplace transform</p>
+<li><p><code>Sympy</code> provides functions for several types of integral transform, but here we focus on the Laplace transform (see also <a href="x_sympy_Laplace_transform.html" class="quarto-xref"><span>Chapter 17</span></a>)</p>
 <p><span class="math display">\[ L_f(s) = \int_0^{\infty} e^{-st} f(t) \,dt \]</span></p>
 <p>with the inverse transform</p>
 <p><span class="math display">\[ f(t) = \frac{1}{2\pi i} \int_{\gamma -i\infty}^{\gamma +i \infty} e^{st} L_f(s)\,ds\]</span></p>
-<p>and the Fourier transform</p>
-<p><span class="math display">\[ F_f(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-i\omega t} f(t)\,dt\]</span></p>
+<p>and the Fourier transform. <span class="math inline">\(~\)</span><code>sympy</code> uses the convention</p>
+<p><span class="math display">\[ F_f(k) = \int_{-\infty}^{\infty} e^{-2\pi i k x} f(x)\,dx\]</span></p>
 <p>with the inverse transform</p>
-<p><span class="math display">\[ f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{i\omega t} F_f(\omega)\,d\omega\]</span></p></li>
+<p><span class="math display">\[ f(x) = \int_{-\infty}^{\infty} e^{2\pi i k x} F_f(k)\,dk\]</span></p>
+<p>where <span class="math inline">\(k\)</span> is the ordinary frequency (the angular frequency is <span class="math inline">\(\omega = 2\pi k\)</span>)</p></li>
 <li><p>With <code>sympy</code>, we can perform these transforms with the</p>
 <blockquote class="blockquote">
 <p><code>sympy.laplace_transform</code> and <code>sympy.fourier_transform</code>, respectively,</p>
@@ -955,62 +951,62 @@ Wall time: 271 μs</code></pre>
 <p><code>sympy.inverse_laplace_transform</code> and <code>sympy.inverse_fourier_transform</code></p>
 </blockquote></li>
 </ul>
-<div id="f6424714" class="cell" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> sympy.symbols(<span class="st">'s'</span>)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>a, t <span class="op">=</span> sympy.symbols(<span class="st">'a, t'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sympy.sin(a<span class="op">*</span>t)</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>sympy.laplace_transform(f, t, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9c00b241" class="cell" data-execution_count="48">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> sympy.symbols(<span class="st">'s'</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>a, t <span class="op">=</span> sympy.symbols(<span class="st">'a, t'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sympy.sin(a<span class="op">*</span>t)</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>sympy.laplace_transform(f, t, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="48">
 <p><span class="math inline">\(\displaystyle \left( \frac{a}{a^{2} + s^{2}}, \  0, \  \text{True}\right)\)</span></p>
 </div>
 </div>
-<div id="77bbf983" class="cell" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> sympy.laplace_transform(f, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>F</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6155b835" class="cell" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> sympy.laplace_transform(f, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>F</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="49">
 <p><span class="math inline">\(\displaystyle \frac{a}{a^{2} + s^{2}}\)</span></p>
 </div>
 </div>
-<div id="5d47916a" class="cell" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>sympy.inverse_laplace_transform(F, s, t, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="df1798ef" class="cell" data-execution_count="50">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>sympy.inverse_laplace_transform(F, s, t, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="50">
 <p><span class="math inline">\(\displaystyle \sin{\left(a t \right)}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="30e2bdf1" class="cell" data-execution_count="51">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>[sympy.laplace_transform(f, t, s, noconds<span class="op">=</span><span class="va">True</span>) <span class="cf">for</span> f <span class="kw">in</span> [t, t<span class="op">**</span><span class="dv">2</span>, t<span class="op">**</span><span class="dv">3</span>, t<span class="op">**</span><span class="dv">4</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="813bb202" class="cell" data-execution_count="51">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>[sympy.laplace_transform(f, t, s, noconds<span class="op">=</span><span class="va">True</span>) <span class="cf">for</span> f <span class="kw">in</span> [t, t<span class="op">**</span><span class="dv">2</span>, t<span class="op">**</span><span class="dv">3</span>, t<span class="op">**</span><span class="dv">4</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="51">
 <p><span class="math inline">\(\displaystyle \left[ \frac{1}{s^{2}}, \  \frac{2}{s^{3}}, \  \frac{6}{s^{4}}, \  \frac{24}{s^{5}}\right]\)</span></p>
 </div>
 </div>
-<div id="26eb5d88" class="cell" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sympy.symbols(<span class="st">'a'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>sympy.laplace_transform(t<span class="op">**</span>a, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="afeca599" class="cell" data-execution_count="52">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> sympy.symbols(<span class="st">'a'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>sympy.laplace_transform(t<span class="op">**</span>a, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="52">
 <p><span class="math inline">\(\displaystyle s^{- a - 1} \Gamma\left(a + 1\right)\)</span></p>
 </div>
 </div>
-<div id="4d11e30a" class="cell" data-execution_count="53">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>sympy.laplace_transform((<span class="dv">1</span> <span class="op">-</span>a<span class="op">*</span>t) <span class="op">*</span>sympy.exp(<span class="op">-</span>a<span class="op">*</span>t), t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e697ceb8" class="cell" data-execution_count="53">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>sympy.laplace_transform((<span class="dv">1</span> <span class="op">-</span>a<span class="op">*</span>t) <span class="op">*</span>sympy.exp(<span class="op">-</span>a<span class="op">*</span>t), t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="53">
 <p><span class="math inline">\(\displaystyle - \frac{a}{\left(a + s\right)^{2}} + \frac{1}{a + s}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="c8c728df" class="cell" data-execution_count="54">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>x, w <span class="op">=</span> sympy.symbols(<span class="st">"x, omega"</span>)</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sympy.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> sympy.fourier_transform(f, x, w)</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>F</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b81f2c39" class="cell" data-execution_count="54">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>x, k <span class="op">=</span> sympy.symbols(<span class="st">"x, k"</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sympy.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> sympy.fourier_transform(f, x, k)</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>F</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="54">
-<p><span class="math inline">\(\displaystyle \sqrt{\pi} e^{- \pi^{2} \omega^{2}}\)</span></p>
+<p><span class="math inline">\(\displaystyle \sqrt{\pi} e^{- \pi^{2} k^{2}}\)</span></p>
 </div>
 </div>
-<div id="7b2b70c9" class="cell" data-execution_count="55">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>sympy.inverse_fourier_transform(F, w, x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2ed0c03c" class="cell" data-execution_count="55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>sympy.inverse_fourier_transform(F, k, x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="55">
 <p><span class="math inline">\(\displaystyle e^{- x^{2}}\)</span></p>
 </div>
