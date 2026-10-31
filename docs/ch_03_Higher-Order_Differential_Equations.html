@@ -393,7 +393,7 @@ window.Quarto = {
   <li><a href="#influence-function" id="toc-influence-function" class="nav-link" data-scroll-target="#influence-function"><span class="header-section-number">3.10.1</span> Influence Function</a></li>
   <li><a href="#greens-function" id="toc-greens-function" class="nav-link" data-scroll-target="#greens-function"><span class="header-section-number">3.10.2</span> Green’s Function</a></li>
   </ul></li>
-  <li><a href="#sec-3-11" id="toc-sec-3-11" class="nav-link" data-scroll-target="#sec-3-11"><span class="header-section-number">3.11</span> Solving Nonlinear Model</a></li>
+  <li><a href="#sec-3-11" id="toc-sec-3-11" class="nav-link" data-scroll-target="#sec-3-11"><span class="header-section-number">3.11</span> Solving Nonlinear Models</a></li>
   <li><a href="#sec-3-12" id="toc-sec-3-12" class="nav-link" data-scroll-target="#sec-3-12"><span class="header-section-number">3.12</span> Solving System of Linear Equations</a></li>
   <li><a href="#worked-exercises" id="toc-worked-exercises" class="nav-link" data-scroll-target="#worked-exercises">Worked Exercises</a></li>
   </ul>
@@ -424,7 +424,7 @@ window.Quarto = {
 <section id="sec-3-1" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-3-1"><span class="header-section-number">3.1</span> Theory of Linear Equations</h2>
 <ul>
-<li><p>In an <strong>initial-value problem (IVP)</strong>, <span class="math inline">\(\,\)</span> we seek a solution <span class="math inline">\(y(x)\)</span> of a <span class="math inline">\(n\)</span><sup>th</sup> order linear DE so that <span class="math inline">\(y(x)\)</span> satisfies <strong>initial conditions</strong> at <span class="math inline">\(x_0\)</span></p>
+<li><p>In an <strong>initial-value problem (IVP)</strong>, <span class="math inline">\(\,\)</span> we seek a solution <span class="math inline">\(y(x)\)</span> of an <span class="math inline">\(n\)</span><sup>th</sup> order linear DE so that <span class="math inline">\(y(x)\)</span> satisfies <strong>initial conditions</strong> at <span class="math inline">\(x_0\)</span></p>
 <ul>
 <li><p><span class="math inline">\(n\)</span><sup>th</sup> order linear DE: <span class="math inline">\(\;a_n(x) \neq 0\)</span></p>
 <p><font color="red"> <span class="math display">\[\underbrace{a_n(x) \frac{d^ny}{dx^n} +a_{n-1}(x) \frac{d^{n-1}y}{dx^{n-1}} +\cdots + a_1(x) \frac{dy}{dx} +a_0(x) y}_{L(y): ~\mathrm{Linear\;Operator}}= g(x)
@@ -442,7 +442,7 @@ window.Quarto = {
 <li><p>The sum, or <font color="red"> <strong>superposition</strong> </font>, of two or more solutions of a homogeneous linear DE is also a solution</p></li>
 <li><p>Any set of <span class="math inline">\(n\)</span> linearly <em>independent</em> solutions <span class="math inline">\(y_1, y_2, \cdots, y_n\)</span> of the <span class="math inline">\(n\)</span><sup>th</sup> order homogeneous linear DE on interval <span class="math inline">\(~I\)</span> is <strong>a fundamental set of solutions</strong></p></li>
 <li><p>If two functions are linearly dependent, then one is a constant multiple of the other (otherwise, they are linearly independent)</p></li>
-<li><p>If <span class="math inline">\(\{y_1, y_2, \cdots, y_n\}\)</span> are a set of linearly independent functions, the <strong>Wronskian</strong> function is not singular:</p>
+<li><p><span class="math inline">\(n\)</span> solutions <span class="math inline">\(y_1, y_2, \cdots, y_n\)</span> of an <span class="math inline">\(n\)</span><sup>th</sup> order homogeneous linear DE on an interval <span class="math inline">\(I\)</span> are linearly independent <strong>if and only if</strong> their <strong>Wronskian</strong> is nonzero for every <span class="math inline">\(x\)</span> in <span class="math inline">\(I\)</span>:</p>
 <p><span class="math display">\[ W(y_1, y_2, \cdots, y_n)= \begin{vmatrix}
      y_1 &amp; y_2 &amp; \cdots &amp; y_n \\
      y_1' &amp; y_2' &amp; \cdots &amp; y_n'\\
@@ -459,15 +459,19 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Given that <span class="math inline">\(\,x(t)=c_1\cos\omega t +c_2 \sin\omega t~\)</span> is the general solution of <span class="math inline">\(x''+\omega^2x=0~\)</span> on the interval <span class="math inline">\((-\infty,\infty)\)</span>, <span class="math inline">\(\,\)</span> show that a solution satisfying the initial conditions <span class="math inline">\(x(0)=x_0\)</span>, <span class="math inline">\(x'(0)=x_1\)</span>, is given by</p>
 <p><span class="math display">\[x(t)=x_0\cos\omega t+\frac{x_1}{\omega} \sin\omega t\]</span></p>
+<p><a href="files/solutions/sol_3_1.pdf" target="_blank">Solution</a></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Determine whether the given set of functions is linearly dependent or linearly independent on the interval <span class="math inline">\((-\infty,\infty)\)</span></p>
 <p><span class="math display">\[f_1(x)=x, ~f_2(x)=x^2, ~f_3(x)=4x-3x^2\]</span></p>
 <p><span class="math display">\[f_1(x)=5, ~f_2(x)=\cos^2 x, ~f_3(x)=\sin^2 x\]</span></p>
+<p><a href="files/solutions/sol_3_1.pdf" target="_blank">Solution</a></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Verify that the given functions form a fundamental set of solutions of the differential equation on the indicated interval. Form the general solution of the equation</p>
 <p><span class="math display">\[y''-y'-12y=0; \;\; e^{-3x}, \; e^{4x}, \;\;(-\infty,\infty)\]</span></p>
 <p><span class="math display">\[y''-2y'+5y=0; \;\;e^x \cos 2x, \;\; e^x\sin 2x, \;\;(-\infty,\infty)\]</span></p>
+<p><a href="files/solutions/sol_3_1.pdf" target="_blank">Solution</a></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Verify that the given two-parameter family of functions is the general solution of the nonhomogeneous differential equation on the indicated interval</p>
 <p><span class="math display">\[y''-7y'+10y=24e^x; \;\;y=c_1 e^{2x} +c_2 e^{5x} +6e^x; \;\;(-\infty,\infty)\]</span></p>
 <p><span class="math display">\[y''-4y'+4y=2e^{2x} +4x-12; \;\;y=c_1 e^{2x} +c_2 xe^{2x} +x^2e^{2x} +x -2; \;\;(-\infty,\infty)\]</span></p>
+<p><a href="files/solutions/sol_3_1.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-3-2" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-3-2"><span class="header-section-number">3.2</span> Reduction of Order</h2>
@@ -491,8 +495,10 @@ window.Quarto = {
 <li><p><span class="math inline">\(y''+16y=0; \;\; y_1=\cos 4x\)</span></p></li>
 <li><p><span class="math inline">\(y''-y=0; \;\; y_1=\cosh x\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_2.pdf" target="_blank">Solution</a></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The indicated function <span class="math inline">\(y_1(x)\)</span> is a solution of the associated homogeneous equation. Use the reduction of order to find a second solution <span class="math inline">\(y_2(x)\)</span> of homogeneous equation and a particular solution <span class="math inline">\(y_p(x)\)</span> of the given nonhomogeneous equation</p>
 <p><span class="math display">\[y''-4y=2; \;\;y_1=e^{-2x}\]</span></p>
+<p><a href="files/solutions/sol_3_2.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-3-3" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="sec-3-3"><span class="header-section-number">3.3</span> Homogeneous Linear Equations with Constant Coefficients</h2>
@@ -507,9 +513,11 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y'' +\omega^2y=0\,\)</span> and <span class="math inline">\(\,y'' -\omega^2y=0\)</span></p>
+<p><a href="files/solutions/sol_3_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~3y'''+5y''+10y'-4y=0\)</span></p>
-<div id="cfaca1bf" class="cell" data-output-location="fragment" data-execution_count="1">
+<p><a href="files/solutions/sol_3_3.pdf" target="_blank">Solution</a></p>
+<div id="ad66a896" class="cell" data-output-location="fragment" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, init_printing</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.solvers <span class="im">import</span> solve</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>init_printing()</span>
@@ -527,15 +535,18 @@ window.Quarto = {
 <li><p><span class="math inline">\(y''-y'-6y=0\)</span></p></li>
 <li><p><span class="math inline">\(y'' +8y' +16y=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the general solution of the given higher-order differential equation</p>
 <ul>
 <li><p><span class="math inline">\(y''' -4y'' -5y'=0\)</span></p></li>
 <li><p><span class="math inline">\(y''' -5y'' +3y' +9y=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the initial-value problem</p>
 <p><span class="math inline">\(y''' +12y'' +36y'=0, \;\;y(0)=0, \;y'(0)=1, \; y''(0)=-7\)</span></p>
+<p><a href="files/solutions/sol_3_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-3-4" class="level2" data-number="3.4">
@@ -546,27 +557,96 @@ window.Quarto = {
 <li><p>Limited to nonhomogeneous linear DEs where</p>
 <ul>
 <li><font color="blue">Coefficients <span class="math inline">\(a_i\)</span></font>, <span class="math inline">\(i=1,\cdots,n\)</span>, are <font color="blue">constants</font></li>
-<li><span class="math inline">\(g(x)\)</span> is <font color="blue">a constant</font>, <font color="blue">a polynominal function</font>, <font color="blue"><span class="math inline">\(e^{\alpha x}\)</span></font>, <font color="blue"><span class="math inline">\(\sin\beta x\)</span> or <span class="math inline">\(\cos\beta x\)</span></font>, or <font color="blue">finite sums and products of these functions</font></li>
+<li><span class="math inline">\(g(x)\)</span> is <font color="blue">a constant</font>, <font color="blue">a polynomial function</font>, <font color="blue"><span class="math inline">\(e^{\alpha x}\)</span></font>, <font color="blue"><span class="math inline">\(\sin\beta x\)</span> or <span class="math inline">\(\cos\beta x\)</span></font>, or <font color="blue">finite sums and products of these functions</font></li>
 </ul></li>
 <li><p>There are models of <span class="math inline">\(y_p\)</span> for various functions</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/ch03_figure01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div></li>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: left;"><span class="math inline">\(g(x)\)</span></th>
+<th style="text-align: left;">Form of <span class="math inline">\(y_p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><span class="math inline">\(1\)</span> (any constant)</td>
+<td style="text-align: left;"><span class="math inline">\(A\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><span class="math inline">\(5x+7\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Ax+B\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><span class="math inline">\(3x^2-2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Ax^2+Bx+C\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><span class="math inline">\(x^3-x+1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Ax^3+Bx^2+Cx+E\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><span class="math inline">\(\sin 4x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(A\cos 4x+B\sin 4x\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><span class="math inline">\(\cos 4x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(A\cos 4x+B\sin 4x\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><span class="math inline">\(e^{5x}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Ae^{5x}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><span class="math inline">\((9x-2)e^{5x}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((Ax+B)e^{5x}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><span class="math inline">\(x^2e^{5x}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((Ax^2+Bx+C)e^{5x}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><span class="math inline">\(e^{3x}\sin 4x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Ae^{3x}\cos 4x+Be^{3x}\sin 4x\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><span class="math inline">\(5x^2\sin 4x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((Ax^2+Bx+C)\cos 4x+(Ex^2+Fx+G)\sin 4x\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;"><span class="math inline">\(xe^{3x}\cos 4x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((Ax+B)e^{3x}\cos 4x+(Cx+E)e^{3x}\sin 4x\)</span></td>
+</tr>
+</tbody>
+</table></li>
 <li><p>Finally, the general solution is obtained from the <strong>superposition</strong> of <span class="math inline">\(y_h\)</span> and <span class="math inline">\(y_p\)</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y'' +4y = x\cos x\)</span></p>
+<p><a href="files/solutions/sol_3_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p>If <span class="math inline">\(g(x)\)</span> consists of a sum of, say, <span class="math inline">\(m\)</span> terms of the kind listed in the table, <span class="math inline">\(~\)</span>then the assumption for <font color="blue">a particular solution <span class="math inline">\(y_p\)</span> consists of the sum of the trial forms</font></p></li>
-<li><p><font color="blue">If <span class="math inline">\(\,y_p\)</span> contains terms that duplicate terms in <span class="math inline">\(y_h\)</span>, <span class="math inline">\(\,\)</span>then that <span class="math inline">\(y_p\)</span> must be multiplied by <span class="math inline">\(x^n\)</span></font>, <span class="math inline">\(~\)</span>where <span class="math inline">\(n\)</span> is the smallest positive integer that eliminate that duplication</p></li>
+<li><p><font color="blue">If <span class="math inline">\(\,y_p\)</span> contains terms that duplicate terms in <span class="math inline">\(y_h\)</span>, <span class="math inline">\(\,\)</span>then that <span class="math inline">\(y_p\)</span> must be multiplied by <span class="math inline">\(x^n\)</span></font>, <span class="math inline">\(~\)</span>where <span class="math inline">\(n\)</span> is the smallest positive integer that eliminates that duplication</p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y'' -6y' +9y = 6x^2 +2 -12e^{3x}\)</span></p>
+<p><a href="files/solutions/sol_3_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y^{(4)}+y'''= 1 -x^2e^{-x}\)</span></p>
+<p><a href="files/solutions/sol_3_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given differential equation by undetermined coefficients</p>
 <ul>
@@ -574,6 +654,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(y'' +2y' -24y=16 - (x+2)e^{4x}\)</span></p></li>
 <li><p><span class="math inline">\(y''' -6y''=3-\cos x\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given initial-value problem</p>
 <ul>
@@ -581,6 +662,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(5y'' +y'=-6x, \;\;y(0)=0, \; y'(0)=-10\)</span></p></li>
 <li><p><span class="math inline">\(\displaystyle \frac{d^2 x}{dt^2} +\omega^2x=F_0 \sin\omega t, \;\; x(0)=0, \;x'(0)=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-3-5" class="level2" data-number="3.5">
@@ -638,6 +720,7 @@ window.Quarto = {
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~\displaystyle y'' -y = \frac{1}{x}\)</span></p>
+<p><a href="files/solutions/sol_3_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p>The method can be generalized to the standard form of <span class="math inline">\(n\)</span><sup>th</sup> order linear DE. <span class="math inline">\(\,\)</span> A particular solution is</p>
 <p><font color="blue"><span class="math display">\[y_p = u_1(x) y_1 +u_2(x) y_2 +\cdots +u_n(x) y_n\]</span></font></p>
@@ -651,6 +734,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(y'' +y=\cos^2 x\)</span></p></li>
 <li><p><span class="math inline">\(3y''-6y'+6y=e^x \sec x\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve each differential equation by variation of parameters subject to the initial conditions <span class="math inline">\(y(0)=1, \;y'(0)=0\)</span></p>
 <ul>
@@ -658,12 +742,14 @@ window.Quarto = {
 <li><p><span class="math inline">\(y''-2y'+y=e^x \sec^2 x\)</span></p></li>
 <li><p><span class="math inline">\(y'' +2y' -8y=2e^{-2x} -e^{-x}\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve each differential equation by variation of parameters subject to the initial conditions <span class="math inline">\(y(0)=1, \;y'(0)=0\)</span></p>
+<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve each differential equation by variation of parameters</p>
 <ul>
 <li><p><span class="math inline">\(\displaystyle y''-4y=\frac{e^{2x}}{x}\)</span></p></li>
 <li><p><span class="math inline">\(2y'' +2y' +y=4\sqrt{x}\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-3-6" class="level2" data-number="3.6">
@@ -683,6 +769,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~x^2y'' -3xy' +3y = 2x^4 e^x\)</span></p>
+<p><a href="files/solutions/sol_3_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given differential equation</p>
 <ul>
@@ -690,12 +777,14 @@ window.Quarto = {
 <li><p><span class="math inline">\(xy''+y'=0\)</span></p></li>
 <li><p><span class="math inline">\(x^2y''+xy'+4y=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given differential equation by variation of parameters</p>
 <ul>
 <li><p><span class="math inline">\(xy''-4y'=x^4\)</span></p></li>
 <li><p><span class="math inline">\(x^2y''+xy'-y=\ln x\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_3_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-3-7" class="level2" data-number="3.7">
@@ -706,6 +795,7 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Verify that <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> are solutions of the given DE but that <span class="math inline">\(c_1 y_1 +c_2 y_2\)</span> is, in general, not a solution</p>
 <p><span class="math display">\[\left(y''\right)^2 = y^2,\; y_1=e^x,\; y_2=\cos x\]</span></p>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p>The major difference between linear and nonlinear DEs of order two or higher lies in the realm of solvability. <font color="blue">Nonlinear higher-order DEs virtually defy solution</font>. This means that there are no analytical methods whereby either an explicit or implicit solution can be found</p></li>
@@ -714,6 +804,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y''=2x(y')^2\)</span> and <span class="math inline">\(yy''=(y')^2\)</span></p>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li>In some instances, a solution of a nonlinear IVP can be approximated by a Taylor series centered at <span class="math inline">\(x_0\)</span></li>
@@ -721,21 +812,26 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y''=x +y -y^2\)</span>, <span class="math inline">\(\,y(0)=-1\)</span>, <span class="math inline">\(\,y'(0)=1\)</span> by using</p>
 <p><span class="math display">\[y(x) = y(0) +\frac{y'(0)}{1!}x +\frac{y''(0)}{2!}x^2 +\frac{y'''(0)}{3!} x^3 + \cdots\]</span></p>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The dependent variable <span class="math inline">\(y\)</span> is missing in the given differential equation. Solve the equation by using the substitution <span class="math inline">\(u=y'\)</span></p>
 <p><span class="math display">\[y''+(y')^2+1=0\]</span></p>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The independent variable <span class="math inline">\(x\)</span> is missing in the given differential equation. Solve the equation by using the substitution <span class="math inline">\(u=y'\)</span></p>
 <p><span class="math display">\[yy''+(y')^2+1=0\]</span></p>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Consider the initial-value problem</p>
 <p><span class="math display">\[y''+yy'=0,\;\;y(0)=1,\;y'(0)=-1\]</span></p>
 <div class="line-block">1. Use the DE and a numerical solver to graph the solution curve<br>
 2. Find an explicit solution of the IVP. <span class="math inline">\(~\)</span>Use a graphing utility to graph this solution<br>
 3. Find an interval of definition for the solution in part 2</div>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Show that the substitution <span class="math inline">\(u=y'\)</span> leads to a Bernoulli equation. Solve this equation</p>
 <p><span class="math display">\[xy''=y'+(y')^3\]</span></p>
+<p><a href="files/solutions/sol_3_7.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-3-8" class="level2" data-number="3.8">
@@ -757,15 +853,17 @@ window.Quarto = {
 \end{aligned}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch03_figure02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+<p><img src="figures/ch03_figure02.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Show that the solution of the initial-value problem</p>
 <p><span class="math display">\[\frac{d^2x}{dt^2}+\omega^2x=F_0\cos\gamma t, \;x(0)=0, \;x'(0)=0\]</span></p>
 <p>is <span class="math inline">\(~\displaystyle x(t)=\frac{F_0}{\omega^2-\gamma^2}(\cos\gamma t -\cos\omega t)\)</span></p>
+<p><a href="files/solutions/sol_3_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\,\displaystyle \lim_{\gamma \to \omega} \frac{F_0}{\omega^2-\gamma^2} (\cos\gamma t - \cos\omega t)\)</span></p>
+<p><a href="files/solutions/sol_3_8.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-3-9" class="level2" data-number="3.9">
@@ -774,11 +872,12 @@ window.Quarto = {
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Temperature in a Ring</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch03_figure03.png" class="quarto-figure quarto-figure-center figure-img" style="height:20.0%"></p>
+<p><img src="figures/ch03_figure03.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
 </figure>
 </div>
 <p>The temperature <span class="math inline">\(u(r)\)</span> in circular ring is determined from the boundary-value problem</p>
 <p><span class="math display">\[r\frac{d^2 u}{dr^2} +\frac{du}{dr}=0,\; u(a)=u_0,\; u(b)=u_1\]</span></p>
+<p><a href="files/solutions/sol_3_9.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-GF" class="level2" data-number="3.10">
 <h2 data-number="3.10" class="anchored" data-anchor-id="sec-GF"><span class="header-section-number">3.10</span> Green’s Functions</h2>
@@ -894,7 +993,7 @@ v'(0) &amp;=-1 \\
 <section id="greens-function" class="level3" data-number="3.10.2">
 <h3 data-number="3.10.2" class="anchored" data-anchor-id="greens-function"><span class="header-section-number">3.10.2</span> Green’s Function</h3>
 <ul>
-<li><p>Here, we research a <font color="blue">two-point boundary value problem:</font></p>
+<li><p>Here, we consider a <font color="blue">two-point boundary value problem:</font></p>
 <p><span class="math display">\[
 \begin{aligned}
   \frac{d}{dx} \left[ p(x)\frac{du}{dx} \right] +q(x)u
@@ -1042,7 +1141,7 @@ a_2(\xi)\left[1+\sigma_2(1 -x)\right]&amp; \text{ for } x &gt; \xi
 a_1(\xi)&amp;= A\left[1 +\sigma_2(1 -\xi)\right] \\
 a_2(\xi)&amp;=A\xi \\
 &amp;\Downarrow {\scriptstyle \left. G' \right|_{x=\xi+0} \,-\,\left. G' \right|_{x=\xi-0}\,=\,-1}\\
-A\xi\cdot-\sigma_2 -A\left[1 +\sigma_2(1 -\xi)\right] &amp;=-1 \rightarrow A = \frac{1}{1+\sigma_2} \\
+-A\sigma_2\xi -A\left[1 +\sigma_2(1 -\xi)\right] &amp;=-1 \rightarrow A = \frac{1}{1+\sigma_2} \\
 &amp;\Downarrow \\
 G(x,\xi) &amp;=
 \begin{cases}
@@ -1099,12 +1198,12 @@ r^2 &amp;u'' +2r u' -n(n +1) u = -r^2 F(r), \;\; 0 &lt; r &lt; R \\
 \end{cases}\\
 \end{aligned}\]</span></p>
 <p>The solution is</p>
-<p><span class="math display">\[ u(x)= \int_0^R G(r,\rho)\,F(\rho) \rho^2 d\rho\]</span></p>
+<p><span class="math display">\[ u(r)= \int_0^R G(r,\rho)\,F(\rho) \rho^2 d\rho\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 </section>
 <section id="sec-3-11" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="sec-3-11"><span class="header-section-number">3.11</span> Solving Nonlinear Model</h2>
+<h2 data-number="3.11" class="anchored" data-anchor-id="sec-3-11"><span class="header-section-number">3.11</span> Solving Nonlinear Models</h2>
 <ul>
 <li><p>In order to analyze an <span class="math inline">\(n\)</span><sup>th</sup> order IVP numerically, <span class="math inline">\(~\)</span>we express the <span class="math inline">\(n\)</span><sup>th</sup> order ODE as a system of <span class="math inline">\(n\)</span> first-order equations</p></li>
 <li><p>For example, <span class="math display">\[
@@ -1128,7 +1227,7 @@ r^2 &amp;u'' +2r u' -n(n +1) u = -r^2 F(r), \;\; 0 &lt; r &lt; R \\
   \dot{x} &amp;= u\\
   \dot{u} &amp;= -x -x^3 -u
 \end{aligned}\]</span></p>
-<div id="60ec5ef8" class="cell" data-execution_count="2">
+<div id="352955be" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1175,7 +1274,7 @@ Figure&nbsp;3.1: <span class="math inline">\(\displaystyle\frac{d^2x}{dt^2} +\fr
 <p>When physical systems are coupled, the mathematical model of the system usually consists of a set of coupled DEs</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch03_figure04.png" title="Coupled Spring/Mass Systems" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+<p><img src="figures/ch03_figure04.svg" title="Coupled Spring/Mass Systems" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1187,7 +1286,7 @@ Figure&nbsp;3.1: <span class="math inline">\(\displaystyle\frac{d^2x}{dt^2} +\fr
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the above equation under the assumption that <span class="math inline">\(k_1=6\)</span>, <span class="math inline">\(k_2=4\)</span>, <span class="math inline">\(m_1=1\)</span>, and <span class="math inline">\(m_2=1\)</span> subject to</p>
 <p><span class="math display">\[x_1(0)=0,\; x'_1(0)=1,\; x_2(0)=0,\; x'_2(0)=-1\]</span></p>
-<div id="f2e420d9" class="cell" data-execution_count="4">
+<div id="0e03d583" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>k1, k2, m1, m2 <span class="op">=</span> <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(t, y):</span>
@@ -1248,15 +1347,15 @@ Figure&nbsp;3.2: Coupled Spring/Mass System
 <p>Guess:</p>
 <p><span class="math display">\[y_{p1}(x) = A \cos x + B \sin x\]</span></p>
 <p>Plug into the left-hand side of the homogeneous operator and simplify</p>
-<p><span class="math display">\[3y’’ -6y’ + 30y = (27A + 6B)\cos x + (27B - 6A)\sin x\]</span></p>
+<p><span class="math display">\[3y’’ -6y’ + 30y = (27A - 6B)\cos x + (6A + 27B)\sin x\]</span></p>
 <p>We want this equal to the right-hand side: <span class="math inline">\(15\sin x\)</span></p>
-<p>So:</p>
+<p>So <span class="math inline">\(~27A-6B=0\)</span>, <span class="math inline">\(~6A+27B=15\)</span>, <span class="math inline">\(~\)</span>which give</p>
 <p><span class="math display">\[\begin{aligned}
-  A &amp;= -\frac{2}{17} \\
+  A &amp;= \frac{2}{17} \\
   B &amp;= \frac{9}{17}
 \end{aligned}\]</span></p>
 <p><span class="math inline">\((b)\)</span> <span class="math inline">\(~e^x \tan 3x\)</span>:</p>
-<p>We use the method of variation of parameters or note that the particular solution involving <span class="math inline">\(e^x \tan 3x\)</span> will not be expressible in elementary functions directly</p>
+<p><span class="math inline">\(\tan 3x\)</span> is not one of the input functions of the method of undetermined coefficients, <span class="math inline">\(~\)</span>so we use the method of variation of parameters</p>
 <p>We now solve:</p>
 <p><span class="math display">\[y’’ - 2y’ + 10y = \frac{1}{3} e^x \tan 3x\]</span></p>
 <p>The fundamental solutions to the homogeneous part are:</p>
@@ -1285,9 +1384,13 @@ u_2’ &amp;= \frac{e^x \cos 3x \cdot \frac{1}{3} e^x \tan 3x}{3e^{2x}} = \frac{
 \end{aligned}\]</span></p>
 <p>Now integrate:</p>
 <p><span class="math display">\[\begin{aligned}
-u_1(x) &amp;= -\frac{1}{9} \int \sin 3x \tan 3x\, dx =-\frac{1}{27} e^x \cos 3x \ln|\sec 3x + \tan 3x| \\
-u_2(x) &amp;= \frac{1}{9} \int \sin 3x dx = -\frac{1}{27} \cos 3x
+u_1(x) &amp;= -\frac{1}{9} \int \frac{1-\cos^2 3x}{\cos 3x}\, dx =\frac{1}{27} \left( \sin 3x - \ln|\sec 3x + \tan 3x| \right) \\
+u_2(x) &amp;= \frac{1}{9} \int \sin 3x \,dx = -\frac{1}{27} \cos 3x
 \end{aligned}\]</span></p>
+<p>so that</p>
+<p><span class="math display">\[y_{p2} = u_1 y_1 + u_2 y_2 = -\frac{1}{27} e^x \cos 3x \ln|\sec 3x + \tan 3x|\]</span></p>
+<p><strong>Step 3:</strong> <span class="math inline">\(~\)</span>General solution</p>
+<p><span class="math display">\[\color{red}{y = e^{x} \left(c_1 \cos 3x + c_2 \sin 3x\right) +\frac{2}{17}\cos x +\frac{9}{17}\sin x -\frac{1}{27} e^x \cos 3x \ln|\sec 3x + \tan 3x|}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>2.</strong> <span class="math inline">\(\phantom{1}\)</span> Solve the given differential equation</p>
 <p><span class="math display">\[y'' -2y' +y = 4x^2 -3 +x^{-1} e^x\]</span></p>
@@ -1347,6 +1450,9 @@ u_2’ &amp;= \frac{e^x \cdot \frac{e^x}{x}}{e^{2x}} = \frac{1}{x} \quad \Righta
 <p>So:</p>
 <p><span class="math display">\[y_{p2}(x) = u_1 y_1 + u_2 y_2 = (-x)e^x + \ln|x| \cdot (x e^x)
 = x e^x (\ln|x| - 1)\]</span></p>
+<p><strong>Step 3:</strong> <span class="math inline">\(~\)</span>General solution</p>
+<p>The term <span class="math inline">\(-xe^x\)</span> is a solution of the homogeneous equation and can be absorbed into <span class="math inline">\(c_2 xe^x\)</span>:</p>
+<p><span class="math display">\[\color{red}{y = (c_1 + c_2 x)e^x + 4x^2 + 16x + 21 + x e^x \ln|x|}\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>3.</strong> <span class="math inline">\(\phantom{1}\)</span> Find a member of the family of solutions of</p>
 <p><span class="math display">\[xy''+y'+\sqrt{x}=0\]</span></p>
@@ -1437,7 +1543,7 @@ u_2(x) = \int \sin x \, dx = -\cos x\]</span></p>
 <p><span class="math display">\[y_p = u_1(x) \cos x + u_2(x) \sin x\]</span></p>
 <p>So we get:</p>
 <p><span class="math display">\[ y_p(x) = -\cos x \ln |\sec x + \tan x| \]</span></p>
-<p><strong>Step 4:</strong> <span class="math inline">\(~\)</span>General Solution</p>
+<p><strong>Step 3:</strong> <span class="math inline">\(~\)</span>General Solution</p>
 <p>Combine homogeneous and particular solutions:</p>
 <p><span class="math display">\[
 y(x) = c_1 \cos x + c_2 \sin x - \cos x \ln |\sec x + \tan x|, \quad -\frac{\pi}{2} &lt; x &lt; \frac{\pi}{2}\]</span></p>
@@ -1478,15 +1584,16 @@ y(x) = c_1 \cos x + c_2 \sin x - \cos x \ln |\sec x + \tan x|, \quad -\frac{\pi}
 <p><strong>Step 3.1:</strong> <span class="math inline">\(~\)</span> Evaluate <span class="math inline">\(y(-1)\)</span></p>
 <p><span class="math display">\[ y(-1) = \sqrt{1}(A + B \ln 1) = A \Rightarrow A = 2 \]</span></p>
 <p><strong>Step 3.2:</strong> <span class="math inline">\(~\)</span> Compute <span class="math inline">\(y'(x)\)</span></p>
-<p><span class="math display">\[y'(x) = -\frac{1}{2\sqrt{-x}} (A + B \ln(-x)) + \sqrt{-x} \cdot \left( -\frac{B}{x} \right)
-= -\frac{A + B \ln(-x)}{2\sqrt{-x}} - \frac{B \sqrt{-x}}{x}\]</span></p>
+<p>Since <span class="math inline">\(\frac{d}{dx}\ln(-x)=\frac{1}{x}\)</span>,</p>
+<p><span class="math display">\[y'(x) = -\frac{1}{2\sqrt{-x}} (A + B \ln(-x)) + \sqrt{-x} \cdot \frac{B}{x}
+= -\frac{A + B \ln(-x)}{2\sqrt{-x}} + \frac{B \sqrt{-x}}{x}\]</span></p>
 <p>Now evaluate at <span class="math inline">\(x = -1\)</span>:</p>
-<p><span class="math display">\[y'(-1) = -\frac{A + B \cdot 0}{2} - B \cdot \frac{1}{-1}
-= -\frac{A}{2} + B\]</span></p>
+<p><span class="math display">\[y'(-1) = -\frac{A + B \cdot 0}{2} + B \cdot \frac{1}{-1}
+= -\frac{A}{2} - B\]</span></p>
 <p>We already found <span class="math inline">\(A = 2\)</span>, so:</p>
-<p><span class="math display">\[4 = -1 + B \Rightarrow B = 5\]</span></p>
+<p><span class="math display">\[4 = -1 - B \Rightarrow B = -5\]</span></p>
 <p><strong>Final Answer:</strong></p>
-<p><span class="math display">\[y(x) = \sqrt{-x} \left( 2 + 5 \ln(-x) \right), \quad x &lt; 0
+<p><span class="math display">\[y(x) = \sqrt{-x} \left( 2 - 5 \ln(-x) \right), \quad x &lt; 0
 \]</span></p>
 <p>This is the unique solution on the interval <span class="math inline">\((-\infty, 0)\)</span> satisfying the initial conditions</p>
 <p><span class="math inline">\(~\)</span></p>
@@ -1551,10 +1658,7 @@ y(x) = c_1 \cos x + c_2 \sin x + \cos x \ln |\cos x| + x \sin x
 <p>Given the presence of <span class="math inline">\(x \ln x\)</span>, this suggests the repeated root <span class="math inline">\(r = 1\)</span>. So the solution corresponds to the roots of the indicial (auxiliary) equation:</p>
 <p><span class="math display">\[(r - 0)(r - 1)^2 = 0
 \Rightarrow r^3 - 2r^2 + r = 0\]</span></p>
-<p>Therefore, the corresponding differential equation is:</p>
-<p><span class="math display">\[
-x^3 y''' - 2x^2 y'' + x y' = 0
-\]</span></p>
+<p>Note that <span class="math inline">\(r^3-2r^2+r\)</span> is the auxiliary (indicial) polynomial, <span class="math inline">\(~\)</span><strong>not</strong> the list of coefficients of the differential equation: <span class="math inline">\(~\)</span>for <span class="math inline">\(x^r\)</span> we have <span class="math inline">\(x^3(x^r)'''=r(r-1)(r-2)x^r\)</span>, <span class="math inline">\(~x^2(x^r)''=r(r-1)x^r\)</span>, <span class="math inline">\(~x(x^r)'=rx^r\)</span>. <span class="math inline">\(~\)</span>The coefficients are found in Step 3</p>
 <p><strong>Step 3:</strong> <span class="math inline">\(~\)</span> Use the General Indicial Form</p>
 <p>For a third-order Cauchy-Euler equation, the general form of the indicial equation is:</p>
 <p><span class="math display">\[r(r - 1)(r - 2) + a_2 r(r - 1) + a_1 r + a_0 = 0\]</span></p>
@@ -1570,7 +1674,7 @@ r^0 &amp;: a_0 = 0
 x^3 y’’’ + x^2 y’’ = 0
 \]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong>7.</strong> <span class="math inline">\(~\)</span> Solve <span class="math inline">\(~2y'' + 2y' +y = 4\sqrt{x}\)</span></p>
+<p><strong>8.</strong> <span class="math inline">\(~\)</span> Solve <span class="math inline">\(~2y'' + 2y' +y = 4\sqrt{x}\)</span></p>
 <p><strong>Solution</strong></p>
 <p><strong>Step 1:</strong> <span class="math inline">\(~\)</span> Homogeneous part</p>
 <p><span class="math display">\[
@@ -1611,6 +1715,7 @@ u_2 &amp;= \int \frac{W_2}{W}\, dx = 4\int \sqrt{x} \,e^{\frac{1}{2}x} \cos \fra
 &amp;\Downarrow \\
 \color{red}{y} &amp; \color{red}{= c_1 y_1 + c_2 y_2 + u_1 y_1 + u_2 y_2}
 \end{aligned}\]</span></p>
+<p>The integrals for <span class="math inline">\(u_1\)</span> and <span class="math inline">\(u_2\)</span> are not elementary, <span class="math inline">\(~\)</span>so <span class="math inline">\(y_p\)</span> is left in integral form (for example, <span class="math inline">\(~\)</span>with lower limit <span class="math inline">\(0\)</span> and the upper limit <span class="math inline">\(x\)</span>)</p>
 <p><span class="math inline">\(~\)</span></p>
 
 

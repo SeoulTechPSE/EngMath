@@ -6,7 +6,7 @@ jupyter: python3
 
 ## Theory of Linear Equations {#sec-3-1}
 
-* In an **initial-value problem (IVP)**, $\,$ we seek a solution $y(x)$ of a $n$^th^ order linear DE 
+* In an **initial-value problem (IVP)**, $\,$ we seek a solution $y(x)$ of an $n$^th^ order linear DE 
 so that $y(x)$ satisfies **initial conditions** at $x_0$
  
    * $n$^th^ order linear DE: $\;a_n(x) \neq 0$
@@ -37,8 +37,7 @@ in which the dependent variable $y$ or its derivatives are specified at **differ
 
 * If two functions are linearly dependent, then one is a constant multiple of the other (otherwise, they are linearly independent)
 
-* If $\{y_1, y_2, \cdots, y_n\}$ are a set of linearly independent functions, 
-  the **Wronskian** function is not singular:
+* $n$ solutions $y_1, y_2, \cdots, y_n$ of an $n$^th^ order homogeneous linear DE on an interval $I$ are linearly independent **if and only if** their **Wronskian** is nonzero for every $x$ in $I$:
 
   $$ W(y_1, y_2, \cdots, y_n)= \begin{vmatrix}
        y_1 & y_2 & \cdots & y_n \\ 
@@ -65,11 +64,15 @@ $~$
 
   $$x(t)=x_0\cos\omega t+\frac{x_1}{\omega} \sin\omega t$$
 
+[Solution](files/solutions/sol_3_1.pdf){target="_blank"}
+
 **Example** $\,$ Determine whether the given set of functions is linearly dependent or linearly independent on the interval $(-\infty,\infty)$
 
   $$f_1(x)=x, ~f_2(x)=x^2, ~f_3(x)=4x-3x^2$$
   
   $$f_1(x)=5, ~f_2(x)=\cos^2 x, ~f_3(x)=\sin^2 x$$
+
+[Solution](files/solutions/sol_3_1.pdf){target="_blank"}
 
 **Example** $\,$ Verify that the given functions form a fundamental set of solutions of the differential equation on the indicated interval. Form the general solution of the equation
 
@@ -77,11 +80,15 @@ $~$
   
   $$y''-2y'+5y=0; \;\;e^x \cos 2x, \;\; e^x\sin 2x, \;\;(-\infty,\infty)$$
 
+[Solution](files/solutions/sol_3_1.pdf){target="_blank"}
+
 **Example** $\,$ Verify that the given two-parameter family of functions is the general solution of the nonhomogeneous differential equation on the indicated interval
 
   $$y''-7y'+10y=24e^x; \;\;y=c_1 e^{2x} +c_2 e^{5x} +6e^x; \;\;(-\infty,\infty)$$
 
   $$y''-4y'+4y=2e^{2x} +4x-12; \;\;y=c_1 e^{2x} +c_2 xe^{2x} +x^2e^{2x} +x -2; \;\;(-\infty,\infty)$$
+
+[Solution](files/solutions/sol_3_1.pdf){target="_blank"}
 
 
 ## Reduction of Order {#sec-3-2}
@@ -111,9 +118,13 @@ $~$
   
 * $y''-y=0; \;\; y_1=\cosh x$
 
+[Solution](files/solutions/sol_3_2.pdf){target="_blank"}
+
 **Example** $\,$ The indicated function $y_1(x)$ is a solution of the associated homogeneous equation. Use the reduction of order to find a second solution $y_2(x)$ of homogeneous equation and a particular solution $y_p(x)$ of the given nonhomogeneous equation
 
 $$y''-4y=2; \;\;y_1=e^{-2x}$$
+
+[Solution](files/solutions/sol_3_2.pdf){target="_blank"}
 
 
 ## Homogeneous Linear Equations with Constant Coefficients {#sec-3-3}
@@ -136,9 +147,13 @@ $~$
 
 **Example** $\,$ Solve $~y'' +\omega^2y=0\,$ and $\,y'' -\omega^2y=0$
 
+[Solution](files/solutions/sol_3_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve $~3y'''+5y''+10y'-4y=0$
+
+[Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
 ```{python}
 # | echo: true
@@ -161,6 +176,8 @@ $~$
   
 * $y'' +8y' +16y=0$
 
+[Solution](files/solutions/sol_3_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find the general solution of the given higher-order differential equation
@@ -169,11 +186,15 @@ $~$
   
 * $y''' -5y'' +3y' +9y=0$
 
+[Solution](files/solutions/sol_3_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve the initial-value problem
 
 $y''' +12y'' +36y'=0, \;\;y(0)=0, \;y'(0)=1, \; y''(0)=-7$
+
+[Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
 $~$
 
@@ -185,11 +206,26 @@ $~$
 
 * Limited to nonhomogeneous linear DEs where
   * <font color="blue">Coefficients $a_i$</font>, $i=1,\cdots,n$, are <font color="blue">constants</font>
-  * $g(x)$ is <font color="blue">a constant</font>, <font color="blue">a polynominal function</font>, <font color="blue">$e^{\alpha x}$</font>, <font color="blue">$\sin\beta x$ or $\cos\beta x$</font>, or <font color="blue">finite sums and products of these functions</font>
+  * $g(x)$ is <font color="blue">a constant</font>, <font color="blue">a polynomial function</font>, <font color="blue">$e^{\alpha x}$</font>, <font color="blue">$\sin\beta x$ or $\cos\beta x$</font>, or <font color="blue">finite sums and products of these functions</font>
 
 * There are models of $y_p$ for various functions
     
-  ![](figures/ch03_figure01.png){width="90%" fig-align="center"}
+
+  |     | $g(x)$ | Form of $y_p$ |
+  |:---:|:-------|:--------------|
+  | 1  | $1$ (any constant) | $A$ |
+  | 2  | $5x+7$ | $Ax+B$ |
+  | 3  | $3x^2-2$ | $Ax^2+Bx+C$ |
+  | 4  | $x^3-x+1$ | $Ax^3+Bx^2+Cx+E$ |
+  | 5  | $\sin 4x$ | $A\cos 4x+B\sin 4x$ |
+  | 6  | $\cos 4x$ | $A\cos 4x+B\sin 4x$ |
+  | 7  | $e^{5x}$ | $Ae^{5x}$ |
+  | 8  | $(9x-2)e^{5x}$ | $(Ax+B)e^{5x}$ |
+  | 9  | $x^2e^{5x}$ | $(Ax^2+Bx+C)e^{5x}$ |
+  | 10 | $e^{3x}\sin 4x$ | $Ae^{3x}\cos 4x+Be^{3x}\sin 4x$ |
+  | 11 | $5x^2\sin 4x$ | $(Ax^2+Bx+C)\cos 4x+(Ex^2+Fx+G)\sin 4x$ |
+  | 12 | $xe^{3x}\cos 4x$ | $(Ax+B)e^{3x}\cos 4x+(Cx+E)e^{3x}\sin 4x$ |
+
         
 * Finally, the general solution is obtained from the **superposition** of $y_h$ and $y_p$
 
@@ -197,20 +233,26 @@ $~$
 
 **Example** $\,$ Solve $~y'' +4y = x\cos x$
 
+[Solution](files/solutions/sol_3_4.pdf){target="_blank"}
+
 $~$
 
 * If $g(x)$ consists of a sum of, say, $m$ terms of the kind listed in the table, $~$then the assumption for <font color="blue">a particular solution $y_p$ consists of the sum of the trial forms</font>
   
 * <font color="blue">If $\,y_p$ contains terms that duplicate terms in $y_h$, $\,$then that $y_p$ must be multiplied by $x^n$</font>,
-  $~$where $n$ is the smallest positive integer that eliminate that duplication
+  $~$where $n$ is the smallest positive integer that eliminates that duplication
 
 $~$
 
 **Example** $\,$ Solve $~y'' -6y' +9y = 6x^2 +2 -12e^{3x}$
 
+[Solution](files/solutions/sol_3_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve $~y^{(4)}+y'''= 1 -x^2e^{-x}$
+
+[Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
 $~$
 
@@ -222,6 +264,8 @@ $~$
 
 * $y''' -6y''=3-\cos x$
 
+[Solution](files/solutions/sol_3_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve the given initial-value problem
@@ -231,6 +275,8 @@ $~$
 * $5y'' +y'=-6x, \;\;y(0)=0, \; y'(0)=-10$
   
 * $\displaystyle \frac{d^2 x}{dt^2} +\omega^2x=F_0 \sin\omega t, \;\; x(0)=0, \;x'(0)=0$
+
+[Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
 $~$
 
@@ -300,6 +346,8 @@ $~$
 
 **Example** $\,$ Solve $~\displaystyle y'' -y = \frac{1}{x}$
 
+[Solution](files/solutions/sol_3_5.pdf){target="_blank"}
+
 $~$
 
 The method can be generalized to the standard form of $n$^th^ order linear DE. $\,$ A particular solution is
@@ -322,6 +370,8 @@ $~$
 
 * $3y''-6y'+6y=e^x \sec x$
 
+[Solution](files/solutions/sol_3_5.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve each differential equation by variation of parameters subject to the initial conditions $y(0)=1, \;y'(0)=0$
@@ -332,13 +382,17 @@ $~$
 
 * $y'' +2y' -8y=2e^{-2x} -e^{-x}$
 
+[Solution](files/solutions/sol_3_5.pdf){target="_blank"}
+
 $~$
 
-**Example** $\,$ Solve each differential equation by variation of parameters subject to the initial conditions $y(0)=1, \;y'(0)=0$
+**Example** $\,$ Solve each differential equation by variation of parameters
 
 * $\displaystyle y''-4y=\frac{e^{2x}}{x}$
   
 * $2y'' +2y' +y=4\sqrt{x}$
+
+[Solution](files/solutions/sol_3_5.pdf){target="_blank"}
 
 $~$
 
@@ -370,6 +424,8 @@ $~$
 
 **Example** $\,$ Solve $~x^2y'' -3xy' +3y = 2x^4 e^x$
 
+[Solution](files/solutions/sol_3_6.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve the given differential equation
@@ -380,6 +436,8 @@ $~$
 
 * $x^2y''+xy'+4y=0$
 
+[Solution](files/solutions/sol_3_6.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve the given differential equation by variation of parameters
@@ -387,6 +445,8 @@ $~$
 * $xy''-4y'=x^4$
 
 * $x^2y''+xy'-y=\ln x$
+
+[Solution](files/solutions/sol_3_6.pdf){target="_blank"}
 
 $~$
 
@@ -399,6 +459,8 @@ $~$
 **Example** $\,$ Verify that $y_1$ and $y_2$ are solutions of the given DE but that $c_1 y_1 +c_2 y_2$ is, in general, not a solution
   
    $$\left(y''\right)^2 = y^2,\; y_1=e^x,\; y_2=\cos x$$
+
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
 $~$
 
@@ -413,6 +475,8 @@ $~$
 
 **Example** $\,$ Solve $~y''=2x(y')^2$ and $yy''=(y')^2$
 
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
+
 $~$
 
 * In some instances, a solution of a nonlinear IVP can be approximated by a Taylor series centered at $x_0$
@@ -423,17 +487,23 @@ $~$
   
    $$y(x) = y(0) +\frac{y'(0)}{1!}x +\frac{y''(0)}{2!}x^2 +\frac{y'''(0)}{3!} x^3 + \cdots$$
 
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ The dependent variable $y$ is missing in the given differential equation. Solve the equation by using the substitution $u=y'$
 
 $$y''+(y')^2+1=0$$
+
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
    
 $~$
 
 **Example** $\,$ The independent variable $x$ is missing in the given differential equation. Solve the equation by using the substitution $u=y'$
 
 $$yy''+(y')^2+1=0$$
+
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
 $~$
 
@@ -445,11 +515,15 @@ $~$
 | 2. Find an explicit solution of the IVP. $~$Use a graphing utility to graph this solution
 | 3. Find an interval of definition for the solution in part 2
 
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Show that the substitution $u=y'$ leads to a Bernoulli equation. Solve this equation
 
 $$xy''=y'+(y')^3$$
+
+[Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
 $~$
 
@@ -469,7 +543,7 @@ $$
   \dot{x}(0) &= x_1
 \end{aligned}$$
 
-![](figures/ch03_figure02.png){width="40%" fig-align="center"}
+![](figures/ch03_figure02.svg){width="60%" fig-align="center"}
 
 $~$
 
@@ -479,9 +553,13 @@ $$\frac{d^2x}{dt^2}+\omega^2x=F_0\cos\gamma t, \;x(0)=0, \;x'(0)=0$$
   
 is $~\displaystyle x(t)=\frac{F_0}{\omega^2-\gamma^2}(\cos\gamma t -\cos\omega t)$
 
+[Solution](files/solutions/sol_3_8.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate $\,\displaystyle \lim_{\gamma \to \omega} \frac{F_0}{\omega^2-\gamma^2} (\cos\gamma t - \cos\omega t)$  
+
+[Solution](files/solutions/sol_3_8.pdf){target="_blank"}
 
 $~$
 
@@ -491,11 +569,13 @@ $~$
 
 **Example** $\,$ Temperature in a Ring
 
-![](figures/ch03_figure03.png){height="20%" fig-align="center"}
+![](figures/ch03_figure03.svg){width="45%" fig-align="center"}
 
 The temperature $u(r)$ in circular ring is determined from the boundary-value problem
 
 $$r\frac{d^2 u}{dr^2} +\frac{du}{dr}=0,\; u(a)=u_0,\; u(b)=u_1$$
+
+[Solution](files/solutions/sol_3_9.pdf){target="_blank"}
 
 ## Green's Functions {#sec-GF}
 
@@ -654,7 +734,7 @@ $$
 
 ### Green's Function
 
-* Here, we research a <font color="blue">two-point boundary value problem:</font>
+* Here, we consider a <font color="blue">two-point boundary value problem:</font>
 
   $$
   \begin{aligned}
@@ -845,7 +925,7 @@ $$
  a_1(\xi)&= A\left[1 +\sigma_2(1 -\xi)\right] \\
  a_2(\xi)&=A\xi \\
  &\Downarrow {\scriptstyle \left. G' \right|_{x=\xi+0} \,-\,\left. G' \right|_{x=\xi-0}\,=\,-1}\\
- A\xi\cdot-\sigma_2 -A\left[1 +\sigma_2(1 -\xi)\right] &=-1 \rightarrow A = \frac{1}{1+\sigma_2} \\
+ -A\sigma_2\xi -A\left[1 +\sigma_2(1 -\xi)\right] &=-1 \rightarrow A = \frac{1}{1+\sigma_2} \\
  &\Downarrow \\
  G(x,\xi) &= 
 \begin{cases}
@@ -914,11 +994,11 @@ $$\scriptsize
 
 The solution is
 
-$$ u(x)= \int_0^R G(r,\rho)\,F(\rho) \rho^2 d\rho$$
+$$ u(r)= \int_0^R G(r,\rho)\,F(\rho) \rho^2 d\rho$$
 
 $~$
 
-## Solving Nonlinear Model {#sec-3-11}
+## Solving Nonlinear Models {#sec-3-11}
 
 * In order to analyze an $n$^th^ order IVP numerically, $~$we express the $n$^th^ order ODE as a system of $n$ first-order equations
 
@@ -989,7 +1069,7 @@ plt.show()
 
 When physical systems are coupled, the mathematical model of the system usually consists of a set of coupled DEs
 
-![](figures/ch03_figure04.png "Coupled Spring/Mass Systems"){width="40%" fig-align="center"}
+![](figures/ch03_figure04.svg "Coupled Spring/Mass Systems"){width="60%" fig-align="center"}
 
 $$
 \begin{aligned}
@@ -1082,20 +1162,20 @@ $$y_{p1}(x) = A \cos x + B \sin x$$
 
 Plug into the left-hand side of the homogeneous operator and simplify
 
-$$3y’’ -6y’ + 30y = (27A + 6B)\cos x + (27B - 6A)\sin x$$
+$$3y’’ -6y’ + 30y = (27A - 6B)\cos x + (6A + 27B)\sin x$$
 
 We want this equal to the right-hand side: $15\sin x$
 
-So:
+So $~27A-6B=0$, $~6A+27B=15$, $~$which give
 
 $$\begin{aligned}
-  A &= -\frac{2}{17} \\
+  A &= \frac{2}{17} \\
   B &= \frac{9}{17}
 \end{aligned}$$
 
 $(b)$ $~e^x \tan 3x$:
 
-We use the method of variation of parameters or note that the particular solution involving $e^x \tan 3x$ will not be expressible in elementary functions directly
+$\tan 3x$ is not one of the input functions of the method of undetermined coefficients, $~$so we use the method of variation of parameters
 
 We now solve:
 
@@ -1136,9 +1216,17 @@ u_2’ &= \frac{e^x \cos 3x \cdot \frac{1}{3} e^x \tan 3x}{3e^{2x}} = \frac{1}{9
 Now integrate:
 
 $$\begin{aligned}
- u_1(x) &= -\frac{1}{9} \int \sin 3x \tan 3x\, dx =-\frac{1}{27} e^x \cos 3x \ln|\sec 3x + \tan 3x| \\
- u_2(x) &= \frac{1}{9} \int \sin 3x dx = -\frac{1}{27} \cos 3x
+ u_1(x) &= -\frac{1}{9} \int \frac{1-\cos^2 3x}{\cos 3x}\, dx =\frac{1}{27} \left( \sin 3x - \ln|\sec 3x + \tan 3x| \right) \\
+ u_2(x) &= \frac{1}{9} \int \sin 3x \,dx = -\frac{1}{27} \cos 3x
 \end{aligned}$$
+
+so that
+
+$$y_{p2} = u_1 y_1 + u_2 y_2 = -\frac{1}{27} e^x \cos 3x \ln|\sec 3x + \tan 3x|$$
+
+**Step 3:** $~$General solution
+
+$$\color{red}{y = e^{x} \left(c_1 \cos 3x + c_2 \sin 3x\right) +\frac{2}{17}\cos x +\frac{9}{17}\sin x -\frac{1}{27} e^x \cos 3x \ln|\sec 3x + \tan 3x|}$$
 
 $~$
 
@@ -1236,6 +1324,12 @@ So:
 
 $$y_{p2}(x) = u_1 y_1 + u_2 y_2 = (-x)e^x + \ln|x| \cdot (x e^x)
 = x e^x (\ln|x| - 1)$$
+
+**Step 3:** $~$General solution
+
+The term $-xe^x$ is a solution of the homogeneous equation and can be absorbed into $c_2 xe^x$:
+
+$$\color{red}{y = (c_1 + c_2 x)e^x + 4x^2 + 16x + 21 + x e^x \ln|x|}$$
 
 $~$
 
@@ -1394,7 +1488,7 @@ So we get:
 
 $$ y_p(x) = -\cos x \ln |\sec x + \tan x| $$
 
-**Step 4:** $~$General Solution
+**Step 3:** $~$General Solution
 
 Combine homogeneous and particular solutions:
 
@@ -1464,21 +1558,23 @@ $$ y(-1) = \sqrt{1}(A + B \ln 1) = A \Rightarrow A = 2 $$
 
 **Step 3.2:** $~$ Compute $y'(x)$
 
-$$y'(x) = -\frac{1}{2\sqrt{-x}} (A + B \ln(-x)) + \sqrt{-x} \cdot \left( -\frac{B}{x} \right)
-= -\frac{A + B \ln(-x)}{2\sqrt{-x}} - \frac{B \sqrt{-x}}{x}$$
+Since $\frac{d}{dx}\ln(-x)=\frac{1}{x}$,
+
+$$y'(x) = -\frac{1}{2\sqrt{-x}} (A + B \ln(-x)) + \sqrt{-x} \cdot \frac{B}{x}
+= -\frac{A + B \ln(-x)}{2\sqrt{-x}} + \frac{B \sqrt{-x}}{x}$$
 
 Now evaluate at $x = -1$:
 
-$$y'(-1) = -\frac{A + B \cdot 0}{2} - B \cdot \frac{1}{-1}
-= -\frac{A}{2} + B$$
+$$y'(-1) = -\frac{A + B \cdot 0}{2} + B \cdot \frac{1}{-1}
+= -\frac{A}{2} - B$$
 
 We already found $A = 2$, so:
 
-$$4 = -1 + B \Rightarrow B = 5$$
+$$4 = -1 - B \Rightarrow B = -5$$
 
 **Final Answer:**
 
-$$y(x) = \sqrt{-x} \left( 2 + 5 \ln(-x) \right), \quad x < 0
+$$y(x) = \sqrt{-x} \left( 2 - 5 \ln(-x) \right), \quad x < 0
 $$
 
 This is the unique solution on the interval $(-\infty, 0)$ satisfying the initial conditions
@@ -1587,11 +1683,7 @@ So the solution corresponds to the roots of the indicial (auxiliary) equation:
 $$(r - 0)(r - 1)^2 = 0
 \Rightarrow r^3 - 2r^2 + r = 0$$
 
-Therefore, the corresponding differential equation is:
-
-$$
-x^3 y''' - 2x^2 y'' + x y' = 0
-$$
+Note that $r^3-2r^2+r$ is the auxiliary (indicial) polynomial, $~$**not** the list of coefficients of the differential equation: $~$for $x^r$ we have $x^3(x^r)'''=r(r-1)(r-2)x^r$, $~x^2(x^r)''=r(r-1)x^r$, $~x(x^r)'=rx^r$. $~$The coefficients are found in Step 3
 
 **Step 3:** $~$ Use the General Indicial Form
 
@@ -1616,7 +1708,7 @@ $$
 
 $~$
 
-**7.** $~$ Solve $~2y'' + 2y' +y = 4\sqrt{x}$
+**8.** $~$ Solve $~2y'' + 2y' +y = 4\sqrt{x}$
 
 **Solution**
 
@@ -1669,5 +1761,7 @@ $$
  &\Downarrow \\
  \color{red}{y} & \color{red}{= c_1 y_1 + c_2 y_2 + u_1 y_1 + u_2 y_2} 
 \end{aligned}$$
+
+The integrals for $u_1$ and $u_2$ are not elementary, $~$so $y_p$ is left in integral form (for example, $~$with lower limit $0$ and the upper limit $x$)
 
 $~$
