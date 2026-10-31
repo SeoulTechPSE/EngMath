@@ -24,7 +24,7 @@ jupyter: python3
 
   * Every power series has a **radius of convergence**, $R$. If $R>0$, a power series $\sum_{n=0}^\infty c_n (x -a)^n$ converges for $|x -a| < R$
   
-  * A function $\,f$ ia **analytic** at point $a$ if it can be represented by a power series in $x -a$ with a positive radius of convergence 
+  * A function $\,f$ is **analytic** at point $a$ if it can be represented by a power series in $x -a$ with a positive radius of convergence 
   
   * Power series can be combined through the operations of addition, multiplication, and division
 
@@ -47,7 +47,7 @@ $~$
 
 **Example:** $\,$ Solve $y'' +xy =0$
 
-* Since there are no finite singular points, $~$two power series solutions are guaranteed, centered at $0$, convergent for $|x|>\infty$
+* Since there are no finite singular points, $~$two power series solutions are guaranteed, centered at $0$, convergent for $|x|<\infty$
  
 * Substituting $~y=\sum_{n=0}^\infty c_n x^n$ and the second derivative $y''=\sum_{n=2}^\infty c_n n(n -1) x^{n -2}$ into the DE gives
 
@@ -57,7 +57,7 @@ $~$
      &= 2c_2 +\sum_{k=1}^{\infty} \left[(k +1)(k +2) c_{k +2} +c_{k -1} \right] x^k =0
    \end{aligned}$$
 
-* The coefficient of each power of $x$ be set equal to zero:
+* The coefficient of each power of $x$ must be set equal to zero:
   
   $$c_2 =0 \;\;\text{and}\;\; \displaystyle c_{k +2} =-\frac{c_{k -1}}{(k+1)(k+2)}, \;k=1,2,3,\cdots$$
 
@@ -76,8 +76,8 @@ $~$
 
   $$  
   \begin{aligned}
-    y_1(x) &= 1 +\sum_{n=1}^\infty \frac{(-1)^n}{2\cdot3 \cdots (3n -1)(3n)}x^{3n}\\ 
-    y_2(x) &= x +\sum_{n=1}^\infty \frac{(-1)^n}{3\cdot4 \cdots (3n)(3n +1)}x^{3n +1}
+    y_1(x) &= 1 +\sum_{n=1}^\infty \frac{(-1)^n}{2\cdot3 \cdot 5\cdot 6 \cdots (3n -1)(3n)}x^{3n}\\ 
+    y_2(x) &= x +\sum_{n=1}^\infty \frac{(-1)^n}{3\cdot4 \cdot 6\cdot 7 \cdots (3n)(3n +1)}x^{3n +1}
   \end{aligned}$$
 
 $~$
@@ -104,7 +104,7 @@ $~$
    
   * The **indicial roots** are the solutions to the quadratic equation and are then substituted into a recurrence relation
 
-**Suppose that $x=x_0$ ia a regular singular point of a DE and the indicial roots are $r_1$ and $r_2$**: $\;r_1 \geq r_2$ 
+**Suppose that $x=x_0$ is a regular singular point of a DE and the indicial roots are $r_1$ and $r_2$**: $\;r_1 \geq r_2$ 
     
 * **Case I** 
      
@@ -321,9 +321,9 @@ gamma_plot()
 
   * When $~\nu=0$, $~J_0(x)$
     
-  * When $r_1 -r_2 = 2\nu~$ is not positive integer, $~J_\nu(x)$ and $J_{-\nu}(x)$ are linearly independent 
+  * When $r_1 -r_2 = 2\nu~$ is not a positive integer, $~J_\nu(x)$ and $J_{-\nu}(x)$ are linearly independent 
     
-  * When $r_1 -r_2 = 2\nu~$ is positive integer, $~$there are two possibilities
+  * When $r_1 -r_2 = 2\nu~$ is a positive integer, $~$there are two possibilities
     
     * When $\nu = m =$ positive integer, $~J_{-m}(x)$ is a constant multiple of $J_m(x)$ : $~J_m(x)=(-1)^m J_{-m}(x)$
       
@@ -332,6 +332,8 @@ gamma_plot()
 $~$
 
 **Example** $\,$ Solve $~x^2y'' +xy' +(x^2 -\frac{1}{4})y=0$
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -362,6 +364,8 @@ $~$
 $~$
 
 **Example** $\,$ Solve $~x^2y'' +xy' +(x^2 -9)y=0$
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -445,6 +449,8 @@ plt.show()
 $~$
 
 **Example** $\,$ $J_0'(x)=-J_1(x)$
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -536,6 +542,8 @@ $~$
 **Example** $\,$ Show that
 $\displaystyle \, J_{-1/2}(x)=\sqrt{\frac{2}{\pi x}}\cos x$
 
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
+
 ```{python}
 # | label: fig-ch05-Spherical-Bessel_Function
 # | fig-cap: Spherical Bessel Function
@@ -571,6 +579,8 @@ $~$
   
 * $x^2y''+xy'-(16x^2+\frac{4}{9})y=0$
 
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find the general solution of the given differential equation on $(0,\infty)$
@@ -579,9 +589,13 @@ $~$
 
   * $xy''+2y'+4y=0$
 
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Verify that $I_\nu(x)=i^{-\nu}J_\nu(ix)~$ is a real function
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -589,11 +603,15 @@ $~$
 
   $$xy''+y'-7x^3y=0$$
 
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ First express the general solution of the given differential equation in terms of Bessel functions and then express the general solution in terms of elementary functions
 
   $$x^2y''+4xy'+(x^2+2)y=0$$
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -602,6 +620,8 @@ $~$
   $$\int_0^x rJ_0(r)\,dr=xJ_1(x)$$
   
   $$J_0'(x)=J_{-1}(x)=-J_1(x)$$
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -612,6 +632,8 @@ $~$
   * $c_1=0, \;c_2\neq 0$
   
   * $c_1\neq 0, \;c_2 \neq 0$
+
+[Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
@@ -657,11 +679,11 @@ $~$
    y_2(x) &= c_1 \left[x - \frac{(n -1)(n+2)}{3!} x^3 +\right. \left. \frac{(n -3)(n -1)(n+2)(n +4)}{5!} x^5 \right. \left. -\frac{(n -5)(n -3)(n -1)(n+2)(n +4)(n +6)}{7!} x^7 \cdots \right]
   \end{aligned}$$
 
-  * <font color="red">If $n$ is an even integer</font>, $~$<font color="blue">the series $y_1(x)$ reduces to a polynomial of degree $n$ with only even powers of $x$</font> <font color="green">and the series $y_2(x)$ diverges</font>
+  * <font color="red">If $n$ is an even integer</font>, $~$<font color="blue">the series $y_1(x)$ reduces to a polynomial of degree $n$ with only even powers of $x$</font> <font color="green">and the series $y_2(x)$ is an infinite series that diverges at $x=\pm 1$</font>
 
-  * <font color="red">If $n$ is an odd integer</font>, $~$<font color="blue">the series $y_2(x)$ reduces to a polynomial of degree $n$ with only odd powers of $x$</font> <font color="green">and the series $y_1(x)$ diverges</font>
+  * <font color="red">If $n$ is an odd integer</font>, $~$<font color="blue">the series $y_2(x)$ reduces to a polynomial of degree $n$ with only odd powers of $x$</font> <font color="green">and the series $y_1(x)$ is an infinite series that diverges at $x=\pm 1$</font>
 
-* The general solution for an integer $n$ is then given by the **polynomials**
+* Hence, for a nonnegative integer $n$, one of the two solutions is a **polynomial**
 
   For example, if $n=4$, then
 
@@ -687,7 +709,7 @@ specific values for $c_0$ or $c_1$, depending on whether $n$ is an even or odd p
   
 * **Legendre Polynomials**
 
-  There specific $n$-th degree polynomials are called **Legendre polynomials** and denoted by $P_n(x)$
+  These specific $n$-th degree polynomials are called **Legendre polynomials** and denoted by $P_n(x)$
 
   $$\scriptsize
   \begin{aligned}
@@ -738,7 +760,7 @@ plt.show()
 
   * The right hand side of \eqref{eq:RF} is an $n$-th order polynomial
 
-  * Treating $\left(x^2 -1\right)^n = (x -1)^n (x + 1)^n$ as a product and using Leibnitz’ rule to differentiate $n$ times, $~$we have
+  * Treating $\left(x^2 -1\right)^n = (x -1)^n (x + 1)^n$ as a product and using Leibniz’ rule to differentiate $n$ times, $~$we have
     
     $$\frac{d^n}{dx^n} (x -1)^n (x +1)^n = n!(x+1)^n + {\scriptsize\text{terms with } (x -1) \text{ as a factor}}$$
    
@@ -748,18 +770,18 @@ plt.show()
 
     $$\left(1 -x^2\right)h' + 2nx\,h = 0$$
     
-    Now differentiate $n +1$ times, using Leibnitz, to get
+    Now differentiate $n +1$ times, using Leibniz, to get
     
     $$\scriptsize
     \begin{aligned}
-       \left(1 -x^2\right)h^{n +2} 
-        & -2(n +1)x h^{n +1} -2\frac{(n + 1)n}{2} h^n + 2nxh^{n +1} + 2n(n + 1)h^n = 0 \\
+       \left(1 -x^2\right)h^{(n +2)} 
+        & -2(n +1)x h^{(n +1)} -2\frac{(n + 1)n}{2} h^{(n)} + 2nxh^{(n +1)} + 2n(n + 1)h^{(n)} = 0 \\
         &\Downarrow\\
-       \left(1 -x^2\right)h^{n +2} 
-        & -2x h^{n +1} +n(n +1) h^n = 0
+       \left(1 -x^2\right)h^{(n +2)} 
+        & -2x h^{(n +1)} +n(n +1) h^{(n)} = 0
     \end{aligned}$$
 
-  * As the equation is linear and $P_n(x) \propto h^n(x)$, $~P_n(x)$ satisfies the Legendre equation of order $n$
+  * As the equation is linear and $P_n(x) \propto h^{(n)}(x)$, $~P_n(x)$ satisfies the Legendre equation of order $n$
     
     $$\left(1 -x^2\right) P_n''(x) -2x P_n'(x) +n(n +1) P_n(x) = 0$$
 
@@ -817,6 +839,8 @@ $~$
 
 **Example** $\,$ Use the recurrence relation and $P_0(x)=1$, $P_1(x)=x$, to generate the next six Legendre polynomials
 
+[Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Show that the differential equation
@@ -824,6 +848,8 @@ $~$
   $$\sin\theta \frac{d^2y}{d\theta^2}+\cos\theta \frac{dy}{d\theta}+n(n+1)\,\sin\theta\,y=0$$
   
   can be transformed into Legendre's equation by means of the substitution $x=\cos\theta$
+
+[Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 
 $~$
 
@@ -834,6 +860,8 @@ $~$
   $$y(0)=0, \;y(x),\;y'(x)\;\text{ bounded on } [-1, 1]$$
   
   has nontrivial solutions
+
+[Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 
 $~$
 
@@ -858,6 +886,8 @@ $~$
 * $\,$ What can you say about $P_n^m(x)$ when $m$ is a non-negative integer and $m>n$?
 
 * $\,$ Verify that $y=P_1^1(x)$ satisfies the associated Legendre equation when $n=1$ and $m=1$
+
+[Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 
 ## Worked Exercises {.unnumbered}
 
@@ -901,7 +931,7 @@ y''(x) = \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 2}$$
 Substitute into the original equation:
 
 $$\scriptsize\begin{aligned}
-& x y'' + (1 - x) y' + n y \\
+& x y'' + (1 - x) y' + \alpha y \\
 &= \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 1}
 +\sum_{k=0}^{\infty} a_k (k + r) x^{k + r - 1}
 -\sum_{k=0}^{\infty} a_k (k + r) x^{k + r}
@@ -1087,7 +1117,7 @@ $$ \begin{aligned}
  a_{2k} &= (-1)^k \frac{\left(\alpha^2 - (2k-2)^2\right) \left(\alpha^2 - (2k-4)^2\right) \cdots \left(\alpha^2 - 2^2\right) \alpha^2}{(2k)!} a_0 = \hat{a}_{2k} a_0 \\
  a_{2k+1} &= (-1)^k \frac{\left(\alpha^2 - (2k-1)^2\right) \left(\alpha^2 - (2k-3)^2\right) \cdots \left(\alpha^2 - 1\right)}{(2k+1)!} a_1 =\hat{a}_{2k+1} a_1 \\
  &\Downarrow \\
- y &= a_0 \sum_{k=1}^\infty \hat{a}_{2k} x^{2k} +a_1 \sum_{k=1}^\infty \hat{a}_{2k+1} x^{2k+1} = a_0 y_0(x) + a_1 y_1(x)
+ y &= a_0 \sum_{k=0}^\infty \hat{a}_{2k} x^{2k} +a_1 \sum_{k=0}^\infty \hat{a}_{2k+1} x^{2k+1} = a_0 y_1(x) + a_1 y_2(x), \quad \hat{a}_0=\hat{a}_1=1
 \end{aligned}$$  
 
 **Solution (b)**
@@ -1113,8 +1143,8 @@ So, the solution is a polynomial of degree $n$
 Similarly, if $a_1 \ne 0$, the odd-power series will terminate at $x^n$ when $n$ is odd.
 Thus, we get a polynomial solution of degree exactly $n$
 
-These solutions are known as the Chebyshev polynomials of the first kind, usually denoted $T_n(x).$
-However the recurrence continues — unless we start with initial coefficients $a_0$, $a_1$ that make the series terminate
+These solutions (suitably normalized) are known as the Chebyshev polynomials of the first kind, usually denoted $T_n(x)$.
+The other series (odd powers when $n$ is even, even powers when $n$ is odd) does not terminate, $~$so only one of the two solutions is a polynomial
 
 **Solution (c)**
 
@@ -1181,7 +1211,7 @@ $$ f_n(x) = (1 - x^2)^{n - \frac{1}{2}}, \quad \text{then} \quad T_n(x) = (-1)^n
 
     $~$
 
-**3.** $~$  If $n$ is an integer, you can use the substitution $R(x)=(\alpha x)^{-1/2} \, Z(x)$ to solve that the differential equation
+**3.** $~$  If $n$ is an integer, you can use the substitution $R(x)=(\alpha x)^{-1/2} \, Z(x)$ to solve the differential equation
 
 $$ x^2 \frac{d^2R}{dx^2} +2x \frac{dR}{dx} +\left[ \alpha^2 x^2 - n(n+1) \right] R = 0 $$
 
@@ -1365,9 +1395,9 @@ So:
 
 $$\mu(x) = e^{\ln|1 - x^2|} = |1 - x^2|$$
 
-but on $(-1, 1)$, $1 - x^2 > 0$ so:, 
+but on $(-1, 1)$, $1 - x^2 > 0$, so
 
-$$\mu(x) = 1 - x^2$$$$
+$$\mu(x) = 1 - x^2$$
 
 Now solve:
 
@@ -1423,31 +1453,31 @@ $$w' + \frac{2 - 4x^2}{x(1 - x^2)} w = 0$$
 
 **Step 3:** $~$ Solve a first-order linear ODE
 
-Integrating factor:
+Partial fractions give $\displaystyle \frac{2 - 4x^2}{x(1 - x^2)} = \frac{2}{x} - \frac{1}{1 - x} + \frac{1}{1 + x}$, $~$so the integrating factor is
 
-$$\scriptsize\mu(x) = \exp\left( \int \frac{2 - 4x^2}{x(1 - x^2)} dx \right) = \exp \left( \int \left( \frac{2}{x} - \frac{1}{1 - x} + \frac{1}{1 + x} \right) dx \right)
-= x^2 \cdot \frac{1}{1 - x} \cdot (1 + x)
-$$
+$$\mu(x) = \exp\left( 2\ln|x| + \ln(1-x) + \ln(1+x) \right) = x^2 (1 - x^2), \qquad -1<x<1$$
 
 Now solve the equation:
 
-$$\frac{d}{dx} \left( w \cdot \mu(x) \right) = 0 \Rightarrow w \cdot \mu(x) = C \Rightarrow w = \frac{C}{\mu(x)} = C \cdot \frac{1 - x}{x^2(1 + x)}$$
+$$\frac{d}{dx} \left( w \cdot \mu(x) \right) = 0 \Rightarrow w \cdot \mu(x) = C \Rightarrow w = \frac{C}{x^2(1 - x^2)}$$
 
 Now integrate to find $v$:
 
 $$\begin{aligned}
-v &= \int w \, dx = C \int \frac{1 - x}{x^2(1 + x)} dx\\
-  &= C \int \left( \frac{1}{x^2} - \frac{2}{x} + \frac{2}{1 + x} \right) dx \\
-  &= C \left( -\frac{1}{x} - 2\ln|x| + 2\ln|1 + x| \right) + D
+v &= \int w \, dx = C \int \frac{dx}{x^2(1 - x^2)}
+   = C \int \left( \frac{1}{x^2} + \frac{1}{1 - x^2} \right) dx \\
+  &= C \left( -\frac{1}{x} + \frac{1}{2}\ln\frac{1 + x}{1 - x} \right) + D
 \end{aligned}$$
 
 **Final Answer:**
 
-The second linearly independent solution for $n = 1$ on $(-1, 1)$ is:
+Taking $C=1$, $D=0$, $~$the second linearly independent solution for $n = 1$ on $(-1, 1)$ is
 
 $$
-y_2(x) = -1 - 2x \ln|x| + 2x \ln|1 + x|
+y_2(x) = x\,v(x) = \frac{x}{2} \ln\frac{1 + x}{1 - x} - 1
 \quad \text{(up to constant multiples)}$$
+
+This is the Legendre function of the second kind $Q_1(x)$. $~$Check: $~y_2' = \frac{1}{2}\ln\frac{1+x}{1-x} + \frac{x}{1-x^2}$, $~y_2''=\frac{2}{(1-x^2)^2}$, $~$and $(1-x^2)y_2''-2xy_2'+2y_2=\frac{2}{1-x^2}-\frac{2x^2}{1-x^2}-2=0$
 
 $~$
 
@@ -1498,7 +1528,7 @@ $(a)$
 
 $$\begin{aligned}
 y'' &-2xy' +2\alpha y=0 \\
- &\Downarrow \;\;y=\sum_{k=0}^\infty c_nk x^k, \;\;x=0 \text{ is an ordinary point}\\ 
+ &\Downarrow \;\;y=\sum_{k=0}^\infty c_k x^k, \;\;x=0 \text{ is an ordinary point}\\ 
  \sum_{k=2}^\infty &c_k k(k-1)x^{k-2} -2\sum_{k=1}^\infty c_k k x^{k} +2\alpha\sum_{k=0}^\infty c_k x^k =0 \\ 
  2c_2 &+ 2\alpha c_0 +\sum_{k=1}^\infty
  \left[(k+2)(k+1) c_{k+2} -2(k -\alpha)c_k \right] x^k = 0\\ 
@@ -1508,14 +1538,14 @@ y'' &-2xy' +2\alpha y=0 \\
  c_{2k} &= (-2)^k \frac{\left(\alpha - (2k-2)\right) \left(\alpha - (2k-4)\right) \cdots \left(\alpha - 2\right) \alpha}{(2k)!} c_0 = \hat{c}_{2k} c_0 \\
  c_{2k+1} &= (-2)^k \frac{\left(\alpha - (2k-1)\right) \left(\alpha - (2k-3)\right) \cdots \left(\alpha - 1\right)}{(2k+1)!} c_1 =\hat{c}_{2k+1} c_1 \\
  &\Downarrow \\
- y &= c_0 \sum_{k=1}^\infty \hat{c}_{2k} x^{2k} +c_1 \sum_{k=1}^\infty \hat{c}_{2k+1} x^{2k+1} = c_0 y_0(x) + c_1 y_1(x)
+ y &= c_0 \sum_{k=0}^\infty \hat{c}_{2k} x^{2k} +c_1 \sum_{k=0}^\infty \hat{c}_{2k+1} x^{2k+1} = c_0 y_0(x) + c_1 y_1(x), \quad \hat{c}_0=\hat{c}_1=1
 \end{aligned}$$
 
 $(b)$ $~$If $n$ is an even integer, the first series terminates, whereas $y_1(x)$ is an infinite series. For example, if $n=4$, then
 
 $$ y_0(x) = c_0 \left[ 1 - 2\frac{4}{2!}x^2 +2^2 \frac{(4 - 2) 4}{4!} x^4 \right] =c_0 \left[1 -4x^2 +\frac{4}{3}x^4 \right] $$
 
-  Similarly, when $n$ is an odd integer, the series for $y_1(x)$ terminates with $x^n$. For exampe, if $n=5$, then
+  Similarly, when $n$ is an odd integer, the series for $y_1(x)$ terminates with $x^n$. For example, if $n=5$, then
   
 $$ y_1(x) = c_1 \left[ x - 2\frac{(5 -1)}{3!}x^3 +4 \frac{(5 - 3)(5-1)}{5!} x^5 \right] =c_1 \left[x -\frac{4}{3}x^3 +\frac{4}{15}x^5 \right] $$
   

@@ -425,7 +425,7 @@ window.Quarto = {
    =|x -a| \lim_{n \to \infty} \left| \frac{c_{n +1}}{c_n} \right| =L\]</span></p>
 <p>If <span class="math inline">\(L&lt;1\)</span>, the series converges absolutely, if <span class="math inline">\(L&gt;1\)</span>, the series diverges, and if <span class="math inline">\(L=1\)</span>, the test is inconclusive</p></li>
 <li><p>Every power series has a <strong>radius of convergence</strong>, <span class="math inline">\(R\)</span>. If <span class="math inline">\(R&gt;0\)</span>, a power series <span class="math inline">\(\sum_{n=0}^\infty c_n (x -a)^n\)</span> converges for <span class="math inline">\(|x -a| &lt; R\)</span></p></li>
-<li><p>A function <span class="math inline">\(\,f\)</span> ia <strong>analytic</strong> at point <span class="math inline">\(a\)</span> if it can be represented by a power series in <span class="math inline">\(x -a\)</span> with a positive radius of convergence</p></li>
+<li><p>A function <span class="math inline">\(\,f\)</span> is <strong>analytic</strong> at point <span class="math inline">\(a\)</span> if it can be represented by a power series in <span class="math inline">\(x -a\)</span> with a positive radius of convergence</p></li>
 <li><p>Power series can be combined through the operations of addition, multiplication, and division</p></li>
 </ul></li>
 <li><p>Consider the linear second-order DE</p>
@@ -441,14 +441,14 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example:</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(y'' +xy =0\)</span></p>
 <ul>
-<li><p>Since there are no finite singular points, <span class="math inline">\(~\)</span>two power series solutions are guaranteed, centered at <span class="math inline">\(0\)</span>, convergent for <span class="math inline">\(|x|&gt;\infty\)</span></p></li>
+<li><p>Since there are no finite singular points, <span class="math inline">\(~\)</span>two power series solutions are guaranteed, centered at <span class="math inline">\(0\)</span>, convergent for <span class="math inline">\(|x|&lt;\infty\)</span></p></li>
 <li><p>Substituting <span class="math inline">\(~y=\sum_{n=0}^\infty c_n x^n\)</span> and the second derivative <span class="math inline">\(y''=\sum_{n=2}^\infty c_n n(n -1) x^{n -2}\)</span> into the DE gives</p>
 <p><span class="math display">\[
 \begin{aligned}
    y'' +xy &amp;= \sum_{n=2}^\infty c_n n(n-1) x^{n -2} +\sum_{n=0}^\infty c_n x^{n +1}\\
    &amp;= 2c_2 +\sum_{k=1}^{\infty} \left[(k +1)(k +2) c_{k +2} +c_{k -1} \right] x^k =0
 \end{aligned}\]</span></p></li>
-<li><p>The coefficient of each power of <span class="math inline">\(x\)</span> be set equal to zero:</p>
+<li><p>The coefficient of each power of <span class="math inline">\(x\)</span> must be set equal to zero:</p>
 <p><span class="math display">\[c_2 =0 \;\;\text{and}\;\; \displaystyle c_{k +2} =-\frac{c_{k -1}}{(k+1)(k+2)}, \;k=1,2,3,\cdots\]</span></p>
 <p><span class="math display">\[\scriptsize
 \begin{aligned}
@@ -463,8 +463,8 @@ c_8 &amp;= -\frac{c_5}{7\cdot8} = 0 \\
 <li><p>After grouping the terms containing <span class="math inline">\(c_0\)</span> and the terms containing <span class="math inline">\(c_1\)</span>, <span class="math inline">\(~\)</span>we obtain <span class="math inline">\(y = c_0 y_1(x) +c_1 y_2(x)\)</span></p>
 <p><span class="math display">\[  
 \begin{aligned}
-  y_1(x) &amp;= 1 +\sum_{n=1}^\infty \frac{(-1)^n}{2\cdot3 \cdots (3n -1)(3n)}x^{3n}\\
-  y_2(x) &amp;= x +\sum_{n=1}^\infty \frac{(-1)^n}{3\cdot4 \cdots (3n)(3n +1)}x^{3n +1}
+  y_1(x) &amp;= 1 +\sum_{n=1}^\infty \frac{(-1)^n}{2\cdot3 \cdot 5\cdot 6 \cdots (3n -1)(3n)}x^{3n}\\
+  y_2(x) &amp;= x +\sum_{n=1}^\infty \frac{(-1)^n}{3\cdot4 \cdot 6\cdot 7 \cdots (3n)(3n +1)}x^{3n +1}
 \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
@@ -487,7 +487,7 @@ c_8 &amp;= -\frac{c_5}{7\cdot8} = 0 \\
 <li><p>The <strong>indicial roots</strong> are the solutions to the quadratic equation and are then substituted into a recurrence relation</p></li>
 </ul></li>
 </ul>
-<p><strong>Suppose that <span class="math inline">\(x=x_0\)</span> ia a regular singular point of a DE and the indicial roots are <span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span></strong>: <span class="math inline">\(\;r_1 \geq r_2\)</span></p>
+<p><strong>Suppose that <span class="math inline">\(x=x_0\)</span> is a regular singular point of a DE and the indicial roots are <span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span></strong>: <span class="math inline">\(\;r_1 \geq r_2\)</span></p>
 <ul>
 <li><p><strong>Case I</strong></p>
 <p><span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span> are distinct <font color="red"> and do not differ by an integer</font>,</p>
@@ -663,7 +663,7 @@ c_{2n} &amp; = \frac{(-1)^n c_0}{2^{2n} n! (1 +\nu)(2 +\nu)\cdots(n +\nu)}\\
 <div id="fig-ch03-gamma-function" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch03-gamma-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch03-gamma-function-output-1.png" class="img-fluid figure-img">
+<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch03-gamma-function-output-1.png" width="522" height="361" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch03-gamma-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.1: Gamma Function
@@ -680,8 +680,8 @@ Figure&nbsp;5.1: Gamma Function
 <p><span class="math display">\[J_{-\nu}(x)=\sum_{n=0}^\infty \frac{(-1)^n}{n!\, \Gamma(1 -\nu +n)} \left( \frac{x}{2} \right)^{2n -\nu}\]</span></p>
 <ul>
 <li><p>When <span class="math inline">\(~\nu=0\)</span>, <span class="math inline">\(~J_0(x)\)</span></p></li>
-<li><p>When <span class="math inline">\(r_1 -r_2 = 2\nu~\)</span> is not positive integer, <span class="math inline">\(~J_\nu(x)\)</span> and <span class="math inline">\(J_{-\nu}(x)\)</span> are linearly independent</p></li>
-<li><p>When <span class="math inline">\(r_1 -r_2 = 2\nu~\)</span> is positive integer, <span class="math inline">\(~\)</span>there are two possibilities</p>
+<li><p>When <span class="math inline">\(r_1 -r_2 = 2\nu~\)</span> is not a positive integer, <span class="math inline">\(~J_\nu(x)\)</span> and <span class="math inline">\(J_{-\nu}(x)\)</span> are linearly independent</p></li>
+<li><p>When <span class="math inline">\(r_1 -r_2 = 2\nu~\)</span> is a positive integer, <span class="math inline">\(~\)</span>there are two possibilities</p>
 <ul>
 <li><p>When <span class="math inline">\(\nu = m =\)</span> positive integer, <span class="math inline">\(~J_{-m}(x)\)</span> is a constant multiple of <span class="math inline">\(J_m(x)\)</span> : <span class="math inline">\(~J_m(x)=(-1)^m J_{-m}(x)\)</span></p></li>
 <li><p>When <span class="math inline">\(\nu\)</span> is half an odd positive integer, <span class="math inline">\(~J_\nu(x)\)</span> and <span class="math inline">\(J_{-\nu}(x)\)</span> are linearly independent</p></li>
@@ -690,6 +690,7 @@ Figure&nbsp;5.1: Gamma Function
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~x^2y'' +xy' +(x^2 -\frac{1}{4})y=0\)</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><strong>Bessel Functions of the Second Kind</strong></p>
@@ -707,6 +708,7 @@ Figure&nbsp;5.1: Gamma Function
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~x^2y'' +xy' +(x^2 -9)y=0\)</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <section id="properties-of-bessel-functions" class="level4" data-number="5.3.1.1">
 <h4 data-number="5.3.1.1" class="anchored" data-anchor-id="properties-of-bessel-functions"><span class="header-section-number">5.3.1.1</span> <strong>Properties of Bessel Functions</strong></h4>
@@ -757,7 +759,7 @@ Figure&nbsp;5.1: Gamma Function
 <div id="fig-ch05-bessel-function" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch05-bessel-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch05-bessel-function-output-1.png" class="img-fluid figure-img">
+<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch05-bessel-function-output-1.png" width="545" height="659" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch05-bessel-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.2: Bessel functions
@@ -791,6 +793,7 @@ Figure&nbsp;5.2: Bessel functions
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> <span class="math inline">\(J_0'(x)=-J_1(x)\)</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="des-solvable-in-terms-of-bessel-functions" class="level4" data-number="5.3.1.2">
@@ -859,6 +862,7 @@ Figure&nbsp;5.2: Bessel functions
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Show that <span class="math inline">\(\displaystyle \, J_{-1/2}(x)=\sqrt{\frac{2}{\pi x}}\cos x\)</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <div id="cell-fig-ch05-Spherical-Bessel_Function" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> spherical_jn</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -883,7 +887,7 @@ Figure&nbsp;5.2: Bessel functions
 <div id="fig-ch05-spherical-bessel_function" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch05-spherical-bessel_function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch05-spherical-bessel_function-output-1.png" class="img-fluid figure-img">
+<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch05-spherical-bessel_function-output-1.png" width="539" height="363" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch05-spherical-bessel_function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.3: Spherical Bessel Function
@@ -900,24 +904,30 @@ Figure&nbsp;5.3: Spherical Bessel Function
 <li><p><span class="math inline">\(x^2y'' +xy'+(9x^2-4)y=0\)</span></p></li>
 <li><p><span class="math inline">\(x^2y''+xy'-(16x^2+\frac{4}{9})y=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the general solution of the given differential equation on <span class="math inline">\((0,\infty)\)</span></p>
 <ul>
 <li><p><span class="math inline">\(x^2y''+2xy'+\alpha^2x^2y=0; \;y=x^{-1/2}u(x)\)</span></p></li>
 <li><p><span class="math inline">\(xy''+2y'+4y=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Verify that <span class="math inline">\(I_\nu(x)=i^{-\nu}J_\nu(ix)~\)</span> is a real function</p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Express the general solution of the given differential equation in terms of the modified Bessel functions</p>
 <p><span class="math display">\[xy''+y'-7x^3y=0\]</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> First express the general solution of the given differential equation in terms of Bessel functions and then express the general solution in terms of elementary functions</p>
 <p><span class="math display">\[x^2y''+4xy'+(x^2+2)y=0\]</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Derive the following result</p>
 <p><span class="math display">\[\int_0^x rJ_0(r)\,dr=xJ_1(x)\]</span></p>
 <p><span class="math display">\[J_0'(x)=J_{-1}(x)=-J_1(x)\]</span></p>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the solution of the aging spring equation <span class="math inline">\(mx''+ke^{-at}x=0\)</span> to discuss the behavior of <span class="math inline">\(x(t)\)</span> as <span class="math inline">\(t \to\infty\)</span> in the three cases</p>
 <ul>
@@ -925,6 +935,7 @@ Figure&nbsp;5.3: Spherical Bessel Function
 <li><p><span class="math inline">\(c_1=0, \;c_2\neq 0\)</span></p></li>
 <li><p><span class="math inline">\(c_1\neq 0, \;c_2 \neq 0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_5_3a.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 </section>
@@ -965,10 +976,10 @@ y_1(x) &amp;= c_0 \left[1 -\frac{n(n+1)}{2!} x^2
 y_2(x) &amp;= c_1 \left[x - \frac{(n -1)(n+2)}{3!} x^3 +\right. \left. \frac{(n -3)(n -1)(n+2)(n +4)}{5!} x^5 \right. \left. -\frac{(n -5)(n -3)(n -1)(n+2)(n +4)(n +6)}{7!} x^7 \cdots \right]
 \end{aligned}\]</span></p>
 <ul>
-<li><p><font color="red">If <span class="math inline">\(n\)</span> is an even integer</font>, <span class="math inline">\(~\)</span><font color="blue">the series <span class="math inline">\(y_1(x)\)</span> reduces to a polynomial of degree <span class="math inline">\(n\)</span> with only even powers of <span class="math inline">\(x\)</span></font> <font color="green">and the series <span class="math inline">\(y_2(x)\)</span> diverges</font></p></li>
-<li><p><font color="red">If <span class="math inline">\(n\)</span> is an odd integer</font>, <span class="math inline">\(~\)</span><font color="blue">the series <span class="math inline">\(y_2(x)\)</span> reduces to a polynomial of degree <span class="math inline">\(n\)</span> with only odd powers of <span class="math inline">\(x\)</span></font> <font color="green">and the series <span class="math inline">\(y_1(x)\)</span> diverges</font></p></li>
+<li><p><font color="red">If <span class="math inline">\(n\)</span> is an even integer</font>, <span class="math inline">\(~\)</span><font color="blue">the series <span class="math inline">\(y_1(x)\)</span> reduces to a polynomial of degree <span class="math inline">\(n\)</span> with only even powers of <span class="math inline">\(x\)</span></font> <font color="green">and the series <span class="math inline">\(y_2(x)\)</span> is an infinite series that diverges at <span class="math inline">\(x=\pm 1\)</span></font></p></li>
+<li><p><font color="red">If <span class="math inline">\(n\)</span> is an odd integer</font>, <span class="math inline">\(~\)</span><font color="blue">the series <span class="math inline">\(y_2(x)\)</span> reduces to a polynomial of degree <span class="math inline">\(n\)</span> with only odd powers of <span class="math inline">\(x\)</span></font> <font color="green">and the series <span class="math inline">\(y_1(x)\)</span> is an infinite series that diverges at <span class="math inline">\(x=\pm 1\)</span></font></p></li>
 </ul></li>
-<li><p>The general solution for an integer <span class="math inline">\(n\)</span> is then given by the <strong>polynomials</strong></p>
+<li><p>Hence, for a nonnegative integer <span class="math inline">\(n\)</span>, one of the two solutions is a <strong>polynomial</strong></p>
 <p>For example, if <span class="math inline">\(n=4\)</span>, then</p>
 <p><span class="math display">\[\scriptsize
 y_1(x) = c_0 \left[1 -\frac{4\cdot5}{2!} x^2 +\frac{2\cdot4\cdot5\cdot7}{4!} x^4 \right]
@@ -984,7 +995,7 @@ y_1(x) = c_0 \left[1 -\frac{4\cdot5}{2!} x^2 +\frac{2\cdot4\cdot5\cdot7}{4!} x^4
 <p><span class="math display">\[\scriptsize y_1(x) = (-1)^{4/2} \frac{1\cdot3}{2\cdot4} \left[1 -10x^2 +\frac{35}{3} x^4 \right]
 =\frac{1}{8} (35x^4 -30x^2 +3)\]</span></p></li>
 <li><p><strong>Legendre Polynomials</strong></p>
-<p>There specific <span class="math inline">\(n\)</span>-th degree polynomials are called <strong>Legendre polynomials</strong> and denoted by <span class="math inline">\(P_n(x)\)</span></p>
+<p>These specific <span class="math inline">\(n\)</span>-th degree polynomials are called <strong>Legendre polynomials</strong> and denoted by <span class="math inline">\(P_n(x)\)</span></p>
 <p><span class="math display">\[\scriptsize
 \begin{aligned}
    P_0(x) &amp; = 1\\
@@ -1015,7 +1026,7 @@ y_1(x) = c_0 \left[1 -\frac{4\cdot5}{2!} x^2 +\frac{2\cdot4\cdot5\cdot7}{4!} x^4
 <div id="fig-ch05-legendre-polynomials" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch05-legendre-polynomials-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch05-legendre-polynomials-output-1.png" class="img-fluid figure-img">
+<img src="ch_05_Series_Solutions_of_Linear_Differential_Equations_files/figure-html/fig-ch05-legendre-polynomials-output-1.png" width="551" height="432" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch05-legendre-polynomials-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.4: Legendre polynomials
@@ -1039,21 +1050,21 @@ Figure&nbsp;5.4: Legendre polynomials
 <p>This can be demonstrated through the following observations</p>
 <ul>
 <li><p>The right hand side of <span class="math inline">\(\eqref{eq:RF}\)</span> is an <span class="math inline">\(n\)</span>-th order polynomial</p></li>
-<li><p>Treating <span class="math inline">\(\left(x^2 -1\right)^n = (x -1)^n (x + 1)^n\)</span> as a product and using Leibnitz’ rule to differentiate <span class="math inline">\(n\)</span> times, <span class="math inline">\(~\)</span>we have</p>
+<li><p>Treating <span class="math inline">\(\left(x^2 -1\right)^n = (x -1)^n (x + 1)^n\)</span> as a product and using Leibniz’ rule to differentiate <span class="math inline">\(n\)</span> times, <span class="math inline">\(~\)</span>we have</p>
 <p><span class="math display">\[\frac{d^n}{dx^n} (x -1)^n (x +1)^n = n!(x+1)^n + {\scriptsize\text{terms with } (x -1) \text{ as a factor}}\]</span></p>
 <p>so that <span class="math inline">\(\displaystyle ~P_n(1) = \frac{n! 2^n}{2^n n!} =1\)</span></p></li>
 <li><p>If <span class="math inline">\(~h(x) = \left(1 -x^2\right)^n\)</span>, <span class="math inline">\(~\)</span>then <span class="math inline">\(h'(x) = -2nx(1 -x^2)^{n-1}\)</span>, <span class="math inline">\(~\)</span>so that</p>
 <p><span class="math display">\[\left(1 -x^2\right)h' + 2nx\,h = 0\]</span></p>
-<p>Now differentiate <span class="math inline">\(n +1\)</span> times, using Leibnitz, to get</p>
+<p>Now differentiate <span class="math inline">\(n +1\)</span> times, using Leibniz, to get</p>
 <p><span class="math display">\[\scriptsize
 \begin{aligned}
-   \left(1 -x^2\right)h^{n +2}
-    &amp; -2(n +1)x h^{n +1} -2\frac{(n + 1)n}{2} h^n + 2nxh^{n +1} + 2n(n + 1)h^n = 0 \\
+   \left(1 -x^2\right)h^{(n +2)}
+    &amp; -2(n +1)x h^{(n +1)} -2\frac{(n + 1)n}{2} h^{(n)} + 2nxh^{(n +1)} + 2n(n + 1)h^{(n)} = 0 \\
     &amp;\Downarrow\\
-   \left(1 -x^2\right)h^{n +2}
-    &amp; -2x h^{n +1} +n(n +1) h^n = 0
+   \left(1 -x^2\right)h^{(n +2)}
+    &amp; -2x h^{(n +1)} +n(n +1) h^{(n)} = 0
 \end{aligned}\]</span></p></li>
-<li><p>As the equation is linear and <span class="math inline">\(P_n(x) \propto h^n(x)\)</span>, <span class="math inline">\(~P_n(x)\)</span> satisfies the Legendre equation of order <span class="math inline">\(n\)</span></p>
+<li><p>As the equation is linear and <span class="math inline">\(P_n(x) \propto h^{(n)}(x)\)</span>, <span class="math inline">\(~P_n(x)\)</span> satisfies the Legendre equation of order <span class="math inline">\(n\)</span></p>
 <p><span class="math display">\[\left(1 -x^2\right) P_n''(x) -2x P_n'(x) +n(n +1) P_n(x) = 0\]</span></p></li>
 </ul></li>
 <li><p><strong>Integral Relations</strong></p>
@@ -1094,15 +1105,18 @@ xP_n(x) = c_0 P_0(x) +c_1 P_1(x) +\cdots +c_{n +1}P_{n +1}(x)
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the recurrence relation and <span class="math inline">\(P_0(x)=1\)</span>, <span class="math inline">\(P_1(x)=x\)</span>, to generate the next six Legendre polynomials</p>
+<p><a href="files/solutions/sol_5_3b.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Show that the differential equation</p>
 <p><span class="math display">\[\sin\theta \frac{d^2y}{d\theta^2}+\cos\theta \frac{dy}{d\theta}+n(n+1)\,\sin\theta\,y=0\]</span></p>
 <p>can be transformed into Legendre’s equation by means of the substitution <span class="math inline">\(x=\cos\theta\)</span></p>
+<p><a href="files/solutions/sol_5_3b.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the first three positive values of <span class="math inline">\(~\lambda~\)</span> for which the problem</p>
 <p><span class="math display">\[(1-x^2)y''-2xy'+\lambda y=0\]</span></p>
 <p><span class="math display">\[y(0)=0, \;y(x),\;y'(x)\;\text{ bounded on } [-1, 1]\]</span></p>
 <p>has nontrivial solutions</p>
+<p><a href="files/solutions/sol_5_3b.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p>The differential equation</p>
@@ -1119,6 +1133,7 @@ xP_n(x) = c_0 P_0(x) +c_1 P_1(x) +\cdots +c_{n +1}P_{n +1}(x)
 <li><p><span class="math inline">\(\,\)</span> What can you say about <span class="math inline">\(P_n^m(x)\)</span> when <span class="math inline">\(m\)</span> is a non-negative integer and <span class="math inline">\(m&gt;n\)</span>?</p></li>
 <li><p><span class="math inline">\(\,\)</span> Verify that <span class="math inline">\(y=P_1^1(x)\)</span> satisfies the associated Legendre equation when <span class="math inline">\(n=1\)</span> and <span class="math inline">\(m=1\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_5_3b.pdf" target="_blank">Solution</a></p>
 </section>
 </section>
 <section id="worked-exercises" class="level2 unnumbered">
@@ -1144,7 +1159,7 @@ y''(x) = \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 2}\]</span></p>
 <p><strong>Step 2: Substitute into the Equation</strong></p>
 <p>Substitute into the original equation:</p>
 <p><span class="math display">\[\scriptsize\begin{aligned}
-&amp; x y'' + (1 - x) y' + n y \\
+&amp; x y'' + (1 - x) y' + \alpha y \\
 &amp;= \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 1}
 +\sum_{k=0}^{\infty} a_k (k + r) x^{k + r - 1}
 -\sum_{k=0}^{\infty} a_k (k + r) x^{k + r}
@@ -1253,7 +1268,7 @@ y''(x) = \sum_{k=2}^{\infty} k(k-1) a_k x^{k-2}\]</span></p>
 a_{2k} &amp;= (-1)^k \frac{\left(\alpha^2 - (2k-2)^2\right) \left(\alpha^2 - (2k-4)^2\right) \cdots \left(\alpha^2 - 2^2\right) \alpha^2}{(2k)!} a_0 = \hat{a}_{2k} a_0 \\
 a_{2k+1} &amp;= (-1)^k \frac{\left(\alpha^2 - (2k-1)^2\right) \left(\alpha^2 - (2k-3)^2\right) \cdots \left(\alpha^2 - 1\right)}{(2k+1)!} a_1 =\hat{a}_{2k+1} a_1 \\
 &amp;\Downarrow \\
-y &amp;= a_0 \sum_{k=1}^\infty \hat{a}_{2k} x^{2k} +a_1 \sum_{k=1}^\infty \hat{a}_{2k+1} x^{2k+1} = a_0 y_0(x) + a_1 y_1(x)
+y &amp;= a_0 \sum_{k=0}^\infty \hat{a}_{2k} x^{2k} +a_1 \sum_{k=0}^\infty \hat{a}_{2k+1} x^{2k+1} = a_0 y_1(x) + a_1 y_2(x), \quad \hat{a}_0=\hat{a}_1=1
 \end{aligned}\]</span></p>
 <p><strong>Solution (b)</strong></p>
 <p>Let <span class="math inline">\(\alpha = n\)</span>, a nonnegative integer. Then the recurrence becomes:</p>
@@ -1266,7 +1281,7 @@ y &amp;= a_0 \sum_{k=1}^\infty \hat{a}_{2k} x^{2k} +a_1 \sum_{k=1}^\infty \hat{a
 <p><span class="math display">\[\color{red}{a_{n+2} = 0 \Rightarrow \text{ the series terminates at } x^n}\]</span></p>
 <p>So, the solution is a polynomial of degree <span class="math inline">\(n\)</span></p>
 <p>Similarly, if <span class="math inline">\(a_1 \ne 0\)</span>, the odd-power series will terminate at <span class="math inline">\(x^n\)</span> when <span class="math inline">\(n\)</span> is odd. Thus, we get a polynomial solution of degree exactly <span class="math inline">\(n\)</span></p>
-<p>These solutions are known as the Chebyshev polynomials of the first kind, usually denoted <span class="math inline">\(T_n(x).\)</span> However the recurrence continues — unless we start with initial coefficients <span class="math inline">\(a_0\)</span>, <span class="math inline">\(a_1\)</span> that make the series terminate</p>
+<p>These solutions (suitably normalized) are known as the Chebyshev polynomials of the first kind, usually denoted <span class="math inline">\(T_n(x)\)</span>. The other series (odd powers when <span class="math inline">\(n\)</span> is even, even powers when <span class="math inline">\(n\)</span> is odd) does not terminate, <span class="math inline">\(~\)</span>so only one of the two solutions is a polynomial</p>
 <p><strong>Solution (c)</strong></p>
 <p>Let’s define:</p>
 <p><span class="math display">\[ f_n(x) = (1 - x^2)^{n - \frac{1}{2}}, \quad \text{then} \quad T_n(x) = (-1)^n \frac{2^n n!}{(2n)!} \sqrt{1 - x^2} \cdot \frac{d^n}{dx^n} f_n(x)\]</span></p>
@@ -1306,7 +1321,7 @@ y &amp;= a_0 \sum_{k=1}^\infty \hat{a}_{2k} x^{2k} +a_1 \sum_{k=1}^\infty \hat{a
   \end{aligned}}\)</span></p>
 <p><span class="math inline">\(~\)</span></p></li>
 </ul>
-<p><strong>3.</strong> <span class="math inline">\(~\)</span> If <span class="math inline">\(n\)</span> is an integer, you can use the substitution <span class="math inline">\(R(x)=(\alpha x)^{-1/2} \, Z(x)\)</span> to solve that the differential equation</p>
+<p><strong>3.</strong> <span class="math inline">\(~\)</span> If <span class="math inline">\(n\)</span> is an integer, you can use the substitution <span class="math inline">\(R(x)=(\alpha x)^{-1/2} \, Z(x)\)</span> to solve the differential equation</p>
 <p><span class="math display">\[ x^2 \frac{d^2R}{dx^2} +2x \frac{dR}{dx} +\left[ \alpha^2 x^2 - n(n+1) \right] R = 0 \]</span></p>
 <p>Find the general solution of the differential equation on the interval <span class="math inline">\((0, \infty)\)</span></p>
 <p><strong>Solution</strong></p>
@@ -1409,8 +1424,8 @@ x Z'' + Z' + \left( \alpha^2 x - \frac{n(n+1) + \tfrac{1}{4}}{x} \right) Z
 <p><span class="math display">\[\int \frac{2x}{1 - x^2} dx = -\int \frac{1}{u} du = -\ln|1 - x^2|\]</span></p>
 <p>So:</p>
 <p><span class="math display">\[\mu(x) = e^{\ln|1 - x^2|} = |1 - x^2|\]</span></p>
-<p>but on <span class="math inline">\((-1, 1)\)</span>, <span class="math inline">\(1 - x^2 &gt; 0\)</span> so:,</p>
-<p><span class="math display">\[\mu(x) = 1 - x^2\]</span>$$</p>
+<p>but on <span class="math inline">\((-1, 1)\)</span>, <span class="math inline">\(1 - x^2 &gt; 0\)</span>, so</p>
+<p><span class="math display">\[\mu(x) = 1 - x^2\]</span></p>
 <p>Now solve:</p>
 <p><span class="math display">\[\frac{d}{dx}(w \cdot \mu(x)) = 0
 \Rightarrow w(1 - x^2) = C
@@ -1440,23 +1455,22 @@ x Z'' + Z' + \left( \alpha^2 x - \frac{n(n+1) + \tfrac{1}{4}}{x} \right) Z
 <p>We rewrite as:</p>
 <p><span class="math display">\[w' + \frac{2 - 4x^2}{x(1 - x^2)} w = 0\]</span></p>
 <p><strong>Step 3:</strong> <span class="math inline">\(~\)</span> Solve a first-order linear ODE</p>
-<p>Integrating factor:</p>
-<p><span class="math display">\[\scriptsize\mu(x) = \exp\left( \int \frac{2 - 4x^2}{x(1 - x^2)} dx \right) = \exp \left( \int \left( \frac{2}{x} - \frac{1}{1 - x} + \frac{1}{1 + x} \right) dx \right)
-= x^2 \cdot \frac{1}{1 - x} \cdot (1 + x)
-\]</span></p>
+<p>Partial fractions give <span class="math inline">\(\displaystyle \frac{2 - 4x^2}{x(1 - x^2)} = \frac{2}{x} - \frac{1}{1 - x} + \frac{1}{1 + x}\)</span>, <span class="math inline">\(~\)</span>so the integrating factor is</p>
+<p><span class="math display">\[\mu(x) = \exp\left( 2\ln|x| + \ln(1-x) + \ln(1+x) \right) = x^2 (1 - x^2), \qquad -1&lt;x&lt;1\]</span></p>
 <p>Now solve the equation:</p>
-<p><span class="math display">\[\frac{d}{dx} \left( w \cdot \mu(x) \right) = 0 \Rightarrow w \cdot \mu(x) = C \Rightarrow w = \frac{C}{\mu(x)} = C \cdot \frac{1 - x}{x^2(1 + x)}\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} \left( w \cdot \mu(x) \right) = 0 \Rightarrow w \cdot \mu(x) = C \Rightarrow w = \frac{C}{x^2(1 - x^2)}\]</span></p>
 <p>Now integrate to find <span class="math inline">\(v\)</span>:</p>
 <p><span class="math display">\[\begin{aligned}
-v &amp;= \int w \, dx = C \int \frac{1 - x}{x^2(1 + x)} dx\\
-  &amp;= C \int \left( \frac{1}{x^2} - \frac{2}{x} + \frac{2}{1 + x} \right) dx \\
-  &amp;= C \left( -\frac{1}{x} - 2\ln|x| + 2\ln|1 + x| \right) + D
+v &amp;= \int w \, dx = C \int \frac{dx}{x^2(1 - x^2)}
+   = C \int \left( \frac{1}{x^2} + \frac{1}{1 - x^2} \right) dx \\
+  &amp;= C \left( -\frac{1}{x} + \frac{1}{2}\ln\frac{1 + x}{1 - x} \right) + D
 \end{aligned}\]</span></p>
 <p><strong>Final Answer:</strong></p>
-<p>The second linearly independent solution for <span class="math inline">\(n = 1\)</span> on <span class="math inline">\((-1, 1)\)</span> is:</p>
+<p>Taking <span class="math inline">\(C=1\)</span>, <span class="math inline">\(D=0\)</span>, <span class="math inline">\(~\)</span>the second linearly independent solution for <span class="math inline">\(n = 1\)</span> on <span class="math inline">\((-1, 1)\)</span> is</p>
 <p><span class="math display">\[
-y_2(x) = -1 - 2x \ln|x| + 2x \ln|1 + x|
+y_2(x) = x\,v(x) = \frac{x}{2} \ln\frac{1 + x}{1 - x} - 1
 \quad \text{(up to constant multiples)}\]</span></p>
+<p>This is the Legendre function of the second kind <span class="math inline">\(Q_1(x)\)</span>. <span class="math inline">\(~\)</span>Check: <span class="math inline">\(~y_2' = \frac{1}{2}\ln\frac{1+x}{1-x} + \frac{x}{1-x^2}\)</span>, <span class="math inline">\(~y_2''=\frac{2}{(1-x^2)^2}\)</span>, <span class="math inline">\(~\)</span>and <span class="math inline">\((1-x^2)y_2''-2xy_2'+2y_2=\frac{2}{1-x^2}-\frac{2x^2}{1-x^2}-2=0\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>7.</strong> <span class="math inline">\(~\)</span> Find the general solution of the differential equation on the interval <span class="math inline">\((0, \infty)\)</span></p>
 <p><span class="math display">\[ x y'' +y=0 \]</span></p>
@@ -1487,7 +1501,7 @@ z^2 \frac{d^2u}{dz^2} + z \frac{du}{dz}&amp;+ ( z^2-1)u = 0
 <p><span class="math inline">\((a)\)</span></p>
 <p><span class="math display">\[\begin{aligned}
 y'' &amp;-2xy' +2\alpha y=0 \\
-&amp;\Downarrow \;\;y=\sum_{k=0}^\infty c_nk x^k, \;\;x=0 \text{ is an ordinary point}\\
+&amp;\Downarrow \;\;y=\sum_{k=0}^\infty c_k x^k, \;\;x=0 \text{ is an ordinary point}\\
 \sum_{k=2}^\infty &amp;c_k k(k-1)x^{k-2} -2\sum_{k=1}^\infty c_k k x^{k} +2\alpha\sum_{k=0}^\infty c_k x^k =0 \\
 2c_2 &amp;+ 2\alpha c_0 +\sum_{k=1}^\infty
 \left[(k+2)(k+1) c_{k+2} -2(k -\alpha)c_k \right] x^k = 0\\
@@ -1497,11 +1511,11 @@ c_2&amp;=-\alpha c_0, \;\; c_{k+2} =-\frac{2(\alpha -k)}{(k+2)(k+1)} c_k \\
 c_{2k} &amp;= (-2)^k \frac{\left(\alpha - (2k-2)\right) \left(\alpha - (2k-4)\right) \cdots \left(\alpha - 2\right) \alpha}{(2k)!} c_0 = \hat{c}_{2k} c_0 \\
 c_{2k+1} &amp;= (-2)^k \frac{\left(\alpha - (2k-1)\right) \left(\alpha - (2k-3)\right) \cdots \left(\alpha - 1\right)}{(2k+1)!} c_1 =\hat{c}_{2k+1} c_1 \\
 &amp;\Downarrow \\
-y &amp;= c_0 \sum_{k=1}^\infty \hat{c}_{2k} x^{2k} +c_1 \sum_{k=1}^\infty \hat{c}_{2k+1} x^{2k+1} = c_0 y_0(x) + c_1 y_1(x)
+y &amp;= c_0 \sum_{k=0}^\infty \hat{c}_{2k} x^{2k} +c_1 \sum_{k=0}^\infty \hat{c}_{2k+1} x^{2k+1} = c_0 y_0(x) + c_1 y_1(x), \quad \hat{c}_0=\hat{c}_1=1
 \end{aligned}\]</span></p>
 <p><span class="math inline">\((b)\)</span> <span class="math inline">\(~\)</span>If <span class="math inline">\(n\)</span> is an even integer, the first series terminates, whereas <span class="math inline">\(y_1(x)\)</span> is an infinite series. For example, if <span class="math inline">\(n=4\)</span>, then</p>
 <p><span class="math display">\[ y_0(x) = c_0 \left[ 1 - 2\frac{4}{2!}x^2 +2^2 \frac{(4 - 2) 4}{4!} x^4 \right] =c_0 \left[1 -4x^2 +\frac{4}{3}x^4 \right] \]</span></p>
-<p>Similarly, when <span class="math inline">\(n\)</span> is an odd integer, the series for <span class="math inline">\(y_1(x)\)</span> terminates with <span class="math inline">\(x^n\)</span>. For exampe, if <span class="math inline">\(n=5\)</span>, then</p>
+<p>Similarly, when <span class="math inline">\(n\)</span> is an odd integer, the series for <span class="math inline">\(y_1(x)\)</span> terminates with <span class="math inline">\(x^n\)</span>. For example, if <span class="math inline">\(n=5\)</span>, then</p>
 <p><span class="math display">\[ y_1(x) = c_1 \left[ x - 2\frac{(5 -1)}{3!}x^3 +4 \frac{(5 - 3)(5-1)}{5!} x^5 \right] =c_1 \left[x -\frac{4}{3}x^3 +\frac{4}{15}x^5 \right] \]</span></p>
 <p>That is, when <span class="math inline">\(n\)</span> is a nonnegative integer, we obtain an <span class="math inline">\(n\)</span>-th degree polynomial solution of <em>Hermite</em> equation</p>
 <p><span class="math inline">\(~\)</span></p>
