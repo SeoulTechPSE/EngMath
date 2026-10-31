@@ -420,7 +420,7 @@ window.Quarto = {
 \end{aligned}\]</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="759fc46b" class="cell" data-execution_count="1">
+<div id="76a04835" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -440,7 +440,7 @@ window.Quarto = {
 scipy:  1.16.0</code></pre>
 </div>
 </div>
-<div id="f90be4a4" class="cell" data-execution_count="2">
+<div id="ce09abfa" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>th1, th2 <span class="op">=</span> sympy.symbols(<span class="st">"theta_1, theta_2"</span>, cls<span class="op">=</span>sympy.Function)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>t, g, m1, l1, m2, l2 <span class="op">=</span> sympy.symbols(<span class="st">"t, g, m_1, l_1, m_2, l_2"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -467,7 +467,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <p>and rewrite the ODEs in terms of these functions</p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="81b3f321" class="cell" data-execution_count="3">
+<div id="a3566a99" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y1, y2, y3, y4 <span class="op">=</span> sympy.symbols(<span class="st">"y_1, y_2, y_3, y_4"</span>, cls<span class="op">=</span>sympy.Function)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>varchange <span class="op">=</span> {th1(t): y1(t),</span>
@@ -485,7 +485,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <li>At this point, <span class="math inline">\(\,\)</span>we have <font color="blue">four coupled 1<sup>st</sup>-order ODEs for the functions <span class="math inline">\(\,y_1\,\)</span> to <span class="math inline">\(\,y_4\)</span></font>. <span class="math inline">\(\,\)</span>It only remains to solve for the derivatives of these functions to obtain the ODEs <font color="blue">in standard form</font></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="846c51c7" class="cell" data-execution_count="4">
+<div id="fe6d74e7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Matrix([y1(t), y2(t), y3(t), y4(t)])</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>vcsol <span class="op">=</span> sympy.solve((ode1_vc, ode2_vc, ode3, ode4), y.diff(t), <span class="bu">dict</span><span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -495,7 +495,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}y_{2}{\left(t \right)}\\\frac{g m_{1} \sin{\left(y_{1}{\left(t \right)} \right)} + \frac{g m_{2} \sin{\left(y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + \frac{g m_{2} \sin{\left(y_{1}{\left(t \right)} \right)}}{2} + \frac{l_{1} m_{2} y_{2}^{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{1} \left(- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}\right)}\\y_{4}{\left(t \right)}\\\frac{g m_{1} \sin{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{1} \sin{\left(y_{3}{\left(t \right)} \right)} + g m_{2} \sin{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{2} \sin{\left(y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{1} y_{2}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{2} y_{2}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2 l_{2} \left(m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}\right)}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="8f25c176" class="cell" data-execution_count="5">
+<div id="3016fc11" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>jac <span class="op">=</span> sympy.Matrix([[f_i.diff(y_j) <span class="cf">for</span> y_j <span class="kw">in</span> y] <span class="cf">for</span> f_i <span class="kw">in</span> f])</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>jac[:, <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -503,25 +503,25 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}0\\\frac{2 m_{2} \left(g m_{1} \sin{\left(y_{1}{\left(t \right)} \right)} + \frac{g m_{2} \sin{\left(y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + \frac{g m_{2} \sin{\left(y_{1}{\left(t \right)} \right)}}{2} + \frac{l_{1} m_{2} y_{2}^{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}\right) \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{1} \left(- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}\right)^{2}} + \frac{g m_{1} \cos{\left(y_{1}{\left(t \right)} \right)} + \frac{g m_{2} \cos{\left(y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + \frac{g m_{2} \cos{\left(y_{1}{\left(t \right)} \right)}}{2} + l_{1} m_{2} y_{2}^{2}{\left(t \right)} \cos{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{1} \left(- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}\right)}\\0\\- \frac{m_{2} \left(g m_{1} \sin{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{1} \sin{\left(y_{3}{\left(t \right)} \right)} + g m_{2} \sin{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{2} \sin{\left(y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{1} y_{2}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{2} y_{2}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}\right) \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{2} \left(m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}\right)^{2}} + \frac{2 g m_{1} \cos{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 g m_{2} \cos{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{1} y_{2}^{2}{\left(t \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{2} y_{2}^{2}{\left(t \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 l_{2} m_{2} y_{4}^{2}{\left(t \right)} \cos{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2 l_{2} \left(m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}\right)}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="2eda5e93" class="cell" data-execution_count="6">
+<div id="fec3d015" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>jac[:, <span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}1\\\frac{m_{2} y_{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}}\\0\\\frac{4 l_{1} m_{1} y_{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 4 l_{1} m_{2} y_{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{2 l_{2} \left(m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}\right)}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="194f546d" class="cell" data-execution_count="7">
+<div id="257e29f8" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>jac[:, <span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}0\\- \frac{2 m_{2} \left(g m_{1} \sin{\left(y_{1}{\left(t \right)} \right)} + \frac{g m_{2} \sin{\left(y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + \frac{g m_{2} \sin{\left(y_{1}{\left(t \right)} \right)}}{2} + \frac{l_{1} m_{2} y_{2}^{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}\right) \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{1} \left(- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}\right)^{2}} + \frac{- g m_{2} \cos{\left(y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)} - l_{1} m_{2} y_{2}^{2}{\left(t \right)} \cos{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)} - l_{2} m_{2} y_{4}^{2}{\left(t \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{1} \left(- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}\right)}\\0\\\frac{m_{2} \left(g m_{1} \sin{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{1} \sin{\left(y_{3}{\left(t \right)} \right)} + g m_{2} \sin{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{2} \sin{\left(y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{1} y_{2}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + 2 l_{1} m_{2} y_{2}^{2}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + l_{2} m_{2} y_{4}^{2}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}\right) \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{2} \left(m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}\right)^{2}} + \frac{- g m_{1} \cos{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{1} \cos{\left(y_{3}{\left(t \right)} \right)} - g m_{2} \cos{\left(2 y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - g m_{2} \cos{\left(y_{3}{\left(t \right)} \right)} - 2 l_{1} m_{1} y_{2}^{2}{\left(t \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - 2 l_{1} m_{2} y_{2}^{2}{\left(t \right)} \cos{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - 2 l_{2} m_{2} y_{4}^{2}{\left(t \right)} \cos{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{2 l_{2} \left(m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}\right)}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="3e4ee5ad" class="cell" data-execution_count="8">
+<div id="33268eac" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>jac[:, <span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}0\\\frac{2 l_{2} m_{2} y_{4}{\left(t \right)} \sin{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)}}{l_{1} \left(- m_{1} + m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} - m_{2}\right)}\\1\\\frac{m_{2} y_{4}{\left(t \right)} \sin{\left(2 y_{1}{\left(t \right)} - 2 y_{3}{\left(t \right)} \right)}}{m_{1} - m_{2} \cos^{2}{\left(y_{1}{\left(t \right)} - y_{3}{\left(t \right)} \right)} + m_{2}}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="b3015392" class="cell" data-execution_count="9">
+<div id="a23fc8d9" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {m1: <span class="fl">5.0</span>, l1: <span class="fl">2.0</span>, m2: <span class="fl">5.0</span>, l2: <span class="fl">1.0</span>, g: <span class="fl">9.8</span>}</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>f_np <span class="op">=</span> sympy.lambdify((t, y), f.subs(params), <span class="st">'numpy'</span>)</span>
@@ -530,7 +530,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <ul>
 <li>We integrate with <code>solve_ivp</code>. <span class="math inline">\(~\)</span>The lambdified functions return a column matrix, <span class="math inline">\(~\)</span>so we flatten the right-hand side to the 1-D array that <code>solve_ivp</code> expects. <span class="math inline">\(~\)</span>Supplying the Jacobian is optional for explicit methods, but it helps implicit solvers such as <code>'LSODA'</code> or <code>'Radau'</code></li>
 </ul>
-<div id="1486a953" class="cell" data-execution_count="10">
+<div id="a9f94a84" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>y0 <span class="op">=</span> [<span class="fl">2.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>]   <span class="co"># theta_1(0) = 2 rad, all other initial values zero</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">1000</span>)</span>
@@ -544,10 +544,10 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <pre><code>'The solver successfully reached the end of the integration interval.'</code></pre>
 </div>
 </div>
-<div id="4d297765" class="cell" data-execution_count="11">
+<div id="c78f3938" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sol.y.T   <span class="co"># rows: time points, columns: y_1, ..., y_4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8ad59947" class="cell" data-execution_count="12">
+<div id="8d041dfa" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">3.5</span>))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>ax.plot(t, y[:, <span class="dv">0</span>], <span class="st">'r'</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="ch">\t</span><span class="vs">heta_1</span><span class="kw">(</span><span class="vs">t</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
@@ -570,7 +570,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <li>When visualizing this solution, <span class="math inline">\(\,\)</span>it is more intuitive <font color="blue">to animate the positions of the pendulums in the <span class="math inline">\(\,x–y\,\)</span> plane</font> rather than their angular deflections</li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
-<div id="86ba91fc" class="cell" data-execution_count="13">
+<div id="4f43910e" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>th1_np, th2_np <span class="op">=</span> y[:, <span class="dv">0</span>], y[:, <span class="dv">2</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> params[l1] <span class="op">*</span>np.sin(th1_np)</span>
@@ -578,7 +578,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> x1 <span class="op">+</span>params[l2] <span class="op">*</span>np.sin(th2_np)</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> y1 <span class="op">-</span>params[l2] <span class="op">*</span>np.cos(th2_np)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1add1688" class="cell" data-execution_count="14">
+<div id="07e29e21" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x$'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
@@ -593,7 +593,7 @@ y_4(t) &amp;=\dot{\theta_2}(t)
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="70bbdb42" class="cell" data-execution_count="15">
+<div id="1e9c7ffe" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>line1, <span class="op">=</span> ax.plot([], [], <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'r'</span>, markersize<span class="op">=</span><span class="fl">4.0</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>line2, <span class="op">=</span> ax.plot([], [], <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'b'</span>, markersize<span class="op">=</span><span class="fl">20.0</span>, lw<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>

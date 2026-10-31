@@ -419,7 +419,7 @@ window.Quarto = {
 
 <section id="importing-sympy" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="importing-sympy"><span class="header-section-number">17.1</span> Importing sympy</h2>
-<div id="b96e2e4c" class="cell" data-execution_count="1">
+<div id="a5f212ed" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> (laplace_transform, inverse_laplace_transform,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                   laplace_correspondence, laplace_initial_conds, pi)</span>
@@ -443,7 +443,7 @@ window.Quarto = {
 </section>
 <section id="symbols-and-functions" class="level2" data-number="17.2">
 <h2 data-number="17.2" class="anchored" data-anchor-id="symbols-and-functions"><span class="header-section-number">17.2</span> Symbols and Functions</h2>
-<div id="1f124af5" class="cell" data-execution_count="3">
+<div id="4e9855e0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> sympy.symbols(<span class="st">"a, b"</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>n, m <span class="op">=</span> sympy.symbols(<span class="st">"n, m"</span>, positive<span class="op">=</span><span class="va">True</span>, integer<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -456,38 +456,38 @@ window.Quarto = {
 <ul>
 <li>A short helper: <span class="math inline">\(~\)</span>transform and write <span class="math inline">\(\mathcal{L}\{y\}\)</span>, <span class="math inline">\(\mathcal{L}\{f\}\)</span>, <span class="math inline">\(\mathcal{L}\{g\}\)</span> as <span class="math inline">\(Y(s)\)</span>, <span class="math inline">\(F(s)\)</span>, <span class="math inline">\(G(s)\)</span></li>
 </ul>
-<div id="ee145cb2" class="cell" data-execution_count="4">
+<div id="2d726aa7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Lt(expr):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> laplace_correspondence(laplace_transform_(expr, t, s), {y: Y, f: F, g: G})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="laplace-transform" class="level2" data-number="17.3">
 <h2 data-number="17.3" class="anchored" data-anchor-id="laplace-transform"><span class="header-section-number">17.3</span> Laplace transform</h2>
-<div id="0c485de7" class="cell" data-execution_count="5">
+<div id="6e05200d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>laplace_transform(<span class="dv">1</span>, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="5">
 <p><span class="math inline">\(\displaystyle \frac{1}{s}\)</span></p>
 </div>
 </div>
-<div id="aaeeb56e" class="cell" data-execution_count="6">
+<div id="81de341f" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>laplace_transform(t, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
 <p><span class="math inline">\(\displaystyle \frac{1}{s^{2}}\)</span></p>
 </div>
 </div>
-<div id="9c86ce89" class="cell" data-execution_count="7">
+<div id="4ce9b17d" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>laplace_transform(sympy.exp(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span>t), t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle \frac{1}{s + 3}\)</span></p>
 </div>
 </div>
-<div id="051c8bce" class="cell" data-execution_count="8">
+<div id="e069a920" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>laplace_transform(<span class="dv">2</span> <span class="op">*</span>sympy.Heaviside(t <span class="op">-</span><span class="dv">3</span>), t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
 <p><span class="math inline">\(\displaystyle \frac{2 e^{- 3 s}}{s}\)</span></p>
 </div>
 </div>
-<div id="e887e7ad" class="cell" data-execution_count="9">
+<div id="7b8a37ab" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>laplace_transform(sympy.sin(<span class="dv">2</span> <span class="op">*</span>t)<span class="op">**</span><span class="dv">2</span>, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="9">
 <p><span class="math inline">\(\displaystyle \frac{8}{s \left(s^{2} + 16\right)}\)</span></p>
@@ -496,13 +496,13 @@ window.Quarto = {
 </section>
 <section id="inverse-laplace-transform" class="level2" data-number="17.4">
 <h2 data-number="17.4" class="anchored" data-anchor-id="inverse-laplace-transform"><span class="header-section-number">17.4</span> Inverse Laplace transform</h2>
-<div id="963e96df" class="cell" data-execution_count="10">
+<div id="ca964105" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>inverse_laplace_transform(<span class="dv">1</span> <span class="op">/</span> s<span class="op">**</span><span class="dv">3</span>, s, t)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="10">
 <p><span class="math inline">\(\displaystyle \frac{t^{2}}{2}\)</span></p>
 </div>
 </div>
-<div id="cd053232" class="cell" data-execution_count="11">
+<div id="e9b31a10" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>inverse_laplace_transform((<span class="op">-</span><span class="dv">2</span> <span class="op">*</span>s <span class="op">+</span><span class="dv">6</span>) <span class="op">/</span> (s<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span>), s, t)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
 <p><span class="math inline">\(\displaystyle 3 \sin{\left(2 t \right)} - 2 \cos{\left(2 t \right)}\)</span></p>
@@ -511,28 +511,28 @@ window.Quarto = {
 </section>
 <section id="laplace-transform-of-derivatives" class="level2" data-number="17.5">
 <h2 data-number="17.5" class="anchored" data-anchor-id="laplace-transform-of-derivatives"><span class="header-section-number">17.5</span> Laplace transform of derivatives</h2>
-<div id="337e145f" class="cell" data-execution_count="12">
+<div id="bfce2a10" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> y(t).diff(t, <span class="dv">2</span>) <span class="op">+</span><span class="dv">2</span> <span class="op">*</span>y(t).diff(t) <span class="op">+</span><span class="dv">10</span> <span class="op">*</span>y(t)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="12">
 <p><span class="math inline">\(\displaystyle 10 y{\left(t \right)} + 2 \frac{d}{d t} y{\left(t \right)} + \frac{d^{2}}{d t^{2}} y{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="0ab0d676" class="cell" data-execution_count="13">
+<div id="cbcdbd7f" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Leq <span class="op">=</span> laplace_correspondence(laplace_transform(eq, t, s, noconds<span class="op">=</span><span class="va">True</span>), {y: Y})</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Leq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="13">
 <p><span class="math inline">\(\displaystyle s^{2} Y{\left(s \right)} + 2 s Y{\left(s \right)} - s y{\left(0 \right)} + 10 Y{\left(s \right)} - 2 y{\left(0 \right)} - \left. \frac{d}{d t} y{\left(t \right)} \right|_{\substack{ t=0 }}\)</span></p>
 </div>
 </div>
-<div id="b9c1e8f3" class="cell" data-execution_count="14">
+<div id="4e1fd894" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Leq <span class="op">=</span> laplace_initial_conds(Leq, t, {y: [<span class="dv">1</span>, <span class="dv">1</span>]})   <span class="co"># y(0) = 1, y'(0) = 1</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Leq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="14">
 <p><span class="math inline">\(\displaystyle s^{2} Y{\left(s \right)} + 2 s Y{\left(s \right)} - s + 10 Y{\left(s \right)} - 3\)</span></p>
 </div>
 </div>
-<div id="2a89a927" class="cell" data-execution_count="15">
+<div id="0f499532" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> sympy.solve(Leq, Y(s))[<span class="dv">0</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="15">
@@ -542,7 +542,7 @@ window.Quarto = {
 </section>
 <section id="laplace-transform-of-integrals" class="level2" data-number="17.6">
 <h2 data-number="17.6" class="anchored" data-anchor-id="laplace-transform-of-integrals"><span class="header-section-number">17.6</span> Laplace transform of integrals</h2>
-<div id="9c61c2e8" class="cell" data-execution_count="16">
+<div id="57dfa05c" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> sympy.integrate(g(tau1), (tau1, <span class="dv">0</span>, t)) <span class="op">+</span>sympy.integrate(sympy.integrate(f(tau2), (tau2, <span class="dv">0</span>, tau1)), (tau1, <span class="dv">0</span>, t))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="16">
@@ -552,7 +552,7 @@ window.Quarto = {
 <ul>
 <li><code>sympy.laplace_transform</code> leaves these integrals unevaluated:</li>
 </ul>
-<div id="89c4b037" class="cell" data-execution_count="17">
+<div id="322e70be" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>laplace_transform(eq, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="17">
 <p><span class="math inline">\(\displaystyle \mathcal{L}_{t}\left[\int\limits_{0}^{t} g{\left(\tau_{1} \right)}\, d\tau_{1}\right]\left(s\right) + \mathcal{L}_{t}\left[\int\limits_{0}^{t}\int\limits_{0}^{\tau_{1}} f{\left(\tau_{2} \right)}\, d\tau_{2}\, d\tau_{1}\right]\left(s\right)\)</span></p>
@@ -561,7 +561,7 @@ window.Quarto = {
 <ul>
 <li>The wrapper uses <span class="math inline">\(~\mathcal{L}\left\{\int_0^t h(\tau)\,d\tau\right\} = \frac{1}{s}\mathcal{L}\{h(t)\}\)</span>:</li>
 </ul>
-<div id="346ec605" class="cell" data-execution_count="18">
+<div id="b5ba91af" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="18">
 <p><span class="math inline">\(\displaystyle \frac{G{\left(s \right)}}{s} + \frac{F{\left(s \right)}}{s^{2}}\)</span></p>
@@ -570,20 +570,20 @@ window.Quarto = {
 </section>
 <section id="convolution" class="level2" data-number="17.7">
 <h2 data-number="17.7" class="anchored" data-anchor-id="convolution"><span class="header-section-number">17.7</span> Convolution</h2>
-<div id="2b6024ea" class="cell" data-execution_count="19">
+<div id="081f4de5" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> sympy.integrate(f(tau)<span class="op">*</span>g(t <span class="op">-</span>tau), (tau, <span class="dv">0</span>, t)) <span class="op">+</span>sympy.integrate(f(t <span class="op">-</span>tau)<span class="op">*</span>g(tau), (tau, <span class="dv">0</span>, t))</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="19">
 <p><span class="math inline">\(\displaystyle \int\limits_{0}^{t} f{\left(\tau \right)} g{\left(t - \tau \right)}\, d\tau + \int\limits_{0}^{t} f{\left(t - \tau \right)} g{\left(\tau \right)}\, d\tau\)</span></p>
 </div>
 </div>
-<div id="c5403140" class="cell" data-execution_count="20">
+<div id="956aecde" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="20">
 <p><span class="math inline">\(\displaystyle 2 F{\left(s \right)} G{\left(s \right)}\)</span></p>
 </div>
 </div>
-<div id="31a916bb" class="cell" data-execution_count="21">
+<div id="141e4a76" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Lt(sympy.integrate(sympy.exp(tau) <span class="op">*</span>sympy.sin(t <span class="op">-</span>tau), (tau, <span class="dv">0</span>, t)))  <span class="co"># e^t * sin t</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="21">
 <p><span class="math inline">\(\displaystyle - \frac{s}{2 \left(s^{2} + 1\right)} - \frac{1}{2 \left(s^{2} + 1\right)} + \frac{1}{2 \left(s - 1\right)}\)</span></p>
@@ -592,14 +592,14 @@ window.Quarto = {
 </section>
 <section id="first-translation-theorem" class="level2" data-number="17.8">
 <h2 data-number="17.8" class="anchored" data-anchor-id="first-translation-theorem"><span class="header-section-number">17.8</span> First translation theorem</h2>
-<div id="78ad9cca" class="cell" data-execution_count="22">
+<div id="a3c6e617" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> y(t) <span class="op">*</span>sympy.exp(<span class="op">-</span>a <span class="op">*</span>t)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="22">
 <p><span class="math inline">\(\displaystyle y{\left(t \right)} e^{- a t}\)</span></p>
 </div>
 </div>
-<div id="54300a5c" class="cell" data-execution_count="23">
+<div id="2fbaa14c" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="23">
 <p><span class="math inline">\(\displaystyle Y{\left(a + s \right)}\)</span></p>
@@ -608,40 +608,40 @@ window.Quarto = {
 </section>
 <section id="second-translation-theorem" class="level2" data-number="17.9">
 <h2 data-number="17.9" class="anchored" data-anchor-id="second-translation-theorem"><span class="header-section-number">17.9</span> Second translation theorem</h2>
-<div id="f7d8681a" class="cell" data-execution_count="24">
+<div id="f04ed529" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> f(t <span class="op">-</span>a) <span class="op">*</span>sympy.Heaviside(t <span class="op">-</span>a)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="24">
 <p><span class="math inline">\(\displaystyle f{\left(- a + t \right)} \theta\left(- a + t\right)\)</span></p>
 </div>
 </div>
-<div id="959b4a82" class="cell" data-execution_count="25">
+<div id="12c32070" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="25">
 <p><span class="math inline">\(\displaystyle F{\left(s \right)} e^{- a s}\)</span></p>
 </div>
 </div>
-<div id="89287bce" class="cell" data-execution_count="26">
+<div id="5d150cf4" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> g(t) <span class="op">*</span>sympy.Heaviside(t <span class="op">-</span>a)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="26">
 <p><span class="math inline">\(\displaystyle g{\left(t \right)} \theta\left(- a + t\right)\)</span></p>
 </div>
 </div>
-<div id="12f49b01" class="cell" data-execution_count="27">
+<div id="c75cf868" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)   <span class="co"># alternative form: exp(-a s) L{g(t + a)}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="27">
 <p><span class="math inline">\(\displaystyle \mathcal{L}_{t}\left[g{\left(a + t \right)}\right]\left(s\right) e^{- a s}\)</span></p>
 </div>
 </div>
-<div id="40907b34" class="cell" data-execution_count="28">
+<div id="a18e6b58" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> sympy.cos(t) <span class="op">*</span>sympy.Heaviside(t <span class="op">-</span>pi)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="28">
 <p><span class="math inline">\(\displaystyle \cos{\left(t \right)} \theta\left(t - \pi\right)\)</span></p>
 </div>
 </div>
-<div id="3f8697c0" class="cell" data-execution_count="29">
+<div id="fc5df306" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="29">
 <p><span class="math inline">\(\displaystyle - \frac{s e^{- \pi s}}{s^{2} + 1}\)</span></p>
@@ -650,68 +650,68 @@ window.Quarto = {
 </section>
 <section id="derivatives-of-transforms" class="level2" data-number="17.10">
 <h2 data-number="17.10" class="anchored" data-anchor-id="derivatives-of-transforms"><span class="header-section-number">17.10</span> Derivatives of Transforms</h2>
-<div id="896e54c0" class="cell" data-execution_count="30">
+<div id="195f4ae3" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span>f(t) <span class="op">*</span>t<span class="op">**</span>m <span class="op">*</span>t<span class="op">**</span>n</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="30">
 <p><span class="math inline">\(\displaystyle 3 t^{m} t^{n} f{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="6316bbd5" class="cell" data-execution_count="31">
+<div id="2f07b006" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="31">
 <p><span class="math inline">\(\displaystyle 3 \left(-1\right)^{m + n} \frac{d^{m + n}}{d s^{m + n}} F{\left(s \right)}\)</span></p>
 </div>
 </div>
-<div id="b11fae36" class="cell" data-execution_count="32">
+<div id="c021bfb1" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span>  t<span class="op">**</span>n <span class="op">*</span>t<span class="op">**</span>m <span class="op">*</span>f(t)<span class="op">*</span>sympy.exp(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>t)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="32">
 <p><span class="math inline">\(\displaystyle t^{m} t^{n} f{\left(t \right)} e^{- 2 t}\)</span></p>
 </div>
 </div>
-<div id="61f085f1" class="cell" data-execution_count="33">
+<div id="22f9f93c" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="33">
 <p><span class="math inline">\(\displaystyle \left(-1\right)^{m + n} \left. \frac{d^{m + n}}{d \sigma^{m + n}} F{\left(\sigma \right)} \right|_{\substack{ \sigma=s + 2 }}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="0f368786" class="cell" data-execution_count="34">
+<div id="44f0b323" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> t<span class="op">**</span>n <span class="op">*</span>sympy.diff(f(t), t, t)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="34">
 <p><span class="math inline">\(\displaystyle t^{n} \frac{d^{2}}{d t^{2}} f{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="938365f4" class="cell" data-execution_count="35">
+<div id="0e542062" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="35">
 <p><span class="math inline">\(\displaystyle \left(-1\right)^{n} \frac{d^{n}}{d s^{n}} \left(s^{2} F{\left(s \right)} - s f{\left(0 \right)} - \left. \frac{d}{d t} f{\left(t \right)} \right|_{\substack{ t=0 }}\right)\)</span></p>
 </div>
 </div>
-<div id="bbbfc96b" class="cell" data-execution_count="36">
+<div id="d85f8060" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> t <span class="op">*</span>sympy.integrate(f(tau), (tau, <span class="dv">0</span>, t))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="36">
 <p><span class="math inline">\(\displaystyle t \int\limits_{0}^{t} f{\left(\tau \right)}\, d\tau\)</span></p>
 </div>
 </div>
-<div id="bd01eb0b" class="cell" data-execution_count="37">
+<div id="faad32ef" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="37">
 <p><span class="math inline">\(\displaystyle - \frac{\frac{d}{d s} F{\left(s \right)}}{s} + \frac{F{\left(s \right)}}{s^{2}}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="cedcd224" class="cell" data-execution_count="38">
+<div id="5c174e77" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> t <span class="op">*</span>f(t) <span class="op">*</span>sympy.exp(<span class="op">-</span>t)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="38">
 <p><span class="math inline">\(\displaystyle t f{\left(t \right)} e^{- t}\)</span></p>
 </div>
 </div>
-<div id="3adc329c" class="cell" data-execution_count="39">
+<div id="f07ec006" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="39">
 <p><span class="math inline">\(\displaystyle - \left. \frac{d}{d \sigma} F{\left(\sigma \right)} \right|_{\substack{ \sigma=s + 1 }}\)</span></p>
@@ -720,7 +720,7 @@ window.Quarto = {
 <ul>
 <li>For this product, <span class="math inline">\(~\)</span><code>sympy.laplace_transform</code> itself (1.14) raises an error:</li>
 </ul>
-<div id="fa64336c" class="cell" data-execution_count="40">
+<div id="dae005f0" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    laplace_transform(eq, t, s)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> err:</span>
@@ -731,14 +731,14 @@ Can't calculate derivative wrt s + 1.</code></pre>
 </div>
 </div>
 <hr>
-<div id="efee8382" class="cell" data-execution_count="41">
+<div id="672946ce" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> t <span class="op">*</span>sympy.diff(f(t), t) <span class="op">*</span>sympy.exp(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>t)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="41">
 <p><span class="math inline">\(\displaystyle t e^{- 4 t} \frac{d}{d t} f{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="3630f0b4" class="cell" data-execution_count="42">
+<div id="e7d7fd4e" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="42">
 <p><span class="math inline">\(\displaystyle - \left(s + 4\right) \left. \frac{d}{d \sigma} F{\left(\sigma \right)} \right|_{\substack{ \sigma=s + 4 }} - F{\left(s + 4 \right)}\)</span></p>
@@ -747,42 +747,42 @@ Can't calculate derivative wrt s + 1.</code></pre>
 </section>
 <section id="various-transform-examples" class="level2" data-number="17.11">
 <h2 data-number="17.11" class="anchored" data-anchor-id="various-transform-examples"><span class="header-section-number">17.11</span> Various Transform Examples</h2>
-<div id="fc9134f1" class="cell" data-execution_count="43">
+<div id="890c3265" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> sympy.exp(<span class="op">-</span>a<span class="op">*</span>t) <span class="op">*</span>sympy.diff(f(t), t, t)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="43">
 <p><span class="math inline">\(\displaystyle e^{- a t} \frac{d^{2}}{d t^{2}} f{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="b2e1a02c" class="cell" data-execution_count="44">
+<div id="bce26436" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="44">
 <p><span class="math inline">\(\displaystyle \left(a + s\right)^{2} F{\left(a + s \right)} - \left(a + s\right) f{\left(0 \right)} - \left. \frac{d}{d t} f{\left(t \right)} \right|_{\substack{ t=0 }}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="bb7c8452" class="cell" data-execution_count="45">
+<div id="a90eb2d2" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> sympy.exp(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>t) <span class="op">*</span>sympy.integrate(f(tau), (tau, <span class="dv">0</span>, t))</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="45">
 <p><span class="math inline">\(\displaystyle e^{- 4 t} \int\limits_{0}^{t} f{\left(\tau \right)}\, d\tau\)</span></p>
 </div>
 </div>
-<div id="c70eadaa" class="cell" data-execution_count="46">
+<div id="822a48f9" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="46">
 <p><span class="math inline">\(\displaystyle \frac{F{\left(s + 4 \right)}}{s + 4}\)</span></p>
 </div>
 </div>
 <hr>
-<div id="3436cf9c" class="cell" data-execution_count="47">
+<div id="e69f86f7" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> f(<span class="dv">3</span><span class="op">*</span>a<span class="op">*</span>t)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>eq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="47">
 <p><span class="math inline">\(\displaystyle f{\left(3 a t \right)}\)</span></p>
 </div>
 </div>
-<div id="fa32d106" class="cell" data-execution_count="48">
+<div id="47a52e71" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>Lt(eq)   <span class="co"># scaling: F(s/k)/k with k = 3a</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="48">
 <p><span class="math inline">\(\displaystyle \frac{F{\left(\frac{s}{3 a} \right)}}{3 a}\)</span></p>
@@ -795,19 +795,19 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <p>A technique that can be used to solve certain ODE problems is to Laplace transform the ODE, which for many problems results in an algebraic equation that is easier to solve. The solution to the algebraic equation can then be transformed back to the original domain with an inverse Laplace transform, to obtain the solution to the original problem. For example, consider the following differential equation for a driven harmonic oscillator:</p>
 <p><span class="math display">\[ \frac{d^2 y}{dt^2} + 2\frac{dy}{dt} +10 y = 2\sin 3t \]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="b7b1fd8d" class="cell" data-execution_count="49">
+<div id="85a2fe0b" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> sympy.symbols(<span class="st">'t'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> sympy.symbols(<span class="st">'s'</span>)</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>y, Y <span class="op">=</span> sympy.symbols(<span class="st">'y, Y'</span>, cls<span class="op">=</span>sympy.Function)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e9c93ffe" class="cell" data-execution_count="50">
+<div id="7af3f291" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>ode <span class="op">=</span> y(t).diff(t, <span class="dv">2</span>) <span class="op">+</span><span class="dv">2</span> <span class="op">*</span>y(t).diff(t) <span class="op">+</span><span class="dv">10</span> <span class="op">*</span>y(t) <span class="op">-</span><span class="dv">2</span> <span class="op">*</span>sympy.sin(<span class="dv">3</span><span class="op">*</span>t)</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>ode</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="50">
 <p><span class="math inline">\(\displaystyle 10 y{\left(t \right)} - 2 \sin{\left(3 t \right)} + 2 \frac{d}{d t} y{\left(t \right)} + \frac{d^{2}}{d t^{2}} y{\left(t \right)}\)</span></p>
 </div>
 </div>
-<div id="5f08fbfe" class="cell" data-execution_count="51">
+<div id="39227eba" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> laplace_correspondence(laplace_transform(ode, t, s, noconds<span class="op">=</span><span class="va">True</span>), {y: Y})</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>Lode</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="51">
@@ -817,7 +817,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>At this point, we need to specify the initial conditions for the ODE problem. Here we use <span class="math inline">\(y(0)=1\)</span> and <span class="math inline">\(y'(0)=0\)</span>, and substitute them into the Laplace-transformed ODE with <code>laplace_initial_conds</code>:</li>
 </ul>
-<div id="5a0aa5a4" class="cell" data-execution_count="52">
+<div id="b4a657ab" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> laplace_initial_conds(Lode, t, {y: [<span class="dv">1</span>, <span class="dv">0</span>]})</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>Lode</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="52">
@@ -827,7 +827,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>This is an algebraic equation that can be solved for <span class="math inline">\(Y(s)\)</span></li>
 </ul>
-<div id="9aedff99" class="cell" data-execution_count="53">
+<div id="c622b270" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>Ysol <span class="op">=</span> sympy.solve(Lode, Y(s))</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>Ysol[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="53">
@@ -837,7 +837,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>The result is a list of solutions, which in this case contains only one element. Performing the inverse Laplace transformation on this expression gives the solution to the original problem in the time domain (older versions of sympy needed the partial fractions to be inverted one by one):</li>
 </ul>
-<div id="a5a57bff" class="cell" data-execution_count="54">
+<div id="07714e99" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>ysol <span class="op">=</span> inverse_laplace_transform(Ysol[<span class="dv">0</span>], s, t)</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>ysol.expand().collect([sympy.exp(<span class="op">-</span>t)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="54">
@@ -847,7 +847,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>The same result is obtained with <code>dsolve</code>:</li>
 </ul>
-<div id="6792fb99" class="cell" data-execution_count="55">
+<div id="b8e926d0" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>sympy.dsolve(ode, y(t), ics<span class="op">=</span>{y(<span class="dv">0</span>): <span class="dv">1</span>, y(t).diff(t).subs(t, <span class="dv">0</span>): <span class="dv">0</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="55">
 <p><span class="math inline">\(\displaystyle y{\left(t \right)} = \left(\frac{43 \sin{\left(3 t \right)}}{111} + \frac{49 \cos{\left(3 t \right)}}{37}\right) e^{- t} + \frac{2 \sin{\left(3 t \right)}}{37} - \frac{12 \cos{\left(3 t \right)}}{37}\)</span></p>
@@ -859,7 +859,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <p>In some instances, the Laplace transform can be used to solve linear differential equations with variable monomial coefficients</p>
 <p><span class="math display">\[ty'' + y' +ty =0, \;\;y(0)=1, \;y'(0)=0\]</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="1daae0d8" class="cell" data-execution_count="56">
+<div id="d272e1db" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>s, t <span class="op">=</span> sympy.symbols(<span class="st">'s, t'</span>, positive<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>y, Y <span class="op">=</span> sympy.symbols(<span class="st">'y, Y'</span>, cls<span class="op">=</span>sympy.Function)</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -873,7 +873,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>Reduce the given differential equation to a linear first-order DE in the transformed function <span class="math inline">\(Y(s)=\mathcal{L}_t\left[y(t)\right]\)</span>. <span class="math inline">\(~\)</span>Since <span class="math inline">\(\mathcal{L}\{t\,h(t)\} = -\frac{d}{ds}\mathcal{L}\{h(t)\}\)</span>, <span class="math inline">\(~\)</span>the factor <span class="math inline">\(t\)</span> becomes a derivative with respect to <span class="math inline">\(s\)</span></li>
 </ul>
-<div id="c3f658ff" class="cell" data-execution_count="57">
+<div id="a3e8eb5a" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> laplace_transform(ode, t, s, noconds<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> laplace_initial_conds(laplace_correspondence(Lode, {y: Y}), t, {y: [<span class="dv">1</span>, <span class="dv">0</span>]})</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>Lode <span class="op">=</span> Lode.doit().expand().collect(Y(s).diff(s))</span>
@@ -885,14 +885,14 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>Solve the first-order ODE for <span class="math inline">\(Y(s)\)</span> and then find <span class="math inline">\(y(t)=\mathcal{L}_t^{-1} \left[Y(s) \right]\)</span></li>
 </ul>
-<div id="78549e03" class="cell" data-execution_count="58">
+<div id="922f7a9b" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> sympy.dsolve(Lode, Y(s))</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="58">
 <p><span class="math inline">\(\displaystyle Y{\left(s \right)} = \frac{C_{1}}{\sqrt{s^{2} + 1}}\)</span></p>
 </div>
 </div>
-<div id="08a470ff" class="cell" data-execution_count="59">
+<div id="1f88cf6f" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> inverse_laplace_transform(sol.rhs, s, t)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="59">
@@ -902,7 +902,7 @@ Can't calculate derivative wrt s + 1.</code></pre>
 <ul>
 <li>The constant follows from <span class="math inline">\(y(0)=1\)</span> <span class="math inline">\(~\)</span>(note <span class="math inline">\(J_0(0)=1\)</span>)</li>
 </ul>
-<div id="1d53d0e8" class="cell" data-execution_count="60">
+<div id="af2aad1c" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>C1 <span class="op">=</span> sympy.solve(sympy.Eq(y.subs(t, <span class="dv">0</span>), <span class="dv">1</span>))[<span class="dv">0</span>]</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>y.subs(sympy.Symbol(<span class="st">'C1'</span>), C1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="60">

@@ -517,7 +517,7 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~3y'''+5y''+10y'-4y=0\)</span></p>
 <p><a href="files/solutions/sol_3_3.pdf" target="_blank">Solution</a></p>
-<div id="ad66a896" class="cell" data-output-location="fragment" data-execution_count="1">
+<div id="69807aac" class="cell" data-output-location="fragment" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, init_printing</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.solvers <span class="im">import</span> solve</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>init_printing()</span>
@@ -1227,7 +1227,7 @@ r^2 &amp;u'' +2r u' -n(n +1) u = -r^2 F(r), \;\; 0 &lt; r &lt; R \\
   \dot{x} &amp;= u\\
   \dot{u} &amp;= -x -x^3 -u
 \end{aligned}\]</span></p>
-<div id="352955be" class="cell" data-execution_count="2">
+<div id="fb3bf07e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1286,7 +1286,7 @@ Figure&nbsp;3.1: <span class="math inline">\(\displaystyle\frac{d^2x}{dt^2} +\fr
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the above equation under the assumption that <span class="math inline">\(k_1=6\)</span>, <span class="math inline">\(k_2=4\)</span>, <span class="math inline">\(m_1=1\)</span>, and <span class="math inline">\(m_2=1\)</span> subject to</p>
 <p><span class="math display">\[x_1(0)=0,\; x'_1(0)=1,\; x_2(0)=0,\; x'_2(0)=-1\]</span></p>
-<div id="0e03d583" class="cell" data-execution_count="4">
+<div id="71634521" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>k1, k2, m1, m2 <span class="op">=</span> <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(t, y):</span>

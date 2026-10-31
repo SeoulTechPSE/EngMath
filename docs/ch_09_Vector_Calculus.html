@@ -1884,7 +1884,7 @@ v &amp; 1 + u
 </ul>
 <p>So, the transformed region is:</p>
 <p><span class="math display">\[S = \left\{ (u, v) \ \middle| \ 0 \le u \le 2,\quad \frac{u^2}{4} - 1 \le v \le 1 - \frac{u^2}{4} \right\}\]</span></p>
-<div id="96456561" class="cell" data-execution_count="1">
+<div id="26cb323d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2346,7 +2346,7 @@ u_z=-\frac{1}{r}\frac{\partial\Psi}{\partial r}\;}\]</span></p>
 <li><p>The structure of <span class="math inline">\(\boldsymbol\omega\)</span> resembles a dipole-like poloidal vorticity: <span class="math inline">\(\omega_r\)</span> is odd in <span class="math inline">\(z\)</span> (changes sign across the <span class="math inline">\(z=0\)</span> plane), while <span class="math inline">\(\omega_z\)</span> has a quadrupolar character (combination of <span class="math inline">\(r^2\)</span> and <span class="math inline">\(z^2\)</span>). Vorticity lines (integral curves of <span class="math inline">\(\boldsymbol\omega\)</span>) lie in meridional planes and encircle/loop around the symmetry axis — qualitatively similar to a vortex ring/poloidal-dipole structure concentrated near the origin</p></li>
 <li><p>Physically this flow can be seen as an idealized concentrated swirl (azimuthal velocity decaying like <span class="math inline">\((\text{distance})^{-2}\)</span> for large distance because <span class="math inline">\(u_\theta\sim r/(r^2+z^2)^{3/2}\)</span>), and the computed <span class="math inline">\(\boldsymbol\omega\)</span> describes the local twisting/rotation of fluid elements produced by that swirl. The sign pattern indicates opposite vorticity above and below the midplane <span class="math inline">\(z=0\)</span> in the radial component, etc</p></li>
 </ul>
-<div id="7714c554" class="cell" data-execution_count="2">
+<div id="1aadd710" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.colors <span class="im">as</span> colors</span>

@@ -66,7 +66,7 @@ def estimate_params(n, use_probability=False):
   """Estimate plotting parameters based on quantum numbers"""
   rmax = n**2 *2.5
   iso_frac = 0.02 if use_probability else 0.08
-  grid = 120 if use_probability else 100
+  grid = 72 if use_probability else 64   # grid points per axis (file size ~ grid**3)
 
   return rmax, iso_frac, grid
 
@@ -138,12 +138,11 @@ def plot_orbital(
   else:
     plot_data = np.real(psi)
     data_label = "ψ"
-    colorscale_pos = 'Reds'
-    colorscale_neg = 'Blues'
     colorscale_2d = 'RdBu_r'
   
   iso = iso_frac *np.max(np.abs(plot_data))
-  Xf, Yf, Zf, Vf = X.flatten(), Y.flatten(), Z.flatten(), plot_data.flatten()
+  # float32 halves the size of the data embedded in the HTML file
+  Xf, Yf, Zf, Vf = (a.ravel().astype(np.float32) for a in (X, Y, Z, plot_data))
 
   # ---------------------------------
   # Create subplot layout
@@ -190,24 +189,14 @@ def plot_orbital(
     )
     fig.add_trace(iso_pos, row=1, col=1) if plot_slices else fig.add_trace(iso_pos)
   else:
-    iso_pos = go.Isosurface(
-      isomin=iso, isomax=iso,
-      colorscale=colorscale_pos,
-      name="+lobe",
+    # one trace with two surfaces (psi = -iso and +iso) stores the grid only once
+    iso_both = go.Isosurface(
+      isomin=-iso, isomax=iso, surface_count=2,
+      colorscale=[[0, '#6baed6'], [1, '#fb6a4a']],   # negative lobe blue, positive lobe red
+      name="lobes",
       **iso_params
     )
-    iso_neg = go.Isosurface(
-      isomin=-iso, isomax=-iso,
-      colorscale=colorscale_neg,
-      name="-lobe",
-      **iso_params
-    )
-    if plot_slices:
-      fig.add_trace(iso_pos, row=1, col=1)
-      fig.add_trace(iso_neg, row=1, col=1)
-    else:
-      fig.add_trace(iso_pos)
-      fig.add_trace(iso_neg)
+    fig.add_trace(iso_both, row=1, col=1) if plot_slices else fig.add_trace(iso_both)
 
   # -----------------------------
   # Add 3D cross-section slice
@@ -373,7 +362,7 @@ def plot_orbital(
   fig = resize_fig_with_colorbar(fig, 0.55)
 
   if save_html:
-    fig.write_html(filename)
+    fig.write_html(filename, include_plotlyjs='cdn')  # load plotly.js from the CDN
 
   if show_plot:
     fig.show()
@@ -431,7 +420,6 @@ def hydrogen_orbital_gui(
 hydrogen_orbital_gui(2, 0, 0, plot_slices=False, show_plot=False, save_html=True)
 hydrogen_orbital_gui(2, 1, 1, show_plot=False, save_html=True)
 hydrogen_orbital_gui(3, 1, 0, show_plot=False, save_html=True)
-hydrogen_orbital_gui(3, 1, 0, plot_slices=False, show_plot=False, save_html=True)
 hydrogen_orbital_gui(4, 2, -2, show_plot=False, save_html=True)
 hydrogen_orbital_gui(4, 2, 0, plot_slices=False, show_plot=False, save_html=True)
 ```

@@ -423,7 +423,7 @@ window.Quarto = {
 </ul>
 <section id="importing-modules" class="level2" data-number="19.1">
 <h2 data-number="19.1" class="anchored" data-anchor-id="importing-modules"><span class="header-section-number">19.1</span> Importing modules</h2>
-<div id="a62b7a3b" class="cell" data-execution_count="1">
+<div id="5111d6cc" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sympy.init_printing()</span>
@@ -463,26 +463,26 @@ cvxopt:  1.3.2</code></pre>
 <p><span class="math display">\[ f(r,h) = 2\pi r^2 + 2\pi rh\]</span></p>
 <p>subject to the equality constraint</p>
 <p><span class="math display">\[ g(r,h) = \pi r^2h -1 = 0 \]</span></p>
-<div id="3db3cb7f" class="cell" data-execution_count="2">
+<div id="10a4897a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>r, h <span class="op">=</span> sympy.symbols(<span class="st">"r, h"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Area <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span>sympy.pi <span class="op">*</span>r<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span>sympy.pi <span class="op">*</span>r <span class="op">*</span>h </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Volume <span class="op">=</span> sympy.pi <span class="op">*</span>r<span class="op">**</span><span class="dv">2</span> <span class="op">*</span>h</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="bdb71265" class="cell" data-execution_count="3">
+<div id="f3953cb6" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>h_r <span class="op">=</span> sympy.solve(Volume <span class="op">-</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>h_r</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
 <p><span class="math inline">\(\displaystyle \left\{ h : \frac{1}{\pi r^{2}}\right\}\)</span></p>
 </div>
 </div>
-<div id="e4197482" class="cell" data-execution_count="4">
+<div id="e1542f5b" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Area_r <span class="op">=</span> Area.subs(h_r)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Area_r</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
 <p><span class="math inline">\(\displaystyle 2 \pi r^{2} + \frac{2}{r}\)</span></p>
 </div>
 </div>
-<div id="ef92a496" class="cell" data-execution_count="5">
+<div id="21fd5786" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f'(r_sol) = 0</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rsol <span class="op">=</span> sympy.solve(Area_r.diff(r))[<span class="dv">0</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>rsol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -490,20 +490,20 @@ cvxopt:  1.3.2</code></pre>
 <p><span class="math inline">\(\displaystyle \frac{2^{\frac{2}{3}}}{2 \sqrt[3]{\pi}}\)</span></p>
 </div>
 </div>
-<div id="ae1358ec" class="cell" data-execution_count="6">
+<div id="6241c755" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rsol.evalf()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
 <p><span class="math inline">\(\displaystyle 0.541926070139289\)</span></p>
 </div>
 </div>
-<div id="6d922ca1" class="cell" data-execution_count="7">
+<div id="a95e7d74" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f''(r_sol) &gt; 0</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Area_r.diff(r, <span class="dv">2</span>).subs(r, rsol)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <p><span class="math inline">\(\displaystyle 12 \pi\)</span></p>
 </div>
 </div>
-<div id="99b5abd9" class="cell" data-execution_count="8">
+<div id="fb202e98" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum Area</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Area_min <span class="op">=</span> Area_r.subs(r, rsol)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Area_min, Area_min.evalf()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -512,25 +512,25 @@ cvxopt:  1.3.2</code></pre>
 </div>
 </div>
 <hr>
-<div id="919ae9cf" class="cell" data-execution_count="9">
+<div id="477f84ea" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(r):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span>np.pi <span class="op">*</span>r<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">/</span>r</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="60ef55c2" class="cell" data-execution_count="10">
+<div id="0381fcfd" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>r_min <span class="op">=</span> optimize.brent(f, brack<span class="op">=</span>(<span class="fl">0.1</span>, <span class="dv">4</span>))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>r_min</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="10">
 <p><span class="math inline">\(\displaystyle 0.541926077255714\)</span></p>
 </div>
 </div>
-<div id="aa8f8a47" class="cell" data-execution_count="11">
+<div id="da206d0e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f(r_min)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
 <p><span class="math inline">\(\displaystyle 5.53581044593209\)</span></p>
 </div>
 </div>
 <hr>
-<div id="66393404" class="cell" data-execution_count="12">
+<div id="7bf5cff4" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>optimize.minimize_scalar(f, bracket<span class="op">=</span>(<span class="fl">0.1</span>, <span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code> message: 
@@ -545,7 +545,7 @@ cvxopt:  1.3.2</code></pre>
 </div>
 </div>
 <hr>
-<div id="7d9bb606" class="cell" data-execution_count="13">
+<div id="c36dbf4c" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.linspace(<span class="fl">1.e-2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
@@ -576,7 +576,7 @@ cvxopt:  1.3.2</code></pre>
 <p><span class="math display">\[\min_x f(x)\]</span></p>
 <p>where the objective function is</p>
 <p><span class="math display">\[ f(x) = (x_1 -1)^4 +5(x_2-1)^2 -2x_1 x_2 \]</span></p>
-<div id="62db3fd5" class="cell" data-execution_count="14">
+<div id="6bc981e5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x1, x2 <span class="op">=</span> sympy.symbols(<span class="st">"x_1, x_2"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>f_sym <span class="op">=</span> (x1 <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">4</span> <span class="op">+</span><span class="dv">5</span> <span class="op">*</span>(x2 <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span><span class="dv">2</span> <span class="op">*</span>x1 <span class="op">*</span>x2</span>
@@ -585,31 +585,31 @@ cvxopt:  1.3.2</code></pre>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>              <span class="cf">for</span> x1_ <span class="kw">in</span> (x1, x2)] </span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>              <span class="cf">for</span> x2_ <span class="kw">in</span> (x1, x2)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="878581fa" class="cell" data-execution_count="15">
+<div id="5888c82a" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sympy.Matrix(fprime_sym)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="15">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}- 2 x_{2} + 4 \left(x_{1} - 1\right)^{3}\\- 2 x_{1} + 10 x_{2} - 10\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="786305af" class="cell" data-execution_count="16">
+<div id="4b37f235" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sympy.Matrix(fhess_sym)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="16">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}12 \left(x_{1} - 1\right)^{2} &amp; -2\\-2 &amp; 10\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<div id="f2410e28" class="cell" data-execution_count="17">
+<div id="4094c830" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>f_lmbda <span class="op">=</span> sympy.lambdify((x1, x2), f_sym, <span class="st">'numpy'</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fprime_lmbda <span class="op">=</span> sympy.lambdify((x1, x2), fprime_sym, <span class="st">'numpy'</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>fhess_lmbda <span class="op">=</span> sympy.lambdify((x1, x2), fhess_sym, <span class="st">'numpy'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="180f59c4" class="cell" data-execution_count="18">
+<div id="afb3d892" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func_XY_X_Y(f):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Wrapper for f(X) -&gt; f(X[0], X[1])</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">lambda</span> X: np.array(f(X[<span class="dv">0</span>], X[<span class="dv">1</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="49e39065" class="cell" data-execution_count="19">
+<div id="b5e1014b" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> func_XY_X_Y(f_lmbda)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fprime <span class="op">=</span> func_XY_X_Y(fprime_lmbda)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>fhess <span class="op">=</span> func_XY_X_Y(fhess_lmbda)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -617,7 +617,7 @@ cvxopt:  1.3.2</code></pre>
 <ul>
 <li>In <code>scipy</code>, the Newton conjugate gradient method is implemented in the function <code>optimize.fmin_ncg</code> (equivalently, <code>optimize.minimize(..., method='Newton-CG')</code>). This function takes the following arguments: a python function for the objective function, a starting point, a python function for evaluating the gradient, and (optionally) a python function for evaluating the Hessian</li>
 </ul>
-<div id="ac9882c4" class="cell" data-execution_count="20">
+<div id="48944045" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.fmin_ncg(f, (<span class="fl">0.0</span>, <span class="fl">0.0</span>), fprime<span class="op">=</span>fprime, fhess<span class="op">=</span>fhess)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Optimization terminated successfully.
@@ -628,13 +628,13 @@ cvxopt:  1.3.2</code></pre>
          Hessian evaluations: 8</code></pre>
 </div>
 </div>
-<div id="f007574b" class="cell" data-execution_count="21">
+<div id="0f802f67" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>array([1.88292613, 1.37658523])</code></pre>
 </div>
 </div>
-<div id="0b382608" class="cell" data-execution_count="22">
+<div id="708d7ce5" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x_ <span class="op">=</span> y_ <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x_, y_)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -658,7 +658,7 @@ cvxopt:  1.3.2</code></pre>
 <li><p>Methods that approximate the Hessian are known as <em>quasi-Newton methods</em>, and there are also alternative iterative methods that completely avoid using the Hessian</p></li>
 <li><p>Two popular methods are the BFGS and the conjugate-gradient methods, which are implemented in <code>scipy</code> as the functions <code>optimize.fmin_bfgs</code> (the quasi-Newton method of Broyden, Fletcher, Goldfarb, and Shanno) and <code>optimize.fmin_cg</code> (the conjugate-gradient method of Polak and Ribiere)</p></li>
 </ul>
-<div id="02d9d633" class="cell" data-execution_count="23">
+<div id="e40f344a" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.fmin_bfgs(f, (<span class="dv">0</span>, <span class="dv">0</span>), fprime<span class="op">=</span>fprime)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>x_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -672,7 +672,7 @@ cvxopt:  1.3.2</code></pre>
 <pre><code>array([1.88292645, 1.37658596])</code></pre>
 </div>
 </div>
-<div id="1b650da7" class="cell" data-execution_count="24">
+<div id="cc791252" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.fmin_cg(f, (<span class="dv">0</span>, <span class="dv">0</span>), fprime<span class="op">=</span>fprime)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -687,7 +687,7 @@ cvxopt:  1.3.2</code></pre>
 </div>
 </div>
 <hr>
-<div id="6ee23125" class="cell" data-execution_count="25">
+<div id="1a8362c3" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.fmin_bfgs(f, (<span class="dv">0</span>, <span class="dv">0</span>))</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>x_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -701,7 +701,7 @@ cvxopt:  1.3.2</code></pre>
 <pre><code>array([1.88292644, 1.37658595])</code></pre>
 </div>
 </div>
-<div id="a2c64181" class="cell" data-execution_count="26">
+<div id="2d51d1a5" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.fmin_cg(f, (<span class="dv">0</span>, <span class="dv">0</span>))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>x_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -725,19 +725,19 @@ cvxopt:  1.3.2</code></pre>
 <p>To illustrate this method, consider the problem of minimizing the function</p>
 <p><span class="math display">\[4 \sin\pi x + 6\sin \pi y +(x -1)^2 +(y -1)^2\]</span></p>
 <p>which has a large number of local minima</p>
-<div id="248e6c85" class="cell" data-execution_count="27">
+<div id="3367dd44" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(X):</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  x, y <span class="op">=</span> X</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">4</span><span class="op">*</span>np.sin(np.pi <span class="op">*</span>x) <span class="op">+</span><span class="dv">6</span><span class="op">*</span>np.sin(np.pi <span class="op">*</span>y) <span class="op">+</span>(x <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>(y <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="70aa311a" class="cell" data-execution_count="28">
+<div id="824c42b5" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>x_start <span class="op">=</span> optimize.brute(f, (<span class="bu">slice</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">5</span>, <span class="fl">0.5</span>), <span class="bu">slice</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">5</span>, <span class="fl">0.5</span>)), finish<span class="op">=</span><span class="va">None</span>)<span class="op">;</span> </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>x_start <span class="op">=</span> <span class="sc">}</span><span class="ss">,'</span>, <span class="ss">f'</span><span class="sc">{</span>f(x_start) <span class="op">=</span> <span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x_start = array([1.5, 1.5]), f(x_start) = np.float64(-9.5)</code></pre>
 </div>
 </div>
-<div id="b0882b13" class="cell" data-execution_count="29">
+<div id="ab7d0a71" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.fmin_bfgs(f, x_start)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>x_opt <span class="op">=</span> <span class="sc">}</span><span class="ss">,'</span>, <span class="ss">f'</span><span class="sc">{</span>f(x_opt) <span class="op">=</span> <span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -750,7 +750,7 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 </div>
 </div>
 <hr>
-<div id="6a77685f" class="cell" data-execution_count="30">
+<div id="689a7ff3" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> optimize.minimize(f, x_start, method<span class="op">=</span><span class="st">'BFGS'</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -767,19 +767,19 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
      njev: 7</code></pre>
 </div>
 </div>
-<div id="fcdf1ae3" class="cell" data-execution_count="31">
+<div id="9ae48843" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>result.x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>array([1.47586906, 1.48365787])</code></pre>
 </div>
 </div>
-<div id="37c44983" class="cell" data-execution_count="32">
+<div id="0737016e" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>result.fun</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="32">
 <p><span class="math inline">\(\displaystyle -9.52022927305502\)</span></p>
 </div>
 </div>
-<div id="1b75977b" class="cell" data-execution_count="33">
+<div id="da73ceff" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func_X_Y_to_XY(f, X, Y):</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  s <span class="op">=</span> np.shape(X)</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> f(np.vstack([X.ravel(), Y.ravel()])).reshape(<span class="op">*</span>s)</span>
@@ -812,12 +812,12 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <li><p>In <code>scipy</code>, the function <code>optimize.leastsq</code> provides a nonlinear least square solver that uses the Levenberg-Marquardt method. To illustrate how this function can be used, consider a nonlinear model on the form <span class="math inline">\(f(x,\boldsymbol{\beta})=\beta_1 +\beta_2 \exp \left( -\beta_3 x^2 \right)\)</span> and a set of observations <span class="math inline">\((x_i, y_i)\)</span></p></li>
 <li><p>Simulate the observations:</p></li>
 </ul>
-<div id="febbdc2c" class="cell" data-execution_count="34">
+<div id="833cdd5c" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (<span class="fl">0.25</span>, <span class="fl">0.75</span>, <span class="fl">0.5</span>)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, b0, b1, b2):</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> b0 <span class="op">+</span>b1 <span class="op">*</span>np.exp(<span class="op">-</span>b2 <span class="op">*</span>x<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="002a43b5" class="cell" data-execution_count="35">
+<div id="f6f0120c" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>xdata <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">50</span>)</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(xdata, <span class="op">*</span>beta)</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2025</span>)</span>
@@ -826,25 +826,25 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <ul>
 <li>The first step is to define a function for the residuals given the data and the model function, which is specified in terms of the yet-to-be determined model parameters</li>
 </ul>
-<div id="9c500819" class="cell" data-execution_count="36">
+<div id="bf7ac0d3" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(beta):</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> ydata <span class="op">-</span>f(xdata, <span class="op">*</span>beta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Next we define an initial guess for the parameter vector and let the <code>optimize.leastsq</code> function solve for the best least square fit for the parameter vector:</li>
 </ul>
-<div id="c2b75ff0" class="cell" data-execution_count="37">
+<div id="411baf71" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>beta_start <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>beta_opt, ier <span class="op">=</span> optimize.leastsq(g, beta_start)  <span class="co"># ier: integer flag; 1-4 means success</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="35735aa1" class="cell" data-execution_count="38">
+<div id="a34abda6" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>beta_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>array([0.23979216, 0.7172281 , 0.44118037])</code></pre>
 </div>
 </div>
 <hr>
-<div id="1c9e00e1" class="cell" data-execution_count="39">
+<div id="f293a804" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>ax.scatter(xdata, ydata, label<span class="op">=</span><span class="st">'simulated data'</span>)</span>
@@ -863,7 +863,7 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 </div>
 </div>
 </div>
-<div id="c59efaa1" class="cell" data-execution_count="40">
+<div id="40b54331" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>beta_opt, beta_cov <span class="op">=</span> optimize.curve_fit(f, xdata, ydata)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>beta_opt  <span class="co"># a convenience wrapper that also returns the covariance matrix</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
@@ -881,19 +881,19 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <p>subject to the constraints</p>
 <p><span class="math display">\[ 2 \leq x_1 \leq 3 \;\text{ and } \; 0 \leq x_2 \leq 2 \]</span></p></li>
 </ul>
-<div id="1390e701" class="cell" data-execution_count="41">
+<div id="e171c436" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(X):</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  x_1, x_2 <span class="op">=</span> X</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (x_1 <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span>(x_2 <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="84ba2b45" class="cell" data-execution_count="42">
+<div id="a54d7489" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.minimize(f, (<span class="dv">1</span>, <span class="dv">1</span>), method<span class="op">=</span><span class="st">'BFGS'</span>).x</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>x_opt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>array([1., 1.])</code></pre>
 </div>
 </div>
-<div id="ce30f535" class="cell" data-execution_count="43">
+<div id="a8d8279d" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>bnd_x1, bnd_x2 <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>), (<span class="dv">0</span>, <span class="dv">2</span>)</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>x_cons_opt <span class="op">=</span> optimize.minimize(f, (<span class="dv">1</span>, <span class="dv">1</span>), </span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                      method<span class="op">=</span><span class="st">'L-BFGS-B'</span>, bounds<span class="op">=</span>[bnd_x1, bnd_x2]).x</span>
@@ -902,7 +902,7 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <pre><code>array([2., 1.])</code></pre>
 </div>
 </div>
-<div id="02d93268" class="cell" data-execution_count="44">
+<div id="5fbc1749" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>x_ <span class="op">=</span> y_ <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x_, y_)</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -936,13 +936,13 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <p><span class="math display">\[ g(x) = 2x_1 x_2 +2 x_0x_2 +2 x_1 x_0 -1 = 0 \]</span></p></li>
 <li><p>To solve this optimization problem using Lagrange multipliers, we form the Lagrangian <span class="math inline">\(L(x, \lambda) = f(x) +\lambda g(x)\)</span>, and seek the stationary points where <span class="math inline">\(\nabla L(x, \lambda) = 0\)</span></p></li>
 </ul>
-<div id="b23442d4" class="cell" data-execution_count="45">
+<div id="27dc3a1e" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x0, x1, x2, l <span class="op">=</span> sympy.symbols(<span class="st">"x_0, x_1, x_2, lambda"</span>)</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> x0 <span class="op">*</span>x1 <span class="op">*</span>x2</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span>(x0 <span class="op">*</span>x1 <span class="op">+</span>x1 <span class="op">*</span>x2 <span class="op">+</span>x2 <span class="op">*</span>x0) <span class="op">-</span><span class="dv">1</span></span>
 <span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> f <span class="op">+</span>l <span class="op">*</span>g</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="256acc7d" class="cell" data-execution_count="46">
+<div id="2bff4faf" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>grad_L <span class="op">=</span> [sympy.diff(L, x_) <span class="cf">for</span> x_ <span class="kw">in</span> x]</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>sols <span class="op">=</span> sympy.solve(grad_L)</span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>display(sols[<span class="dv">0</span>])</span>
@@ -954,13 +954,13 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <p><span class="math inline">\(\displaystyle \left\{ \lambda : \frac{\sqrt{6}}{24}, \  x_{0} : - \frac{\sqrt{6}}{6}, \  x_{1} : - \frac{\sqrt{6}}{6}, \  x_{2} : - \frac{\sqrt{6}}{6}\right\}\)</span></p>
 </div>
 </div>
-<div id="80116a62" class="cell" data-execution_count="47">
+<div id="ee35a66a" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>g.subs(sols[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="47">
 <p><span class="math inline">\(\displaystyle 0\)</span></p>
 </div>
 </div>
-<div id="e9317873" class="cell" data-execution_count="48">
+<div id="d33508b6" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>f.subs(sols[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="48">
 <p><span class="math inline">\(\displaystyle \frac{\sqrt{6}}{36}\)</span></p>
@@ -971,14 +971,14 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <li><p>There exist various numerical methods of applying this approach. One example is the method known as sequential least squares programming, abbreviated as SLSQP, which is available in the <code>scipy</code> as the <code>optimize.fmin_slsqp</code> function and via <code>optimize.minimize</code> with <code>method='SLSQP'</code></p></li>
 <li><p>The <code>optimize.minimize</code> function takes the keyword argument <code>constraints</code>, which should be a list of dictionaries that each specifies a constraint. The allowed keys (values) in this dictionary are type (<code>'eq'</code> or <code>'ineq'</code>), <code>fun</code> (constraint function), <code>jac</code> (Jacobian of the constraint function)</p></li>
 </ul>
-<div id="5f77dbbb" class="cell" data-execution_count="49">
+<div id="4cf92f68" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(X):</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span>X[<span class="dv">0</span>] <span class="op">*</span>X[<span class="dv">1</span>] <span class="op">*</span>X[<span class="dv">2</span>]</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(X):</span>
 <span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span>(X[<span class="dv">0</span>] <span class="op">*</span>X[<span class="dv">1</span>] <span class="op">+</span>X[<span class="dv">1</span>] <span class="op">*</span>X[<span class="dv">2</span>] <span class="op">+</span>X[<span class="dv">2</span>] <span class="op">*</span>X[<span class="dv">0</span>]) <span class="op">-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ed6fe6fc" class="cell" data-execution_count="50">
+<div id="d42893fa" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>constraints <span class="op">=</span> [<span class="bu">dict</span>(<span class="bu">type</span><span class="op">=</span><span class="st">'eq'</span>, fun<span class="op">=</span>g)]</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>x_cons_opt <span class="op">=</span> optimize.minimize(f, [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>], </span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>                      method<span class="op">=</span><span class="st">'SLSQP'</span>, constraints<span class="op">=</span>constraints)</span>
@@ -1001,14 +1001,14 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <li><p>To solve problems with inequality constraints, all we need to do is to set <code>type='ineq'</code> in the constraint dictionary and provide the corresponding inequality function. To demonstrate minimization of a nonlinear objective function with a nonlinear inequality constraint, we return to the quadratic problem considered previously, but in this case with inequality constraint</p>
 <p><span class="math display">\[ g(x) = x_1 -1.75 -(x_0 -0.75)^4 \geq 0 \]</span></p></li>
 </ul>
-<div id="d921cfda" class="cell" data-execution_count="51">
+<div id="d6e88dec" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(X):</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (X[<span class="dv">0</span>] <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (X[<span class="dv">1</span>] <span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(X):</span>
 <span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> X[<span class="dv">1</span>] <span class="op">-</span><span class="fl">1.75</span> <span class="op">-</span>(X[<span class="dv">0</span>] <span class="op">-</span><span class="fl">0.75</span>)<span class="op">**</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f2385eac" class="cell" data-execution_count="52">
+<div id="0f6a8aa3" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>x_opt <span class="op">=</span> optimize.minimize(f, (<span class="dv">0</span>, <span class="dv">0</span>), method<span class="op">=</span><span class="st">'BFGS'</span>).x</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>constraints <span class="op">=</span> [<span class="bu">dict</span>(<span class="bu">type</span><span class="op">=</span><span class="st">'ineq'</span>, fun<span class="op">=</span>g)]</span>
@@ -1019,7 +1019,7 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <pre><code>array([0.96857656, 1.75228252])</code></pre>
 </div>
 </div>
-<div id="a170b3ad" class="cell" data-execution_count="53">
+<div id="23f6a9af" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>x_ <span class="op">=</span> y_ <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x_, y_)</span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1082,14 +1082,14 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 \]</span></p></li>
 <li><p><code>scipy</code> solves this problem with <code>optimize.linprog</code>, <span class="math inline">\(~\)</span>which uses the HiGHS solvers. <span class="math inline">\(~\)</span>By default it assumes <span class="math inline">\(\mathbf{x} \geq \mathbf{0}\)</span></p></li>
 </ul>
-<div id="d264b69c" class="cell" data-execution_count="54">
+<div id="5257ece5" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.array([<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="op">-</span><span class="fl">3.0</span>])</span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[ <span class="fl">1.0</span>,  <span class="fl">1.0</span>, <span class="fl">0.0</span>],</span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>              [<span class="op">-</span><span class="fl">1.0</span>,  <span class="fl">3.0</span>, <span class="fl">0.0</span>],</span>
 <span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>              [ <span class="fl">0.0</span>, <span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.0</span>]])</span>
 <span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5ed84b97" class="cell" data-execution_count="55">
+<div id="14bb0fd3" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> optimize.linprog(c, A_ub<span class="op">=</span>A, b_ub<span class="op">=</span>b)  <span class="co"># bounds=(0, None) is the default</span></span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>res.x, res.fun</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="55">
@@ -1103,7 +1103,7 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 <li><p>The sign conditions <span class="math inline">\(\mathbf{x} \geq \mathbf{0}\)</span> must be added as the extra rows <span class="math inline">\(-\mathbf{I}\,\mathbf{x} \leq \mathbf{0}\)</span></p></li>
 </ul></li>
 </ul>
-<div id="328e8afb" class="cell" data-execution_count="56">
+<div id="95c8e27d" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> cvxopt.matrix(np.vstack([A, <span class="op">-</span>np.eye(<span class="dv">3</span>)]))</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> cvxopt.matrix(np.concatenate([b, np.zeros(<span class="dv">3</span>)]))</span>
 <span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1119,7 +1119,7 @@ x_opt = array([1.47586906, 1.48365787]), f(x_opt) = np.float64(-9.52022927305501
 Optimal solution found.</code></pre>
 </div>
 </div>
-<div id="21209cd7" class="cell" data-execution_count="57">
+<div id="e6b80e84" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(sol[<span class="st">'x'</span>])</span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
@@ -1128,7 +1128,7 @@ Optimal solution found.</code></pre>
        [3.50667228]])</code></pre>
 </div>
 </div>
-<div id="bb019eea" class="cell" data-execution_count="58">
+<div id="98e62516" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>sol[<span class="st">'primal objective'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="58">
 <p><span class="math inline">\(\displaystyle -9.99999998101402\)</span></p>
@@ -1151,7 +1151,7 @@ Optimal solution found.</code></pre>
 <p>subject to</p>
 <p><span class="math display">\[ x_1 \geq 0,\, x_2 \geq 0 \; \text{ and } \; x_1 + x_2 =1\]</span></p></li>
 </ul>
-<div id="535167e9" class="cell" data-execution_count="59">
+<div id="8a1b0087" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>cvxopt.matrix([[<span class="dv">2</span>, <span class="fl">0.5</span>], [<span class="fl">0.5</span>, <span class="dv">1</span>]])  <span class="co"># symmetric, so column order does not matter</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> cvxopt.matrix([<span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> cvxopt.matrix([[<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">0.0</span>], [<span class="fl">0.0</span>,<span class="op">-</span><span class="fl">1.0</span>]])</span>
@@ -1169,7 +1169,7 @@ Optimal solution found.</code></pre>
 Optimal solution found.</code></pre>
 </div>
 </div>
-<div id="e60afaec" class="cell" data-execution_count="60">
+<div id="425ee8fd" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(sol[<span class="st">'x'</span>])</span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
@@ -1177,7 +1177,7 @@ Optimal solution found.</code></pre>
        [0.7499999]])</code></pre>
 </div>
 </div>
-<div id="f729fa56" class="cell" data-execution_count="61">
+<div id="09ee7cdb" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>sol[<span class="st">'primal objective'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="61">
 <p><span class="math inline">\(\displaystyle 1.87500000000002\)</span></p>

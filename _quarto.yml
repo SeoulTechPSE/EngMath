@@ -2,6 +2,11 @@ project:
   type: book
   output-dir: docs
 
+# Re-execute code only when a .qmd file changes; stored results live in _freeze/
+# (commit _freeze/ so that the site can be rebuilt without running Python)
+execute:
+  freeze: auto
+
 book:
   title: "Engineering Mathematics"
   author: "Kee-Youn Yoo"

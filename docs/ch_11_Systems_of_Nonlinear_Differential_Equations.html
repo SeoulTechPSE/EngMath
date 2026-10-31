@@ -522,7 +522,7 @@ c &amp; d
 <p>in terms of <span class="math inline">\(c\)</span>, and use a numerical solver to discover the shapes of solutions corresponding to the cases <span class="math inline">\(c=\frac{1}{4}\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(0\)</span>, and <span class="math inline">\(-9\)</span>. <span class="math inline">\(\mathbf{A}\)</span> has trace <span class="math inline">\(\tau=-2\)</span> and determinant <span class="math inline">\(\Delta=1 -c\)</span>, and so the eigenvalues are</p>
 <p><span class="math display">\[ \lambda =-1 \pm \sqrt{c} \]</span></p>
 <p>The nature of the eigenvalues is therefore determined by the value of <span class="math inline">\(c\)</span></p>
-<div id="daf39738" class="cell" data-execution_count="1">
+<div id="951f5fed" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sp.init_printing(use_unicode<span class="op">=</span><span class="va">True</span>)</span>
@@ -534,7 +534,7 @@ c &amp; d
 <p><span class="math inline">\(\displaystyle \left[ \left( - \sqrt{c} - 1, \  1, \  \left[ \left[\begin{matrix}\frac{- \sqrt{c} - 1}{c} + \frac{1}{c}\\1\end{matrix}\right]\right]\right), \  \left( \sqrt{c} - 1, \  1, \  \left[ \left[\begin{matrix}\frac{\sqrt{c} - 1}{c} + \frac{1}{c}\\1\end{matrix}\right]\right]\right)\right]\)</span></p>
 </div>
 </div>
-<div id="aae8204d" class="cell" data-execution_count="2">
+<div id="08a8f470" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
@@ -609,7 +609,7 @@ c &amp; d
 <span class="math inline">\((\text{a})\)</span> <span class="math inline">\(\begin{pmatrix} -2 &amp; -2\\ -2 &amp; -5 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{b})\)</span> <span class="math inline">\(\begin{pmatrix} -1 &amp; -2\\ \;\;3 &amp; \;\;4 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{c})\)</span> <span class="math inline">\(\begin{pmatrix} 2 &amp; -1\\ 3 &amp; -2 \end{pmatrix}\)</span>
 </center>
 <p><a href="files/solutions/sol_8_2.pdf" target="_blank">Solution</a></p>
-<div id="14303e05" class="cell" data-execution_count="3">
+<div id="6ac336bd" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
@@ -688,7 +688,7 @@ c &amp; d
 <span class="math inline">\((\text{a})\)</span> <span class="math inline">\(\begin{pmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{b})\)</span> <span class="math inline">\(\begin{pmatrix} 3 &amp; -18\\ 2 &amp;\; -9 \end{pmatrix}\)</span>, <span class="math inline">\(\;\)</span> <span class="math inline">\((\text{c})\)</span> <span class="math inline">\(\begin{pmatrix} \;\;2 &amp; 4\\ -1 &amp; 6 \end{pmatrix}\)</span>
 </center>
 <p><a href="files/solutions/sol_8_2.pdf" target="_blank">Solution</a></p>
-<div id="22e94e25" class="cell" data-execution_count="4">
+<div id="3b10e255" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
@@ -758,7 +758,7 @@ c &amp; d
 <span class="math inline">\((\text{a})\)</span> <span class="math inline">\(\begin{pmatrix} -1 &amp; 2\\ -1 &amp; 1 \end{pmatrix}\)</span>,<span class="math inline">\(\;\)</span> <span class="math inline">\((\text{b})\)</span> <span class="math inline">\(\begin{pmatrix} -1 &amp; -4\\ \;\;1 &amp; -1 \end{pmatrix}\)</span>
 </center>
 <p><a href="files/solutions/sol_8_2.pdf" target="_blank">Solution</a></p>
-<div id="617fb5f8" class="cell" data-execution_count="5">
+<div id="197ca812" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">6</span>)</span>
@@ -960,7 +960,7 @@ y'&amp;= x^3 -x
 <p>If <span class="math inline">\(\mathbf{x}(0)=(x_0,0)\)</span>, where <span class="math inline">\(0&lt;x_0&lt;1\)</span>, then <span class="math inline">\(c=-\frac{x_0^4}{2} +x_0^2\)</span>, and so</p>
 <p><span class="math display">\[ y^2=\frac{(2 -x^2 -x_0^2)(x_0^2 -x^2)}{2} \]</span></p>
 <p>Note that <span class="math inline">\(y=0\)</span> when <span class="math inline">\(x=-x_0\)</span>. In addition, the right-hand side is positive when <span class="math inline">\(-x_0&lt;x&lt;x_0\)</span>, and so each <span class="math inline">\(x\)</span> has two corresponding values of <span class="math inline">\(y\)</span>. The solution <span class="math inline">\(\mathbf{x}(t)\)</span> that satisfies <span class="math inline">\(\mathbf{x}(0)=(x_0,0)\)</span> is therefore periodic, and so <span class="math inline">\((0,0)\)</span> is a center</p>
-<div id="efbb6747" class="cell" data-execution_count="6">
+<div id="69f3191d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myODE(t, y):</span>
@@ -1037,7 +1037,7 @@ y'&amp;= x^3 -x
 <p><span class="math display">\[ y^2=\frac{2g}{l}(\cos x -\cos x_0)\]</span></p>
 <p>Note that <span class="math inline">\(y=0\)</span> when <span class="math inline">\(x=-x_0\)</span>, and that <span class="math inline">\((2g/l)(\cos x -\cos x_0)&gt;0\)</span> for <span class="math inline">\(|x|&lt;|x_0|&lt;\pi\)</span>. Thus each such <span class="math inline">\(x\)</span> has two corresponding values of <span class="math inline">\(y\)</span>, and so the solution <span class="math inline">\(\mathbf{x}(t)\)</span> that satisfies <span class="math inline">\(\mathbf{x}(0)=(x_0,0)\)</span> is periodic. We may conclude that <span class="math inline">\((0,0)\)</span> is a center. In the case of large initial velocities, the pendulum spins in complete circles about the pivot</p></li>
 </ul>
-<div id="cdc5063a" class="cell" data-execution_count="7">
+<div id="f8cc3271" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>w1 <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>w2 <span class="op">=</span> np.pi</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w1, w1, <span class="dv">100</span>)</span>
@@ -1133,7 +1133,7 @@ F_x &amp;= -mg\sin\theta\cos\theta
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> A bead is released from the position <span class="math inline">\(x(0)=x_0\)</span> on the curve <span class="math inline">\(z=\cosh(x)\)</span> with initial velocity <span class="math inline">\(x'(0)=\nu_0\)</span>. Use the phase-plane method to show that the resulting solution is periodic when the system is undamped</p>
 <p><a href="files/solutions/sol_8_4.pdf" target="_blank">Solution</a></p>
-<div id="8597d207" class="cell" data-execution_count="8">
+<div id="9cfaf072" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">200</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">200</span>)</span>
@@ -1219,7 +1219,7 @@ F_x &amp;= -mg\sin\theta\cos\theta
 </ul></li>
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(~\)</span> If we let <span class="math inline">\(a=0.1\)</span>, <span class="math inline">\(b=0.002\)</span>, <span class="math inline">\(c=0.0025\)</span>, and <span class="math inline">\(d=0.2\)</span> in the Lotka-Volterra predator-prey model, the critical point in the first quadrant is <span class="math inline">\((d/c,a/b)=(80,50)\)</span>, and we know that this critical point is a center. The eigenvalues of <span class="math inline">\(\mathbf{g}'((80,50))\)</span> are <span class="math inline">\(\lambda=\pm(\sqrt{2}/10)i\)</span>, and so the solutions near the critical point have period <span class="math inline">\(p\simeq 10\sqrt{2}\pi\)</span></p>
-<div id="ce59f94b" class="cell" data-execution_count="9">
+<div id="746eb99d" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">0.1</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.002</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">0.0025</span></span>
@@ -1285,7 +1285,7 @@ y' &amp;= 0.001 y\,(100 -y -3.0x)
 \]</span></p>
 <p>Find and classify all critical points of the system</p>
 <p><a href="files/solutions/sol_8_4.pdf" target="_blank">Solution</a></p>
-<div id="cf218d07" class="cell" data-execution_count="10">
+<div id="dcc12411" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">120</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="dv">0</span>, w, <span class="dv">200</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="dv">0</span>, w, <span class="dv">200</span>)</span>
@@ -1429,7 +1429,7 @@ x' &amp;= y\\
 y' &amp;= -\mu (x^2 -1)y -x
 \end{aligned}\]</span></p>
 <p>Show that the Van der Pol DE has a periodic solution when <span class="math inline">\(\mu&gt;0\)</span></p>
-<div id="481b25bb" class="cell" data-execution_count="11">
+<div id="520916c7" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>xp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">100</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>yp <span class="op">=</span> np.linspace(<span class="op">-</span>w, w, <span class="dv">100</span>)</span>
@@ -1480,7 +1480,7 @@ y' &amp;= -\mu (x^2 -1)y -x
 \end{pmatrix}
 \]</span></p>
 <p>Therefore, <span class="math inline">\(\tau=\mu\)</span>, <span class="math inline">\(\Delta=1\)</span>, and <span class="math inline">\(\tau^2 -4\Delta=\mu^2-4\)</span>. Since <span class="math inline">\(\mu &gt;0\)</span>, the critical point is either an unstable spiral point or an unstable node. By part (a) of <strong>Poincaré–Bendixson I</strong>, the system has at least one periodic solution in <span class="math inline">\(\mathbb{R}\)</span></p>
-<div id="ef8bf096" class="cell" data-execution_count="12">
+<div id="962d8c6f" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>td <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>mu_ <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="fl">2.5</span>])</span>

@@ -1,0 +1,52 @@
+# Build the Quarto book on GitHub and publish it to GitHub Pages.
+#
+# Code cells are NOT executed here: `execute: freeze: auto` in _quarto.yml makes
+# Quarto reuse the results stored in _freeze/. After editing a chapter, render it
+# locally (quarto render <file>.qmd) and commit the .qmd together with _freeze/.
+# If a changed chapter has no up-to-date frozen results, this build fails on
+# purpose instead of publishing a page without outputs.
+#
+# One-time setup: Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"
+
+name: Publish book
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: release
+
+      - name: Render book (frozen results, no code execution)
+        run: quarto render --to html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
