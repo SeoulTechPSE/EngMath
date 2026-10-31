@@ -13,20 +13,20 @@ jupyter: python3
 * Equal, Scalar Multiplication
 
   $~$
-  ![](figures/ch07_figure00.svg "Equal"){width="30%" fig-align="center"}
+  ![](figures/ch07_figure00.svg "Equal"){width="50%" fig-align="center"}
 
-  ![](figures/ch07_figure01.svg "Parallel_Vectors"){width="30%" fig-align="center"}
+  ![](figures/ch07_figure01.svg "Parallel_Vectors"){width="70%" fig-align="center"}
 
 * Addition and Subtraction
 
   $~$
-  ![](figures/ch07_figure02_03.svg "Addition"){width="60%" fig-align="center"}
+  ![](figures/ch07_figure02_03.svg "Addition"){width="95%" fig-align="center"}
 
 * Vectors in a Coordinate Plane
 
   $$\mathbf{a}=\left \langle a_1, a_2 \right \rangle$$
 
-  ![](figures/ch07_figure04.svg "Components"){width="25%" fig-align="center"}
+  ![](figures/ch07_figure04.svg "Components"){width="45%" fig-align="center"}
 
 * Let $~$$\mathbf{a}=\left \langle a_1, a_2 \right \rangle~$ and $~$$\mathbf{b}=\left \langle b_1, b_2 \right \rangle~$ 
  be vectors in $\mathbb{R}^2$
@@ -79,7 +79,7 @@ $~$
 $$\mathbf{a} +\mathbf{b} +\mathbf{c}=\mathbf{0}\;~\text{and}\;~\mathbf{a} +\mathbf{b} +\mathbf{c} +\mathbf{d}=\mathbf{0}$$
 
 
-![](figures/ch07_figure_ex1.svg "example7_1"){width="60%" fig-align="center"}
+![](figures/ch07_figure_ex1.svg "example7_1"){width="70%" fig-align="center"}
 
 [Solution](files/solutions/sol_9_1.pdf){target="_blank"}
 
@@ -89,7 +89,7 @@ $~$
 
 $~$
 
-![](figures/ch07_figure06.svg "3_space"){width="40%" fig-align="center"}
+![](figures/ch07_figure06.svg "3_space"){width="85%" fig-align="center"}
 
 * $\mathbf{i}$, $~\mathbf{j}$, and $~\mathbf{k}$ vectors
 
@@ -199,7 +199,7 @@ $~$
 
   To find the component of $\mathbf{a}$ on a vector $\mathbf{b}$, $~$we dot $\mathbf{a}$ with a unit vector in the direction of $\mathbf{b}$
   
-  ![](figures/ch07_figure08.svg "Component_of_a_on_b"){width="35%" fig-align="center"}
+  ![](figures/ch07_figure08.svg "Component_of_a_on_b"){width="95%" fig-align="center"}
     
   $$\text{comp}_{\mathbf{b}} \mathbf{a} =\left\| \mathbf{a} \right\| \cos\theta
    =\left\| \mathbf{a} \right\| \cos\theta \frac{\left\| \mathbf{b} \right\|}{\left\| \mathbf{b} \right\|}
@@ -208,7 +208,7 @@ $~$
 
 * Projection of $\mathbf{a}$ onto $\mathbf{b}$
 
-  ![](figures/ch07_figure09.svg "Projection_of_a_onto_b"){width="30%" fig-align="center"}
+  ![](figures/ch07_figure09.svg "Projection_of_a_onto_b"){width="50%" fig-align="center"}
     
   $$\text{proj}_{\mathbf{b}} \mathbf{a} = \left(\text{comp}_{\mathbf{b}} \mathbf{a} \right) \left(\frac{\mathbf{b}}{\left\| \mathbf{b} \right\|} \right)=\color{red}{\left(\frac{\mathbf{a}\cdot\mathbf{b}}{\mathbf{b}\cdot\mathbf{b}}\right) \mathbf{b}}$$
 
@@ -270,7 +270,7 @@ $~$
 
    $~$
    
-   ![](figures/ch07_figure11.svg "area_parallelogram"){width=2.5in fig-align="center"}
+   ![](figures/ch07_figure11.svg "area_parallelogram"){width="45%" fig-align="center"}
 
 * Volume of a Parallelepiped 
  
@@ -278,7 +278,7 @@ $~$
 
   $~$
  
-  ![](figures/ch07_figure12.svg "volume_parallelepiped"){width=2.5in fig-align="center"}
+  ![](figures/ch07_figure12.svg "volume_parallelepiped"){width="45%" fig-align="center"}
 
 * Special Products
 
@@ -317,7 +317,7 @@ $~$
 
 * Lines
 
-  ![](figures/ch07_figure13.svg "Lines"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure13.svg "Lines"){width="60%" fig-align="center"}
 
   $$
   \begin{aligned}
@@ -337,9 +337,9 @@ $~$
     \end{aligned}
   $$
 
-  ![](figures/ch07_figure14.svg "Planes_1"){width="40%" fig-align="center"}
+  ![](figures/ch07_figure14.svg "Planes_1"){width="55%" fig-align="center"}
 
-  ![](figures/ch07_figure15.svg "Planes_2"){width="40%" fig-align="center"}
+  ![](figures/ch07_figure15.svg "Planes_2"){width="55%" fig-align="center"}
 
 $~$
 
@@ -567,7 +567,7 @@ $~$
   
   $$\begin{aligned} \mathbf{v}_1 &= \mathbf{u}_1 \\ \mathbf{v}_2 &= \mathbf{u}_2 -\left( \frac{\mathbf{u}_2 \cdot \mathbf{v}_1}{\mathbf{v}_1 \cdot \mathbf{v}_1}\right) \mathbf{v}_1\end{aligned}$$
 
-  ![](figures/ch07_figure16.svg "constructing_an_orthogonal_basis_R2"){width="60%" fig-align="center"}
+  ![](figures/ch07_figure16.svg "constructing_an_orthogonal_basis_R2"){width="95%" fig-align="center"}
 
 * Constructing an Orthogonal Basis for $\mathbb{R}^3$
   

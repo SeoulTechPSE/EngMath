@@ -18,7 +18,7 @@ jupyter: python3
   
   are **vector-valued functions**
 
-![](figures/ch09_figure01.svg "Vector Functions"){width="55%" fig-align="center"}
+![](figures/ch09_figure01.svg "Vector Functions"){width="90%" fig-align="center"}
 
 * **Limits**
 
@@ -56,7 +56,7 @@ jupyter: python3
 
   * When $\mathbf{r}$ has a continuous first derivative and $\mathbf{r}'(t)\neq\mathbf{0}~$ for all $~t~$ in the open interval $(a,b),$ $\,$then $\mathbf{r}$ is said to be a **smooth function**
 
-    ![](figures/ch09_figure02.svg "Derivative"){width="40%" fig-align="center"}
+    ![](figures/ch09_figure02.svg "Derivative"){width="95%" fig-align="center"}
 
   * In the case of the **second derivative**, $\,$we have
     
@@ -143,7 +143,7 @@ jupyter: python3
   
   is a **unit tangent**
 
-![](figures/ch09_figure03.svg "Unit Tangents"){width="20%" fig-align="center"}
+![](figures/ch09_figure03.svg "Unit Tangents"){width="40%" fig-align="center"}
 
 $$
 \begin{aligned}
@@ -184,11 +184,11 @@ it follows that $\displaystyle\frac{d\mathbf{T}}{dt}=\kappa v \mathbf{N}$. $\,$T
   
     $$\mathbf{a}(t)=\kappa v^2 \mathbf{N} +\frac{dv}{dt}\mathbf{T} =a_N \mathbf{N} +a_T\mathbf{T}$$
 
-![](figures/ch09_figure04.svg "Acceleration"){width="30%" fig-align="center"}
+![](figures/ch09_figure04.svg "Acceleration"){width="50%" fig-align="center"}
 
 * Binormal: $\,\mathbf{B}(t)=\mathbf{T}(t) \times \mathbf{N}(t)$
 
-![](figures/ch09_figure05.svg "Osculating plane"){width="40%" fig-align="center"}
+![](figures/ch09_figure05.svg "Osculating plane"){width="55%" fig-align="center"}
 
 * Formulas for $a_T$, $a_N$, and Curvature
 
@@ -236,7 +236,7 @@ $~$
   
   ex) $~\displaystyle w=\frac{x^2+y^2}{z}$
 
-![](figures/ch09_figure09.svg "Level Curves"){width="25%" fig-align="center"}   
+![](figures/ch09_figure09.svg "Level Curves"){width="40%" fig-align="center"}   
 
 * Partial Derivatives
   
@@ -295,7 +295,7 @@ $~$
 
 $~$
 
-![](figures/ch09_figure10.svg "Arbitrary Direction"){width="45%" fig-align="center"} 
+![](figures/ch09_figure10.svg "Arbitrary Direction"){width="65%" fig-align="center"} 
 
 * Generalization of Partial Differentiation
 
@@ -311,7 +311,7 @@ $~$
        = \nabla f(x,y)\cdot \mathbf{u}
     \end{aligned}$$
 
-![](figures/ch09_figure11.svg "Directional Derivative"){width="55%" fig-align="center"}
+![](figures/ch09_figure11.svg "Directional Derivative"){width="70%" fig-align="center"}
 
 * **Partial Proof** $\,$ Let $x$, $y$, and $\theta$ $\,$be fixed so that 
   
@@ -393,7 +393,7 @@ $~$
 
 * <font color="blue">$\nabla F$ is normal to the level surface at $P$</font>
 
-![](figures/ch09_figure13.svg "normal"){fig-align="center" width="40%"}
+![](figures/ch09_figure13.svg "normal"){width="60%" fig-align="center"}
 
 * Let $\,P(x_0,y_0,z_0)$ be a point on the graph of $F(x,y,z)=c$. $\,$The **tangent plane** at $P$ is
 
@@ -420,7 +420,7 @@ $~$
       +Q(x,y,z)\mathbf{j} +R(x,y,z)\mathbf{k}
   \end{aligned}$$
 
-![](figures/ch09_figure14.svg "vector field"){fig-align="center" width="85%"}
+![](figures/ch09_figure14.svg "vector field"){width="95%" fig-align="center"}
 
 * The del operator combined with a scalar function $\,\phi(x,y,z)$ $\,$produces a vector field
 
@@ -606,9 +606,9 @@ $~$
 
 * Physical Interpretations
 
-![](figures/ch09_figure15.svg "irrotational-rotational"){fig-align="center" width="70%"}
+![](figures/ch09_figure15.svg "irrotational-rotational"){width="95%" fig-align="center"}
 
-![](figures/ch09_figure16.svg "source-sink"){fig-align="center" width="50%"}
+![](figures/ch09_figure16.svg "source-sink"){width="90%" fig-align="center"}
 
 $~$
 
@@ -616,17 +616,17 @@ $~$
 
 * Integration of a function defined along a curve
 
-![](figures/ch09_figure17.svg "various curve"){fig-align="center" width="35%"}
+![](figures/ch09_figure17.svg "various curve"){width="95%" fig-align="center"}
 
 * Definite Integral
 
   $$\lim_{\|P\|\to 0} \sum_{k=1}^n f(x_k^*)\Delta x_k = \int_a^b f(x)\,dx$$
 
-![](figures/ch09_figure18.svg "sample point in k"){fig-align="center" width="40%"}
+![](figures/ch09_figure18.svg "sample point in k"){width="70%" fig-align="center"}
 
 * Line Integrals in the Plane
 
-![](figures/ch09_figure19.svg "sample point in k subarc"){fig-align="center" width="30%"}
+![](figures/ch09_figure19.svg "sample point in k subarc"){width="45%" fig-align="center"}
 
 $$
 \begin{aligned}
@@ -669,7 +669,7 @@ $$
 
   $${\displaystyle\int_{-C} P\,dx +Q\,dy = -\int_C P\,dx +Q\,dy}$$
 
-![](figures/ch09_figure20.svg "opposite_orientation"){fig-align="center" width="25%"}
+![](figures/ch09_figure20.svg "opposite_orientation"){width="40%" fig-align="center"}
 
 * A line integral along a closed curve $C$
   
@@ -698,7 +698,7 @@ $$
   $$W =\int_C \mathbf{f} \cdot d\mathbf{r} = \int_C \mathbf{f}\cdot \mathbf{T} \,ds $$
   $$\mathrm{Circulation}= \oint_C \mathbf{f} \cdot d\mathbf{r} = \oint_C \mathbf{f}\cdot \mathbf{T} \,ds $$
 
-![](figures/ch09_figure21.svg "circulation"){fig-align="center" width="30%"}
+![](figures/ch09_figure21.svg "circulation"){width="45%" fig-align="center"}
 
 $~$
 
@@ -733,7 +733,7 @@ $~$
   
   where $A=(x(a), y(a), z(a))~$ and $\,B=(x(b), y(b), z(b))$
 
-  ![](figures/ch09_figure22.svg "regions"){width=30% fig-align="center"}
+  ![](figures/ch09_figure22.svg "regions"){width="45%" fig-align="center"}
 
 * **Equivalent Concepts:** $\,$In an open connected region $R$, 
   $\displaystyle\int_C \mathbf{f}\cdot d\mathbf{r}$ 
@@ -781,7 +781,7 @@ $~$
 
   $$ V=\iint_R f(x,y) \,dA $$
 
-![](figures/ch09_figure23.svg "volume"){width="40%" fig-align="center"}
+![](figures/ch09_figure23.svg "volume"){width="65%" fig-align="center"}
 
 * Properties of Double Integrals
 
@@ -791,11 +791,11 @@ $~$
   
   $$ \iint_R f(x,y) \,dA = \iint_{R_1} f(x,y) \,dA + \iint_{R_2} f(x,y) \,dA $$
 
-  ![](figures/ch09_figure24.svg "union region"){width="30%" fig-align="center"}
+  ![](figures/ch09_figure24.svg "union region"){width="45%" fig-align="center"}
 
 * **Evaluation of Double Integrals**
 
-  ![](figures/ch09_figure25.svg "region type"){width="32%" fig-align="center"}
+  ![](figures/ch09_figure25.svg "region type"){width="30%" fig-align="center"}
 
   * If $R$ is of Type I, $\,$then
   
@@ -824,7 +824,7 @@ $~$
     &=r_k^*\Delta r_k \Delta\theta_k
   \end{aligned}$$
 
-![](figures/ch09_figure26.svg "polar rectangle"){width="70%" fig-align="center"}
+![](figures/ch09_figure26.svg "polar rectangle"){width="90%" fig-align="center"}
 
 * Double Integrals in Polar Coordinates
 
@@ -837,7 +837,7 @@ $~$
     & =\int_a^b \int_{h_1(r)}^{h_2(r)} f(r,\theta)\,r \,d\theta \,dr
   \end{aligned}$$
 
-![](figures/ch09_figure27_28.svg "polar R1 & R2"){width="70%" fig-align="center"}
+![](figures/ch09_figure27_28.svg "polar R1 & R2"){width="85%" fig-align="center"}
 
 $~$
 
@@ -851,7 +851,7 @@ $~$
 
 $~$  
 
-![](figures/ch09_figure29.svg "direction C"){width="70%" fig-align="center"}
+![](figures/ch09_figure29.svg "direction C"){width="95%" fig-align="center"}
 
 * **Partial Proof**
   
@@ -865,7 +865,7 @@ $~$
   
   $~$
 
-  ![](figures/ch09_figure30.svg "Green's Proof"){fig-align="center" width="30%"}
+  ![](figures/ch09_figure30.svg "Green's Proof"){width="40%" fig-align="center"}
 
 * **Region with Holes**
   
@@ -877,14 +877,14 @@ $~$
     &=\oint_{C_1} P \,dx +Q \,dy +\oint_{C_2} P \,dx +Q \,dy =\oint_C P \,dx +Q \,dy
   \end{aligned}$$
 
-  ![](figures/ch09_figure31.svg "region with hole"){fig-align="center" width="50%"}
+  ![](figures/ch09_figure31.svg "region with hole"){width="90%" fig-align="center"}
 
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\oint_{C} \frac{-y}{x^2 +y^2}\, dx + \frac{x}{x^2 + y^2}\,dy$, 
   $\,$ where $C=C_1 \cup C_2$ is the boundary of the shaded region $R$
 
-  ![](figures/ch09_figure32.svg "Ex region"){fig-align="center" width="30%"}
+  ![](figures/ch09_figure32.svg "Ex region"){width="40%" fig-align="center"}
 
 [Solution](files/solutions/sol_10_12a.pdf){target="_blank"}
 
@@ -929,7 +929,7 @@ $~$
 
   $$\mathbf{n}=\frac{\nabla g}{\|\nabla g\|}$$
 
-  ![](figures/ch09_figure35.svg "unit normal"){fig-align="center" width="30%"}
+  ![](figures/ch09_figure35.svg "unit normal"){width="45%" fig-align="center"}
 
 * Integrals of Vector Fields
 
@@ -937,7 +937,7 @@ $~$
 
 $$ \mathrm{flux} =\iint_S (\mathbf{v}\cdot\mathbf{n})\,dS $$
 
-![](figures/ch09_figure36.svg "flux"){fig-align="center" width="40%"}
+![](figures/ch09_figure36.svg "flux"){width="50%" fig-align="center"}
 
 $~$
 
@@ -984,7 +984,7 @@ $~$
     d\mathbf{r}
   \end{aligned}$$
 
-![](figures/ch09_figure38.svg "physical meaning Curl"){fig-align="center" width="30%"}
+![](figures/ch09_figure38.svg "physical meaning Curl"){width="45%" fig-align="center"}
 
 $~$
 
@@ -994,7 +994,7 @@ $~$
   
   $${\lim_{\| P\|\to 0} \sum_{k=1}^n F(x_k^*,y_k^*,z_k^*)\,\Delta V_k = \iiint_D F(x,y,z)\,dV}$$
 
-![](figures/ch09_figure39.svg "sub region"){fig-align="center" width="40%"}
+![](figures/ch09_figure39.svg "sub region"){width="55%" fig-align="center"}
 
 * Evaluation by Iterated Integrals
   
@@ -1004,14 +1004,14 @@ $~$
      &= \int_a^b \int_{g_1(x)}^{g_2(x)} \int_{f_1(x,y)}^{f_2(x,y)} F(x,y,z)\,dz\,dy\,dx
   \end{aligned}$$
   
-  ![](figures/ch09_figure40.svg "triple integral"){fig-align="center" width="50%"}
+  ![](figures/ch09_figure40.svg "triple integral"){width="60%" fig-align="center"}
 
 $~$
 
 **Example**
   $\,$ Find the volume of the solid in the first octant bounded by the graphs of $z=1-y^2$, $y=2x$, and $x=3$
 
-  ![](figures/ch09_figure41.svg "triple integral example"){fig-align="center" width="70%"}
+  ![](figures/ch09_figure41.svg "triple integral example"){width="90%" fig-align="center"}
 
 [Solution](files/solutions/sol_10_15.pdf){target="_blank"}
 
@@ -1025,7 +1025,7 @@ $~$
     r^2 = x^2 +y^2, \;\; &\tan\theta=\frac{y}{x},\;\; z=z 
   \end{aligned}$$
 
-  ![](figures/ch09_figure42.svg "cylindrical coordinate"){fig-align="center" width="60%"}
+  ![](figures/ch09_figure42.svg "cylindrical coordinate"){width="90%" fig-align="center"}
 
 * Triple Integrals in Cylindrical Coordinates
 
@@ -1037,7 +1037,7 @@ $~$
        \int_{f_1(r,\theta)}^{f_2(r,\theta)} F(r,\theta,z)\,r\,dz\,dr\,d\theta
   \end{aligned}$$
 
-  ![](figures/ch09_figure43.svg "cylindrical wedge"){fig-align="center" width="75%"}
+  ![](figures/ch09_figure43.svg "cylindrical wedge"){width="55%" fig-align="center"}
 
 * Spherical Coordinates
   
@@ -1051,7 +1051,7 @@ $~$
    \;\;\cos\phi=\frac{z}{\sqrt{x^2 +y^2 +z^2}} 
  \end{aligned}$$
 
- ![](figures/ch09_figure44.svg "spherical coordinate"){fig-align="center" width="60%"}
+ ![](figures/ch09_figure44.svg "spherical coordinate"){width="90%" fig-align="center"}
 
  * Triple Integrals in Spherical Coordinates
   
@@ -1063,7 +1063,7 @@ $~$
       \rho^2 \sin\phi\, d\rho\,d\phi\,d\theta
   \end{aligned}$$
 
-  ![](figures/ch09_figure45.svg "spherical wedge"){fig-align="center" width="40%"}
+  ![](figures/ch09_figure45.svg "spherical wedge"){width="55%" fig-align="center"}
 
 
 ## Divergence Theorem {#sec-9-16}
@@ -1096,7 +1096,7 @@ $~$
 
 * **Partial Proof**
   
-  ![](figures/ch09_figure46.svg "region D"){fig-align="center" width="30%"}
+  ![](figures/ch09_figure46.svg "region D"){width="55%" fig-align="center"}
 
   $${\scriptsize \displaystyle\iiint_D \frac{\partial R}{\partial z}\,dV
    =\iint_{R'} \left[ \int_{f_1(x,y)}^{f_2(x,y)} \frac{\partial R}{\partial z}\,dz \right]\,dA
@@ -1155,7 +1155,7 @@ $~$
      (\mathbf{f} \cdot \mathbf{n})\,dS
   \end{aligned}$$
   
-  ![](figures/ch09_figure47.svg "divergence physical interpretation"){fig-align="center" width="25%"}
+  ![](figures/ch09_figure47.svg "divergence physical interpretation"){width="40%" fig-align="center"}
 
 * Continuity Equation
 
