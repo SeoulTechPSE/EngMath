@@ -16,7 +16,11 @@ sympy.init_printing()
 
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from mpl_toolkits.mplot3d.axes3d import Axes3D
+
+import scipy
+print("numpy: ", np.__version__)
+print("sympy: ", sympy.__version__)
+print("scipy: ", scipy.__version__)
 ```
 
 ## Ordinary differential equations
@@ -37,15 +41,15 @@ from mpl_toolkits.mplot3d.axes3d import Axes3D
 
   where $f$ and $F$ are known functions. 
   
-  The general solution of an $n$-th order ODE have $n$ free parameters
+  The general solution of an $n$-th order ODE has $n$ free parameters
 that we need to specify, for example, as initial conditions for the unknown function and $n -1$ of its derivatives
 
-  $$y(0)=y_0, y'(0)=y_1, \cdots, y^{n-1}(0)=y_{n-1}$$
+  $$y(0)=y_0, y'(0)=y_1, \cdots, y^{(n-1)}(0)=y_{n-1}$$
 
 * An ODE can always be rewritten as a system of first-order ODEs. Specifically, the $n$-th order ODE on the
 explicit form can be written in the standard form by introducing $n$ new functions
 
-  $$y_1 = y,\, y_2=\frac{dy}{dx},\, \cdots,\, y_n = \frac{dy^{n-1}}{dx^{n-1}}$$
+  $$y_1 = y,\, y_2=\frac{dy}{dx},\, \cdots,\, y_n = \frac{d^{n-1}y}{dx^{n-1}}$$
 
   This gives the following system of first-order ODEs:
 
@@ -69,13 +73,13 @@ explicit form can be written in the standard form by introducing $n$ new functio
 
   $$\frac{d\mathbf{y}}{dx} = \mathbf{f}(x,\mathbf{y}(x))$$
 
-  This canonical form is particularly useful for numerical solutions of ODEs, and it is common that numerical methods for solving ODEs take the function $\mathbf{f} = (f_1, f_2,\cdots,f_n)$
+  This canonical form is particularly useful for numerical solutions of ODEs, and it is common that numerical methods for solving ODEs take the function $\mathbf{f} = (f_1, f_2,\cdots,f_n)$ as their input
 
 * If the functions $f_1, f_2, \cdots, f_n$ are all linear, then the corresponding system of ODEs can be written on the simple form
 
-  $$ \frac{d\mathbf{y}}{dx} = \mathbf{A}(\mathbf{x})\mathbf{y}(\mathbf{x}) +\mathbf{r}(\mathbf{x}),$$
+  $$ \frac{d\mathbf{y}}{dx} = \mathbf{A}(x)\mathbf{y}(x) +\mathbf{r}(x),$$
 
-  where $\mathbf{A}(\mathbf{x})$ is an $n\times n$ matrix, and $\mathbf{r}(\mathbf{x})$ is an $n$-vector, that only depends on $\mathbf{x}$. In this form, the $\mathbf{r}(\mathbf{x})$ is known as the source term, and the linear system is known as homogeneous if $\mathbf{r}(\mathbf{x})=\mathbf{0}$, and nonhomogeneous otherwise
+  where $\mathbf{A}(x)$ is an $n\times n$ matrix, and $\mathbf{r}(x)$ is an $n$-vector, that only depend on $x$. In this form, $\mathbf{r}(x)$ is known as the source term, and the linear system is known as homogeneous if $\mathbf{r}(x)=\mathbf{0}$, and nonhomogeneous otherwise
 
 * For certain properties and forms of the function $\mathbf{f}(\mathbf{x}, \mathbf{y}(\mathbf{x}))$, there may be known solutions and special methods for solving the corresponding ODE problem, but there is no general method for an arbitrary $\mathbf{f}(\mathbf{x}, \mathbf{y}(\mathbf{x}))$, other than approximate numerical methods
 
@@ -141,7 +145,7 @@ C_sol
 ode_sol.subs(C_sol[0])
 ```
 
-* Applying the initial conditions and solving for the undetermined integration constants can be slightly tedious, and it worth while to collect these steps in a reusable function. The following function `apply_ics` is a basic
+* Applying the initial conditions and solving for the undetermined integration constants can be slightly tedious, and it is worthwhile to collect these steps in a reusable function. The following function `apply_ics` is a basic
 implementation that generalizes these steps to a differential equation of arbitrary order
 
 ```{python}
@@ -175,6 +179,12 @@ T_sol = apply_ics(ode_sol, ics, t, [k, Ta])
 T_sol
 ```
 
+* Recent versions of `sympy` can also apply the initial conditions directly through the `ics` keyword argument of `dsolve`:
+
+```{python}
+sympy.dsolve(ode, ics={T(0): T0})
+```
+
 ```{python}
 x = np.linspace(0, 4, 100)
 y = sympy.lambdify((t, k), 
@@ -183,12 +193,12 @@ y = sympy.lambdify((t, k),
 
 fig, ax = plt.subplots(figsize=(6, 4))
 
-for k in [1, 2, 3]:
-  ax.plot(x, y(x, k), label=rf'$k={k}$')
+for k_ in [1, 2, 3]:
+  ax.plot(x, y(x, k_), label=rf'$k={k_}$')
 
-ax.set_title(rf'${sympy.latex(T_sol)}$', fontsize=12)
-ax.set_xlabel(r"$x$", fontsize=12)
-ax.set_ylabel(r"$y$", fontsize=12)
+ax.set_title(rf'${sympy.latex(T_sol)}$ $\;(T_0=5,\ T_a=1)$', fontsize=12)
+ax.set_xlabel(r"$t$", fontsize=12)
+ax.set_ylabel(r"$T(t)$", fontsize=12)
 ax.legend()
 ax.set_xlim(0, 4)
 ax.set_ylim(1, 5)
@@ -281,10 +291,9 @@ ode
 ```{python}
 sympy.classify_ode(ode)
 ```
-* See @sec-2-5
+* This is a Riccati equation (see @sec-2-5). $~$With `sympy` 1.14, the hint `'1st_rational_riccati'` still fails with an internal error for this equation, which has no rational solution. $~$So we apply the Riccati substitution $y = -u'/(q_2 u)$ by hand, which turns it into the linear second-order equation $u'' + x u = 0$ (an Airy equation)
 
 ```{python}
-# sympy bug: '1st_rational_riccati' not working
 q0 = x
 q1 = sympy.Integer('0')
 q2 = sympy.Integer('1')
@@ -336,7 +345,7 @@ except Exception as e:
 
   $$\frac{dy}{dx}=f(x,y(x))$$
 
-  The reason why the direction field graph is useful is that smooth and continuous curves that tangent the slope lines (at every point) in the direction field graph are possible solutions to the ODE
+  The reason why the direction field graph is useful is that smooth and continuous curves that are tangent to the slope lines (at every point) in the direction field graph are possible solutions to the ODE
 
 
 ```{python}
@@ -394,8 +403,7 @@ x_vec = np.linspace(-5, 5, 300)
 y_vec = sympy.lambdify(x, y_sol)(x_vec)
 
 threshold = 20
-y_vec[y_vec > threshold] = np.inf
-y_vec[y_vec <-threshold] = np.inf
+y_vec[np.abs(y_vec) > threshold] = np.nan  # break the curve at the poles of the solution
 
 ax.plot(x_vec, y_vec, 'r', lw=2)  
 ```
@@ -413,7 +421,7 @@ ax.plot(x_vec, y_vec, 'r', lw=2)
 x = sympy.symbols('x')
 y = sympy.Function('y')
 
-fig, axes = plt.subplots(3, 1, figsize=(4, 13))
+fig, axes = plt.subplots(1, 3, figsize=(13, 4.5))
 
 plot_direction_field(x, y(x), y(x)**2 +x, ax=axes[0])
 plot_direction_field(x, y(x), -x /y(x), ax=axes[1])
@@ -486,7 +494,7 @@ fig.tight_layout()
 
 * The basic idea of many numerical methods for ODEs is captured in Euler's method. This method can, for example, be derived from a Taylor-series expansion of $y(x)$ around the point $x$:
 
-  $$ y(x+h) = y(x) +\frac{dy(x)}{dx}h +\frac{d^2 y(x)}{dx^2} h^2 + \cdots, $$
+  $$ y(x+h) = y(x) +\frac{dy(x)}{dx}h +\frac{1}{2}\frac{d^2 y(x)}{dx^2} h^2 + \cdots, $$
 
   where for notational simplicity we consider the case when $y(x)$ is a scalar function
 
@@ -526,18 +534,18 @@ the Taylor series gives error that limits the accuracy of the method. Second, us
 
   $$ 
   \begin{aligned}
-    k_1 &= f(t_k, \,y_k)\\ 
-    k_2 &= f\left(t_k + \frac{h_k}{2},\, y_k +h_k \frac{k_1}{2} \right)\\ 
-    k_3 &= f\left(t_k + \frac{h_k}{2},\, y_k +h_k \frac{k_2}{2} \right)\\ 
-    k_4 &= f(t_k +h_k, \,y_k +h_k k_3)
+    k_1 &= f(x_k, \,y_k)\\ 
+    k_2 &= f\left(x_k + \frac{h_k}{2},\, y_k +h_k \frac{k_1}{2} \right)\\ 
+    k_3 &= f\left(x_k + \frac{h_k}{2},\, y_k +h_k \frac{k_2}{2} \right)\\ 
+    k_4 &= f(x_k +h_k, \,y_k +h_k k_3)
   \end{aligned}
   $$
 
-* Here, $k_1$ to $k_4$ are four different evaluations of the ODE function $f(x, y(x))$ that are used in the explicit formula for $y_{k+1}$ given above. The resulting estimate of $y_{k+1}$ is accurate to 4-th order, with an error of 5-th order.
+* Here, $k_1$ to $k_4$ are four different evaluations of the ODE function $f(x, y(x))$ that are used in the explicit formula for $y_{k+1}$ given above. The resulting method is of 4-th order: the local error of each step is $O(h^5)$, and the accumulated (global) error is $O(h^4)$
 
   Higher-order schemes that use more function evaluations can also be constructed. <span style="color:blue">By combining two methods of different order</span>, it can be possible to also estimate the error in the approximation. 
 
-  A popular combination is the Runge-Kutta 4-th and 5-th order schemes, which results in a 4-th order accurate method with error estimates. It is known as <span style="color:blue">*RK45*</span> or the *Runge-Kutta-Fehlberg method*. The <span style="color:blue">*Dormand-Prince method*</span> is another example of a higher-order method, which additionally uses adaptive step size control. For example, the 8-5-3 method combines 3rd and 5-th order schemes to produce an 8-th order method
+  A popular combination is a pair of 4-th and 5-th order Runge-Kutta schemes that share most of their function evaluations: the difference between the two results estimates the error, which is used for adaptive step-size control. The *Runge-Kutta-Fehlberg* method (RKF45) is the classic example; `scipy`'s <span style="color:blue">*RK45*</span> uses the <span style="color:blue">*Dormand-Prince*</span> pair 5(4), which advances with the 5-th order result. Likewise, `DOP853` is an 8-th order Dormand-Prince method that uses 5-th and 3-rd order schemes for its error estimate
 
 * An alternative method is <span style="color:blue">to use more than one previous value of $y_k$ to compute $y_{k+1}$</span>. Such methods are
 known as <span style="color:blue">*multistep methods*</span>, and can in general be written on the form
@@ -559,7 +567,7 @@ known as <span style="color:blue">*multistep methods*</span>, and can in general
   where again the remaining unknown coefficients are chosen to maximize
 the order of the method
 
-  Specifically, <span style="color:blue">the explicit method with $b_s = 0$ are known as Adams-Bashforth methods, and the implicit methods with $b_s \neq 0$ are known as Adams-Moulton methods</span>. For example, the one-step Adams-Bashforth and Adams-Moulton methods reduce to the forward and backward Euler
+  Specifically, <span style="color:blue">the explicit methods with $b_s = 0$ are known as Adams-Bashforth methods, and the implicit methods with $b_s \neq 0$ are known as Adams-Moulton methods</span>. For example, the one-step Adams-Bashforth and Adams-Moulton methods reduce to the forward and backward Euler
 methods, respectively 
 
   And the two-step methods are
@@ -570,9 +578,9 @@ methods, respectively
 
   $$y_{k+1} = y_{k} + \frac{h}{2} \left[ f(x_{k}, y_{k}) + f(x_{k+1}, y_{k+1}) \right]$$
 
-* In general, explicit methods are more convenient to implement and less computationally demanding to iterate than implicit methods, which in principle requires solving (a potentially nonlinear) equation in each iteration with an initial guess for the unknown $y_{k+1}$
+* In general, explicit methods are more convenient to implement and less computationally demanding to iterate than implicit methods, which in principle require solving a (potentially nonlinear) equation in each iteration with an initial guess for the unknown $y_{k+1}$
 
-  However, as mentioned earlier, implicit methods often are more accurate and have superior stability properties. A compromise that retain some of the advantages of both methods is <span style="color:blue">to combine explicit and implicit methods</span> in the following way:
+  However, as mentioned earlier, implicit methods often are more accurate and have superior stability properties. A compromise that retains some of the advantages of both methods is <span style="color:blue">to combine explicit and implicit methods</span> in the following way:
 
   * <span style="color:red">First compute $y_{k+1}$ using an explicit method</span>, 
 
@@ -617,7 +625,7 @@ ax.plot(sol_p.t, sol_p.y.T, 'g', lw=2)
 ax.plot(sol_m.t, sol_m.y.T, 'r', lw=2)
 ```
 
-* In the previous example, we solved a scalar ODE problem. More often we are interested in vector-valued ODE problems (systems of ODEs). To see how we can solve that kind of problems using `solve_ivp`, consider the Lokta-Volterra equations for the dynamics of a population of predator and prey animals (a classic example of coupled ODEs). The equations are
+* In the previous example, we solved a scalar ODE problem. More often we are interested in vector-valued ODE problems (systems of ODEs). To see how we can solve that kind of problems using `solve_ivp`, consider the Lotka-Volterra equations for the dynamics of a population of predator and prey animals (a classic example of coupled ODEs). The equations are
 
   $$
   x'(t) = a x - b x y
@@ -648,7 +656,7 @@ xy_t = sol.y.T
 
 ```{python}
 #| fig-align: center
-fig, axes = plt.subplots(2, 1, figsize=(6, 12))
+fig, axes = plt.subplots(1, 2, figsize=(12, 4.5))
 
 axes[0].plot(t, xy_t[:,0], 'r', label="Prey")
 axes[0].plot(t, xy_t[:,1], 'b', label="Predator")
@@ -667,7 +675,7 @@ axes[1].set_ylim(50, 450)
 axes[1].tick_params(which='both', direction='in')
 ```
 
-* In the previous two examples, the function for the right-hand side of the ODE was implemented without additional arguments. Rather than using global variables, it is often convenient and elegant to implement the `f` function in such a way that it takes arguments for all its coefficient or parameters. To illustrate this point, let’s consider another famous ODE problem: the Lorenz equations, which is the following system of three
+* In the previous two examples, the function for the right-hand side of the ODE was implemented without additional arguments. Rather than using global variables, it is often convenient and elegant to implement the `f` function in such a way that it takes arguments for all its coefficient or parameters. To illustrate this point, let’s consider another famous ODE problem: the Lorenz equations, which are the following system of three
 coupled nonlinear ODEs,
 
   $$
@@ -703,7 +711,7 @@ sol3 = integrate.solve_ivp(f, t_span, xyz0,
 
 ```{python}
 #| fig-align: center
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(7, 15), 
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 5), 
   subplot_kw={'projection': '3d'})
 
 xyz1 = sol1.y
@@ -721,9 +729,14 @@ for ax, xyz, c in [(ax1, xyz1, 'r'),
     ax.set_xticks([-15, 0, 15])
     ax.set_yticks([-20, 0, 20])
     ax.set_zticks([0, 20, 40])
+
+ax1.set_title(r'$\sigma=8,\ \beta=8/3$')
+ax2.set_title(r'$\sigma=8,\ \beta=0.6\cdot 8/3$')
+ax3.set_title(r'$\sigma=16,\ \beta=0.6\cdot 8/3$')
+fig.tight_layout()
 ```
 
-* To illustrate how to use the `integrate.ode` interface, $\,$we first look at the following sets of coupled second-order ODEs:
+* `scipy` also keeps the older, class-based interface `integrate.ode`. $~$`solve_ivp` is recommended for new code, but to illustrate how to use the `integrate.ode` interface, $\,$we look at the following sets of coupled second-order ODEs:
 
   $$
   \begin{aligned}
@@ -783,24 +796,23 @@ r.set_integrator('lsoda')
 r.set_initial_value(y0, t[0])
 r.set_f_params(args)
 
-dt = t[1] -t[0]
 y = np.zeros((len(t), len(y0)))
-idx = 0
-while r.successful() and r.t < t[-1]:
-  y[idx, :] = r.y
-  r.integrate(r.t +dt)
-  idx += 1
+y[0, :] = y0
+for idx in range(1, len(t)):
+  if not r.successful():
+    break
+  y[idx, :] = r.integrate(t[idx])
 ```
 
-* This is arguably not as convenient as simply calling the `solive_ivp`, but it offers extra flexibility that sometimes is exactly what is needed
+* This is arguably not as convenient as simply calling `solve_ivp`, but it offers extra flexibility that sometimes is exactly what is needed
 
 ```{python}
 #| fig-align: center
-fig = plt.figure(figsize=(5, 10))
+fig = plt.figure(figsize=(11, 5))
 
-ax1 = plt.subplot2grid((10, 4), (0, 0), colspan=4, rowspan=3)
-ax2 = plt.subplot2grid((10, 4), (3, 0), colspan=4, rowspan=3)
-ax3 = plt.subplot2grid((10, 4), (6, 0), colspan=4, rowspan=4)
+ax1 = plt.subplot2grid((2, 5), (0, 0), colspan=3)
+ax2 = plt.subplot2grid((2, 5), (1, 0), colspan=3)
+ax3 = plt.subplot2grid((2, 5), (0, 3), colspan=2, rowspan=2)
 
 # x_1 vs time plot
 ax1.plot(t, y[:, 0], 'r')
@@ -832,4 +844,4 @@ ax3.tick_params(which='both', direction='in', axis='x', pad=7)
 fig.tight_layout()
 ```
 
-* Python functions for both $f(t, y(t))$ and its Jacobian can conveniently be generated using `sympy`'s `lambdify`, provided that the ODE problem first can be defined as a `sympy` expression. This symbolic-numeric hybrid approach is a powerful method to solving ODE problems(See @sec-double-pendulum)
+* Python functions for both $f(t, y(t))$ and its Jacobian can conveniently be generated using `sympy`'s `lambdify`, provided that the ODE problem first can be defined as a `sympy` expression. This symbolic-numeric hybrid approach is a powerful method for solving ODE problems (see @sec-double-pendulum)
