@@ -379,17 +379,19 @@ window.Quarto = {
 <section id="sec-4-1" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="sec-4-1"><span class="header-section-number">4.1</span> Definition of the Laplace Transform</h2>
 <ul>
-<li><p>If <span class="math inline">\(f\)</span> be a function defined for <span class="math inline">\(t \geq 0\)</span>, <span class="math inline">\(~\)</span>then the <em>integral</em></p>
+<li><p>Let <span class="math inline">\(f\)</span> be a function defined for <span class="math inline">\(t \geq 0\)</span>. <span class="math inline">\(~\)</span>Then the <em>integral</em></p>
 <p><font color="red"><span class="math display">\[\mathcal{L}\{f(t)\} =\int_0^\infty f(t) e^{-st}\, dt =F(s)\]</span></font></p>
 <p>is the <strong>Laplace Transform</strong> of <span class="math inline">\(~f\)</span> provided the integral converges. The result is a function of <span class="math inline">\(s\)</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\mathcal{L}\{1\}\)</span>, <span class="math inline">\(~\mathcal{L}\{t\}\)</span>, <span class="math inline">\(~\)</span>and <span class="math inline">\(~\mathcal{L}\{e^{-3t}\}\)</span></p>
+<p><a href="files/solutions/sol_4_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\mathcal{L}\{f(t)\}~\)</span> for <span class="math inline">\(~\displaystyle f(t) = \left\{\begin{matrix}
 0, &amp; 0 \leq t &lt; 3\\
 2, &amp; \phantom{0 \leq }\; t \geq 3
 \end{matrix}\right.\)</span></p>
+<p><a href="files/solutions/sol_4_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><span class="math inline">\(\mathcal{L}\)</span> is a linear transform</p>
@@ -397,6 +399,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find <span class="math inline">\(\mathcal{L}\{f(t)\}\)</span> by first using an appropriate trigonometric identity <span class="math inline">\(~f(t)=\sin^2 2t\)</span></p>
+<p><a href="files/solutions/sol_4_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find <span class="math inline">\(\mathcal{L}\{f(t)\}\)</span></p>
 <ul>
@@ -413,6 +416,7 @@ window.Quarto = {
 0,&amp; t \geq \pi \quad\;\;
 \end{matrix}\right.\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find <span class="math inline">\(\mathcal{L}\{f(t)\}\)</span></p>
 <ul>
@@ -422,6 +426,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(~f(t)=\sin 3t \cos 3t\)</span></p></li>
 <li><p><span class="math inline">\(~f(t)=\sin^4 t\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_1.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-4-2" class="level2" data-number="4.2">
@@ -451,8 +456,10 @@ window.Quarto = {
 </ul>
 </div>
 </div>
+<p><a href="files/solutions/sol_4_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\displaystyle\mathcal{L}^{-1}\left\{\frac{-2s +6}{s^2 +4}\right\}\)</span></p>
+<p><a href="files/solutions/sol_4_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><strong>Transforms of derivatives</strong></p>
@@ -463,19 +470,21 @@ window.Quarto = {
   &amp;\; \vdots  
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(\displaystyle\mathcal{L}\left\{\frac{d^n f}{dt^n}\right\}\)</span> depends on <span class="math inline">\(F(s)=\mathcal{L}\{f(t)\}\)</span> and the <span class="math inline">\(n-1\)</span> derivatives of <span class="math inline">\(~f(t)\)</span> evaluated at <span class="math inline">\(t=0\)</span></p></li>
-<li><p>If <span class="math inline">\(~f\)</span> is piecewise continuous on <span class="math inline">\([0, \infty]\)</span> and of exponential order, then</p>
+<li><p>If <span class="math inline">\(~f\)</span> is piecewise continuous on <span class="math inline">\([0, \infty)\)</span> and of exponential order, then</p>
 <p><span class="math display">\[\lim_{s \to \infty} \mathcal{L}\{f(t)\}=0\]</span></p></li>
 <li><p>The Laplace transform of a linear DE with constant coefficients becomes an algebraic equation in <span class="math inline">\(Y(s)\)</span></p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the Laplace transform to solve the IVP</p>
 <p><span class="math display">\[\frac{dy}{dt} +3y = 13\sin 2t, \;y(0)=6\]</span></p>
+<p><a href="files/solutions/sol_4_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the Laplace transform to solve the given initial-value problem</p>
 <ul>
 <li><p><span class="math inline">\(~y''+y=\sqrt{2} \sin \sqrt{2}t, \;\;y(0)=10,\;y'(0)=0\)</span></p></li>
 <li><p><span class="math inline">\(~2y'''+3y''-3y'-2y=e^{-t}, \;\;y(0)=0, \;y'(0)=0, \; y''(0)=1\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-4-3" class="level2" data-number="4.3">
@@ -487,6 +496,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\mathcal{L}\{e^{-2t}\cos 4t\}\)</span> and <span class="math inline">\(\displaystyle\mathcal{L}^{-1}\left\{\frac{2s +5}{(s +3)^2}\right\}\)</span></p>
+<p><a href="files/solutions/sol_4_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><strong>Second Translation Theorem</strong></p>
@@ -515,6 +525,7 @@ window.Quarto = {
 </ul>
 </div>
 </div>
+<p><a href="files/solutions/sol_4_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y' +y = f(t)\)</span>, <span class="math inline">\(~\)</span><span class="math inline">\(y(0)=5\)</span>, where</p>
 <p><span class="math display">\[f(t) =
@@ -522,6 +533,7 @@ window.Quarto = {
        0, &amp; 0 \leq t &lt; \pi\\
        3\cos t ,&amp; t \geq \pi
     \end{cases}\]</span></p>
+<p><a href="files/solutions/sol_4_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-4-4" class="level2" data-number="4.4">
@@ -542,19 +554,24 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(~\mathcal{L}\{t\sin \omega t\}\)</span></p>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~x'' +16x =\cos 4t, \; x(0)=1, \; x'(0)=1\)</span></p>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\displaystyle\mathcal{L}^{-1}\left\{\frac{1}{(s^2 +\omega^2)^2}\right\}\)</span></p>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate <span class="math inline">\(\displaystyle\mathcal{L} \left\{ \int_0^t f(\tau)\, d\tau \right\}\)</span></p>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(\displaystyle \,f(t) =3t^2 -e^{-t} -\int_0^t f(\tau)\, e^{t -\tau}\, d\tau\;\)</span> for <span class="math inline">\(f(t)\)</span></p>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the Laplace transform of the periodic function</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch04_figure01.png" title="Square wave" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="figures/ch04_figure01.svg" title="Square wave" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%"></p>
 </figure>
 </div>
 <p><span class="math display">\[\scriptsize\mathcal{L}\{E(t)\}=\frac{1}{1 -e^{-2s}} \int_0^2 e^{-st} E(t)\,dt=\frac{1}{s(1 +e^{-s})}\]</span></p>
@@ -565,50 +582,56 @@ window.Quarto = {
 <li><p><span class="math inline">\(~\mathcal{L}\left\{ t\cos 2t \right\}\)</span></p></li>
 <li><p><span class="math inline">\(~\mathcal{L}\left\{ te^{2t}\sin 6t \right\}\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the Laplace transform to solve the given initial-value problem</p>
 <ul>
 <li><p><span class="math inline">\(~y'+y=t \sin t, \;y(0)=0\)</span></p></li>
 <li><p><span class="math inline">\(~y''+9y=\cos 3t, \;y(0)=2, \;y'(0)=5\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the convolution <span class="math inline">\(~f*g\)</span> of the given functions. After integrating find the Laplace transform <span class="math inline">\(~f*g\)</span></p>
+<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the convolution <span class="math inline">\(~f*g\)</span> of the given functions. After integrating, find the Laplace transform of <span class="math inline">\(~f*g\)</span></p>
 <ul>
 <li><p><span class="math inline">\(~f(t)=4t, \;g(t)=3t^2\)</span></p></li>
 <li><p><span class="math inline">\(~f(t)=e^{-t}, \;g(t)=e^t\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Find the Laplace transform</p>
 <ul>
 <li><span class="math inline">\(~\mathcal{L} \left\{ e^{-t}* e^t \cos t \right\}\)</span></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Evaluate the given inverse transform</p>
 <ul>
 <li><span class="math inline">\(~\displaystyle \mathcal{L}^{-1} \left\{ \frac{1}{s^3(s-1)} \right\}\)</span></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the Laplace transform to solve the given integral or integrodifferential equation</p>
 <ul>
 <li><p><span class="math inline">\(~\displaystyle f(t) +2\int_0^t f(\tau)\cos (t-\tau)\,d\tau=4e^{-t}+\sin t\)</span></p></li>
 <li><p><span class="math inline">\(~\displaystyle \frac{dy}{dt}=10-\int_0^t e^{-4\tau} y(t-\tau)\,d\tau, \;y(0)=5\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The Laplace transform <span class="math inline">\(\mathcal{L} \left\{ e^{-t^2} \right\}\)</span> exists, but without finding it solve the initial-value problem</p>
 <ul>
 <li><span class="math inline">\(~y''+9y=3e^{-t^2}, \;\;y(0)=0, \;y'(0)=0\)</span></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the integral equation</p>
 <ul>
 <li><span class="math inline">\(~\displaystyle f(t)=e^t+e^t \int_0^t e^{-\tau} f(\tau)\, d\tau\)</span></li>
 </ul>
+<p><a href="files/solutions/sol_4_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-4-5" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="sec-4-5"><span class="header-section-number">4.5</span> The Dirac Delta Function</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
 <p><span class="math display">\[\textbf{Unit Pulse}\]</span></p>
 <p><span class="math display">\[\small
      \delta_a(t-t_0) =
@@ -617,13 +640,10 @@ window.Quarto = {
           \frac{1}{2a}, &amp; t_0 -a \leq t \leq t_0 +a\\
           0, &amp; \;\; t \geq t_0 +a
        \end{matrix}\right.\]</span></p>
-</div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch04_figure02.png" title="Dirac delta function" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="figures/ch04_figure02.svg" title="Dirac delta function" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 <ul>
 <li><p><strong>The Dirac Delta Function</strong></p>
@@ -638,6 +658,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(~y'' +y=4\delta(t -2\pi)\)</span> <span class="math inline">\(~\)</span>subject to <span class="math inline">\(y(0)=1, \;y'(0)=0\)</span></p>
+<p><a href="files/solutions/sol_4_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the Laplace transform to solve the given differential equation subject to the indicated initial conditions</p>
 <ul>
@@ -645,6 +666,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(~y''+y=\delta(t-2\pi), \;y(0)=0, \,y'(0)=1\)</span></p></li>
 <li><p><span class="math inline">\(~y''+y=\delta(t-\pi/2)+\delta(t-3\pi/2),\;y(0)=0,\,y'(0)=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_4_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-4-6" class="level2" data-number="4.6">
@@ -656,7 +678,7 @@ window.Quarto = {
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Double Pendulum</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch04_figure03.png" title="Double Pendulum" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:25.0%"></p>
+<p><img src="figures/ch04_figure03.svg" title="Double Pendulum" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div>
 <p><strong>Linearization</strong> <span class="math inline">\(\,\)</span> For small displacements <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>,</p>
@@ -668,6 +690,7 @@ window.Quarto = {
 <p>Solve the system when</p>
 <p><span class="math display">\[m_1=3, m_2=1, l_1=l_2=5, \text{ and } ~g=10\]</span></p>
 <p><span class="math display">\[\theta_1(0) = 1, \theta_2(0)=-1, \dot{\theta_1}(0)=0,  \dot{\theta_2}(0)=0\]</span></p>
+<p><a href="files/solutions/sol_4_6.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use the Laplace transform to solve the given system of differential equations</p>
 <p><span class="math display">\[
@@ -685,6 +708,7 @@ window.Quarto = {
     2&amp;\dot{x}+\dot{y} -2x= 1 \\
     &amp;\dot{x}+\dot{y} -3x -3y= 2, \;\;x(0)=0,\;y(0)=0
 \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_4_6.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="worked-exercises" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="worked-exercises">Worked Exercises</h2>
@@ -748,9 +772,10 @@ x'' +y'' &amp;= e^{2t}\\
 <p><span class="math display">\[ x(t) = \frac{1}{2} - \frac{1}{2} e^{2t} + t e^{2t}
 = \frac{1}{2}(1 - e^{2t}) + t e^{2t}\]</span></p>
 <p>Recall:</p>
-<p><span class="math display">\[ Y(s) = \frac{1}{s^2(s - 2)} - \frac{2}{s(s - 2)^2} = -\frac{5}{4s} - \frac{1}{2s^2} + \frac{5}{4(s - 2)} - \frac{2}{(s - 2)^2}\]</span></p>
+<p><span class="math display">\[ Y(s) = \frac{1}{s^2(s - 2)} - \frac{2}{s(s - 2)^2} = -\frac{3}{4s} - \frac{1}{2s^2} + \frac{3}{4(s - 2)} - \frac{1}{(s - 2)^2}\]</span></p>
 <p>Thus:</p>
-<p><span class="math display">\[ y(t) = -\frac{5}{4} - \frac{1}{2} t + \frac{5}{4} e^{2t} - 2t e^{2t}\]</span></p>
+<p><span class="math display">\[ y(t) = -\frac{3}{4} - \frac{1}{2} t + \frac{3}{4} e^{2t} - t e^{2t}\]</span></p>
+<p>Check: <span class="math inline">\(~x''+y'' = (2e^{2t}+4te^{2t}) + (-e^{2t}-4te^{2t}) = e^{2t}\)</span>, <span class="math inline">\(~2x'+y''=4te^{2t}-e^{2t}-4te^{2t}=-e^{2t}\)</span>, <span class="math inline">\(~\)</span>and <span class="math inline">\(y(0)=y'(0)=0\)</span></p>
 <p><strong>3.</strong> <span class="math inline">\((a)\)</span> Show that <span class="math inline">\(y = e^{-t^2}\)</span> is a solution of the initial value problem</p>
 <p><span class="math display">\[ \frac{dy}{dt} +2ty=0,\;\;y(0)=1 \]</span></p>
 <p><span class="math inline">\((b)\)</span> Find <span class="math inline">\(Y(s)=\mathcal{L}\left[ e^{-t^2} \right]\)</span> by applying the Laplace transform to the above differential equation</p>
@@ -785,12 +810,14 @@ x'' +y'' &amp;= e^{2t}\\
 <p><span class="math display">\[\frac{d}{ds} \left( e^{-\frac{1}{4}s^2} Y \right) = -\frac{1}{2} e^{-\frac{1}{4}s^2}\]</span></p>
 <p>Now integrate both sides:</p>
 <p><span class="math display">\[\int \frac{d}{ds} \left( e^{-\frac{1}{4}s^2} Y \right) ds = \int -\frac{1}{2} e^{-\frac{1}{4}s^2} ds\]</span></p>
-<p><span class="math display">\[e^{-\frac{1}{4}s^2} Y(s) = -\frac{1}{2} \int e^{-\frac{1}{4}s^2} ds + C\]</span></p>
-<p>There’s no elementary antiderivative for <span class="math inline">\(e^{-\frac{1}{4}s^2}\)</span>, so we leave the integral unevaluated:</p>
-<p><span class="math display">\[Y(s) = e^{\frac{1}{4}s^2} \left( C - \frac{1}{2} \int e^{-\frac{1}{4}s^2} ds \right)\]</span></p>
-<p>The constant <span class="math inline">\(C\)</span> that appears when solving a differential equation via the Laplace transform is determined by the initial condition (e.g., <span class="math inline">\(y(0) = 1\)</span>)</p>
-<p><span class="math display">\[C = \frac{\sqrt{\pi}}{2} \operatorname{erfc}\left( \frac{s}{2} \right) + \frac{1}{2} \int e^{-s^2/4} ds\]</span></p>
-<p>Then:</p>
+<p>There’s no elementary antiderivative for <span class="math inline">\(e^{-\frac{1}{4}s^2}\)</span>, so we integrate from <span class="math inline">\(0\)</span> to <span class="math inline">\(s\)</span>:</p>
+<p><span class="math display">\[Y(s) = e^{\frac{1}{4}s^2} \left( C - \frac{1}{2} \int_0^s e^{-\frac{1}{4}u^2} du \right)\]</span></p>
+<p><strong>Step 3:</strong> <span class="math inline">\(~\)</span> Determine <span class="math inline">\(C\)</span></p>
+<p>The initial condition <span class="math inline">\(y(0)=1\)</span> has already been used. <span class="math inline">\(~\)</span>The constant is fixed instead by the fact that every Laplace transform satisfies <span class="math inline">\(Y(s)\to 0\)</span> as <span class="math inline">\(s\to\infty\)</span>. <span class="math inline">\(~\)</span>Since <span class="math inline">\(e^{s^2/4}\to\infty\)</span>, <span class="math inline">\(~\)</span>the bracket must tend to <span class="math inline">\(0\)</span>:</p>
+<p><span class="math display">\[C = \frac{1}{2} \int_0^\infty e^{-\frac{1}{4}u^2} du = \frac{\sqrt{\pi}}{2}\]</span></p>
+<p>Hence, <span class="math inline">\(~\)</span>with <span class="math inline">\(u=2v\)</span>,</p>
+<p><span class="math display">\[Y(s) = \frac{1}{2} e^{\frac{1}{4}s^2} \int_s^\infty e^{-\frac{1}{4}u^2} du = e^{\frac{1}{4}s^2} \int_{s/2}^\infty e^{-v^2} dv = \frac{\sqrt{\pi}}{2} e^{\frac{s^2}{4}} \operatorname{erfc}\left( \frac{s}{2} \right)\]</span></p>
+<p>Therefore:</p>
 <p><span class="math display">\[
 \mathcal{L} \{ e^{-t^2} \} = \frac{\sqrt{\pi}}{2} e^{\frac{s^2}{4}} \operatorname{erfc}\left( \frac{s}{2} \right)
 \]</span></p>
@@ -798,7 +825,7 @@ x'' +y'' &amp;= e^{2t}\\
 <p><strong>4.</strong> <span class="math inline">\(~\)</span> One definition of the gamma function <span class="math inline">\(\Gamma(\alpha)\)</span> is given by the improper integral</p>
 <p><span class="math display">\[ \Gamma(\alpha) = \int_0^\infty t^{\alpha-1} \,e^{-t} \, dt, \;\alpha &gt; 0 \]</span></p>
 <p><span class="math inline">\((a)\)</span> Use this definition to show that <span class="math inline">\(\Gamma(\alpha+1) = \alpha \Gamma(\alpha)\)</span></p>
-<p><span class="math inline">\((b)\)</span> and find that <span class="math inline">\(\mathcal{L}\left[ t^\alpha \right]\)</span></p>
+<p><span class="math inline">\((b)\)</span> Find <span class="math inline">\(\mathcal{L}\left[ t^\alpha \right]\)</span></p>
 <p><strong>Solution (a)</strong></p>
 <p>Start with <span class="math inline">\(\Gamma(\alpha + 1)\)</span></p>
 <p><span class="math display">\[ \Gamma(\alpha + 1) = \int_0^\infty t^{\alpha} e^{-t} dt \]</span></p>
@@ -824,8 +851,9 @@ x'' +y'' &amp;= e^{2t}\\
 &amp;= \int_0^\infty e^{-s t} t^\alpha dt
 = \int_0^\infty e^{-u} \left( \frac{u}{s} \right)^\alpha \cdot \frac{du}{s} \\
 &amp;= \frac{1}{s^{\alpha + 1}} \int_0^\infty u^\alpha e^{-u} du \\
-&amp;= \frac{1}{s^{\alpha + 1}} \Gamma(\alpha + 1)
+&amp;= \frac{\Gamma(\alpha + 1)}{s^{\alpha + 1}}, \qquad \alpha&gt;-1, \; s&gt;0
 \end{aligned}\]</span></p>
+<p>For <span class="math inline">\(\alpha=n=0,1,2,\cdots\)</span>, <span class="math inline">\(~\Gamma(n+1)=n!\)</span> <span class="math inline">\(~\)</span>and this reduces to <span class="math inline">\(\mathcal{L}\{t^n\}=n!/s^{n+1}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>5.</strong> <span class="math inline">\(~\)</span> Solve the given differential equation</p>
 <p><span class="math display">\[y''+2y'+y=(t-1) u(t-1) +\delta(t-5), \;y(0)=0, \;y'(0)=0\]</span></p>

@@ -6,7 +6,7 @@ jupyter: python3
 
 ## Definition of the Laplace Transform {#sec-4-1}
 
-* If $f$ be a function defined for $t \geq 0$, $~$then the *integral*
+* Let $f$ be a function defined for $t \geq 0$. $~$Then the *integral*
 
   <font color='red'>$$\mathcal{L}\{f(t)\} =\int_0^\infty f(t) e^{-st}\, dt =F(s)$$</font>
 
@@ -16,12 +16,16 @@ $~$
 
 **Example** $\,$ Evaluate $\mathcal{L}\{1\}$, $~\mathcal{L}\{t\}$, $~$and $~\mathcal{L}\{e^{-3t}\}$
 
+[Solution](files/solutions/sol_4_1.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate $\mathcal{L}\{f(t)\}~$ for $~\displaystyle f(t) = \left\{\begin{matrix}
 0, & 0 \leq t < 3\\ 
 2, & \phantom{0 \leq }\; t \geq 3
 \end{matrix}\right.$
+
+[Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
 $~$
 
@@ -32,6 +36,8 @@ $~$
 $~$
 
 **Example** $\,$ Find $\mathcal{L}\{f(t)\}$ by first using an appropriate trigonometric identity $~f(t)=\sin^2 2t$
+
+[Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
 $~$
 
@@ -52,6 +58,8 @@ $~$
  0,& t \geq \pi \quad\;\;
 \end{matrix}\right.$
 
+[Solution](files/solutions/sol_4_1.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Find $\mathcal{L}\{f(t)\}$
@@ -65,6 +73,8 @@ $~$
 * $~f(t)=\sin 3t \cos 3t$
 
 * $~f(t)=\sin^4 t$
+
+[Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
 $~$
 
@@ -104,9 +114,13 @@ $~$
 :::
 :::
 
+[Solution](files/solutions/sol_4_2.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\mathcal{L}^{-1}\left\{\frac{-2s +6}{s^2 +4}\right\}$
+
+[Solution](files/solutions/sol_4_2.pdf){target="_blank"}
 
 $~$
 
@@ -121,7 +135,7 @@ $~$
   
   $\displaystyle\mathcal{L}\left\{\frac{d^n f}{dt^n}\right\}$ depends on $F(s)=\mathcal{L}\{f(t)\}$ and the $n-1$ derivatives of $~f(t)$ evaluated at $t=0$
 
-* If $~f$ is piecewise continuous on $[0, \infty]$ and of exponential order, then
+* If $~f$ is piecewise continuous on $[0, \infty)$ and of exponential order, then
 
   $$\lim_{s \to \infty} \mathcal{L}\{f(t)\}=0$$
 
@@ -133,6 +147,8 @@ $~$
   
 $$\frac{dy}{dt} +3y = 13\sin 2t, \;y(0)=6$$
 
+[Solution](files/solutions/sol_4_2.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Use the Laplace transform to solve the given initial-value problem
@@ -140,6 +156,8 @@ $~$
 * $~y''+y=\sqrt{2} \sin \sqrt{2}t, \;\;y(0)=10,\;y'(0)=0$
     
 * $~2y'''+3y''-3y'-2y=e^{-t}, \;\;y(0)=0, \;y'(0)=0, \; y''(0)=1$
+
+[Solution](files/solutions/sol_4_2.pdf){target="_blank"}
 
 $~$
 
@@ -154,6 +172,8 @@ $~$
 $~$
 
 **Example** $\,$ Evaluate $\mathcal{L}\{e^{-2t}\cos 4t\}$ and $\displaystyle\mathcal{L}^{-1}\left\{\frac{2s +5}{(s +3)^2}\right\}$
+
+[Solution](files/solutions/sol_4_3.pdf){target="_blank"}
 
 $~$
 
@@ -193,6 +213,8 @@ $~$
 
 :::
 
+[Solution](files/solutions/sol_4_3.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve $~y' +y = f(t)$, $~$$y(0)=5$, 
@@ -203,6 +225,8 @@ $$f(t) =
        0, & 0 \leq t < \pi\\ 
        3\cos t ,& t \geq \pi
     \end{cases}$$
+
+[Solution](files/solutions/sol_4_3.pdf){target="_blank"}
 
 $~$
 
@@ -227,28 +251,38 @@ $~$
 $~$
 
 **Example** $\,$ Evaluate $~\mathcal{L}\{t\sin \omega t\}$
+
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
   
 $~$
 
 **Example** $\,$ Solve $~x'' +16x =\cos 4t, \; x(0)=1, \; x'(0)=1$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\mathcal{L}^{-1}\left\{\frac{1}{(s^2 +\omega^2)^2}\right\}$
+
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\mathcal{L} \left\{ \int_0^t f(\tau)\, d\tau \right\}$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve $\displaystyle \,f(t) =3t^2 -e^{-t} -\int_0^t f(\tau)\, e^{t -\tau}\, d\tau\;$ for $f(t)$
+
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Find the Laplace transform of the periodic function
   
-![](figures/ch04_figure01.png "Square wave"){width="50%" fig-align="center"}
+![](figures/ch04_figure01.svg "Square wave"){width="65%" fig-align="center"}
   
 $$\scriptsize\mathcal{L}\{E(t)\}=\frac{1}{1 -e^{-2s}} \int_0^2 e^{-st} E(t)\,dt=\frac{1}{s(1 +e^{-s})}$$
 
@@ -262,6 +296,8 @@ $~$
   
 * $~\mathcal{L}\left\{ te^{2t}\sin 6t \right\}$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Use the Laplace transform to solve the given initial-value problem
@@ -270,13 +306,17 @@ $~$
 
 * $~y''+9y=\cos 3t, \;y(0)=2, \;y'(0)=5$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
-**Example** $\,$ Find the convolution $~f*g$ of the given functions. After integrating find the Laplace transform $~f*g$
+**Example** $\,$ Find the convolution $~f*g$ of the given functions. After integrating, find the Laplace transform of $~f*g$
 
 * $~f(t)=4t, \;g(t)=3t^2$
 
 * $~f(t)=e^{-t}, \;g(t)=e^t$
+
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
  
 $~$
 
@@ -284,19 +324,25 @@ $~$
 
 * $~\mathcal{L} \left\{ e^{-t}* e^t \cos t \right\}$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Evaluate the given inverse transform
 
 * $~\displaystyle \mathcal{L}^{-1} \left\{ \frac{1}{s^3(s-1)} \right\}$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
-**Example** $\,$ Use the Laplace transform  to solve the given integral or integrodifferential equation
+**Example** $\,$ Use the Laplace transform to solve the given integral or integrodifferential equation
 
 * $~\displaystyle f(t) +2\int_0^t f(\tau)\cos (t-\tau)\,d\tau=4e^{-t}+\sin t$
   
 * $~\displaystyle \frac{dy}{dt}=10-\int_0^t e^{-4\tau} y(t-\tau)\,d\tau, \;y(0)=5$
+
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
 
@@ -304,19 +350,20 @@ $~$
 
 * $~y''+9y=3e^{-t^2}, \;\;y(0)=0, \;y'(0)=0$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Solve the integral equation
 
 * $~\displaystyle f(t)=e^t+e^t \int_0^t e^{-\tau} f(\tau)\, d\tau$
 
+[Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
 $~$
 
 ## The Dirac Delta Function {#sec-4-5}
 
-::: columns
-
-::: {.column width=45%}
 $$\textbf{Unit Pulse}$$
   
 $$\small
@@ -326,13 +373,8 @@ $$\small
           \frac{1}{2a}, & t_0 -a \leq t \leq t_0 +a\\ 
           0, & \;\; t \geq t_0 +a
        \end{matrix}\right.$$
-:::
 
-::: {.column width=55%}
-![](figures/ch04_figure02.png "Dirac delta function"){width="60%" fig-align="center"}
-:::
-
-:::
+![](figures/ch04_figure02.svg "Dirac delta function"){width="80%" fig-align="center"}
 
 * **The Dirac Delta Function**
   
@@ -350,6 +392,8 @@ $~$
 
 **Example** $\,$ Solve $~y'' +y=4\delta(t -2\pi)$ $~$subject to $y(0)=1, \;y'(0)=0$
 
+[Solution](files/solutions/sol_4_5.pdf){target="_blank"}
+
 $~$
 
 **Example** $\,$ Use the Laplace transform to solve the given differential equation subject to the indicated initial conditions
@@ -359,6 +403,8 @@ $~$
 * $~y''+y=\delta(t-2\pi), \;y(0)=0, \,y'(0)=1$
   
 * $~y''+y=\delta(t-\pi/2)+\delta(t-3\pi/2),\;y(0)=0,\,y'(0)=0$
+
+[Solution](files/solutions/sol_4_5.pdf){target="_blank"}
 
 $~$
 
@@ -370,7 +416,7 @@ $~$
 
 **Example** $\,$ Double Pendulum
 
-![](figures/ch04_figure03.png "Double Pendulum"){width="25%" fig-align="center"}
+![](figures/ch04_figure03.svg "Double Pendulum"){width="40%" fig-align="center"}
 
 **Linearization** $\,$ For small displacements $\theta_1$ and $\theta_2$,
 
@@ -385,6 +431,8 @@ Solve the system when
 $$m_1=3, m_2=1, l_1=l_2=5, \text{ and } ~g=10$$
 
 $$\theta_1(0) = 1, \theta_2(0)=-1, \dot{\theta_1}(0)=0,  \dot{\theta_2}(0)=0$$
+
+[Solution](files/solutions/sol_4_6.pdf){target="_blank"}
 
 $~$
 
@@ -407,6 +455,8 @@ $$
     2&\dot{x}+\dot{y} -2x= 1 \\ 
     &\dot{x}+\dot{y} -3x -3y= 2, \;\;x(0)=0,\;y(0)=0 
 \end{aligned}$$
+
+[Solution](files/solutions/sol_4_6.pdf){target="_blank"}
 
 ## Worked Exercises {.unnumbered}
 
@@ -510,11 +560,13 @@ $$ x(t) = \frac{1}{2} - \frac{1}{2} e^{2t} + t e^{2t}
 
 Recall:
 
-$$ Y(s) = \frac{1}{s^2(s - 2)} - \frac{2}{s(s - 2)^2} = -\frac{5}{4s} - \frac{1}{2s^2} + \frac{5}{4(s - 2)} - \frac{2}{(s - 2)^2}$$
+$$ Y(s) = \frac{1}{s^2(s - 2)} - \frac{2}{s(s - 2)^2} = -\frac{3}{4s} - \frac{1}{2s^2} + \frac{3}{4(s - 2)} - \frac{1}{(s - 2)^2}$$
 
 Thus:
 
-$$ y(t) = -\frac{5}{4} - \frac{1}{2} t + \frac{5}{4} e^{2t} - 2t e^{2t}$$
+$$ y(t) = -\frac{3}{4} - \frac{1}{2} t + \frac{3}{4} e^{2t} - t e^{2t}$$
+
+Check: $~x''+y'' = (2e^{2t}+4te^{2t}) + (-e^{2t}-4te^{2t}) = e^{2t}$, $~2x'+y''=4te^{2t}-e^{2t}-4te^{2t}=-e^{2t}$, $~$and $y(0)=y'(0)=0$
 
 
 **3.** $(a)$ Show that $y = e^{-t^2}$ is a solution of the initial value problem
@@ -584,18 +636,21 @@ Now integrate both sides:
 
 $$\int \frac{d}{ds} \left( e^{-\frac{1}{4}s^2} Y \right) ds = \int -\frac{1}{2} e^{-\frac{1}{4}s^2} ds$$
 
-$$e^{-\frac{1}{4}s^2} Y(s) = -\frac{1}{2} \int e^{-\frac{1}{4}s^2} ds + C$$
+There’s no elementary antiderivative for $e^{-\frac{1}{4}s^2}$, so we integrate from $0$ to $s$:
 
-There’s no elementary antiderivative for $e^{-\frac{1}{4}s^2}$, so we leave the integral unevaluated:
+$$Y(s) = e^{\frac{1}{4}s^2} \left( C - \frac{1}{2} \int_0^s e^{-\frac{1}{4}u^2} du \right)$$
 
-$$Y(s) = e^{\frac{1}{4}s^2} \left( C - \frac{1}{2} \int e^{-\frac{1}{4}s^2} ds \right)$$
+**Step 3:** $~$ Determine $C$
 
-The constant $C$ that appears when solving a differential equation via the Laplace transform
-is determined by the initial condition (e.g., $y(0) = 1$)
+The initial condition $y(0)=1$ has already been used. $~$The constant is fixed instead by the fact that every Laplace transform satisfies $Y(s)\to 0$ as $s\to\infty$. $~$Since $e^{s^2/4}\to\infty$, $~$the bracket must tend to $0$:
 
-$$C = \frac{\sqrt{\pi}}{2} \operatorname{erfc}\left( \frac{s}{2} \right) + \frac{1}{2} \int e^{-s^2/4} ds$$
+$$C = \frac{1}{2} \int_0^\infty e^{-\frac{1}{4}u^2} du = \frac{\sqrt{\pi}}{2}$$
 
-Then:
+Hence, $~$with $u=2v$,
+
+$$Y(s) = \frac{1}{2} e^{\frac{1}{4}s^2} \int_s^\infty e^{-\frac{1}{4}u^2} du = e^{\frac{1}{4}s^2} \int_{s/2}^\infty e^{-v^2} dv = \frac{\sqrt{\pi}}{2} e^{\frac{s^2}{4}} \operatorname{erfc}\left( \frac{s}{2} \right)$$
+
+Therefore:
 
 $$
 \mathcal{L} \{ e^{-t^2} \} = \frac{\sqrt{\pi}}{2} e^{\frac{s^2}{4}} \operatorname{erfc}\left( \frac{s}{2} \right)
@@ -610,7 +665,7 @@ $$ \Gamma(\alpha) = \int_0^\infty t^{\alpha-1} \,e^{-t} \, dt, \;\alpha > 0 $$
 
 $(a)$ Use this definition to show that $\Gamma(\alpha+1) = \alpha \Gamma(\alpha)$
 
-$(b)$ and find that $\mathcal{L}\left[ t^\alpha \right]$
+$(b)$ Find $\mathcal{L}\left[ t^\alpha \right]$
 
 **Solution (a)**
 
@@ -647,8 +702,10 @@ $$
 &= \int_0^\infty e^{-s t} t^\alpha dt
 = \int_0^\infty e^{-u} \left( \frac{u}{s} \right)^\alpha \cdot \frac{du}{s} \\
 &= \frac{1}{s^{\alpha + 1}} \int_0^\infty u^\alpha e^{-u} du \\
-&= \frac{1}{s^{\alpha + 1}} \Gamma(\alpha + 1)
+&= \frac{\Gamma(\alpha + 1)}{s^{\alpha + 1}}, \qquad \alpha>-1, \; s>0
 \end{aligned}$$
+
+For $\alpha=n=0,1,2,\cdots$, $~\Gamma(n+1)=n!$ $~$and this reduces to $\mathcal{L}\{t^n\}=n!/s^{n+1}$
 
 $~$
 
