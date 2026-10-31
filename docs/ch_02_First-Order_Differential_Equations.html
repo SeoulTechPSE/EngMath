@@ -432,21 +432,21 @@ window.Quarto = {
 <p>For example, <span class="math inline">\(~\displaystyle\frac{dy}{dx}=\sin y\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch02_figure01.png" title="Direction Field" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+<p><img src="figures/ch02_figure01.svg" title="Direction Field" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
 </figure>
 </div>
 <ul>
 <li><p>Using the given computer-generated direction field, sketch, by hand, an approximate solution curve that passes through each of the indicated points:</p>
 <p><span class="math display">\[
 \begin{aligned}
-    \frac{df}{dx} &amp;= x^2 -y^2 \\ \\
+    \frac{dy}{dx} &amp;= x^2 -y^2 \\ \\
     (a) &amp;\;\; y(-2)=1 \\
     (b) &amp;\;\; y(-1)=-1 \\
     (c) &amp;\;\; y(0)=2 \\
     (d) &amp;\;\; y(0)=0
 \end{aligned}\]</span></p></li>
 </ul>
-<div id="89ec5e09" class="cell" data-execution_count="1">
+<div id="95a30345" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
@@ -472,11 +472,12 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_02_First-Order_Differential_Equations_files/figure-html/cell-2-output-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="ch_02_First-Order_Differential_Equations_files/figure-html/cell-2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="454" height="432"></p>
 </figure>
 </div>
 </div>
 </div>
+<p><a href="files/solutions/sol_2_1.pdf" target="_blank">Solution</a></p>
 <ul>
 <li><p><strong>Autonomous</strong> first-order DEs, <span class="math inline">\(~\displaystyle\color{red}{\frac{dy}{dx}=f(y)}\)</span></p>
 <p>An ODE in which the independent variable does not appear explicitly</p>
@@ -485,7 +486,8 @@ window.Quarto = {
     \frac{dy}{dx} &amp;= 0.2\,xy &amp;&amp; \mathrm{nonautonomous}
   \end{aligned}\]</span></p></li>
 <li><p><strong>Critical points</strong>, <span class="math inline">\(~f(c)=0\)</span>, <span class="math inline">\(~\)</span> are constant (or equilibrium) solutions of autonomous DEs</p></li>
-<li><p>A <strong>phase portrait</strong> is made by putting critical points on a vertical line with phase lines pointing up or down, depending on the sign of the function over intervals between the points</p></li>
+<li><p>A <strong>phase portrait</strong> (phase line) is made by putting the critical points on a vertical line, with arrows pointing up or down depending on the sign of <span class="math inline">\(f(y)\)</span> on the intervals between the points</p></li>
+<li><p>The horizontal lines <span class="math inline">\(y=c\)</span> through the critical points divide the <span class="math inline">\(xy\)</span>-plane into sub-regions (horizontal strips) <span class="math inline">\(R_i\)</span></p></li>
 <li><p>Some conclusions can be drawn about nonconstant solution curves to autonomous DEs</p>
 <ul>
 <li>If a solution <span class="math inline">\(y(x)\)</span> passes through <span class="math inline">\((x_0,y_0)\)</span> in sub-region <span class="math inline">\(R_i\)</span>, <font color="blue"><span class="math inline">\(~\)</span>then <span class="math inline">\(y(x)\)</span> remains in <span class="math inline">\(R_i\)</span> </font></li>
@@ -498,7 +500,7 @@ window.Quarto = {
 <p><span class="math display">\[ \displaystyle \frac{dP}{dt} = P(a-bP) \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch02_figure02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/ch02_figure02.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p><span class="math inline">\(~\)</span></p>
@@ -512,6 +514,7 @@ window.Quarto = {
     &amp;(c) &amp;&amp; \phantom{-}0 &lt; y_0 &lt; 1 \\
     &amp;(d) &amp;&amp; \phantom{-}1 &lt; y_0 \\
   \end{aligned}\]</span></p>
+<p><a href="files/solutions/sol_2_1.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-2-2" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="sec-2-2"><span class="header-section-number">2.2</span> Separable Equations</h2>
@@ -546,7 +549,7 @@ window.Quarto = {
 <p><span class="math display">\[
   \begin{aligned}
     \frac{1}{6} \ln \left | \frac{y-3}{y+3} \right | &amp;= x+c_1\\
-    &amp;\Downarrow c=e^{6c_1} \\
+    &amp;\Downarrow c=\mp e^{6c_1} \\
     y &amp;= 3 \frac{1-ce^{6x}}{1+ce^{6x}}
   \end{aligned}\]</span></p>
 <ul>
@@ -559,8 +562,9 @@ window.Quarto = {
 <li><p><span class="math inline">\(\displaystyle dx +e^{3x} dy = 0\)</span></p></li>
 <li><p><span class="math inline">\(\displaystyle \frac{dy}{dx} = x\sqrt{1 -y^2}\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="bc36a57b" class="cell" data-execution_count="2">
+<div id="b4ced352" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> pi, dsolve</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sympy.init_printing()</span>
@@ -581,16 +585,17 @@ window.Quarto = {
 <li><p><span class="math inline">\(\displaystyle x^2 \frac{dy}{dx} = y -xy, \;\;y(-1)=-1\)</span></p></li>
 <li><p><span class="math inline">\(\displaystyle \frac{dx}{dt}=4(x^2 + 1), \;\;x(\pi/4)=1\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_2.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="504bb9ef" class="cell" data-execution_count="3">
+<div id="c98ec278" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> sympy.Symbol(<span class="st">'t'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Function(<span class="st">'x'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> x(t).diff(t) <span class="op">-</span><span class="dv">4</span> <span class="op">*</span>(t <span class="op">*</span>t <span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> x(t).diff(t) <span class="op">-</span><span class="dv">4</span> <span class="op">*</span>(x(t)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span><span class="dv">1</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dsolve(eq, ics<span class="op">=</span>{x(pi<span class="op">/</span><span class="dv">4</span>): <span class="dv">1</span>}, hint<span class="op">=</span><span class="st">'separable'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
-<p><span class="math inline">\(\displaystyle x{\left(t \right)} = \frac{4 t^{3}}{3} + 4 t - \pi - \frac{\pi^{3}}{48} + 1\)</span></p>
+<p><span class="math inline">\(\displaystyle x{\left(t \right)} = \tan{\left(4 t + \frac{\pi}{4} \right)}\)</span></p>
 </div>
 </div>
 <p><span class="math inline">\(~\)</span></p>
@@ -615,7 +620,7 @@ window.Quarto = {
   \ln |y_h| &amp;= -\int P(x)\,dx +c \,\Rightarrow\, y_h = \bar{c} \exp\left( -\int P(x) \,dx \right)    
 \end{aligned}\]</span></p>
 <ul>
-<li><strong>Variation of parameters</strong> <span class="math inline">\(\,\color{blue}{y_p=u(x)y_h}~\)</span> can be used to solve the nonhomogeneous equation of <span class="math inline">\(\,y_p\)</span></li>
+<li><strong>Variation of parameters</strong> <span class="math inline">\(\,\color{blue}{y_p=u(x)y_h}~\)</span> can be used to find a particular solution <span class="math inline">\(\,y_p\)</span> of the nonhomogeneous equation</li>
 </ul>
 <p><span class="math display">\[
 \begin{aligned}
@@ -632,14 +637,16 @@ window.Quarto = {
 <li><p><span class="math inline">\(~\displaystyle x\frac{dy}{dx} +2y=3\)</span></p></li>
 <li><p><span class="math inline">\(~\displaystyle xy' +(1+x)y=e^{-x} \sin 2x\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given initial-value problem. Give the largest interval <span class="math inline">\(~I\)</span> over which the solution is defined</p>
 <ul>
 <li><p><span class="math inline">\(~\displaystyle y\frac{dx}{dy} -x=2y^2, \;\; y(1)=5\)</span></p></li>
 <li><p><span class="math inline">\(~\displaystyle (x+1)\frac{dy}{dx}+y = \ln x, \;\;y(1)=10\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="5cb62556" class="cell" data-execution_count="4">
+<div id="dd8c261c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Symbol(<span class="st">'x'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -656,12 +663,14 @@ window.Quarto = {
 <li><p><span class="math inline">\(~dx=(x+y^2)dy\)</span></p></li>
 <li><p><span class="math inline">\(~ydx + (2x + xy-3)dy=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The sine integral function is defined as</p>
 <p><span class="math display">\[ \mathrm{Si}(x)=\int_0^x \frac{\sin t }{t} \,dt\]</span></p>
 <p>where the integrand is defined to be 1 at <span class="math inline">\(x=0\)</span>. Express the solution of the initial value problem</p>
 <p><span class="math display">\[x^3 \frac{dy}{dx} + 2x^2 y = 10 \sin x, \;\; y(1)=0\]</span></p>
 <p>in terms of <span class="math inline">\(\mathrm{Si}(x)\)</span></p>
+<p><a href="files/solutions/sol_2_3.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-2-4" class="level2" data-number="2.4">
@@ -669,12 +678,13 @@ window.Quarto = {
 <ul>
 <li><p>A differential expression <span class="math inline">\(~M(x,y)dx + N(x,y)dy~\)</span> is an <strong>exact differential</strong> in a region <span class="math inline">\(R\)</span> of the <span class="math inline">\(xy\)</span>-plane if it corresponds to the differential of some function <span class="math inline">\(f(x,y)\)</span>:</p>
 <p><span class="math display">\[ \color{red}{df(x,y)=\frac{\partial f}{\partial x} dx +\frac{\partial f}{\partial y} dy}\]</span></p></li>
-<li><p>and a condition of exact differentials is:</p>
+<li><p><strong>Criterion for an exact differential:</strong> <span class="math inline">\(~\)</span>if <span class="math inline">\(M\)</span>, <span class="math inline">\(N\)</span> and their first partial derivatives are continuous in a rectangular region <span class="math inline">\(R\)</span>, <span class="math inline">\(~\)</span>then <span class="math inline">\(M\,dx+N\,dy\)</span> is exact in <span class="math inline">\(R\)</span> if and only if</p>
 <p><span class="math display">\[ \frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\]</span></p></li>
 <li><p><span class="math inline">\(M(x,y)\,dx + N(x,y)\, dy=0 ~\)</span> is an <strong>exact equation</strong> if the left side is an exact differential</p></li>
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solving an exact DE, <span class="math inline">\(\;2xy\,dx+(x^2-1)\,dy=0\)</span></p>
+<p><a href="files/solutions/sol_2_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><font color="blue"><strong>Integrating Factor</strong></font> of the first-order linear DE</p>
@@ -696,7 +706,7 @@ window.Quarto = {
 \begin{aligned}
    I(x) \frac{dy}{dx} +I(x) P(x)y &amp;= I(x)f(x) \; \Rightarrow \; \frac{d} {dx}\left\{ I(x)y \right \} = I(x)f(x) \\
    &amp;\Downarrow \\
-  \color{red}{y(x) = I(x)^{-1}y(x_0)I(x_0)}  &amp;\color{red}{\,+\,I(x)^{-1} \int_{x_0}^x I(x) f(x) dx}  
+  \color{red}{y(x) = I(x)^{-1}y(x_0)I(x_0)}  &amp;\color{red}{\,+\,I(x)^{-1} \int_{x_0}^x I(t) f(t)\, dt}  
 \end{aligned}\]</span></p></li>
 </ul>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(\displaystyle\frac{dy}{dx} -2xy = 2, \;y(0)=1\)</span></p>
@@ -717,8 +727,9 @@ window.Quarto = {
 <li><p><span class="math inline">\(~(2xy^2-3)dx +(2x^2y+4)dy=0\)</span></p></li>
 <li><p><span class="math inline">\(~(x^2 -y^2)dx+(x^2-2xy)dy=0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="b9a2f6cd" class="cell" data-execution_count="5">
+<div id="ec0cbfdf" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Symbol(<span class="st">'x'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -735,11 +746,13 @@ window.Quarto = {
 <li><p><span class="math inline">\(~(x+y)^2 dx + (2xy +x^2-1)dy = 0, \;\;y(1)=1\)</span></p></li>
 <li><p><span class="math inline">\(~(4y + 2t -5)dt + (6y +4t-1)dy=0, \;\;y(-1)=2\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_4.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given differential equation by finding an appropriate integrating factor</p>
 <ul>
 <li><span class="math inline">\(~y(x+y+1)dx + (x+2y)dy=0\)</span></li>
 </ul>
+<p><a href="files/solutions/sol_2_4.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-2-5" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="sec-2-5"><span class="header-section-number">2.5</span> Solutions by Substitutions</h2>
@@ -752,8 +765,9 @@ window.Quarto = {
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the IVP <span class="math inline">\(~\displaystyle\frac{dy}{dx} = (-2x +y)^2 -7, \;y(0)=0\)</span></p>
 <p>Let <span class="math inline">\(\,u=-2x+y\)</span>, then <span class="math inline">\(~\displaystyle\frac{du}{dx}=-2 + \frac{dy}{dx}~\)</span> giving <span class="math inline">\(~\displaystyle\frac{du}{dx} = u^2 -9\)</span></p>
+<p><a href="files/solutions/sol_2_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="db505a45" class="cell" data-execution_count="6">
+<div id="e9f339ae" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Symbol(<span class="st">'x'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -768,8 +782,8 @@ window.Quarto = {
 <ul>
 <li><p><strong>Homogeneous</strong> first-order DE</p>
 <p>A first-order ordinary DE in the form:</p>
-<p><span class="math display">\[\frac{dy}{dx}=f(x,y) = - \frac{M(x,y)}{N(x,y)}\]</span></p>
-<p>is a homogeneous type if both function <span class="math inline">\(M(x,y)\)</span> and <span class="math inline">\(N(x,y)\)</span> are homogeneous functions of the same degree <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[\frac{dy}{dx}= - \frac{M(x,y)}{N(x,y)}\]</span></p>
+<p>is of homogeneous type if both functions <span class="math inline">\(M(x,y)\)</span> and <span class="math inline">\(N(x,y)\)</span> are homogeneous functions of the same degree <span class="math inline">\(n\)</span>:</p>
 <p><span class="math display">\[M(\lambda x, \lambda y) = \lambda^n M(x, y), \;\; N(\lambda x, \lambda y) = \lambda^n N(x, y)\]</span></p>
 <p>Thus, we can let <span class="math inline">\(\color{blue}{t=1/x}~\)</span> to simplify this quotient to a function <span class="math inline">\(f\)</span> of the single variable <span class="math inline">\(y/x\)</span>:</p>
 <p><span class="math display">\[\frac{M(x, y)}{N(x, y)}=\frac{M(t x,t y)}{N(t x, t y)} = \frac{M\left(1, \tfrac{y}{x}\right)}{N\left(1,\tfrac{y}{x}\right)}
@@ -779,6 +793,7 @@ window.Quarto = {
 </ul>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\((x^2 +y^2) dx +(x^2 -xy) dy = 0\)</span></p>
+<p><a href="files/solutions/sol_2_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <ul>
 <li><p><strong>Bernoulli</strong> DE:</p>
@@ -792,8 +807,9 @@ window.Quarto = {
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve <span class="math inline">\(\displaystyle y'-\frac{2}{x}y=-x^2y^2\)</span></p>
 <p>Changing variables <span class="math inline">\(\displaystyle u=\tfrac{1}{y}\)</span>, <span class="math inline">\(~\)</span><span class="math inline">\(\displaystyle u'=-\tfrac{1}{y^2}y'\)</span> gives the equation</p>
 <p><span class="math display">\[ u'+\frac{2}{x}u=x^2\]</span></p>
+<p><a href="files/solutions/sol_2_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="2b367bab" class="cell" data-execution_count="7">
+<div id="b615c735" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Symbol(<span class="st">'x'</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -810,7 +826,7 @@ window.Quarto = {
 <ul>
 <li><p>Riccati equation is any first-order ordinary differential equation that is quadratic in the unknown function. In other words, it is an equation of the form</p>
 <p><span class="math display">\[y'=q_0(x)+q_1(x)y+q_2(x)y^2\]</span></p>
-<p>where <span class="math inline">\(q_0(x)\neq 0\)</span> and <span class="math inline">\(q_2(x)\neq 0\)</span>. If <span class="math inline">\(q_0(x)=0\)</span>, the equation is Bernoulli one, and if <span class="math inline">\(q_2(x)=0\)</span>, the equation is linear one</p></li>
+<p>where <span class="math inline">\(q_0(x)\neq 0\)</span> and <span class="math inline">\(q_2(x)\neq 0\)</span>. If <span class="math inline">\(q_0(x)=0\)</span>, it is a Bernoulli equation, and if <span class="math inline">\(q_2(x)=0\)</span>, it is a linear equation</p></li>
 <li><p>The new variable <font color="blue"><span class="math inline">\(v=yq_2\)</span></font> satisfies an equation</p>
 <p><span class="math display">\[v'=v^2+R(x)v+S(x)\]</span></p>
 <p>where <span class="math inline">\(S(x)=q_2 q_0\)</span> and <span class="math inline">\(\displaystyle R(x)=q_{1}+\left({\tfrac{q_{2}'}{q_{2}}}\right)\)</span></p></li>
@@ -826,8 +842,9 @@ window.Quarto = {
 <li><p><span class="math inline">\(~\displaystyle \frac{dy}{dx}=\frac{y-x}{y+x}\)</span></p></li>
 <li><p><span class="math inline">\(~\displaystyle x\frac{dy}{dx}=y+\sqrt{x^2-y^2}, \;\;x&gt;0\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
-<div id="356474f0" class="cell" data-execution_count="8">
+<div id="fbaf1ee3" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.Symbol(<span class="st">'x'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sympy.Function(<span class="st">'y'</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -844,6 +861,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(~\displaystyle xy^2 \frac{dy}{dx}=y^3-x^3, \;\;y(1)=2\)</span></p></li>
 <li><p><span class="math inline">\(~\displaystyle (x^2 +2y^2) \frac{dx}{dy}=xy, \;\; y(-1)=1\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Solve the given differential equation by using an appropriate substitution</p>
 <ul>
@@ -851,6 +869,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(~\displaystyle 3(1+t^2)\frac{dy}{dt}=2ty(y^3-1)\)</span></p></li>
 <li><p><span class="math inline">\(~\displaystyle \frac{dy}{dx}=\cos (x+y), \;\;y(0)=\frac{\pi}{4}\)</span></p></li>
 </ul>
+<p><a href="files/solutions/sol_2_5.pdf" target="_blank">Solution</a></p>
 <p><span class="math inline">\(~\)</span></p>
 </section>
 <section id="sec-2-6" class="level2" data-number="2.6">
@@ -865,7 +884,7 @@ window.Quarto = {
 </div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch02_figure03.png" title="Euler's method" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+<p><img src="figures/ch02_figure03.svg" title="Euler's method" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -883,7 +902,7 @@ window.Quarto = {
       y_5 &amp;= 5.0768
 \end{aligned}\]</span></p></li>
 </ul>
-<div id="1b867b4b" class="cell" data-execution_count="9">
+<div id="aa6678f7" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y0 <span class="op">=</span> <span class="fl">4.0</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>xf <span class="op">=</span> <span class="fl">2.5</span></span>
@@ -916,7 +935,7 @@ x =  2.5, y =  5.0768</code></pre>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_02_First-Order_Differential_Equations_files/figure-html/cell-10-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="ch_02_First-Order_Differential_Equations_files/figure-html/cell-10-output-2.png" width="368" height="381" class="figure-img"></p>
 <figcaption>Euler’s Method</figcaption>
 </figure>
 </div>
@@ -924,29 +943,31 @@ x =  2.5, y =  5.0768</code></pre>
 </div>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> Use Euler’s method to obtain a four-decimal approximation of the indicated value. Carry out the recursion, first using <span class="math inline">\(h=0.1\)</span> and then using <span class="math inline">\(h=0.05\)</span></p>
 <p><span class="math display">\[~y'=2x-3y+1, \;\; y(1)=5; \;\;y(1.2)\]</span></p>
+<p><a href="files/solutions/sol_2_6.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-2-7" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="sec-2-7"><span class="header-section-number">2.7</span> Linear Models</h2>
-<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Series Circuits - For a series circuit containing a resister <span class="math inline">\(R\)</span> and an inductor <span class="math inline">\(L\)</span>,</p>
+<p><strong>Example</strong> <span class="math inline">\(\,\)</span> Series Circuits - For a series circuit containing a resistor <span class="math inline">\(R\)</span> and an inductor <span class="math inline">\(L\)</span>,</p>
 <p><span class="math inline">\(~\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch02_figure04.png" title="LR-series circuit" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+<p><img src="figures/ch02_figure04.svg" title="LR-series circuit" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div>
-<p>Kirchoff’s second law gives</p>
+<p>Kirchhoff’s second law gives</p>
 <p><span class="math display">\[L\frac{di}{dt}+Ri=E(t)\]</span></p>
-<p>For a series circuit containing a resister and a capacitor,</p>
+<p>For a series circuit containing a resistor and a capacitor,</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/ch02_figure05.png" title="RC-series circuit" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+<p><img src="figures/ch02_figure05.svg" title="RC-series circuit" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
 </figure>
 </div>
-<p>Kirchoff’s second law gives</p>
+<p>Kirchhoff’s second law gives</p>
 <p><span class="math display">\[Ri+\frac{1}{C}q=E(t)\]</span></p>
 <p>where <span class="math inline">\(\displaystyle i=\frac{dq}{dt}\)</span>. <span class="math inline">\(~\)</span>Then <span class="math inline">\(~\)</span><span class="math inline">\(\displaystyle R\frac{dq}{dt}+\frac{1}{C}q=E(t)\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>Example</strong> <span class="math inline">\(\,\)</span> The population of a community is known to increase at a rate proportional to the number of people present at time <span class="math inline">\(t\)</span>. If an initial population <span class="math inline">\(P_0\)</span> has doubled in 5 years, how long will it take to triple? To quadruple?</p>
+<p><a href="files/solutions/sol_2_7.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="sec-2-8" class="level2" data-number="2.8">
 <h2 data-number="2.8" class="anchored" data-anchor-id="sec-2-8"><span class="header-section-number">2.8</span> Nonlinear Models</h2>
@@ -955,7 +976,7 @@ x =  2.5, y =  5.0768</code></pre>
 <ul>
 <li><p>Verhulst proposed a model, called the logistic model, for population growth in 1838. It does not assume unlimited resources. Instead, it assumes there is a carrying capacity <span class="math inline">\(K\)</span> for the population</p></li>
 <li><p>This carrying capacity is the stable population level. If the population is above <span class="math inline">\(K\)</span>, then the population will decrease, but if below, then it will increase</p></li>
-<li><p>For this model, it is assumed that ther rate of change <span class="math inline">\(\frac{dy}{dt}\)</span> of the population <span class="math inline">\(y\)</span> is proportional to the product of the current population <span class="math inline">\(y\)</span> and <span class="math inline">\(K − y\)</span></p>
+<li><p>For this model, it is assumed that the rate of change <span class="math inline">\(\frac{dy}{dt}\)</span> of the population <span class="math inline">\(y\)</span> is proportional to the product of the current population <span class="math inline">\(y\)</span> and <span class="math inline">\(K − y\)</span></p>
 <p><span class="math display">\[\frac{dy}{dt}=\alpha y(K-y)\]</span></p></li>
 </ul>
 </section>
@@ -968,9 +989,9 @@ x =  2.5, y =  5.0768</code></pre>
 <ul class="incremental">
 <li><p>The decay of the initial element <span class="math inline">\(X\)</span> is described by</p>
 <p><span class="math display">\[\frac{dx}{dt}=-k_1 x\]</span></p></li>
-<li><p>The second element <span class="math inline">\(Y\)</span> is produced by the decay of <span class="math inline">\(X\)</span> and loses from its own spontaneous decay</p>
+<li><p>The second element <span class="math inline">\(Y\)</span> is produced by the decay of <span class="math inline">\(X\)</span> and is lost through its own spontaneous decay</p>
 <p><span class="math display">\[\frac{dy}{dt}=k_1 x -k_2 y\]</span></p></li>
-<li><p>The stable element <span class="math inline">\(z\)</span> is generated from the decay of <span class="math inline">\(Y\)</span></p>
+<li><p>The stable element <span class="math inline">\(Z\)</span> is generated from the decay of <span class="math inline">\(Y\)</span></p>
 <p><span class="math display">\[\frac{dz}{dt}=k_2 y\]</span></p></li>
 </ul>
 </div>
@@ -985,7 +1006,7 @@ x =  2.5, y =  5.0768</code></pre>
 <ul>
 <li>Use a numerical solver to graph <span class="math inline">\(x(t)\)</span> and <span class="math inline">\(y(t)\)</span></li>
 </ul>
-<div id="78fd9408" class="cell" data-execution_count="10">
+<div id="686ce8d6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lotka-Volterra predator-prey model</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1010,7 +1031,7 @@ x =  2.5, y =  5.0768</code></pre>
 <ul>
 <li>Use the graphs to approximate the period of each population</li>
 </ul>
-<div id="1227bed2" class="cell" data-execution_count="11">
+<div id="a04f7c57" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ax.plot(t, xy_t[:, <span class="dv">0</span>], <span class="st">'r'</span>, label<span class="op">=</span><span class="st">"Predator"</span>)</span>
@@ -1026,17 +1047,18 @@ x =  2.5, y =  5.0768</code></pre>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ch_02_First-Order_Differential_Equations_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ch_02_First-Order_Differential_Equations_files/figure-html/cell-12-output-1.png" width="526" height="437" class="figure-img"></p>
 <figcaption>Lotka-Volterra predator-prey model</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p><a href="files/solutions/sol_2_9.pdf" target="_blank">Solution</a></p>
 </section>
 <section id="worked-exercises" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="worked-exercises">Worked Exercises</h2>
 <p><strong>Solve the given differential equation by separation of variables</strong></p>
-<p><strong><a href="#sec-2-2" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-2-2</span></a>: 1.</strong> <span class="math inline">\(\,\displaystyle \frac{dy}{dx}=\sin 5 x\)</span></p>
+<p><strong><a href="#sec-2-2" class="quarto-xref"><span>2.2</span></a>: 1.</strong> <span class="math inline">\(\,\displaystyle \frac{dy}{dx}=\sin 5 x\)</span></p>
 <p><strong>Solution</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1046,7 +1068,7 @@ x =  2.5, y =  5.0768</code></pre>
    &amp;\Downarrow \\
    y &amp;=-\frac{1}{5} \cos 5x +c
 \end{aligned}\]</span></p>
-<p><strong><a href="#sec-2-2" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-2-2</span></a>: 3.</strong> <span class="math inline">\(\,\displaystyle dx +e^{3x} dy = 0\)</span></p>
+<p><strong><a href="#sec-2-2" class="quarto-xref"><span>2.2</span></a>: 3.</strong> <span class="math inline">\(\,\displaystyle dx +e^{3x} dy = 0\)</span></p>
 <p><strong>Solution</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1054,7 +1076,7 @@ x =  2.5, y =  5.0768</code></pre>
   &amp;\Downarrow \\
   y &amp;= \frac{1}{3}e^{-3x} +c
 \end{aligned}\]</span></p>
-<p><strong><a href="#sec-2-2" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-2-2</span></a>: 21.</strong> <span class="math inline">\(\,\displaystyle \frac{dy}{dx} = x\sqrt{1 -y^2}\)</span></p>
+<p><strong><a href="#sec-2-2" class="quarto-xref"><span>2.2</span></a>: 21.</strong> <span class="math inline">\(\,\displaystyle \frac{dy}{dx} = x\sqrt{1 -y^2}\)</span></p>
 <p><strong>Solution</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1064,7 +1086,8 @@ x =  2.5, y =  5.0768</code></pre>
 &amp;\Downarrow \\
 y &amp;= \sin \left(\frac{1}{2}x^2 +c \right)
 \end{aligned}\]</span></p>
-<p><strong><a href="#sec-2-2" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-2-2</span></a>: 25.</strong> Find an implicit or an explicit solution of the given initial-value problem</p>
+<p>In dividing by <span class="math inline">\(\sqrt{1-y^2}\)</span> we assumed <span class="math inline">\(|y|&lt;1\)</span>; <span class="math inline">\(~\)</span>the constant functions <span class="math inline">\(y=1\)</span> and <span class="math inline">\(y=-1\)</span> are also (singular) solutions</p>
+<p><strong><a href="#sec-2-2" class="quarto-xref"><span>2.2</span></a>: 25.</strong> Find an implicit or an explicit solution of the given initial-value problem</p>
 <p><span class="math display">\[ x^2 \frac{dy}{dx} = y -xy, \;\;y(-1)=-1\]</span></p>
 <p><strong>Solution</strong></p>
 <p><span class="math display">\[
@@ -1077,7 +1100,7 @@ y &amp;= \sin \left(\frac{1}{2}x^2 +c \right)
   &amp;\Downarrow \\
   y &amp;= \frac{1}{x} e^{-\left( 1 +\frac{1}{x}\right)}
 \end{aligned}\]</span></p>
-<p><strong><a href="#sec-2-7" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">sec-2-7</span></a>: 41.</strong> <span class="math inline">\(\,\)</span> <strong>Evaporating Raindrop</strong> <span class="math inline">\(\,\)</span> As a raindrop falls, it evaporates while retaining its spherical shape. If we make the further assumptions that the rate at which the raindrop evaporates is proportional to its surface area and that air resistance is negligible, then a model for the velocity <span class="math inline">\(v(t)\)</span> of the raindrop is</p>
+<p><strong><a href="#sec-2-7" class="quarto-xref"><span>2.7</span></a>: 41.</strong> <span class="math inline">\(\,\)</span> <strong>Evaporating Raindrop</strong> <span class="math inline">\(\,\)</span> As a raindrop falls, it evaporates while retaining its spherical shape. If we make the further assumptions that the rate at which the raindrop evaporates is proportional to its surface area and that air resistance is negligible, then a model for the velocity <span class="math inline">\(v(t)\)</span> of the raindrop is</p>
 <p><span class="math display">\[
 \frac{dv}{dt} + \frac{3(k/\rho)}{(k/\rho) t +r_0} v = g
 \]</span></p>
@@ -1090,7 +1113,7 @@ y &amp;= \sin \left(\frac{1}{2}x^2 +c \right)
 <p><span class="math display">\[
 \begin{aligned}
 \frac{dv}{dt} &amp;+ \frac{3(k/\rho)}{(k/\rho) t +r_0} v = g \\
-&amp;\Downarrow {\small \text{ multiply by the integral factor }} \\
+&amp;\Downarrow {\small \text{ multiply by the integrating factor }} \\
 \frac{d}{dt} \left[ \left(\frac{k}{\rho}t +r_0 \right)^3 v  \right] &amp;= \left(\frac{k}{\rho}t +r_0 \right)^3 g\\
 &amp;\Downarrow \\
 v(t)=\frac{g\rho}{4k} \left( \frac{k}{\rho} t +r_0 \right) &amp;+c\left(\frac{k}{\rho}t +r_0 \right)^{-3} \\
@@ -1145,6 +1168,8 @@ r(t)  &amp;= -0.0003 t + 0.01 = 0 \; \Rightarrow \; t =\frac{0.01}{0.0003} \appr
 <p><span class="math display">\[\arcsin y = \arcsin x + \frac{\pi}{3}\]</span></p>
 <p>Now apply <span class="math inline">\(\sin\)</span> to both sides:</p>
 <p><span class="math display">\[y = \sin\left(\arcsin x + \frac{\pi}{3}\right)\]</span></p>
+<p>or, expanding the sine, <span class="math inline">\(~\displaystyle y=\frac{x}{2}+\frac{\sqrt{3}}{2}\sqrt{1-x^2}\)</span></p>
+<p>This is a solution only where <span class="math inline">\(\cos\left(\arcsin x+\frac{\pi}{3}\right)\ge 0\)</span>, <span class="math inline">\(~\)</span>because <span class="math inline">\(\frac{dy}{dx}=\frac{\cos\left(\arcsin x+\pi/3\right)}{\sqrt{1-x^2}}\)</span> must equal <span class="math inline">\(\frac{\sqrt{1-y^2}}{\sqrt{1-x^2}}\ge 0\)</span>. <span class="math inline">\(~\)</span>Hence <span class="math inline">\(\arcsin x+\frac{\pi}{3}\le\frac{\pi}{2}\)</span>, <span class="math inline">\(~\)</span>i.e.&nbsp;the solution is defined for <span class="math inline">\(-1&lt;x\le\frac{1}{2}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>2.</strong> <span class="math inline">\(~\)</span>Find an explicit solution of the given initial value problem</p>
 <p><span class="math display">\[\frac{dy}{dx} =-y\ln y, \;y(0)=e\]</span></p>
@@ -1189,7 +1214,7 @@ r(t)  &amp;= -0.0003 t + 0.01 = 0 \; \Rightarrow \; t =\frac{0.01}{0.0003} \appr
 <p><span class="math display">\[u = 3x + 2y\]</span></p>
 <p>Differentiate both sides with respect to x:</p>
 <p><span class="math display">\[\frac{du}{dx} = 3 + 2\frac{dy}{dx}\]</span></p>
-<p>Now solve for from this:</p>
+<p>Now solve for <span class="math inline">\(\frac{dy}{dx}\)</span> from this:</p>
 <p><span class="math display">\[\frac{dy}{dx} = \frac{1}{2} \left( \frac{du}{dx} - 3 \right)\]</span></p>
 <p>But also, from the original equation:</p>
 <p><span class="math display">\[\frac{dy}{dx} = \frac{u}{u + 2}\]</span></p>
@@ -1256,26 +1281,14 @@ x = \frac{1}{5}(3x + 2y) + \frac{4}{25} \ln |5(3x + 2y) + 6| - \frac{4}{25} \ln 
 <p>Left-hand side becomes:</p>
 <p><span class="math display">\[\frac{d}{dx}\left( e^{\sin x} y \right) = e^{\sin x} \sin 2x\]</span></p>
 <p><strong>Step 2:</strong> <span class="math inline">\(~\)</span>Integrate Both Sides</p>
-<p><span class="math display">\[\int \frac{d}{dx}(e^{\sin x} y) \, dx = \int e^{\sin x} \sin 2x \, dx\]</span></p>
+<p>With <span class="math inline">\(s=\sin x\)</span>, <span class="math inline">\(~ds=\cos x\,dx\)</span> and <span class="math inline">\(\sin 2x=2\sin x\cos x\)</span>, the integral is elementary:</p>
+<p><span class="math display">\[\int e^{\sin x} \sin 2x \, dx = \int 2s\,e^{s}\,ds = 2(s-1)e^{s} = 2(\sin x-1)\,e^{\sin x}\]</span></p>
 <p>So:</p>
-<p><span class="math display">\[y(x) = e^{-\sin x} \left( \int e^{\sin x} \sin 2x \, dx + C \right)\]</span></p>
+<p><span class="math display">\[y(x) = e^{-\sin x} \left( 2(\sin x-1)e^{\sin x} + C \right) = 2(\sin x - 1) + C e^{-\sin x}\]</span></p>
 <p><strong>Step 3:</strong> <span class="math inline">\(~\)</span>Impose Periodicity</p>
-<p>Let’s denote:</p>
-<p><span class="math display">\[I(x) := \int e^{\sin x} \sin 2x \, dx
-\Rightarrow y(x) = e^{-\sin x} (I(x) + C)\]</span></p>
-<p>Let’s write the condition:</p>
-<p><span class="math display">\[
-\begin{aligned}
-y(x + 2\pi) = y(x) \; &amp;\Rightarrow \; e^{-\sin x} (I(x + 2\pi) + C) = e^{-\sin x} (I(x) + C)\\
-&amp;\Rightarrow I(x + 2\pi) = I(x)
-\end{aligned}\]</span></p>
-<p>But:</p>
-<p><span class="math display">\[
-I(x + 2\pi) = \int_{0}^{x + 2\pi} e^{\sin t} \sin 2t \, dt = \int_{0}^{x} e^{\sin t} \sin 2t \, dt + \int_{x}^{x+2\pi} e^{\sin t} \sin 2t \, dt\]</span></p>
-<p>Therefore, periodicity condition is:</p>
-<p><span class="math display">\[I(x + 2\pi) - I(x) = \int_{x}^{x + 2\pi} e^{\sin t} \sin 2t \, dt = 0\]</span></p>
-<p>So the <span class="math inline">\(2\pi\)</span>-periodic solution is:</p>
-<p><span class="math display">\[y(x) = e^{-\sin x} \int_0^x e^{\sin t} \sin 2t \, dt\]</span></p>
+<p>Both <span class="math inline">\(2(\sin x-1)\)</span> and <span class="math inline">\(e^{-\sin x}\)</span> have period <span class="math inline">\(2\pi\)</span>, <span class="math inline">\(~\)</span>so <strong>every</strong> solution has period <span class="math inline">\(2\pi\)</span>, <span class="math inline">\(~\)</span>whatever the value of <span class="math inline">\(C\)</span>:</p>
+<p><span class="math display">\[\color{red}{y(x) = 2(\sin x - 1) + C e^{-\sin x}}\]</span></p>
+<p>(The periodicity can also be seen without evaluating the integral: <span class="math inline">\(~e^{-\sin x}\)</span> is <span class="math inline">\(2\pi\)</span>-periodic and <span class="math inline">\(\int_0^{2\pi} e^{\sin t}\sin 2t\,dt = 0\)</span>, <span class="math inline">\(~\)</span>because the integrand changes sign under <span class="math inline">\(t\mapsto \pi-t\)</span>.) <span class="math inline">\(~\)</span>Check: <span class="math inline">\(~y=2\sin x-2\)</span> gives <span class="math inline">\(y'+(\cos x)y = 2\cos x+2\sin x\cos x-2\cos x=\sin 2x\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>6.</strong> <span class="math inline">\(~\)</span> Find the solution of period <span class="math inline">\(2\pi\)</span> of the equation</p>
 <p><span class="math display">\[ y' +3 y = \cos x\]</span></p>
@@ -1321,10 +1334,10 @@ I(x + 2\pi) = \int_{0}^{x + 2\pi} e^{\sin t} \sin 2t \, dt = \int_{0}^{x} e^{\si
 <p><span class="math display">\[\int \sec^2 u \, du = \tan u, \quad
 \int \sec u \tan u \, du = \sec u\]</span></p>
 <p>So:</p>
-<p><span class="math display">\[\int \frac{du}{1 + \sin u} = \tan u - \sec u + C = x + C\]</span></p>
+<p><span class="math display">\[\int \frac{du}{1 + \sin u} = \tan u - \sec u \;\Rightarrow\; \tan u - \sec u = x + C\]</span></p>
 <p><strong>Step 3:</strong> <span class="math inline">\(~\)</span>Substitute Back <span class="math inline">\(u = x + y\)</span></p>
 <p><span class="math display">\[\tan(x + y) - \sec(x + y) = x + C\]</span></p>
-<p>This is the implicit general solution to the differential equation</p>
+<p>This is the implicit general solution to the differential equation. <span class="math inline">\(~\)</span>In separating variables we divided by <span class="math inline">\(1+\sin u\)</span>, <span class="math inline">\(~\)</span>so the constant solutions <span class="math inline">\(\sin u=-1\)</span>, <span class="math inline">\(~\)</span>i.e.&nbsp;<span class="math inline">\(y=-x-\frac{\pi}{2}+2k\pi\)</span>, <span class="math inline">\(~\)</span>must be added</p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong>8.</strong> <span class="math inline">\(~\)</span> Find a general solution of the equation</p>
 <p><span class="math display">\[ydx+(2x+xy-3)dy=0\]</span></p>
@@ -1348,7 +1361,7 @@ y^2 e^y dx \;+\;&amp;y e^y (2x+xy-3)dy =0 \\
 &amp;\Downarrow \\
 \frac{\partial f}{\partial y} = ye^y(2x +xy) +\frac{dh}{dy} \;\;&amp;\rightarrow \;\; \frac{dh}{dy} = -3y e^y\\
 &amp;\Downarrow \\  
-h(y) =-3e^y (y-1) - C \;\;&amp;\rightarrow \;\; f(x,y) =y^2 e^y x -3e^y (y-1) = C \\
+h(y) =-3e^y (y-1) \;\;&amp;\rightarrow \;\; f(x,y) =y^2 e^y x -3e^y (y-1) = C \\
 &amp;\Downarrow \\
 \color{red}{x = \frac{3}{y}\left(1-\frac{1}{y} \right)}\, &amp; \color{red}{\, + \,Cy^{-2} e^{-y}}
 \end{aligned}\]</span></p>
