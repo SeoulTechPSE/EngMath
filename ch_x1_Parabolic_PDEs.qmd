@@ -2806,6 +2806,10 @@ plt.close()
 HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
 
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x1_Parabolic_PDEs.html#sec-x1-17)](figures/pdf/ch_x1_Parabolic_PDEs_anim1.png){width=95%}
+:::
+
 $~$
 
 **8.** $~$ Consider the heat equation on the interval $0 < x < 1$:

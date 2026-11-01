@@ -6,10 +6,13 @@ jupyter: python3
 
 **Chemical engineering** occupies a unique position at the interface between molecular sciences and engineering. Intimately linked with the fundamental subjects of chemistry, biology, **mathematics**, and physics — and in close collaboration with fellow engineering disciplines like materials science, computer science, and mechanical, electrical, and civil engineering — chemical engineering offers unparalleled opportunities to do great things
 
-<!-- [Lecture Notes (pdf)](Engineering-Mathematics.pdf) -->
+::: {.content-visible when-format="html"}
+[Download the lecture notes as a PDF](files/Engineering-Mathematics.pdf) $\,$(main chapters; the appendices are on this site and in Colab)
+:::
 
 ---
 
+::: {.content-visible when-format="html"}
 ## Contents {.unnumbered}
 
 ### Part I
@@ -34,10 +37,13 @@ jupyter: python3
 * [Hyperbolic Partial Differential Equations](ch_x2_Hyperbolic_PDEs.qmd)
 * [Elliptic Partial Differential Equations](ch_x3_Elliptic_PDEs.qmd)
 
+:::
+
 ---
 
 ![https://seoultechpse.github.io/EngMath/](qrcode_seoultechpse.github.io_EngMath.png){width=150px}
 
+::: {.content-visible when-format="html"}
 ### Scientific Computing in Python
 
 * [Numpy: Vectors, Matrices, and Multidimensional Arrays](x_numpy_vectors_matrices_and_multidimensional_arrays.qmd)
@@ -60,6 +66,8 @@ jupyter: python3
 * [Mandelbrot Set in Python](x_Mandelbrot_set.qmd)
 * [Hydrogen Atomic Orbitals](x_hydrogen_orbital.qmd)
 <!-- * [Pandas](x_pandas.qmd) -->
+
+:::
 
 ---
 

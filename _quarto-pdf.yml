@@ -1,0 +1,51 @@
+# PDF edition: the main chapters only (the appendices are on the site and in Colab).
+# Build:  quarto render --profile pdf --to pdf      (output: _pdf/Engineering-Mathematics.pdf)
+project:
+  output-dir: _pdf
+
+# run the code instead of using _freeze/, which holds the HTML results
+execute:
+  freeze: false
+
+book:
+  output-file: Engineering-Mathematics
+  chapters:
+    - index.qmd
+    - part: "First Semester"
+      chapters:
+        - ch_01_Introduction_to_Differential_Equations.qmd
+        - ch_02_First-Order_Differential_Equations.qmd
+        - ch_03_Higher-Order_Differential_Equations.qmd
+        - ch_04_The_Laplace_Transform.qmd
+        - ch_05_Series_Solutions_of_Linear_Differential_Equations.qmd
+        - ch_08_Matrices.qmd
+        - ch_10_Systems_of_Linear_Differential_Equations.qmd
+        - ch_11_Systems_of_Nonlinear_Differential_Equations.qmd
+    - part: "Second Semester"
+      chapters:
+        - ch_07_Vectors.qmd
+        - ch_09_Vector_Calculus.qmd
+        - ch_12_Orthogonal_Functions_and_Fourier_Series.qmd
+        - ch_x1_Parabolic_PDEs.qmd
+        - ch_x2_Hyperbolic_PDEs.qmd
+        - ch_x3_Elliptic_PDEs.qmd
+
+format:
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    geometry: [margin=2.3cm]
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    code-overflow: wrap
+    # code output contains symbols (∇, π, 𝜙) that Latin Modern Mono lacks
+    include-in-header:
+      text: |
+        \directlua{luaotfload.add_fallback("unicodefallback", {"STIXTwoMath:mode=harf;"})}
+        \setmonofont{DejaVu Sans Mono}[Scale=0.85, RawFeature={fallback=unicodefallback}]
+    filters:
+      # before Quarto turns the callouts into its own nodes
+      - path: tools/pdf.lua
+        at: pre-ast

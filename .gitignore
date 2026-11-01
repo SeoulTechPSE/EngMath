@@ -14,3 +14,6 @@
 # Rendered site: built and published by GitHub Actions (.github/workflows/publish.yml)
 /docs/
 __pycache__/
+
+# PDF edition build output (quarto render --profile pdf --to pdf)
+/_pdf/

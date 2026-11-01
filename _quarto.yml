@@ -2,6 +2,11 @@ project:
   type: book
   output-dir: docs
 
+# The table of contents lives in the profiles: _quarto-web.yml (the site,
+# used by default) and _quarto-pdf.yml (the PDF edition, main chapters only)
+profile:
+  default: web
+
 # Re-execute code only when a .qmd file changes; stored results live in _freeze/
 # (commit _freeze/ so that the site can be rebuilt without running Python)
 execute:
@@ -17,45 +22,11 @@ book:
     logo: assets/psl-logo-compact.svg
     logo-href: https://seoultechpse.github.io/   # PSL home
     logo-alt: "PSL home"
+    tools:
+      - icon: file-earmark-pdf
+        href: files/Engineering-Mathematics.pdf
+        aria-label: "PDF edition"
   cover-image: SeoulTech.png
-  chapters:
-    - index.qmd
-    - part: "**First Semester**"
-      chapters:   
-        - ch_01_Introduction_to_Differential_Equations.qmd
-        - ch_02_First-Order_Differential_Equations.qmd
-        - ch_03_Higher-Order_Differential_Equations.qmd
-        - ch_04_The_Laplace_Transform.qmd
-        - ch_05_Series_Solutions_of_Linear_Differential_Equations.qmd
-        - ch_08_Matrices.qmd
-        - ch_10_Systems_of_Linear_Differential_Equations.qmd
-        - ch_11_Systems_of_Nonlinear_Differential_Equations.qmd        
-    - part: "**Second Semester**"
-      chapters:
-        - ch_07_Vectors.qmd
-        - ch_09_Vector_Calculus.qmd
-        - ch_12_Orthogonal_Functions_and_Fourier_Series.qmd
-        - ch_x1_Parabolic_PDEs.qmd
-        - ch_x2_Hyperbolic_PDEs.qmd
-        - ch_x3_Elliptic_PDEs.qmd
-    - part: "**Appendices**"
-      chapters:
-        - x_numpy_vectors_matrices_and_multidimensional_arrays.qmd
-        - x_sympy_symbolic_computing.qmd
-        - x_sympy_Laplace_transform.qmd
-        - x_equation_solving.qmd
-        - x_optimization.qmd
-        - x_interpolation.qmd
-        - x_integration.qmd
-        - x_ordinary_differential_equations.qmd
-        - x_double_pendulum.qmd
-        #- x_PDE_dedalus.qmd
-        #- x_PDE_FEniCS.qmd
-        - x_matplotlib.qmd
-        - x_Mandelbrot_set.qmd
-        - x_hydrogen_orbital.qmd
-        # - x_pandas.qmd
-        # - references.qmd
 
 # bibliography: references.bib
 
@@ -63,7 +34,3 @@ format:
   html:
     theme: cosmo
     css: assets/site.css
-
-  pdf:
-    documentclass: scrreprt
-

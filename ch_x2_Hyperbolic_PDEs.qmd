@@ -216,6 +216,10 @@ anim = animation.FuncAnimation(fig, animate,
 HTML('<center>' + anim.to_html5_video() + '</center>')
 ```
 
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-19)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim1.png){width=95%}
+:::
+
 $~$
 
 ## $\,$More on the D'Alembert Solution {#sec-x2-20}
@@ -378,6 +382,10 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 
 HTML('<center>' + anim.to_html5_video() + '</center>')
 ```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-20)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim2.png){width=95%}
+:::
 
 $~$
 
@@ -545,6 +553,10 @@ anim = animation.FuncAnimation(fig, animate,
 HTML('<center>' + anim.to_html5_video() + '</center>')
 ```
 
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-20)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim3.png){width=95%}
+:::
+
 $~$
 
 **Example** $\,$Solve the semi-infinite string problem
@@ -687,7 +699,13 @@ ani.save("figures/reflection.mp4", writer="ffmpeg", fps=30)
 plt.close()
 ```
 
+::: {.content-visible when-format="html"}
 ![](figures/reflection.mp4)
+:::
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-20)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim4.png){width=95%}
+:::
 
 $~$
 
@@ -2023,6 +2041,10 @@ anim = animation.FuncAnimation(fig, animate,
 
 HTML('<center>' + anim.to_html5_video() + '</center>')
 ```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-25)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim5.png){width=95%}
+:::
 
 $~$
 
@@ -3418,6 +3440,10 @@ ani = animation.FuncAnimation(fig, animate, frames=len(t_vals_light),
 
 HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim6.png){width=95%}
+:::
 
 $~$
 

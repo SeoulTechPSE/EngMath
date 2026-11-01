@@ -1,6 +1,6 @@
 """Generate Colab-ready Jupyter notebooks from the appendix chapters.
 
-Each appendix x_*.qmd listed in the Appendices part of _quarto.yml becomes notebooks/<name>.ipynb:
+Each appendix x_*.qmd listed in the Appendices part of _quarto-web.yml becomes notebooks/<name>.ipynb:
 python cells become code cells (Quarto cell options removed, {{< include >}}
 files inlined), and the Quarto-only markdown is rewritten so that it works
 outside the book (images and links point to the published site, @sec
@@ -45,7 +45,7 @@ IFRAME = re.compile(r'<iframe\s+src="([^"]+)"', re.S)
 
 
 def appendices():
-    text = (ROOT / '_quarto.yml').read_text(encoding='utf-8')
+    text = (ROOT / '_quarto-web.yml').read_text(encoding='utf-8')
     block = text.split('"**Appendices**"')[1]
     return re.findall(r'^\s+-\s+(x_[\w-]+)\.qmd', block, re.M)   # commented-out entries do not match
 
