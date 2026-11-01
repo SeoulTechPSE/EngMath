@@ -103,6 +103,10 @@ and the initial condition $y(0)=y_0$. Sketch the graph of a typical solution $y(
 
 [Solution](files/solutions/sol_2_1.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Draw direction fields for any $dy/dx = f(x, y)$: @sec-ode-direction-fields
+:::
+
 ## Separable Equations {#sec-2-2}
 
 * Consider $~\displaystyle\frac{dy}{dx}=f(x)$
@@ -189,6 +193,10 @@ eq = x(t).diff(t) -4 *(x(t)**2 +1)
 
 dsolve(eq, ics={x(pi/4): 1}, hint='separable')
 ```
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Newton's law of cooling and other first-order equations with `sympy.dsolve`, including initial conditions: @sec-ode-symbolic
+:::
 
 $~$
 
@@ -539,6 +547,10 @@ $~$
 
 [Solution](files/solutions/sol_2_5.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** A Riccati equation reduced in `sympy` to a second-order linear (Airy) equation by the substitution $y = -u'/(q_2 u)$: @sec-ode-symbolic
+:::
+
 $~$
 
 ## A Numerical Method {#sec-2-6}
@@ -605,6 +617,10 @@ plt.show()
 $$~y'=2x-3y+1, \;\; y(1)=5; \;\;y(1.2)$$
 
 [Solution](files/solutions/sol_2_6.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Euler's method, Runge-Kutta and multistep methods: @sec-ode-numerical-methods; $~$adaptive solvers with `scipy.integrate.solve_ivp`: @sec-ode-scipy
+:::
 
 
 ## Linear Models {#sec-2-7}
@@ -731,6 +747,10 @@ plt.show()
 ```
 
 [Solution](files/solutions/sol_2_9.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** The Lotka-Volterra and Lorenz systems solved with `solve_ivp`, with phase-plane plots: @sec-ode-scipy
+:::
 
 ## Worked Exercises {.unnumbered}
 

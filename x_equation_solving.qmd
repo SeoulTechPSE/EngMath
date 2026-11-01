@@ -32,7 +32,7 @@ print('scipy: ', __version__)
 print('matplotlib: ', mpl.__version__)
 ```
 
-## System of Linear equations
+## System of Linear equations {#sec-eqsolve-linear}
 
 $~$
 
@@ -373,7 +373,7 @@ ax.set_ylabel(r"$y$", fontsize=12)
 ax.legend(loc=2)
 ```
 
-## Eigenvalue problems
+## Eigenvalue problems {#sec-eqsolve-eigen}
 
 ```{python}
 eps, delta = sympy.symbols("epsilon, Delta")
@@ -662,7 +662,7 @@ optimize.brenth(f, -2, 2)
 optimize.ridder(f, -2, 2)
 ```
 
-## System of nonlinear equations
+## System of nonlinear equations {#sec-eqsolve-nonlinear-systems}
 
 * For example, consider the following system of two multivariate and nonlinear equations:
 

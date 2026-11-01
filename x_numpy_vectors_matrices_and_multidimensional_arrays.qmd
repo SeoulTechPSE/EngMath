@@ -1065,7 +1065,7 @@ data.shape
 data.T.shape
 ```
 
-## Matrix and vector operations
+## Matrix and vector operations {#sec-numpy-matrix-ops}
 
 ```{python}
 A = np.arange(1, 7).reshape(2, 3)

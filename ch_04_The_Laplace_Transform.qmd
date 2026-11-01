@@ -76,6 +76,10 @@ $~$
 
 [Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Laplace transforms and inverse transforms with `sympy`: @sec-sympy-Laplace-transform
+:::
+
 $~$
 
 ## The Inverse Transform and Transforms of Derivatives {#sec-4-2}
@@ -158,6 +162,10 @@ $~$
 * $~2y'''+3y''-3y'-2y=e^{-t}, \;\;y(0)=0, \;y'(0)=0, \; y''(0)=1$
 
 [Solution](files/solutions/sol_4_2.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Solving an initial-value problem by Laplace transform, step by step in `sympy`: @sec-laplace-example-1 $~$and @sec-ode-laplace
+:::
 
 $~$
 
@@ -359,6 +367,10 @@ $~$
 * $~\displaystyle f(t)=e^t+e^t \int_0^t e^{-\tau} f(\tau)\, d\tau$
 
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Derivatives of transforms and the convolution theorem in `sympy`: @sec-laplace-derivatives-of-transforms, @sec-laplace-convolution; $~$an ODE with variable coefficients: @sec-laplace-example-2
+:::
 
 $~$
 

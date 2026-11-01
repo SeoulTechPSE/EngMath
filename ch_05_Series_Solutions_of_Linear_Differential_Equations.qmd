@@ -80,6 +80,10 @@ $~$
     y_2(x) &= x +\sum_{n=1}^\infty \frac{(-1)^n}{3\cdot4 \cdot 6\cdot 7 \cdots (3n)(3n +1)}x^{3n +1}
   \end{aligned}$$
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Taylor series of functions with `sympy.series`: @sec-sympy-series
+:::
+
 $~$
 
 ## Solutions about Singular Points {#sec-5-2}
@@ -888,6 +892,10 @@ $~$
 * $\,$ Verify that $y=P_1^1(x)$ satisfies the associated Legendre equation when $n=1$ and $m=1$
 
 [Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Legendre and Chebyshev polynomials as `numpy.polynomial` classes: @sec-interp-polynomials
+:::
 
 ## Worked Exercises {.unnumbered}
 

@@ -893,6 +893,10 @@ ax.grid()
 ax.tick_params(axis='both', direction='in')
 ```
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Eigenvalues and eigenvectors numerically: @sec-eqsolve-eigen; $~$integrating linear systems with `solve_ivp`: @sec-ode-scipy
+:::
+
 ## Solution by Diagonalization {#sec-10-3}
 
 * A homogeneous system

@@ -198,6 +198,10 @@ $~$
 
 * The <font color="red">*overshooting*</font> by the partial sums from the functional values near a point of discontinuity does not smooth out but remains fairly constant. This behavior of a Fourier series near a point at which $f$ is discontinuous is known as the <font color="red">*Gibbs phenomenon*</font>
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Computing Fourier coefficients by numerical integration (`scipy.integrate.quad`): @sec-integration-scipy; $~$or exactly with `sympy`: @sec-sympy-integrals
+:::
+
 $~$
 
 ## Fourier Cosine and Sine Series {#sec-12-3}

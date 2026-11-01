@@ -86,7 +86,7 @@ explicit form can be written in the standard form by introducing $n$ new functio
 * In addition to the properties of $\mathbf{f}(\mathbf{x}, \mathbf{y}(\mathbf{x}))$, the boundary conditions for an ODE also influence the solvability of the ODE problem, as well as which numerical approaches are available. There are two main types of boundary conditions for ODE problems: initial value conditions
 and boundary value conditions
 
-## Symbolic solution to ODEs
+## Symbolic solution to ODEs {#sec-ode-symbolic}
 
 * `Sympy` provides a generic ODE solver `sympy.dsolve`, which is able to find analytical solutions to many
 elementary ODEs. The `sympy.dsolve` function attempts to automatically classify a given ODE, and it may
@@ -339,7 +339,7 @@ except Exception as e:
   print(e)
 ```
 
-### Direction fields
+### Direction fields {#sec-ode-direction-fields}
 
 * A direction field graph is a simple but useful technique to visualize possible solutions to arbitrary first-order ODEs. It is made up of short lines that show the slope of the unknown function on a grid in the $x$–$y$ plane. This graph can be easily produced because the slope of $y(x)$ at arbitrary points of the $x$–$y$ plane is given by the definition of the ODE:
 
@@ -428,7 +428,7 @@ plot_direction_field(x, y(x), -x /y(x), ax=axes[1])
 plot_direction_field(x, y(x), y(x)**2 /x, ax=axes[2])
 ```
 
-### Solving ODEs using Laplace Transformation
+### Solving ODEs using Laplace Transformation {#sec-ode-laplace}
 
 * A technique that can be used to solve certain ODE problems is to do Laplace transform on the ODE, which for many problems results in an algebraic equation that is easier to solve. The solution to the algebraic equation can then be transformed back to the original domain with an inverse Laplace transform, to obtain the solution to the original problem. For example, consider the following differential equation for a driven harmonic oscillator:
 
@@ -486,7 +486,7 @@ ax.set_ylabel(r"$y(t)$", fontsize=12)
 fig.tight_layout()
 ```
 
-## Numerical methods for solving ODEs
+## Numerical methods for solving ODEs {#sec-ode-numerical-methods}
 
 * In practice, ODE problems are therefore mainly solved with numerical methods. There are many approaches to solving ODEs numerically, and most of them are designed for problems that are formulated as a system of first-order ODEs on the standard form:
 
@@ -588,7 +588,7 @@ methods, respectively
 
   This equation does not need to be solved exactly, and since the initial guess from the explicit method should be quite good, a fixed number of iterations, using for example Newton's method, could be sufficient. Methods like these, where an explicit method is used to predict $y_{k+1}$ and an implicit method is used to correct the prediction, are called <span style="color:blue">*predictor-corrector methods*</span>
 
-## Numerical integration of ODEs using `scipy`
+## Numerical integration of ODEs using `scipy` {#sec-ode-scipy}
 
 * The `integrate` module of `scipy` provides the ODE solver interface: `integrate.solve_ivp`. This function numerically integrates a system of ordinary differential equations given an initial value:
 

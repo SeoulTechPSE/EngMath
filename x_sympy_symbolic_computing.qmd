@@ -553,7 +553,7 @@ expr_func(xvalues)  # efficient method
 
 ## Calculus
 
-### Derivatives
+### Derivatives {#sec-sympy-derivatives}
 
 ```{python}
 f = sympy.Function('f')(x)
@@ -638,7 +638,7 @@ d
 d.doit()
 ```
 
-### Integrals
+### Integrals {#sec-sympy-integrals}
 
 ```{python}
 a, b, x, y = sympy.symbols('a, b, x, y')
@@ -744,7 +744,7 @@ p, q
 
 * Hence the oblique asymptote of the curve is $y = px + q$
 
-### Series
+### Series {#sec-sympy-series}
 
 ```{python}
 sympy.series(sympy.exp(x), x)  # Taylor series about x = 0, up to O(x**6)
@@ -866,7 +866,7 @@ for i in range(4):
  eq2.subs(sol).simplify() == 0 for sol in sols]
 ```
 
-## Linear algebra
+## Linear algebra {#sec-sympy-linear-algebra}
 
 ```{python}
 sympy.Matrix([1, 2])

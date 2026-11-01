@@ -269,6 +269,10 @@ $~$
    
   $$\frac{dz}{dt}=\frac{\partial z}{\partial u}\frac{du}{dt}+\frac{\partial z}{\partial v}\frac{dv}{dt}$$
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Partial and higher derivatives with `sympy`: @sec-sympy-derivatives
+:::
+
 $~$
 
 ## Directional Derivatives {#sec-9-5}
@@ -810,6 +814,10 @@ $~$
   $$ \bar{x} = \frac{\displaystyle\iint_R x\rho(x,y)\,dA}{M} \, \;\textrm{ and } \; \bar{y}=\frac{\displaystyle\iint_R y\rho(x,y) \,dA}{M}$$
 
   $$ I_y=\iint_R x^2\rho(x,y) \, dA\;\textrm{ and } \; I_x=\iint_R y^2\rho(x,y) \,dA $$
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Double and triple integrals numerically with `scipy` (`dblquad`, `tplquad`, `nquad`): @sec-integration-multiple; $~$symbolically with `sympy`: @sec-sympy-integrals
+:::
 
 $~$
 

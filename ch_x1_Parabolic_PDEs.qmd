@@ -1232,6 +1232,10 @@ $$\begin{aligned}
  \mathcal{F}^{-1}[F(\omega)]&=\frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty F(\omega) e^{i\omega x}\,d\omega = f(x)
 \end{aligned}$$
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Fourier and Laplace transforms with `sympy`: @sec-integration-transforms
+:::
+
 $~$
 
 ## $~$The Fourier Transform and its Application to PDEs {#sec-x1-13}
@@ -1785,6 +1789,10 @@ x = np.linspace(0, 5, 300)
 
 example_plot7(t, x, u0, u_solution)    
 ```
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Laplace transforms with `sympy`: @sec-sympy-Laplace-transform
+:::
 
 $~$
 

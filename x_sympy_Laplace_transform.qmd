@@ -123,7 +123,7 @@ laplace_transform(eq, t, s, noconds=True)
 Lt(eq)
 ```
 
-## Convolution
+## Convolution {#sec-laplace-convolution}
 
 ```{python}
 eq = sympy.integrate(f(tau)*g(t -tau), (tau, 0, t)) +sympy.integrate(f(t -tau)*g(tau), (tau, 0, t))
@@ -178,7 +178,7 @@ eq
 Lt(eq)
 ```
 
-## Derivatives of Transforms
+## Derivatives of Transforms {#sec-laplace-derivatives-of-transforms}
 
 ```{python}
 eq = 3 *f(t) *t**m *t**n
@@ -284,7 +284,7 @@ Lt(eq)   # scaling: F(s/k)/k with k = 3a
 
 $~$
 
-## **Example 1**
+## **Example 1** {#sec-laplace-example-1}
 
 A technique that can be used to solve certain ODE problems is to Laplace transform the ODE, which for many problems results in an algebraic equation that is easier to solve. The solution to the algebraic equation can then be transformed back to the original domain with an inverse Laplace transform, to obtain the solution to the original problem. For example, consider the following differential equation for a driven harmonic oscillator:
 
@@ -336,7 +336,7 @@ ysol.expand().collect([sympy.exp(-t)])
 sympy.dsolve(ode, y(t), ics={y(0): 1, y(t).diff(t).subs(t, 0): 0})
 ```
 
-## **Example 2**
+## **Example 2** {#sec-laplace-example-2}
 
 In some instances, the Laplace transform can be used to solve linear differential equations with variable monomial coefficients
 

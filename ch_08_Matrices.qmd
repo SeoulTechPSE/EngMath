@@ -178,6 +178,10 @@ $$\begin{pmatrix}
 
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Matrix operations with `numpy`: @sec-numpy-matrix-ops; $~$exact (symbolic) matrices with `sympy`: @sec-sympy-linear-algebra
+:::
+
 $~$
 
 ## Systems of Linear Algebraic Equations {#sec-8-2}
@@ -578,6 +582,10 @@ $$\begin{pmatrix}
 \end{pmatrix} \mathbf{A}$$
 
 [Solution](files/solutions/sol_6_2.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Solving linear systems numerically and symbolically, condition numbers, and least squares: @sec-eqsolve-linear
+:::
 
 $~$
 
@@ -1655,6 +1663,10 @@ $~$
 
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Eigenvalues and eigenvectors with `sympy` and `scipy.linalg`: @sec-eqsolve-eigen
+:::
+
 $~$
 
 ## Powers of Matrices {#sec-8-9}
@@ -2638,6 +2650,10 @@ $$\begin{pmatrix}
   \begin{pmatrix} 7 \\ 7\\28 \end{pmatrix}$$
 
 [Solution](files/solutions/sol_6_13.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** LU decomposition with `sympy` and `scipy.linalg.lu`: @sec-eqsolve-linear
+:::
 
 
 ## Applications {#sec-8-14}

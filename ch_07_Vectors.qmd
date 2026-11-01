@@ -225,6 +225,10 @@ $~$
 
 [Solution](files/solutions/sol_9_3b.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Dot (inner), outer and Kronecker products with `numpy`: @sec-numpy-matrix-ops
+:::
+
 $~$
 
 ## Cross Product {#sec-7-4}

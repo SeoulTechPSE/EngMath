@@ -196,6 +196,10 @@ $y''' +12y'' +36y'=0, \;\;y(0)=0, \;y'(0)=1, \; y''(0)=-7$
 
 [Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Characteristic equations and general solutions with `sympy`: @sec-ode-symbolic
+:::
+
 $~$
 
 ## Undetermined Coefficients {#sec-3-4}
@@ -560,6 +564,10 @@ $~$
 **Example** $\,$ Evaluate $\,\displaystyle \lim_{\gamma \to \omega} \frac{F_0}{\omega^2-\gamma^2} (\cos\gamma t - \cos\omega t)$  
 
 [Solution](files/solutions/sol_3_8.pdf){target="_blank"}
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** The damped harmonic oscillator solved symbolically, including the critically damped limit $\gamma \to 1$: @sec-ode-symbolic
+:::
 
 $~$
 
@@ -1065,6 +1073,10 @@ plt.legend()
 plt.show()
 ```
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Nonlinear second-order models as first-order systems with `solve_ivp`: @sec-ode-scipy; $~$the double pendulum: @sec-double-pendulum
+:::
+
 ## Solving System of Linear Equations {#sec-3-12}
 
 When physical systems are coupled, the mathematical model of the system usually consists of a set of coupled DEs
@@ -1114,6 +1126,10 @@ plt.ylabel('x')
 
 plt.show()
 ```
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Coupled spring-mass systems integrated numerically: @sec-ode-scipy
+:::
 
 ## Worked Exercises {.unnumbered}
 

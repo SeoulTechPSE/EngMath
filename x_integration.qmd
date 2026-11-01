@@ -103,7 +103,7 @@ q_rule.subs(w_sol).simplify()
 * An example of such a method is a *Gaussian quadrature*, which also uses polynomial interpolation to determine the values of the weight factors in the quadrature rule, but where the quadrature nodes $x_i$ are chosen to maximize the order of polynomials that can be integrated exactly (the polynomial degree) given a fixed number of quadrature points
 
 
-## Numerical integration with Scipy
+## Numerical integration with Scipy {#sec-integration-scipy}
 
 * The numerical quadrature routines in the `scipy` `integrate` module can be categorized into two types: routines that take the integrand as a python function, and routines that take arrays with samples of the integrand at given points
 
@@ -285,7 +285,7 @@ val_exact -integrate.romb(y, dx=dx)
 val_exact -integrate.simpson(y, dx=dx)
 ```
 
-## Multiple integration
+## Multiple integration {#sec-integration-multiple}
 
 * The double integral routine `dblquad` can evaluate integrals on the form
 
@@ -442,7 +442,7 @@ res3 = mpmath.quad(f3_mpmath, (0, 1), (0, 1), (0, 1))
 sympy.sympify(res2), sympy.sympify(res3)
 ```
 
-## Integral transforms
+## Integral transforms {#sec-integration-transforms}
 
 * In general, an integral transform of a function $f(t)$ can be written as
 

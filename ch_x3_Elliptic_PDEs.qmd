@@ -1063,6 +1063,10 @@ $~$
 | **2D** | Unit disk $D=\{\mathbf{x}\in\mathbb{R}^2:|\mathbf{x}|<1\}$ | $\displaystyle \mathcal{P}(\mathbf{x},\boldsymbol{\xi}) = \frac{1}{2\pi}\frac{1 - |\mathbf{x}|^2}{|\mathbf{x} - \boldsymbol{\xi} |^2}$ | $\displaystyle u(\mathbf{x}) = \int_{\partial D} \mathcal{P}(\mathbf{x},\boldsymbol{\xi})\, g(\boldsymbol{\xi})\, d\boldsymbol{\xi}$ |
 | **3D** | Unit ball $B=\{\mathbf{x}\in\mathbb{R}^3:|\mathbf{x}|<1\}$ | $\displaystyle \mathcal{P}(\mathbf{x},\boldsymbol{\xi})= \frac{1}{4\pi}\frac{1 - |\mathbf{x}|^2}{|\mathbf{x} - \boldsymbol{\xi}|^3}$ | $\displaystyle u(\mathbf{x}) = \int_{\partial B} \mathcal{P}(\mathbf{x},\boldsymbol{\xi})\, g(\boldsymbol{\xi})\, d\boldsymbol{\xi}$ |
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Spherical harmonics $Y_l^m$ evaluated with `scipy.special.sph_harm_y` and visualized in 3D: @sec-ha-orbital
+:::
+
 ## A Nonhomogeneous Dirichlet Problem (Green's Function) {#sec-x3-36}
 
 * A common problem in applied mathematics is to find the potential in some region of space in response to a forcing term $\,f$. $\,$A typical example would be to find the potential inside a circle in two dimensions that satisfies
@@ -1607,6 +1611,10 @@ $~$
   $$ \scriptsize\int_0^{2\pi} \int_0^{\pi} \int_0^\infty \psi^*_{n'l'm'}(r,\phi,\theta)\,\psi_{nlm}(r,\phi,\theta) \,r^2 \sin\phi \,dr \,d\phi \, d\theta = \delta_{nn'} \delta_{ll'}\delta_{mm'}$$
 
 See the [Hydrogen Atomic Orbitals](x_hydrogen_orbital.qmd)
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Interactive 3D plots of hydrogen orbitals $\psi_{nlm}$: @sec-ha-orbital
+:::
 
 $~$
 

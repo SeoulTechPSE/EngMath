@@ -80,6 +80,10 @@ $$
 
 [Solution](files/solutions/sol_8_1.pdf){target="_blank"}
 
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Finding critical points of nonlinear systems with `scipy.optimize.fsolve`: @sec-eqsolve-nonlinear-systems
+:::
+
 ## Stability of Linear Systems {#sec-11-2}
 
 If $\mathbf{x}_1$ is a critical point of a plane autonomous system and $\mathbf{x}=\mathbf{x}(t)$ is a solution
@@ -1066,6 +1070,10 @@ for i in range(2):
     
 plt.show()
 ```
+
+::: {.callout-tip appearance="simple" icon="false"}
+**Try it in Python:** Predator-prey and Lorenz systems with `solve_ivp`: @sec-ode-scipy; $~$the chaotic double pendulum: @sec-double-pendulum
+:::
 
 ## Periodic Solutions, Limit Cycles, and Global Stability {#sec-11-5}
 

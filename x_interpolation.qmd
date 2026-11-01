@@ -59,7 +59,7 @@ print("scipy: ", scipy.__version__)
 
 * Note that in general $f(x)$ is not unique, but for $n$ data points there is a unique interpolating polynomial of degree $n-1$, regardless of which polynomial basis we use. The structure of the matrix $\Phi(\mathbf{x})$ is different for different polynomial bases, and its condition number and the computational cost of solving the interpolation problem vary correspondingly
 
-## Polynomials
+## Polynomials {#sec-interp-polynomials}
 
 * The `numpy` library contains the submodule `polynomial` (here imported as `P`), which provides functions and classes for working with polynomials. In particular, it provides implementations of many standard orthogonal polynomials
 
