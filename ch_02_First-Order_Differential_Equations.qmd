@@ -4,6 +4,15 @@ jupyter: python3
 
 # First-Order Differential Equations {#sec-2}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* sketch solution curves from a direction field, $\,$and find and classify the critical points of an autonomous equation $dy/dx=f(y)$
+* recognize separable, linear, exact, homogeneous, Bernoulli and $y'=f(Ax+By+C)$ equations, $\,$and solve each by its method
+* approximate a solution by Euler's method and see how the step size $h$ affects the error
+* set up and solve first-order models: $\,$growth and decay, series circuits, the logistic equation, radioactive series and predator-prey systems
+:::
+
 ## Solution Curves Without a Solution {#sec-2-1}
 
 * <font color="blue">DEs can be analyzed qualitatively</font>, allowing us to approximate a solution curve without solving the problem
@@ -879,6 +888,30 @@ Both populations are periodic with the same period, $T\approx45$ (time units)
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** The Lotka-Volterra and Lorenz systems solved with `solve_ivp`, with phase-plane plots: @sec-ode-scipy
 :::
+
+## Summary {.unnumbered}
+
+| Type | Form | Method |
+|:--|:--|:--|
+| Autonomous | $y'=f(y)$ | critical points $f(c)=0$; $\,$the sign of $f$ between them gives stability (phase portrait) |
+| Separable | $y'=g(x)h(y)$ | $\displaystyle\int\frac{dy}{h(y)}=\int g(x)\,dx$; $\,$check the constant solutions $h(c)=0$ |
+| Linear | $y'+P(x)y=f(x)$ | integrating factor $I(x)=e^{\int P\,dx}$: $\ \dfrac{d}{dx}\left[I y\right]=I f$ |
+| Exact | $M\,dx+N\,dy=0$, $\ M_y=N_x$ | find $f$ with $f_x=M$, $f_y=N$; $\,$solution $f(x,y)=c$ |
+| Not exact | $M_y\ne N_x$ | integrating factor $\mu(x)=e^{\int (M_y-N_x)/N\,dx}$ $\,$if $(M_y-N_x)/N$ depends on $x$ only; $\,$similarly $\mu(y)=e^{\int (N_x-M_y)/M\,dy}$ |
+| Homogeneous | $M$, $N$ homogeneous of the same degree | $y=ux$ $\,$(or $x=vy$) $\,\to\,$ separable |
+| Bernoulli | $y'+P(x)y=f(x)y^n$ | $u=y^{1-n}$ $\,\to\,$ linear |
+| $y'=f(Ax+By+C)$ | | $u=Ax+By+C$ $\,\to\,$ separable |
+| Euler's method | $y'=f(x,y)$, $\ y(x_0)=y_0$ | $y_{n+1}=y_n+h\,f(x_n,y_n)$ |
+
+| Model | Equation |
+|:--|:--|
+| Growth and decay | $\dfrac{dP}{dt}=kP$ |
+| LR and RC series circuits | $L\dfrac{di}{dt}+Ri=E(t)$, $\quad R\dfrac{dq}{dt}+\dfrac1C q=E(t)$ |
+| Logistic growth | $\dfrac{dy}{dt}=\alpha y(K-y)$ |
+| Radioactive series $X\to Y\to Z$ | $x'=-k_1x$, $\ y'=k_1x-k_2y$, $\ z'=k_2y$ |
+| Predator-prey (Lotka-Volterra) | $x'=-ax+bxy$, $\ y'=cy-dxy$ $\ $ ($x$ predator, $y$ prey) |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 
