@@ -1,0 +1,6 @@
+/* PSL logo above the book title in the sidebar (links to the lab home page) */
+.sidebar-logo {
+  max-height: 30px;
+  width: auto;
+  margin: 0.25rem 0 0.75rem;
+}

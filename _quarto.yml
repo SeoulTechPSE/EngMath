@@ -13,6 +13,10 @@ book:
   author: "Kee-Youn Yoo"
   date: "11/01/2026"
   search: true
+  sidebar:
+    logo: assets/psl-logo-compact.svg
+    logo-href: https://seoultechpse.github.io/   # PSL home
+    logo-alt: "PSL home"
   cover-image: SeoulTech.png
   chapters:
     - index.qmd
@@ -58,6 +62,7 @@ book:
 format:
   html:
     theme: cosmo
+    css: assets/site.css
 
   pdf:
     documentclass: scrreprt
