@@ -10,3 +10,6 @@
 # ParaView 세션 파일 무시
 *.pvsm
 **/*.quarto_ipynb
+
+# Rendered site: built and published by GitHub Actions (.github/workflows/publish.yml)
+/docs/
