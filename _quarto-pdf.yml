@@ -45,6 +45,10 @@ format:
       text: |
         \directlua{luaotfload.add_fallback("unicodefallback", {"STIXTwoMath:mode=harf;"})}
         \setmonofont{DejaVu Sans Mono}[Scale=0.85, RawFeature={fallback=unicodefallback}]
+        % room for two-digit section numbers (10.10) in the table of contents
+        \RedeclareSectionCommand[tocnumwidth=2.8em]{section}
+        % lab logo on the title page, between the title and the author
+        \subtitle{\vspace{2.5em}\includegraphics[width=0.5\textwidth]{assets/psl-logo.pdf}\vspace{1.5em}}
     filters:
       # before Quarto turns the callouts into its own nodes
       - path: tools/pdf.lua

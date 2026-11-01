@@ -126,8 +126,18 @@ function Pandoc(doc)
     answers = {}
   end
 
+  local function is_part(b)       -- a book part ("Second Semester", a Div) also ends a chapter
+    if b.t == 'Div' or b.t == 'Header' then
+      for _, c in ipairs(b.classes) do if c:match('part') then return true end end
+    end
+    return false
+  end
+
   for _, b in ipairs(blocks) do
-    if b.t == 'Header' and b.level == 1 then
+    if is_part(b) then
+      flush()
+      out:insert(b)
+    elseif b.t == 'Header' and b.level == 1 then
       flush()
       chapter, k, section = (b.identifier ~= '' and b.identifier or chapter), 0, nil
       out:insert(b)
