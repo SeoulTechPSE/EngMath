@@ -60,7 +60,7 @@ jupyter: python3
 
 ---
 
-### Ploting and Data Analysis in Python
+### Plotting and Data Analysis in Python
 
 * [Matplotlib](x_matplotlib.qmd)
 * [Mandelbrot Set in Python](x_Mandelbrot_set.qmd)
@@ -76,7 +76,7 @@ jupyter: python3
 * D.G. Zill and W.S. Wright, **Advanced Engineering Mathematics**, *7^th^ ed.*, Jones and Bartlett, 2022.
 * E.A. Coddington, **An Introduction to Ordinary Differential Equations**, Prentice-Hall, 1961. (Dover Publications Inc., 1989 - Unabridged, corrected republication).
 * G.E. Shilov, **Linear Algebra**, Prentice-Hall, 1971. (Dover Publications Inc., 1977 - Unabridged republication)
-* S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**, John Wiely & Sons, 1982. (Dover Publications Inc., 1993 -- Unabridged, corrected republication).
+* S.J. Farlow, **Partial Differential Equations for Scientists and Engineers**, John Wiley & Sons, 1982. (Dover Publications Inc., 1993 -- Unabridged, corrected republication).
 * H.F. Weinberger, **A First Course in Partial Differential Equations with Complex Variables and Transform Methods**, Blaisdell Publishing Company, 1965. (Dover Publications Inc., 1995 - New edition).
 * R. Johansson, **Numerical Python: Scientific Computing and Data Science Applications with Numpy, Scipy and Matplotlib**, *2^nd^ ed.*, Apress, 2018.
 <!-- * Jørgen S. Dokken, **The FEniCSx tutorial**, [https://jsdokken.com/dolfinx-tutorial/](https://jsdokken.com/dolfinx-tutorial/) -->
