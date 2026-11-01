@@ -4,3 +4,9 @@
   width: auto;
   margin: 0.25rem 0 0.75rem;
 }
+
+/* Chapter summary tables: smaller text and math, columns sized to their content */
+#summary table { font-size: 0.85em; }
+#summary table col { width: auto !important; }
+#summary table td:first-child { white-space: nowrap; }
+#summary table td, #summary table th { padding: 0.3rem 0.6rem; vertical-align: middle; }
