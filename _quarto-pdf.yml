@@ -7,6 +7,9 @@ project:
 execute:
   freeze: false
 
+# title page date: November 2026
+date-format: "MMMM YYYY"
+
 book:
   output-file: Engineering-Mathematics
   chapters:
@@ -49,6 +52,9 @@ format:
         \RedeclareSectionCommand[tocnumwidth=2.8em]{section}
         % lab logo on the title page, between the title and the author
         \subtitle{\vspace{2.5em}\includegraphics[width=0.5\textwidth]{assets/psl-logo.pdf}\vspace{1.5em}}
+        % title block lower on the page; affiliation under the author
+        \titlehead{\vspace*{0.16\textheight}}
+        \AtBeginDocument{\author{Kee-Youn Yoo\\[0.5em]\small Department of Chemical and Biomolecular Engineering\\\small Seoul National University of Science and Technology}}
     filters:
       # before Quarto turns the callouts into its own nodes
       - path: tools/pdf.lua
