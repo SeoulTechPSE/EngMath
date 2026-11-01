@@ -9,6 +9,7 @@ execute:
 
 book:
   title: "Engineering Mathematics"
+  site-url: https://seoultechpse.github.io/EngMath/
   author: "Kee-Youn Yoo"
   date: "11/01/2026"
   search: true
