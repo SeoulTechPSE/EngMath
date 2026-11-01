@@ -49,6 +49,10 @@ $~$
 
 **Example** $\displaystyle \left\{ \frac{1}{\sqrt{2\pi}}, \frac{\cos x}{\sqrt{\pi}}, \frac{\cos 2x}{\sqrt{\pi}},\cdots \right\}$, $\;\; -\pi \leq x\leq \pi$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(\phi_m,\phi_n)=\delta_{mn}$, $\ $ so the set is orthonormal on $[-\pi,\pi]$
+:::
+
 [Solution](files/solutions/sol_11_1.pdf){target="_blank"}
 
 $~$
@@ -346,6 +350,12 @@ $~$
 
 **Example** $\,$ Expand $\;f(x)=e^{-x}$, $\;-\pi<x<\pi\;$ in a complex Fourier series and find the frequency spectrum
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$c_n=\dfrac{(-1)^n\sinh\pi}{\pi\,(1+in)}$, $\quad e^{-x}=\dfrac{\sinh\pi}{\pi}\displaystyle\sum_{n=-\infty}^{\infty}\frac{(-1)^n}{1+in}\,e^{inx}$
+
+Spectrum: $\omega=1$, $\ $ points $\left(n,\ \dfrac{\sinh\pi}{\pi\sqrt{1+n^2}}\right)$
+:::
+
 [Solution](files/solutions/sol_11_4.pdf){target="_blank"}
 
 $~$
@@ -559,6 +569,10 @@ $~$
   $$ \left\{ 1,\cos\frac{\pi}{L}x, \cos\frac{2\pi}{L}x, \cdots, \sin\frac{\pi}{L}x, \sin\frac{2\pi}{L}x, \,\cdots \right\}$$
   
   This set, $\,$which is orthogonal on $\,[-L,L]$, $\,$is the basis for the Fourier Series
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\lambda_0=0$: $\ y_0=1$; $\quad \lambda_n=\left(\dfrac{n\pi}{L}\right)^2$: $\ y_n=A_n\cos\dfrac{n\pi x}{L}+B_n\sin\dfrac{n\pi x}{L}\quad(n=1,2,\dots)$
+:::
 
   [Solution](files/solutions/sol_11_5.pdf){target="_blank"}
 

@@ -470,6 +470,12 @@ $$
 
 ![](figures/pde02_figure09.svg "Example initial condition"){width="70%" fig-align="center"}
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\tfrac12\,\chi_{(1+ct,\ 2+ct)}(x)+\tfrac12\,\chi_{(1-ct,\ 2-ct)}(x)-\tfrac12\,\chi_{(ct-2,\ ct-1)}(x),\quad x>0$
+
+($\chi_{(a,b)}=1$ on $(a,b)$ and $0$ elsewhere): the left-moving pulse is reflected upside down at the fixed end
+:::
+
 [Solution](files/solutions/sol_13_3a.pdf){target="_blank"}
 
 
@@ -1010,6 +1016,10 @@ $~$
     \end{array} && -\infty < x <\infty 
     \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\dfrac{\sqrt\pi}{4c\sqrt a}\displaystyle\int_0^t e^{-b\tau}\Bigl[\mathrm{erf}\bigl(\sqrt a\,(x+c(t-\tau))\bigr)-\mathrm{erf}\bigl(\sqrt a\,(x-c(t-\tau))\bigr)\Bigr]d\tau$
+:::
+
 [Solution](files/solutions/sol_13_3b.pdf){target="_blank"}
 
 
@@ -1190,6 +1200,10 @@ $$\begin{aligned}
 \end{cases} 
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(r,t)=\begin{cases} t, & ct\le 1-r\\ \dfrac{1-(r-ct)^2}{4cr}, & |r-ct|<1<r+ct\\ 0, & \text{otherwise} \end{cases}$ $\quad$ a spherical shell of thickness $2$ moving outward; behind it $u=0$ again (Huygens' principle)
+:::
+
 [Solution](files/solutions/sol_13_4a.pdf){target="_blank"}
 
 
@@ -1261,6 +1275,12 @@ $$\begin{aligned}
  \;0 & \text{elsewhere} 
 \end{cases} 
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(r,t)=\dfrac{1}{2\pi c}\displaystyle\int_0^{ct}\frac{\Theta(\rho;r)\,\rho}{\sqrt{c^2t^2-\rho^2}}\,d\rho$, $\quad u(0,t)=\begin{cases} t, & ct\le1\\ \dfrac{ct-\sqrt{c^2t^2-1}}{c}, & ct>1\end{cases}$
+
+Unlike 3D, the wave leaves a tail that decays slowly instead of vanishing
+:::
 
 [Solution](files/solutions/sol_13_4b.pdf){target="_blank"}
 
@@ -1512,6 +1532,10 @@ $$\begin{aligned}
  u_t(x,0) &= 0
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\cos\dfrac{\pi ct}{L}\,\sin\dfrac{\pi x}{L}+0.5\cos\dfrac{3\pi ct}{L}\,\sin\dfrac{3\pi x}{L}$
+:::
+
 [Solution](files/solutions/sol_13_6a.pdf){target="_blank"}
 
 
@@ -1523,6 +1547,10 @@ $$\begin{aligned}
  u(x,0)&= 0\\ 
  u_t(x,0)&= \sin\frac{3\pi x}{L}
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\dfrac{L}{3\pi c}\,\sin\dfrac{3\pi ct}{L}\,\sin\dfrac{3\pi x}{L}$
+:::
 
 [Solution](files/solutions/sol_13_6b.pdf){target="_blank"}
 
@@ -1551,6 +1579,14 @@ $$
   \end{array}
   && 0 \leq x \leq 1
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\displaystyle\sum_{n=1}^\infty T_n(t)\sin n\pi x$, $\quad b_n=2\displaystyle\int_0^1 f(x)\sin n\pi x\,dx$, $\quad \omega_n=n\pi c$
+
+$T_n=b_n e^{-\beta t/2}\left[\cos\nu_nt+\dfrac{\beta}{2\nu_n}\sin\nu_nt\right]$, $\ \nu_n=\sqrt{\omega_n^2-\beta^2/4}$ $\,$ if $\omega_n>\beta/2$; $\quad T_n=b_n e^{-\beta t/2}\left(1+\tfrac{\beta}{2}t\right)$ $\,$ if $\omega_n=\beta/2$
+
+$T_n=b_n\dfrac{r_2e^{r_1t}-r_1e^{r_2t}}{r_2-r_1}$, $\ r_{1,2}=-\tfrac\beta2\pm\sqrt{\tfrac{\beta^2}4-\omega_n^2}$ $\,$ if $\omega_n<\beta/2$
+:::
 
 [Solution](files/solutions/sol_13_6c.pdf){target="_blank"}
 
@@ -1994,6 +2030,10 @@ $$
   \end{array} && 0 \leq r \leq 1
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(r,t)=\displaystyle\sum_{m=1}^\infty\frac{8}{\alpha_{0m}^3\,J_1(\alpha_{0m})}\,J_0(\alpha_{0m}r)\,\cos(\alpha_{0m}t)$, $\quad J_0(\alpha_{0m})=0$
+:::
+
 [Solution](files/solutions/sol_13_8.pdf){target="_blank"}
 
 
@@ -2151,6 +2191,10 @@ $~$
 **Example** $\,$How could you pick a new space variable $\,\xi\,$ so that $\,v$ is eliminated in the equation
 
 $$ u_t +vu_x=0 $$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\xi=\dfrac{x}{v}$ $\ \Longrightarrow\ $ $u_t+u_\xi=0$
+:::
 
 [Solution](files/solutions/sol_13_9.pdf){target="_blank"}
 
@@ -2361,6 +2405,10 @@ $$u_{xx} + 4u_{xy} = 0$$
 
 Solve the transformed equation in the new coordinate system and then transform back to the original coordinates to find the solution to the original problem
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,y)=F(y)+G(y-4x)$, $\,$ with arbitrary twice-differentiable $F$, $G$
+:::
+
 [Solution](files/solutions/sol_13_10.pdf){target="_blank"}
 
 $~$
@@ -2548,6 +2596,10 @@ $$
    a u_x +b u_y +c u_t +du &=0 && \scriptsize -\infty < x < \infty, \;-\infty < y < \infty, \; 0< t < \infty \\
    u(x,y,0) &=e^{-(x^2 +y^2)} && \scriptsize -\infty < x < \infty, \;-\infty < y < \infty
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,y,t)=\exp\!\left[-\left(x-\dfrac act\right)^2-\left(y-\dfrac bct\right)^2\right]e^{-dt/c}$
+:::
 
 [Solution](files/solutions/sol_13_11.pdf){target="_blank"}
 
@@ -2753,6 +2805,10 @@ $$
     \end{cases}  
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+For $t\ge\frac13$: $\ u(x,t)=\begin{cases}\dfrac{3(1+x)}{1+3t}, & -1\le x<x_s(t)\\ 0, & \text{otherwise}\end{cases}$, $\quad$ shock at $x_s(t)=\sqrt{2(1+3t)}-1$
+:::
+
 [Solution](files/solutions/sol_13_12a.pdf){target="_blank"}
 
 
@@ -2765,6 +2821,10 @@ $$
   u_t +g(u)u_x &=0 \quad -\infty < x < \infty, \; 0 < t < \infty \\
   u(x,0) &= \phi(x)
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u=\phi[x-g(u)t]$ satisfies both the PDE and the initial condition as long as $1+t\,g'(u)\,\phi'(\xi)\neq0$
+:::
 
 [Solution](files/solutions/sol_13_12b.pdf){target="_blank"}
 
@@ -2904,6 +2964,10 @@ $$\begin{aligned}
  &\frac{\partial u_1}{\partial t} +\frac{\partial u_1}{\partial x} +\frac{\partial u_2}{\partial x} = 0\\ 
  &\frac{\partial u_2}{\partial t} +4\frac{\partial u_1}{\partial x} +\frac{\partial u_2}{\partial x} = 0 
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\begin{bmatrix}u_1\\u_2\end{bmatrix}=\phi(x-3t)\begin{bmatrix}1\\2\end{bmatrix}+\psi(x+t)\begin{bmatrix}1\\-2\end{bmatrix}$, $\,$ with arbitrary differentiable $\phi$, $\psi$
+:::
 
 [Solution](files/solutions/sol_13_13.pdf){target="_blank"}
 

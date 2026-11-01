@@ -64,6 +64,10 @@ $~$
 
   $$x(t)=x_0\cos\omega t+\frac{x_1}{\omega} \sin\omega t$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$x(t)=x_0\cos\omega t+\dfrac{x_1}{\omega}\sin\omega t$
+:::
+
 [Solution](files/solutions/sol_3_1.pdf){target="_blank"}
 
 **Example** $\,$ Determine whether the given set of functions is linearly dependent or linearly independent on the interval $(-\infty,\infty)$
@@ -71,6 +75,12 @@ $~$
   $$f_1(x)=x, ~f_2(x)=x^2, ~f_3(x)=4x-3x^2$$
   
   $$f_1(x)=5, ~f_2(x)=\cos^2 x, ~f_3(x)=\sin^2 x$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** Linearly dependent: $4f_1-3f_2-f_3=0$
+
+**(2)** Linearly dependent: $f_1-5f_2-5f_3=0$
+:::
 
 [Solution](files/solutions/sol_3_1.pdf){target="_blank"}
 
@@ -80,6 +90,12 @@ $~$
   
   $$y''-2y'+5y=0; \;\;e^x \cos 2x, \;\; e^x\sin 2x, \;\;(-\infty,\infty)$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $W=7e^{x}\ne0$; $\quad y=c_1e^{-3x}+c_2e^{4x}$
+
+**(2)** $W=2e^{2x}\ne0$; $\quad y=e^{x}(c_1\cos2x+c_2\sin2x)$
+:::
+
 [Solution](files/solutions/sol_3_1.pdf){target="_blank"}
 
 **Example** $\,$ Verify that the given two-parameter family of functions is the general solution of the nonhomogeneous differential equation on the indicated interval
@@ -87,6 +103,12 @@ $~$
   $$y''-7y'+10y=24e^x; \;\;y=c_1 e^{2x} +c_2 e^{5x} +6e^x; \;\;(-\infty,\infty)$$
 
   $$y''-4y'+4y=2e^{2x} +4x-12; \;\;y=c_1 e^{2x} +c_2 xe^{2x} +x^2e^{2x} +x -2; \;\;(-\infty,\infty)$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $W(e^{2x},e^{5x})=3e^{7x}\ne0$ and $y_p=6e^x$ satisfies the equation
+
+**(2)** $W(e^{2x},xe^{2x})=e^{4x}\ne0$ and $y_p=x^2e^{2x}+x-2$ satisfies the equation
+:::
 
 [Solution](files/solutions/sol_3_1.pdf){target="_blank"}
 
@@ -118,11 +140,23 @@ $~$
   
 * $y''-y=0; \;\; y_1=\cosh x$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y_2=xe^{2x}$
+
+**(2)** $y_2=\sin4x$
+
+**(3)** $y_2=\sinh x$
+:::
+
 [Solution](files/solutions/sol_3_2.pdf){target="_blank"}
 
 **Example** $\,$ The indicated function $y_1(x)$ is a solution of the associated homogeneous equation. Use the reduction of order to find a second solution $y_2(x)$ of homogeneous equation and a particular solution $y_p(x)$ of the given nonhomogeneous equation
 
 $$y''-4y=2; \;\;y_1=e^{-2x}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y_2=e^{2x}$, $\quad y_p=-\dfrac12$, $\quad y=c_1e^{2x}+c_2e^{-2x}-\dfrac12$
+:::
 
 [Solution](files/solutions/sol_3_2.pdf){target="_blank"}
 
@@ -147,11 +181,21 @@ $~$
 
 **Example** $\,$ Solve $~y'' +\omega^2y=0\,$ and $\,y'' -\omega^2y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y''+\omega^2y=0$: $\ y=c_1\cos\omega x+c_2\sin\omega x$
+
+$y''-\omega^2y=0$: $\ y=c_1e^{\omega x}+c_2e^{-\omega x}=C_1\cosh\omega x+C_2\sinh\omega x$
+:::
+
 [Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Solve $~3y'''+5y''+10y'-4y=0$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1e^{x/3}+e^{-x}\left(c_2\cos\sqrt3x+c_3\sin\sqrt3x\right)$
+:::
 
 [Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
@@ -176,6 +220,14 @@ $~$
   
 * $y'' +8y' +16y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1+c_2e^{-x/4}$
+
+**(2)** $y=c_1e^{3x}+c_2e^{-2x}$
+
+**(3)** $y=(c_1+c_2x)e^{-4x}$
+:::
+
 [Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
 $~$
@@ -186,6 +238,12 @@ $~$
   
 * $y''' -5y'' +3y' +9y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1+c_2e^{5x}+c_3e^{-x}$
+
+**(2)** $y=c_1e^{-x}+(c_2+c_3x)e^{3x}$
+:::
+
 [Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
 $~$
@@ -193,6 +251,10 @@ $~$
 **Example** $\,$ Solve the initial-value problem
 
 $y''' +12y'' +36y'=0, \;\;y(0)=0, \;y'(0)=1, \; y''(0)=-7$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=\dfrac5{36}-\dfrac5{36}e^{-6x}+\dfrac16xe^{-6x}$
+:::
 
 [Solution](files/solutions/sol_3_3.pdf){target="_blank"}
 
@@ -237,6 +299,10 @@ $~$
 
 **Example** $\,$ Solve $~y'' +4y = x\cos x$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1\cos2x+c_2\sin2x+\dfrac13x\cos x+\dfrac29\sin x$
+:::
+
 [Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
 $~$
@@ -250,11 +316,19 @@ $~$
 
 **Example** $\,$ Solve $~y'' -6y' +9y = 6x^2 +2 -12e^{3x}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1e^{3x}+c_2xe^{3x}+\dfrac23x^2+\dfrac89x+\dfrac23-6x^2e^{3x}$
+:::
+
 [Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Solve $~y^{(4)}+y'''= 1 -x^2e^{-x}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1+c_2x+c_3x^2+c_4e^{-x}+\dfrac16x^3+\left(\dfrac13x^3+3x^2+12x\right)e^{-x}$
+:::
 
 [Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
@@ -268,6 +342,14 @@ $~$
 
 * $y''' -6y''=3-\cos x$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=(c_1+c_2x)e^{-x}-\dfrac12\cos x-\dfrac9{25}\cos2x+\dfrac{12}{25}\sin2x$
+
+**(2)** $y=c_1e^{-6x}+c_2e^{4x}-\dfrac23-\left(\dfrac{1}{20}x^2+\dfrac{19}{100}x\right)e^{4x}$
+
+**(3)** $y=c_1+c_2x+c_3e^{6x}-\dfrac14x^2-\dfrac6{37}\cos x+\dfrac1{37}\sin x$
+:::
+
 [Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
 $~$
@@ -279,6 +361,14 @@ $~$
 * $5y'' +y'=-6x, \;\;y(0)=0, \; y'(0)=-10$
   
 * $\displaystyle \frac{d^2 x}{dt^2} +\omega^2x=F_0 \sin\omega t, \;\; x(0)=0, \;x'(0)=0$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=\sqrt2\sin2x-\dfrac12$
+
+**(2)** $y=-200+200e^{-x/5}-3x^2+30x$
+
+**(3)** $x(t)=\dfrac{F_0}{2\omega^2}\sin\omega t-\dfrac{F_0}{2\omega}\,t\cos\omega t$
+:::
 
 [Solution](files/solutions/sol_3_4.pdf){target="_blank"}
 
@@ -350,6 +440,10 @@ $~$
 
 **Example** $\,$ Solve $~\displaystyle y'' -y = \frac{1}{x}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1e^x+c_2e^{-x}+\displaystyle\int_{x_0}^x\frac{\sinh(x-t)}{t}\,dt$
+:::
+
 [Solution](files/solutions/sol_3_5.pdf){target="_blank"}
 
 $~$
@@ -374,6 +468,16 @@ $~$
 
 * $3y''-6y'+6y=e^x \sec x$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1\cos x+c_2\sin x+\cos x\ln|\cos x|+x\sin x$
+
+**(2)** $y=c_1\cos x+c_2\sin x-\dfrac12x\cos x$
+
+**(3)** $y=c_1\cos x+c_2\sin x+\dfrac12-\dfrac16\cos2x$
+
+**(4)** $y=e^x(c_1\cos x+c_2\sin x)+\dfrac13e^x\left(\cos x\ln|\cos x|+x\sin x\right)$
+:::
+
 [Solution](files/solutions/sol_3_5.pdf){target="_blank"}
 
 $~$
@@ -386,6 +490,14 @@ $~$
 
 * $y'' +2y' -8y=2e^{-2x} -e^{-x}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=\left(\dfrac18x^2-\dfrac14x+\dfrac34\right)e^{x/2}+\dfrac14e^{-x/2}$
+
+**(2)** $y=(1-x)e^x-e^x\ln(\cos x),\ \ -\dfrac\pi2<x<\dfrac\pi2$
+
+**(3)** $y=\dfrac{25}{36}e^{2x}+\dfrac49e^{-4x}-\dfrac14e^{-2x}+\dfrac19e^{-x}$
+:::
+
 [Solution](files/solutions/sol_3_5.pdf){target="_blank"}
 
 $~$
@@ -395,6 +507,12 @@ $~$
 * $\displaystyle y''-4y=\frac{e^{2x}}{x}$
   
 * $2y'' +2y' +y=4\sqrt{x}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1e^{2x}+c_2e^{-2x}+\dfrac14e^{2x}\ln x-\dfrac14e^{-2x}\displaystyle\int_{x_0}^x\frac{e^{4t}}{t}\,dt,\ \ x>0$
+
+**(2)** $y=e^{-x/2}\left(c_1\cos\tfrac x2+c_2\sin\tfrac x2\right)+4\displaystyle\int_{0}^x\sqrt t\;e^{-(x-t)/2}\sin\frac{x-t}{2}\,dt$
+:::
 
 [Solution](files/solutions/sol_3_5.pdf){target="_blank"}
 
@@ -428,6 +546,10 @@ $~$
 
 **Example** $\,$ Solve $~x^2y'' -3xy' +3y = 2x^4 e^x$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1x+c_2x^3+2x(x-1)e^x,\ \ x>0$
+:::
+
 [Solution](files/solutions/sol_3_6.pdf){target="_blank"}
 
 $~$
@@ -440,6 +562,14 @@ $~$
 
 * $x^2y''+xy'+4y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1x^2+c_2x^{-1}$
+
+**(2)** $y=c_1+c_2\ln x$
+
+**(3)** $y=c_1\cos(2\ln x)+c_2\sin(2\ln x)$
+:::
+
 [Solution](files/solutions/sol_3_6.pdf){target="_blank"}
 
 $~$
@@ -449,6 +579,12 @@ $~$
 * $xy''-4y'=x^4$
 
 * $x^2y''+xy'-y=\ln x$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1+c_2x^5+\dfrac15x^5\ln x$
+
+**(2)** $y=c_1x+\dfrac{c_2}{x}-\ln x$
+:::
 
 [Solution](files/solutions/sol_3_6.pdf){target="_blank"}
 
@@ -463,6 +599,10 @@ $~$
 **Example** $\,$ Verify that $y_1$ and $y_2$ are solutions of the given DE but that $c_1 y_1 +c_2 y_2$ is, in general, not a solution
   
    $$\left(y''\right)^2 = y^2,\; y_1=e^x,\; y_2=\cos x$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y_1$, $y_2$ satisfy the equation, but for $y=c_1y_1+c_2y_2$: $\ (y'')^2-y^2=-4c_1c_2\,e^x\cos x\ne0$ unless $c_1c_2=0$
+:::
 
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
@@ -479,6 +619,12 @@ $~$
 
 **Example** $\,$ Solve $~y''=2x(y')^2$ and $yy''=(y')^2$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** With $u=y'$: $\ y=-\dfrac1a\arctan\dfrac xa+c_2\ (c_1=a^2)$, $\ y=\dfrac1{2a}\ln\left|\dfrac{x+a}{x-a}\right|+c_2\ (c_1=-a^2)$, $\ y=\dfrac1x+c_2\ (c_1=0)$, $\,$ and $y=c$
+
+**(2)** $y=c_2e^{c_1x}$
+:::
+
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
 $~$
@@ -491,6 +637,10 @@ $~$
   
    $$y(x) = y(0) +\frac{y'(0)}{1!}x +\frac{y''(0)}{2!}x^2 +\frac{y'''(0)}{3!} x^3 + \cdots$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y(x)\approx-1+x-x^2+\dfrac23x^3-\dfrac13x^4+\dfrac15x^5$
+:::
+
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
 $~$
@@ -499,6 +649,10 @@ $~$
 
 $$y''+(y')^2+1=0$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=\ln|\cos(c_1-x)|+c_2$
+:::
+
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
    
 $~$
@@ -506,6 +660,10 @@ $~$
 **Example** $\,$ The independent variable $x$ is missing in the given differential equation. Solve the equation by using the substitution $u=y'$
 
 $$yy''+(y')^2+1=0$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(x+c_2)^2+y^2=c_1$ $\,$ (arcs of circles)
+:::
 
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
@@ -519,6 +677,10 @@ $~$
 | 2. Find an explicit solution of the IVP. $~$Use a graphing utility to graph this solution
 | 3. Find an interval of definition for the solution in part 2
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=\tan\left(\dfrac\pi4-\dfrac x2\right)$, $\ \ -\dfrac\pi2<x<\dfrac{3\pi}2$
+:::
+
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
 $~$
@@ -526,6 +688,10 @@ $~$
 **Example** $\,$ Show that the substitution $u=y'$ leads to a Bernoulli equation. Solve this equation
 
 $$xy''=y'+(y')^3$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$x^2+(y-c_2)^2=c_1$, $\,$ and $y=c$ (from $u=0$)
+:::
 
 [Solution](files/solutions/sol_3_7.pdf){target="_blank"}
 
@@ -557,11 +723,19 @@ $$\frac{d^2x}{dt^2}+\omega^2x=F_0\cos\gamma t, \;x(0)=0, \;x'(0)=0$$
   
 is $~\displaystyle x(t)=\frac{F_0}{\omega^2-\gamma^2}(\cos\gamma t -\cos\omega t)$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$x(t)=\dfrac{F_0}{\omega^2-\gamma^2}\left(\cos\gamma t-\cos\omega t\right)$
+:::
+
 [Solution](files/solutions/sol_3_8.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Evaluate $\,\displaystyle \lim_{\gamma \to \omega} \frac{F_0}{\omega^2-\gamma^2} (\cos\gamma t - \cos\omega t)$  
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\displaystyle\lim_{\gamma\to\omega}x(t)=\frac{F_0}{2\omega}\,t\sin\omega t$ $\,$ (pure resonance)
+:::
 
 [Solution](files/solutions/sol_3_8.pdf){target="_blank"}
 
@@ -582,6 +756,10 @@ $~$
 The temperature $u(r)$ in circular ring is determined from the boundary-value problem
 
 $$r\frac{d^2 u}{dr^2} +\frac{du}{dr}=0,\; u(a)=u_0,\; u(b)=u_1$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(r)=u_0+(u_1-u_0)\,\dfrac{\ln(r/a)}{\ln(b/a)},\qquad a\le r\le b$
+:::
 
 [Solution](files/solutions/sol_3_9.pdf){target="_blank"}
 

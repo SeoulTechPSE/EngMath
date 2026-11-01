@@ -326,6 +326,12 @@ $~$
 
 ::::
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Attractor: $\ \mathbf x=c_1\begin{pmatrix}4\\3\end{pmatrix}e^{-t}+c_2\begin{pmatrix}-2\\1\end{pmatrix}e^{-7t/2}$
+
+Repeller: $\ \mathbf x=c_1\begin{pmatrix}-2\\1\end{pmatrix}e^{t}+c_2\begin{pmatrix}1\\1\end{pmatrix}e^{4t}$
+:::
+
 [Solution](files/solutions/sol_7_2.pdf){target="_blank"}
 
 $~$

@@ -16,6 +16,10 @@ $~$
 
 **Example** $\,$ Evaluate $\mathcal{L}\{1\}$, $~\mathcal{L}\{t\}$, $~$and $~\mathcal{L}\{e^{-3t}\}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathcal L\{1\}=\dfrac1s\ (s>0)$, $\quad\mathcal L\{t\}=\dfrac1{s^2}$, $\quad\mathcal L\{e^{-3t}\}=\dfrac1{s+3}\ (s>-3)$
+:::
+
 [Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
 $~$
@@ -24,6 +28,10 @@ $~$
 0, & 0 \leq t < 3\\ 
 2, & \phantom{0 \leq }\; t \geq 3
 \end{matrix}\right.$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathcal L\{f\}=\dfrac{2e^{-3s}}{s}$
+:::
 
 [Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
@@ -36,6 +44,10 @@ $~$
 $~$
 
 **Example** $\,$ Find $\mathcal{L}\{f(t)\}$ by first using an appropriate trigonometric identity $~f(t)=\sin^2 2t$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathcal L\{\sin^22t\}=\dfrac{8}{s(s^2+16)}$
+:::
 
 [Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
@@ -58,6 +70,14 @@ $~$
  0,& t \geq \pi \quad\;\;
 \end{matrix}\right.$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\dfrac{2e^{-s}-1}{s}$
+
+**(2)** $\dfrac{1-e^{-s}}{s^2}$
+
+**(3)** $\dfrac{1+e^{-\pi s}}{s^2+1}$
+:::
+
 [Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
 $~$
@@ -73,6 +93,12 @@ $~$
 * $~f(t)=\sin 3t \cos 3t$
 
 * $~f(t)=\sin^4 t$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathcal L\{e^{t+7}\}=\dfrac{e^7}{s-1}$, $\quad\mathcal L\{e^t\cos t\}=\dfrac{s-1}{(s-1)^2+1}$, $\quad\mathcal L\{t\cos t\}=\dfrac{s^2-1}{(s^2+1)^2}$
+
+$\mathcal L\{\sin3t\cos3t\}=\dfrac{3}{s^2+36}$, $\quad\mathcal L\{\sin^4t\}=\dfrac{24}{s(s^2+4)(s^2+16)}$
+:::
 
 [Solution](files/solutions/sol_4_1.pdf){target="_blank"}
 
@@ -118,11 +144,19 @@ $~$
 :::
 :::
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\dfrac{t^2}{2}$, $\quad t-2t^4$, $\quad 1+3t+\dfrac32t^2+\dfrac16t^3$, $\quad \dfrac12\sin\dfrac t2$, $\quad \cos\sqrt2t+\dfrac1{\sqrt2}\sin\sqrt2t$
+:::
+
 [Solution](files/solutions/sol_4_2.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\mathcal{L}^{-1}\left\{\frac{-2s +6}{s^2 +4}\right\}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$-2\cos2t+3\sin2t$
+:::
 
 [Solution](files/solutions/sol_4_2.pdf){target="_blank"}
 
@@ -151,6 +185,10 @@ $~$
   
 $$\frac{dy}{dt} +3y = 13\sin 2t, \;y(0)=6$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=8e^{-3t}-2\cos2t+3\sin2t$
+:::
+
 [Solution](files/solutions/sol_4_2.pdf){target="_blank"}
 
 $~$
@@ -160,6 +198,12 @@ $~$
 * $~y''+y=\sqrt{2} \sin \sqrt{2}t, \;\;y(0)=10,\;y'(0)=0$
     
 * $~2y'''+3y''-3y'-2y=e^{-t}, \;\;y(0)=0, \;y'(0)=0, \; y''(0)=1$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=10\cos t+2\sin t-\sqrt2\sin\sqrt2t$
+
+**(2)** $y=\dfrac12e^{-t}+\dfrac5{18}e^{t}-\dfrac89e^{-t/2}+\dfrac19e^{-2t}$
+:::
 
 [Solution](files/solutions/sol_4_2.pdf){target="_blank"}
 
@@ -180,6 +224,10 @@ $~$
 $~$
 
 **Example** $\,$ Evaluate $\mathcal{L}\{e^{-2t}\cos 4t\}$ and $\displaystyle\mathcal{L}^{-1}\left\{\frac{2s +5}{(s +3)^2}\right\}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathcal L\{e^{-2t}\cos4t\}=\dfrac{s+2}{(s+2)^2+16}$, $\quad\mathcal L^{-1}\left\{\dfrac{2s+5}{(s+3)^2}\right\}=(2-t)e^{-3t}$
+:::
 
 [Solution](files/solutions/sol_4_3.pdf){target="_blank"}
 
@@ -221,6 +269,12 @@ $~$
 
 :::
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\dfrac1{(s-10)^2}$, $\quad\dfrac{10!}{(s+7)^{11}}$, $\quad\dfrac{3}{(s-1)^2+9}$
+
+$(1-t)e^{-t}$, $\quad 5-t-5e^{-t}-4te^{-t}-\dfrac32t^2e^{-t}$
+:::
+
 [Solution](files/solutions/sol_4_3.pdf){target="_blank"}
 
 $~$
@@ -233,6 +287,10 @@ $$f(t) =
        0, & 0 \leq t < \pi\\ 
        3\cos t ,& t \geq \pi
     \end{cases}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=\begin{cases}5e^{-t}, & 0\le t<\pi\\ 5e^{-t}+\frac32e^{-(t-\pi)}+\frac32(\cos t+\sin t), & t\ge\pi\end{cases}$
+:::
 
 [Solution](files/solutions/sol_4_3.pdf){target="_blank"}
 
@@ -260,11 +318,19 @@ $~$
 
 **Example** $\,$ Evaluate $~\mathcal{L}\{t\sin \omega t\}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathcal L\{t\sin\omega t\}=\dfrac{2\omega s}{(s^2+\omega^2)^2}$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
   
 $~$
 
 **Example** $\,$ Solve $~x'' +16x =\cos 4t, \; x(0)=1, \; x'(0)=1$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$x=\cos4t+\dfrac14\sin4t+\dfrac18t\sin4t$
+:::
 
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
@@ -272,17 +338,29 @@ $~$
 
 **Example** $\,$ Evaluate $\displaystyle\mathcal{L}^{-1}\left\{\frac{1}{(s^2 +\omega^2)^2}\right\}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\dfrac{\sin\omega t-\omega t\cos\omega t}{2\omega^3}$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\mathcal{L} \left\{ \int_0^t f(\tau)\, d\tau \right\}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\dfrac{F(s)}{s}$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Solve $\displaystyle \,f(t) =3t^2 -e^{-t} -\int_0^t f(\tau)\, e^{t -\tau}\, d\tau\;$ for $f(t)$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$f(t)=3t^2-t^3+1-2e^{-t}$
+:::
 
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
@@ -304,6 +382,10 @@ $~$
   
 * $~\mathcal{L}\left\{ te^{2t}\sin 6t \right\}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\dfrac1{(s+10)^2}$, $\quad\dfrac{s^2-4}{(s^2+4)^2}$, $\quad\dfrac{12(s-2)}{\left[(s-2)^2+36\right]^2}$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
@@ -313,6 +395,12 @@ $~$
 * $~y'+y=t \sin t, \;y(0)=0$
 
 * $~y''+9y=\cos 3t, \;y(0)=2, \;y'(0)=5$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=\dfrac12\left(t\sin t-t\cos t+\cos t-e^{-t}\right)$
+
+**(2)** $y=2\cos3t+\dfrac53\sin3t+\dfrac16t\sin3t$
+:::
 
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
@@ -324,6 +412,12 @@ $~$
 
 * $~f(t)=e^{-t}, \;g(t)=e^t$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $f*g=t^4$, $\quad\mathcal L\{f*g\}=\dfrac{24}{s^5}$
+
+**(2)** $f*g=\sinh t$, $\quad\mathcal L\{f*g\}=\dfrac1{s^2-1}$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
  
 $~$
@@ -332,6 +426,10 @@ $~$
 
 * $~\mathcal{L} \left\{ e^{-t}* e^t \cos t \right\}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\dfrac1{s+1}\cdot\dfrac{s-1}{(s-1)^2+1}$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
@@ -339,6 +437,10 @@ $~$
 **Example** $\,$ Evaluate the given inverse transform
 
 * $~\displaystyle \mathcal{L}^{-1} \left\{ \frac{1}{s^3(s-1)} \right\}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$e^t-1-t-\dfrac{t^2}{2}$
+:::
 
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
@@ -350,6 +452,12 @@ $~$
   
 * $~\displaystyle \frac{dy}{dt}=10-\int_0^t e^{-4\tau} y(t-\tau)\,d\tau, \;y(0)=5$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $f(t)=(4-7t+4t^2)e^{-t}$
+
+**(2)** $y=40-e^{-2t}\left(35\cosh\sqrt3t+20\sqrt3\sinh\sqrt3t\right)$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
@@ -358,6 +466,10 @@ $~$
 
 * $~y''+9y=3e^{-t^2}, \;\;y(0)=0, \;y'(0)=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y(t)=\displaystyle\int_0^te^{-\tau^2}\sin3(t-\tau)\,d\tau$
+:::
+
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
 $~$
@@ -365,6 +477,10 @@ $~$
 **Example** $\,$ Solve the integral equation
 
 * $~\displaystyle f(t)=e^t+e^t \int_0^t e^{-\tau} f(\tau)\, d\tau$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$f(t)=e^{2t}$
+:::
 
 [Solution](files/solutions/sol_4_4.pdf){target="_blank"}
 
@@ -404,6 +520,10 @@ $~$
 
 **Example** $\,$ Solve $~y'' +y=4\delta(t -2\pi)$ $~$subject to $y(0)=1, \;y'(0)=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=\cos t+4\sin t\,\mathcal U(t-2\pi)$
+:::
+
 [Solution](files/solutions/sol_4_5.pdf){target="_blank"}
 
 $~$
@@ -415,6 +535,14 @@ $~$
 * $~y''+y=\delta(t-2\pi), \;y(0)=0, \,y'(0)=1$
   
 * $~y''+y=\delta(t-\pi/2)+\delta(t-3\pi/2),\;y(0)=0,\,y'(0)=0$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=e^{3(t-2)}\,\mathcal U(t-2)$
+
+**(2)** $y=\sin t+\sin t\,\mathcal U(t-2\pi)$
+
+**(3)** $y=-\cos t\,\mathcal U\!\left(t-\tfrac\pi2\right)+\cos t\,\mathcal U\!\left(t-\tfrac{3\pi}2\right)$
+:::
 
 [Solution](files/solutions/sol_4_5.pdf){target="_blank"}
 
@@ -444,6 +572,10 @@ $$m_1=3, m_2=1, l_1=l_2=5, \text{ and } ~g=10$$
 
 $$\theta_1(0) = 1, \theta_2(0)=-1, \dot{\theta_1}(0)=0,  \dot{\theta_2}(0)=0$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\theta_1(t)=\dfrac14\cos\dfrac{2}{\sqrt3}t+\dfrac34\cos2t,\qquad \theta_2(t)=\dfrac12\cos\dfrac{2}{\sqrt3}t-\dfrac32\cos2t$
+:::
+
 [Solution](files/solutions/sol_4_6.pdf){target="_blank"}
 
 $~$
@@ -467,6 +599,14 @@ $$
     2&\dot{x}+\dot{y} -2x= 1 \\ 
     &\dot{x}+\dot{y} -3x -3y= 2, \;\;x(0)=0,\;y(0)=0 
 \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $x=\dfrac13\left(e^{t}-e^{-2t}\right),\quad y=\dfrac23e^{t}+\dfrac13e^{-2t}$
+
+**(2)** $x=-\cos3t-\dfrac53\sin3t,\quad y=2\cos3t-\dfrac73\sin3t$
+
+**(3)** $x=-\dfrac12+\dfrac52e^{2t}-2e^{3t},\quad y=-\dfrac16-\dfrac52e^{2t}+\dfrac83e^{3t}$
+:::
 
 [Solution](files/solutions/sol_4_6.pdf){target="_blank"}
 

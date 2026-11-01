@@ -337,6 +337,10 @@ $~$
 
 **Example** $\,$ Solve $~x^2y'' +xy' +(x^2 -\frac{1}{4})y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1J_{1/2}(x)+c_2J_{-1/2}(x)=\sqrt{\dfrac{2}{\pi x}}\left(c_1\sin x+c_2\cos x\right)$
+:::
+
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
@@ -368,6 +372,10 @@ $~$
 $~$
 
 **Example** $\,$ Solve $~x^2y'' +xy' +(x^2 -9)y=0$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1J_3(x)+c_2Y_3(x)$
+:::
 
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
@@ -453,6 +461,10 @@ plt.show()
 $~$
 
 **Example** $\,$ $J_0'(x)=-J_1(x)$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Put $\nu=0$ in $\dfrac{d}{dx}\left[x^{-\nu}J_\nu(x)\right]=-x^{-\nu}J_{\nu+1}(x)$
+:::
 
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
@@ -546,6 +558,10 @@ $~$
 **Example** $\,$ Show that
 $\displaystyle \, J_{-1/2}(x)=\sqrt{\frac{2}{\pi x}}\cos x$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+With $\Gamma\left(\frac12+n\right)=\dfrac{(2n)!}{2^{2n}n!}\sqrt\pi$, $\ $ the series becomes $\sqrt{\dfrac{2}{\pi x}}\displaystyle\sum_{n=0}^\infty\frac{(-1)^nx^{2n}}{(2n)!}=\sqrt{\dfrac{2}{\pi x}}\cos x$
+:::
+
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 ```{python}
@@ -583,6 +599,16 @@ $~$
   
 * $x^2y''+xy'-(16x^2+\frac{4}{9})y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=c_1J_{1/3}(x)+c_2J_{-1/3}(x)$
+
+**(2)** $y=c_1J_0(x)+c_2Y_0(x)$
+
+**(3)** $y=c_1J_2(3x)+c_2Y_2(3x)$
+
+**(4)** $y=c_1I_{2/3}(4x)+c_2K_{2/3}(4x)$
+:::
+
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
@@ -593,11 +619,21 @@ $~$
 
   * $xy''+2y'+4y=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $y=x^{-1/2}\left[c_1J_{1/2}(\alpha x)+c_2J_{-1/2}(\alpha x)\right]=C_1\dfrac{\sin\alpha x}{x}+C_2\dfrac{\cos\alpha x}{x}$
+
+**(2)** $y=x^{-1/2}\left[c_1J_1(4\sqrt x)+c_2Y_1(4\sqrt x)\right]$
+:::
+
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Verify that $I_\nu(x)=i^{-\nu}J_\nu(ix)~$ is a real function
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$I_\nu(x)=\displaystyle\sum_{n=0}^\infty\frac{1}{n!\,\Gamma(1+\nu+n)}\left(\frac{x}{2}\right)^{2n+\nu}$, $\ $ a series of real (and positive) terms for $x>0$
+:::
 
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
@@ -607,6 +643,10 @@ $~$
 
   $$xy''+y'-7x^3y=0$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=c_1I_0\left(\dfrac{\sqrt7}{2}x^2\right)+c_2K_0\left(\dfrac{\sqrt7}{2}x^2\right)$
+:::
+
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 $~$
@@ -614,6 +654,10 @@ $~$
 **Example** $\,$ First express the general solution of the given differential equation in terms of Bessel functions and then express the general solution in terms of elementary functions
 
   $$x^2y''+4xy'+(x^2+2)y=0$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$y=x^{-3/2}\left[c_1J_{1/2}(x)+c_2J_{-1/2}(x)\right]=C_1\dfrac{\sin x}{x^2}+C_2\dfrac{\cos x}{x^2}$
+:::
 
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
@@ -624,6 +668,10 @@ $~$
   $$\int_0^x rJ_0(r)\,dr=xJ_1(x)$$
   
   $$J_0'(x)=J_{-1}(x)=-J_1(x)$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Integrate $\dfrac{d}{dr}\left[rJ_1(r)\right]=rJ_0(r)$ from $0$ to $x$; $\ $ $J_0'=J_{-1}$ follows from $\dfrac{d}{dx}\left[x^\nu J_\nu\right]=x^\nu J_{\nu-1}$ with $\nu=0$, and $J_{-1}=-J_1$
+:::
 
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
@@ -636,6 +684,12 @@ $~$
   * $c_1=0, \;c_2\neq 0$
   
   * $c_1\neq 0, \;c_2 \neq 0$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+As $t\to\infty$ the argument $s=\frac2\alpha\sqrt{k/m}\,e^{-\alpha t/2}\to0$:
+
+**(1)** $x(t)\to c_1$ $\,$ (the mass comes to rest) $\quad$ **(2)** $|x(t)|\to\infty$, growing almost linearly in $t$ $\quad$ **(3)** the $Y_0$ term dominates, so $|x(t)|\to\infty$
+:::
 
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
@@ -843,6 +897,12 @@ $~$
 
 **Example** $\,$ Use the recurrence relation and $P_0(x)=1$, $P_1(x)=x$, to generate the next six Legendre polynomials
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$P_2=\tfrac12(3x^2-1)$, $\quad P_3=\tfrac12(5x^3-3x)$, $\quad P_4=\tfrac18(35x^4-30x^2+3)$, $\quad P_5=\tfrac18(63x^5-70x^3+15x)$
+
+$P_6=\tfrac1{16}(231x^6-315x^4+105x^2-5)$, $\quad P_7=\tfrac1{16}(429x^7-693x^5+315x^3-35x)$
+:::
+
 [Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 
 $~$
@@ -852,6 +912,10 @@ $~$
   $$\sin\theta \frac{d^2y}{d\theta^2}+\cos\theta \frac{dy}{d\theta}+n(n+1)\,\sin\theta\,y=0$$
   
   can be transformed into Legendre's equation by means of the substitution $x=\cos\theta$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+With $\dfrac{dy}{d\theta}=-\sin\theta\,y_x$ and $\dfrac{d^2y}{d\theta^2}=\sin^2\theta\,y_{xx}-\cos\theta\,y_x$, $\ $ the equation becomes $\sin\theta\left[(1-x^2)y_{xx}-2xy_x+n(n+1)y\right]=0$
+:::
 
 [Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 
@@ -864,6 +928,10 @@ $~$
   $$y(0)=0, \;y(x),\;y'(x)\;\text{ bounded on } [-1, 1]$$
   
   has nontrivial solutions
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\lambda=2,\ 12,\ 30$ $\,$ ($n=1,3,5$; the solutions are $P_1$, $P_3$, $P_5$)
+:::
 
 [Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 
@@ -890,6 +958,14 @@ $~$
 * $\,$ What can you say about $P_n^m(x)$ when $m$ is a non-negative integer and $m>n$?
 
 * $\,$ Verify that $y=P_1^1(x)$ satisfies the associated Legendre equation when $n=1$ and $m=1$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$P_0^0=1$, $\ P_1^0=x$, $\ P_1^1=(1-x^2)^{1/2}$, $\ P_2^1=3x(1-x^2)^{1/2}$, $\ P_2^2=3(1-x^2)$
+
+$P_3^1=\tfrac32(5x^2-1)(1-x^2)^{1/2}$, $\ P_3^2=15x(1-x^2)$, $\ P_3^3=15(1-x^2)^{3/2}$
+
+$m$ even: $\,P_n^m$ is a polynomial of degree $n$; $\quad m>n$: $\,P_n^m\equiv0$
+:::
 
 [Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
 

@@ -78,6 +78,10 @@ $$
  y'&= x^2 -y 
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(\sqrt2,\,2)$ $\,$ and $\,(-\sqrt2,\,2)$
+:::
+
 [Solution](files/solutions/sol_8_1.pdf){target="_blank"}
 
 ::: {.callout-tip appearance="simple" icon="false"}
@@ -238,6 +242,10 @@ $\mathbf{x}'=\mathbf{A}\mathbf{x}$ as either a stable node, an unstable node, or
  $(\text{c})$ $\begin{pmatrix} 2 & -1\\ 3 & -2 \end{pmatrix}$
  </center>
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** stable node ($\lambda=-1,-6$) $\quad$ **(b)** unstable node ($\lambda=1,2$) $\quad$ **(c)** saddle point ($\lambda=\pm1$)
+:::
+
 [Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
@@ -324,6 +332,10 @@ $(\text{b})$ $\begin{pmatrix} 3 & -18\\ 2 &\; -9 \end{pmatrix}$, $\;$
 $(\text{c})$ $\begin{pmatrix} \;\;2 & 4\\ -1 & 6 \end{pmatrix}$
 </center>
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** degenerate unstable node ($\lambda=1$, $\mathbf A=\mathbf I$) $\quad$ **(b)** degenerate stable node ($\lambda=-3$) $\quad$ **(c)** degenerate unstable node ($\lambda=4$)
+:::
+
 [Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
@@ -397,6 +409,10 @@ $\mathbf{x}'=\mathbf{A}\mathbf{x}$
 $(\text{a})$ $\begin{pmatrix} -1 & 2\\ -1 & 1 \end{pmatrix}$,$\;$
 $(\text{b})$ $\begin{pmatrix} -1 & -4\\ \;\;1 & -1 \end{pmatrix}$
 </center>
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** center ($\lambda=\pm i$, clockwise) $\quad$ **(b)** stable spiral point ($\lambda=-1\pm2i$, counterclockwise)
+:::
 
 [Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
@@ -855,6 +871,10 @@ plt.show()
 
 **Example** $~$ A bead is released from the position $x(0)=x_0$ on the curve $z=\cosh(x)$ with initial velocity $x'(0)=\nu_0$. Use the phase-plane method to show that the resulting solution is periodic when the system is undamped
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Trajectories $y^2=\nu_0^2+2g\left(\operatorname{sech}x-\operatorname{sech}x_0\right)$ are closed curves around $(0,0)$, so the motion is periodic, provided $|\nu_0|<\sqrt{2g\operatorname{sech}x_0}$ (always true for $\nu_0=0$)
+:::
+
 [Solution](files/solutions/sol_8_4.pdf){target="_blank"}
 
 ```{python}
@@ -1024,6 +1044,12 @@ $$
 
 Find and classify all critical points of the system
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(0,0)$: unstable node $\quad$ $(50,0)$: stable node $\quad$ $(0,100)$: degenerate stable node $\quad$ $(20,40)$: saddle point
+
+The coexistence point is unstable, so almost every solution tends to $(50,0)$ or $(0,100)$ (competitive exclusion)
+:::
+
 [Solution](files/solutions/sol_8_4.pdf){target="_blank"}
 
 ```{python}
@@ -1111,6 +1137,10 @@ $$
 $$
 
 has no periodic solutions in the first quadrant
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+With the Dulac function $\delta=1/(xy)$: $\ \dfrac{\partial(\delta P)}{\partial x}+\dfrac{\partial(\delta Q)}{\partial y}=-\dfrac{0.004}{y}-\dfrac{0.001}{x}<0$ in the first quadrant
+:::
 
 [Solution](files/solutions/sol_8_5.pdf){target="_blank"}
 
@@ -1333,6 +1363,12 @@ $(\text{a})$ $~$ Use the Bendixson negative criterion to show that there are no 
 
 $(\text{b})$ $~$ If $\mathbf{x}_0$ is in $\mathbb{R}$ and $\mathbf{x}=\mathbf{x}(t)$ is the solution satisfying 
 $\mathbf{x}(0)=\mathbf{x}_0$, use **Poincar&eacute;&ndash;Bendixson II** to find $\lim_{t \to \infty}\mathbf{x}(t)$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** $\operatorname{div}\mathbf v=-(x-y)^2-(1-y^2)\le0$ in the rectangle (zero only at $(1,1)$)
+
+**(b)** $\displaystyle\lim_{t\to\infty}\mathbf x(t)=\left(\tfrac32,\ \tfrac29\right)$ $\,$ for every $\mathbf x_0\in\mathbb R$
+:::
 
 [Solution](files/solutions/sol_8_5.pdf){target="_blank"}
 

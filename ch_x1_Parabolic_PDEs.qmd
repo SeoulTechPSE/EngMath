@@ -403,6 +403,10 @@ $$\begin{aligned}
     u(x,0) & = 1 + \cos\pi x +0.5\cos 3\pi x && 0 \leq x \leq 1
   \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=1+e^{-\pi^2 t}\cos\pi x+0.5\,e^{-9\pi^2 t}\cos 3\pi x$
+:::
+
 [Solution](files/solutions/sol_12_5.pdf){target="_blank"}
 
 $~$
@@ -734,6 +738,12 @@ $$
     u(x,0) &= \sin\pi x +x && 0 \leq x \leq 1
   \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=1+\dfrac{1-h}{1+h}\,x+\displaystyle\sum_{n=1}^\infty a_n e^{-\alpha\lambda_nt}\sin\sqrt{\lambda_n}\,x$
+
+$\lambda_n$: positive roots of $\tan\sqrt\lambda=-\sqrt\lambda/h$, $\ \left(n-\frac12\right)^2\pi^2<\lambda_n<n^2\pi^2$; $\quad a_n=\dfrac{2(\lambda_n+h^2)}{\lambda_n+h^2+h}\left[\dfrac{\pi\sin\sqrt{\lambda_n}}{\pi^2-\lambda_n}+\dfrac{h\sin\sqrt{\lambda_n}}{\lambda_n}-\dfrac{1}{\sqrt{\lambda_n}}\right]$
+:::
+
 [Solution](files/solutions/sol_12_7.pdf){target="_blank"}
 
 $~$
@@ -957,6 +967,10 @@ $$
 
 where $h=1$ and $\lambda_1$ is the first root of the equation $\,$ $\tan\sqrt{\lambda}=-\sqrt{\lambda}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\dfrac{1-e^{-\lambda_1 t}}{\lambda_1}\,\sin\sqrt{\lambda_1}\,x$, $\quad \sqrt{\lambda_1}=2.028758,\ \ \lambda_1=4.115858$
+:::
+
 [Solution](files/solutions/sol_12_9.pdf){target="_blank"}
 
 $~$
@@ -1044,6 +1058,10 @@ $$
     u(1,t) &= 0 && \\
     u(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\displaystyle\sum_{n=1}^\infty\left[\int_0^t e^{-(\alpha n^2\pi^2+\beta)(t-\tau)}F_n(\tau)\,d\tau\right]\sin n\pi x$, $\quad F_n(t)=2\displaystyle\int_0^1 f(x,t)\sin n\pi x\,dx$
+:::
 
 [Solution](files/solutions/sol_12_10.pdf){target="_blank"}
 
@@ -1147,6 +1165,12 @@ $$
     u(x,0) &= \phi(x) && 0 \leq x \leq 1
   \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u=u_1+u_2+u_3+u_4$, $\,$ each solving $u_t=u_{xx}$ with one source of nonhomogeneity and zero for the rest:
+
+(P1) heat source $f(x,t)$ only $\quad$ (P2) $u(0,t)=g_1(t)$ only $\quad$ (P3) $u(1,t)=g_2(t)$ only $\quad$ (P4) $u(x,0)=\phi(x)$ only
+:::
+
 [Solution](files/solutions/sol_12_11a.pdf){target="_blank"}
 
 $~$
@@ -1160,6 +1184,10 @@ $$
     u(1,t) &= 1 && \\
     u(x,0) &= \sin \pi x && 0 \leq x \leq 1
   \end{aligned}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=x+\dfrac{\sin3\pi x}{9\pi^2}+e^{-\pi^2t}\sin\pi x-\dfrac{e^{-9\pi^2t}}{9\pi^2}\sin3\pi x+\displaystyle\sum_{n=1}^\infty\frac{2(-1)^n}{n\pi}\,e^{-n^2\pi^2t}\sin n\pi x$
+:::
 
 [Solution](files/solutions/sol_12_11b.pdf){target="_blank"}
 
@@ -1565,6 +1593,10 @@ $$
 \end{aligned}$$
 
 where $H(x)$ is the Heaviside function
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(x,t)=\dfrac2\pi\displaystyle\int_0^\infty\frac{\sin\omega}{\omega}e^{-\alpha\omega^2t}\cos\omega x\,d\omega=\frac12\left[\mathrm{erf}\!\left(\frac{1+x}{2\sqrt{\alpha t}}\right)+\mathrm{erf}\!\left(\frac{1-x}{2\sqrt{\alpha t}}\right)\right]$
+:::
 
 [Solution](files/solutions/sol_12_14.pdf){target="_blank"}
 

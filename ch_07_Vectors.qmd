@@ -81,6 +81,10 @@ $$\mathbf{a} +\mathbf{b} +\mathbf{c}=\mathbf{0}\;~\text{and}\;~\mathbf{a} +\math
 
 ![](figures/ch07_figure_ex1.svg "example7_1"){width="70%" fig-align="center"}
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Vectors joined head to tail around a closed path add up to the vector from the starting point back to itself, i.e. the zero vector, whatever the number of vertices.
+:::
+
 [Solution](files/solutions/sol_9_1.pdf){target="_blank"}
 
 $~$
@@ -152,6 +156,12 @@ $~$
   
 * $x=y=z$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** the union of the three coordinate planes $\quad$ **(b)** the single point $(-1,2,-3)$ $\quad$ **(c)** the union of the planes $x=2$ and $z=8$
+
+**(d)** the two planes $z=5$ and $z=-5$ $\quad$ **(e)** the line through the origin with direction $\langle1,1,1\rangle$
+:::
+
 [Solution](files/solutions/sol_9_2.pdf){target="_blank"}
 
 $~$
@@ -217,11 +227,19 @@ $~$
 **Example** $\,$ Verify that the vector
   $\displaystyle \mathbf{c}=\mathbf{b} - \left(\frac{\mathbf{a} \cdot \mathbf{b}}{\mathbf{a} \cdot \mathbf{a}}\right) \mathbf{a}\,$ is orthogonal to the vector $\mathbf{a}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf a\cdot\mathbf c=\mathbf a\cdot\mathbf b-\dfrac{\mathbf a\cdot\mathbf b}{\mathbf a\cdot\mathbf a}\,\mathbf a\cdot\mathbf a=0$, $\ $ so $\mathbf c\perp\mathbf a$
+:::
+
 [Solution](files/solutions/sol_9_3a.pdf){target="_blank"}
 
 $~$
   
 **Example** $\,$ In the methane molecule $\mathrm{CH}_4$, the hydrogen atoms are located at the four vertices of a regular tetrahedron. The distance between the center of a hydrogen atom and the center of a carbon atom is 1.10 angstroms, and the hydrogen-carbon-hydrogen bond angle is $\,\theta=109.5^\circ$. Using vector methods only, find the distance between two hydrogen atoms
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$d=\|\mathbf a-\mathbf b\|=1.10\sqrt{2(1-\cos109.5^\circ)}\approx 1.80$ Å
+:::
 
 [Solution](files/solutions/sol_9_3b.pdf){target="_blank"}
 
@@ -313,6 +331,10 @@ $~$
 * Lagrange's identity
   $\| \mathbf{a}\times\mathbf{b}\|^2 = \|\mathbf{a}\|^2 \|\mathbf{b}\|^2 - (\mathbf{a}\cdot\mathbf{b})^2$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** true $\quad$ **(b)** false (counterexample $\mathbf a=\mathbf b=\mathbf i$, $\mathbf c=\mathbf j$) $\quad$ **(c)** true (Jacobi identity) $\quad$ **(d)** true
+:::
+
 [Solution](files/solutions/sol_9_4.pdf){target="_blank"}
 
 $~$
@@ -350,6 +372,10 @@ $~$
 **Example** $\,$ Find parametric equation for the line that contains $(-4, 1, 7)$ and is perpendicular to the plane 
 $$-7x+2y+3z=1$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$x=-4-7t,\quad y=1+2t,\quad z=7+3t,\quad -\infty<t<\infty$
+:::
+
 [Solution](files/solutions/sol_9_5a.pdf){target="_blank"}
 
 $~$
@@ -362,6 +388,10 @@ $$
   x + 4y +3z &= 4 
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$x=2+t,\quad y=\tfrac12-t,\quad z=t,\quad -\infty<t<\infty$
+:::
+
 [Solution](files/solutions/sol_9_5b.pdf){target="_blank"}
 
 $~$
@@ -369,6 +399,10 @@ $~$
 **Example** $\,$ Find an equation of the plane that contains the given line and is orthogonal to the indicated plane
 
 $$\frac{2-x}{3}=\frac{y+2}{5}=\frac{z-8}{2}; \quad 2x - 4y-z + 16=0$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$3x+y+2z=20$
+:::
 
 [Solution](files/solutions/sol_9_5c.pdf){target="_blank"}
 
@@ -458,6 +492,10 @@ $~$
 
   Determine whether $V$ is a vector space
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Yes, all ten axioms hold. $\,$ The zero vector is the number $1$, and the negative of $\mathbf x$ is $1/x$.
+:::
+
 [Solution](files/solutions/sol_9_6a.pdf){target="_blank"}
 
 $~$
@@ -540,6 +578,10 @@ $~$
       \end{pmatrix}
   \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** a vector space (the same as $\mathbb R^2$) $\quad$ **(b)** not a vector space (there is no zero vector, and addition is not associative)
+:::
+
 [Solution](files/solutions/sol_9_6b.pdf){target="_blank"}
 
 $~$
@@ -615,6 +657,10 @@ $~$
   Use the Gram-Schmidt orthogonalization process to transform the given basis for $P_2$ into an orthogonal basis $B'$
   
   $$B = \{1, x, x^2\}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$B'=\left\{\,1,\ \ x,\ \ x^2-\tfrac13\,\right\}$
+:::
 
 [Solution](files/solutions/sol_9_7.pdf){target="_blank"}
 

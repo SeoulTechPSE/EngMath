@@ -132,17 +132,29 @@ If $~\mathbf{A}=
     
 find $~$(a) $\mathbf{AB}$, $~$(b) $\mathbf{BA}$, $~$(c) $\mathbf{A}^2$, $~$(d) $\mathbf{B}^2$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf{AB}=\begin{pmatrix}-11&6\\17&-22\end{pmatrix},\quad \mathbf{BA}=\begin{pmatrix}-32&27\\-4&-1\end{pmatrix},\quad \mathbf A^2=\begin{pmatrix}19&-18\\-30&31\end{pmatrix},\quad \mathbf B^2=\begin{pmatrix}19&6\\3&22\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Show that if $\mathbf{A}$ is an $m\times n$ matrix, $~$then $\mathbf{AA}^T$ is symmetric
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(\mathbf{AA}^T)^T=(\mathbf A^T)^T\mathbf A^T=\mathbf{AA}^T$
+:::
+
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ In matrix theory, $~$many of the familiar properties of the real number system are not valid. $~$If $a$ and $b$ are real numbers, then $ab=0\;$ implies that $a=0$ or $b=0$. $~$Find two matrices such that $\mathbf{AB}=\mathbf{0}~$ but $\mathbf{A}\neq\mathbf{0}$ and $\mathbf{B}\neq \mathbf{0}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+For example $\mathbf A=\begin{pmatrix}1&1\\1&1\end{pmatrix}$, $\ \mathbf B=\begin{pmatrix}1&-1\\-1&1\end{pmatrix}$, $\ $ or $\ \mathbf A=\begin{pmatrix}1&0\\0&0\end{pmatrix}$, $\ \mathbf B=\begin{pmatrix}0&0\\0&1\end{pmatrix}$
+:::
 
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
@@ -152,12 +164,20 @@ $~$
 
 $$(\mathbf{A} + \mathbf{B})^2 = \mathbf{A}^2 + 2\mathbf{A}\mathbf{B} +\mathbf{B}^2$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(\mathbf A+\mathbf B)^2=\mathbf A^2+\mathbf{AB}+\mathbf{BA}+\mathbf B^2$, $\ $ and $\mathbf{AB}+\mathbf{BA}=2\mathbf{AB}$ only if $\mathbf{AB}=\mathbf{BA}$, which is not true in general
+:::
+
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Find the resulting vector $\mathbf{b}$ if the given vector $\mathbf{a} = \langle 1, 1 \rangle$ is rotated through the indicated angle
  $\theta=\pi/2$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf b=\langle-1,1\rangle$
+:::
 
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
@@ -175,6 +195,10 @@ $$\begin{pmatrix}
     \begin{pmatrix}
       x \\ y 
 \end{pmatrix}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\begin{pmatrix}x&y\end{pmatrix}\begin{pmatrix}ax+\frac b2y\\\frac b2x+cy\end{pmatrix}=ax^2+bxy+cy^2$
+:::
 
 [Solution](files/solutions/sol_6_1.pdf){target="_blank"}
 
@@ -554,6 +578,18 @@ $$
     -&x_1 +x_2 +x_3 = 4 
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $x_1=4,\ x_2=-7$
+
+**(2)** $x_1=-\frac23,\ x_2=\frac13$
+
+**(3)** $x_1=0,\ x_2=4,\ x_3=-1$
+
+**(4)** $(x_1,x_2,x_3)=(-t,\,t,\,0)$ (infinitely many solutions)
+
+**(5)** No solution (inconsistent)
+:::
+
 [Solution](files/solutions/sol_6_2.pdf){target="_blank"}
 
 $~$
@@ -563,6 +599,12 @@ $~$
 $$\mathrm{C}_5\mathrm{H}_8 +\mathrm{O}_2 \rightarrow \mathrm{CO}_2 + \mathrm{H}_2\mathrm{O}$$
 
 $$\mathrm{Cu} + \mathrm{HNO}_3 \rightarrow \mathrm{Cu(NO}_3\mathrm{)}_2 + \mathrm{H}_2\mathrm{O} +\mathrm{NO}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\mathrm{C_5H_8}+7\,\mathrm{O_2}\ \to\ 5\,\mathrm{CO_2}+4\,\mathrm{H_2O}$
+
+**(2)** $3\,\mathrm{Cu}+8\,\mathrm{HNO_3}\ \to\ 3\,\mathrm{Cu(NO_3)_2}+4\,\mathrm{H_2O}+2\,\mathrm{NO}$
+:::
 
 [Solution](files/solutions/sol_6_2.pdf){target="_blank"}
 
@@ -580,6 +622,10 @@ $$\begin{pmatrix}
  0 & 1 & 0\\ 
  0 & c & 1
 \end{pmatrix} \mathbf{A}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\begin{pmatrix}a_{21}&a_{22}&a_{23}\\a_{11}&a_{12}&a_{13}\\ca_{21}+a_{31}&ca_{22}+a_{32}&ca_{23}+a_{33}\end{pmatrix}$ $\,$ (rows 1 and 2 swapped, then $c\times$ row 2 added to row 3)
+:::
 
 [Solution](files/solutions/sol_6_2.pdf){target="_blank"}
 
@@ -650,6 +696,10 @@ $${\scriptsize\begin{pmatrix}
     6 & 6 & 6 & 12 & 0 
    \end{pmatrix}}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** rank $=1$ $\quad$ **(2)** rank $=3$ $\quad$ **(3)** rank $=3$
+:::
+
 [Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
 $~$
@@ -660,11 +710,19 @@ $$\mathbf{u}_1 = \langle 1, 2, 3 \rangle, \;\mathbf{u}_2 = \langle 1, 0, 1 \rang
 
 $$\mathbf{u}_1 = \langle 1, -1, 3, -1 \rangle, \;\mathbf{u}_2 = \langle 1, -1, 4, 2 \rangle, \; \mathbf{u}_3 = \langle 1, -1, 5, 7 \rangle$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** linearly independent (rank $3$) $\quad$ **(2)** linearly independent (rank $3$)
+:::
+
 [Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Suppose the system $\mathbf{Ax}=\mathbf{b}~$ is consistent and $~\mathbf{A}$ is a $5\times 8~$ matrix and $~\mathrm{rank}\,\mathbf{A}=3.$ $~$How many parameters does the solution of the system have?
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$8-3=5$ parameters
+:::
 
 [Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
@@ -682,6 +740,10 @@ $~$
 
 | **3.** $~$ If $\mathrm{rank}(\mathbf{A})=3$, $~$then how many parameters does the solution of the system $~\mathbf{Ax}=\mathbf{0}~$ have?
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**1.** $4$ $\quad$ **2.** inconsistent if rank$(\mathbf A)=1$ (consistent if rank$(\mathbf A)=2$) $\quad$ **3.** $6-3=3$ parameters
+:::
+
 [Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
 $~$
@@ -696,6 +758,10 @@ $$\mathbf{A} =
 \end{pmatrix}$$
 
   What can we conclude about $\mathrm{rank} (\mathbf{A})$ from the observation $2\mathbf{v}_1 +3\mathbf{v}_2 -\mathbf{v}_3=\mathbf{0}$?
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+rank$(\mathbf A)=2$ $\,$ (so $\det\mathbf A=0$)
+:::
 
 [Solution](files/solutions/sol_6_3.pdf){target="_blank"}
 
@@ -775,6 +841,10 @@ $$\mathbf{A} = \begin{pmatrix}
    
 | **1.** $~M_{12}~$ **2.** $~M_{32}~$ **3.** $~C_{13}~$ **4.** $~C_{22}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$M_{12}=9,\quad M_{32}=0,\quad C_{13}=1,\quad C_{22}=18$
+:::
+
 [Solution](files/solutions/sol_6_4.pdf){target="_blank"}
    
 $~$
@@ -790,6 +860,10 @@ $$\begin{pmatrix}
  1 - \lambda & 3 \\ 
  2 & 2 - \lambda 
 \end{pmatrix}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$17$, $\quad \lambda^2-3\lambda-4=(\lambda-4)(\lambda+1)$
+:::
 
 [Solution](files/solutions/sol_6_4.pdf){target="_blank"}
 
@@ -808,6 +882,10 @@ $$\begin{pmatrix}
  x & y & z\\ 
  2 & 3 & 4
 \end{pmatrix}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $-85$ $\quad$ **(2)** $-x+2y-z$
+:::
 
 [Solution](files/solutions/sol_6_4.pdf){target="_blank"}
 
@@ -965,6 +1043,14 @@ $${\begin{vmatrix}
  5 & 9 & -4
 \end{vmatrix}}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** interchanging two rows changes the sign
+
+**(2)** adding a multiple of one column to another leaves the determinant unchanged
+
+**(3)** common factors $2$ (row 2) and $3$ (column 3) are taken out: $2\cdot3=6$
+:::
+
 [Solution](files/solutions/sol_6_5.pdf){target="_blank"}
 
 $~$
@@ -998,6 +1084,10 @@ $$\begin{vmatrix}
  2c_1 -c_3 & \frac{1}{2}c_2 & \frac{1}{2}c_3
 \end{pmatrix}}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $-5$ $\quad$ **(2)** $30$ $\quad$ **(3)** $10$
+:::
+
 [Solution](files/solutions/sol_6_5.pdf){target="_blank"}
 
 $~$
@@ -1013,6 +1103,10 @@ $${\mathbf{A} =
 
 Without expanding, $~$show that $\mathrm{det}\, \mathbf{A}=0$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Adding row 2 to row 3 makes row 3 equal to $(x+y+z)\langle1,1,1\rangle$, a multiple of row 1, so $\det\mathbf A=0$
+:::
+
 [Solution](files/solutions/sol_6_5.pdf){target="_blank"}
 
 $~$
@@ -1025,6 +1119,10 @@ $${\begin{vmatrix}
  a^2 & b^2 & c^2 & d^2\\ 
  a^3 & b^3 & c^3 & d^3
 \end{vmatrix}}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(b-a)(c-a)(d-a)(c-b)(d-b)(d-c)$
+:::
 
 [Solution](files/solutions/sol_6_5.pdf){target="_blank"}
 
@@ -1099,6 +1197,10 @@ $$\mathbf{A}=\begin{pmatrix}
  -4 & \phantom{-}2
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf{AB}=\mathbf{BA}=\mathbf I$
+:::
+
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 $~$
@@ -1123,6 +1225,14 @@ $$\begin{pmatrix}
  0 & -3 & 0 & 1
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** nonsingular ($\det=-36$): $\ \mathbf A^{-1}=\mathrm{diag}\left(\tfrac13,\tfrac16,-\tfrac12\right)$
+
+**(2)** nonsingular ($\det=27$): $\ \mathbf A^{-1}=\dfrac1{27}\begin{pmatrix}6&21&-9&-36\\-1&1&6&-3\\10&17&-6&-51\\4&-4&3&12\end{pmatrix}$
+
+**(3)** nonsingular ($\det=1$): $\ \mathbf A^{-1}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&2&1&0\\0&3&0&1\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 $~$
@@ -1140,6 +1250,10 @@ $$\begin{pmatrix}
  -1 & -2 & 0
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** no inverse ($\det=0$) $\quad$ **(2)** $\begin{pmatrix}0&\frac23&\frac13\\0&-\frac13&-\frac23\\\frac13&-\frac23&0\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
 $~$
@@ -1150,6 +1264,10 @@ $$\mathbf{A}=\begin{pmatrix}
  1 & 4\\ 
  2 & 10 
 \end{pmatrix}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(\mathbf A^T)^{-1}=(\mathbf A^{-1})^T=\begin{pmatrix}5&-1\\-2&\frac12\end{pmatrix}$
+:::
 
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
@@ -1163,6 +1281,10 @@ $$\mathbf{M}=\begin{pmatrix}
 \end{pmatrix}$$
   
 What does $\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$ represent?
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf M^{-1}=\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}=\mathbf M(-\theta)=\mathbf M^T$: $\ $ $\mathbf a$ is $\mathbf b$ rotated back through $-\theta$
+:::
 
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
@@ -1178,6 +1300,10 @@ $${\scriptsize\mathbf{A}=\frac{1}{\sqrt{6}}\begin{pmatrix}
  \sqrt{2} & \phantom{-}\sqrt{3} & \phantom{-}1\\ 
  \sqrt{2} &  -\sqrt{3} & \phantom{-}1
 \end{pmatrix}}~$$ is an orthogonal matrix
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+In both cases $\mathbf A^T\mathbf A=\mathbf I$ (the columns are orthonormal)
+:::
 
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
@@ -1205,6 +1331,14 @@ $\mathbf{AB}=\mathbf{0}$. $~$Then show that $\mathbf{B}=\mathbf{0}$
 * Suppose $\mathbf{A}~$ is a nonsingular matrix. $~$Then show that $\mathbf{A}^T~$ is nonsingular
 
 * Suppose $\mathbf{A}$ and $\mathbf{B}~$ are $~n\times n~$ nonzero matrices and $\mathbf{AB}=\mathbf{0}$. $~$Then show that both $\mathbf{A}~$ and $~\mathbf{B~}$ are singular
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+Use $\det(\mathbf{AB})=\det\mathbf A\det\mathbf B$ and "nonsingular $\iff\det\ne0$":
+
+$(\det\mathbf A)^2=\det(\mathbf A^T\mathbf A)=1$; $\ \det(\mathbf{AB})\ne0$; $\ \det(\mathbf{AB})=0$; $\ \det\mathbf A\det\mathbf A^{-1}=1$; $\ $ if $\mathbf A$ is nonsingular, multiply $\mathbf A^2=\mathbf A$ by $\mathbf A^{-1}$
+
+$\mathbf B=\mathbf A^{-1}(\mathbf{AB})=\mathbf 0$; $\ \mathbf B=\mathbf A^{-1}(\mathbf{AC})=\mathbf C$; $\ $ $\mathbf A+\mathbf B$ need not be nonsingular ($\mathbf B=-\mathbf A$); $\ \det\mathbf A^T=\det\mathbf A\ne0$; $\ $ if either were nonsingular, the other would be $\mathbf 0$
+:::
 
 [Solution](files/solutions/sol_6_6.pdf){target="_blank"}
 
@@ -1239,6 +1373,10 @@ $$
     3x +2y &=-2
   \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $x_1=-\frac35,\ x_2=\frac65$ $\quad$ **(2)** $x_1=0.1,\ x_2=-0.3$ $\quad$ **(3)** $x=4,\ y=-7$
+:::
+
 [Solution](files/solutions/sol_6_7.pdf){target="_blank"}
 
 $~$
@@ -1258,6 +1396,12 @@ When $\epsilon$ is close to $1$, $~$the lines that make up the system are almost
   $${\scriptsize x_1 = 1 -\frac{1}{\epsilon -1}, \;\;x_2 = \frac{1}{\epsilon - 1}}$$
   
 **2.** The system is said to be ill-conditioned since small changes in the input data(for example, the coefficients) cause a significant or large change in the output or solution. $~$Verify this by finding the solution of the system for $\epsilon=1.01$ and then for $\epsilon=0.99$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**1.** $x_1=\dfrac{\epsilon-2}{\epsilon-1}=1-\dfrac{1}{\epsilon-1},\quad x_2=\dfrac{1}{\epsilon-1}$
+
+**2.** $\epsilon=1.01$: $(x_1,x_2)=(-99,100)$; $\quad\epsilon=0.99$: $(101,-100)$. $\,$ A $2\%$ change in $\epsilon$ flips the solution, because the lines are almost parallel ($\det\mathbf A=\epsilon-1\approx0$)
+:::
 
 [Solution](files/solutions/sol_6_7.pdf){target="_blank"}
 
@@ -1610,6 +1754,14 @@ $$\begin{pmatrix}
  1 & 1 & -1 
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\lambda=1$: $\langle1,1\rangle$; $\ \lambda=6$: $\langle2,7\rangle$; $\ $ nonsingular
+
+**(2)** $\lambda=4$: $\langle1,0\rangle$; $\ \lambda=-5$: $\langle-8,9\rangle$; $\ $ nonsingular
+
+**(3)** $\lambda=-1$: $\langle1,-1,1\rangle$; $\ \lambda=\pm i$: $\langle\pm i,1,1\rangle$; $\ $ nonsingular
+:::
+
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
 $~$
@@ -1626,11 +1778,21 @@ $$\begin{pmatrix}
  0 & 0 & \phantom{-}5 
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\lambda=4$: $\langle-1,1\rangle$; $\ \lambda=6$: $\langle1,1\rangle$; $\quad\mathbf A^{-1}$: $\frac14$, $\frac16$ with the same eigenvectors
+
+**(2)** $\lambda=3$: $\langle-2,1,0\rangle$; $\ \lambda=4$: $\langle1,0,0\rangle$; $\ \lambda=5$: $\langle-3,-1,1\rangle$; $\quad\mathbf A^{-1}$: $\frac13,\frac14,\frac15$ with the same eigenvectors
+:::
+
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ True or False: $~$ If $\lambda$ is an eigenvalue of an $n \times n~$ matrix $\mathbf{A}$, $~$ then the matrix $\mathbf{A}-\lambda\mathbf{I}~$ is singular. Justify your answer
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+True: $(\mathbf A-\lambda\mathbf I)\mathbf k=\mathbf 0$ has a nonzero solution $\mathbf k$, so $\det(\mathbf A-\lambda\mathbf I)=0$
+:::
 
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
@@ -1649,17 +1811,33 @@ $$\mathbf{A}=\begin{pmatrix}
 
 **3.** Generalize the result in part 1
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**1.** $\mathbf A^2\mathbf k=\mathbf A(\lambda\mathbf k)=\lambda^2\mathbf k$: $\ \lambda^2$ is an eigenvalue of $\mathbf A^2$ with the same eigenvector
+
+**2.** $\lambda=-1$: $\langle-1,1\rangle$, $\ \lambda=7$: $\langle3,5\rangle$; $\ \mathbf A^2\langle3,5\rangle^T=49\langle3,5\rangle^T$
+
+**3.** $\mathbf A^n\mathbf k=\lambda^n\mathbf k$, $\ $ and $p(\mathbf A)\mathbf k=p(\lambda)\mathbf k$ for any polynomial $p$
+:::
+
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Let $\mathbf{A}$ and $\mathbf{B}$ be $n \times n~$ matrices. The matrix $\mathbf{B}$ is said to be **similar** to the matrix $\mathbf{A}~$ if there exists a nonsingular matrix $\mathbf{S}$ such that $\mathbf{B}=\mathbf{S}^{-1}\mathbf{AS}$. $~$If $\mathbf{B}$ is similar to $\mathbf{A}$, $~$then show that $\mathbf{A}$ is similar to $\mathbf{B}$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf A=\mathbf{SBS}^{-1}=\mathbf T^{-1}\mathbf{BT}$ with $\mathbf T=\mathbf S^{-1}$
+:::
+
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Suppose $\mathbf{A}$ and $\mathbf{B}$ are similar matrices. Show that $\mathbf{A}$ and $\mathbf{B}$ have the same eigenvalues
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\det(\mathbf B-\lambda\mathbf I)=\det\mathbf S^{-1}\,\det(\mathbf A-\lambda\mathbf I)\,\det\mathbf S=\det(\mathbf A-\lambda\mathbf I)$
+:::
 
 [Solution](files/solutions/sol_6_8.pdf){target="_blank"}
 
@@ -1697,6 +1875,10 @@ $$~\mathbf{A}=\begin{pmatrix}
  4 & \phantom{-}5
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\lambda^2-6\lambda+13=0$ and $\mathbf A^2-6\mathbf A+13\mathbf I=\mathbf 0$
+:::
+
 [Solution](files/solutions/sol_6_9.pdf){target="_blank"}
 
 $~$
@@ -1713,6 +1895,12 @@ $$\mathbf{A}=\begin{pmatrix}
  0 & 1 & 0
 \end{pmatrix}; \;\;m=10$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\mathbf A^5=16640\,\mathbf I+8336\,\mathbf A=\begin{pmatrix}83328&41680\\33344&16640\end{pmatrix}$
+
+**(2)** $\mathbf A^{10}=-340\,\mathbf I+341\,\mathbf A^2=\begin{pmatrix}1&1023&1023\\0&683&682\\0&341&342\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_9.pdf){target="_blank"}
 
 $~$
@@ -1723,6 +1911,10 @@ $$\mathbf{A}=\begin{pmatrix}
  \phantom{-}7 & 3\\ 
  -3 & 1
 \end{pmatrix}; \;\;m=6$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf A^m=4^{m-1}\begin{pmatrix}4+3m&3m\\-3m&4-3m\end{pmatrix},\qquad \mathbf A^6=\begin{pmatrix}22528&18432\\-18432&-14336\end{pmatrix}$
+:::
 
 [Solution](files/solutions/sol_6_9.pdf){target="_blank"}
 
@@ -1744,6 +1936,12 @@ $$(a)\;\;\mathbf{A}=\begin{pmatrix}
  1 & 1 & \phantom{-}3
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(a)** $\mathbf A^m=4^{m-1}\mathbf A$ $\,$ (only one unknown $c_1$ remains, so no system needs to be solved)
+
+**(b)** $\mathbf A^m=\bigl(3\cdot2^{m-1}-2\cdot3^{m-1}\bigr)\mathbf A+\bigl(3^{m-1}-2^{m-1}\bigr)\mathbf A^2$
+:::
+
 [Solution](files/solutions/sol_6_9.pdf){target="_blank"}
 
 $~$
@@ -1753,6 +1951,12 @@ $~$
 **1.** $~$Explain why any nilpotent matrix $~\mathbf{A}$ is singular
 
 **2.** $~$Show that all the eigenvalues of a nilpotent matrix $~\mathbf{A}$ are $0$ 
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**1.** $(\det\mathbf A)^m=\det\mathbf A^m=0$, so $\det\mathbf A=0$
+
+**2.** $\mathbf 0=\mathbf A^m\mathbf k=\lambda^m\mathbf k$ with $\mathbf k\ne\mathbf 0$, so $\lambda=0$
+:::
 
 [Solution](files/solutions/sol_6_9.pdf){target="_blank"}
 
@@ -1826,6 +2030,10 @@ $$\begin{pmatrix}
  \phantom{-}\frac{5}{13}&  \frac{12}{13}& 0
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** orthogonal $\quad$ **(2)** orthogonal
+:::
+
 [Solution](files/solutions/sol_6_10.pdf){target="_blank"}
 
 $~$
@@ -1845,6 +2053,12 @@ $$\mathbf{A}=
 1 \\ 1 \\ 1
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+(a), **(b)** $\mathbf{Ak}_1=-2\mathbf k_1$, $\ \mathbf{Ak}_2=-2\mathbf k_2$, $\ \mathbf{Ak}_3=4\mathbf k_3$
+
+**(c)** $\mathbf P=\begin{pmatrix}\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}\\[2pt]-\frac1{\sqrt2}&\frac1{\sqrt6}&\frac1{\sqrt3}\\[2pt]0&-\frac2{\sqrt6}&\frac1{\sqrt3}\end{pmatrix}$, $\quad \mathbf P^T\mathbf{AP}=\mathrm{diag}(-2,-2,4)$
+:::
+
 [Solution](files/solutions/sol_6_10.pdf){target="_blank"}
 
 $~$
@@ -1860,6 +2074,12 @@ $~$
 * Suppose $\mathbf{A}~$ is an orthogonal matrix such that $~\mathbf{A}^2=\mathbf{I}~$. $~$Then show that $\mathbf{A}^T=\mathbf{A}$
 
 * Show that the rotation matrix is orthogonal
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$(\mathbf{AB})^T(\mathbf{AB})=\mathbf B^T\mathbf A^T\mathbf{AB}=\mathbf I$; $\ $ so $\mathbf A^2$ is orthogonal too
+
+$(\mathbf A^{-1})^T\mathbf A^{-1}=\mathbf{AA}^T=\mathbf I$; $\ $ if $\mathbf A^2=\mathbf I$ then $\mathbf A^T=\mathbf A^{-1}=\mathbf A$; $\ $ for the rotation matrix $\mathbf M^T\mathbf M=\mathbf I$
+:::
 
 [Solution](files/solutions/sol_6_10.pdf){target="_blank"}
 
@@ -2277,6 +2497,14 @@ $$\begin{pmatrix}
  0 & \phantom{-}0 & 1
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\mathbf P=\begin{pmatrix}13&1\\2&1\end{pmatrix},\quad \mathbf D=\mathrm{diag}(-7,4)$
+
+**(2)** $\mathbf P=\begin{pmatrix}-1&1&1\\0&1&0\\1&1&1\end{pmatrix},\quad \mathbf D=\mathrm{diag}(0,1,2)$
+
+**(3)** $\mathbf P=\begin{pmatrix}0&1-\sqrt5&1+\sqrt5\\0&2&2\\1&0&0\end{pmatrix},\quad \mathbf D=\mathrm{diag}(1,-\sqrt5,\sqrt5)$
+:::
+
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
@@ -2296,6 +2524,14 @@ $$\begin{pmatrix}
  7 & 0 & 1
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\mathbf P=\dfrac1{\sqrt2}\begin{pmatrix}-1&1\\1&1\end{pmatrix},\quad \mathbf D=\mathrm{diag}(0,2)$
+
+**(2)** $\mathbf P=\begin{pmatrix}-\frac1{\sqrt2}&\frac1{\sqrt2}&0\\\frac1{\sqrt2}&\frac1{\sqrt2}&0\\0&0&1\end{pmatrix},\quad \mathbf D=\mathrm{diag}(-1,1,1)$
+
+**(3)** $\mathbf P=\begin{pmatrix}-\frac1{\sqrt2}&0&\frac1{\sqrt2}\\0&1&0\\\frac1{\sqrt2}&0&\frac1{\sqrt2}\end{pmatrix},\quad \mathbf D=\mathrm{diag}(-6,1,8)$
+:::
+
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
@@ -2305,6 +2541,10 @@ $~$
 $$\phantom{-}5x^2 -2xy +5y^2 =24$$
   
 $$-3x^2 +8xy +3y^2 =20$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** ellipse: $\dfrac{X^2}{6}+\dfrac{Y^2}{4}=1$ $\quad$ **(2)** hyperbola: $\dfrac{Y^2}{4}-\dfrac{X^2}{4}=1$
+:::
 
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
   
@@ -2322,11 +2562,19 @@ $$\mathbf{k}_1 = \begin{pmatrix}
   1 \\ 2 \\ 1
 \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf A=\dfrac13\begin{pmatrix}8&4&-1\\4&11&4\\-1&4&8\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ If $\mathbf{A}$ is an $n\times n~$ diagonalizable matrix, then $\mathbf{D}=\mathbf{P}^{-1}\mathbf{AP}$, $~$ where $\mathbf{D}$ is a diagonal matrix. $~$ Show that if $m$ is a positive integer,  then $\mathbf{A}^m=\mathbf{PD}^m\mathbf{P}^{-1}$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf A^m=(\mathbf{PDP}^{-1})(\mathbf{PDP}^{-1})\cdots(\mathbf{PDP}^{-1})=\mathbf{PD}^m\mathbf P^{-1}$
+:::
 
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
@@ -2346,17 +2594,29 @@ $$
   \end{pmatrix},\;\;\mathbf{A}^{10}
 \end{aligned}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\mathbf A^5=\begin{pmatrix}21&11\\22&10\end{pmatrix}$ $\quad$ **(2)** $\mathbf A^{10}=\mathbf A=\begin{pmatrix}6&-10\\3&-5\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Suppose $\mathbf{A}$ is a nonsingular diagonalizable matrix. Then show that $\mathbf{A}^{-1}$ is diagonalizable
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf D^{-1}=\mathbf P^{-1}\mathbf A^{-1}\mathbf P$ is diagonal, so the same $\mathbf P$ diagonalizes $\mathbf A^{-1}$
+:::
+
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
 $~$
   
 **Example** $\,$ Suppose $\mathbf{A}$ is a diagonalizable matrix. $~$Is the matrix $\mathbf{P}$ unique?
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+No: the columns of $\mathbf P$ can be rescaled or reordered, and for a repeated eigenvalue other eigenvectors can be chosen. $\,$ Only $\mathbf D$ (up to order) is unique.
+:::
 
 [Solution](files/solutions/sol_6_12.pdf){target="_blank"}
 
@@ -2633,6 +2893,12 @@ $$
    12 & 1 & 3
   \end{pmatrix}$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $\begin{pmatrix}1&0\\\frac12&1\end{pmatrix}\begin{pmatrix}2&-2\\0&3\end{pmatrix}$ $\quad$ **(2)** $\begin{pmatrix}1&0\\-2&1\end{pmatrix}\begin{pmatrix}-1&4\\0&10\end{pmatrix}$
+
+**(3)** $\begin{pmatrix}1&0&0\\-1&1&0\\3&-7&1\end{pmatrix}\begin{pmatrix}4&-2&1\\0&-1&3\\0&0&21\end{pmatrix}$
+:::
+
 [Solution](files/solutions/sol_6_13.pdf){target="_blank"}
 
 $~$
@@ -2648,6 +2914,10 @@ $$\begin{pmatrix}
   \end{pmatrix}
   \begin{pmatrix} x_1 \\ x_2 \\x_3 \end{pmatrix} = 
   \begin{pmatrix} 7 \\ 7\\28 \end{pmatrix}$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+**(1)** $x_1=-\frac13,\ x_2=-\frac56$ $\quad$ **(2)** $x_1=1,\ x_2=1,\ x_3=5$
+:::
 
 [Solution](files/solutions/sol_6_13.pdf){target="_blank"}
 

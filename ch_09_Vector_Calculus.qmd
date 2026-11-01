@@ -894,11 +894,19 @@ $~$
 
   ![](figures/ch09_figure32.svg "Ex region"){width="40%" fig-align="center"}
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\displaystyle\oint_{C_1\cup C_2}\frac{-y\,dx+x\,dy}{x^2+y^2}=0$ $\,$ (Green's theorem on $R$, which excludes the origin)
+:::
+
 [Solution](files/solutions/sol_10_12a.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ Evaluate $\displaystyle\oint_{C_1} \frac{-y}{x^2 +y^2}\, dx + \frac{x}{x^2 + y^2}\,dy$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\displaystyle\oint_{C_1}\frac{-y\,dx+x\,dy}{x^2+y^2}=2\pi$
+:::
 
 [Solution](files/solutions/sol_10_12b.pdf){target="_blank"}
 
@@ -1020,6 +1028,10 @@ $~$
   $\,$ Find the volume of the solid in the first octant bounded by the graphs of $z=1-y^2$, $y=2x$, and $x=3$
 
   ![](figures/ch09_figure41.svg "triple integral example"){width="90%" fig-align="center"}
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$V=\dfrac{15}{8}=1.875$
+:::
 
 [Solution](files/solutions/sol_10_15.pdf){target="_blank"}
 

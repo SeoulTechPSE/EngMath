@@ -161,11 +161,19 @@ $~$
 
 **Example** $\,$ What is the wave equation $\,u_{tt}=c^2\nabla^2 u\,$ in polar coordinates if you know that the solution $\,u\,$ depends only on $\,r\,$ and $\,t$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u_{tt}=c^2\left(u_{rr}+\dfrac1r\,u_r\right)$
+:::
+
 [Solution](files/solutions/sol_14_1a.pdf){target="_blank"}
 
 $~$
 
 **Example** $\,$ What is Laplace equation in spherical coordinates if the solution $\,u\,$ depends only on $\,r$? $\,$Can you find the solutions of this equation? These are the spherically symmetric potentials in three dimensions
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u_{rr}+\dfrac2r\,u_r=0$, $\quad u(r)=a+\dfrac br$
+:::
 
 [Solution](files/solutions/sol_14_1b.pdf){target="_blank"}
 
@@ -248,6 +256,10 @@ $$ \nabla^2 u = 0, \quad 0 < r < 1$$
 
 $$ \frac{\partial u}{\partial r} =\sin^2\theta, \quad r=1, \;\; 0 \leq \theta < 2\pi$$
 
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+No: the total boundary flux $\displaystyle\int_0^{2\pi}\sin^2\theta\,d\theta=\pi\neq0$ violates the compatibility condition
+:::
+
 [Solution](files/solutions/sol_14_2a.pdf){target="_blank"}
 
 $~$
@@ -257,6 +269,10 @@ $~$
 $$ \nabla^2 u = 0, \quad 0 < r < 1$$
 
 $$ \frac{\partial u}{\partial r} +h(u -\sin\theta)=0, \quad r=1, \;\; 0 \leq \theta < 2\pi$$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$u(r,\theta)=\dfrac{h}{1+h}\,r\sin\theta$
+:::
 
 [Solution](files/solutions/sol_14_2b.pdf){target="_blank"}
 
