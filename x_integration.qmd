@@ -4,6 +4,8 @@ jupyter: python3
 
 # Integration {#sec-integration}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_integration.ipynb)
+
 $~$
 
 ## Importing modules

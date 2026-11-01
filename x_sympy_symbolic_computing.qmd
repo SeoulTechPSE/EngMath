@@ -4,6 +4,8 @@ jupyter: python3
 
 # Sympy: Symbolic Computing {#sec-sympy}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_sympy_symbolic_computing.ipynb)
+
 $~$
 
 [![](https://www.sympy.org/static/images/logo.png)](https://docs.sympy.org/latest/index.html)

@@ -4,6 +4,8 @@ jupyter: python3
 
 # Interpolation {#sec-interpolation}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_interpolation.ipynb)
+
 $~$
 
 Interpolation is a mathematical method for constructing a function from a discrete set of data points. To perform interpolation in python, we use the `polynomial` module from `numpy` and the `interpolate` module from `scipy`

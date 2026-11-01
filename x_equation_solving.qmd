@@ -4,6 +4,8 @@ jupyter: python3
 
 # Equation Solving {#sec-equation-solving}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_equation_solving.ipynb)
+
 $~$
 
 * In this appendix, we use `sympy` for solving equations symbolically, when possible, and use the `linalg` module from the `scipy` library for numerically solving linear equation systems. For tackling nonlinear problems, we will use the root-finding functions in the `optimize` module of `scipy`

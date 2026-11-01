@@ -13,3 +13,4 @@
 
 # Rendered site: built and published by GitHub Actions (.github/workflows/publish.yml)
 /docs/
+__pycache__/

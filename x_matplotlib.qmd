@@ -4,6 +4,8 @@ jupyter: python3
 
 # Matplotlib: Plotting and Visualization {#sec-matplotlib}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_matplotlib.ipynb)
+
 [![](figures/matplotlib_logo.png){width="40%" fig-align="center"}](https://matplotlib.org/)
 
 * `Matplotlib` is a Python library for publication-quality 2D and 3D graphics, with support for a variety of different output formats

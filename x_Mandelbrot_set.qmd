@@ -4,6 +4,8 @@ jupyter: python3
 
 # Mandelbrot Set in Python {#sec-Mandelbrot}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_Mandelbrot_set.ipynb)
+
 $~$
 
 Original Author: [Bartosz Zaczyński](https://realpython.com/mandelbrot-set-python/)

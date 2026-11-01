@@ -4,6 +4,8 @@ jupyter: python3
 
 # Double Pendulum {#sec-double-pendulum}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_double_pendulum.ipynb)
+
 $~$
 
 * Consider the rather complicated system of <font color="blue">two coupled 2^nd^-order nonlinear ODEs</font> for a double pendulum

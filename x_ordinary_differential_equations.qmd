@@ -4,6 +4,8 @@ jupyter: python3
 
 # Ordinary Differential Equations {#sec-ordinary-differential-equations}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_ordinary_differential_equations.ipynb)
+
 In this appendix, we will explore both symbolic and numerical approaches to solving ODE problems. For symbolic methods, we use the `sympy` module, and for numerical integration of ODEs, we use functions from the `integrate` module in `scipy`
 
 ## Importing modules

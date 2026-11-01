@@ -4,6 +4,8 @@ jupyter: python3
 
 # Hydrogen Atomic Orbitals {#sec-ha-orbital}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_hydrogen_orbital.ipynb)
+
 * The **complete hydrogen atomic wave functions** are given by
 
   $$ \color{red}{\psi_{nlm}(r, \phi, \theta) = R_{nl}(r)\,Y_l^m(\phi,\theta)} $$

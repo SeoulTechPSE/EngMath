@@ -4,6 +4,8 @@ jupyter: python3
 
 # Sympy: Laplace Transform {#sec-sympy-Laplace-transform}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_sympy_Laplace_transform.ipynb)
+
 ::: {.callout-note appearance="simple" icon="false"}
 **Used in the main text:** @sec-4-1 (Definition of the Laplace Transform), @sec-x1-15 (The Laplace Transform)
 :::

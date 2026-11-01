@@ -4,6 +4,8 @@ jupyter: python3
 
 # Numpy: Vectors, Matrices, and Multidimensional Arrays {#sec-numpy}
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_numpy_vectors_matrices_and_multidimensional_arrays.ipynb)
+
 $~$
 
 [![](./figures/numpy_logo.png){width="30%" fig-align="center"}](https://numpy.org/doc/stable/)
