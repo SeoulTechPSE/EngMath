@@ -903,14 +903,6 @@ Both populations are periodic with the same period, $T\approx45$ (time units)
 | $y'=f(Ax+By+C)$ | | $u=Ax+By+C$ $\,\to\,$ separable |
 | Euler's method | $y'=f(x,y)$, $\ y(x_0)=y_0$ | $y_{n+1}=y_n+h\,f(x_n,y_n)$ |
 
-| Model | Equation |
-|:--|:--|
-| Growth and decay | $\dfrac{dP}{dt}=kP$ |
-| LR and RC series circuits | $L\dfrac{di}{dt}+Ri=E(t)$, $\quad R\dfrac{dq}{dt}+\dfrac1C q=E(t)$ |
-| Logistic growth | $\dfrac{dy}{dt}=\alpha y(K-y)$ |
-| Radioactive series $X\to Y\to Z$ | $x'=-k_1x$, $\ y'=k_1x-k_2y$, $\ z'=k_2y$ |
-| Predator-prey (Lotka-Volterra) | $x'=-ax+bxy$, $\ y'=cy-dxy$ $\ $ ($x$ predator, $y$ prey) |
-
 $~$
 
 ## Worked Exercises {.unnumbered}
