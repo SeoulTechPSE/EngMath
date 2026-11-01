@@ -638,6 +638,10 @@ d
 d.doit()
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-9-4 (Partial Derivatives)
+:::
+
 ### Integrals {#sec-sympy-integrals}
 
 ```{python}
@@ -703,6 +707,10 @@ sympy.integrate(expr, x, y)
 sympy.integrate(expr, (x, 0, 1), (y, 0, 1))
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-9-10 (Double Integrals), @sec-12-2 (Fourier Series)
+:::
+
 ### Limits
 
 ```{python}
@@ -761,6 +769,10 @@ sympy.series(sympy.cos(x), x, pi / 2, n=6)  # about x = pi/2
 ```{python}
 sympy.series(sympy.exp(x), x).removeO()  # drop the order term
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-5-1 (Solutions about Ordinary Points)
+:::
 
 ### Sums and products
 
@@ -928,6 +940,10 @@ x
 x = M.inv() *b
 x
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-8-1 (Matrix Algebra)
+:::
 
 ## ODE
 

@@ -373,6 +373,10 @@ ax.set_ylabel(r"$y$", fontsize=12)
 ax.legend(loc=2)
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-8-2 (Systems of Linear Algebraic Equations), @sec-8-13 (LU Factorization)
+:::
+
 ## Eigenvalue problems {#sec-eqsolve-eigen}
 
 ```{python}
@@ -435,6 +439,10 @@ evals, evecs = la.eigh(A)
 ```{python}
 evecs
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-8-8 (The Eigenvalue Problem), @sec-10-2 (Homogeneous Linear Systems)
+:::
 
 ## Nonlinear equation
 
@@ -780,3 +788,7 @@ ax.set_ylabel(r'$y$', fontsize=12)
 
 plt.show()
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-11-1 (Autonomous Systems)
+:::

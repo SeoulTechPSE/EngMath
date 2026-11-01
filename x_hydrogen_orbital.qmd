@@ -30,6 +30,10 @@ jupyter: python3
 
     For historical reasons, $\,l\,$ is called the azimuthal quantum number, $\,$and $\,m\,$ the magnetic quantum number
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-x3-35 (Laplace Equation in Spherical Coordinates (Spherical Harmonics)), @sec-x3-37 (Hydrogen Atom)
+:::
+
 ```{python}
 from pathlib import Path
 

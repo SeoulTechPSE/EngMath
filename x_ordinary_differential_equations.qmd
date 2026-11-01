@@ -428,6 +428,10 @@ plot_direction_field(x, y(x), -x /y(x), ax=axes[1])
 plot_direction_field(x, y(x), y(x)**2 /x, ax=axes[2])
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-2-1 (Solution Curves Without a Solution)
+:::
+
 ### Solving ODEs using Laplace Transformation {#sec-ode-laplace}
 
 * A technique that can be used to solve certain ODE problems is to do Laplace transform on the ODE, which for many problems results in an algebraic equation that is easier to solve. The solution to the algebraic equation can then be transformed back to the original domain with an inverse Laplace transform, to obtain the solution to the original problem. For example, consider the following differential equation for a driven harmonic oscillator:
@@ -485,6 +489,14 @@ ax.set_xlabel(r"$t$", fontsize=12)
 ax.set_ylabel(r"$y(t)$", fontsize=12)
 fig.tight_layout()
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-1-2 (Initial-Value Problems - IVP), @sec-2-2 (Separable Equations), @sec-2-5 (Solutions by Substitutions), @sec-3-3 (Homogeneous Linear Equations with Constant Coefficients), @sec-3-8 (Linear Models: Initial-Value Problems)
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-4-2 (The Inverse Transform and Transforms of Derivatives)
+:::
 
 ## Numerical methods for solving ODEs {#sec-ode-numerical-methods}
 
@@ -587,6 +599,10 @@ methods, respectively
   * <span style="color:red">then use this $y_{k+1}$ as an initial guess for solving the equation for $y_{k+1}$ given by an implicit method</span>.
 
   This equation does not need to be solved exactly, and since the initial guess from the explicit method should be quite good, a fixed number of iterations, using for example Newton's method, could be sufficient. Methods like these, where an explicit method is used to predict $y_{k+1}$ and an implicit method is used to correct the prediction, are called <span style="color:blue">*predictor-corrector methods*</span>
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-2-6 (A Numerical Method)
+:::
 
 ## Numerical integration of ODEs using `scipy` {#sec-ode-scipy}
 
@@ -845,3 +861,7 @@ fig.tight_layout()
 ```
 
 * Python functions for both $f(t, y(t))$ and its Jacobian can conveniently be generated using `sympy`'s `lambdify`, provided that the ODE problem first can be defined as a `sympy` expression. This symbolic-numeric hybrid approach is a powerful method for solving ODE problems (see @sec-double-pendulum)
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-2-6 (A Numerical Method), @sec-2-9 (Modeling with Systems of First-Order DEs), @sec-3-11 (Solving Nonlinear Models), @sec-3-12 (Solving System of Linear Equations), @sec-10-2 (Homogeneous Linear Systems), @sec-11-4 (Autonomous Systems as Mathematical Models)
+:::

@@ -20,6 +20,10 @@ $~$
     - m_2l_1 \color{red}{\left(\dot{\theta_1}\right)^2 \sin(\theta_1-\theta_2)} +m_2g\color{red}{\sin(\theta_2)} = 0
   \end{aligned}$$
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-3-11 (Solving Nonlinear Models), @sec-11-4 (Autonomous Systems as Mathematical Models)
+:::
+
 $~$
 
 ```{python}

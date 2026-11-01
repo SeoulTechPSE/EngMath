@@ -1219,3 +1219,7 @@ np.einsum("mk,kn", A, B)
 ```{python}
 np.all(np.einsum("mk,kn", A, B) == np.dot(A, B))
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-7-3 (Dot Product (Inner or Scalar Product)), @sec-8-1 (Matrix Algebra)
+:::

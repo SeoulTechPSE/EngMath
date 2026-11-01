@@ -4,6 +4,10 @@ jupyter: python3
 
 # Sympy: Laplace Transform {#sec-sympy-Laplace-transform}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-4-1 (Definition of the Laplace Transform), @sec-x1-15 (The Laplace Transform)
+:::
+
 ## Importing sympy
 
 ```{python}
@@ -138,6 +142,10 @@ Lt(eq)
 Lt(sympy.integrate(sympy.exp(tau) *sympy.sin(t -tau), (tau, 0, t)))  # e^t * sin t
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-4-4 (Additional Operational Properties)
+:::
+
 ## First translation theorem
 
 ```{python}
@@ -249,6 +257,10 @@ eq
 Lt(eq)
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-4-4 (Additional Operational Properties)
+:::
+
 ## Various Transform Examples
 
 ```{python}
@@ -336,6 +348,10 @@ ysol.expand().collect([sympy.exp(-t)])
 sympy.dsolve(ode, y(t), ics={y(0): 1, y(t).diff(t).subs(t, 0): 0})
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-4-2 (The Inverse Transform and Transforms of Derivatives)
+:::
+
 ## **Example 2** {#sec-laplace-example-2}
 
 In some instances, the Laplace transform can be used to solve linear differential equations with variable monomial coefficients
@@ -381,3 +397,7 @@ y
 C1 = sympy.solve(sympy.Eq(y.subs(t, 0), 1))[0]
 y.subs(sympy.Symbol('C1'), C1)
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-4-4 (Additional Operational Properties)
+:::

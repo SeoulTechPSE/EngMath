@@ -285,6 +285,10 @@ val_exact -integrate.romb(y, dx=dx)
 val_exact -integrate.simpson(y, dx=dx)
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-12-2 (Fourier Series)
+:::
+
 ## Multiple integration {#sec-integration-multiple}
 
 * The double integral routine `dblquad` can evaluate integrals on the form
@@ -356,6 +360,10 @@ def f(*args):
 ```{python}
 %time integrate.nquad(f, [(0, 1)] *4)
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-9-10 (Double Integrals)
+:::
 
 ## Symbolic and arbitrary-precision integration
 
@@ -529,3 +537,7 @@ F
 ```{python}
 sympy.inverse_fourier_transform(F, k, x)
 ```
+
+::: {.callout-note appearance="simple" icon="false"}
+**Used in the main text:** @sec-x1-12 (The Fourier Integral and Transform)
+:::
