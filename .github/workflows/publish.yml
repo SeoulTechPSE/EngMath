@@ -37,6 +37,10 @@ jobs:
       - name: Render book (frozen results, no code execution)
         run: quarto render --to html
 
+      # Stops the deployment if any page refers to a missing image, PDF, video or page
+      - name: Check for broken local links
+        run: python3 tools/check_links.py docs
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
