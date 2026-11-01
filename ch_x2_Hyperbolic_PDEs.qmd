@@ -4,6 +4,17 @@ jupyter: python3
 
 # Hyperbolic Partial Differential Equations {#sec-x2}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* solve the infinite string by d'Alembert's formula and interpret the solution as traveling waves, $\,$including reflection at a boundary
+* solve the wave equation in two and three dimensions in free space, $\,$and explain Huygens' principle
+* solve vibrating strings and drumheads by separation of variables, $\,$and nonhomogeneous problems by finite transforms
+* nondimensionalize problems, $\,$classify second-order PDEs and reduce a hyperbolic equation to canonical form
+* solve first-order linear and nonlinear (conservation) equations and hyperbolic systems by the method of characteristics, $\,$including shocks
+:::
+
+
 ## The One-dimensional Wave Equation {#sec-x2-18}
 
 We will now begin to study the second major class of PDEs, $\,$<font color="red">**hyperbolic equations**</font>
@@ -2971,6 +2982,20 @@ $\begin{bmatrix}u_1\\u_2\end{bmatrix}=\phi(x-3t)\begin{bmatrix}1\\2\end{bmatrix}
 
 [Solution](files/solutions/sol_13_13.pdf){target="_blank"}
 
+
+$~$
+
+## Summary {.unnumbered}
+
+| Topic | Key result |
+|:--|:--|
+| D'Alembert | $u_{tt}=c^2u_{xx}$, $\,u(x,0)=f$, $\,u_t(x,0)=g$: $\ u=\dfrac12\left[f(x-ct)+f(x+ct)\right]+\dfrac1{2c}\displaystyle\int_{x-ct}^{x+ct}g(\alpha)\,d\alpha$ |
+| Vibrating string | fixed ends: $\ u=\displaystyle\sum_{n=1}^\infty\left[a_n\cos\frac{n\pi ct}{L}+b_n\sin\frac{n\pi ct}{L}\right]\sin\frac{n\pi x}{L}$ |
+| Drumhead | radially symmetric: $\ u=\sum A_mJ_0(\alpha_{0m}r)\cos(\alpha_{0m}ct)$, $\ J_0(\alpha_{0m})=0$ |
+| Canonical form | characteristics $\dfrac{dy}{dx}=\dfrac{B\pm\sqrt{B^2-4AC}}{2A}$ give $\xi$, $\eta$ and $u_{\xi\eta}+\cdots=0$ |
+| First-order linear | $u_t+vu_x=0$: $\ u=f(x-vt)$, $\,$constant along the characteristics $x-vt=$ const |
+| Conservation law | $u_t+f(u)_x=0$; $\quad u_t+g(u)u_x=0$, $\,u(x,0)=\phi$: $\ u=\phi\big[x-g(u)t\big]$ |
+| Shock speed | $s=\dfrac{dx_s}{dt}=\dfrac{f(u^-)-f(u^+)}{u^--u^+}$, $\quad f'(u^+)<s<f'(u^-)$ |
 
 $~$
 

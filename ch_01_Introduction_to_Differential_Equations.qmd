@@ -4,6 +4,16 @@ jupyter: python3
 
 # Introduction to Differential Equations {#sec-1}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* classify a differential equation by type (ODE or PDE), $\,$order and linearity
+* verify that a function, $\,$explicit or implicit, $\,$is a solution on an interval, $\,$and recognize families of solutions
+* state the conditions under which a first-order initial-value problem has a unique solution
+* translate a physical situation, $\,$such as radioactive decay or a draining tank, $\,$into a differential equation
+:::
+
+
 ## Definitions and Terminology
 
 * A **differential equation (DE)** is an equation containing the **derivatives** of **one or more dependent variables** with respect to **one or more independent variables**
@@ -163,6 +173,20 @@ $~x\left( \frac{\pi}{2} \right) =-2, \;x'\left (\frac{\pi}{2} \right)=1$
 
 * Combining expressions gives the differential equation for the height of water at time $t$
   $$\frac{dh}{dt}=-\frac{A_h}{A_w}\sqrt{2gh}$$
+
+## Summary {.unnumbered}
+
+| Concept | Key point |
+|:--|:--|
+| Order | order of the highest derivative in the equation |
+| Linear ODE | $a_n(x)y^{(n)}+\cdots+a_1(x)y'+a_0(x)y=g(x)$: $\,$linear in $y, y', \cdots, y^{(n)}$ |
+| Solution | a function $\phi$ on an interval $I$ that reduces the ODE to an identity; $\,$explicit $y=\phi(x)$ or implicit $G(x,y)=0$ |
+| $n$-parameter family | $G(x,y,c_1,\cdots,c_n)=0$ solves an $n$-th order ODE |
+| Initial-value problem | ODE with $y(x_0)=y_0,\ y'(x_0)=y_1,\ \cdots,\ y^{(n-1)}(x_0)=y_{n-1}$ |
+| Existence and uniqueness | $y'=f(x,y)$, $\,y(x_0)=y_0$: $\,$if $f$ and $\partial f/\partial y$ are continuous on a rectangle containing $(x_0,y_0)$, $\,$there is exactly one solution near $x_0$ |
+| Models | radioactive decay $\dfrac{dA}{dt}=-kA$; $\quad$ draining tank $\dfrac{dh}{dt}=-\dfrac{A_h}{A_w}\sqrt{2gh}$ |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 

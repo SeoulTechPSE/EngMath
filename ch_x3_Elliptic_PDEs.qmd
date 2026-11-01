@@ -4,6 +4,17 @@ jupyter: python3
 
 # Elliptic Partial Differential Equations {#sec-x3}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* interpret the Laplacian, $\,$and set up Dirichlet, $\,$Neumann and Robin problems, $\,$including the compatibility condition for the Neumann problem
+* solve Laplace's equation in a disk, $\,$an annulus and an exterior region by separation of variables, $\,$and derive the Poisson integral formula
+* solve Laplace's equation in spherical coordinates with Legendre functions and spherical harmonics
+* solve a nonhomogeneous Dirichlet problem with a Green's function
+* apply these methods to the hydrogen atom
+:::
+
+
 ## The Laplacian (an Intuitive Description) {#sec-x3-31}
 
 * The <font color=red> Laplacian operator </font>
@@ -1631,6 +1642,20 @@ See the [Hydrogen Atomic Orbitals](x_hydrogen_orbital.qmd)
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** Interactive 3D plots of hydrogen orbitals $\psi_{nlm}$: @sec-ha-orbital
 :::
+
+$~$
+
+## Summary {.unnumbered}
+
+| Topic | Key result |
+|:--|:--|
+| Laplacian (cylindrical) | $\nabla^2u=u_{rr}+\dfrac1ru_r+\dfrac1{r^2}u_{\theta\theta}+u_{zz}$ |
+| Neumann compatibility | $\nabla^2u=0$ in $D$, $\,\partial u/\partial n=g$ on the boundary needs $\displaystyle\oint g\,ds=0$ |
+| Disk of radius $R$ | $u=\dfrac{a_0}{2}+\displaystyle\sum_{n=1}^\infty\left(\frac rR\right)^n(a_n\cos n\theta+b_n\sin n\theta)$ |
+| Poisson integral formula | $u(r,\theta)=\dfrac1{2\pi}\displaystyle\int_0^{2\pi}\frac{R^2-r^2}{R^2+r^2-2rR\cos(\theta-\alpha)}\,g(\alpha)\,d\alpha$ |
+| Sphere (axisymmetric) | $u(r,\phi)=\displaystyle\sum_{n=0}^\infty a_nr^nP_n(\cos\phi)$ inside the unit sphere |
+| Green's function | $u(r,\theta)=\displaystyle\int_0^{2\pi}\int_0^1G(r,\theta,\rho,\phi)\,f(\rho,\phi)\,\rho\,d\rho\,d\phi$ |
+| Hydrogen atom | $E_n=-\left[\dfrac{\mu e^4}{2\hbar^2}\right]\dfrac1{n^2}$, $\ n=1,2,\cdots$; $\,$wave functions $R_{nl}(r)\,Y_l^m$ |
 
 $~$
 

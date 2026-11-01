@@ -4,6 +4,16 @@ jupyter: python3
 
 # Series Solutions of Linear Differential Equations {#sec-5}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* find power series solutions about an ordinary point, $\,$and the interval on which they converge
+* classify singular points, $\,$and solve about a regular singular point by the method of Frobenius using the indicial equation
+* solve Bessel's and Legendre's equations and equations reducible to them
+* use the properties of $J_\nu$, $Y_\nu$, $I_\nu$, $K_\nu$ and $P_n$: $\,$recurrence relations, $\,$Rodrigues' formula and orthogonality
+:::
+
+
 ## Solutions about Ordinary Points {#sec-5-1}
 
 * A power series in $x -a$ is an infinite series of the form
@@ -972,6 +982,21 @@ $m$ even: $\,P_n^m$ is a polynomial of degree $n$; $\quad m>n$: $\,P_n^m\equiv0$
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** Legendre and Chebyshev polynomials as `numpy.polynomial` classes: @sec-interp-polynomials
 :::
+
+## Summary {.unnumbered}
+
+| Topic | Key result |
+|:--|:--|
+| Ordinary point | $P$, $Q$ analytic at $x_0$: $\,$two independent solutions $\sum c_n(x-x_0)^n$, $\,$convergent at least up to the nearest singular point |
+| Regular singular point | $(x-x_0)P$ and $(x-x_0)^2Q$ analytic: $\,y=\sum c_n(x-x_0)^{n+r}$, $\,r$ from the indicial equation |
+| Frobenius cases ($r_1\ge r_2$) | $r_1-r_2\notin\mathbb Z$: two series; $\ r_1-r_2=N$: $\,y_2=Cy_1\ln(x-x_0)+\sum b_n(x-x_0)^{n+r_2}$; $\ r_1=r_2$: $\,y_2=y_1\ln(x-x_0)+\sum b_n(x-x_0)^{n+r_1}$ |
+| Bessel | $x^2y''+xy'+(x^2-\nu^2)y=0$: $\ y=c_1J_\nu(x)+c_2Y_\nu(x)$ $\,$($J_{-\nu}$ instead of $Y_\nu$ if $\nu$ is not an integer) |
+| Parametric and modified Bessel | $x^2y''+xy'+(\alpha^2x^2-\nu^2)y=0$: $\,c_1J_\nu(\alpha x)+c_2Y_\nu(\alpha x)$; $\quad x^2y''+xy'-(x^2+\nu^2)y=0$: $\,c_1I_\nu(x)+c_2K_\nu(x)$ |
+| Bessel recurrences | $\dfrac{d}{dx}\left[x^\nu J_\nu\right]=x^\nu J_{\nu-1}$, $\quad\dfrac{d}{dx}\left[x^{-\nu}J_\nu\right]=-x^{-\nu}J_{\nu+1}$ |
+| Legendre | $(1-x^2)y''-2xy'+n(n+1)y=0$: $\ P_n(x)=\dfrac{1}{2^nn!}\dfrac{d^n}{dx^n}(x^2-1)^n$ |
+| Legendre properties | $(n+1)P_{n+1}=(2n+1)xP_n-nP_{n-1}$, $\quad\displaystyle\int_{-1}^1P_kP_l\,dx=\delta_{kl}\frac{2}{2l+1}$ |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 

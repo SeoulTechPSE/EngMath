@@ -4,6 +4,17 @@ jupyter: python3
 
 # Matrices {#sec-8}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* perform matrix algebra, $\,$and solve linear systems by Gaussian and Gauss-Jordan elimination
+* use the rank to decide whether a system is consistent and how many parameters its solution has
+* evaluate determinants by cofactor expansion and their properties, $\,$find inverses, $\,$and use Cramer's rule and the LU factorization
+* find eigenvalues and eigenvectors, $\,$compute matrix powers with the Cayley-Hamilton theorem, $\,$and approximate eigenvalues by the power method
+* diagonalize matrices, $\,$orthogonally diagonalize symmetric matrices, $\,$and apply matrices to quadratic forms, $\,$codes, $\,$least squares and compartmental models
+:::
+
+
 ## Prerequisites
 
 * Vector Spaces (@sec-7-6)
@@ -3377,6 +3388,24 @@ for month in range(13):
     print(f'{month:5d} {x[0]:9.2f} {x[1]:9.2f} {x[2]:9.2f} {x[3]:9.2f}')  
     x = T @ x 
 ```
+
+## Summary {.unnumbered}
+
+| Topic | Key result |
+|:--|:--|
+| Elimination | $(\mathbf A\vert\mathbf b)\to$ row echelon form by elementary row operations, $\,$then back substitution |
+| Rank | $\mathbf{Ax}=\mathbf b$ is consistent iff $\mathrm{rank}\,\mathbf A=\mathrm{rank}(\mathbf A\vert\mathbf b)$; $\,$the solution then has $n-\mathrm{rank}\,\mathbf A$ parameters |
+| Determinant | $\det\mathbf A=\sum_j a_{ij}C_{ij}$, $\ C_{ij}=(-1)^{i+j}M_{ij}$; $\quad\det(\mathbf{AB})=\det\mathbf A\det\mathbf B$, $\ \det\mathbf A^T=\det\mathbf A$ |
+| Inverse | exists iff $\det\mathbf A\ne0$: $\ \mathbf A^{-1}=\dfrac{\mathrm{adj}\,\mathbf A}{\det\mathbf A}$, $\,$or $(\mathbf A\vert\mathbf I)\to(\mathbf I\vert\mathbf A^{-1})$ |
+| Cramer's rule | $x_k=\dfrac{\det\mathbf A_k}{\det\mathbf A}$ $\,$($\mathbf A_k$: column $k$ replaced by $\mathbf b$) |
+| Eigenvalues | $\det(\mathbf A-\lambda\mathbf I)=0$, $\quad(\mathbf A-\lambda\mathbf I)\mathbf k=\mathbf 0$ |
+| Cayley-Hamilton | $\mathbf A$ satisfies its characteristic equation; $\,\mathbf A^m=c_0\mathbf I+c_1\mathbf A+\cdots+c_{n-1}\mathbf A^{n-1}$ with $\lambda^m=c_0+c_1\lambda+\cdots$ |
+| Orthogonal and symmetric | orthogonal: $\mathbf A^{-1}=\mathbf A^T$; $\,$symmetric: real eigenvalues, $\,$orthogonal eigenvectors |
+| Power method | $\mathbf x_i=\mathbf A\mathbf x_{i-1}$, $\quad\lambda_1\approx\dfrac{\mathbf A\mathbf x_m\cdot\mathbf x_m}{\mathbf x_m\cdot\mathbf x_m}$ (Rayleigh quotient) |
+| Diagonalization | $\mathbf D=\mathbf P^{-1}\mathbf{AP}$ ($n$ independent eigenvectors); $\,$symmetric: $\mathbf D=\mathbf P^T\mathbf{AP}$; $\quad\mathbf A^m=\mathbf{PD}^m\mathbf P^{-1}$ |
+| LU factorization | $\mathbf A=\mathbf{LU}$: $\,$solve $\mathbf{Ly}=\mathbf b$, $\,$then $\mathbf{Ux}=\mathbf y$ |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 

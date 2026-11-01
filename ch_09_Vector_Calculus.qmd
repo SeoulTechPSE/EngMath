@@ -4,6 +4,17 @@ jupyter: python3
 
 # Vector Calculus {#sec-9}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* differentiate vector functions and describe motion on a curve: $\,$velocity, $\,$acceleration, $\,$curvature and its components
+* compute partial and directional derivatives, $\,$gradients, $\,$tangent planes, $\,$and the divergence and curl of a vector field
+* evaluate line integrals, $\,$and recognize conservative fields and path independence
+* evaluate double, $\,$triple and surface integrals, $\,$using polar, $\,$cylindrical and spherical coordinates and a change of variables
+* apply Green's theorem, $\,$Stokes' theorem and the divergence theorem
+:::
+
+
 ## Vector Functions {#sec-9-1}
 
 * A parametric curve in space is a set of ordered triples $(x,y,z),$ $~$where
@@ -1245,6 +1256,23 @@ $~$
     \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} & \frac{\partial y}{\partial w}\\
     \frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} & \frac{\partial z}{\partial w} 
    \end{matrix}\right|, \qquad dV = h_1 h_2 h_3\, dq_1 dq_2 dq_3$$
+
+$~$
+
+## Summary {.unnumbered}
+
+| Topic | Formula |
+|:--|:--|
+| Motion | $\mathbf v=\mathbf r'$, $\ \mathbf a=\mathbf r''$; $\ \kappa=\dfrac{\lVert d\mathbf T/dt\rVert}{v}$, $\ \mathbf a=\dfrac{dv}{dt}\mathbf T+\kappa v^2\mathbf N$ |
+| Directional derivative | $D_{\mathbf u}f=\nabla f\cdot\mathbf u$; $\,$largest, $\lVert\nabla f\rVert$, $\,$in the direction of $\nabla f$ |
+| Tangent plane | $\nabla F(x_0,y_0,z_0)$ is normal to the level surface $F(x,y,z)=c$ |
+| Divergence and curl | $\nabla\cdot\mathbf f$, $\quad\nabla\times\mathbf f$ |
+| Path independence | $\mathbf f=\nabla\phi$: $\ \displaystyle\int_C\mathbf f\cdot d\mathbf r=\phi(B)-\phi(A)$ |
+| Green's theorem | $\displaystyle\oint_C P\,dx+Q\,dy=\iint_R\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA$ |
+| Surface area | $\displaystyle\iint_R\sqrt{1+f_x^2+f_y^2}\,dA$, $\quad\mathbf n=\dfrac{\nabla g}{\lVert\nabla g\rVert}$ |
+| Stokes' theorem | $\displaystyle\oint_C\mathbf f\cdot d\mathbf r=\iint_S(\nabla\times\mathbf f)\cdot\mathbf n\,dS$ |
+| Divergence theorem | $\displaystyle\iint_S(\mathbf f\cdot\mathbf n)\,dS=\iiint_D\nabla\cdot\mathbf f\,dV$ |
+| Change of variables | $\displaystyle\iint_R f\,dA=\iint_S f\big(x(u,v),y(u,v)\big)\left\lvert\frac{\partial(x,y)}{\partial(u,v)}\right\rvert du\,dv$ |
 
 $~$
 

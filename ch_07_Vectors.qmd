@@ -4,6 +4,17 @@ jupyter: python3
 
 # Vectors {#sec-7}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* carry out vector algebra in 2- and 3-space with components, $\,$norms and unit vectors
+* use the dot product for angles, $\,$orthogonality and projections, $\,$and the cross product for normals, $\,$areas and volumes
+* write equations of lines and planes in 3-space
+* decide whether a set is a vector space or a subspace, $\,$test linear independence, $\,$and find a basis and the dimension
+* construct an orthogonal (orthonormal) basis by the Gram-Schmidt process
+:::
+
+
 ## Vectors in 2-Space {#sec-7-1}
 
 * We distinguish two important quantities: $~$ **scalars** and **vectors**
@@ -663,6 +674,21 @@ $B'=\left\{\,1,\ \ x,\ \ x^2-\tfrac13\,\right\}$
 :::
 
 [Solution](files/solutions/sol_9_7.pdf){target="_blank"}
+
+$~$
+
+## Summary {.unnumbered}
+
+| Topic | Formula |
+|:--|:--|
+| Norm | $\lVert\mathbf a\rVert=\sqrt{a_1^2+a_2^2+a_3^2}$, $\quad$unit vector $\mathbf a/\lVert\mathbf a\rVert$ |
+| Dot product | $\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3=\lVert\mathbf a\rVert\lVert\mathbf b\rVert\cos\theta$; $\,$orthogonal iff $\mathbf a\cdot\mathbf b=0$ |
+| Projection | $\mathrm{comp}_{\mathbf b}\mathbf a=\dfrac{\mathbf a\cdot\mathbf b}{\lVert\mathbf b\rVert}$, $\quad\mathrm{proj}_{\mathbf b}\mathbf a=\left(\dfrac{\mathbf a\cdot\mathbf b}{\mathbf b\cdot\mathbf b}\right)\mathbf b$ |
+| Cross product | $\mathbf a\times\mathbf b=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix}=(\lVert\mathbf a\rVert\lVert\mathbf b\rVert\sin\theta)\,\mathbf n$; $\,$area $\lVert\mathbf a\times\mathbf b\rVert$, $\,$volume $\lvert\mathbf a\cdot(\mathbf b\times\mathbf c)\rvert$ |
+| Line | $\mathbf r=\mathbf r_2+t\mathbf a$, $\quad\dfrac{x-x_2}{a_1}=\dfrac{y-y_2}{a_2}=\dfrac{z-z_2}{a_3}$ |
+| Plane | $\mathbf n\cdot(\mathbf r-\mathbf r_1)=0$, $\quad n_1(x-x_1)+n_2(y-y_1)+n_3(z-z_1)=0$ |
+| Basis and dimension | a linearly independent set that spans $V$; $\,$the dimension is the number of basis vectors |
+| Gram-Schmidt | $\mathbf v_1=\mathbf u_1$, $\ \mathbf v_k=\mathbf u_k-\displaystyle\sum_{j<k}\frac{\mathbf u_k\cdot\mathbf v_j}{\mathbf v_j\cdot\mathbf v_j}\mathbf v_j$; $\,$orthonormal: $\mathbf v_k/\lVert\mathbf v_k\rVert$ |
 
 $~$
 

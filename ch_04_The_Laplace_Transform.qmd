@@ -4,6 +4,16 @@ jupyter: python3
 
 # The Laplace Transform {#sec-4}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* compute Laplace transforms from the definition and by linearity, $\,$and find inverse transforms with partial fractions
+* solve initial-value problems for linear equations with constant coefficients, $\,$including piecewise and impulsive forcing
+* use the translation theorems, $\,$derivatives of transforms, $\,$convolution and the transform of a periodic function
+* solve systems of linear differential equations by the Laplace transform
+:::
+
+
 ## Definition of the Laplace Transform {#sec-4-1}
 
 * Let $f$ be a function defined for $t \geq 0$. $~$Then the *integral*
@@ -609,6 +619,22 @@ $$
 :::
 
 [Solution](files/solutions/sol_4_6.pdf){target="_blank"}
+
+## Summary {.unnumbered}
+
+| Property | Formula |
+|:--|:--|
+| Definition | $\mathcal L\{f(t)\}=\displaystyle\int_0^\infty f(t)e^{-st}\,dt=F(s)$ |
+| Basic transforms | $\mathcal L\{1\}=\dfrac1s$, $\ \mathcal L\{t^n\}=\dfrac{n!}{s^{n+1}}$, $\ \mathcal L\{e^{at}\}=\dfrac1{s-a}$, $\ \mathcal L\{\sin kt\}=\dfrac{k}{s^2+k^2}$, $\ \mathcal L\{\cos kt\}=\dfrac{s}{s^2+k^2}$ |
+| Derivatives | $\mathcal L\{f'\}=sF(s)-f(0)$, $\quad\mathcal L\{f''\}=s^2F(s)-sf(0)-f'(0)$ |
+| First translation | $\mathcal L\{e^{-at}f(t)\}=F(s+a)$ |
+| Second translation | $\mathcal L\{f(t-a)\,\mathcal U(t-a)\}=e^{-as}F(s)$, $\quad\mathcal L\{g(t)\,\mathcal U(t-a)\}=e^{-as}\mathcal L\{g(t+a)\}$ |
+| Derivatives of transforms | $\mathcal L\{t^nf(t)\}=(-1)^n\dfrac{d^n}{ds^n}F(s)$ |
+| Convolution | $\mathcal L\{f*g\}=F(s)G(s)$, $\quad f*g=\displaystyle\int_0^t f(\tau)g(t-\tau)\,d\tau$ |
+| Periodic function | $\mathcal L\{f(t)\}=\dfrac{1}{1-e^{-sT}}\displaystyle\int_0^T e^{-st}f(t)\,dt$, $\quad f(t+T)=f(t)$ |
+| Dirac delta | $\mathcal L\{\delta(t-t_0)\}=e^{-st_0}$ |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 

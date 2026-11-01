@@ -3,6 +3,17 @@ jupyter: python3
 ---
 
 # Systems of Nonlinear Differential Equations  {#sec-11}
+
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* write a higher-order equation as a plane autonomous system and find its critical points
+* classify the critical point of a linear system $\mathbf x'=\mathbf{Ax}$ from $\tau=\mathrm{tr}\,\mathbf A$ and $\Delta=\det\mathbf A$
+* determine local stability by linearization, $\,$and use the phase-plane method when linearization is not decisive
+* analyze models such as the pendulum, $\,$the bead on a wire, $\,$predator-prey and competition
+* rule out periodic solutions (Bendixson, $\,$Dulac) $\,$or show that they exist (Poincaré-Bendixson)
+:::
+
 ## Autonomous Systems  {#sec-11-1}
 
 A system of first-order differential equations is called **autonomous** when the system can be written in the form
@@ -1371,5 +1382,20 @@ $\mathbf{x}(0)=\mathbf{x}_0$, use **Poincar&eacute;&ndash;Bendixson II** to find
 :::
 
 [Solution](files/solutions/sol_8_5.pdf){target="_blank"}
+
+## Summary {.unnumbered}
+
+| Case | Critical point $(0,0)$ of $\mathbf x'=\mathbf{Ax}$ |
+|:--|:--|
+| Eigenvalues | $\lambda=\dfrac{\tau\pm\sqrt{\tau^2-4\Delta}}{2}$ |
+| $\tau^2-4\Delta>0$ | $\Delta<0$: saddle point; $\ \Delta>0,\ \tau<0$: stable node; $\ \Delta>0,\ \tau>0$: unstable node |
+| $\tau^2-4\Delta=0$ | degenerate node, $\,$stable if $\tau<0$ and unstable if $\tau>0$ |
+| $\tau^2-4\Delta<0$ | $\tau=0$: center; $\ \tau<0$: stable spiral point; $\ \tau>0$: unstable spiral point |
+| Linearization | $\mathbf A=\mathbf g'(\mathbf x_1)$: $\,$all eigenvalues with negative real part $\Rightarrow$ asymptotically stable; $\,$one with positive real part $\Rightarrow$ unstable |
+| Bendixson | $\mathrm{div}\,\mathbf v=\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}$ does not change sign in a simply connected $\mathbb R$ $\Rightarrow$ no periodic solution |
+| Dulac | the same with $\dfrac{\partial(\delta P)}{\partial x}+\dfrac{\partial(\delta Q)}{\partial y}$ for some $\delta(x,y)$ |
+| Poincaré-Bendixson I | invariant region of type I with a single unstable node or spiral point inside, $\,$or of type II with no critical points $\Rightarrow$ a periodic solution (limit cycle) |
+
+$~$
 
 ## Worked Exercises {.unnumbered}

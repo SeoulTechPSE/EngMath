@@ -4,6 +4,17 @@ jupyter: python3
 
 # Parabolic Partial Differential Equations {#sec-x1}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* classify second-order linear PDEs, $\,$and set up diffusion problems with Dirichlet, $\,$Neumann and Robin boundary conditions
+* solve the heat equation on a finite interval by separation of variables and eigenfunction expansions
+* remove nonhomogeneous boundary conditions with a steady-state solution, $\,$and simplify equations by substitutions
+* solve problems with the finite sine and cosine transforms, $\,$the Fourier, $\,$Fourier sine and cosine transforms, $\,$and the Laplace transform
+* treat convection terms, $\,$superposition of sources and time-dependent boundary conditions (Duhamel's principle)
+:::
+
+
 ## Introduction to Partial Differential Equations {#sec-x1-1}
 
 * Most physical phenomena, $\,$whether in the domain of fluid dynamics, electricity, magnetism, mechanics, optics, or heat flow, $\,$can be described in general by partial differential equations(PDEs): $\,$in fact, $\,$<font color="red">most of mathematical physics are PDEs</font>
@@ -2041,6 +2052,23 @@ $~$
 
   allows us to find $u(x,t)$ to an arbitrary boundary temperature $\,f(t)$ once we have carried out an experiment to determine the temperature response $\,v(x,t)$ from an impulse temperature
 
+
+## Summary {.unnumbered}
+
+| Topic | Key result |
+|:--|:--|
+| Classification | $Au_{xx}+Bu_{xy}+Cu_{yy}+\cdots=0$: $\,B^2-4AC<0$ elliptic, $\,=0$ parabolic, $\,>0$ hyperbolic |
+| Heat equation | $u_t=\alpha u_{xx}$ |
+| Separation of variables | $u(0,t)=u(L,t)=0$: $\ u=\displaystyle\sum_{n=1}^\infty b_ne^{-\alpha(n\pi/L)^2t}\sin\frac{n\pi x}{L}$, $\ b_n=\dfrac2L\displaystyle\int_0^L\phi(x)\sin\frac{n\pi x}{L}\,dx$ |
+| Nonhomogeneous BCs | $u=$ steady state $+$ transient, $\,$the transient satisfying homogeneous BCs |
+| Substitutions | $u_t=\alpha u_{xx}-\beta u$: $\,u=e^{-\beta t}w$; $\quad u_t=\alpha u_{xx}-vu_x$: $\,u=\exp\left[\dfrac{v}{2\alpha}\left(x-\dfrac v2t\right)\right]w$ |
+| Eigenfunction expansion | $u_t=\alpha u_{xx}+f(x,t)$: $\,u=\sum T_n(t)X_n(x)$, $\,$one ODE for each $T_n$ |
+| Finite sine transform | $\mathcal F_s[u_{xx}]=-\left(\dfrac{n\pi}{L}\right)^2\mathcal F_s[u]+\dfrac{2n\pi}{L^2}\left[u(0,t)-(-1)^nu(L,t)\right]$ |
+| Fourier transform | $\mathcal F[f]=\dfrac1{\sqrt{2\pi}}\displaystyle\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx$, $\quad\mathcal F[f_x]=i\omega\mathcal F[f]$, $\ \mathcal F[f_{xx}]=-\omega^2\mathcal F[f]$ |
+| Infinite rod | $u(x,t)=\dfrac{1}{2\sqrt{\alpha\pi t}}\displaystyle\int_{-\infty}^\infty\phi(\xi)\,e^{-(x-\xi)^2/4\alpha t}\,d\xi$ |
+| Duhamel's principle | $u(x,t)=\displaystyle\int_0^t\frac{\partial w}{\partial t}(x,t-\tau)\,f(\tau)\,d\tau$, $\,$where $w$ solves the problem with the constant boundary value $1$ |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 

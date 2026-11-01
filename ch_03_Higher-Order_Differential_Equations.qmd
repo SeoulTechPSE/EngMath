@@ -4,6 +4,17 @@ jupyter: python3
 
 # Higher-Order Differential Equations {#sec-3}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* use superposition, $\,$the Wronskian and fundamental sets to build the general solution $y=y_h+y_p$ of a linear equation
+* solve homogeneous equations with constant coefficients and Cauchy-Euler equations from the characteristic (auxiliary) equation
+* find a second solution by reduction of order, $\,$and particular solutions by undetermined coefficients and by variation of parameters
+* solve boundary-value problems with influence and Green's functions
+* model spring-mass systems and recognize resonance, $\,$and treat nonlinear equations by substitution, $\,$Taylor series or numerically
+:::
+
+
 ## Theory of Linear Equations {#sec-3-1}
 
 * In an **initial-value problem (IVP)**, $\,$ we seek a solution $y(x)$ of an $n$^th^ order linear DE 
@@ -1308,6 +1319,22 @@ plt.show()
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** Coupled spring-mass systems integrated numerically: @sec-ode-scipy
 :::
+
+## Summary {.unnumbered}
+
+| Topic | Form | Result |
+|:--|:--|:--|
+| General solution | linear, order $n$ | $y=c_1y_1+\cdots+c_ny_n+y_p$; $\,y_1,\cdots,y_n$ independent iff $W\ne0$ |
+| Reduction of order | $y''+P(x)y'+Q(x)y=0$, $\,y_1$ known | $y_2=y_1\displaystyle\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$ |
+| Constant coefficients | $ay''+by'+cy=0$, $\ ap^2+bp+c=0$ | $c_1e^{p_1x}+c_2e^{p_2x}$; $\ (c_1+c_2x)e^{p_1x}$; $\ e^{\alpha x}(c_1\cos\beta x+c_2\sin\beta x)$ |
+| Undetermined coefficients | constant coefficients; $\,g$: polynomial, $e^{ax}$, $\sin$, $\cos$ | $y_p$ of the same form as $g$, $\,$multiplied by $x^k$ if it duplicates $y_h$ |
+| Variation of parameters | $y''+P(x)y'+Q(x)y=f(x)$ | $y_p=u_1y_1+u_2y_2$, $\ u_1'=-\dfrac{y_2f}{W}$, $\ u_2'=\dfrac{y_1f}{W}$ |
+| Cauchy-Euler | $ax^2y''+bxy'+cy=0$, $\ y=x^p$ | $c_1x^{p_1}+c_2x^{p_2}$; $\ x^{p_1}(c_1+c_2\ln x)$; $\ x^\alpha[c_1\cos(\beta\ln x)+c_2\sin(\beta\ln x)]$ |
+| Green's function | $\dfrac{d}{dx}\left[p\,u'\right]+qu=-f$ with BCs | $u(x)=\displaystyle\int_\alpha^\beta G(x,\xi)f(\xi)\,d\xi$, $\ G(x,\xi)=G(\xi,x)$ |
+| Spring-mass | $mx''+\beta x'+kx=f(t)$ | pure resonance: $\,x''+\omega^2x=F_0\cos\omega t$ gives $\dfrac{F_0}{2\omega}\,t\sin\omega t$ |
+| Nonlinear | $y$ or $x$ missing | $u=y'$; $\,$if $x$ is missing, $\,y''=u\,\dfrac{du}{dy}$ |
+
+$~$
 
 ## Worked Exercises {.unnumbered}
 

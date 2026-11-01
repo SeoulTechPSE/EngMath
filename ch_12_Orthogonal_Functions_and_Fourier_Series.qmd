@@ -4,6 +4,16 @@ jupyter: python3
 
 # Orthogonal Functions and Fourier Series {#sec-12}
 
+::: {.callout-note appearance="simple" icon="false"}
+**Learning objectives** $\,$ After this chapter you should be able to
+
+* test functions for orthogonality and expand a function in an orthogonal set
+* compute Fourier series, $\,$half-range cosine and sine series, $\,$and complex Fourier series, $\,$and describe their convergence and the Gibbs phenomenon
+* formulate regular and singular Sturm-Liouville problems and use the orthogonality of their eigenfunctions
+* expand functions in Fourier-Bessel and Fourier-Legendre series
+:::
+
+
 ## Orthogonal Functions {#sec-12-1}
 
 * Inner Product
@@ -976,6 +986,21 @@ $~$
 * Hypergeometric 
 
   $$x(1-x)y'' +[c - (a + b +1)x]\, y' -ab y = 0$$
+
+$~$
+
+## Summary {.unnumbered}
+
+| Topic | Formula |
+|:--|:--|
+| Orthogonal expansion | $f=\sum c_n\phi_n$, $\quad c_n=\dfrac{\int_a^b f\phi_n\,dx}{\int_a^b\phi_n^2\,dx}$ |
+| Fourier series on $(-p,p)$ | $f(x)=\dfrac{a_0}{2}+\displaystyle\sum_{n=1}^\infty\left(a_n\cos\frac{n\pi}{p}x+b_n\sin\frac{n\pi}{p}x\right)$, $\ a_n=\dfrac1p\displaystyle\int_{-p}^pf\cos\frac{n\pi}{p}x\,dx$, $\ b_n=\dfrac1p\displaystyle\int_{-p}^pf\sin\frac{n\pi}{p}x\,dx$ |
+| Convergence | at a jump the series converges to $\dfrac{f(x^+)+f(x^-)}{2}$ |
+| Half-range series on $(0,p)$ | cosine: $\,a_n=\dfrac2p\displaystyle\int_0^pf\cos\frac{n\pi}{p}x\,dx$; $\quad$sine: $\,b_n=\dfrac2p\displaystyle\int_0^pf\sin\frac{n\pi}{p}x\,dx$ |
+| Complex Fourier series | $f(x)=\displaystyle\sum_{n=-\infty}^\infty c_ne^{in\pi x/p}$, $\quad c_n=\dfrac1{2p}\displaystyle\int_{-p}^pf(x)e^{-in\pi x/p}\,dx$ |
+| Sturm-Liouville | $\dfrac{d}{dx}\left[r(x)y'\right]+\left[\lambda p(x)+q(x)\right]y=0$: $\,$eigenfunctions are orthogonal with weight $p(x)$ |
+| Fourier-Bessel | $f(x)=\sum c_iJ_n(\alpha_ix)$, $\quad c_i=\dfrac{\int_0^bx\,f(x)J_n(\alpha_ix)\,dx}{\int_0^bx\,J_n^2(\alpha_ix)\,dx}$ |
+| Fourier-Legendre | $f(x)=\sum c_nP_n(x)$, $\quad c_n=\dfrac{2n+1}{2}\displaystyle\int_{-1}^1f(x)P_n(x)\,dx$ |
 
 $~$
 
