@@ -153,20 +153,24 @@ This is what we were aiming for, $\,$and it is called the **D'Alembert solution*
 
 * **Initial Velocity Given**
 
-  Suppose now the initial position of the string is at equilibrium and we impose an initial velocity (as in a piano string) of $\,\sin x$
+  Suppose now the initial position of the string is at equilibrium and we impose a localized initial velocity, $\,$as when a piano hammer strikes the string near $\,x=0$
 
   $$\begin{aligned}
    u(x,0)&= 0\\ 
-   u_t(x,0)&=\sin x 
+   u_t(x,0)&=e^{-x^2} 
   \end{aligned}$$
 
   Here, $\,$the solution would be
 
   $$\begin{aligned}
-   u(x,t) &= \frac{1}{2c} \int_{x-ct}^{x+ct} \sin\xi \, d\xi\\ 
-    &=\frac{1}{2c} \left[ \cos(x -ct) -\cos(x +ct)\right] \\
-    &=\frac{1}{c} \sin x \cdot \sin ct
+   u(x,t) &= \frac{1}{2c} \int_{x-ct}^{x+ct} e^{-\xi^2} \, d\xi\\ 
+    &=\frac{\sqrt{\pi}}{4c} \left[ \mathrm{erf}(x +ct) -\mathrm{erf}(x -ct)\right], 
+    \qquad \mathrm{erf}(z)=\frac{2}{\sqrt{\pi}}\int_0^z e^{-s^2}\,ds
   \end{aligned}$$
+
+  * The struck part of the string starts to move first, $\,$and the disturbance spreads to both sides with speed $\,c$
+  * Unlike an initial displacement, $\,$which splits into two traveling copies and leaves the string at rest, $\,$an initial velocity leaves the string displaced: $\,$for each fixed $\,x$, $\,u(x,t)\to \sqrt{\pi}/(2c)\,$ as $\,t\to\infty$. $\,$The string forms a plateau whose edges $\,x\approx\pm ct\,$ move outward
+  * For comparison, $\,$the initial velocity $\,u_t(x,0)=\sin x$, $\,$which is spread over the whole string, $\,$gives the standing wave $\,u=\frac{1}{c}\sin x\,\sin ct$: $\,$every point just oscillates in place
 
 $~$
 
@@ -181,12 +185,13 @@ plt.rcParams['xtick.direction'] = 'in'
 plt.rcParams['ytick.direction'] = 'in'
 ```
 ```{python}
-fig = plt.figure(figsize=(6, 4))
-ax = plt.axes(xlim=(-6.0*np.pi, 6.0*np.pi), ylim=(-1.5, 1.5))
+from scipy.special import erf
 
-ax.set_xticks([-6.0*np.pi,-3.0*np.pi, 0, 3.0*np.pi, 6.0*np.pi])
-ax.set_xticklabels([r'$-6\pi$',r'$-3\pi$','$0$',r'$3\pi$',r'$6\pi$'])
-ax.set_yticks([-1.2, -0.6, 0, 0.6, 1.2])
+fig = plt.figure(figsize=(6, 4))
+ax = plt.axes(xlim=(-10, 10), ylim=(-0.1, 1.1))
+
+ax.set_xticks([-10, -5, 0, 5, 10])
+ax.set_yticks([0, 0.25, 0.5, 0.75, 1.0])
 ax.set_xlabel('$x$')
 ax.set_ylabel('$u(x,t)$')
 
@@ -194,23 +199,24 @@ plt.close()
 ```
 
 ```{python}
-# | fig-cap: '<center><font size="3px">Initial Velocity Given: $\;u_t(x,0)=\sin x$</font></center>'
-time_text = ax.text(-1.5, 1.3, '')
+# | fig-cap: '<center><font size="3px">Initial Velocity Given: $\;u_t(x,0)=e^{-x^2}$</font></center>'
+c = 1
+ax.axhline(np.sqrt(np.pi)/(2.0*c), color='gray', ls=':', lw=1)   # plateau height
+time_text = ax.text(-1.5, 1.0, '')
 line, = ax.plot([], [], lw=2)
 def init():
     time_text.set_text('t = 0.0')
     line.set_data([], [])
     return (line,)
 
-c = 1
 def animate(t):
     time_text.set_text(f't = {t:3.1f}')
-    x = np.linspace(-6.0*np.pi, 6.0*np.pi, 300)
-    u = 1.0/(2.0*c)*(np.cos(x -c*t) -np.cos(x +c*t))
+    x = np.linspace(-10, 10, 400)
+    u = np.sqrt(np.pi)/(4.0*c)*(erf(x +c*t) -erf(x -c*t))
     line.set_data(x, u)
     return (line,)
 
-tt = list(np.linspace(0, 2.0*np.pi/c, 100))
+tt = list(np.linspace(0, 8.0/c, 100))
 anim = animation.FuncAnimation(fig, animate, 
         init_func=init, frames=tt, interval=200, blit=True) 
 HTML('<center>' + anim.to_html5_video() + '</center>')
