@@ -1366,6 +1366,31 @@ Note that the integrand is made up of two terms:
 
 $$ G(x-\xi,t)=\frac{1}{2\sqrt{\alpha\pi t}}e^{-(x -\xi)^2/4\alpha t}, \;\;\lim_{t\to 0^+}G(x-\xi,t) = \underbrace{\delta(x-\xi)}_{\text{Dirac delta function}}$$
 
+$~$
+
+**NOTE** $\,$Inverse transform of $\,e^{-\alpha\omega^2 t}\,$ (Gaussian integral)
+
+* Let $\,b=\alpha t>0$. $\,$Since $\,e^{-b\omega^2}\,$ is even in $\,\omega$, $\,$the $\,\sin\omega x\,$ part vanishes and
+
+  $$ \mathcal{F}^{-1}\left[e^{-b\omega^2}\right]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-b\omega^2}e^{i\omega x}\,d\omega
+   =\sqrt{\frac{2}{\pi}}\;\underbrace{\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega}_{J(x)} $$
+
+* Differentiating with respect to $\,x\,$ and integrating by parts with $\,\omega e^{-b\omega^2}d\omega=d\left(-\frac{1}{2b}e^{-b\omega^2}\right)$,
+
+  $$ J'(x)=-\int_0^\infty \omega e^{-b\omega^2}\sin\omega x\,d\omega
+   =\underbrace{\left[\frac{e^{-b\omega^2}\sin\omega x}{2b}\right]_0^\infty}_{=0}-\frac{x}{2b}\,J(x) $$
+
+* With $\,\displaystyle J(0)=\int_0^\infty e^{-b\omega^2}d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}$, $\,$the solution of this first-order ODE is
+
+  $$ \color{blue}{J(x)=\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}\;e^{-x^2/4b}} $$
+
+  $$ \Rightarrow\;\; \mathcal{F}^{-1}\left[e^{-\alpha\omega^2 t}\right]=\frac{1}{\sqrt{2\alpha t}}\,e^{-x^2/4\alpha t},
+   \qquad G(x,t)=\frac{1}{\sqrt{2\pi}}\cdot\frac{1}{\sqrt{2\alpha t}}\,e^{-x^2/4\alpha t} $$
+
+  where the factor $\,1/\sqrt{2\pi}\,$ comes from the definition of the convolution
+
+$~$
+
 It can be shown that this impulse-response function $G(x-\xi,t)$ $\,$is the temperature response to an initial temperature impulse at $\,x=\xi$
 
 ![](figures/pde01_figure12.svg "impulse response G(x-\xi,t)"){width="75%" fig-align="center"}
@@ -1594,6 +1619,55 @@ example_plot6(A, alpha, t, x)
 
 $~$
 
+$~$
+
+**Evaluating the inverse sine transform directly**
+
+* Instead of using the tables, $\,$the inverse sine transform of $\,U(t)\,$ is
+
+  $$ u(x,t)=\int_0^\infty U(t)\sin\omega x\,d\omega
+   =\frac{2A}{\pi}\int_0^\infty \frac{\sin\omega x}{\omega}\left(1-e^{-\alpha\omega^2 t}\right)d\omega $$
+
+* The first term is the Dirichlet integral: $\,$for $\,x>0$,
+
+  $$ \int_0^\infty \frac{\sin\omega x}{\omega}\,d\omega=\frac{\pi}{2} $$
+
+* For the second term, $\,$let $\,\displaystyle I(x)=\int_0^\infty \frac{\sin\omega x}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega$. $\,$Differentiating with respect to $\,x\,$ gives the integral $\,J(x)\,$ in the NOTE in @sec-x1-13
+
+  $$ I'(x)=\int_0^\infty \cos\omega x\;e^{-\alpha\omega^2 t}\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{\alpha t}}\;e^{-x^2/4\alpha t} $$
+
+  and integrating back with $\,I(0)=0\,$ and $\,s=2\sqrt{\alpha t}\,\beta$,
+
+  $$ I(x)=\frac{1}{2}\sqrt{\frac{\pi}{\alpha t}}\int_0^x e^{-s^2/4\alpha t}\,ds=\frac{\pi}{2}\,\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right),
+   \quad \mathrm{erf}(\eta)=\frac{2}{\sqrt{\pi}}\int_0^\eta e^{-\beta^2}\,d\beta $$
+
+* Therefore,
+
+  $$ u(x,t)=\frac{2A}{\pi}\cdot\frac{\pi}{2}\left[1-\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right)\right]
+   =\color{blue}{A\,\mathrm{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)} $$
+
+$~$
+
+**Physical meaning and verification**
+
+* Let $\,v=u-A$. $\,$Then $\,v(0,t)=0\,$ and $\,v(x,0)=-A$. $\,$The Dirichlet boundary is equivalent to the odd extension, $\,$i.e., $\,$an infinite rod with $\,v(x,0)=-A\,\mathrm{sgn}(x)$, $\,$whose solution is
+
+  $$ v(x,t)=-A\,\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right)
+   \;\;\Rightarrow\;\; u=A\,\mathrm{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right) $$
+
+  Compare with the next example: $\,$Dirichlet boundary $\to$ odd extension, $\,$Neumann boundary $\to$ even extension
+
+* Limits: $\,t\to 0^+\,$ with $\,x>0\,$ gives $\,u\to 0$; $\,x=0\,$ gives $\,u=A$; $\,t\to\infty\,$ gives $\,u\to A$
+
+* Similarity variable: $\,u\,$ depends only on $\,\eta=x/(2\sqrt{\alpha t})$, $\,$so all curves in the figure collapse onto one curve when plotted against $\,\eta$. $\,$The penetration depth grows as $\,\delta\sim\sqrt{\alpha t}$
+
+* Heat flux at the boundary and heat absorbed:
+
+  $$ -u_x(0,t)=\frac{A}{\sqrt{\pi\alpha t}}, \qquad
+   \int_0^\infty u\,dx=\int_0^t \alpha\left(-u_x(0,\tau)\right)d\tau=2A\sqrt{\frac{\alpha t}{\pi}} $$
+
+$~$
+
 **Example** $\,$Solve by means of the cosine transform
 
 $$
@@ -1650,6 +1724,46 @@ def u_solution(alpha, t, x):
 
 example_plot6b(alpha, t, x, u_solution)      
 ```
+
+$~$
+
+**Evaluating the integral in closed form**
+
+* Using $\,\sin\omega\cos\omega x=\frac{1}{2}\left[\sin\omega(1+x)+\sin\omega(1-x)\right]$ $\,$and the result obtained in the previous example,
+
+  $$ \int_0^\infty \frac{\sin a\omega}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega=\frac{\pi}{2}\,\mathrm{erf}\left(\frac{a}{2\sqrt{\alpha t}}\right) $$
+
+  which holds for any real $\,a\,$ since both sides are odd in $\,a$
+
+* Therefore,
+
+  $$\begin{aligned}
+   u(x,t)&=\frac{2}{\pi}\int_0^\infty \frac{\sin\omega}{\omega}\,e^{-\alpha\omega^2 t}\cos\omega x\,d\omega \\[4pt]
+   &=\color{blue}{\frac{1}{2}\left[\mathrm{erf}\left(\frac{1+x}{2\sqrt{\alpha t}}\right)
+     +\mathrm{erf}\left(\frac{1-x}{2\sqrt{\alpha t}}\right)\right]}
+  \end{aligned}$$
+
+* Equivalently, $\,$with the Green's function $\,G\,$ of @sec-x1-13 and the even extension of the initial condition,
+
+  $$ u(x,t)=\int_{-1}^{1}G(x-\xi,t)\,d\xi=\frac{1}{2\sqrt{\alpha\pi t}}\int_{-1}^{1}e^{-(x-\xi)^2/4\alpha t}\,d\xi $$
+
+$~$
+
+**Physical meaning and verification**
+
+* The insulated boundary $\,u_x(0,t)=0\,$ is equivalent to the even extension of $\,H(1-x)$, $\,$i.e., $\,$heat conduction in an infinite rod with the initial rectangular pulse $\,u(x,0)=1\,$ for $\,|x|<1\,$ and $\,0\,$ for $\,|x|>1$
+
+* $t\to 0^+$: $\,$for $\,0\le x<1$, $\,u\to\frac{1}{2}(1+1)=1$; $\,$for $\,x>1$, $\,$the two erf terms cancel and $\,u\to 0$
+
+  At $\,x=1$, $\,u\to\frac{1}{2}$, $\,$the mean of the jump, $\,$as expected from the Fourier integral
+
+* $u_x(0,t)=0$: $\,u\,$ is even in $\,x$, $\,$so the boundary condition is satisfied automatically
+
+* $t\to\infty$: $\,$using $\,\mathrm{erf}(\eta)\approx 2\eta/\sqrt{\pi}\,$ for $\,x\ll\sqrt{\alpha t}$,
+
+  $$ u(x,t)\approx \frac{1}{\sqrt{\pi\alpha t}} \to 0 $$
+
+  while the total heat $\,\displaystyle\int_0^\infty u\,dx=1\,$ is conserved since no heat escapes through the insulated boundary
 
 $~$
 
@@ -1833,6 +1947,85 @@ x = np.linspace(0, 5, 300)
 example_plot7(t, x, u0, u_solution)    
 ```
 
+$~$
+
+**Evaluating the inverse Laplace transform directly**
+
+* Both terms in the bracket of $\,U(x,s)\,$ follow from one basic pair
+
+  $$ \mathcal{L}\left[\frac{1}{\sqrt{\pi t}}\,e^{-x^2/4t}\right]=\frac{e^{-x\sqrt{s}}}{\sqrt{s}} \qquad (\star) $$
+
+* Proof: $\,$with $\,t=u^2\,$ and $\,a=x/2$,
+
+  $$\begin{aligned}
+   \int_0^\infty \frac{e^{-x^2/4t}}{\sqrt{\pi t}}\,e^{-st}\,dt
+   &=\frac{2}{\sqrt{\pi}}\int_0^\infty e^{-su^2-a^2/u^2}\,du \\
+   &=\frac{2}{\sqrt{\pi}}\,e^{-2a\sqrt{s}}\underbrace{\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du}_{=\frac{1}{2}\sqrt{\pi/s}}
+  \end{aligned}$$
+
+  The last integral follows by adding the same integral with $\,u\to a/(\sqrt{s}\,u)\,$ and then setting $\,w=\sqrt{s}\,u-a/u$
+
+$~$
+
+**First term** $\,\displaystyle\mathcal{L}^{-1}\left[e^{-x\sqrt{s}}/s\right]$
+
+* Differentiating $\,(\star)\,$ with respect to $\,x$,
+
+  $$ \mathcal{L}\left[\frac{x}{2\sqrt{\pi}\,t^{3/2}}\,e^{-x^2/4t}\right]=e^{-x\sqrt{s}} $$
+
+* Dividing by $\,s\,$ means integrating from $\,0\,$ to $\,t$. $\,$With $\,\beta=x/(2\sqrt{\tau})$,
+
+  $$\begin{aligned}
+   \mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{s}\right]&=\int_0^t \frac{x}{2\sqrt{\pi}\,\tau^{3/2}}\,e^{-x^2/4\tau}\,d\tau \\
+   &=\frac{2}{\sqrt{\pi}}\int_{x/2\sqrt{t}}^\infty e^{-\beta^2}\,d\beta
+   =\color{blue}{\mathrm{erfc}\left(\frac{x}{2\sqrt{t}}\right)}
+  \end{aligned}$$
+
+  This is the solution of the sine-transform example in @sec-x1-14 with $\,A=1\,$ and $\,\alpha=1$: $\,$the same problem solved by two transforms
+
+$~$
+
+**Second term** $\,\displaystyle\mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}\right]$
+
+* Writing $\,\displaystyle\frac{1}{\sqrt{s}+1}=\int_0^\infty e^{-(\sqrt{s}+1)\xi}\,d\xi$,
+
+  $$ \frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}=\int_0^\infty e^{-\xi}\,\frac{e^{-(x+\xi)\sqrt{s}}}{\sqrt{s}}\,d\xi $$
+
+* Applying $\,(\star)\,$ with $\,x\to x+\xi$,
+
+  $$ f(t)=\frac{1}{\sqrt{\pi t}}\int_0^\infty e^{-\xi-(x+\xi)^2/4t}\,d\xi $$
+
+* Completing the square with $\,\eta=x+\xi$,
+
+  $$ -(\eta-x)-\frac{\eta^2}{4t}=x+t-\left(\frac{\eta}{2\sqrt{t}}+\sqrt{t}\right)^2 $$
+
+* Then $\,\beta=\eta/(2\sqrt{t})+\sqrt{t}\,$ and $\,d\eta=2\sqrt{t}\,d\beta\,$ give
+
+  $$ f(t)=e^{x+t}\,\frac{2}{\sqrt{\pi}}\int_{\sqrt{t}+x/2\sqrt{t}}^\infty e^{-\beta^2}\,d\beta
+   =\color{blue}{e^{x+t}\,\mathrm{erfc}\left(\sqrt{t}+\frac{x}{2\sqrt{t}}\right)} $$
+
+  The factor $\,e^{x+t}\,$ comes from completing the square
+
+$~$
+
+**Physical meaning and verification**
+
+* $u_x(0,t)=u(0,t)\,$ is Newton's law of cooling to the air at zero temperature. $\,$For $\,u_x(0,t)=h\,u(0,t)$,
+
+  $$ u=u_0-u_0\left[\mathrm{erfc}\left(\frac{x}{2\sqrt{t}}\right)-e^{hx+h^2t}\,\mathrm{erfc}\left(h\sqrt{t}+\frac{x}{2\sqrt{t}}\right)\right] $$
+
+* $h\to\infty$: $\,$the last term vanishes and $\,u\to u_0\,\mathrm{erf}\left(\frac{x}{2\sqrt{t}}\right)$, $\,$the fixed surface temperature $\,u(0,t)=0$
+
+* Limits: $\,t\to 0^+\,$ or $\,x\to\infty\,$ gives $\,u\to u_0$. $\,$The surface temperature
+
+  $$ u(0,t)=u_0\,e^{t}\,\mathrm{erfc}\left(\sqrt{t}\right)\approx\frac{u_0}{\sqrt{\pi t}} \;\;\text{for large } t $$
+
+  starts at $\,u_0\,$ and decreases slowly
+
+* Numerics: $\,$for large $\,t$, $\,e^{x+t}\,$ overflows. $\,$Use $\,\mathrm{erfcx}(z)=e^{z^2}\mathrm{erfc}(z)\,$ (`special.erfcx`)
+
+  $$ e^{x+t}\,\mathrm{erfc}\left(\sqrt{t}+\frac{x}{2\sqrt{t}}\right)=\mathrm{erfcx}\left(\sqrt{t}+\frac{x}{2\sqrt{t}}\right)e^{-x^2/4t} $$
+
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** Laplace transforms with `sympy`: @sec-sympy-Laplace-transform
 :::
@@ -1966,6 +2159,98 @@ x = np.linspace(0, 16, 400)
 
 example_plot8(D, V, t, x, u_solution)  
 ```
+
+$~$
+
+**Example** $\,$Solve
+
+$\,$
+$$\begin{aligned}
+    u_t & = Du_{xx} -Vu_x && -\infty < x < \infty,\; 0 < t < \infty\\
+    u(x,0) & = e^{-x^2}
+  \end{aligned}$$
+
+**Solution** $\,$STEP 1 $\,$Moving coordinate
+
+* With $\,\xi=x-Vt\,$ and $\,\tau=t$, $\,$the convection term disappears as before
+
+  $$\begin{aligned}
+    u_\tau &= D u_{\xi\xi}, \;\;\; -\infty<\xi<\infty \\
+    u(\xi,0) &= e^{-\xi^2}
+  \end{aligned}$$
+
+* Using $\,J(x)\,$ in the NOTE in @sec-x1-13 with $\,b=1$,
+
+  $$ \mathcal{F}\left[e^{-\xi^2}\right]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\xi^2}e^{-i\omega\xi}\,d\xi
+   =\sqrt{\frac{2}{\pi}}\,J(\omega)=\frac{1}{\sqrt{2}}\,e^{-\omega^2/4} $$
+
+$~$
+
+**STEP 2** $\,$Transformed problem and its inverse
+
+* The transformed problem $\,\dfrac{dU}{d\tau}=-D\omega^2 U,\;\; U(0)=\dfrac{1}{\sqrt{2}}e^{-\omega^2/4}\,$ gives
+
+  $$ U(\omega,\tau)=\frac{1}{\sqrt{2}}\,e^{-\left(\frac{1}{4}+D\tau\right)\omega^2} $$
+
+* From the NOTE, $\,\mathcal{F}^{-1}\left[e^{-b\omega^2}\right]=\dfrac{1}{\sqrt{2b}}\,e^{-\xi^2/4b}\,$ with $\,b=\frac{1}{4}+D\tau$,
+
+  $$ u(\xi,\tau)=\frac{1}{\sqrt{1+4D\tau}}\,e^{-\xi^2/(1+4D\tau)}
+   \;\;\Rightarrow\;\;
+   \color{blue}{u(x,t)=\frac{1}{\sqrt{1+4Dt}}\,\exp\left[-\frac{(x-Vt)^2}{1+4Dt}\right]} $$
+
+* Alternatively, $\,$by the convolution with $\,G\,$ of @sec-x1-13 $\,(b=4D\tau)$,
+
+  $$ u(\xi,\tau)=\frac{1}{\sqrt{\pi b}}\int_{-\infty}^\infty e^{-\omega^2}e^{-(\xi-\omega)^2/b}\,d\omega $$
+
+* Completing the square in $\,\omega$,
+
+  $$ \omega^2+\frac{(\xi-\omega)^2}{b}=\frac{1+b}{b}\left(\omega-\frac{\xi}{1+b}\right)^2+\frac{\xi^2}{1+b}
+   \;\;\Rightarrow\;\; u=\frac{1}{\sqrt{1+b}}\,e^{-\xi^2/(1+b)} $$
+
+  Gaussian $*$ Gaussian $=$ Gaussian
+
+```{python}
+#| label: fig-diffusion-convection-gaussian
+#| fig-cap: "Diffusion-convection of a Gaussian pulse on the infinite domain"
+#| fig-align: center
+
+def example_plot9(D, V, t, x):
+    plt.figure(figsize=(8, 6))
+    for tt in t:
+        u = np.exp(-(x -V*tt)**2 /(1.0 +4.0*D*tt)) /np.sqrt(1.0 +4.0*D*tt)
+        plt.plot(x, u, label=rf'$t={tt:3.1f}$')
+    plt.xlim(x[0], x[-1])
+    plt.ylim(0, 1.1)
+    plt.legend(loc='upper left', bbox_to_anchor=(1.0, 1.0))
+    plt.xlabel('$x$')
+    plt.ylabel('$u(x,t)$')
+    plt.title(rf'$D={D:4.1f},\;V={V:3.1f}$')
+    plt.show()
+
+D = 0.1
+V = 1.0
+
+t = [0.0, 2.0, 4.0, 6.0, 8.0]
+x = np.linspace(-3, 12, 400)
+
+example_plot9(D, V, t, x)
+```
+
+$~$
+
+**Physical meaning and verification**
+
+* The pulse is carried with speed $\,V\,$ (peak at $\,x=Vt$) and spreads by diffusion
+
+  $$ \text{peak height}=\frac{1}{\sqrt{1+4Dt}}, \qquad \text{variance}=\frac{1+4Dt}{2} $$
+
+  and the total mass $\,\displaystyle\int_{-\infty}^\infty u\,dx=\sqrt{\pi}\,$ is conserved
+
+* $e^{-x^2}\,$ is itself a heat kernel at $\,t_0=1/(4D)$: $\,e^{-x^2}=2\sqrt{\pi Dt_0}\;G(x,t_0)$. $\,$Hence
+
+  $$ u(x,t)=2\sqrt{\pi Dt_0}\;G\left(x-Vt,\;t+t_0\right) $$
+
+  i.e., $\,$the Gaussian behaves like a point source released at the earlier time $\,-t_0$
 
 $~$
 
