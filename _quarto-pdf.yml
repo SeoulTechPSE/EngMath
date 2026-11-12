@@ -48,6 +48,9 @@ format:
       text: |
         \directlua{luaotfload.add_fallback("unicodefallback", {"STIXTwoMath:mode=harf;"})}
         \setmonofont{DejaVu Sans Mono}[Scale=0.85, RawFeature={fallback=unicodefallback}]
+        % wrap long code lines instead of letting them run into the margin
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
         % room for two-digit section numbers (10.10) in the table of contents
         \RedeclareSectionCommand[tocnumwidth=2.8em]{section}
         % lab logo on the title page, between the title and the author

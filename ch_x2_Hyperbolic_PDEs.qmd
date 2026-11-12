@@ -1089,55 +1089,40 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
     $$\begin{aligned}
       \mathcal{F}(u)
-        &=\frac{1}{(2\pi)^{3/2}}\iiint_{-\infty}^\infty 
-          u(x,y,z,t) e^{-i(\omega_1 x+\omega_2 y+\omega_3 z)}\,dx\,dy\,dz 
-          =U(\omega_1,\omega_2,\omega_3,t)\\ 
-      \mathcal{F}(\psi)&=\frac{1}{(2\pi)^{3/2}}\iiint_{-\infty}^\infty 
-        \psi(x,y,z) e^{-i(\omega_1 x+\omega_2 y+\omega_3 z)}\,dx\,dy\,dz 
-        =\Psi(\omega_1,\omega_2,\omega_3)
+        &=\frac{1}{(2\pi)^{3/2}}\iiint_{-\infty}^\infty u(x,y,z,t)\, e^{-i(\omega_1 x+\omega_2 y+\omega_3 z)}\,dx\,dy\,dz \\
+        &=U(\omega_1,\omega_2,\omega_3,t)\\[4pt]
+      \mathcal{F}(\psi)
+        &=\frac{1}{(2\pi)^{3/2}}\iiint_{-\infty}^\infty \psi(x,y,z)\, e^{-i(\omega_1 x+\omega_2 y+\omega_3 z)}\,dx\,dy\,dz \\
+        &=\Psi(\omega_1,\omega_2,\omega_3)
     \end{aligned}$$
 
-  $$\scriptsize \begin{aligned}
-  &\Downarrow\;\; \mathcal{F}^{-1} \\ \\
-  u(x,y,z,t)= \frac{1}{(2\pi)^{3/2}} 
-    \lim_{L\to\infty} \underset{\omega_1^2 +\omega_2^2 +\omega_3^2 < L^2}{\iiint}
-    \Psi(\omega_1,\omega_2,\omega_3) &
-    \frac{\sin ct \sqrt{ \omega_1^2 +\omega_2^2 +\omega_3^2 }}{c\sqrt{\omega_1^2 
-    +\omega_2^2 +\omega_3^2 }} \,e^{i(\omega_1 x +\omega_2 y +\omega_3 z)}\,d\omega_1 \,d\omega_2 \,d\omega_3 \\ 
-  = \frac{1}{(2\pi)^{3/2}} 
-  \iiint_{-\infty}^\infty \psi(\xi,\eta,\zeta)\;
-    {\tiny \left[ \frac{1}{(2\pi)^{3/2}}  \lim_{L\to\infty} 
-      \underset{\omega_1^2 +\omega_2^2 +\omega_3^2 < L^2}{\iiint} \right. } &
-    {\tiny \left. e^{-i\left[\omega_1 (\xi-x) +\omega_2 (\eta-y) +\omega_3 (\zeta-z) \right]} \;
-    \frac{\sin ct \sqrt{ \omega_1^2 +\omega_2^2 +\omega_3^2 }}{c\sqrt{\omega_1^2 +\omega_2^2 +\omega_3^2 }}\,
-    \,d\omega_1 \,d\omega_2 \,d\omega_3 \,\right] } \,d\xi \,d\eta \,d\zeta 
+  $$\begin{aligned}
+  &\Downarrow\;\; \mathcal{F}^{-1}, \qquad \varrho=\sqrt{\omega_1^2 +\omega_2^2 +\omega_3^2} \\[4pt]
+  &u(x,y,z,t) \\
+  &= \frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \underset{\varrho < L}{\iiint}
+  \Psi(\omega_1,\omega_2,\omega_3)\,\frac{\sin ct\varrho}{c\varrho}\,
+  e^{i(\omega_1 x +\omega_2 y +\omega_3 z)}\,d\omega_1 \,d\omega_2 \,d\omega_3 \\[4pt]
+  &= \frac{1}{(2\pi)^{3/2}} \iiint_{-\infty}^\infty \psi(\xi,\eta,\zeta)\,
+  \Bigg[ \frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \underset{\varrho < L}{\iiint} \\
+  &\hspace{4em} e^{-i\left[\omega_1 (\xi-x) +\omega_2 (\eta-y) +\omega_3 (\zeta-z) \right]}\,
+  \frac{\sin ct\varrho}{c\varrho}\,d\omega_1 \,d\omega_2 \,d\omega_3 \Bigg]\,d\xi \,d\eta \,d\zeta
   \end{aligned}$$
 
   * We introduce spherical coordinates $(\varrho,\varphi,\vartheta)$ in the $(\omega_1,\omega_2,\omega_3)$ space with the north pole $\varphi=0$ in the direction of the vector $\left \langle \xi-x,\eta-y,\zeta-z \right \rangle$. $\,$Then the integral in $(\omega_1,\omega_2,\omega_3)$ becomes
 
-    $$\scriptsize\begin{aligned}
-      \frac{1}{(2\pi)^{3/2}}  \lim_{L\to\infty} 
-      \underset{\omega_1^2 +\omega_2^2 +\omega_3^2 < L^2}{\iiint} 
-      &e^{-i\left[\omega_1 (\xi-x) +\omega_2 (\eta-y) 
-      +\omega_3 (\zeta-z)\right]}\;
-      \frac{\sin ct \sqrt{ \omega_1^2 +\omega_2^2 +\omega_3^2 }}{c\sqrt{\omega_1^2 +\omega_2^2 +\omega_3^2 }}\,
-      \,d\omega_1 \,d\omega_2 \,d\omega_3 \\ 
-      &\;\;\Downarrow \; 
-        {\tiny r=|\mathbf{r}|=\sqrt{(\xi-x)^2 +(\eta -y)^2 +(\zeta -z)^2},\;\; 
-          \varrho =|\boldsymbol{\varrho}| 
-      = \sqrt{\omega_1^2 +\omega_2^2 +\omega_3^2} }\\ 
-        &=\frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} 
-        \int_0^L \int_0^{2\pi}  \int_0^\pi 
-      \;e^{-ir \varrho\cos \varphi} \;\frac{\sin ct \varrho}{c\varrho}\; 
+    $$\begin{aligned}
+    &\frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \underset{\varrho < L}{\iiint}
+      e^{-i\left[\omega_1 (\xi-x) +\omega_2 (\eta-y) +\omega_3 (\zeta-z)\right]}\,
+      \frac{\sin ct \varrho}{c\varrho}\,d\omega_1 \,d\omega_2 \,d\omega_3 \\
+    &\;\;\Downarrow \;\; r=|\mathbf{r}|=\sqrt{(\xi-x)^2 +(\eta -y)^2 +(\zeta -z)^2}, \\
+    &\phantom{\;\;\Downarrow \;\;} \varrho=|\boldsymbol{\varrho}| =\sqrt{\omega_1^2 +\omega_2^2 +\omega_3^2} \\
+    &=\frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \int_0^L \int_0^{2\pi} \int_0^\pi
+      e^{-ir \varrho\cos \varphi}\,\frac{\sin ct \varrho}{c\varrho}\,
       \varrho^2 \sin\varphi \,d\varphi\,d\vartheta\,d\varrho \\
-        &\;\;\Downarrow 
-        \; {\tiny \alpha=\cos\varphi, \;d\alpha=-\sin\varphi d\varphi } \\ 
-        &=\frac{1}{(2\pi)^{3/2}} 
-        \lim_{L\to\infty} \frac{2\pi}{c} \int_0^L \; \varrho \sin ct\varrho 
-      \underbrace{\left[ \frac{e^{-ir\varrho \alpha}}{-ir\varrho} 
-        \right]_{-1}^1 }_{\frac{2}{r\varrho}\sin r\varrho} \,d\varrho \\ 
-        &=\frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \frac{4\pi}{cr} \int_0^L  
-        \;\sin ct \varrho \cdot \sin r\varrho \,d\varrho
+    &\;\;\Downarrow \;\; \alpha=\cos\varphi, \;\; d\alpha=-\sin\varphi\, d\varphi \\
+    &=\frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \frac{2\pi}{c} \int_0^L \varrho \sin ct\varrho
+      \underbrace{\left[ \frac{e^{-ir\varrho \alpha}}{-ir\varrho} \right]_{-1}^1 }_{\frac{2}{r\varrho}\sin r\varrho} \,d\varrho \\
+    &=\frac{1}{(2\pi)^{3/2}} \lim_{L\to\infty} \frac{4\pi}{cr} \int_0^L \sin ct \varrho \cdot \sin r\varrho \,d\varrho
     \end{aligned}$$
 
   * To treat the integration with respect to $\xi$, $\,\eta$, and $\,\zeta$, $~$we introduce spherical coordinates $(r,\phi,\theta)$ in the $(\xi,\eta,\zeta)$ space with their origin at $(x,y,z)$, $\,$so that
@@ -1150,20 +1135,18 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
     Then the solution becomes
 
-    $$\scriptsize\begin{aligned}
-    {\normalsize\color{red}{u(x,y,z,t)}}
-    &= {\tiny \frac{4\pi}{(2\pi)^3 c} \lim_{L\to \infty} \int_0^\infty \int_0^{2\pi} \int_0^\pi  
-      \;\psi(x +r\sin\phi\cos\theta,y +r\sin\phi\sin\theta, z+r\cos\phi)\; \frac{1}{r}\;\left[ \int_0^L  
-      \sin ct \varrho \sin r\varrho\, d\varrho \right] r^2\sin\phi \, d\phi \, d\theta \,dr }\\
-      &= {\tiny \frac{1}{2\pi^2 c} \lim_{L\to \infty} \int_0^L \sin ct\varrho \left[\int_0^\infty \sin r\varrho 
-      \underbrace{\left( \int_0^{2\pi} \int_0^\pi  \psi(x +r\sin\phi\cos\theta,y +r\sin\phi\sin\theta, z+r\cos\phi) 
-      \,r\,\sin\phi \,d\phi\,d\theta  \right) }_{g(r)} dr \right] d\varrho } \\ 
-      &= {\tiny \frac{1}{2\pi^2 c} \frac{\pi}{2} \int_0^\infty \sin ct \varrho \;\underbrace{\left[\frac{2}{\pi} \int_0^\infty 
-      \sin r\varrho \,g(r)\,dr \right]}_{G(\varrho)} d\varrho  
-      = \frac{1}{4\pi c} \underbrace{\int_0^\infty \sin ct \varrho \;G(\varrho)\,d\varrho}_{g(ct)} } \\ 
-      &= {\tiny \frac{t}{4\pi (ct)^2} \int_0^{2\pi}\int_0^\pi  \psi(x +ct\sin\phi\cos\theta,y +ct\sin\phi\sin\theta, z+ct\cos\phi) 
-      \,(ct)^2\sin\phi \,d\phi \,d\theta  }
-      = {\normalsize\color{red}{t\bar{\psi}}}
+    $$\begin{aligned}
+    &\text{with}\;\; \psi_S(r,\phi,\theta)=\psi(x +r\sin\phi\cos\theta,\; y +r\sin\phi\sin\theta,\; z+r\cos\phi) \\[6pt]
+    &\color{red}{u(x,y,z,t)} \\
+    &= \frac{4\pi}{(2\pi)^3 c} \lim_{L\to \infty} \int_0^\infty \int_0^{2\pi} \int_0^\pi \psi_S(r,\phi,\theta)\, \frac{1}{r} \\
+     &\hspace{6em} \times\left[ \int_0^L \sin ct \varrho \sin r\varrho\, d\varrho \right] r^2\sin\phi \, d\phi \, d\theta \,dr \\
+     &= \frac{1}{2\pi^2 c} \lim_{L\to \infty} \int_0^L \sin ct\varrho \left[\int_0^\infty \sin r\varrho\,
+        \underbrace{\left( \int_0^{2\pi} \int_0^\pi \psi_S\, r\sin\phi \,d\phi\,d\theta \right)}_{g(r)} dr \right] d\varrho \\
+     &= \frac{1}{2\pi^2 c}\cdot\frac{\pi}{2} \int_0^\infty \sin ct \varrho\,
+        \underbrace{\left[\frac{2}{\pi} \int_0^\infty \sin r\varrho \,g(r)\,dr \right]}_{G(\varrho)} d\varrho \\
+     &= \frac{1}{4\pi c} \underbrace{\int_0^\infty \sin ct \varrho \,G(\varrho)\,d\varrho}_{g(ct)} \\
+     &= \frac{t}{4\pi (ct)^2} \int_0^{2\pi}\int_0^\pi \psi_S(ct,\phi,\theta)\,(ct)^2\sin\phi \,d\phi \,d\theta
+      = \color{red}{t\bar{\psi}}
     \end{aligned}$$
 
     <font color="blue"> where $\bar{\psi}$ is the average of the initial disturbance $\psi$ over the surface of the sphere of radius $\,ct\,$ centered at $(x,y,z)$</font>
@@ -1182,7 +1165,10 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
     This is easy: $\,$A famous theorem developed by *Stokes* says all we have to do to solve this problem is to change the ICs to $\,v=0$, $\,v_t=\phi$, $\,$and then differentiate this solution with respect to time. $\,$Indeed, $\,$if $\,v\,$ solves the wave equation with $\,v=0,\ v_t=\phi\,$ at $\,t=0$, $\,$then $\,u=v_t\,$ also solves the wave equation and
 
-    $$ u(x,y,z,0)=v_t(x,y,z,0)=\phi, \qquad u_t(x,y,z,0)=v_{tt}(x,y,z,0)=c^2\nabla^2 v(x,y,z,0)=0 $$
+    $$\begin{aligned}
+    u(x,y,z,0)&=v_t(x,y,z,0)=\phi, \\
+    u_t(x,y,z,0)&=v_{tt}(x,y,z,0)=c^2\nabla^2 v(x,y,z,0)=0
+    \end{aligned}$$
 
   * In other words, $\,$we solve
 
@@ -1266,13 +1252,15 @@ $~$
 
   * This technique is called the method of descent. $\,$Carrying out the computations, $\,$we get
 
-    $$\scriptstyle\begin{aligned}
-    \bar{\psi}(x,y,t) &= \frac{1}{4\pi (ct)^2} \color{red}{\int_0^{2\pi}  \int_{0}^\pi} 
-      \psi(x +ct\sin\phi\cos\theta,y+ct\sin\phi\sin\theta)\, \color{red}{(ct)^2 \sin\phi \, d\phi \, d\theta} \;\;\leftarrow \text{spherical surface}\\
-    &\Downarrow \;\; {\tiny r = ct \,\sin \phi, \; \,dr =ct \, \cos\phi \,d\phi\;\;\rightarrow\;\; \int_0^{\pi} ct \sin\phi\,d\phi = 2\int_0^{ct}\frac{r}{\sqrt{(ct)^2 -r^2}} dr } \\
-    &= \frac{1}{2\pi ct} \, \color{red}{\int_0^{2\pi} \int_0^{ct}} \psi(x +r\cos\theta, y+r\sin\theta)\,\frac{1}{\sqrt{(ct)^2 -r^2}}\,\color{red}{r\,dr\,d\theta} \;\;\leftarrow \text{circle interior}\\
-    \bar{\phi}(x,y,t) &= \frac{1}{2\pi ct} \, \color{red}{\int_0^{2\pi} \int_0^{ct}} 
-    \phi(x +r\cos\theta, y+r\sin\theta)\,\frac{1}{\sqrt{(ct)^2 -r^2}}\,\color{red}{r\,dr\,d\theta}
+    $$\begin{aligned}
+    &\bar{\psi}(x,y,t) \;\;\text{(average over the spherical surface)} \\
+    &= \frac{1}{4\pi (ct)^2} \color{red}{\int_0^{2\pi} \int_{0}^\pi}
+      \psi(x +ct\sin\phi\cos\theta,\,y+ct\sin\phi\sin\theta)\, \color{red}{(ct)^2 \sin\phi \, d\phi \, d\theta} \\
+    &\Downarrow \;\; r = ct \,\sin \phi, \;\; dr =ct \, \cos\phi \,d\phi \;\;\rightarrow\;\; \int_0^{\pi} ct \sin\phi\,d\phi = 2\int_0^{ct}\frac{r}{\sqrt{(ct)^2 -r^2}}\, dr \\
+    &= \frac{1}{2\pi ct} \, \color{red}{\int_0^{2\pi} \int_0^{ct}} \psi(x +r\cos\theta,\, y+r\sin\theta)\,\frac{1}{\sqrt{(ct)^2 -r^2}}\,\color{red}{r\,dr\,d\theta} \\
+    &\phantom{=}\;\;\text{(an integral over the interior of the circle of radius } ct) \\[6pt]
+    &\bar{\phi}(x,y,t) = \frac{1}{2\pi ct} \, \color{red}{\int_0^{2\pi} \int_0^{ct}}
+      \phi(x +r\cos\theta,\, y+r\sin\theta)\,\frac{1}{\sqrt{(ct)^2 -r^2}}\,\color{red}{r\,dr\,d\theta}
     \end{aligned}$$
 
     Note that in this solution, $\,$the two integrals of the initial conditions $\,\phi\,$ and $\,\psi\,$ are integrated over the interior of a circle with center $\,(x,y)\,$ and radius $\,ct$. $\,$We see that initial disturbances give rise to sharp leading waves, $\,$but not to sharp trailing waves. $\,$Thus, Huygens' principle doesn't hold in two dimensions
@@ -1550,12 +1538,14 @@ $~$
 
 **NOTE**
 
-$$\scriptsize\begin{aligned}
-\normalsize u(x,t) \;&\normalsize= \sum_{n=1}^\infty \left[ a_n \cos\frac{n\pi c t}{L} +b_n \sin \frac{n\pi c t}{L} \right]\,\sin \frac{n\pi x}{L}\\[5pt]
- &= \frac{1}{2} \sum_{n=1}^\infty a_n\left[\sin \frac{n\pi}{L} (x+ct) +\sin \frac{n\pi}{L} (x-ct)\right ] 
-\\&\quad-\frac{1}{2} \sum_{n=1}^\infty b_n\left[\cos \frac{n\pi}{L} (x+ct) -\cos \frac{n\pi}{L} (x-ct)\right ]\\[5pt] 
- &\;\;\Big\Downarrow \;\; {\tiny f,\,g \text{ extended as odd } 2L\text{-periodic functions}, \;\; \sum_{n=1}^\infty a_n \sin \frac{n\pi x}{L}=f(x), \;\;\sum_{n=1}^\infty b_n \frac{n\pi c}{L}\sin\frac{n\pi x}{L}=g(x) \;\rightarrow\, -\sum_{n=1}^\infty b_n\, c\cos \frac{n\pi x}{L} +\sum_{n=1}^\infty b_n c=\int^x_0 g(\alpha) d\alpha} \\[5pt]
- &\normalsize= \frac{1}{2}\left[ f(x+ct) +f(x-ct)\right] +\frac{1}{2c} \int_{x-ct}^{x+ct} g(\alpha)\,d\alpha 
+$$\begin{aligned}
+u(x,t) &= \sum_{n=1}^\infty \left[ a_n \cos\frac{n\pi c t}{L} +b_n \sin \frac{n\pi c t}{L} \right]\sin \frac{n\pi x}{L}\\[5pt]
+ &= \frac{1}{2} \sum_{n=1}^\infty a_n\left[\sin \frac{n\pi}{L} (x+ct) +\sin \frac{n\pi}{L} (x-ct)\right] \\
+ &\quad-\frac{1}{2} \sum_{n=1}^\infty b_n\left[\cos \frac{n\pi}{L} (x+ct) -\cos \frac{n\pi}{L} (x-ct)\right]\\[5pt]
+ &\;\;\Big\Downarrow \;\; f,\,g \text{ extended as odd } 2L\text{-periodic functions:} \\
+ &\qquad \textstyle\sum_{n} a_n \sin \frac{n\pi x}{L}=f(x), \quad \sum_{n} b_n \frac{n\pi c}{L}\sin\frac{n\pi x}{L}=g(x) \\
+ &\qquad \textstyle\Rightarrow\; -\sum_{n} b_n\, c\cos \frac{n\pi x}{L} +\sum_{n} b_n c=\int^x_0 g(\alpha)\, d\alpha \\[5pt]
+ &= \frac{1}{2}\left[ f(x+ct) +f(x-ct)\right] +\frac{1}{2c} \int_{x-ct}^{x+ct} g(\alpha)\,d\alpha
 \end{aligned}$$
 
 $~$
@@ -1769,21 +1759,24 @@ $~$
 
   * It's obvious that <font color="red">the drumhead is periodic with period $\,2\pi\,$ in $\,\theta.$</font> $\,$Thus
 
-    $$\scriptsize\begin{aligned}
+    $$\begin{aligned}
     \Theta'' &+\mu\Theta = 0 \\
     &\Downarrow \\
-    \Theta(\theta) &= a \cos\sqrt{\mu}\theta +b\sin\sqrt{\mu}\theta \\ 
-    &\Downarrow \;{\scriptstyle \Theta(0)=\Theta(2\pi),\;\;\Theta'(0)=\Theta'(2\pi)} \\ 
-    \begin{bmatrix}
-      1 -\cos 2\pi\sqrt{\mu} & -\sin 2\pi\sqrt{\mu} \\ 
-      \sqrt{\mu} \sin 2\pi\sqrt{\mu} & \sqrt{\mu}\left(1 -\cos 2\pi\sqrt{\mu}\right)
-    \end{bmatrix} &\begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ \;\;&\overset{\text{non-trivial solution}}{\longrightarrow} \;\; 
-      {\tiny \sqrt{\mu}(1 -\cos 2\pi\sqrt{\mu})^2 +\sqrt{\mu} \sin^2 2\pi\sqrt{\mu}=0 \;\rightarrow\;1=\cos 2\pi\sqrt{\mu} } \\
+    \Theta(\theta) &= a \cos\sqrt{\mu}\theta +b\sin\sqrt{\mu}\theta \\
+    &\Downarrow \;\; \Theta(0)=\Theta(2\pi),\;\;\Theta'(0)=\Theta'(2\pi) \\
+    &\begin{bmatrix}
+    1 -\cos 2\pi\sqrt{\mu} & -\sin 2\pi\sqrt{\mu} \\
+    \sqrt{\mu} \sin 2\pi\sqrt{\mu} & \sqrt{\mu}\left(1 -\cos 2\pi\sqrt{\mu}\right)
+    \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\
+    &\Downarrow \;\; \det = 0 \;\text{ (non-trivial solution)} \\
+    &\sqrt{\mu}(1 -\cos 2\pi\sqrt{\mu})^2 +\sqrt{\mu} \sin^2 2\pi\sqrt{\mu} =0 \\
+    &\Downarrow \\
+    &\cos 2\pi\sqrt{\mu} = 1 \\
     &\Downarrow \\
     \color{red}{\mu}\, &\color{red}{= n^2, \;\;n=0,1,2,\cdots} \\
-    &\Downarrow \\ 
+    &\Downarrow \\
     \color{red}{\Theta_n(\theta)}\, &\color{red}{= a_n \cos n\theta +b_n\sin n\theta} \\
-    &=\sqrt{a_n^2 +b_n^2} \left(\cos n\theta \cos \phi +\sin n\theta \sin \phi \right),\;\;\tan \phi=\frac{b_n}{a_n} \\
+    &=\sqrt{a_n^2 +b_n^2} \left(\cos n\theta \cos \phi +\sin n\theta \sin \phi \right), \quad \tan \phi=b_n/a_n \\
     &\color{red}{=c_n \cos (n\theta -\phi)}
     \end{aligned}$$
 
@@ -1889,7 +1882,10 @@ $~$
 
   and add the products in such a way that the initial conditions are satisfied. $\,$That is, $\,$the solution to our problem will be
 
-  $$ \color{red}{u(r,\theta,t) = \sum_{n=0}^\infty \sum_{m=1}^\infty J_n(\alpha_{nm}r) \cos (n\theta -\phi_{nm}) \left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]}$$
+  $$ \color{red}{\begin{aligned}
+  u(r,\theta,t) = \sum_{n=0}^\infty \sum_{m=1}^\infty &J_n(\alpha_{nm}r) \cos (n\theta -\phi_{nm}) \\
+   &\times\left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]
+  \end{aligned}}$$
 
   Rather than going through the complicated process of finding $\,A_{nm}\,$ and $\,B_{nm}\,$ for the general case, $\,$<font color="blue">we will find the solution for the situation where $\,u\,$ is independent of $\,\theta$ (very common, $\,n=0$). $\,$In other words, $\,$we will assume that the initial position of the drumhead depends only on $\,r$</font>
 
@@ -2632,8 +2628,8 @@ $~$
 
 $$
 \begin{aligned}
-   a u_x +b u_y +c u_t +du &=0 && \scriptsize -\infty < x < \infty, \;-\infty < y < \infty, \; 0< t < \infty \\
-   u(x,y,0) &=e^{-(x^2 +y^2)} && \scriptsize -\infty < x < \infty, \;-\infty < y < \infty
+   a u_x +b u_y +c u_t +du &=0 && (x,y)\in\mathbb{R}^2, \; 0< t < \infty \\
+   u(x,y,0) &=e^{-(x^2 +y^2)} && (x,y)\in\mathbb{R}^2
 \end{aligned}$$
 
 ::: {.callout-note collapse="true" title="Answer" appearance="simple"}
@@ -2667,13 +2663,9 @@ $~$
 
   Then, $\,$it is fairly obvious that for a road segment $\,[a,b]$, $\,$the change in the number of cars (with respect to time) is given by both of the following expressions:
 
-  $$\begin{aligned}
-    \text{change in the number of cars in } [a,b] 
-      &= \frac{d}{dt} \int_a^b u(x,t)\,dx \\
-    \text{change in the number of cars in } [a,b] 
-      &= f(a,t) -f(b,t) 
-      = -\int_a^b \frac{\partial f}{\partial x}(x,t)\,dx
-    \end{aligned}$$
+  $$ \frac{d}{dt} \int_a^b u(x,t)\,dx
+     \qquad\text{and}\qquad
+     f(a,t) -f(b,t) = -\int_a^b \frac{\partial f}{\partial x}(x,t)\,dx $$
 
   Setting these two integrals equal to each other, $\,$we have
 
@@ -2793,16 +2785,15 @@ that some characteristic lines will intersect each other. $\,$In other words, $\
 
   Let the solution exhibit a jump (or shock) at $\,x=x_s(t)\,$ and integrate over the partial domain, $\,x \in (x_1, x_2)$, $\,$where $\,x_1 < x_s(t) < x_2$,
 
-  $$\scriptsize \begin{aligned}
-  \frac{d}{dt} \left( \int_{x_1}^{x_s(t)}u\,dx +\int_{x_s(t)}^{x_2}u \,dx\right)&= -\int_{x_1}^{x_2} 
-    \frac{\partial } {\partial x} f(u)\,dx\\
+  $$\begin{aligned}
+  \frac{d}{dt} \left( \int_{x_1}^{x_s(t)}u\,dx +\int_{x_s(t)}^{x_2}u \,dx\right)&= -\int_{x_1}^{x_2} \frac{\partial}{\partial x} f(u)\,dx\\
+  &\Downarrow \;\; u^\mp=u\left(x_s(t)^\mp,t\right) \\
+  \int_{x_1}^{x_s(t)} u_t \,dx +\int_{x_s(t)}^{x_2} u_t \,dx +\left(u^- -u^+\right)\frac{dx_s}{dt}
+    &= f\big(u(x_1,t)\big) -f\big(u(x_2,t)\big)\\
+  &\Downarrow \;\; x_1 \to x_s(t)^-,\;\; x_2 \to x_s(t)^+ \\
+  \left( u^- -u^+ \right) \frac{d x_s}{dt} &= f(u^-) -f(u^+) \\
   &\Downarrow \\
-    \int_{x_1}^{x_s(t)} u_t \,dx +u^-(x_s(t),t)\frac{dx_s}{dt} +\int_{x_s(t)}^{x_2} u_t \,dx 
-    &-u^+(x_s(t),t)\frac{dx_s}{dt}= -\left. \underset{}{f(u)}\, \right|_{x_1}^{x_2}\\ 
-  x_1 \to x_s(t),\;x_2 \to x_s(t) \;\; &\Downarrow \\ 
-  \left[ u^-(x_s(t),t) -u^+(x_s(t),t) \right] \frac{d x_s}{dt} &= f(u^-(x_s(t),t)) -f(u^+(x_s(t),t)) \\
-  &\Downarrow \\
-  s=\frac{d x_s}{dt} &=\frac{f(u^-(x_s(t),t)) -f(u^+(x_s(t),t))}{ u^-(x_s(t),t) -u^+(x_s(t),t)}
+  s=\frac{d x_s}{dt} &=\frac{f(u^-) -f(u^+)}{u^- -u^+}
   \end{aligned}$$
 
   in which $\,s\,$ is the speed of the discontinuity and represents the jump condition for the conservation equation 
@@ -3065,7 +3056,10 @@ On the sphere $|\xi| = t$, we have $|\xi|^2 = t^2$ constant
 
 Then:
 
-$$u(0,0,0,t) = \frac{1}{4\pi t} \int_{|\xi| = t} t^2 \, dS(\xi) = \frac{t^2}{4\pi t} \cdot \text{Surface area of sphere of radius } t$$
+$$\begin{aligned}
+u(0,0,0,t) &= \frac{1}{4\pi t} \int_{|\xi| = t} t^2 \, dS(\xi) \\
+ &= \frac{t^2}{4\pi t} \cdot \left(\text{surface area of the sphere of radius } t\right)
+\end{aligned}$$
 
 The surface area of a sphere of radius $t$ is $4\pi t^2$, so:
 
