@@ -1313,10 +1313,12 @@ This, $\,$then, $\,$is the Green's function for $\,r > \rho$. $\,$It is already 
 
 <font color="blue">**Green Function in 2D and 3D - Summary Table**</font>
 
-| Dimension - Domain | Object | Formula | Purpose |
-|-------------------|---------|----------|----------|
-| **2D** - Unit disk $\scriptsize D=\{\mathbf{x}\in\mathbb{R}^2:|\mathbf{x}|<1\}$ | **Green Function** | $\scriptsize\displaystyle G(\mathbf{x},\mathbf{y})=\frac{1}{2\pi}\left(\ln \frac{1}{|\mathbf{x}-\mathbf{y}|} -\ln\frac{1}{|\mathbf{y}|\,|\mathbf{x} -\mathbf{y}^*|} \right),\quad \mathbf{y}^*=\frac{\mathbf{y}}{|\mathbf{y}|^2}$ | Solve **Poisson equation** $\scriptsize\Delta u = -f$: $\scriptsize\displaystyle u(\mathbf{x})=\int_{D} G(\mathbf{x},\mathbf{y})f(\mathbf{y})d\mathbf{y}$ |
-| **3D** - Unit ball $\scriptsize B=\{\mathbf{x}\in\mathbb{R}^3:|\mathbf{x}|<1\}$ | **Green Function** | $\scriptsize \displaystyle G(\mathbf{x},\mathbf{y})=\frac{1}{4\pi}\left( \frac{1}{|\mathbf{x}-\mathbf{y}|}-\frac{1}{|\mathbf{y}|\,|\mathbf{x}-\mathbf{y}^*|} \right),\quad \mathbf{y}^*=\frac{\mathbf{y}}{|\mathbf{y}|^2}$ | Solve **Poisson equation** $\scriptsize\Delta u=-f$: $\scriptsize\displaystyle u(\mathbf{x})=\int_{B} G(\mathbf{x},\mathbf{y})f(\mathbf{y})d\mathbf{y}$|
+| Domain | Green function $\,G(\mathbf{x},\mathbf{y})$ | Solution of $\,\Delta u=-f$ |
+|----------------------------|----------------------------------------|--------------------------------|
+| **2D** - Unit disk $\scriptsize D=\{\mathbf{x}\in\mathbb{R}^2:|\mathbf{x}|<1\}$ | $\scriptsize\displaystyle \frac{1}{2\pi}\left(\ln \frac{1}{|\mathbf{x}-\mathbf{y}|} -\ln\frac{1}{|\mathbf{y}|\,|\mathbf{x} -\mathbf{y}^*|} \right)$ | $\scriptsize\displaystyle u(\mathbf{x})=\int_{D} G(\mathbf{x},\mathbf{y})f(\mathbf{y})\,d\mathbf{y}$ |
+| **3D** - Unit ball $\scriptsize B=\{\mathbf{x}\in\mathbb{R}^3:|\mathbf{x}|<1\}$ | $\scriptsize\displaystyle \frac{1}{4\pi}\left( \frac{1}{|\mathbf{x}-\mathbf{y}|}-\frac{1}{|\mathbf{y}|\,|\mathbf{x}-\mathbf{y}^*|} \right)$ | $\scriptsize\displaystyle u(\mathbf{x})=\int_{B} G(\mathbf{x},\mathbf{y})f(\mathbf{y})\,d\mathbf{y}$ |
+
+In both cases $\,\mathbf{y}^*=\mathbf{y}/|\mathbf{y}|^2\,$ is the image of $\,\mathbf{y}\,$ in the unit circle (sphere)
 
 $~$
 
