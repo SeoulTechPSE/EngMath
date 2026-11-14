@@ -1,4 +1,5 @@
 ---
+# Build: see derivations/README.md (render here, then copy the PDF to files/derivations/)
 title: "Parabolic PDEs: Evaluating the Inverse Transforms"
 subtitle: "Supplement to the chapter *Parabolic Partial Differential Equations*"
 author: "Kee-Youn Yoo"
