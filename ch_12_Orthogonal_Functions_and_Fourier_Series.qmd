@@ -73,15 +73,13 @@ $~$
   
   $$
   \begin{aligned}
-     \color{blue}{f(x)}
-       &\; \color{blue}{= c_0\phi_0(x) +c_1\phi_1(x) +\cdots +c_n\phi_n(x)+\cdots}\\
-       &\; {\scriptsize\Downarrow}\\ 
-      {\scriptsize \int_a^b f(x) \phi_n(x)\,dx} 
-       &\; {\scriptsize =c_0\int_a^b \phi_0(x) \phi_n(x)\,dx 
-        +c_1\int_a^b \phi_1(x)\phi_n(x)\,dx +\cdots +c_n\int_a^b \phi_n^2(x)\,dx+\cdots}\\ 
-       &\; {\scriptsize = c_n\int_a^b \phi_n^2(x)\,dx} \\
-       &\; {\scriptsize\Downarrow} \\ 
-    {\color{red}{c_n}} & {\color{red}{= \frac{\displaystyle \int_a^b f(x)\,\phi_n(x)\,dx}{\displaystyle \int_a^b \phi_n^2(x)\,dx},\;\;n=0,1,2,\cdots}} 
+  \color{blue}{f(x)} &\color{blue}{= c_0\phi_0(x) +c_1\phi_1(x) +\cdots +c_n\phi_n(x)+\cdots}\\
+  &\Downarrow\\
+  \int_a^b f(x) \phi_n(x)\,dx &=c_0\int_a^b \phi_0(x) \phi_n(x)\,dx +c_1\int_a^b \phi_1(x)\phi_n(x)\,dx \\
+  &\quad +\cdots +c_n\int_a^b \phi_n^2(x)\,dx+\cdots\\
+  &= c_n\int_a^b \phi_n^2(x)\,dx \\
+  &\Downarrow \\
+  \color{red}{c_n} &\color{red}{= \frac{\displaystyle \int_a^b f(x)\,\phi_n(x)\,dx}{\displaystyle \int_a^b \phi_n^2(x)\,dx},\;\;n=0,1,2,\cdots}
   \end{aligned}$$
 
 * Orthogonal Set/Weight Function
@@ -375,16 +373,11 @@ $~$
 * Self-Adjoint Form
 
   $$\begin{aligned}
-    a(x) \frac{d^2 y}{dx^2} 
-     +b(x) \frac{dy}{dx} 
-    &+\left[ \lambda c(x) +d(x) \right] y 
-     = 0,\;\;a(x)\neq 0 \\
-    &\Downarrow \\
-    {\scriptsize \frac{d}{dx}\left[ \exp\left(\int\frac{b(x)}{a(x)}dx\right)\frac{dy}{dx} \right ]} 
-    &{\scriptsize +\left\{ \lambda \frac{c(x)}{a(x)}\exp\left(\int\frac{b(x)}{a(x)}dx\right) 
-     +\frac{d(x)}{a(x)}\exp\left(\int\frac{b(x)}{a(x)}dx\right)\right \} y = 0} \\
-    &\Downarrow \\     
-     \color{red}{\frac{d}{dx}\left[r(x)\frac{dy}{dx}\right]}&\color{red}{+\left[\lambda p(x) +q(x)\right]y=0}
+  a(x) \frac{d^2 y}{dx^2} +b(x) \frac{dy}{dx} &+\left[ \lambda c(x) +d(x) \right] y = 0,\;\;a(x)\neq 0 \\
+  &\Downarrow \;\; \text{multiply by } \frac{1}{a(x)}\, e^{\int (b/a)\,dx} \\
+  \frac{d}{dx}\left[ e^{\int (b/a)\,dx}\,\frac{dy}{dx} \right] &+\left\{ \lambda \frac{c(x)}{a(x)} +\frac{d(x)}{a(x)}\right\} e^{\int (b/a)\,dx}\; y = 0 \\
+  &\Downarrow \\
+  \color{red}{\frac{d}{dx}\left[r(x)\frac{dy}{dx}\right]}&\color{red}{+\left[\lambda p(x) +q(x)\right]y=0}
   \end{aligned}$$
 
 * Eigenvalues and Eigenfunctions
@@ -432,25 +425,20 @@ $~$
 
 * **Proof of 4**
 
-  $$\scriptstyle   
-    \begin{aligned}
-     \frac{d}{dx}\left[r(x)\frac{dy_m}{dx}\right] 
-     &+\left(\lambda_m p(x) +q(x)\right) y_m \;=\; 0 \\ 
-     \frac{d}{dx}\left[r(x)\frac{dy_n}{dx}\right] 
-     &+\left(\lambda_n p(x) +q(x)\right) y_n \;=\; 0 \\ 
-     &\Downarrow \\ 
-     \left( \lambda_m -\lambda_n \right ) p(x) y_m y_n \;
-     &=\; y_m \frac{d}{dx}\left[r(x)\frac{dy_n}{dx}\right] -y_n \frac{d}{dx}\left[r(x)\frac{dy_m}{dx}\right] \\
-     &\Downarrow \\
-     \left( \lambda_m -\lambda_n \right) \int_a^b p(x) y_m y_n \,dx \;
-     & =\; \left.y_m r(x) \frac{d y_n}{dx} \right|_a^b
-      \;-\;\int_a^b \frac{d y_m}{dx} r(x) \frac{d y_n}{dx} \,dx \;-\;\left.y_n r(x) \frac{d y_m}{dx} \right|_a^b
-      \;+\;\int_a^b \frac{d y_n}{dx} r(x) \frac{d y_m}{dx} \,dx \\
-     & =\; r(b)\left[ y_m(b) y_n'(b) - y_n(b) y_m'(b) \right ] \;-\;r(a)\left[ y_m(a) y_n'(a) - y_n(a) y_m'(a) \right ] \\
-     & =\; 0 \\
-     &\Downarrow \\
-     \int_a^b p(x) y_m y_n \,dx \;
-     & =\; 0, \;\;\lambda_m \neq \lambda_n
+  $$\begin{aligned}
+  \frac{d}{dx}\left[r(x)\frac{dy_m}{dx}\right] &+\left(\lambda_m p(x) +q(x)\right) y_m = 0 \\
+  \frac{d}{dx}\left[r(x)\frac{dy_n}{dx}\right] &+\left(\lambda_n p(x) +q(x)\right) y_n = 0 \\
+  &\Downarrow \\
+  \left( \lambda_m -\lambda_n \right ) p(x) y_m y_n &= y_m \frac{d}{dx}\left[r(x)\frac{dy_n}{dx}\right] -y_n \frac{d}{dx}\left[r(x)\frac{dy_m}{dx}\right] \\
+  &\Downarrow \\
+  \left( \lambda_m -\lambda_n \right) \int_a^b p(x) y_m y_n \,dx
+  &= \left.y_m r(x) \frac{d y_n}{dx} \right|_a^b -\int_a^b \frac{d y_m}{dx} r(x) \frac{d y_n}{dx} \,dx \\
+  &\quad -\left.y_n r(x) \frac{d y_m}{dx} \right|_a^b +\int_a^b \frac{d y_n}{dx} r(x) \frac{d y_m}{dx} \,dx \\
+  &= r(b)\left[ y_m(b) y_n'(b) - y_n(b) y_m'(b) \right] \\
+  &\quad -r(a)\left[ y_m(a) y_n'(a) - y_n(a) y_m'(a) \right] \\
+  &= 0 \\
+  &\Downarrow \\
+  \int_a^b p(x) y_m y_n \,dx &= 0, \;\;\lambda_m \neq \lambda_n
   \end{aligned}$$
 
 $~$

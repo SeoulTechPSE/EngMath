@@ -65,23 +65,20 @@ $~$
 
     As an illustration, $\,$we see how the two-dimensional Laplacian is transformed into polar coordinates:
 
-    $$\scriptsize 
-    \begin{aligned}
-    \nabla^2u &= u_{xx} +u_{yy}\\ 
-    &\Updownarrow \\ 
-    u_x = u_r r_x +u_\theta \theta_x &= u_r \cos\theta -u_\theta \frac{\sin\theta}{r}\\ 
-    u_y = u_r r_y +u_\theta \theta_y &= u_r \sin\theta +u_\theta \frac{\cos\theta}{r}\\ 
+    $$\begin{aligned}
+    \nabla^2u &= u_{xx} +u_{yy}\\
+    &\Updownarrow \\
+    u_x &= u_r r_x +u_\theta \theta_x = u_r \cos\theta -u_\theta \frac{\sin\theta}{r}\\
+    u_y &= u_r r_y +u_\theta \theta_y = u_r \sin\theta +u_\theta \frac{\cos\theta}{r}\\
     &\Downarrow \\
-    u_{xx} = (u_x)_r r_x +(u_x)_\theta \theta_x =& 
-        {\tiny\left( u_{rr} \cos\theta -u_{\theta r} \frac{\sin\theta}{r} +u_\theta\frac{\sin\theta}{r^2} \right) \cos\theta 
-        -\left( u_{r\theta} \cos\theta -u_r\sin\theta -u_{\theta\theta} \frac{\sin\theta}{r} 
-        -u_\theta \frac{\cos\theta}{r} \right) \frac{\sin\theta}{r} }\\
-    u_{yy} = (u_y)_r r_y +(u_y)_\theta \theta_y =& 
-    {\tiny  \left( u_{rr} \sin\theta +u_{\theta r} \frac{\cos\theta}{r} -u_\theta\frac{\cos\theta}{r^2} \right) \sin\theta 
-        +\left( u_{r\theta} \sin\theta +u_r\cos\theta +u_{\theta\theta} \frac{\cos\theta}{r} 
-        -u_\theta \frac{\sin\theta}{r} \right) \frac{\cos\theta}{r} } \\
-        &\Updownarrow \\
-        \color{red}{\nabla^2 u = u_{rr}} &\color{red}{+\frac{1}{r} u_r +\frac{1}{r^2} u_{\theta\theta}} 
+    u_{xx} &= (u_x)_r r_x +(u_x)_\theta \theta_x \\
+    &= \left( u_{rr} \cos\theta -u_{\theta r} \frac{\sin\theta}{r} +u_\theta\frac{\sin\theta}{r^2} \right) \cos\theta \\
+    &\quad -\left( u_{r\theta} \cos\theta -u_r\sin\theta -u_{\theta\theta} \frac{\sin\theta}{r} -u_\theta \frac{\cos\theta}{r} \right) \frac{\sin\theta}{r} \\
+    u_{yy} &= (u_y)_r r_y +(u_y)_\theta \theta_y \\
+    &= \left( u_{rr} \sin\theta +u_{\theta r} \frac{\cos\theta}{r} -u_\theta\frac{\cos\theta}{r^2} \right) \sin\theta \\
+    &\quad +\left( u_{r\theta} \sin\theta +u_r\cos\theta +u_{\theta\theta} \frac{\cos\theta}{r} -u_\theta \frac{\sin\theta}{r} \right) \frac{\cos\theta}{r} \\
+    &\Updownarrow \\
+    \color{red}{\nabla^2 u} &\color{red}{= u_{rr} +\frac{1}{r} u_r +\frac{1}{r^2} u_{\theta\theta}}
     \end{aligned}$$
 
   * Cylindrical Coordinates
@@ -120,44 +117,38 @@ $~$
 
     Finally, $\,$if we write the Laplacian in spherical coordinates, $\,$we have
 
-    $$\scriptsize \begin{aligned}
-    \nabla^2u &= u_{xx} +u_{yy} +u_{zz}\\ 
-    &\Updownarrow \\ 
-    u_x = u_r r_x +u_\phi \phi_x+u_\theta \theta_x &= u_r \sin\phi\cos\theta +u_\phi \frac{\cos\phi\cos\theta}{r}
-    -u_\theta \frac{\sin\theta}{r\sin\phi}\\ 
-    u_y = u_r r_y +u_\phi \phi_y+u_\theta \theta_y &= u_r \sin\phi\sin\theta +u_\phi \frac{\cos\phi\sin\theta}{r}
-    +u_\theta \frac{\cos\theta}{r \sin\phi}\\ 
-    u_z = u_r r_z +u_\phi \phi_z+u_\theta \theta_z &= u_r \cos\phi -u_\phi\frac{\sin\phi}{r} \\ 
+    $$\begin{aligned}
+    \nabla^2u &= u_{xx} +u_{yy} +u_{zz}\\
+    &\Updownarrow \\
+    u_x &= u_r r_x +u_\phi \phi_x+u_\theta \theta_x \\
+    &= u_r \sin\phi\cos\theta +u_\phi \frac{\cos\phi\cos\theta}{r} -u_\theta \frac{\sin\theta}{r\sin\phi}\\
+    u_y &= u_r r_y +u_\phi \phi_y+u_\theta \theta_y \\
+    &= u_r \sin\phi\sin\theta +u_\phi \frac{\cos\phi\sin\theta}{r} +u_\theta \frac{\cos\theta}{r \sin\phi}\\
+    u_z &= u_r r_z +u_\phi \phi_z+u_\theta \theta_z = u_r \cos\phi -u_\phi\frac{\sin\phi}{r} \\
     &\Downarrow \\
-        u_{xx} = (u_x)_r r_x +(u_x)_\phi \phi_x+(u_x)_\theta \theta_x &= 
-    {\tiny \left( u_{rr} \sin\phi\cos\theta +u_{\phi r} \frac{\cos\phi\cos\theta}{r} -u_\phi\frac{\cos\phi\cos\theta}{r^2}
-        -u_{\theta r} \frac{\sin\theta}{r\sin\phi} +u_\theta\frac{\sin\theta}{r^2\sin\phi} \right) 
-        \sin\phi\cos\theta} \\
-    { \tiny +\left( u_{r\phi}\sin\phi \cos\theta \right. }&{\tiny\, \left. +u_r\cos\phi\cos\theta +u_{\phi\phi} \frac{\cos\phi\cos\theta}{r} -u_{\phi} \frac{\sin\phi\cos\theta}{r} 
-        -u_{\theta\phi} \frac{\sin\theta}{r\sin\phi} +u_\theta \frac{\sin\theta\cot\phi}{r\sin\phi}
-    \right)\frac{\cos\phi \cos\theta}{r}} \\
-    {\tiny -\left( u_{r\theta}\sin\phi\cos\theta \right. }&{\tiny \, \left. -u_r \sin\phi\sin\theta +u_{\phi\theta} \frac{\cos\phi\cos\theta}{r} 
-    -u_\phi \frac{\cos\phi\sin\theta}{r} -u_{\theta\theta}\frac{\sin\theta}{r\sin\phi} -u_\theta \frac{\cos\theta}{r\sin\phi} \right) 
-    \frac{\sin\theta}{r\sin\phi} }\qquad\qquad
+    u_{xx} &= (u_x)_r r_x +(u_x)_\phi \phi_x+(u_x)_\theta \theta_x \\
+    &= \Big( u_{rr} \sin\phi\cos\theta +u_{\phi r} \frac{\cos\phi\cos\theta}{r} -u_\phi\frac{\cos\phi\cos\theta}{r^2} \\
+    &\qquad -u_{\theta r} \frac{\sin\theta}{r\sin\phi} +u_\theta\frac{\sin\theta}{r^2\sin\phi} \Big) \sin\phi\cos\theta \\
+    &\quad +\Big( u_{r\phi}\sin\phi \cos\theta +u_r\cos\phi\cos\theta +u_{\phi\phi} \frac{\cos\phi\cos\theta}{r} -u_{\phi} \frac{\sin\phi\cos\theta}{r} \\
+    &\qquad -u_{\theta\phi} \frac{\sin\theta}{r\sin\phi} +u_\theta \frac{\sin\theta\cot\phi}{r\sin\phi} \Big)\frac{\cos\phi \cos\theta}{r} \\
+    &\quad -\Big( u_{r\theta}\sin\phi\cos\theta -u_r \sin\phi\sin\theta +u_{\phi\theta} \frac{\cos\phi\cos\theta}{r} -u_\phi \frac{\cos\phi\sin\theta}{r} \\
+    &\qquad -u_{\theta\theta}\frac{\sin\theta}{r\sin\phi} -u_\theta \frac{\cos\theta}{r\sin\phi} \Big) \frac{\sin\theta}{r\sin\phi}
     \end{aligned}$$
 
-    $$\scriptsize \begin{aligned}
-        u_{yy} = (u_y)_r r_y +(u_y)_\phi \phi_y+(u_y)_\theta \theta_y &= 
-    {\tiny \left( u_{rr} \sin\phi\sin\theta +u_{\phi r} \frac{\cos\phi\sin\theta}{r}  -u_\phi\frac{\cos\phi\sin\theta}{r^2}
-        +u_{\theta r} \frac{\cos\theta}{r\sin\phi} -u_\theta\frac{\cos\theta}{r^2\sin\phi} \right) 
-        \sin\phi\sin\theta }\\
-    {\tiny+\left( u_{r\phi}\sin\phi \sin\theta \right.} &{\tiny\, \left. +u_r\cos\phi\sin\theta +u_{\phi\phi} \frac{\cos\phi\sin\theta}{r} -u_{\phi} \frac{\sin\phi\sin\theta}{r} 
-        +u_{\theta\phi} \frac{\cos\theta}{r\sin\phi} -u_\theta \frac{\cos\theta\cot\phi}{r\sin\phi}
-    \right)\frac{\cos\phi \sin\theta}{r}} \\
-    {\tiny+\left( u_{r\theta}\sin\phi\sin\theta \right.} &{\tiny \, \left.+u_r \sin\phi\cos\theta +u_{\phi\theta} \frac{\cos\phi\sin\theta}{r} 
-    +u_\phi \frac{\cos\phi\cos\theta}{r} +u_{\theta\theta}\frac{\cos\theta}{r\sin\phi} -u_\theta \frac{\sin\theta}{r\sin\phi} \right) 
-    \frac{\cos\theta}{r\sin\phi} }\\
-        u_{zz} = (u_z)_r r_z +(u_z)_\phi \phi_z+(u_z)_\theta \theta_z 
-        &={\tiny \left( u_{rr}\cos\phi -u_{\phi r}\frac{\sin\phi}{r} +u_\phi\frac{\sin\phi}{r^2} \right) \cos\phi} 
-        {\tiny +\left( -u_{r\phi}\cos\phi \right. +}{\tiny\, \left. u_{r}\sin\phi +u_{\phi\phi}\frac{\sin\phi}{r} +u_\phi\frac{\cos\phi}{r} \right) \frac{\sin\phi}{r}}\\ 
-        &\Downarrow \\
-        \color{red}{\nabla^2 u =u_{rr} +\frac{2}{r} u_r }&\color{red}{+\frac{1}{r^2}u_{\phi\phi} +\frac{\cot\phi}{r^2} u_{\phi} +\frac{1}{r^2\sin^2\phi}u_{\theta\theta}} \\
-        \color{red}{= \frac{1}{r^2}\left(  r^2 u_r \right)_r }& \color{red}{+\frac{1}{r^2 \sin\phi} \left( \sin\phi\, u_\phi \right)_\phi +\frac{1}{r^2\sin^2\phi}u_{\theta\theta}}
+    $$\begin{aligned}
+    u_{yy} &= (u_y)_r r_y +(u_y)_\phi \phi_y+(u_y)_\theta \theta_y \\
+    &= \Big( u_{rr} \sin\phi\sin\theta +u_{\phi r} \frac{\cos\phi\sin\theta}{r} -u_\phi\frac{\cos\phi\sin\theta}{r^2} \\
+    &\qquad +u_{\theta r} \frac{\cos\theta}{r\sin\phi} -u_\theta\frac{\cos\theta}{r^2\sin\phi} \Big) \sin\phi\sin\theta \\
+    &\quad +\Big( u_{r\phi}\sin\phi \sin\theta +u_r\cos\phi\sin\theta +u_{\phi\phi} \frac{\cos\phi\sin\theta}{r} -u_{\phi} \frac{\sin\phi\sin\theta}{r} \\
+    &\qquad +u_{\theta\phi} \frac{\cos\theta}{r\sin\phi} -u_\theta \frac{\cos\theta\cot\phi}{r\sin\phi} \Big)\frac{\cos\phi \sin\theta}{r} \\
+    &\quad +\Big( u_{r\theta}\sin\phi\sin\theta +u_r \sin\phi\cos\theta +u_{\phi\theta} \frac{\cos\phi\sin\theta}{r} +u_\phi \frac{\cos\phi\cos\theta}{r} \\
+    &\qquad +u_{\theta\theta}\frac{\cos\theta}{r\sin\phi} -u_\theta \frac{\sin\theta}{r\sin\phi} \Big) \frac{\cos\theta}{r\sin\phi} \\
+    u_{zz} &= (u_z)_r r_z +(u_z)_\phi \phi_z+(u_z)_\theta \theta_z \\
+    &= \left( u_{rr}\cos\phi -u_{\phi r}\frac{\sin\phi}{r} +u_\phi\frac{\sin\phi}{r^2} \right) \cos\phi \\
+    &\quad +\left( -u_{r\phi}\cos\phi +u_{r}\sin\phi +u_{\phi\phi}\frac{\sin\phi}{r} +u_\phi\frac{\cos\phi}{r} \right) \frac{\sin\phi}{r}\\
+    &\Downarrow \\
+    \color{red}{\nabla^2 u} &\color{red}{=u_{rr} +\frac{2}{r} u_r +\frac{1}{r^2}u_{\phi\phi} +\frac{\cot\phi}{r^2} u_{\phi} +\frac{1}{r^2\sin^2\phi}u_{\theta\theta}} \\
+    &\color{red}{= \frac{1}{r^2}\left( r^2 u_r \right)_r +\frac{1}{r^2 \sin\phi} \left( \sin\phi\, u_\phi \right)_\phi +\frac{1}{r^2\sin^2\phi}u_{\theta\theta}}
     \end{aligned}$$
 
 $~$
@@ -306,33 +297,19 @@ $~$
     &\Downarrow u(r,\theta)=R(r)\Theta(\theta)\\ 
   \end{aligned}$$
 
-  $$\scriptsize\begin{aligned}
-    -\frac{r^2R'' +rR'}{R} 
-     &= \frac{\;\Theta''}{\Theta} =-\lambda \leq 0 \\ 
-    &\Downarrow \\
-    \Theta'' +\lambda \Theta =0 
-     \;\; \xrightarrow[] 
-      {\;\;\Theta(0)=\Theta(2\pi),\;\Theta'(0)
-      =\Theta'(2\pi)\;\;} 
-        &\;\;\Theta_n(\theta)=a_n \cos n\theta 
-        +b_n \sin n\theta, \;\; \lambda_n =n^2, 
-        \;\; n=0,1,2,\cdots \\
-    &\Downarrow \\
-    r^2R_0'' +rR_0'=0\; 
-     &\xrightarrow[]{\;\;| R_0(0)| \,<\,\infty  \;\;} 
-      \;\; R_0(r)=1 \\ 
-    r^2R_n''+rR_n' -n^2 R_n=0,\;\;n =1,2,\cdots\; 
-     &\xrightarrow[]{\;\; | R_n(0) | \,<\,\infty \;\;} 
-      \;\;R_n(r)= r^n \\ 
-    &\Downarrow \\
-    \color{red}{u(r,\theta) =\frac{a_0}{2} 
-     +\sum_{n=1}^\infty }
-     &\color{red}{ r^n \left( a_n \cos n\theta 
-      +b_n \sin n\theta \right)} \\
-    a_n = \frac{1}{\pi} \int_0^{2\pi} &g(\theta) 
-     \cos n\theta \,d\theta \\
-    b_n = \frac{1}{\pi} \int_0^{2\pi} &g(\theta) 
-     \sin n\theta \,d\theta
+  $$\begin{aligned}
+  -\frac{r^2R'' +rR'}{R} &= \frac{\Theta''}{\Theta} =-\lambda \leq 0 \\
+  &\Downarrow \\
+  \Theta'' +\lambda \Theta &=0, \quad \Theta(0)=\Theta(2\pi),\;\Theta'(0)=\Theta'(2\pi) \\
+  &\Downarrow \\
+  \Theta_n(\theta) &=a_n \cos n\theta +b_n \sin n\theta, \quad \lambda_n =n^2, \;\; n=0,1,2,\cdots \\
+  &\Downarrow \\
+  r^2R_0'' +rR_0' &=0,\;\; |R_0(0)|<\infty \;\;\rightarrow\;\; R_0(r)=1 \\
+  r^2R_n''+rR_n' -n^2 R_n &=0,\;\; |R_n(0)|<\infty \;\;\rightarrow\;\; R_n(r)= r^n, \;\; n =1,2,\cdots \\
+  &\Downarrow \\
+  \color{red}{u(r,\theta)} &\color{red}{=\frac{a_0}{2} +\sum_{n=1}^\infty r^n \left( a_n \cos n\theta +b_n \sin n\theta \right)} \\
+  a_n &= \frac{1}{\pi} \int_0^{2\pi} g(\theta) \cos n\theta \,d\theta \\
+  b_n &= \frac{1}{\pi} \int_0^{2\pi} g(\theta) \sin n\theta \,d\theta
   \end{aligned}$$
 
   * The solution can be interpreted as expanding the boundary function $\,g(\theta)\,$ as a Fourier series
@@ -693,31 +670,16 @@ $~$
 
   Making this change of variable gives rise to the new Legendre's equation
 
-  $$\scriptsize 
-  \begin{aligned}
-    \left(\sin\phi\, \Phi' \right)' 
-    &+\lambda \sin\phi \Phi= 0\\ 
-    &\Downarrow 
-    \;\; x=\cos\phi, 
-      \;\; \Phi'=\frac{d\Phi}{dx} \frac{dx}{d\phi}
-      =-\sin\phi\frac{d\Phi}{dx} \\
-    \left(\sin\phi\, \Phi' \right)'
-    &=-\frac{d}{dx}
-      \left(\sin^2\phi \frac{d\Phi}{dx} \right) 
-      \frac{dx}{d\phi}
-    =\left(\sin^2\phi \frac{d^2\Phi}{dx^2} 
-    +2\sin\phi\cos\phi 
-    \frac{d\phi}{dx}\frac{d\Phi}{dx} \right)\sin\phi \\
-    &=\left[ (1 -x^2) \frac{d^2\Phi}{dx^2} 
-    -2x\frac{d\Phi}{dx} \right] \sin\phi \\
-    &\Downarrow \\
-      \color{red}{(1 -x^2) \frac{d^2\Phi}{dx^2}} 
-    &\color{red}{-2x\frac{d\Phi}{dx} +\lambda \Phi = 0, 
-    \;\;\; -1 \leq x \leq 1} \\
-    &\Downarrow \\
-    \frac{d}{dx} \left[ (1 -x^2) 
-    \frac{d\Phi}{dx} \right] 
-    &+\lambda \Phi = 0
+  $$\begin{aligned}
+  \left(\sin\phi\, \Phi' \right)' &+\lambda \sin\phi\, \Phi= 0\\
+  &\Downarrow \;\; x=\cos\phi, \;\; \Phi'=\frac{d\Phi}{dx} \frac{dx}{d\phi} =-\sin\phi\frac{d\Phi}{dx} \\
+  \left(\sin\phi\, \Phi' \right)' &=-\frac{d}{dx}\left(\sin^2\phi \frac{d\Phi}{dx} \right) \frac{dx}{d\phi} \\
+  &=\left(\sin^2\phi \frac{d^2\Phi}{dx^2} +2\sin\phi\cos\phi \frac{d\phi}{dx}\frac{d\Phi}{dx} \right)\sin\phi \\
+  &=\left[ (1 -x^2) \frac{d^2\Phi}{dx^2} -2x\frac{d\Phi}{dx} \right] \sin\phi \\
+  &\Downarrow \\
+  \color{red}{(1 -x^2) \frac{d^2\Phi}{dx^2}} &\color{red}{-2x\frac{d\Phi}{dx} +\lambda \Phi = 0, \;\;\; -1 \leq x \leq 1} \\
+  &\Downarrow \\
+  \frac{d}{dx} \left[ (1 -x^2) \frac{d\Phi}{dx} \right] &+\lambda \Phi = 0
   \end{aligned}$$
 
   * One of the difficulties in this equation is that 
@@ -929,34 +891,29 @@ $~$
 
   * In Fourier expressions, $\,$it is useful to know the integrals of $\,\left[P_n^m(x)\right]^2$. $\,$It follows from the Rodrigues formula and $\,n\,$ integrations by parts that
 
-    $$\tiny \begin{aligned}
-      \color{blue}{\int_0^\pi \left[ P_n(\cos\phi)\right]^2 \,\sin\phi  \,d\phi} &= \int_{-1}^1 \left[P_n(x) \right]^2 \,dx\\ 
-      &= \frac{1}{2^{2n} n!^2} \int_{-1}^1 \left[ \frac{d^n}{dx^n} \left(1- x^2 \right)^n\right]^2 \, dx\\ 
-      &= \frac{1}{2^{2n} n!^2} \left[ \underbrace{\left.\frac{d^{n-1}}{dx^{n-1}} \left(1- x^2 \right)^n
-      \frac{d^{n}}{dx^{n}} \left(1- x^2 \right)^n \right|_{-1}^{1}}_{=0} 
-      -\int_{-1}^1 \frac{d^{n-1}}{dx^{n-1}} \left(1- x^2 \right)^n
-      \frac{d^{n+1}}{dx^{n+1}} \left(1- x^2 \right)^n \,dx\right]\\ 
-      &\,\vdots \\ 
-      &=\frac{(-1)^n}{2^{2n} n!^2} \int_{-1}^1 \left(1- x^2 \right)^n
-      \underbrace{\frac{d^{2n}}{dx^{2n}} \left(1- x^2 \right)^n}_{(-1)^n (2n)!} \,dx \\
-      &=\frac{(2n)!}{2^{2n} n!^2} \int_{-1}^1 \left(1- x^2 \right)^n \,dx = \frac{(2n)!}{2^{2n} n!^2} 2^{2n +1} \frac{n!^2}{(2n+1)!}=\color{blue}{\frac{2}{2n +1}}
+    $$\begin{aligned}
+    &\color{blue}{\int_0^\pi \left[ P_n(\cos\phi)\right]^2 \sin\phi \,d\phi} \\
+    &= \int_{-1}^1 \left[P_n(x) \right]^2 \,dx = \frac{1}{2^{2n} n!^2} \int_{-1}^1 \left[ \frac{d^n}{dx^n} \left(1- x^2 \right)^n\right]^2 dx\\
+    &= \frac{1}{2^{2n} n!^2} \Bigg[ \underbrace{\left.\frac{d^{n-1}}{dx^{n-1}} \left(1- x^2 \right)^n \frac{d^{n}}{dx^{n}} \left(1- x^2 \right)^n \right|_{-1}^{1}}_{=0} \\
+    &\hspace{5em} -\int_{-1}^1 \frac{d^{n-1}}{dx^{n-1}} \left(1- x^2 \right)^n \frac{d^{n+1}}{dx^{n+1}} \left(1- x^2 \right)^n \,dx\Bigg]\\
+    &\;\vdots \\
+    &=\frac{(-1)^n}{2^{2n} n!^2} \int_{-1}^1 \left(1- x^2 \right)^n \underbrace{\frac{d^{2n}}{dx^{2n}} \left(1- x^2 \right)^n}_{(-1)^n (2n)!} \,dx \\
+    &=\frac{(2n)!}{2^{2n} n!^2} \int_{-1}^1 \left(1- x^2 \right)^n \,dx
+    = \frac{(2n)!}{2^{2n} n!^2}\, 2^{2n +1} \frac{n!^2}{(2n+1)!}=\color{blue}{\frac{2}{2n +1}}
     \end{aligned}$$
 
   * Similarly,
 
-    $$\tiny \begin{aligned}
-      \color{blue}{\int_0^\pi \left[ P_n^m(\cos\phi)\right]^2 \,\sin\phi  \,d\phi} &= \int_{-1}^1 \left[P_n^m(x) \right]^2 \,dx 
-      = \int_{-1}^1 \left[ \left(1 -x^2 \right)^{m/2} \frac{d^m}{dx^m} P_n(x) \right]^2 \, dx\\ 
-      &= \underbrace{\left. \frac{d^{m-1}}{dx^{m-1}} P_n(x)
-      \left\{ \left(1- x^2 \right)^m  \frac{d^m}{dx^m} P_n(x) \right\} \right|_{-1}^{\phantom{-}1}}_{=0} 
-      -\int_{-1}^1 \frac{d^{m-1}}{dx^{m-1}} P_n(x)
-      \frac{d}{dx} \left\{\left(1- x^2 \right)^m  \frac{d^m}{dx^m} P_n(x)  \right\} \,dx \\ 
-      &\;\Downarrow \;\;\left(1- x^2 \right)^m = (-1)^m x^{2m}+\cdots, \;\;\frac{d^m}{dx^m} P_n(x)=c_n \frac{n!}{(n -m)!}x^{n -m}+\cdots\\ 
-      &= (-1)^m \int_{-1}^1 P_n(x)
-      \underbrace{\frac{d^m}{dx^m} \left\{\left(1- x^2 \right)^m  \frac{d^m}{dx^m} P_n(x) \right\}}_{(-1)^m c_n \frac{n!}{(n-m)!} \frac{(n +m)!}{n!} x^n +\cdots} \,dx \\
-      &=\frac{(n+m)!}{(n-m)!} \int_{-1}^1 P_n(x) c_n x^n \,dx \\
-      &=\frac{(n+m)!}{(n-m)!} \int_{-1}^1 \left[ P_n(x) \right ]^2 \,dx \\
-      &=\color{blue}{\frac{2}{2n +1}\frac{(n+m)!}{(n-m)!}}
+    $$\begin{aligned}
+    &\color{blue}{\int_0^\pi \left[ P_n^m(\cos\phi)\right]^2 \sin\phi \,d\phi} \\
+    &= \int_{-1}^1 \left[P_n^m(x) \right]^2 \,dx = \int_{-1}^1 \left[ \left(1 -x^2 \right)^{m/2} \frac{d^m}{dx^m} P_n(x) \right]^2 dx\\
+    &= \underbrace{\left. \frac{d^{m-1}}{dx^{m-1}} P_n(x) \left\{ \left(1- x^2 \right)^m \frac{d^m}{dx^m} P_n(x) \right\} \right|_{-1}^{\phantom{-}1}}_{=0} \\
+    &\quad -\int_{-1}^1 \frac{d^{m-1}}{dx^{m-1}} P_n(x) \frac{d}{dx} \left\{\left(1- x^2 \right)^m \frac{d^m}{dx^m} P_n(x) \right\} dx \\
+    &\;\Downarrow \;\; \left(1- x^2 \right)^m = (-1)^m x^{2m}+\cdots, \;\; \frac{d^m}{dx^m} P_n(x)=c_n \frac{n!}{(n -m)!}x^{n -m}+\cdots\\
+    &= (-1)^m \int_{-1}^1 P_n(x) \underbrace{\frac{d^m}{dx^m} \left\{\left(1- x^2 \right)^m \frac{d^m}{dx^m} P_n(x) \right\}}_{(-1)^m c_n \frac{n!}{(n-m)!} \frac{(n +m)!}{n!} x^n +\cdots} dx \\
+    &=\frac{(n+m)!}{(n-m)!} \int_{-1}^1 P_n(x)\, c_n x^n \,dx
+    =\frac{(n+m)!}{(n-m)!} \int_{-1}^1 \left[ P_n(x) \right]^2 dx \\
+    &=\color{blue}{\frac{2}{2n +1}\frac{(n+m)!}{(n-m)!}}
     \end{aligned}$$
 
     in which $\,c_n\,$ is the coefficient of $\,x^n\,$ in $\,P_n(x)$
@@ -1009,16 +966,11 @@ $~$
 
   where $\,K(r,\phi,\theta; R,\varphi,\vartheta)\,$ is
 
-  $$ \scriptsize\displaystyle
-     \sum_{n=0}^\infty \left( \frac{r}{R} \right)^n 
-     \underbrace{\left[ \frac{2n +1}{4\pi} 
-      P_n(\cos\phi) P_n(\cos\varphi) +\sum_{m=1}^n 
-       \frac{(2n +1)}{2\pi}\frac{(n -m)!}{(n +m)!} 
-        P_n^m(\cos\phi) P_n^m(\cos\varphi) 
-        \cos m(\theta -\vartheta) 
-         \right]}_{K_n(\phi,\,\theta; 
-          \,\varphi,\,\vartheta)}
-   \tag{KL}\label{eq:KL}$$
+  $$\begin{aligned}
+  &\sum_{n=0}^\infty \left( \frac{r}{R} \right)^n K_n(\phi,\theta;\varphi,\vartheta), \quad\text{where} \\
+  &K_n = \frac{2n +1}{4\pi} P_n(\cos\phi) P_n(\cos\varphi) \\
+  &\qquad +\sum_{m=1}^n \frac{2n+1}{2\pi}\,\frac{(n -m)!}{(n +m)!}\, P_n^m(\cos\phi) P_n^m(\cos\varphi) \cos m(\theta -\vartheta)
+  \end{aligned} \tag{KL}\label{eq:KL}$$
 
   * For a fixed $\,n$, 
 

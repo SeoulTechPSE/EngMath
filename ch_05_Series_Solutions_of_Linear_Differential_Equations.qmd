@@ -156,15 +156,13 @@ $~$
  
 * Substituting $y = \sum_{n=0}^\infty c_n x^{n +r}$ gives
 
-  $$\scriptsize  
-   \begin{aligned} 
-    2xy'' & +(1 +x)y' +y \\ 
-    & = 2\sum_{n=0}^\infty (n +r)(n +r -1)c_n x^{n +r -1}
-     +\sum_{n=0}^\infty (n +r) c_n x^{n +r -1}
-     +\sum_{n=0}^\infty (n +r) c_n x^{n +r}
-     +\sum_{n=0}^\infty c_n x^{n +r}\\ 
-     & = x^r\left[r(2r -1) c_0 x^{-1} +\sum_{k=0}^\infty [(k + r +1)(2k +2r +1) c_{k +1} +(k +r +1) c_k] x^k \right] = 0
-   \end{aligned}$$
+  $$\begin{aligned}
+  2xy'' & +(1 +x)y' +y \\
+  & = 2\sum_{n=0}^\infty (n +r)(n +r -1)c_n x^{n +r -1} +\sum_{n=0}^\infty (n +r) c_n x^{n +r -1} \\
+  & \quad +\sum_{n=0}^\infty (n +r) c_n x^{n +r} +\sum_{n=0}^\infty c_n x^{n +r}\\
+  & = x^r\left[r(2r -1) c_0 x^{-1} \right. \\
+  & \quad \left. +\sum_{k=0}^\infty \big[(k + r +1)(2k +2r +1) c_{k +1} +(k +r +1) c_k\big] x^k \right] = 0
+  \end{aligned}$$
  
    which implies
  
@@ -739,12 +737,11 @@ $~$
 
 * Thus for at least $|x|<1$, $\,$we obtain two linearly independent power series solutions:
 
-  $$\tiny
-  \begin{aligned}
-   y_1(x) &= c_0 \left[1 -\frac{n(n+1)}{2!} x^2 
-     +\frac{(n -2)n(n+1)(n +3)}{4!} x^4 
-        -\frac{(n -4)(n -2)n(n+1)(n +3)(n +5)}{6!} x^6 \cdots \right] \\
-   y_2(x) &= c_1 \left[x - \frac{(n -1)(n+2)}{3!} x^3 +\right. \left. \frac{(n -3)(n -1)(n+2)(n +4)}{5!} x^5 \right. \left. -\frac{(n -5)(n -3)(n -1)(n+2)(n +4)(n +6)}{7!} x^7 \cdots \right]
+  $$\begin{aligned}
+  y_1(x) &= c_0 \left[1 -\frac{n(n+1)}{2!} x^2 +\frac{(n -2)n(n+1)(n +3)}{4!} x^4 \right. \\
+  &\qquad \left. -\frac{(n -4)(n -2)n(n+1)(n +3)(n +5)}{6!} x^6 +\cdots \right] \\[6pt]
+  y_2(x) &= c_1 \left[x - \frac{(n -1)(n+2)}{3!} x^3 +\frac{(n -3)(n -1)(n+2)(n +4)}{5!} x^5 \right. \\
+  &\qquad \left. -\frac{(n -5)(n -3)(n -1)(n+2)(n +4)(n +6)}{7!} x^7 +\cdots \right]
   \end{aligned}$$
 
   * <font color="red">If $n$ is an even integer</font>, $~$<font color="blue">the series $y_1(x)$ reduces to a polynomial of degree $n$ with only even powers of $x$</font> <font color="green">and the series $y_2(x)$ is an infinite series that diverges at $x=\pm 1$</font>
@@ -924,7 +921,9 @@ $~$
   can be transformed into Legendre's equation by means of the substitution $x=\cos\theta$
 
 ::: {.callout-note collapse="true" title="Answer" appearance="simple"}
-With $\dfrac{dy}{d\theta}=-\sin\theta\,y_x$ and $\dfrac{d^2y}{d\theta^2}=\sin^2\theta\,y_{xx}-\cos\theta\,y_x$, $\ $ the equation becomes $\sin\theta\left[(1-x^2)y_{xx}-2xy_x+n(n+1)y\right]=0$
+With $\dfrac{dy}{d\theta}=-\sin\theta\,y_x$ and $\dfrac{d^2y}{d\theta^2}=\sin^2\theta\,y_{xx}-\cos\theta\,y_x$, $\ $ the equation becomes
+
+$$\sin\theta\left[(1-x^2)y_{xx}-2xy_x+n(n+1)y\right]=0$$
 :::
 
 [Solution](files/solutions/sol_5_3b.pdf){target="_blank"}
@@ -1039,12 +1038,10 @@ y''(x) = \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 2}$$
 
 Substitute into the original equation:
 
-$$\scriptsize\begin{aligned}
+$$\begin{aligned}
 & x y'' + (1 - x) y' + \alpha y \\
-&= \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 1}
-+\sum_{k=0}^{\infty} a_k (k + r) x^{k + r - 1}
--\sum_{k=0}^{\infty} a_k (k + r) x^{k + r}
-+\sum_{k=0}^{\infty} \alpha a_k x^{k + r} = 0
+&= \sum_{k=0}^{\infty} a_k (k + r)(k + r - 1) x^{k + r - 1} +\sum_{k=0}^{\infty} a_k (k + r) x^{k + r - 1} \\
+&\quad -\sum_{k=0}^{\infty} a_k (k + r) x^{k + r} +\sum_{k=0}^{\infty} \alpha a_k x^{k + r} = 0
 \end{aligned}$$
 
 Group and simplify:
