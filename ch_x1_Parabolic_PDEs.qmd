@@ -2167,17 +2167,24 @@ $~$
 
 ## $~$Duhamel's Principle {#sec-x1-17}
 
-* Quite often, $\,$it is important to find the temperature inside a medium due to time-varying boundary conditions. $\,$For example, $\,$consider an insulated rod with temperature specified as $\,f(t)$ on the right end
+* Quite often, $\,$it is important to find the temperature inside a medium due to time-varying boundary conditions. 
+$\,$For example, $\,$consider an insulated rod with temperature specified as $\,\psi(t)$ on the right end
+
+  $~$
 
   $$
   \begin{aligned}
    u_t &= u_{xx} && 0 < x < 1, \; 0 < t < \infty \\
    u(0,t) &= 0 && 0 < t < \infty \\ 
-   u(1,t) &= \color{red}{f(t)} && \\
+   u(1,t) &= \color{red}{\psi(t)} && \\
    u(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned} \tag{D1}\label{eq:D1}$$
 
+$~$
+
 * We may think that the solution to \eqref{eq:D1} can be easily found once we know the solution to the simpler version (constant temperature on the boundaries)
+
+  $~$
 
   $$
   \begin{aligned}
@@ -2187,7 +2194,56 @@ $~$
    w(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned} \tag{D2}\label{eq:D2}$$ 
 
-  In fact, $\,$if we solve \eqref{eq:D1} and \eqref{eq:D2} side by side by the Laplace transform, $\,$<font color=red>we will see a striking result (Duhamel's principle) that will give us the solution to \eqref{eq:D1} in terms of the solution of \eqref{eq:D2}</font>
+  $~$
+
+  $w(x,t)\,$ is the response to a unit **step** in the boundary temperature (the step response)
+
+$~$
+
+**Idea** $\,$Superposition of steps
+
+* Approximate $\,\psi(t)\,$ by a staircase: $\,$a step of height $\,\psi(0)\,$ at $\,t=0$, $\,$then small steps of height $\,\Delta\psi\approx\psi'(\tau)\,\Delta\tau\,$ at the times $\,\tau$
+
+```{python}
+#| label: fig-duhamel-staircase
+#| fig-cap: "Boundary temperature as a sum of steps"
+#| fig-align: center
+
+def staircase_plot(psi, t, dtau):
+    taus = np.arange(0.0, t[-1], dtau)
+    plt.figure(figsize=(8, 4))
+    plt.plot(t, psi(t), 'k', label=r'$\psi(t)$')
+    plt.step(np.append(taus, t[-1]), np.append(psi(taus), psi(taus[-1])),
+             where='post', color='C0', label='staircase')
+    for tau in taus[1:4]:
+        plt.annotate('', xy=(tau, psi(tau)), xytext=(tau, psi(tau - dtau)),
+                     arrowprops=dict(arrowstyle='->', color='C3', lw=2))
+    plt.text(0.10, 0.0, r'steps $\Delta\psi\approx\psi^{\prime}(\tau)\Delta\tau$', color='C3')
+    plt.annotate('', xy=(0.0, psi(0.0)), xytext=(0.0, 0.0),
+                 arrowprops=dict(arrowstyle='->', color='C2', lw=2))
+    plt.text(0.012, 0.08, r'$\psi(0)$', color='C2')
+    plt.axhline(0.0, color='gray', lw=0.5)
+    plt.xlim(-0.02, t[-1])
+    plt.xlabel(r'$\tau$')
+    plt.legend(loc='upper right')
+    plt.show()
+
+staircase_plot(lambda t: 0.3 +np.sin(2.0*np.pi*t), np.linspace(0, 1, 400), 0.08)
+```
+
+$~$
+
+* The PDE is linear and $\,$\eqref{eq:D2} $\,$is invariant under a shift in time. $\,$A step $\,\Delta\psi\,$ switched on at $\,t=\tau\,$ therefore produces the response $\,w(x,t-\tau)\,\Delta\psi\,$ for $\,t>\tau$
+
+* Adding the responses to all the steps and letting $\,\Delta\tau\to 0$,
+
+  $$ \color{red}{u(x,t)=\psi(0)\,w(x,t)+\int_0^t w(x,t-\tau)\,\psi'(\tau)\,d\tau} $$
+
+  This is <font color="red">Duhamel's principle</font>: $\,$the solution for a time-varying boundary temperature is built from the step response alone
+
+* The same idea gives the convolution $\,\mathcal{L}^{-1}[F(s)G(s)]=f*g\,$ for linear ODEs (the response of a linear system to an input is the superposition of its responses to steps or impulses). $\,$If we solve \eqref{eq:D1} and \eqref{eq:D2} side by side by the Laplace transform, $\,$we obtain the same result
+
+$~$
 
 * Solving \eqref{eq:D2} by Laplace transform, $\,$we have
 
@@ -2201,32 +2257,42 @@ $~$
          &\Downarrow {\scriptstyle \text{Find the inverse transform}}\\
      w(x,t)=x +\frac{2}{\pi} & \sum_{n=1}^\infty 
      \frac{(-1)^n}{n} e^{-(n\pi)^2 t}\sin n\pi x 
-  \end{aligned}$$
+  \end{aligned}$$ 
+
+$~$
 
 * And we also obtain the following by transforming \eqref{eq:D1}: 
 
   $$\begin{aligned}
    \frac{d^2U}{dx^2} &-sU = 0\\ 
     U(0)&=0 \\ 
-    U(1)&=\color{red}{F(s)} \\ 
+    U(1)&=\color{red}{\Psi(s)} \\ 
      &\Downarrow {\scriptstyle \text{Solve the ODE}}\\ 
-    U(x,s)&=F(s) \left[ \frac{\sinh x\sqrt{s}}{\sinh \sqrt{s}} \right] 
-           =F(s) s \color{red}{\frac{1}{s}\left[ \frac{\sinh x\sqrt{s}}{\sinh \sqrt{s}} \right]} 
-           =F(s) sW(x,s)\\
+    U(x,s)&=\Psi(s) \left[ \frac{\sinh x\sqrt{s}}{\sinh \sqrt{s}} \right] 
+           =\Psi(s) \color{blue}{s} \color{red}{\frac{1}{s}
+           \left[ \frac{\sinh x\sqrt{s}}{\sinh \sqrt{s}} \right]} 
+           =\Psi(s) \color{blue}{s}\color{red}{W(x,s)}\\
      &\big\Downarrow \;{\scriptstyle \mathcal{L}[w_t]=sW -w(x,0)=sW}\\
-    U(x,s)&=F(s) \mathcal{L}[w_t] \\
-     &\big\Downarrow \;{\scriptstyle \text{Find the inverse transform}}\\
-     \color{red}{u(x,t)} 
-       &= \mathcal{L}^{-1} \left[ F(s) \mathcal{L}[w_t] \right] 
-       =f(t) * w_t(x,t) \\
-       &\color{red}{\;= \int_0^t w_{t -\tau}(x,t-\tau) \, f(\tau) \,d\tau} \\
-       &= \left. -w(x,t-\tau)\, f(\tau) \phantom{\frac{}{}} 
-        \right |_{\,0}^{\,t} +\int_0^t w(x,t-\tau) f'(\tau) \,d\tau\\
-       &= \int_0^t w(x,t-\tau) f'(\tau)\,d\tau +w(x,t) \, f(0)
-  \end{aligned}$$
+    U(x,s)&=\Psi(s) \mathcal{L}[w_t] \\
+  \end{aligned}$$ 
 
-  We have found the solution $u(x,t)$ to the time-varying problem in terms of the solution to the easy problem (constant BCs).
-$\,$The above result is known as <font color="red">Duhamel's principle</font>
+$~$
+
+* Inverting with the convolution theorem,
+
+  $$ \color{red}{u(x,t)} = \mathcal{L}^{-1} \left[ \Psi(s) \mathcal{L}[w_t] \right] =\psi(t) * w_t(x,t)
+   \color{red}{\;= \int_0^t \frac{\partial w}{\partial t}(x,t-\tau) \, \psi(\tau) \,d\tau} $$
+
+  where $\,\dfrac{\partial w}{\partial t}(x,t-\tau)\,$ means $\,w_t\,$ evaluated at time $\,t-\tau$
+
+* Since $\,\dfrac{d}{d\tau}\,w(x,t-\tau)=-\dfrac{\partial w}{\partial t}(x,t-\tau)$, $\,$integration by parts gives
+
+  $$\begin{aligned}
+   u(x,t)&=\Big[-w(x,t-\tau)\,\psi(\tau)\Big]_{\tau=0}^{\tau=t} +\int_0^t w(x,t-\tau)\, \psi'(\tau) \,d\tau\\
+   &= -\underbrace{w(x,0)}_{=\,0}\,\psi(t)+w(x,t)\,\psi(0) +\int_0^t w(x,t-\tau)\, \psi'(\tau) \,d\tau
+  \end{aligned}$$ 
+
+  which is the formula obtained from the superposition of steps
 
 $~$
 
@@ -2242,12 +2308,173 @@ $~$
    v(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned}$$ 
 
-* Knowing this formula
+* Since $\,\delta(t)\,$ is the derivative of the unit step, $\,v\,$ is the impulse response, $\,v=w_t$, $\,$and the first formula becomes
 
-  $$ \color{red}{u(x,t)=\int_0^t v(x,t-\tau) \,f(\tau)\,d\tau} $$
+  $$ \color{red}{u(x,t)=\int_0^t v(x,t-\tau) \,\psi(\tau)\,d\tau} $$
 
-  allows us to find $u(x,t)$ to an arbitrary boundary temperature $\,f(t)$ once we have carried out an experiment to determine the temperature response $\,v(x,t)$ from an impulse temperature
+  This allows us to find $u(x,t)$ to an arbitrary boundary temperature $\,\psi(t)$ once we have carried out an experiment to determine the temperature response $\,v(x,t)$ from an impulse temperature
 
+$~$
+
+**Example** $\,$Periodic boundary temperature
+
+$$
+  \begin{aligned}
+   u_t &= u_{xx} && 0 < x < 1, \; 0 < t < \infty \\
+   u(0,t) &= 0 && 0 < t < \infty \\ 
+   u(1,t) &= \color{red}{\sin\omega t} && \\
+   u(x,0) &= 0 && 0 \leq x \leq 1
+  \end{aligned}$$ 
+
+**Solution** $\,$Since $\,\psi(0)=0\,$ and $\,\psi'(\tau)=\omega\cos\omega\tau$,
+
+$$ u(x,t)=\int_0^t \left[x+\frac{2}{\pi}\sum_{n=1}^\infty \frac{(-1)^n}{n}\,e^{-\lambda_n(t-\tau)}\sin n\pi x\right]\omega\cos\omega\tau\,d\tau, \qquad \lambda_n=(n\pi)^2 $$
+
+$~$
+
+* With $\,\displaystyle\int_0^t e^{-\lambda(t-\tau)}\cos\omega\tau\,d\tau=\frac{\lambda\cos\omega t+\omega\sin\omega t-\lambda e^{-\lambda t}}{\lambda^2+\omega^2}$,
+
+  $$ \color{blue}{u(x,t)=x\sin\omega t+\frac{2\omega}{\pi}\sum_{n=1}^\infty\frac{(-1)^n}{n}\,
+     \frac{\lambda_n\cos\omega t+\omega\sin\omega t-\lambda_n e^{-\lambda_n t}}{\lambda_n^2+\omega^2}\,\sin n\pi x} $$
+
+$~$
+
+```{python}
+#| label: fig-duhamel-periodic
+#| fig-cap: "Periodic boundary temperature: Duhamel's principle (lines) and a finite-difference solution (circles)"
+#| fig-align: center
+from scipy.integrate import solve_ivp
+
+def u_duhamel(t, x, omega, N=200):
+    n = np.arange(1, N +1)[:, None]
+    lam = (n *np.pi)**2
+    c = (2.0 *omega /np.pi) *(-1.0)**n /n *np.sin(n *np.pi *x) /(lam**2 +omega**2)
+    return x *np.sin(omega *t) +np.sum(c *(lam *np.cos(omega *t) +omega *np.sin(omega *t)
+                                           -lam *np.exp(-lam *t)), axis=0)
+
+def u_numerical(t_eval, omega, M=100):      # method of lines, 2nd-order differences
+    x = np.linspace(0, 1, M +1)
+    h = x[1]
+    def rhs(t, y):
+        y = np.concatenate(([0.0], y, [np.sin(omega *t)]))
+        return (y[2:] -2.0 *y[1:-1] +y[:-2]) /h**2
+    sol = solve_ivp(rhs, (0, t_eval[-1]), np.zeros(M -1), method='BDF',
+                    t_eval=t_eval, rtol=1e-8, atol=1e-10)
+    return x[1:-1], sol.y
+
+def example_plot10(omega):
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5))
+
+    x = np.linspace(0, 1, 201)
+    t_snap = 3.0 +np.arange(4) /4
+    xn, un = u_numerical(t_snap, omega)
+    for k, tt in enumerate(t_snap):
+        ax1.plot(x, u_duhamel(tt, x, omega), color=f'C{k}', label=rf'$t={tt:4.2f}$')
+        ax1.plot(xn[::8], un[::8, k], 'o', color=f'C{k}', mfc='none')
+    ax1.set_xlim(0, 1)
+    ax1.set_ylim(-1.1, 1.6)
+    ax1.set_xlabel('$x$')
+    ax1.set_ylabel('$u(x,t)$')
+    ax1.legend(loc='upper left', fontsize=12, ncol=2)
+    ax1.set_title('profiles over one period')
+
+    t = np.linspace(0, 4, 401)
+    ax2.plot(t, np.sin(omega *t), 'k', label=r'$x=1$')
+    for k, xx in enumerate([0.75, 0.5, 0.25]):
+        ax2.plot(t, u_duhamel(t, np.array([xx]), omega), color=f'C{k +4}', label=rf'$x={xx}$')
+    ax2.set_xlim(0, 4)
+    ax2.set_ylim(-1.1, 1.6)
+    ax2.set_xlabel('$t$')
+    ax2.legend(loc='upper center', fontsize=12, ncol=4, handlelength=1.2, columnspacing=1.0)
+    ax2.set_title('time history')
+
+    plt.tight_layout()
+    plt.show()
+
+example_plot10(omega=2.0 *np.pi)
+```
+
+$~$
+
+**Physical meaning and verification**
+
+* $t=0$: $\,$each term of the sum vanishes, $\,$so $\,u(x,0)=0$; $\,x=1$: $\,\sin n\pi=0$, $\,$so $\,u(1,t)=\sin\omega t$
+
+* The terms with $\,e^{-\lambda_n t}\,$ form the transient, $\,$which decays like $\,e^{-\pi^2 t}$. $\,$The remaining terms are the periodic response, $\,$which also follows from $\,u=\mathrm{Im}\left[X(x)\,e^{i\omega t}\right]\,$ with $\,X''=i\omega X$, $\,X(0)=0$, $\,X(1)=1$:
+
+  $$ u_{\text{periodic}}=\mathrm{Im}\left[\frac{\sinh\left(\sqrt{i\omega}\,x\right)}{\sinh\sqrt{i\omega}}\,e^{i\omega t}\right], \qquad \sqrt{i\omega}=(1+i)\sqrt{\omega/2} $$
+
+* The amplitude decreases and the phase lags behind the boundary as we move away from it. $\,$For $\,\omega=2\pi$: $\,$amplitude $\,0.66,\;0.42,\;0.21\,$ and phase lag $\,0.40,\;0.72,\;0.91\,$ rad at $\,x=0.75,\;0.5,\;0.25$
+
+* For a deep medium ($\omega\gg 1$), $\,X\approx e^{-(1+i)(1-x)/\delta}$: $\,$the temperature wave decays over the penetration depth $\,\delta=\sqrt{2/\omega}\,$ (with diffusivity: $\,\sqrt{2\alpha/\omega}$). $\,$This is why the soil temperature a few meters down lags behind the seasons
+
+$~$
+
+**Duhamel's principle for a source term**
+
+* The same superposition idea applies to a time-varying heat source
+
+  $$
+  \begin{aligned}
+   u_t &= \alpha u_{xx}+\color{red}{f(x,t)} && 0 < x < 1, \; 0 < t < \infty \\
+   u(0,t) &= 0, \;\; u(1,t)=0 && 0 < t < \infty \\
+   u(x,0) &= 0 && 0 \leq x \leq 1
+  \end{aligned}$$ 
+
+* <font color="red">The heat added during $\,[\tau,\tau+d\tau]\,$ acts like an initial temperature $\,f(x,\tau)\,d\tau\,$ given at time $\,\tau$</font>. $\,$Let $\,\phi(x,t;\tau)\,$ solve the homogeneous problem that starts at $\,t=\tau$:
+
+  $$ \phi_t=\alpha\phi_{xx}\;\;(t>\tau), \qquad \phi(0,t;\tau)=\phi(1,t;\tau)=0, \qquad \phi(x,\tau;\tau)=f(x,\tau) $$
+
+  Then
+
+  $$ \color{red}{u(x,t)=\int_0^t \phi(x,t;\tau)\,d\tau} $$
+
+$~$
+
+* **Verification**: $\,$by the Leibniz rule,
+
+  $$ u_t=\underbrace{\phi(x,t;t)}_{=\,f(x,t)}+\int_0^t \phi_t(x,t;\tau)\,d\tau
+   =f(x,t)+\alpha\int_0^t \phi_{xx}(x,t;\tau)\,d\tau=f(x,t)+\alpha u_{xx} $$
+
+  The BCs hold since every $\,\phi\,$ satisfies them, $\,$and $\,u(x,0)=0\,$ since the integral is empty at $\,t=0$
+
+$~$
+
+* **Finite interval**: $\,$with $\,f(x,\tau)=\sum f_n(\tau)\sin n\pi x$, $\,$separation of variables gives $\,\phi=\sum f_n(\tau)\,e^{-\alpha(n\pi)^2(t-\tau)}\sin n\pi x$, $\,$so
+
+  $$ u(x,t)=\sum_{n=1}^\infty \left[\int_0^t e^{-\alpha(n\pi)^2(t-\tau)}\,f_n(\tau)\,d\tau\right]\sin n\pi x $$
+
+  This is the forcing part found by the eigenfunction expansion in @sec-x1-9: $\,$each mode obeys $\,T_n'+\alpha(n\pi)^2T_n=f_n(t)$, $\,$whose solution is the same superposition of decaying responses
+
+$~$
+
+* **Infinite domain**: $\,$by the Green's function of @sec-x1-13, $\,\phi(x,t;\tau)=\int_{-\infty}^\infty G(x-\xi,t-\tau)\,f(\xi,\tau)\,d\xi$, $\,$so
+
+  $$ u(x,t)=\int_0^t\int_{-\infty}^\infty \frac{1}{2\sqrt{\alpha\pi(t-\tau)}}\,e^{-(x-\xi)^2/4\alpha(t-\tau)}\,f(\xi,\tau)\,d\xi\,d\tau $$
+
+* **Example**: $\,f=q\,$ (constant) with $\,\alpha=1$: $\,f_n=\dfrac{2q\left[1-(-1)^n\right]}{n\pi}\,$ and
+
+  $$ u(x,t)=\sum_{n=1}^\infty \frac{2q\left[1-(-1)^n\right]}{(n\pi)^3}\left(1-e^{-(n\pi)^2 t}\right)\sin n\pi x
+   \;\;\xrightarrow{\;t\to\infty\;}\;\; \frac{q}{2}\,x(1-x) $$
+
+  the steady state of $\,u_{xx}=-q\,$ with zero end temperatures
+
+$~$
+
+**Two forms, one principle**
+
+* Substituting $\,u=v+x\,\psi(t)\,$ into \eqref{eq:D1} $\,$(as in @sec-x1-7) $\,$moves the boundary temperature into a source:
+
+  $$ v_t=v_{xx}-x\,\psi'(t), \qquad v(0,t)=v(1,t)=0, \qquad v(x,0)=-x\,\psi(0) $$
+
+* With $\,\psi(0)=0$, $\,$the source $\,-x\,\psi'(\tau)\,$ has the sine coefficients $\,\dfrac{2(-1)^n}{n\pi}\,\psi'(\tau)$, $\,$so
+
+  $$ u=x\,\psi(t)+\sum_{n=1}^\infty\left[\int_0^t e^{-(n\pi)^2(t-\tau)}\,\frac{2(-1)^n}{n\pi}\,\psi'(\tau)\,d\tau\right]\sin n\pi x
+   =\int_0^t w(x,t-\tau)\,\psi'(\tau)\,d\tau $$
+
+  which is the boundary form of Duhamel's principle. $\,$The step response $\,w\,$ is the steady state $\,x\,$ plus the response to the source
+
+$~$
 
 ## Summary {.unnumbered}
 
@@ -2262,7 +2489,7 @@ $~$
 | Finite sine transform | $\mathcal F_s[u_{xx}]=-\left(\dfrac{n\pi}{L}\right)^2\mathcal F_s[u]+\dfrac{2n\pi}{L^2}\left[u(0,t)-(-1)^nu(L,t)\right]$ |
 | Fourier transform | $\mathcal F[f]=\dfrac1{\sqrt{2\pi}}\displaystyle\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx$, $\quad\mathcal F[f_x]=i\omega\mathcal F[f]$, $\ \mathcal F[f_{xx}]=-\omega^2\mathcal F[f]$ |
 | Infinite rod | $u(x,t)=\dfrac{1}{2\sqrt{\alpha\pi t}}\displaystyle\int_{-\infty}^\infty\phi(\xi)\,e^{-(x-\xi)^2/4\alpha t}\,d\xi$ |
-| Duhamel's principle | $u(x,t)=\displaystyle\int_0^t\frac{\partial w}{\partial t}(x,t-\tau)\,f(\tau)\,d\tau$, $\,$where $w$ solves the problem with the constant boundary value $1$ |
+| Duhamel's principle | $u(1,t)=\psi(t)$: $\,u=\psi(0)\,w(x,t)+\displaystyle\int_0^t w(x,t-\tau)\,\psi'(\tau)\,d\tau$, $\,$where $w$ solves the problem with the constant boundary value $1$; $\quad$source $f(x,t)$: $\,u=\displaystyle\int_0^t\phi(x,t;\tau)\,d\tau$, $\,\phi(x,\tau;\tau)=f(x,\tau)$ |
 
 $~$
 
