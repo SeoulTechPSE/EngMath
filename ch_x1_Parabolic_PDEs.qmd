@@ -1966,7 +1966,11 @@ $~$
 
 **NOTE** $\,$Symmetrization: $\,\displaystyle K=\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du$
 
-* Substituting $\,u=a/(\sqrt{s}\,v)$: $\,du=-\frac{a}{\sqrt{s}\,v^2}\,dv$, $\,u:0\to\infty \Rightarrow v:\infty\to 0$, $\,$and $\,\left(\sqrt{s}\,u-\frac{a}{u}\right)^2=\left(\sqrt{s}\,v-\frac{a}{v}\right)^2$
+* Substituting $\,u=a/(\sqrt{s}\,v)$: $\,du=-\frac{a}{\sqrt{s}\,v^2}\,dv$, $\,u:0\to\infty \Rightarrow v:\infty\to 0$, $\,$and
+
+  $$ \left(\sqrt{s}\,u-\frac{a}{u}\right)^2=\left(\sqrt{s}\,v-\frac{a}{v}\right)^2 $$
+
+  so that
 
   $$ K=\int_0^\infty e^{-\left(\sqrt{s}\,v-a/v\right)^2}\,\frac{a}{\sqrt{s}\,v^2}\,dv $$
 
