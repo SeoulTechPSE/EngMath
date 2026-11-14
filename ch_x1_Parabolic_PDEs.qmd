@@ -1962,7 +1962,22 @@ $~$
    &=\frac{2}{\sqrt{\pi}}\,e^{-2a\sqrt{s}}\underbrace{\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du}_{=\frac{1}{2}\sqrt{\pi/s}}
   \end{aligned}$$
 
-  The last integral follows by adding the same integral with $\,u\to a/(\sqrt{s}\,u)\,$ and then setting $\,w=\sqrt{s}\,u-a/u$
+  The last integral is evaluated by symmetrization (below)
+
+**NOTE** $\,$Symmetrization: $\,\displaystyle K=\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du$
+
+* Substituting $\,u=a/(\sqrt{s}\,v)$: $\,du=-\frac{a}{\sqrt{s}\,v^2}\,dv$, $\,u:0\to\infty \Rightarrow v:\infty\to 0$, $\,$and $\,\left(\sqrt{s}\,u-\frac{a}{u}\right)^2=\left(\sqrt{s}\,v-\frac{a}{v}\right)^2$
+
+  $$ K=\int_0^\infty e^{-\left(\sqrt{s}\,v-a/v\right)^2}\,\frac{a}{\sqrt{s}\,v^2}\,dv $$
+
+* Adding this to the original $\,K\,$ (renaming $\,v\to u$) creates the factor needed for $\,dw$
+
+  $$ 2K=\frac{1}{\sqrt{s}}\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}\left(\sqrt{s}+\frac{a}{u^2}\right)du $$
+
+* Now $\,w=\sqrt{s}\,u-a/u\,$ gives $\,dw=\left(\sqrt{s}+\frac{a}{u^2}\right)du\,$ and $\,u:0\to\infty \Rightarrow w:-\infty\to\infty$
+
+  $$ 2K=\frac{1}{\sqrt{s}}\int_{-\infty}^{\infty}e^{-w^2}\,dw=\sqrt{\frac{\pi}{s}}
+   \;\;\Rightarrow\;\; \color{blue}{K=\frac{1}{2}\sqrt{\frac{\pi}{s}}} $$
 
 $~$
 
