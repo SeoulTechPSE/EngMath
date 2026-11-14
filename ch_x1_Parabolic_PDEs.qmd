@@ -1369,24 +1369,10 @@ $~$
 
 **NOTE** $\,$Inverse transform of $\,e^{-\alpha\omega^2 t}\,$ (Gaussian integral)
 
-* Let $\,b=\alpha t>0$. $\,$Since $\,e^{-b\omega^2}\,$ is even in $\,\omega$, $\,$the $\,\sin\omega x\,$ part vanishes and
+$$ J(x)=\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}\;e^{-x^2/4b}
+ \;\;\Rightarrow\;\; \mathcal{F}^{-1}\left[e^{-b\omega^2}\right]=\frac{1}{\sqrt{2b}}\,e^{-x^2/4b} $$
 
-  $$ \mathcal{F}^{-1}\left[e^{-b\omega^2}\right]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-b\omega^2}e^{i\omega x}\,d\omega
-   =\sqrt{\frac{2}{\pi}}\;\underbrace{\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega}_{J(x)} $$
-
-* Differentiating with respect to $\,x\,$ and integrating by parts with $\,\omega e^{-b\omega^2}d\omega=d\left(-\frac{1}{2b}e^{-b\omega^2}\right)$,
-
-  $$ J'(x)=-\int_0^\infty \omega e^{-b\omega^2}\sin\omega x\,d\omega
-   =\underbrace{\left[\frac{e^{-b\omega^2}\sin\omega x}{2b}\right]_0^\infty}_{=0}-\frac{x}{2b}\,J(x) $$
-
-* With $\,\displaystyle J(0)=\int_0^\infty e^{-b\omega^2}d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}$, $\,$the solution of this first-order ODE is
-
-  $$ \color{blue}{J(x)=\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}\;e^{-x^2/4b}} $$
-
-  $$ \Rightarrow\;\; \mathcal{F}^{-1}\left[e^{-\alpha\omega^2 t}\right]=\frac{1}{\sqrt{2\alpha t}}\,e^{-x^2/4\alpha t},
-   \qquad G(x,t)=\frac{1}{\sqrt{2\pi}}\cdot\frac{1}{\sqrt{2\alpha t}}\,e^{-x^2/4\alpha t} $$
-
-  where the factor $\,1/\sqrt{2\pi}\,$ comes from the definition of the convolution
+With $\,b=\alpha t\,$ and the factor $\,1/\sqrt{2\pi}\,$ of the convolution, $\,$this gives $\,G(x,t)\,$ above. $\,$[Derivation (Section 1 of the supplement)](files/derivations/parabolic_inverse_transforms.pdf){target="_blank"}
 
 $~$
 
@@ -1622,28 +1608,12 @@ $~$
 
 **Evaluating the inverse sine transform directly**
 
-* Instead of using the tables, $\,$the inverse sine transform of $\,U(t)\,$ is
+Instead of using the tables, $\,$the inverse sine transform can be evaluated with the Dirichlet integral $\,\int_0^\infty \frac{\sin\omega x}{\omega}\,d\omega=\frac{\pi}{2}\,$ $(x>0)$ $\,$and the Gaussian integral $\,J(x)\,$ of @sec-x1-13:
 
-  $$ u(x,t)=\int_0^\infty U(t)\sin\omega x\,d\omega
-   =\frac{2A}{\pi}\int_0^\infty \frac{\sin\omega x}{\omega}\left(1-e^{-\alpha\omega^2 t}\right)d\omega $$
+$$ u(x,t)=\frac{2A}{\pi}\int_0^\infty \frac{\sin\omega x}{\omega}\left(1-e^{-\alpha\omega^2 t}\right)d\omega
+ =A\,\mathrm{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right) $$
 
-* The first term is the Dirichlet integral: $\,$for $\,x>0$,
-
-  $$ \int_0^\infty \frac{\sin\omega x}{\omega}\,d\omega=\frac{\pi}{2} $$
-
-* For the second term, $\,$let $\,\displaystyle I(x)=\int_0^\infty \frac{\sin\omega x}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega$. $\,$Differentiating with respect to $\,x\,$ gives the integral $\,J(x)\,$ in the NOTE in @sec-x1-13
-
-  $$ I'(x)=\int_0^\infty \cos\omega x\;e^{-\alpha\omega^2 t}\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{\alpha t}}\;e^{-x^2/4\alpha t} $$
-
-  and integrating back with $\,I(0)=0\,$ and $\,s=2\sqrt{\alpha t}\,\beta$,
-
-  $$ I(x)=\frac{1}{2}\sqrt{\frac{\pi}{\alpha t}}\int_0^x e^{-s^2/4\alpha t}\,ds=\frac{\pi}{2}\,\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right),
-   \quad \mathrm{erf}(\eta)=\frac{2}{\sqrt{\pi}}\int_0^\eta e^{-\beta^2}\,d\beta $$
-
-* Therefore,
-
-  $$ u(x,t)=\frac{2A}{\pi}\cdot\frac{\pi}{2}\left[1-\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right)\right]
-   =\color{blue}{A\,\mathrm{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)} $$
+[Derivation (Sections 2–3 of the supplement)](files/derivations/parabolic_inverse_transforms.pdf){target="_blank"}
 
 $~$
 
@@ -1728,23 +1698,11 @@ $~$
 
 **Evaluating the integral in closed form**
 
-* Using $\,\sin\omega\cos\omega x=\frac{1}{2}\left[\sin\omega(1+x)+\sin\omega(1-x)\right]$ $\,$and the result obtained in the previous example,
+The integral in the answer evaluates in closed form with the same integrals as in the previous example. $\,$Equivalently, $\,$with the Green's function $\,G\,$ of @sec-x1-13 and the even extension of the initial condition,
 
-  $$ \int_0^\infty \frac{\sin a\omega}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega=\frac{\pi}{2}\,\mathrm{erf}\left(\frac{a}{2\sqrt{\alpha t}}\right) $$
+$$ u(x,t)=\int_{-1}^{1}G(x-\xi,t)\,d\xi=\frac{1}{2}\left[\mathrm{erf}\left(\frac{1+x}{2\sqrt{\alpha t}}\right)+\mathrm{erf}\left(\frac{1-x}{2\sqrt{\alpha t}}\right)\right] $$
 
-  which holds for any real $\,a\,$ since both sides are odd in $\,a$
-
-* Therefore,
-
-  $$\begin{aligned}
-   u(x,t)&=\frac{2}{\pi}\int_0^\infty \frac{\sin\omega}{\omega}\,e^{-\alpha\omega^2 t}\cos\omega x\,d\omega \\[4pt]
-   &=\color{blue}{\frac{1}{2}\left[\mathrm{erf}\left(\frac{1+x}{2\sqrt{\alpha t}}\right)
-     +\mathrm{erf}\left(\frac{1-x}{2\sqrt{\alpha t}}\right)\right]}
-  \end{aligned}$$
-
-* Equivalently, $\,$with the Green's function $\,G\,$ of @sec-x1-13 and the even extension of the initial condition,
-
-  $$ u(x,t)=\int_{-1}^{1}G(x-\xi,t)\,d\xi=\frac{1}{2\sqrt{\alpha\pi t}}\int_{-1}^{1}e^{-(x-\xi)^2/4\alpha t}\,d\xi $$
+[Derivation (Section 4 of the supplement)](files/derivations/parabolic_inverse_transforms.pdf){target="_blank"}
 
 $~$
 
@@ -1907,8 +1865,6 @@ $~$
     -\mathrm{erfc}\left( \sqrt{t}+\frac{x}{2\sqrt{t}} \right)
     e^{x+t}\right]} $$
 
-    See [Inverse Laplace Transform Table](http://eqworld.ipmnet.ru/en/auxiliary/inttrans/LapInv5.pdf)
-
 $~$
 
 ```{python}
@@ -1950,79 +1906,16 @@ $~$
 
 **Evaluating the inverse Laplace transform directly**
 
-* Both terms in the bracket of $\,U(x,s)\,$ follow from one basic pair
+Both terms in the bracket of $\,U(x,s)\,$ follow from one basic pair
 
-  $$ \mathcal{L}\left[\frac{1}{\sqrt{\pi t}}\,e^{-x^2/4t}\right]=\frac{e^{-x\sqrt{s}}}{\sqrt{s}} \qquad (\star) $$
+$$ \mathcal{L}\left[\frac{1}{\sqrt{\pi t}}\,e^{-x^2/4t}\right]=\frac{e^{-x\sqrt{s}}}{\sqrt{s}} $$
 
-* Proof: $\,$with $\,t=u^2\,$ and $\,a=x/2$,
+by differentiating it with respect to $\,x\,$ (first term) and by writing $\,\frac{1}{\sqrt{s}+1}=\int_0^\infty e^{-(\sqrt{s}+1)\xi}\,d\xi\,$ (second term):
 
-  $$\begin{aligned}
-   \int_0^\infty \frac{e^{-x^2/4t}}{\sqrt{\pi t}}\,e^{-st}\,dt
-   &=\frac{2}{\sqrt{\pi}}\int_0^\infty e^{-su^2-a^2/u^2}\,du \\
-   &=\frac{2}{\sqrt{\pi}}\,e^{-2a\sqrt{s}}\underbrace{\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du}_{=\frac{1}{2}\sqrt{\pi/s}}
-  \end{aligned}$$
+$$ \mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{s}\right]=\mathrm{erfc}\left(\frac{x}{2\sqrt{t}}\right), \qquad
+ \mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}\right]=e^{x+t}\,\mathrm{erfc}\left(\sqrt{t}+\frac{x}{2\sqrt{t}}\right) $$
 
-  The last integral is evaluated by symmetrization (below)
-
-**NOTE** $\,$Symmetrization: $\,\displaystyle K=\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du$
-
-* Substituting $\,u=a/(\sqrt{s}\,v)$: $\,du=-\frac{a}{\sqrt{s}\,v^2}\,dv$, $\,u:0\to\infty \Rightarrow v:\infty\to 0$, $\,$and
-
-  $$ \left(\sqrt{s}\,u-\frac{a}{u}\right)^2=\left(\sqrt{s}\,v-\frac{a}{v}\right)^2 $$
-
-  so that
-
-  $$ K=\int_0^\infty e^{-\left(\sqrt{s}\,v-a/v\right)^2}\,\frac{a}{\sqrt{s}\,v^2}\,dv $$
-
-* Adding this to the original $\,K\,$ (renaming $\,v\to u$) creates the factor needed for $\,dw$
-
-  $$ 2K=\frac{1}{\sqrt{s}}\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}\left(\sqrt{s}+\frac{a}{u^2}\right)du $$
-
-* Now $\,w=\sqrt{s}\,u-a/u\,$ gives $\,dw=\left(\sqrt{s}+\frac{a}{u^2}\right)du\,$ and $\,u:0\to\infty \Rightarrow w:-\infty\to\infty$
-
-  $$ 2K=\frac{1}{\sqrt{s}}\int_{-\infty}^{\infty}e^{-w^2}\,dw=\sqrt{\frac{\pi}{s}}
-   \;\;\Rightarrow\;\; \color{blue}{K=\frac{1}{2}\sqrt{\frac{\pi}{s}}} $$
-
-$~$
-
-**First term** $\,\displaystyle\mathcal{L}^{-1}\left[e^{-x\sqrt{s}}/s\right]$
-
-* Differentiating $\,(\star)\,$ with respect to $\,x$,
-
-  $$ \mathcal{L}\left[\frac{x}{2\sqrt{\pi}\,t^{3/2}}\,e^{-x^2/4t}\right]=e^{-x\sqrt{s}} $$
-
-* Dividing by $\,s\,$ means integrating from $\,0\,$ to $\,t$. $\,$With $\,\beta=x/(2\sqrt{\tau})$,
-
-  $$\begin{aligned}
-   \mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{s}\right]&=\int_0^t \frac{x}{2\sqrt{\pi}\,\tau^{3/2}}\,e^{-x^2/4\tau}\,d\tau \\
-   &=\frac{2}{\sqrt{\pi}}\int_{x/2\sqrt{t}}^\infty e^{-\beta^2}\,d\beta
-   =\color{blue}{\mathrm{erfc}\left(\frac{x}{2\sqrt{t}}\right)}
-  \end{aligned}$$
-
-  This is the solution of the sine-transform example in @sec-x1-14 with $\,A=1\,$ and $\,\alpha=1$: $\,$the same problem solved by two transforms
-
-$~$
-
-**Second term** $\,\displaystyle\mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}\right]$
-
-* Writing $\,\displaystyle\frac{1}{\sqrt{s}+1}=\int_0^\infty e^{-(\sqrt{s}+1)\xi}\,d\xi$,
-
-  $$ \frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}=\int_0^\infty e^{-\xi}\,\frac{e^{-(x+\xi)\sqrt{s}}}{\sqrt{s}}\,d\xi $$
-
-* Applying $\,(\star)\,$ with $\,x\to x+\xi$,
-
-  $$ f(t)=\frac{1}{\sqrt{\pi t}}\int_0^\infty e^{-\xi-(x+\xi)^2/4t}\,d\xi $$
-
-* Completing the square with $\,\eta=x+\xi$,
-
-  $$ -(\eta-x)-\frac{\eta^2}{4t}=x+t-\left(\frac{\eta}{2\sqrt{t}}+\sqrt{t}\right)^2 $$
-
-* Then $\,\beta=\eta/(2\sqrt{t})+\sqrt{t}\,$ and $\,d\eta=2\sqrt{t}\,d\beta\,$ give
-
-  $$ f(t)=e^{x+t}\,\frac{2}{\sqrt{\pi}}\int_{\sqrt{t}+x/2\sqrt{t}}^\infty e^{-\beta^2}\,d\beta
-   =\color{blue}{e^{x+t}\,\mathrm{erfc}\left(\sqrt{t}+\frac{x}{2\sqrt{t}}\right)} $$
-
-  The factor $\,e^{x+t}\,$ comes from completing the square
+[Derivation (Section 5 of the supplement)](files/derivations/parabolic_inverse_transforms.pdf){target="_blank"}
 
 $~$
 

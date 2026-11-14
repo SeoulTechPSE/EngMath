@@ -1,0 +1,243 @@
+---
+title: "Parabolic PDEs: Evaluating the Inverse Transforms"
+subtitle: "Supplement to the chapter *Parabolic Partial Differential Equations*"
+author: "Kee-Youn Yoo"
+date: "2026-11-15"
+date-format: "MMMM YYYY"
+format:
+  pdf:
+    documentclass: scrartcl
+    papersize: a4
+    geometry: [margin=2.3cm]
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 1
+---
+
+The chapter solves the heat equation on infinite and semi-infinite domains by the Fourier, sine, cosine and Laplace transforms, and reads the inverse transforms from tables. This supplement evaluates them directly. Sections 1 and 2 give the two integrals that the later sections use: the Gaussian integral and the Dirichlet integral
+
+$~$
+
+Lecture notes: <https://seoultechpse.github.io/EngMath/ch_x1_Parabolic_PDEs.html>
+
+# Inverse transform of $\,e^{-\alpha\omega^2 t}\,$ (Gaussian integral) {#sec-gauss}
+
+On the infinite domain, $\,$the Fourier transform turns $\,u_t=\alpha u_{xx}\,$ into $\,dU/dt=-\alpha\omega^2U$, $\,$so the solution needs the inverse transform of $\,e^{-\alpha\omega^2 t}$
+
+* Let $\,b=\alpha t>0$. $\,$Since $\,e^{-b\omega^2}\,$ is even in $\,\omega$, $\,$the $\,\sin\omega x\,$ part vanishes and
+
+  $$ \mathcal{F}^{-1}\left[e^{-b\omega^2}\right]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-b\omega^2}e^{i\omega x}\,d\omega
+   =\sqrt{\frac{2}{\pi}}\;\underbrace{\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega}_{J(x)} $$
+
+* Differentiating with respect to $\,x\,$ and integrating by parts with $\,\omega e^{-b\omega^2}d\omega=d\left(-\frac{1}{2b}e^{-b\omega^2}\right)$,
+
+  $$ J'(x)=-\int_0^\infty \omega e^{-b\omega^2}\sin\omega x\,d\omega
+   =\underbrace{\left[\frac{e^{-b\omega^2}\sin\omega x}{2b}\right]_0^\infty}_{=0}-\frac{x}{2b}\,J(x) $$
+
+* With $\,\displaystyle J(0)=\int_0^\infty e^{-b\omega^2}d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}$, $\,$the solution of this first-order ODE is
+
+  $$ \color{blue}{J(x)=\int_0^\infty e^{-b\omega^2}\cos\omega x\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{b}}\;e^{-x^2/4b}} $$
+
+  $$ \Rightarrow\;\; \mathcal{F}^{-1}\left[e^{-\alpha\omega^2 t}\right]=\frac{1}{\sqrt{2\alpha t}}\,e^{-x^2/4\alpha t},
+   \qquad G(x,t)=\frac{1}{\sqrt{2\pi}}\cdot\frac{1}{\sqrt{2\alpha t}}\,e^{-x^2/4\alpha t} $$
+
+  where the factor $\,1/\sqrt{2\pi}\,$ comes from the definition of the convolution
+
+# The Dirichlet integral {#sec-dirichlet}
+
+## Convergence
+
+$$ \int_0^\infty \frac{\sin x}{x}\,dx=\frac{\pi}{2} $$
+
+* Near $\,x=0$, $\,\sin x/x\to 1$. $\,$For large $\,x$, $\,$integration by parts gives
+
+  $$ \int_1^R\frac{\sin x}{x}\,dx=\left[-\frac{\cos x}{x}\right]_1^R-\int_1^R\frac{\cos x}{x^2}\,dx $$
+
+  and both terms converge as $\,R\to\infty\,$ since $\,|\cos x/x^2|\le 1/x^2$
+
+* However, $\,$the integral is only **conditionally** convergent:
+
+  $$ \int_0^\infty\left|\frac{\sin x}{x}\right|dx\;\ge\;\sum_{n=0}^\infty\frac{2}{(n+1)\pi}=\infty $$
+
+  So we cannot differentiate under the integral sign or interchange integrals directly $\,\Rightarrow\,$ insert a damping factor
+
+## Proof by differentiating a parameter
+
+* With the damping factor $\,e^{-px}\,(p>0)$, $\,$the integral converges absolutely
+
+  $$ F(p)=\int_0^\infty\frac{\sin x}{x}\,e^{-px}\,dx
+   \;\;\Rightarrow\;\;
+   F'(p)=-\int_0^\infty e^{-px}\sin x\,dx=-\frac{1}{1+p^2} $$
+
+  where the last integral is $\,\mathcal{L}[\sin t]=1/(s^2+1)\,$ with $\,s=p$
+
+* Since $\,|F(p)|\le\int_0^\infty e^{-px}dx=1/p\to 0\,$ as $\,p\to\infty$,
+
+  $$ F(p)=\frac{\pi}{2}-\arctan p
+   \;\;\xrightarrow{\;p\to 0^+\;}\;\;
+   \color{blue}{\int_0^\infty\frac{\sin x}{x}\,dx=\frac{\pi}{2}} $$
+
+## Fourier interpretation {#sec-dirichlet-fourier}
+
+* With $\,\omega\to\omega/|a|$, $\,$the result depends only on the sign of $\,a$
+
+  $$ \int_0^\infty\frac{\sin a\omega}{\omega}\,d\omega=\frac{\pi}{2}\,\mathrm{sgn}(a) $$
+
+  Using $\,\sin\omega\cos\omega x=\frac{1}{2}\left[\sin\omega(1+x)+\sin\omega(1-x)\right]$,
+
+  $$ \frac{2}{\pi}\int_0^\infty\frac{\sin\omega\cos\omega x}{\omega}\,d\omega
+   =\begin{cases}1&|x|<1\\ \frac{1}{2}&|x|=1\\ 0&|x|>1\end{cases} $$
+
+  which is the Fourier integral of the rectangular pulse, $\,$with the mean value at the jumps
+
+* With the Gaussian factor of the heat equation, $\,$the jump is smoothed out (@sec-sine)
+
+  $$ \int_0^\infty\frac{\sin a\omega}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega
+   =\frac{\pi}{2}\,\mathrm{erf}\left(\frac{a}{2\sqrt{\alpha t}}\right)
+   \;\;\xrightarrow{\;t\to 0^+\;}\;\;\frac{\pi}{2}\,\mathrm{sgn}(a) $$
+
+# Sine transform: fixed boundary temperature {#sec-sine}
+
+$$\begin{aligned}
+ u_t &= \alpha u_{xx} && 0<x<\infty,\; 0<t<\infty \\
+ u(0,t) &= A && 0<t<\infty \\
+ u(x,0) &= 0 && 0\le x<\infty
+\end{aligned}$$
+
+The sine transform gives $\,\displaystyle U(\omega,t)=\frac{2A}{\pi}\,\frac{1-e^{-\alpha\omega^2 t}}{\omega}$
+
+* Instead of using the tables, $\,$the inverse sine transform of $\,U(t)\,$ is
+
+  $$ u(x,t)=\int_0^\infty U(t)\sin\omega x\,d\omega
+   =\frac{2A}{\pi}\int_0^\infty \frac{\sin\omega x}{\omega}\left(1-e^{-\alpha\omega^2 t}\right)d\omega $$
+
+* The first term is the Dirichlet integral (@sec-dirichlet): $\,$for $\,x>0$,
+
+  $$ \int_0^\infty \frac{\sin\omega x}{\omega}\,d\omega=\frac{\pi}{2} $$
+
+* For the second term, $\,$let $\,\displaystyle I(x)=\int_0^\infty \frac{\sin\omega x}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega$. $\,$Differentiating with respect to $\,x\,$ gives the integral $\,J(x)\,$ of @sec-gauss with $\,b=\alpha t$
+
+  $$ I'(x)=\int_0^\infty \cos\omega x\;e^{-\alpha\omega^2 t}\,d\omega=\frac{1}{2}\sqrt{\frac{\pi}{\alpha t}}\;e^{-x^2/4\alpha t} $$
+
+  and integrating back with $\,I(0)=0\,$ and $\,s=2\sqrt{\alpha t}\,\beta$,
+
+  $$ I(x)=\frac{1}{2}\sqrt{\frac{\pi}{\alpha t}}\int_0^x e^{-s^2/4\alpha t}\,ds=\frac{\pi}{2}\,\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right),
+   \quad \mathrm{erf}(\eta)=\frac{2}{\sqrt{\pi}}\int_0^\eta e^{-\beta^2}\,d\beta $$
+
+* Therefore,
+
+  $$ u(x,t)=\frac{2A}{\pi}\cdot\frac{\pi}{2}\left[1-\mathrm{erf}\left(\frac{x}{2\sqrt{\alpha t}}\right)\right]
+   =\color{blue}{A\,\mathrm{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)} $$
+
+# Cosine transform: insulated boundary {#sec-cosine}
+
+$$\begin{aligned}
+ u_t &= \alpha u_{xx} && 0<x<\infty,\; 0<t<\infty \\
+ u_x(0,t) &= 0 && 0<t<\infty \\
+ u(x,0) &= H(1-x) && 0\le x<\infty
+\end{aligned}$$
+
+The cosine transform gives $\,\displaystyle U(\omega,t)=\frac{2}{\pi}\,\frac{\sin\omega}{\omega}\,e^{-\alpha\omega^2 t}$
+
+* Using $\,\sin\omega\cos\omega x=\frac{1}{2}\left[\sin\omega(1+x)+\sin\omega(1-x)\right]$ $\,$and the result of @sec-sine (see also @sec-dirichlet-fourier),
+
+  $$ \int_0^\infty \frac{\sin a\omega}{\omega}\,e^{-\alpha\omega^2 t}\,d\omega=\frac{\pi}{2}\,\mathrm{erf}\left(\frac{a}{2\sqrt{\alpha t}}\right) $$
+
+  which holds for any real $\,a\,$ since both sides are odd in $\,a$
+
+* Therefore,
+
+  $$\begin{aligned}
+   u(x,t)&=\frac{2}{\pi}\int_0^\infty \frac{\sin\omega}{\omega}\,e^{-\alpha\omega^2 t}\cos\omega x\,d\omega \\[4pt]
+   &=\color{blue}{\frac{1}{2}\left[\mathrm{erf}\left(\frac{1+x}{2\sqrt{\alpha t}}\right)
+     +\mathrm{erf}\left(\frac{1-x}{2\sqrt{\alpha t}}\right)\right]}
+  \end{aligned}$$
+
+* Equivalently, $\,$with the Green's function $\,G\,$ of @sec-gauss and the even extension of the initial condition,
+
+  $$ u(x,t)=\int_{-1}^{1}G(x-\xi,t)\,d\xi=\frac{1}{2\sqrt{\alpha\pi t}}\int_{-1}^{1}e^{-(x-\xi)^2/4\alpha t}\,d\xi $$
+
+# Laplace transform: cooling through the surface {#sec-laplace}
+
+$$\begin{aligned}
+ u_t &= u_{xx} && 0<x<\infty,\; 0<t<\infty \\
+ u_x(0,t)-u(0,t) &= 0 && 0<t<\infty \\
+ u(x,0) &= u_0 && 0\le x<\infty
+\end{aligned}$$
+
+The Laplace transform in $\,t\,$ gives
+
+$$ U(x,s)=\frac{u_0}{s}-u_0\left[\frac{e^{-x\sqrt{s}}}{s}-\frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}\right] $$
+
+* Both terms in the bracket of $\,U(x,s)\,$ follow from one basic pair
+
+  $$ \mathcal{L}\left[\frac{1}{\sqrt{\pi t}}\,e^{-x^2/4t}\right]=\frac{e^{-x\sqrt{s}}}{\sqrt{s}} \qquad (\star) $$
+
+* Proof: $\,$with $\,t=u^2\,$ and $\,a=x/2$,
+
+  $$\begin{aligned}
+   \int_0^\infty \frac{e^{-x^2/4t}}{\sqrt{\pi t}}\,e^{-st}\,dt
+   &=\frac{2}{\sqrt{\pi}}\int_0^\infty e^{-su^2-a^2/u^2}\,du \\
+   &=\frac{2}{\sqrt{\pi}}\,e^{-2a\sqrt{s}}\underbrace{\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du}_{=\frac{1}{2}\sqrt{\pi/s}}
+  \end{aligned}$$
+
+  The last integral is evaluated by symmetrization below
+
+## Symmetrization
+
+Let $\,\displaystyle K=\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}du$
+
+* Substituting $\,u=a/(\sqrt{s}\,v)$: $\,du=-\frac{a}{\sqrt{s}\,v^2}\,dv$, $\,u:0\to\infty \Rightarrow v:\infty\to 0$, $\,$and
+
+  $$ \left(\sqrt{s}\,u-\frac{a}{u}\right)^2=\left(\sqrt{s}\,v-\frac{a}{v}\right)^2 $$
+
+  so that
+
+  $$ K=\int_0^\infty e^{-\left(\sqrt{s}\,v-a/v\right)^2}\,\frac{a}{\sqrt{s}\,v^2}\,dv $$
+
+* Adding this to the original $\,K\,$ (renaming $\,v\to u$) creates the factor needed for $\,dw$
+
+  $$ 2K=\frac{1}{\sqrt{s}}\int_0^\infty e^{-\left(\sqrt{s}\,u-a/u\right)^2}\left(\sqrt{s}+\frac{a}{u^2}\right)du $$
+
+* Now $\,w=\sqrt{s}\,u-a/u\,$ gives $\,dw=\left(\sqrt{s}+\frac{a}{u^2}\right)du\,$ and $\,u:0\to\infty \Rightarrow w:-\infty\to\infty$
+
+  $$ 2K=\frac{1}{\sqrt{s}}\int_{-\infty}^{\infty}e^{-w^2}\,dw=\sqrt{\frac{\pi}{s}}
+   \;\;\Rightarrow\;\; \color{blue}{K=\frac{1}{2}\sqrt{\frac{\pi}{s}}} $$
+
+## First term $\,\displaystyle\mathcal{L}^{-1}\left[e^{-x\sqrt{s}}/s\right]$
+
+* Differentiating $\,(\star)\,$ with respect to $\,x$,
+
+  $$ \mathcal{L}\left[\frac{x}{2\sqrt{\pi}\,t^{3/2}}\,e^{-x^2/4t}\right]=e^{-x\sqrt{s}} $$
+
+* Dividing by $\,s\,$ means integrating from $\,0\,$ to $\,t$. $\,$With $\,\beta=x/(2\sqrt{\tau})$,
+
+  $$\begin{aligned}
+   \mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{s}\right]&=\int_0^t \frac{x}{2\sqrt{\pi}\,\tau^{3/2}}\,e^{-x^2/4\tau}\,d\tau \\
+   &=\frac{2}{\sqrt{\pi}}\int_{x/2\sqrt{t}}^\infty e^{-\beta^2}\,d\beta
+   =\color{blue}{\mathrm{erfc}\left(\frac{x}{2\sqrt{t}}\right)}
+  \end{aligned}$$
+
+  This is the solution of @sec-sine with $\,A=1\,$ and $\,\alpha=1$: $\,$the same problem solved by two transforms
+
+## Second term $\,\displaystyle\mathcal{L}^{-1}\left[\frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}\right]$
+
+* Writing $\,\displaystyle\frac{1}{\sqrt{s}+1}=\int_0^\infty e^{-(\sqrt{s}+1)\xi}\,d\xi$,
+
+  $$ \frac{e^{-x\sqrt{s}}}{\sqrt{s}(\sqrt{s}+1)}=\int_0^\infty e^{-\xi}\,\frac{e^{-(x+\xi)\sqrt{s}}}{\sqrt{s}}\,d\xi $$
+
+* Applying $\,(\star)\,$ with $\,x\to x+\xi$,
+
+  $$ f(t)=\frac{1}{\sqrt{\pi t}}\int_0^\infty e^{-\xi-(x+\xi)^2/4t}\,d\xi $$
+
+* Completing the square with $\,\eta=x+\xi$,
+
+  $$ -(\eta-x)-\frac{\eta^2}{4t}=x+t-\left(\frac{\eta}{2\sqrt{t}}+\sqrt{t}\right)^2 $$
+
+* Then $\,\beta=\eta/(2\sqrt{t})+\sqrt{t}\,$ and $\,d\eta=2\sqrt{t}\,d\beta\,$ give
+
+  $$ f(t)=e^{x+t}\,\frac{2}{\sqrt{\pi}}\int_{\sqrt{t}+x/2\sqrt{t}}^\infty e^{-\beta^2}\,d\beta
+   =\color{blue}{e^{x+t}\,\mathrm{erfc}\left(\sqrt{t}+\frac{x}{2\sqrt{t}}\right)} $$
+
+  The factor $\,e^{x+t}\,$ comes from completing the square

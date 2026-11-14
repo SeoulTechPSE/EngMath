@@ -17,3 +17,7 @@ __pycache__/
 
 # PDF edition build output (quarto render --profile pdf --to pdf)
 /_pdf/
+
+# Supplement PDFs: sources in derivations/, published copies in files/derivations/
+/derivations/*.pdf
+/derivations/.quarto/
