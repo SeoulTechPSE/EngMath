@@ -104,11 +104,11 @@ jupyter: python3
   
     $yu_{xx}+u_{yy}=0$
 
-![](figures/pde_classification.svg "PDE classification"){width="60%" fig-align="center"}    
+![](figures/pde_classification.svg "PDE classification"){width="60%" fig-align="center" fig-alt="PDE classification"}    
 
 ## Diffusion-Type Problems (Parabolic Equations) {#sec-x1-2}
 
-![](figures/pde01_figure01.svg "heat flow experiment"){width="90%" fig-align="center"}
+![](figures/pde01_figure01.svg "heat flow experiment"){width="90%" fig-align="center" fig-alt="heat flow experiment"}
 
 * **The Mathematical Model of the Heat-Flow**
 
@@ -177,7 +177,7 @@ jupyter: python3
 
 $~$
 
-![](figures/pde01_figure05.svg "thin conducting rod"){width="70%" fig-align="center"}
+![](figures/pde01_figure05.svg "thin conducting rod"){width="70%" fig-align="center" fig-alt="thin conducting rod"}
 
 * Suppose we have a one-dimension rod of length $L$ for which we make the following assumptions:
 
@@ -223,9 +223,9 @@ $~$
 
 * **Type 1 BC (Temperature specified on the boundary)** 
 
-  ![](figures/pde01_figure02.svg "type 1 BC"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure02.svg "type 1 BC"){width="70%" fig-align="center" fig-alt="type 1 BC"}
 
-  ![](figures/pde01_figure03.svg "oscillating BC"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure03.svg "oscillating BC"){width="70%" fig-align="center" fig-alt="oscillating BC"}
 
   * Of course, we'd have an initial temperature to get this experiment started, but in this case, the effects of our IC would vanish after a short period of time, and the resulting temperature inside the circle would depend on the boundary temperature
 
@@ -251,7 +251,7 @@ For example, if the circular disc insulated on the boundary, then the BC would b
 
 * **Type 3 BC (Temperature of the surrounding medium specified)**
 
-  ![](figures/pde01_figure04.svg "convective cooling at boundary"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure04.svg "convective cooling at boundary"){width="60%" fig-align="center" fig-alt="convective cooling at boundary"}
 
   * By specifying these types of BCs, $\,$we cannot say the boundary temperatures of the rod will be the same as the liquid temperature $g_1(t)$ and $g_2(t)$,
 
@@ -312,7 +312,7 @@ For example, if the circular disc insulated on the boundary, then the BC would b
       u(x, 0) &= \phi(x) && 0 \leq x \leq L
   \end{aligned}$$
 
-  ![](figures/pde01_figure06.svg "diffusion problem"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure06.svg "diffusion problem"){width="70%" fig-align="center" fig-alt="diffusion problem"}
 
 **STEP 1** $\,$ To begin, $\,$we look for solutions of the form $u(x,t)=X(x)T(t)$ by substituting $X(x)T(t)$ into the PDE
 
@@ -428,7 +428,7 @@ $~$
 
 * **Heat-Flow Problem with 3^rd^ kind BC**
 
-  ![](figures/pde01_figure08.svg "Heat-Flow Problem with 3^rd^ kind BC"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure08.svg "Heat-Flow Problem with 3^rd^ kind BC"){width="60%" fig-align="center" fig-alt="Heat-Flow Problem with 3^rd^ kind BC"}
 
 * We fix the temperature at the top of the rod at $u(0,t)=0$ and immerse the bottom of the rod in a solution of water fixed at the same temperature of zero. The natural flow of heat says that the BC at $x=1$ is
 
@@ -665,7 +665,7 @@ example_plot3(alpha, t, x, n_eig, sqrt_eig, eigfunc, u_solution)
 
 * However, $\,$it is obvious that the solution will have a steady-state solution (when $t=\infty$) that varies linearly between the boundary temperatures $k_1$ and $k_2$
 
-  ![](figures/pde01_figure07.svg "nonhomogeneous BCa"){width="70%" fig-align="center"}
+  ![](figures/pde01_figure07.svg "nonhomogeneous BCa"){width="70%" fig-align="center" fig-alt="nonhomogeneous BCa"}
 
 * In other words, $\,$it seems reasonable to think of our temperature $u(x,t)$ as the sum of two parts
 
@@ -763,7 +763,7 @@ $~$
 
 ## Transforming Hard Equations into Easier Ones {#sec-x1-8}
 
-![](figures/pde01_figure09.svg "heat flow with lateral heat loss"){width="75%" fig-align="center"}
+![](figures/pde01_figure09.svg "heat flow with lateral heat loss"){width="75%" fig-align="center" fig-alt="heat flow with lateral heat loss"}
 
 * Consider the following problem:
 
@@ -1005,7 +1005,7 @@ the major ingredient that distinguishes one transform from another; $\,$ it is c
 
 * In other words, integral transformations change problems into easier ones. $\,$The transformed problem is then solved, and its inverse is obtained to find the solution to the original problem
 
-![](figures/pde01_figure10alt.svg "general philosophy of transforms"){width="90%" fig-align="center"}
+![](figures/pde01_figure10alt.svg "general philosophy of transforms"){width="90%" fig-align="center" fig-alt="general philosophy of transforms"}
 
 * We first start with a function $f(x)$ defined on an interval $[0,L]$. $\,$The finite sine and cosine transforms of this function are defined by
 
@@ -1039,7 +1039,7 @@ $$\begin{aligned}
    f(x)&=\frac{4}{\pi} \sum_{n=1}^\infty \left[ \frac{1}{2n-1} \right] \sin (2n-1)\pi x
   \end{aligned}$$
 
-![](figures/pde02_figure21.svg "Finite Sine Transform"){width="65%" fig-align="center"}
+![](figures/pde02_figure21.svg "Finite Sine Transform"){width="65%" fig-align="center" fig-alt="Finite Sine Transform"}
 
 $~$
 
@@ -1280,7 +1280,7 @@ $~$
 
 * The usefulness of the Fourier transform comes from the fact that <font color="green">it changes the operation of differentiation into multiplication</font>; $\,$that is, $\,$partial differential equations are changed into ordinary differential equations
 
-  ![](figures/fourier2.jpg "Fourier"){width="35%" fig-align="center"}
+  ![](figures/fourier2.jpg "Fourier"){width="35%" fig-align="center" fig-alt="Portrait of Joseph Fourier"}
 
 * <font color="blue">**Useful Properties of the Fourier Transform**</font>
 
@@ -1378,7 +1378,7 @@ $~$
 
 It can be shown that this impulse-response function $G(x-\xi,t)$ $\,$is the temperature response to an initial temperature impulse at $\,x=\xi$
 
-![](figures/pde01_figure12.svg "impulse response G(x-\xi,t)"){width="75%" fig-align="center"}
+![](figures/pde01_figure12.svg "impulse response G(x-\xi,t)"){width="75%" fig-align="center" fig-alt="impulse response G(x-\xi,t)"}
 
 <font color="blue">Hence, $\,$the interpretation of solution is that the initial temperature $\,u(x,0)=\phi(x)\,$ is decomposed into a continuum of impulses of $\,\phi(\xi)\,$ at each point $x=\xi$ and the resulting temperature $\,\phi(\xi)G(x-\xi,t)\,$ is found.</font> <font color="red">$\,$These resulting temperatures are then added (integrated) to obtain the solution. This general idea is also superposition</font>
 
@@ -1523,7 +1523,7 @@ does not exist. $\,$Only functions that damp to zero sufficiently fast as $|x| \
     u(x,0) &= 0 && 0 \leq x < \infty
   \end{aligned}$$
 
-  ![](figures/pde01_figure11.svg "diffusion problem in a semi-infinite medium"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure11.svg "diffusion problem in a semi-infinite medium"){width="60%" fig-align="center" fig-alt="diffusion problem in a semi-infinite medium"}
 
   To solve this, $\,$we break into three simple steps. $\,$First our strategy is to transform the <font color="blue">$x$-variable via Fourier sine transform</font> so that we get an ODE in time
 
@@ -1827,7 +1827,7 @@ $~$
 
 * **Heat Conduction in a Semi-infinite Medium**
 
-  ![](figures/pde01_figure13.svg "deep container"){width="60%" fig-align="center"}
+  ![](figures/pde01_figure13.svg "deep container"){width="60%" fig-align="center" fig-alt="deep container"}
 
   * Consider a large (deep) container of liquid that is insulated on the sides. Suppose the liquid has an initial temperature of $u_0$ and that the temperature of the air above liquid is zero. Our goal is to find the temperature of the liquid at various depths of the container at different $t$ values:
 

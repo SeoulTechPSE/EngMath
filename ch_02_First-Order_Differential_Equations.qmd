@@ -25,7 +25,7 @@ jupyter: python3
 
 For example, $~\displaystyle\frac{dy}{dx}=\sin y$
     
-![](figures/ch02_figure01.svg "Direction Field"){width="45%" fig-align="center"}
+![](figures/ch02_figure01.svg "Direction Field"){width="45%" fig-align="center" fig-alt="Direction Field"}
 
 * Using the given computer-generated direction field, sketch, by hand, an approximate solution curve that passes through each of the indicated points:
 
@@ -100,7 +100,7 @@ $~$
 
 $$ \displaystyle \frac{dP}{dt} = P(a-bP) $$
 
-![](figures/ch02_figure02.svg){width="80%" fig-align="center"}
+![](figures/ch02_figure02.svg){width="80%" fig-align="center" fig-alt="Phase line and solution curves of the logistic equation dP/dt = P(a - bP)"}
 
 $~$
 
@@ -689,7 +689,7 @@ $~$
 :::
 
 ::: {.column width="55%"}
-![](figures/ch02_figure03.svg "Euler's method"){width="95%" fig-align="center"}
+![](figures/ch02_figure03.svg "Euler's method"){width="95%" fig-align="center" fig-alt="Euler's method"}
 :::
 :::
 
@@ -758,7 +758,7 @@ $h=0.1$: $\,y(1.2)\approx2.9800$; $\quad h=0.05$: $\,y(1.2)\approx3.1151$
 
 $~$
 
-![](figures/ch02_figure04.svg "LR-series circuit"){width="40%" fig-align="center"}
+![](figures/ch02_figure04.svg "LR-series circuit"){width="40%" fig-align="center" fig-alt="LR-series circuit"}
 
 Kirchhoff's second law gives
 
@@ -766,7 +766,7 @@ $$L\frac{di}{dt}+Ri=E(t)$$
 
 For a series circuit containing a resistor and a capacitor, 
 
-![](figures/ch02_figure05.svg "RC-series circuit"){width="40%" fig-align="center"}
+![](figures/ch02_figure05.svg "RC-series circuit"){width="40%" fig-align="center" fig-alt="RC-series circuit"}
 
 Kirchhoff's second law gives
 

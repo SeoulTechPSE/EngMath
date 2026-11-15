@@ -218,7 +218,7 @@ $~$
 
 ## Fourier Cosine and Sine Series {#sec-12-3}
 
-![](figures/ch12_figure01_02.svg "even and odd function"){width="90%" fig-align="center"}
+![](figures/ch12_figure01_02.svg "even and odd function"){width="90%" fig-align="center" fig-alt="even and odd function"}
 
 * If $\,f\,$ is even, $~$ then 
 
@@ -323,7 +323,7 @@ $~$
   
   * Define $f$ on $-L < x < 0\;$ by $\,f(x)=f(x+L)$
 
-![](figures/ch12_figure03.svg "Cosine, Sine and Fourier Series"){fig-align="center" width="60%"}
+![](figures/ch12_figure03.svg "Cosine, Sine and Fourier Series"){fig-align="center" width="60%" fig-alt="Cosine, Sine and Fourier Series"}
 
 
 ## Complex Fourier Series {#sec-12-4}
@@ -996,7 +996,7 @@ $~$
 
 **1.** $~$ Suppose the function $y=f(x)$, $0 < x < L$, given in figure is expanded in a cosine series, in a sine series, and in a Fourier series. Sketch the periodic extension to which each series converges
 
-![](./figures/ch12_ex01.svg)
+![](./figures/ch12_ex01.svg){fig-alt="Graph of the function f(x) on 0 < x < L for Worked Exercise 1"}
 
 $$f(x) = \begin{cases}
  0 & 0 \displaystyle \leq x < \frac{L}{2} \\

@@ -75,11 +75,11 @@ $$
     
   * An **arc**, $\mathbf{x}(t)$ - a plane curve that does not cross itself
     
-    ![](figures/ch11_figure01.svg){width="85%" fig-align="center"}
+    ![](figures/ch11_figure01.svg){width="85%" fig-align="center" fig-alt="Solutions of a plane autonomous system: an arc, and a self-crossing curve that cannot be a solution"}
     
   * A **periodic solution** or **cycle**, $\mathbf{x}(t +p)=\mathbf{x}(t)$
     
-    ![](figures/ch11_figure02.svg){width="40%" fig-align="center"}
+    ![](figures/ch11_figure02.svg){width="40%" fig-align="center" fig-alt="A periodic solution (cycle) through x0"}
     
  **Example** $~$Find all critical points of the following plane autonomous system
 
@@ -104,7 +104,7 @@ $(\sqrt2,\,2)$ $\,$ and $\,(-\sqrt2,\,2)$
 If $\mathbf{x}_1$ is a critical point of a plane autonomous system and $\mathbf{x}=\mathbf{x}(t)$ is a solution
 satisfying $\mathbf{x}(0)=\mathbf{x}_0$, when $\mathbf{x}_0$ is placed near $\mathbf{x}_1$
 
-![](figures/ch11_figure03.svg){width="100%" fig-align="center"}
+![](figures/ch11_figure03.svg){width="100%" fig-align="center" fig-alt="A solution starting near a critical point: it returns, stays close, or moves away"}
 
 (@) It may return to the critical point 
 (@) It may remain close to the critical point without returning
@@ -464,7 +464,7 @@ for i in range(2):
     if i == 1: ax.set_xlabel(r'$x$')
 ```
 
-![](figures/ch11_figure04.svg){width="90%" fig-align="center"}
+![](figures/ch11_figure04.svg){width="90%" fig-align="center" fig-alt="Classification of the critical point of x' = Ax in the trace-determinant plane"}
 
 For a linear plane autonomous system $\mathbf{x}'=\mathbf{A}\mathbf{x}$ with $\mathrm{det}\,\mathbf{A}\neq 0$,
 let $\mathbf{x}$ denote the solution that satisfies the initial condition $\mathbf{x}(0)=\mathbf{x}_0$, where
@@ -622,7 +622,7 @@ stable critical point
 
 * **Classifying Critical Points**
 
-![](figures/ch11_figure05.svg){width="90%" fig-align="center"}
+![](figures/ch11_figure05.svg){width="90%" fig-align="center" fig-alt="Classification of critical points after linearization, with the undecided borderline cases"}
 
 **Example** $~$ The second-order differential equation $mx'' +kx +k_1x^3 =0$, for $k>0$, represents a general
 model for the free, undamped oscillations of a mass $m$ attached to a nonlinear spring.
@@ -814,7 +814,7 @@ plt.show()
   A wide variety of nonlinear oscillations can be obtained by changing the shape of the wire and by making
   different assumptions about the forces acting on the bead
 
-  ![](figures/ch11_figure06.svg){width="65%" fig-align="center"}
+  ![](figures/ch11_figure06.svg){width="65%" fig-align="center" fig-alt="Bead sliding on the wire z = f(x) with its weight and tangential component"}
 
   The tangential force $\mathbf{F}$ due to the weight $W=mg$ $\,$ has a magnitude $mg\sin\theta$, and therefore
   the $x$-component of $\mathbf{F}$ is $F_x=-mg\sin\theta\cos\theta$. Since $f'(x)=\tan\theta$, $\,$ we can use the identity $1+\tan^2\theta=\sec^2\theta$ to conclude that
@@ -972,7 +972,7 @@ plt.show()
 
   Typical graphs of the nonnegative functions $F(x)=x^d e^{-cx}$ and $G(y)=y^a e^{-by}$ are shown in
 
-  ![](figures/ch11_figure07.svg){width="100%" fig-align="center"}
+  ![](figures/ch11_figure07.svg){width="100%" fig-align="center" fig-alt="Graphs of F(x) = x^d e^(-cx) and G(y) = y^a e^(-by) used in the Lotka-Volterra analysis"}
 
   It is not hard to show that $F(x)$ has an absolute maximum at $x=d/c$, whereas $G(y)$ has an absolute maximum at $y=a/b$. These graphs can be used to establish the following properties of a solution curve that originates at a noncritical point $(x_0,y_0)$ in the first quadrant
 
@@ -1235,7 +1235,7 @@ in the first quadrant
 
   A region $\mathbb{R}$ is called an **invariant region** for a plane autonomous system if, whenever $\mathbf{x}_0$ is in $\mathbb{R}$, the solution $\mathbf{x}=\mathbf{x}(t)$ remains in $\mathbb{R}$. If $\mathbf{n}(x,y)$ denotes a normal vector on the boundary that points inside the region, then $\mathbb{R}$ will be an invariant region for the plane autonomous system provided $\mathbf{v}(x,y)\cdot\mathbf{n}(x,y)\geq 0$ for all points $(x,y)$ in the boundary
 
- ![](figures/ch11_figure08.svg){width="90%" fig-align="center"}
+ ![](figures/ch11_figure08.svg){width="90%" fig-align="center" fig-alt="Invariant regions of type I (simply connected) and type II (annulus)"}
 
 * **Poincar&eacute;&ndash;Bendixson I**
 

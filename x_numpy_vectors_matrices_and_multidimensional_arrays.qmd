@@ -8,7 +8,7 @@ jupyter: python3
 
 $~$
 
-[![](./figures/numpy_logo.png){width="30%" fig-align="center"}](https://numpy.org/doc/stable/)
+[![](./figures/numpy_logo.png){width="30%" fig-align="center" fig-alt="NumPy logo"}](https://numpy.org/doc/stable/)
 
 $~$
 

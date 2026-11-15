@@ -378,7 +378,7 @@ $~$
 
 **Example** $\,$ Find the Laplace transform of the periodic function
   
-![](figures/ch04_figure01.svg "Square wave"){width="65%" fig-align="center"}
+![](figures/ch04_figure01.svg "Square wave"){width="65%" fig-align="center" fig-alt="Square wave"}
   
 $$\scriptsize\mathcal{L}\{E(t)\}=\frac{1}{1 -e^{-2s}} \int_0^2 e^{-st} E(t)\,dt=\frac{1}{s(1 +e^{-s})}$$
 
@@ -512,7 +512,7 @@ $$\small
           0, & \;\; t \geq t_0 +a
        \end{matrix}\right.$$
 
-![](figures/ch04_figure02.svg "Dirac delta function"){width="80%" fig-align="center"}
+![](figures/ch04_figure02.svg "Dirac delta function"){width="80%" fig-align="center" fig-alt="Dirac delta function"}
 
 * **The Dirac Delta Function**
   
@@ -566,7 +566,7 @@ $~$
 
 **Example** $\,$ Double Pendulum
 
-![](figures/ch04_figure03.svg "Double Pendulum"){width="40%" fig-align="center"}
+![](figures/ch04_figure03.svg "Double Pendulum"){width="40%" fig-align="center" fig-alt="Double Pendulum"}
 
 **Linearization** $\,$ For small displacements $\theta_1$ and $\theta_2$,
 

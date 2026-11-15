@@ -267,7 +267,7 @@ $~$
 
 $~$
 
-![](figures/ch08_figure01.svg "Equal"){width="95%" fig-align="center"}
+![](figures/ch08_figure01.svg "Two equations in two unknowns"){width="95%" fig-align="center" fig-alt="Two linear equations in two unknowns: (a) unique solution, (b) infinitely many, (c) none"}
 
 * **Augmented Matrix**
 
@@ -682,7 +682,7 @@ $${\scriptsize
     0      & 0       & 0      & 0      & 0         & 0        & 0       & {\color{red} 0}    
   \end{array}\right)}$$
 
-![](figures/ch08_figure02.png "Equal"){width="60%" fig-align="center"}
+![](figures/ch08_figure02.svg "Consistency of Ax = b"){width="60%" fig-align="center" fig-alt="Consistency of Ax = b decided by ranks"}
 
 $~$
 
@@ -1180,7 +1180,7 @@ $~$
 
   or
 
-  ![](figures/ch08_figure03.svg "Inverse"){width="80%" fig-align="center"}
+  ![](figures/ch08_figure03.svg "Inverse"){width="80%" fig-align="center" fig-alt="Gauss-Jordan inverse: (A | I) row-reduced to (I | A^{-1})"}
 
 * **Using the Inverse to Solve Systems**
 
@@ -2315,7 +2315,7 @@ $\mathbf{P}^{-1}\mathbf{A}\mathbf{P}=\mathbf{D}$ is a diagonal matrix?</font>
   
   Multiplying by $\mathbf{P}^{-1}$ on the left then gives $\mathbf{P}^{-1}\mathbf{A}\mathbf{P}=\mathbf{D}$
 
-![](figures/ch08_figure04.png){width="50%" fig-align="center"}
+![](figures/ch08_figure04.svg){width="50%" fig-align="center" fig-alt="Diagonalizable matrices: symmetric matrices and matrices with n distinct eigenvalues; defective matrices lie outside"}
 
 * If an $n \times n$ matrix $\mathbf{A}$ has $n$ distinct eigenvalues, $\,$it is diagonalizable
 * An $n \times n$ matrix $\mathbf{A}$ can be *orthogonally* diagonalized if and only if $\mathbf{A}$ is symmetric
@@ -3226,7 +3226,7 @@ $~$
 
 ### **Method of Least Squares**
 
-![](figures/ch08_figure06.svg){width="40%" fig-align="center"}
+![](figures/ch08_figure06.svg){width="40%" fig-align="center" fig-alt="Least-squares line and the vertical deviations of the data points from it"}
 
   When performing experiments we often tabulate data in the form of ordered pairs $(x_1, y_1),$ $(x_2, y_2),$ $\cdots,$ $(x_n, y_n),$ with each $x_i$ distinct. Given the data, it is then often desirable to predict $y$ from $x$ by finding a mathematical model, that is, a function $f(x)$ that approximates or fits the data
 
@@ -3338,7 +3338,7 @@ $~$
 
 * Strontium 90 is deposited into pastureland by rainfall. To study how this material is cycled through the ecosystem, $~$we divide the system into the compartments:
 
-  ![](figures/ch08_figure07.svg){width="75%" fig-align="center"}
+  ![](figures/ch08_figure07.svg){width="75%" fig-align="center" fig-alt="Compartmental model for strontium 90 with monthly transfer coefficients"}
   
   Suppose that $\Delta t=1$ month and the transfer coefficients shown in the figure are measured in fraction/month
 

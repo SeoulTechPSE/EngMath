@@ -10,3 +10,7 @@
 #summary table col { width: auto !important; }
 #summary table td:first-child { white-space: nowrap; }
 #summary table td, #summary table th { padding: 0.3rem 0.6rem; vertical-align: middle; }
+
+/* Figures from code cells carry their pixel size as width/height attributes,
+   so wide ones would overflow the text column: scale them down to fit */
+.cell-output-display img, .quarto-figure img { max-width: 100%; height: auto; }

@@ -15,7 +15,7 @@ jupyter: python3
 ::: {.content-visible when-format="html"}
 ## Contents {.unnumbered}
 
-### Part I
+### First Semester
 
 * [Introduction to Differential Equations](ch_01_Introduction_to_Differential_Equations.qmd)
 * [First-Order Differential Equations](ch_02_First-Order_Differential_Equations.qmd)
@@ -28,7 +28,7 @@ jupyter: python3
 
 ---
 
-### Part II
+### Second Semester
 
 * [Vectors](ch_07_Vectors.qmd)
 * [Vector Calculus](ch_09_Vector_Calculus.qmd)

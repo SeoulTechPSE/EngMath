@@ -12,3 +12,5 @@ Seoul National University of Science and Technology
 - `notebooks/` holds the Colab versions of the appendices. They are generated, so after editing an appendix (`x_*.qmd`) run `python3 tools/make_notebooks.py`. The build stops if they are out of date.
 - `tools/check_links.py` runs after rendering and stops the deployment if a page refers to a missing file.
 - PDF edition (main chapters only): `quarto render --profile pdf --to pdf` writes `_pdf/Engineering-Mathematics.pdf`; copy it to `files/` to publish it. It runs the code (about 3 minutes) and uses `tools/pdf.lua`. After changing an animation, run `python3 tools/make_filmstrips.py` first to refresh its still frames in `figures/pdf/`.
+- `tools/check_pdf.py` (needs `pymupdf`) lists text, equations and images of the PDF that run into the right margin; run it after rebuilding the PDF. Page 4 (the table of contents) is a known harmless hit.
+- Figure sources: the SVG figures are drawn by the scripts in `figures/src/` of the slides repository (EngMath-slides) and copied to `figures/`.

@@ -23,11 +23,11 @@ We will now begin to study the second major class of PDEs, $\,$<font color="red"
 
   We consider the small vibrations of a string that is fastened at each end
 
-  ![](figures/pde02_figure01.svg "vibrating string"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure01.svg "vibrating string"){width="80%" fig-align="center" fig-alt="vibrating string"}
 
 * To mathematically describe the vibrations of this string, $\,$we consider all the forces acting on a small section $\Delta x$ of the string 
 
-  ![](figures/pde02_figure02.jpg "Small Segment of Vibrating String"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure02.svg "Small Segment of Vibrating String"){width="70%" fig-align="center" fig-alt="Small Segment of Vibrating String"}
 
   If the horizontal component of tension is constant $T$, $\,$then the tension acting on each side of the string segment is given by
 
@@ -149,7 +149,7 @@ This is what we were aiming for, $\,$and it is called the **D'Alembert solution*
     u_t(x,0)&=0 
   \end{aligned}$$ 
 
-  ![](figures/pde02_figure03.svg "Initial Wave Decomposed into Two Traveling Waves"){width="60%" fig-align="center"}
+  ![](figures/pde02_figure03.svg "Initial Wave Decomposed into Two Traveling Waves"){width="60%" fig-align="center" fig-alt="Initial Wave Decomposed into Two Traveling Waves"}
 
 * **Initial Velocity Given**
 
@@ -272,7 +272,7 @@ $~$
    x +ct&= x_0 +ct_0 
   \end{aligned}\quad\color{red}{\text{characteristic curves}}$$
 
-  ![](figures/pde02_figure04.svg "xt-plane interpretation"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure04.svg "xt-plane interpretation"){width="80%" fig-align="center" fig-alt="xt-plane interpretation"}
 
 * For example, $\,$using this interpretation, $\,$the initial condition
 
@@ -287,7 +287,7 @@ $~$
 
   would give us the solution in the $\,xt$-plane shown in figure
 
-  ![](figures/pde02_figure05.svg "solution in xt-plane"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure05.svg "solution in xt-plane"){width="80%" fig-align="center" fig-alt="solution in xt-plane"}
 
 **CASE 2** <font color="red">$\,$Initial Displacement Zero; $\,$ Velocity Arbitrary</font>
 
@@ -314,7 +314,7 @@ $~$
 
   has a solution in the $\,xt$-plane in figure
 
-  ![](figures/pde02_figure07.svg "solution of initial velocity in xt-plane"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure07.svg "solution of initial velocity in xt-plane"){width="80%" fig-align="center" fig-alt="solution of initial velocity in xt-plane"}
 
 * To find the displacement, $\,$we compute the D'Alembert solution
 
@@ -470,7 +470,7 @@ $~$
 
     are known as <font color="red">**characteristics**</font>, $\,$and it is along these lines that disturbances are propagated. $\,$<font color="red">Characteristics are generally associated with hyperbolic equations</font>
 
-![](figures/pde02_figure08.svg "solution of semi-infinite string in xt-plane"){width="80%" fig-align="center"}
+![](figures/pde02_figure08.svg "solution of semi-infinite string in xt-plane"){width="80%" fig-align="center" fig-alt="solution of semi-infinite string in xt-plane"}
 
 $~$
 
@@ -493,7 +493,7 @@ $$
     \end{array} && 0 < x <\infty 
   \end{aligned}$$
 
-![](figures/pde02_figure09.svg "Example initial condition"){width="70%" fig-align="center"}
+![](figures/pde02_figure09.svg "Example initial condition"){width="70%" fig-align="center" fig-alt="Example initial condition"}
 
 ::: {.callout-note collapse="true" title="Answer" appearance="simple"}
 $u(x,t)=\tfrac12\,\chi_{(1+ct,\ 2+ct)}(x)+\tfrac12\,\chi_{(1-ct,\ 2-ct)}(x)-\tfrac12\,\chi_{(ct-2,\ ct-1)}(x),\quad x>0$
@@ -1191,7 +1191,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
   * The interpretation of this solution is that the initial disturbance $\,\psi\,$ radiates outward spherically (velocity $c$) at each point, $\,$so that after so many seconds, $\,$the point $\,(x,y,z)$ will be influenced by those initial disturbances on a sphere (of radius $\,ct$) around that point
 
-    ![](figures/pde02_figure19.svg "solution as the average of initial disturbances on a sphere"){width="80%" fig-align="center"}
+    ![](figures/pde02_figure19.svg "solution as the average of initial disturbances on a sphere"){width="80%" fig-align="center" fig-alt="solution as the average of initial disturbances on a sphere"}
 
   * Now, $\,$to finish the problem, $\,$what about the other half; $\,$that is
 
@@ -1232,7 +1232,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
     $~$
 
-    ![](figures/pde02_figure20.svg "diagram showing how initial disturbances affect a point"){width="60%" fig-align="center"}
+    ![](figures/pde02_figure20.svg "diagram showing how initial disturbances affect a point"){width="60%" fig-align="center" fig-alt="diagram showing how initial disturbances affect a point"}
 
   * Suppose now the initial disturbances $\,\phi\,$ and $\,\psi\,$ are zero except for a small sphere. $\,$As time increases, $\,$the radius of the sphere around $(x,y,z)$ increases with velocity $\,c$
 
@@ -1474,11 +1474,11 @@ The purpose of this section is to discuss some of the various types of BCs that 
 
   where we control the end points so that they move in a given manner
 
-  ![](figures/pde02_figure10.svg "1st kind BC"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure10.svg "1st kind BC"){width="70%" fig-align="center" fig-alt="1st kind BC"}
 
   A typical problem of this kind would involve suddenly twisting (at $t=1$) the right end of a fastened rod so many degrees and observing the resulting torsional vibration
 
-  ![](figures/pde02_figure11.svg "torsional vibration"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure11.svg "torsional vibration"){width="80%" fig-align="center" fig-alt="torsional vibration"}
 
 * **Second Kind: $\,$Force Given on the Boundaries** 
 
@@ -1489,7 +1489,7 @@ The purpose of this section is to discuss some of the various types of BCs that 
   u_x(1,t)&=0
   \end{aligned}, \quad 0 < t < \infty$$
 
-  ![](figures/pde02_figure12.svg "free BC"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure12.svg "free BC"){width="70%" fig-align="center" fig-alt="free BC"}
 
   If a vertical force $f(t)$ is applied at the end $x=1$, $\,$then the BC would be 
 
@@ -1499,7 +1499,7 @@ The purpose of this section is to discuss some of the various types of BCs that 
 
   Consider finally a violin string whose ends are attached to an elastic arrangement like the one shown in figure
 
-  ![](figures/pde02_figure13.svg "elastic attachment"){width="60%" fig-align="center"}
+  ![](figures/pde02_figure13.svg "elastic attachment"){width="60%" fig-align="center" fig-alt="elastic attachment"}
 
   Here, $\,$the spring attachments at each end give rise to vertical forces proportional to the displacements $\,-u(0,t)\,$ and $\,-u(1,t)$
 
@@ -1524,7 +1524,7 @@ The purpose of this section is to discuss some of the various types of BCs that 
   u_x(1,t) &=-\frac{h}{T} \left[u(1,t) -\theta_2(t) \right] 
   \end{aligned}$$
 
-  ![](figures/pde02_figure14.svg "nonhomogeneous elastic attachment"){width="80%" fig-align="center"}
+  ![](figures/pde02_figure14.svg "nonhomogeneous elastic attachment"){width="80%" fig-align="center" fig-alt="nonhomogeneous elastic attachment"}
 
 $~$
 
@@ -1569,7 +1569,7 @@ $~$
 
   * What happens is that the traveling wave solution to the PDE and IC keeps reflecting from the boundaries in such a way that the wave motion does not appear to be moving, $\,$but, $\,$in fact, appears to be vibrating in one position:
 
-    ![](figures/pde02_figure15.svg "Standing Waves"){width="60%" fig-align="center"}
+    ![](figures/pde02_figure15.svg "Standing Waves"){width="60%" fig-align="center" fig-alt="Standing Waves"}
 
   * We start by seeking standing-wave solutions to the PDE; $\,$that is solutions of the form
 
@@ -2561,7 +2561,7 @@ $~$
 
 * We have now reduced the problem to finding the two functions $\,\xi(x,y)\,$ and $\,\eta(x,y)\,$ so that their ratio $\,[\xi_x/\xi_y]\,$ and $\,[\eta_x/\eta_y]\,$ satisfy the above equation. $\,$Finding functions satisfying these conditions is really quite easy once we look for a few moments at figure
 
-  ![](figures/pde02_figure16.svg "characteristic curves"){width="65%" fig-align="center"}
+  ![](figures/pde02_figure16.svg "characteristic curves"){width="65%" fig-align="center" fig-alt="characteristic curves"}
 
   $$\begin{aligned}
     &\big\Downarrow \;\;{\scriptsize \xi = \text{constant}, \eta = \text{constant}}\\
@@ -2600,7 +2600,7 @@ $$\begin{array}{l}
    \eta =y-2x=c_2
  \end{array}$$
 
-![](figures/pde02_figure17.svg "Characteristic Curves2"){width="50%" fig-align="center"}
+![](figures/pde02_figure17.svg "Characteristic Curves2"){width="50%" fig-align="center" fig-alt="Characteristic Curves2"}
 
 $~$
 
@@ -2627,7 +2627,7 @@ $$\begin{aligned}
  \eta = \,&y^2 +x^2
 \end{aligned}$$
 
-![](figures/pde02_figure18.svg "Characteristic Curves3"){width="70%" fig-align="center"}
+![](figures/pde02_figure18.svg "Characteristic Curves3"){width="70%" fig-align="center" fig-alt="Characteristic Curves3"}
 
 
 We substitute this new coordinate into the equation to find the new equation
@@ -2739,7 +2739,7 @@ $~$
 
   The solution to this equation is based on a physical fact, $\,$that <font color="blue">an initial disturbance at some point $\,x\,$ propagates along a line (curve) in the $\,xt$-plane (called a characteristic)</font>
 
-  ![](figures/pde02_figure22.svg "characteristics"){width="70%" fig-align="center"}
+  ![](figures/pde02_figure22.svg "characteristics"){width="70%" fig-align="center" fig-alt="General characteristics (s varies along them, tau along the initial curve)"}
 
 * With this in mind, $\,$the idea is to introduce two new coordinates $\,s\,$ and $\,\tau$ (to replace $\,x\,$ and $\,t$) that have the properties
 
@@ -2782,7 +2782,7 @@ $$\begin{aligned}
   x - t = \tau, \;\;\;&-\infty < \tau < \infty
 \end{aligned}$$
 
-![](figures/pde02_figure23.svg "new coordinates"){width="60%" fig-align="center"}
+![](figures/pde02_figure23.svg "new coordinates"){width="60%" fig-align="center" fig-alt="new coordinates"}
 
 **STEP 2** $\,$ Using this coordinate system, $\,$we change the PDE to the ODE
 
@@ -2796,7 +2796,7 @@ $$\begin{aligned}
 
 $$u(x,t) = \sin(x -t) \cdot e^{-2t}$$
 
-![](figures/pde02_figure24.svg "solution"){width="60%" fig-align="center"}
+![](figures/pde02_figure24.svg "solution"){width="60%" fig-align="center" fig-alt="u = sin(x-t) e^{-2t}: profiles carried along the characteristics x - t = const"}
 
 $~$
 
@@ -2916,7 +2916,7 @@ $~$
 
   * It is clear that by knowing these characteristic curves starting from each point (and knowing the solution doesn't change along these curves), $\,$we can piece together the solution $\,u(x,t)\,$ for all time $\,t$. $\,$We won't actually find the explicit equation for the solution $\,u(x,t)\,$ in terms of $\,x\,$ and $\,t\,$ but will use our knowledge of the characteristics of the equation to solve some interesting problems
 
-![](figures/pde02_figure25.svg "characteristic curves"){width="40%" fig-align="center"}
+![](figures/pde02_figure25.svg "characteristic curves"){width="40%" fig-align="center" fig-alt="characteristic curves"}
 
 $~$
 
@@ -2934,7 +2934,7 @@ $~$
   \;\;\; 0 & 1 \leq x 
   \end{cases}$$
 
-![](figures/pde02_figure26.svg "initial density"){width="60%" fig-align="center"}
+![](figures/pde02_figure26.svg "initial density"){width="60%" fig-align="center" fig-alt="initial density"}
 
 **STEP 1**
 
@@ -2969,7 +2969,7 @@ $$\begin{aligned}
 
 which represents vertical lines starting at $\,x_0$
 
-![](figures/pde02_figure27.svg "characteristics"){width="80%" fig-align="center"}
+![](figures/pde02_figure27.svg "characteristics"){width="80%" fig-align="center" fig-alt="Characteristics of u_t + 2u u_x = 0 and the shock x = t + 1/2"}
 
 The solution remains constant along each characteristic line. $\,$Now the solution for $\,x \in \mathbb{R}$, $\,0 \leq t <\textstyle\frac{1}{2}\,$ is given by
 
@@ -2984,7 +2984,7 @@ $$u(x,t)=
 The difficulty in this example is
 that some characteristic lines will intersect each other. $\,$In other words, $\,$<font color="red">at the intersection point $\,(1,\textstyle \frac{1}{2})\,$ of the two characteristic lines, $\,$the solution becomes multi-valued</font>. $\,$This pathology means that the solution in the usual sense fails to exist after $\,t \geq \textstyle \frac{1}{2}$
 
-![](figures/pde02_figure28.svg "density of traffic at different values of time"){width="50%" fig-align="center"}
+![](figures/pde02_figure28.svg "density of traffic at different values of time"){width="50%" fig-align="center" fig-alt="density of traffic at different values of time"}
 
 **STEP 2**
 
@@ -3959,7 +3959,7 @@ $~$
 **7.** $~$ Suppose the vibration of a string is described by $u_{tt}=u_{xx}$ and has an initial displacement as given by the following diagram:
 
 
-![](./figures/2023_final_2_B_2.jpg)
+![](./figures/2023_final_2_B_2.jpg){fig-alt="Initial displacement of the string for Worked Exercise 7"}
 
 Assuming the initial velocity $u_t(x,0)=0$, describe the solution of this problem in the $xt$-plane
 

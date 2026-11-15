@@ -105,7 +105,7 @@ When solving an IVP, consider whether a solution exists and whether the solution
 :::{#thm-existence-and-uniqueness} 
 gives conditions that are sufficient to guarantee the existence and uniqueness of a solution $y(x)$ to a first-order IVP
 
-![](figures/ch01_figure01.svg "Rectangular Region R"){width="45%" fig-align="center"}
+![](figures/ch01_figure01.svg "Rectangular Region R"){width="45%" fig-align="center" fig-alt="Rectangular Region R"}
 
 Let $R$ be a rectangular region in the $xy$-plane defined by $a\le x\le b$, $c\le y\le d$ that contains the point $(x_0,y_0)$ in its interior. If $f(x,y)$ and $\partial f/\partial y$ are continuous on $R$, then there exists some interval $I_0$: $(x_0-h,\,x_0+h)$, $h>0$, contained in $[a,b]$, and a unique function $y(x)$, defined on $I_0$, that is a solution of the IVP $\;dy/dx=f(x,y)$, $y(x_0)=y_0$
 :::
@@ -150,7 +150,7 @@ $~x\left( \frac{\pi}{2} \right) =-2, \;x'\left (\frac{\pi}{2} \right)=1$
  
 * Steps of the modeling process
 
-![](figures/ch01_figure02.svg "modeling process"){width="90%" fig-align="center"}
+![](figures/ch01_figure02.svg "modeling process"){width="90%" fig-align="center" fig-alt="modeling process"}
 
 **Example** $\,$ Radioactive Decay
 
@@ -162,7 +162,7 @@ $~x\left( \frac{\pi}{2} \right) =-2, \;x'\left (\frac{\pi}{2} \right)=1$
 
 **Example** $\,$ Draining Tank
 
-![](figures/ch01_figure03.svg "Water draining from a tank"){width="35%" fig-align="center"}
+![](figures/ch01_figure03.svg "Water draining from a tank"){width="35%" fig-align="center" fig-alt="Water draining from a tank"}
 
 * Torricelli's law states that the exit speed $v$ of water through a sharp-edged hole at the bottom of a tank filled to a depth $h$ is the same as the speed it would acquire falling from a height $h$, $\,$$v=\sqrt{2gh}$
 
@@ -321,7 +321,7 @@ $~$
 
 $$ \frac{dT}{dt}=k(T -T_m), \;\;T(0)=T_0 $$
 
-![](figures/ch01_exer01.svg "Newton's law of cooling"){width="50%" fig-align="center"}
+![](figures/ch01_exer01.svg "Newton's law of cooling"){width="50%" fig-align="center" fig-alt="Newton's law of cooling"}
 
 **Solution**
 
@@ -337,7 +337,7 @@ $$ \frac{dT}{dt}=k(T -T_m), \;\;T(0)=T_0 $$
 
 **[-@sec-1-3]: 19.** After a mass $m$ is attached to a spring, it stretches $s$ units and then hangs at rest in the equilibrium position as shown in Figure (b). After the spring/mass system has been set in motion, let $x(t)$ denote the directed distance of the mass beyond the equilibrium position. As indicated in Figure (c), assume that the downward direction is positive, that the motion takes place in a vertical straight line through the center of gravity of the mass, and that the only forces acting on the system are the weight of the mass and the restoring force of the stretched spring. Use Hooke's law: The restoring force of a spring is proportional to its total elongation. Determine a differential equation for the displacement $x(t)$ at time $t$
 
-![](figures/ch01_exer03.svg "spring mass system"){width="75%" fig-align="center"}
+![](figures/ch01_exer03.svg "spring mass system"){width="75%" fig-align="center" fig-alt="spring mass system"}
 
 **Solution**
 

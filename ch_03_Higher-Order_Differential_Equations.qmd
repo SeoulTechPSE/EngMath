@@ -724,7 +724,7 @@ $$
   \dot{x}(0) &= x_1
 \end{aligned}$$
 
-![](figures/ch03_figure02.svg){width="60%" fig-align="center"}
+![](figures/ch03_figure02.svg){width="60%" fig-align="center" fig-alt="Spring-mass system: unstretched spring, equilibrium position and motion x(t)"}
 
 $~$
 
@@ -762,7 +762,7 @@ $~$
 
 **Example** $\,$ Temperature in a Ring
 
-![](figures/ch03_figure03.svg){width="45%" fig-align="center"}
+![](figures/ch03_figure03.svg){width="45%" fig-align="center" fig-alt="Temperature in a ring: u = u0 on the inner circle r = a and u = u1 on the outer circle r = b"}
 
 The temperature $u(r)$ in circular ring is determined from the boundary-value problem
 
@@ -1267,7 +1267,7 @@ plt.show()
 
 When physical systems are coupled, the mathematical model of the system usually consists of a set of coupled DEs
 
-![](figures/ch03_figure04.svg "Coupled Spring/Mass Systems"){width="60%" fig-align="center"}
+![](figures/ch03_figure04.svg "Coupled Spring/Mass Systems"){width="60%" fig-align="center" fig-alt="Coupled Spring/Mass Systems"}
 
 $$
 \begin{aligned}

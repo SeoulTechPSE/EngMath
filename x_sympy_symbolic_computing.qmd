@@ -8,7 +8,7 @@ jupyter: python3
 
 $~$
 
-[![](https://www.sympy.org/static/images/logo.png)](https://docs.sympy.org/latest/index.html)
+[![](https://www.sympy.org/static/images/logo.png){fig-alt="SymPy logo"}](https://docs.sympy.org/latest/index.html)
 
 $~$
 

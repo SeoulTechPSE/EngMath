@@ -24,20 +24,20 @@ jupyter: python3
 * Equal, Scalar Multiplication
 
   $~$
-  ![](figures/ch07_figure00.svg "Equal"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure00.svg "Equal"){width="50%" fig-align="center" fig-alt="Equal vectors AB and CD"}
 
-  ![](figures/ch07_figure01.svg "Parallel_Vectors"){width="70%" fig-align="center"}
+  ![](figures/ch07_figure01.svg "Parallel_Vectors"){width="70%" fig-align="center" fig-alt="Scalar multiples of AB"}
 
 * Addition and Subtraction
 
   $~$
-  ![](figures/ch07_figure02_03.svg "Addition"){width="95%" fig-align="center"}
+  ![](figures/ch07_figure02_03.svg "Addition"){width="95%" fig-align="center" fig-alt="(a) parallelogram law for a sum, (b) difference AB - AC"}
 
 * Vectors in a Coordinate Plane
 
   $$\mathbf{a}=\left \langle a_1, a_2 \right \rangle$$
 
-  ![](figures/ch07_figure04.svg "Components"){width="45%" fig-align="center"}
+  ![](figures/ch07_figure04.svg "Components"){width="45%" fig-align="center" fig-alt="Components of a in the plane"}
 
 * Let $~$$\mathbf{a}=\left \langle a_1, a_2 \right \rangle~$ and $~$$\mathbf{b}=\left \langle b_1, b_2 \right \rangle~$ 
  be vectors in $\mathbb{R}^2$
@@ -90,7 +90,7 @@ $~$
 $$\mathbf{a} +\mathbf{b} +\mathbf{c}=\mathbf{0}\;~\text{and}\;~\mathbf{a} +\mathbf{b} +\mathbf{c} +\mathbf{d}=\mathbf{0}$$
 
 
-![](figures/ch07_figure_ex1.svg "example7_1"){width="70%" fig-align="center"}
+![](figures/ch07_figure_ex1.svg "example7_1"){width="70%" fig-align="center" fig-alt="Triangle a, b, c and quadrilateral a, b, c, d (head to tail)"}
 
 ::: {.callout-note collapse="true" title="Answer" appearance="simple"}
 Vectors joined head to tail around a closed path add up to the vector from the starting point back to itself, i.e. the zero vector, whatever the number of vertices.
@@ -104,7 +104,7 @@ $~$
 
 $~$
 
-![](figures/ch07_figure06.svg "3_space"){width="85%" fig-align="center"}
+![](figures/ch07_figure06.svg "3_space"){width="85%" fig-align="center" fig-alt="(a) unit vectors i, j, k; (b) a = a1 i + a2 j + a3 k"}
 
 * $\mathbf{i}$, $~\mathbf{j}$, and $~\mathbf{k}$ vectors
 
@@ -119,7 +119,7 @@ $~$
 
 * Octants
 
-![](figures/ch07_figure05.svg "Octants"){width="40%" fig-align="center"}
+![](figures/ch07_figure05.svg "Octants"){width="40%" fig-align="center" fig-alt="The three coordinate planes dividing space into eight octants (true 3-D view)"}
 
 :::: {.columns}
 
@@ -206,7 +206,7 @@ $~$
 
   * Direction cosines
 
-  ![](figures/ch07_figure07.svg "Direction_Cosines"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure07.svg "Direction_Cosines"){width="50%" fig-align="center" fig-alt="Direction angles alpha, beta, gamma of a (true 3-D view, dashed angle arcs)"}
   
   $\phantom{xx}\displaystyle\cos\alpha=\frac{a_1}{\left\|\mathbf{a}\right\|}$, 
   $~\displaystyle\cos\beta=\frac{a_2}{\left\|\mathbf{a}\right\|}$,
@@ -220,7 +220,7 @@ $~$
 
   To find the component of $\mathbf{a}$ on a vector $\mathbf{b}$, $~$we dot $\mathbf{a}$ with a unit vector in the direction of $\mathbf{b}$
   
-  ![](figures/ch07_figure08.svg "Component_of_a_on_b"){width="95%" fig-align="center"}
+  ![](figures/ch07_figure08.svg "Component_of_a_on_b"){width="95%" fig-align="center" fig-alt="comp_b a = ||a|| cos(theta) for acute and obtuse theta"}
     
   $$\text{comp}_{\mathbf{b}} \mathbf{a} =\left\| \mathbf{a} \right\| \cos\theta
    =\left\| \mathbf{a} \right\| \cos\theta \frac{\left\| \mathbf{b} \right\|}{\left\| \mathbf{b} \right\|}
@@ -229,7 +229,7 @@ $~$
 
 * Projection of $\mathbf{a}$ onto $\mathbf{b}$
 
-  ![](figures/ch07_figure09.svg "Projection_of_a_onto_b"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure09.svg "Projection_of_a_onto_b"){width="50%" fig-align="center" fig-alt="Projection of a onto b"}
     
   $$\text{proj}_{\mathbf{b}} \mathbf{a} = \left(\text{comp}_{\mathbf{b}} \mathbf{a} \right) \left(\frac{\mathbf{b}}{\left\| \mathbf{b} \right\|} \right)=\color{red}{\left(\frac{\mathbf{a}\cdot\mathbf{b}}{\mathbf{b}\cdot\mathbf{b}}\right) \mathbf{b}}$$
 
@@ -278,7 +278,7 @@ $~$
 
   The vectors $\mathbf{a}$, $\mathbf{b}$, and $~\mathbf{a}\times\mathbf{b}~$ form a right-hand system:
   
-  ![](figures/ch07_figure10.svg "right_hand_rule"){width="50%" fig-align="center"}
+  ![](figures/ch07_figure10.svg "right_hand_rule"){width="50%" fig-align="center" fig-alt="Right-hand rule: a, b and n = a x b"}
 
 * Parallel Vectors
 
@@ -303,7 +303,7 @@ $~$
 
    $~$
    
-   ![](figures/ch07_figure11.svg "area_parallelogram"){width="45%" fig-align="center"}
+   ![](figures/ch07_figure11.svg "area_parallelogram"){width="45%" fig-align="center" fig-alt="(a) parallelogram and (b) triangle spanned by a and b"}
 
 * Volume of a Parallelepiped 
  
@@ -311,7 +311,7 @@ $~$
 
   $~$
  
-  ![](figures/ch07_figure12.svg "volume_parallelepiped"){width="45%" fig-align="center"}
+  ![](figures/ch07_figure12.svg "volume_parallelepiped"){width="45%" fig-align="center" fig-alt="Parallelepiped spanned by a, b, c; height = |comp_{b x c} a|"}
 
 * Special Products
 
@@ -354,7 +354,7 @@ $~$
 
 * Lines
 
-  ![](figures/ch07_figure13.svg "Lines"){width="60%" fig-align="center"}
+  ![](figures/ch07_figure13.svg "Lines"){width="60%" fig-align="center" fig-alt="Line through P1 and P2 with direction a = r2 - r1"}
 
   $$
   \begin{aligned}
@@ -374,9 +374,9 @@ $~$
     \end{aligned}
   $$
 
-  ![](figures/ch07_figure14.svg "Planes_1"){width="55%" fig-align="center"}
+  ![](figures/ch07_figure14.svg "Planes_1"){width="55%" fig-align="center" fig-alt="Plane through P1 with normal n"}
 
-  ![](figures/ch07_figure15.svg "Planes_2"){width="55%" fig-align="center"}
+  ![](figures/ch07_figure15.svg "Planes_2"){width="55%" fig-align="center" fig-alt="Plane through three points P1, P2, P3"}
 
 $~$
 
@@ -624,7 +624,7 @@ $~$
   
   $$\begin{aligned} \mathbf{v}_1 &= \mathbf{u}_1 \\ \mathbf{v}_2 &= \mathbf{u}_2 -\left( \frac{\mathbf{u}_2 \cdot \mathbf{v}_1}{\mathbf{v}_1 \cdot \mathbf{v}_1}\right) \mathbf{v}_1\end{aligned}$$
 
-  ![](figures/ch07_figure16.svg "constructing_an_orthogonal_basis_R2"){width="95%" fig-align="center"}
+  ![](figures/ch07_figure16.svg "constructing_an_orthogonal_basis_R2"){width="95%" fig-align="center" fig-alt="Gram-Schmidt in R^2"}
 
 * Constructing an Orthogonal Basis for $\mathbb{R}^3$
   
@@ -633,7 +633,7 @@ $~$
    \mathbf{v}_3 &= \mathbf{u}_3 -\left( \frac{\mathbf{u}_3 \cdot \mathbf{v}_1}{\mathbf{v}_1 \cdot \mathbf{v}_1}\right) \mathbf{v}_1
    -\left( \frac{\mathbf{u}_3 \cdot \mathbf{v}_2}{\mathbf{v}_2 \cdot \mathbf{v}_2}\right) \mathbf{v}_2 \end{aligned}$$
 
-![](figures/ch07_figure17.svg "constructing_an_orthogonal_basis_R3"){width="45%" fig-align="center"}
+![](figures/ch07_figure17.svg "constructing_an_orthogonal_basis_R3"){width="45%" fig-align="center" fig-alt="Gram-Schmidt in R^3: v3 = u3 - x with x = projection of u3 on W2 = span{v1, v2}"}
 
 * **Gram-Schmidt Orthogonalization Process**
 

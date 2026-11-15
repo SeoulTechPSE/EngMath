@@ -10,7 +10,7 @@ $~$
 
 * Consider the rather complicated system of <font color="blue">two coupled 2^nd^-order nonlinear ODEs</font> for a double pendulum
 
-  ![](figures/ch04_figure03.svg "Double Pendulum"){width="35%" fig-align="center"}
+  ![](figures/ch04_figure03.svg "Double Pendulum"){width="35%" fig-align="center" fig-alt="Double Pendulum"}
 
 * <font color="blue">Nonlinear governing equations</font>
 

@@ -32,7 +32,7 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: release
+          version: 1.9.36   # same as the local build (requirements.txt)
 
       # The Colab notebooks are generated from the appendices; stop if someone forgot to regenerate them
       - name: Check that notebooks/ matches the appendices

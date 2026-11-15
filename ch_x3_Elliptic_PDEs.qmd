@@ -27,7 +27,7 @@ jupyter: python3
 
 $~$
 
-![](figures/pde03_figure01.svg "Intuitive Meaning of the Laplacian"){width="90%" fig-align="center"}
+![](figures/pde03_figure01.svg "Intuitive Meaning of the Laplacian"){width="90%" fig-align="center" fig-alt="Intuitive Meaning of the Laplacian"}
 
 $~$
 
@@ -52,7 +52,7 @@ $~$
 
   * Polar Coordinates
 
-    ![](figures/pde03_figure02.svg "Polar Coordinate"){width="45%" fig-align="center"}
+    ![](figures/pde03_figure02.svg "Polar Coordinate"){width="45%" fig-align="center" fig-alt="Polar Coordinate"}
 
     $$\begin{matrix}
       x = r\cos\theta \\ 
@@ -83,7 +83,7 @@ $~$
 
   * Cylindrical Coordinates
 
-    ![](figures/pde03_figure03.svg "Cylindrical Coordinate"){width="55%" fig-align="center"}
+    ![](figures/pde03_figure03.svg "Cylindrical Coordinate"){width="55%" fig-align="center" fig-alt="Cylindrical Coordinate"}
 
     $$\begin{matrix}
         x = r\cos \theta \\ 
@@ -102,7 +102,7 @@ $~$
 
   * Spherical Coordinates
 
-    ![](figures/pde03_figure04.svg "Spherical Coordinate"){width="65%" fig-align="center"}
+    ![](figures/pde03_figure04.svg "Spherical Coordinate"){width="65%" fig-align="center" fig-alt="Spherical Coordinate"}
 
     $$\begin{matrix}
     x = r\sin\phi\cos \theta \\ 
@@ -198,12 +198,12 @@ $~$
   $$ u_{rr} +\frac{1}{r}u_r + \frac{1}{r^2} u_{\theta\theta}=0, $$
   $$\;\; u(1,\theta) = \sin\theta, \;\;\;0 < r < 1,\;\;\; 0 \leq \theta < 2\pi$$
 
-  ![](figures/pde03_figure05.svg "Interior Dirichlet Problem"){width="45%" fig-align="center"}
+  ![](figures/pde03_figure05.svg "Interior Dirichlet Problem"){width="45%" fig-align="center" fig-alt="Interior Dirichlet Problem"}
 
   Another example would be an exterior Dirichlet problem in which we are looking for the solution of Laplace equation outside the unit circle, $\,$and the boundary condition is given on the circle
 
 
-  ![](figures/pde03_figure06.svg "Exterior Dirichlet Problem"){width="45%" fig-align="center"}
+  ![](figures/pde03_figure06.svg "Exterior Dirichlet Problem"){width="45%" fig-align="center" fig-alt="Exterior Dirichlet Problem"}
 
 * **Neumann Problems**
 
@@ -224,7 +224,7 @@ $~$
   Here, $\,$we can see that the flux of heat across the boundary is inward for $\,0 \leq \theta \leq \pi\,$ and outward for $\,\pi \leq \theta < 2\pi$
 
 
-  ![](figures/pde03_figure07.svg "heat flow for the Neumann problem"){width="40%" fig-align="center"}  
+  ![](figures/pde03_figure07.svg "heat flow for the Neumann problem"){width="40%" fig-align="center" fig-alt="heat flow for the Neumann problem"}  
 
   However, $\,$since the total flux
 
@@ -387,7 +387,7 @@ $~$
 
     $$\mathcal{P}(r,\theta)=\frac{1}{2\pi}\frac{R^2 -r^2}{R^2 +r^2 -2rR\cos(\theta -\alpha)}$$
 
-    ![](figures/pde03_figure08.svg "Poisson Kernel"){width="45%" fig-align="center"}
+    ![](figures/pde03_figure08.svg "Poisson Kernel"){width="45%" fig-align="center" fig-alt="Poisson Kernel"}
 
     For boundary values $\,g(\alpha)\,$ close to $\,(r,\theta)\,$, $\,$the Poisson kernel gets larger, $\,$since the denominator of the Poisson kernel is the square of the distance from $\,(r,\theta)\,$ to $\,(R,\alpha)$
 
@@ -626,7 +626,7 @@ plt.show()
   $$ \color{red}{u_{rr} +\frac{1}{r}u_r + \frac{1}{r^2} u_{\theta\theta}=0, \;\;R_1 < r < R_2}$$
   $$\;\; \color{red}{\begin{aligned} u(R_1,\theta) &= g_1(\theta) \\ u(R_2,\theta) &= g_2(\theta) \end{aligned}, \;\;\; 0 \leq \theta < 2\pi}$$
 
-  ![](figures/pde03_figure09.svg "An annulus"){width="45%" fig-align="center"}
+  ![](figures/pde03_figure09.svg "An annulus"){width="45%" fig-align="center" fig-alt="An annulus"}
 
 * We begin by looking for solutions of the form
 
@@ -814,7 +814,7 @@ $~$
 
 * Quite often $\,g(\phi,\theta)\,$ has a specific form, $\,$so that it isn't necessary to solve the problem in its most general form. $\,$Two important special cases are considered in this section. $\,$<font color=blue>One is the case when $\,g(\phi,\theta)\,$ is constant, $\,$and the other is when it depends only on the angle $\,\phi\,$ (the angle from the north pole)</font>
 
-  ![](figures/pde03_figure10.svg "spherical coordinate"){width="45%" fig-align="center"}
+  ![](figures/pde03_figure10.svg "spherical coordinate"){width="45%" fig-align="center" fig-alt="spherical coordinate"}
 
 * **Special Case 1** $\,$ $-\;\;\color{red}{g(\phi,\theta) = \text{constant}}$
 
@@ -859,7 +859,7 @@ we substitute it in the BCs and solve for $\,a\,$ and $\,b\,$; $\,$doing this gi
 
 $$ u(r)= (A -B) \frac{R_1 R_2}{R_2 -R_1} \frac{1}{r} + \frac{R_2 B -R_1 A}{R_2 -R_1} $$
 
-![](figures/pde03_figure11.svg "potential between two concentric spheres"){width="75%" fig-align="center"}
+![](figures/pde03_figure11.svg "potential between two concentric spheres"){width="75%" fig-align="center" fig-alt="potential between two concentric spheres"}
 
 $~$
 
@@ -922,7 +922,7 @@ $~$
 
     The graphs of a few Legendre polynomials are shown in
 
-    ![](figures/pde03_figure12.svg "Legendre polynomials"){width="65%" fig-align="center"}
+    ![](figures/pde03_figure12.svg "Legendre polynomials"){width="65%" fig-align="center" fig-alt="Legendre polynomials"}
 
   * We now solve Euler's equation by substituting $\,\lambda = n(n+1)\,$ and $\,R(r)=r^\alpha\,$ in the equation and solving for $\,\alpha$. $\,$Doing this, $\,$we get two values
 
@@ -1425,7 +1425,7 @@ With these steps in mind, $\,$we construct Green's function
 
 $$ G(r,\theta,\rho,\phi)=\frac{1}{2\pi}\ln \frac{1}{R} -\frac{1}{2\pi}\ln \frac{1}{\bar{R}} + \frac{1}{2\pi}\ln \rho $$
 
-![](figures/pde03_figure13.svg "potential field due to two opposite charges"){width="85%" fig-align="center"}
+![](figures/pde03_figure13.svg "potential field due to two opposite charges"){width="85%" fig-align="center" fig-alt="potential field due to two opposite charges"}
 
 To find the solution to our original problem, $\,$we merely superimpose the impulse functions; $\,$this brings us to the final solution
 

@@ -6,7 +6,7 @@ jupyter: python3
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SeoulTechPSE/EngMath/blob/main/notebooks/x_matplotlib.ipynb)
 
-[![](figures/matplotlib_logo.png){width="40%" fig-align="center"}](https://matplotlib.org/)
+[![](figures/matplotlib_logo.png){width="40%" fig-align="center" fig-alt="Matplotlib logo"}](https://matplotlib.org/)
 
 * `Matplotlib` is a Python library for publication-quality 2D and 3D graphics, with support for a variety of different output formats
 
@@ -177,7 +177,7 @@ respectively. This allows us to set and retain full control of the properties of
 
 * `Matplotlib` implements many types of plotting techniques as methods of the `Axes` object
 
-  ![](figures/matplotlib_plot_types_1.png){width="70%" fig-align="center"}
+  ![](figures/matplotlib_plot_types_1.png){width="70%" fig-align="center" fig-alt="Overview of Matplotlib plot types"}
 
   For details, see [Matplotlib's plot types](https://matplotlib.org/stable/plot_types/index.html)
 
