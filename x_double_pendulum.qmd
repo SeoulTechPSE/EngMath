@@ -8,11 +8,11 @@ jupyter: python3
 
 $~$
 
-* Consider the rather complicated system of <font color="blue">two coupled 2^nd^-order nonlinear ODEs</font> for a double pendulum
+* Consider the rather complicated system of [two coupled 2^nd^-order nonlinear ODEs]{.blue} for a double pendulum
 
   ![](figures/ch04_figure03.svg "Double Pendulum"){width="35%" fig-align="center" fig-alt="Double Pendulum"}
 
-* <font color="blue">Nonlinear governing equations</font>
+* [Nonlinear governing equations]{.blue}
 
   $$\scriptsize
   \begin{aligned}
@@ -62,7 +62,7 @@ ode2 = sympy.Eq(m2 *l2 *th2(t).diff(t, t) +
 
 $~$
 
-* We first have <font color='red'>to write the system of two 2^nd^-order ODEs as a system of $\,$four 1^st^-order ODEs in standard form</font>. $\,$To this end, $\,$we need to introduce new functions
+* We first have [to write the system of two 2^nd^-order ODEs as a system of $\,$four 1^st^-order ODEs in standard form]{.red}. $\,$To this end, $\,$we need to introduce new functions
 
   $$
   \begin{aligned}
@@ -92,7 +92,7 @@ ode4 = sympy.Eq(y3(t).diff(t) -y4(t), 0)
 
 $~$
 
-* At this point, $\,$we have <font color="blue">four coupled 1^st^-order ODEs for the functions $\,y_1\,$ to $\,y_4$</font>. $\,$It only remains to solve for the derivatives of these functions to obtain the ODEs <font color="blue">in standard form</font>
+* At this point, $\,$we have [four coupled 1^st^-order ODEs for the functions $\,y_1\,$ to $\,y_4$]{.blue}. $\,$It only remains to solve for the derivatives of these functions to obtain the ODEs [in standard form]{.blue}
 
 $~$
 
@@ -162,7 +162,7 @@ ax.tick_params(which='both', direction='in')
 
 $~$
 
-* When visualizing this solution, $\,$it is more intuitive <font color="blue">to animate the positions of the pendulums in the $\,x–y\,$ plane</font> rather than their angular deflections
+* When visualizing this solution, $\,$it is more intuitive [to animate the positions of the pendulums in the $\,x–y\,$ plane]{.blue} rather than their angular deflections
 
 $~$
 

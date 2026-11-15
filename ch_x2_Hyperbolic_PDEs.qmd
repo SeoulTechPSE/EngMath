@@ -19,7 +19,7 @@ jupyter: python3
 
 ## The One-dimensional Wave Equation {#sec-x2-18}
 
-We will now begin to study the second major class of PDEs, $\,$<font color="red">**hyperbolic equations**</font>
+We will now begin to study the second major class of PDEs, $\,$[**hyperbolic equations**]{.red}
 
 * **Vibrating-String Problem**
 
@@ -53,11 +53,11 @@ We will now begin to study the second major class of PDEs, $\,$<font color="red"
    u_{tt} &= c^2 u_{xx}
   \end{aligned}$$
 
-  This is the <font color="blue">wave equation</font> for $\,u(x,t)\,$ and <font color="green">$\,c$ is the speed of propagation of the wave</font> in the string
+  This is the [wave equation]{.blue} for $\,u(x,t)\,$ and [$\,c$ is the speed of propagation of the wave]{.green} in the string
 
 ## $\,$D'Alembert Solution of the Wave Equation {#sec-x2-19}
 
-* If the student recalls the parabolic case, $\,$we started  solving diffusion problems when the space variable was bounded (by separation of variables), $\,$and then went on to solve the unbounded case (where <font color="red">$-\infty < x <\infty$</font>) by the Fourier transform
+* If the student recalls the parabolic case, $\,$we started  solving diffusion problems when the space variable was bounded (by separation of variables), $\,$and then went on to solve the unbounded case (where [$-\infty < x <\infty$]{.red}) by the Fourier transform
 
 * In the hyperbolic case (wave equation), $\,$we will do the opposite. $\,$We start by solving the one-dimensional wave equation in free space:
 
@@ -75,7 +75,7 @@ $$
   \end{array} && -\infty < x <\infty 
 \end{aligned} \tag{DA}\label{eq:DA}$$ 
 
-* We could solve this problem by using the Fourier transform (transforming $x$) or the Laplace transform (transforming $t$), $\,$but we will introduce yet a new technique (<font color="red">canonical coordinate</font>), $\,$which will introduce the reader to several new and exciting ideas
+* We could solve this problem by using the Fourier transform (transforming $x$) or the Laplace transform (transforming $t$), $\,$but we will introduce yet a new technique ([canonical coordinate]{.red}), $\,$which will introduce the reader to several new and exciting ideas
 
 **STEP 1** $\,$Replacing $\,(x,t)$ by new canonical coordinates $(\xi,\eta)$
 
@@ -257,7 +257,7 @@ $~$
 
   We now present an interpretation of this solution in the $\,xt$-plane at the two specific cases
 
-**CASE 1** <font color="red">$\,$ Initial Position Given; $\,$ Initial Velocity Zero</font>
+**CASE 1** [$\,$ Initial Position Given; $\,$ Initial Velocity Zero]{.red}
 
 * Let's consider the following initial condition
 
@@ -270,7 +270,7 @@ $~$
 
   $$ u(x,t) =\frac{1}{2} \left[ f(x -ct) +f(x +ct) \right] $$
 
-  and <font color="blue">the solution $u(x_0,t_0)$ can be interpreted as being the average of the initial displacement $\,f(x)$ at the points $(x_0-ct_0,0)$ and $(x_0 +ct_0,0)$ found by backtracking along the lines</font>
+  and [the solution $u(x_0,t_0)$ can be interpreted as being the average of the initial displacement $\,f(x)$ at the points $(x_0-ct_0,0)$ and $(x_0 +ct_0,0)$ found by backtracking along the lines]{.blue}
 
   $$\begin{aligned}
    x -ct&= x_0 -ct_0\\ 
@@ -294,7 +294,7 @@ $~$
 
   ![](figures/pde02_figure05.svg "solution in xt-plane"){width="80%" fig-align="center" fig-alt="solution in xt-plane"}
 
-**CASE 2** <font color="red">$\,$Initial Displacement Zero; $\,$ Velocity Arbitrary</font>
+**CASE 2** [$\,$Initial Displacement Zero; $\,$ Velocity Arbitrary]{.red}
 
 * Consider now the IC
 
@@ -307,7 +307,7 @@ $~$
 
   $$ u(x,t) =\frac{1}{2c} \int_{x -ct}^{x +ct} g(\xi)\,d\xi $$
 
-  and, $\,$hence, $\,$<font color="blue">the solution $\,u(x_0, t_0)\,$ can be interpreted as integrating the initial velocity between $x_0 -ct_0$ and $x_0 +ct_0$ on the initial line $t=0$</font>
+  and, $\,$hence, $\,$[the solution $\,u(x_0, t_0)\,$ can be interpreted as integrating the initial velocity between $x_0 -ct_0$ and $x_0 +ct_0$ on the initial line $t=0$]{.blue}
 
 * Again, $\,$using this interpretation, $\,$the solution to the initial-value problem
 
@@ -403,7 +403,7 @@ HTML('<center>' + anim.to_html5_video() + '</center>')
 
 $~$
 
-<font color="blue">**Solution of the Semi-Infinite String via the D'Alembert Formula**</font> 
+[**Solution of the Semi-Infinite String via the D'Alembert Formula**]{.blue} 
 
   * In the remainder of the section, $\,$we will solve the initial-boundary-value problem for the semi-infinite string
 
@@ -437,7 +437,7 @@ $~$
           g(\xi)\,d\xi +\frac{C}{2c} \\
       \end{aligned}} \tag{IM}\label{eq:IM}$$ 
 
-  * We now have a problem we didn't encounter when dealing with the infinite string. $\,$Since we are looking for the solution $\,u(x,t)\,$ <font color="blue">everywhere in the first quadrant $(x>0,\;t>0)\,$ of the $\,xt$-plane</font>, $\,$it is obvious that we must find
+  * We now have a problem we didn't encounter when dealing with the infinite string. $\,$Since we are looking for the solution $\,u(x,t)\,$ [everywhere in the first quadrant $(x>0,\;t>0)\,$ of the $\,xt$-plane]{.blue}, $\,$it is obvious that we must find
 
     $$\begin{aligned}
       \phi(x -ct)
@@ -449,13 +449,13 @@ $~$
 
   * Unfortunately, $\,$the first equation only gives us $\,\phi(x -ct)\,$ for $\,x -ct \geq 0$, $\,$since our initial data $\,f(x)$ and $g(x)$ are only known for positive arguments
 
-  * <font color="blue">As long as $x -ct \geq 0$, $\,$we have no problem</font>, $\,$since we can substitute \eqref{eq:IM} into the general solution \eqref{eq:GS} to get
+  * [As long as $x -ct \geq 0$, $\,$we have no problem]{.blue}, $\,$since we can substitute \eqref{eq:IM} into the general solution \eqref{eq:GS} to get
 
     $$ {u(x,t) =\frac{1}{2} \left[ f(x -ct) +f(x +ct) \right] +\frac{1}{2c} \int_{x-ct}^{x+ct} g(\xi)\,d\xi,\;\;\; x \geq ct} $$
 
-    The question is, $\,$<font color="blue">what to do when $x < ct$?</font>
+    The question is, $\,$[what to do when $x < ct$?]{.blue}
 
-  * <font color="blue">When $x < ct$</font>, $\,$substituting the general solution \eqref{eq:GS} into <font color="blue">the BC $\,u(0,t)=0\,$ </font>gives
+  * [When $x < ct$]{.blue}, $\,$substituting the general solution \eqref{eq:GS} into [the BC $\,u(0,t)=0\,$ ]{.blue}gives
 
     $$\color{blue}{\phi(-ct)=-\psi(ct)}$$
 
@@ -467,7 +467,7 @@ $~$
 
     $$ {u(x,t) =\frac{1}{2} \left[ f(x +ct) -f(ct -x) \right] +\frac{1}{2c} \int_{ct -x}^{x+ct} g(\xi)\,d\xi,\;\;\;0<x<ct} $$
 
-  * For $x \geq ct$, $\,$the solution is the same as the D'Alembert solution for the infinite wave, <font color="red">while for $x < ct$, $\,$the solution $u(x,t)$ is modified as a result of the wave reflecting from the boundary (The sign of the wave is changed when it's reflected)</font>
+  * For $x \geq ct$, $\,$the solution is the same as the D'Alembert solution for the infinite wave, [while for $x < ct$, $\,$the solution $u(x,t)$ is modified as a result of the wave reflecting from the boundary (The sign of the wave is changed when it's reflected)]{.red}
 
   * The straight lines
 
@@ -476,7 +476,7 @@ $~$
       x -ct &= \text{constant} 
     \end{aligned}$$
 
-    are known as <font color="red">**characteristics**</font>, $\,$and it is along these lines that disturbances are propagated. $\,$<font color="red">Characteristics are generally associated with hyperbolic equations</font>
+    are known as [**characteristics**]{.red}, $\,$and it is along these lines that disturbances are propagated. $\,$[Characteristics are generally associated with hyperbolic equations]{.red}
 
 ![](figures/pde02_figure08.svg "solution of semi-infinite string in xt-plane"){width="80%" fig-align="center" fig-alt="solution of semi-infinite string in xt-plane"}
 
@@ -595,7 +595,7 @@ $$
 
 following an approach analogous to the one used to solve the semi-infinite string problem in the lesson
 
-**Solution** $\,$For $x \geq ct$, $\,$the solution is the same as the D'Alembert solution for the infinite wave, <font color="red"> $\,$while for $x < ct$, $\,$the solution $u(x,t)$ is modified as a result of the wave reflecting from the boundary</font>
+**Solution** $\,$For $x \geq ct$, $\,$the solution is the same as the D'Alembert solution for the infinite wave, [ $\,$while for $x < ct$, $\,$the solution $u(x,t)$ is modified as a result of the wave reflecting from the boundary]{.red}
 
 $$ \begin{aligned}
     u(x,t) =\frac{1}{2}& \left[ f(x +ct) +f(ct -x) \right] \\
@@ -828,7 +828,7 @@ Thus the original nonhomogeneous Neumann problem is transformed into a standard 
 
 $~$
 
-<font color="blue">**Solution of the Wave Equation on $x\ge 0$ with a Robin Boundary Condition**</font>
+[**Solution of the Wave Equation on $x\ge 0$ with a Robin Boundary Condition**]{.blue}
 
 We consider the wave equation on the half-line
 
@@ -940,7 +940,7 @@ This formula expresses the solution as:
 
 $~$
 
-<font color="blue">**The Nonhomogeneous Wave Equation**</font>
+[**The Nonhomogeneous Wave Equation**]{.blue}
 
   * We consider now the pure nonhomogeneous wave equation:
 
@@ -1025,7 +1025,7 @@ $\,$The differential equation then becomes
 
 * The inner integral is the total forcing over the spatial region that can influence the point $x$ after the time $t-\tau$ (wave speed $c$); $\,$the outer integral sums these contributions from $\tau=0$ to $t$
 
-* The same formula follows in one line, $\,$without canonical coordinates, $\,$from <font color="red">**Duhamel's principle**</font>
+* The same formula follows in one line, $\,$without canonical coordinates, $\,$from [**Duhamel's principle**]{.red}
 
 $~$
 
@@ -1049,7 +1049,7 @@ $~$
      \quad\Longrightarrow\quad
      u=\frac{1}{2c}\int_0^t\left[\int_{x-c(t-\tau)}^{x+c(t-\tau)} F(\beta,\tau)\,d\beta\right]d\tau $$
 
-* <font color="blue">Verification</font> $\,$ by the Leibniz rule, $\,$using $\,v(x,t;t)=0\,$ and $\,v_t(x,t;t)=F(x,t)$:
+* [Verification]{.blue} $\,$ by the Leibniz rule, $\,$using $\,v(x,t;t)=0\,$ and $\,v_t(x,t;t)=F(x,t)$:
 
   $$\begin{aligned}
     u_t &= \underbrace{v(x,t;t)}_{=\,0}+\int_0^t v_t(x,t;\tau)\,d\tau \\
@@ -1061,7 +1061,7 @@ $~$
 
 $~$
 
-* <font color="blue">Green's function</font> $\,$ The response to a unit kick concentrated at $\,x=0$, $\,t=0\,$ ($\,F=\delta(x)\delta(t)$, $\,$that is, $\,g=\delta(x)$) is
+* [Green's function]{.blue} $\,$ The response to a unit kick concentrated at $\,x=0$, $\,t=0\,$ ($\,F=\delta(x)\delta(t)$, $\,$that is, $\,g=\delta(x)$) is
 
   $$G(x,t)=\frac{1}{2c}\int_{x-ct}^{x+ct}\delta(\beta)\,d\beta=\frac{1}{2c}\, H\!\left( t - \frac{|x|}{c}\right)$$
 
@@ -1079,9 +1079,9 @@ $~$
 | Green's function | $G(0)=0,\;\; G_t(0)=\delta(x)$ | $u=\displaystyle\int_0^t\!\!\int G(x-\beta,t-\tau)F(\beta,\tau)\,d\beta\,d\tau$ |
 | Stokes' rule | $v(0)=0,\;\; v_t(0)=\phi$ | $u=v_t$ |
 
-* Duhamel: source $\,F$; $\,$Stokes' rule (@sec-x2-21): initial position $\,\phi$. $\,$All three use only the solution with <font color="red">zero displacement and a given velocity</font>: $\,$the source acts on $\,u_{tt}$, $\,$so it is a velocity kick
+* Duhamel: source $\,F$; $\,$Stokes' rule (@sec-x2-21): initial position $\,\phi$. $\,$All three use only the solution with [zero displacement and a given velocity]{.red}: $\,$the source acts on $\,u_{tt}$, $\,$so it is a velocity kick
 
-* Compare with the heat equation $\,u_t=\alpha u_{xx}+F\,$ (@sec-x1-17): $\,$there the source acts on $\,u_t$, $\,$so the free problem starts with $\,v(\tau)=F(\cdot,\tau)$. $\,$The rule is the same: $\,$<font color="blue">the source sets the highest time derivative that appears in the initial conditions</font>
+* Compare with the heat equation $\,u_t=\alpha u_{xx}+F\,$ (@sec-x1-17): $\,$there the source acts on $\,u_t$, $\,$so the free problem starts with $\,v(\tau)=F(\cdot,\tau)$. $\,$The rule is the same: $\,$[the source sets the highest time derivative that appears in the initial conditions]{.blue}
 
 $~$
 
@@ -1199,7 +1199,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
       = \color{red}{t\bar{\psi}}
     \end{aligned}$$
 
-    <font color="blue"> where $\bar{\psi}$ is the average of the initial disturbance $\psi$ over the surface of the sphere of radius $\,ct\,$ centered at $(x,y,z)$</font>
+    [ where $\bar{\psi}$ is the average of the initial disturbance $\psi$ over the surface of the sphere of radius $\,ct\,$ centered at $(x,y,z)$]{.blue}
 
   * The interpretation of this solution is that the initial disturbance $\,\psi\,$ radiates outward spherically (velocity $c$) at each point, $\,$so that after so many seconds, $\,$the point $\,(x,y,z)$ will be influenced by those initial disturbances on a sphere (of radius $\,ct$) around that point
 
@@ -1300,7 +1300,7 @@ $~$
 
   $$ u = \frac{\partial}{\partial t} [t\bar{\phi}] +t\bar{\psi} $$
 
-  for $\,u\,$ will describe <font color="red">cylindrical waves</font> and, $\,$hence, $\,$give us the solution for the two-dimensional problem
+  for $\,u\,$ will describe [cylindrical waves]{.red} and, $\,$hence, $\,$give us the solution for the two-dimensional problem
 
   * This technique is called the method of descent. $\,$Carrying out the computations, $\,$we get
 
@@ -1410,11 +1410,11 @@ plt.show()
 
 $~$
 
-* <font color="blue">3D</font>: $\,$the disturbance is a shell of thickness $\,2\,$ that moves outward with speed $\,c$; $\,$its height falls like $\,1/r$. $\,$The point $\,r=3\,$ feels the wave only for $\,2<t<4\,$ (shaded), $\,$when the sphere of radius $\,ct\,$ cuts the unit ball: $\,$a sharp front <font color="red">and a sharp back</font>, $\,$so a sound arrives and then is gone
+* [3D]{.blue}: $\,$the disturbance is a shell of thickness $\,2\,$ that moves outward with speed $\,c$; $\,$its height falls like $\,1/r$. $\,$The point $\,r=3\,$ feels the wave only for $\,2<t<4\,$ (shaded), $\,$when the sphere of radius $\,ct\,$ cuts the unit ball: $\,$a sharp front [and a sharp back]{.red}, $\,$so a sound arrives and then is gone
 
-* <font color="blue">2D</font>: $\,$the front is just as sharp, $\,$but behind it the membrane does not come back to rest. $\,$At $\,r=3\,$ the signal starts at $\,t=2\,$ and then decays slowly, $\,u(3,t)\approx\dfrac{1}{2c^2t}\,$ for large $\,t\,$ (the area $\,\pi\,$ of the disk times $\,\frac{1}{2\pi c\cdot ct}$): $\,$a <font color="red">tail</font>, $\,$like the ripples behind a stone dropped in water
+* [2D]{.blue}: $\,$the front is just as sharp, $\,$but behind it the membrane does not come back to rest. $\,$At $\,r=3\,$ the signal starts at $\,t=2\,$ and then decays slowly, $\,u(3,t)\approx\dfrac{1}{2c^2t}\,$ for large $\,t\,$ (the area $\,\pi\,$ of the disk times $\,\frac{1}{2\pi c\cdot ct}$): $\,$a [tail]{.red}, $\,$like the ripples behind a stone dropped in water
 
-* <font color="blue">1D</font>: $\,$for the same initial velocity, $\,$the string is left displaced, $\,u\to 1/c\,$ behind the fronts (@sec-x2-20): $\,$no trailing edge at all
+* [1D]{.blue}: $\,$for the same initial velocity, $\,$the string is left displaced, $\,u\to 1/c\,$ behind the fronts (@sec-x2-20): $\,$no trailing edge at all
 
 * So Huygens' principle (sharp back as well as sharp front) holds in three dimensions but not in one or two: $\,$in 2D the whole disk $\,|\mathbf{y}-\mathbf{x}|<ct\,$ contributes, $\,$in 3D only the sphere $\,|\mathbf{y}-\mathbf{x}|=ct$
 
@@ -1551,9 +1551,9 @@ $~$
 
 ## The Finite Vibrating String (Standing Waves) {#sec-x2-23}
 
-* So far, $\,$we have studied the wave equation $\,u_{tt}=c^2 u_{xx}\,$ <font color="red">for the unbounded domain</font> and have found D'Alembert solutions to be certain <font color="red">*traveling waves* (moving in opposite directions)</font>
+* So far, $\,$we have studied the wave equation $\,u_{tt}=c^2 u_{xx}\,$ [for the unbounded domain]{.red} and have found D'Alembert solutions to be certain [*traveling waves* (moving in opposite directions)]{.red}
 
-* When we study the same wave equation <font color="red">in a bounded region of space $0 < x < L$</font>, $\,$we find that the waves no longer appear to be moving due to their repeated interaction with the boundaries and, in fact, often appear to be what are known as <font color="red">*standing waves*</font>
+* When we study the same wave equation [in a bounded region of space $0 < x < L$]{.red}, $\,$we find that the waves no longer appear to be moving due to their repeated interaction with the boundaries and, in fact, often appear to be what are known as [*standing waves*]{.red}
 
 * **Separation of Variables Solution to the Finite Vibrating String**
 
@@ -1809,7 +1809,7 @@ $~$
 
 **Interpretation**
 
-* The first mode oscillates about $\,\displaystyle\frac{1}{\pi^2c^2}\sin\pi x$, $\,$the <font color="blue">static deflection</font> under the load: $\,$it solves $\,c^2u_s''+\sin\pi x=0$, $\,u_s(0)=u_s(1)=0$. $\,$The other modes are free vibrations, $\,$which the load does not touch, $\,$since $\,S_n=0\,$ for $\,n\geq 2$
+* The first mode oscillates about $\,\displaystyle\frac{1}{\pi^2c^2}\sin\pi x$, $\,$the [static deflection]{.blue} under the load: $\,$it solves $\,c^2u_s''+\sin\pi x=0$, $\,u_s(0)=u_s(1)=0$. $\,$The other modes are free vibrations, $\,$which the load does not touch, $\,$since $\,S_n=0\,$ for $\,n\geq 2$
 
 * The initial shape $\,u(x,0)=1\,$ does not satisfy the BCs, $\,$so its sine coefficients decay only like $\,1/n$: $\,$the series converges slowly, $\,$with the Gibbs overshoot near $\,x=0,1$
 
@@ -1832,7 +1832,7 @@ $~$
 
 $~$
 
-**Example** $\,$ Periodic force and <font color="red">resonance</font>
+**Example** $\,$ Periodic force and [resonance]{.red}
 
 $$
 \begin{aligned}
@@ -1911,9 +1911,9 @@ $~$
 
 * $\omega=0.5\,\omega_1$: $\,$a bounded mixture of the forcing frequency $\,\omega\,$ and the natural frequency $\,\omega_1$
 
-* $\omega=0.9\,\omega_1$: <font color="blue">beats</font>. $\,$For $\,\omega\approx\omega_1$, $\,$the numerator is $\,\approx 2\omega_1\sin\frac{(\omega-\omega_1)t}{2}\cos\frac{(\omega+\omega_1)t}{2}$, $\,$a fast oscillation inside the slow envelope $\,\dfrac{2\left|\sin\frac{1}{2}(\omega_1-\omega)t\right|}{\omega_1^2-\omega^2}\,$ (dashed) with the beat period $\,2\pi/|\omega_1-\omega|=20$
+* $\omega=0.9\,\omega_1$: [beats]{.blue}. $\,$For $\,\omega\approx\omega_1$, $\,$the numerator is $\,\approx 2\omega_1\sin\frac{(\omega-\omega_1)t}{2}\cos\frac{(\omega+\omega_1)t}{2}$, $\,$a fast oscillation inside the slow envelope $\,\dfrac{2\left|\sin\frac{1}{2}(\omega_1-\omega)t\right|}{\omega_1^2-\omega^2}\,$ (dashed) with the beat period $\,2\pi/|\omega_1-\omega|=20$
 
-* $\omega=\omega_1$: $\,$<font color="red">resonance</font>. $\,$The force stays in phase with the velocity of the mode, $\,$so it feeds energy in every cycle and the amplitude grows without bound. $\,$In a real string, $\,$damping (the damped string of @sec-x2-23) limits it
+* $\omega=\omega_1$: $\,$[resonance]{.red}. $\,$The force stays in phase with the velocity of the mode, $\,$so it feeds energy in every cycle and the amplitude grows without bound. $\,$In a real string, $\,$damping (the damped string of @sec-x2-23) limits it
 
 * For a general force $\,F(x)\sin\omega t$, $\,$resonance occurs at every natural frequency $\,\omega_n=n\pi c\,$ with $\,S_n\neq 0$. $\,$A force orthogonal to a mode cannot excite it: $\,\sin\pi x\,$ excites only $\,n=1$, $\,$and a load symmetric about $\,x=\frac{1}{2}\,$ never excites the even modes
 
@@ -1982,7 +1982,7 @@ $~$
 
     We get a new separation constant $\,\mu$
 
-  * It's obvious that <font color="red">the drumhead is periodic with period $\,2\pi\,$ in $\,\theta.$</font> $\,$Thus
+  * It's obvious that [the drumhead is periodic with period $\,2\pi\,$ in $\,\theta.$]{.red} $\,$Thus
 
     $$\begin{aligned}
     \Theta'' &+\mu\Theta = 0 \\
@@ -2053,14 +2053,14 @@ plt.show()
 
 $~$
 
-* * Since the functions $Y_n(\sqrt{\lambda} r)$ are unbounded at $r=0$, $\,$we choose as our solution $J_n(\sqrt{\lambda} r)$. $\,$The last step in finding $R_n(r)$ is to use the boundary condition $R_n(1)=0~$ to find $\lambda$. $\,$We must pick $\lambda$ to be one of <font color="red">the roots of</font> $\,\color{red}{J_n(\sqrt{\lambda})=0}$; $\,$that is
+* * Since the functions $Y_n(\sqrt{\lambda} r)$ are unbounded at $r=0$, $\,$we choose as our solution $J_n(\sqrt{\lambda} r)$. $\,$The last step in finding $R_n(r)$ is to use the boundary condition $R_n(1)=0~$ to find $\lambda$. $\,$We must pick $\lambda$ to be one of [the roots of]{.red} $\,\color{red}{J_n(\sqrt{\lambda})=0}$; $\,$that is
 
     $$\color{red}{\sqrt{\lambda_{nm}}=\alpha_{nm}}$$
 
     where $\,\alpha_{nm}$ is the $m$-th root of $\,J_n(r)=0$, $~m=1,2,3,\cdots$.
 $\,$With these roots, $\,$we have just solved the Helmholtz eigenvalue problem
 
-  * <font color="red">The eigenvalues $\,\lambda_{nm}$ are $\,\alpha_{nm}^2$; $\,$and the corresponding eigenfunctions are</font>
+  * [The eigenvalues $\,\lambda_{nm}$ are $\,\alpha_{nm}^2$; $\,$and the corresponding eigenfunctions are]{.red}
 
     $$\color{red}{U_{nm}(r,\theta) =c_n J_n(\alpha_{nm} r) \cos (n\theta -\phi), \;\;\;n=0,1,2,\cdots, \;\;m=1,2,3,\cdots}$$
 
@@ -2114,7 +2114,7 @@ $~$
    &\times\left[ A_{nm}\cos c\alpha_{nm}t +B_{nm}\sin c\alpha_{nm}t \right]
   \end{aligned}}$$
 
-  Rather than going through the complicated process of finding $\,A_{nm}\,$ and $\,B_{nm}\,$ for the general case, $\,$<font color="blue">we will find the solution for the situation where $\,u\,$ is independent of $\,\theta$ (very common, $\,n=0$). $\,$In other words, $\,$we will assume that the initial position of the drumhead depends only on $\,r$</font>
+  Rather than going through the complicated process of finding $\,A_{nm}\,$ and $\,B_{nm}\,$ for the general case, $\,$[we will find the solution for the situation where $\,u\,$ is independent of $\,\theta$ (very common, $\,n=0$). $\,$In other words, $\,$we will assume that the initial position of the drumhead depends only on $\,r$]{.blue}
 
 * In particular, $\,$we consider
 
@@ -2310,7 +2310,7 @@ $~$
 
 * In this way, $\,$many different equations in physics, biology, engineering, $\,$and chemistry that contain special nuances via physical parameters are all transformed into the same simple form
 
-**<font color="blue">Converting a Diffusion Problem to Dimensionless Form</font>**
+**[Converting a Diffusion Problem to Dimensionless Form]{.blue}**
 
 * Suppose we start with the initial-boundary-value problem:
 
@@ -2399,7 +2399,7 @@ $~$
 
 $~$
 
-**<font color="blue">Transforming a Hyperbolic Problem to Dimensionless Form</font>**
+**[Transforming a Hyperbolic Problem to Dimensionless Form]{.blue}**
 
 * Consider the vibrating string
 
@@ -2474,13 +2474,13 @@ $~$
 
   in which $A, B, C, D, E, F,$ and $\,G$ are, in general, functions of $x$ and $y$ in two independent variables and could be constants, as
 
-  * <font color="red">Hyperbolic if $\,B^2 -4AC > 0~$ at $\,(x,y)$ </font>
+  * [Hyperbolic if $\,B^2 -4AC > 0~$ at $\,(x,y)$ ]{.red}
 
-  * <font color="red">Parabolic $~\,$ if $\,B^2 -4AC = 0~$ at $\,(x,y)$ </font>
+  * [Parabolic $~\,$ if $\,B^2 -4AC = 0~$ at $\,(x,y)$ ]{.red}
 
-  * <font color="red">Elliptic $~~~~~\,$ if $\,B^2 -4AC < 0~$ at $\,(x,y)$ </font>  
+  * [Elliptic $~~~~~\,$ if $\,B^2 -4AC < 0~$ at $\,(x,y)$ ]{.red}  
 
-* and depending on which is true, $\,$<font color="blue">the equation can be transformed into a corresponding canonical (simple) form by introducing new coordinates $\,\xi=\xi(x,y)$ $\,$and $\,\eta=\eta(x,y)$</font>
+* and depending on which is true, $\,$[the equation can be transformed into a corresponding canonical (simple) form by introducing new coordinates $\,\xi=\xi(x,y)$ $\,$and $\,\eta=\eta(x,y)$]{.blue}
 
   $$\begin{aligned}
     u_{\xi\eta} = \Phi(\xi,\eta,u,u_\xi,u_\eta) 
@@ -2565,7 +2565,7 @@ $~$
 
   in which $\,J\,$ is the Jacobian of the transformation and we select the transformation $\,(\xi,\eta)\,$ such that $\,J \neq 0$
 
-* <font color="blue">The next step in our process is to set the coefficients $\,\bar{A}\,$ and $\,\bar{C}\,$ to zero and solve for the transformation $\,\xi\,$ and $\,\eta\,$</font>. $\,$This will give us the coordinates that reduce the original PDE to canonical form:
+* [The next step in our process is to set the coefficients $\,\bar{A}\,$ and $\,\bar{C}\,$ to zero and solve for the transformation $\,\xi\,$ and $\,\eta\,$]{.blue}. $\,$This will give us the coordinates that reduce the original PDE to canonical form:
 
   $$\begin{aligned}
   \bar{A}=&\;A\xi_x^2 +B\xi_x \xi_y +C\xi_y^2 =0\\
@@ -2740,7 +2740,7 @@ $~$
 
   <font color="red">$$u_t=-vu_x$$</font>
 
-  would be <font color="red">$\,u(x,t)=\phi(x-vt)$</font>
+  would be [$\,u(x,t)=\phi(x-vt)$]{.red}
 
 * So we can think of the first-order equation
 
@@ -2750,13 +2750,13 @@ $~$
 
   <font color="blue">$$ v=\frac{a(x,t)}{b(x,t)}$$</font>
 
-* The purpose of this section is to introduce the notion of first-order partial differential equations and <font color="red">method of characteristics</font>. $\,$The problem we will solve is the initial-value problem
+* The purpose of this section is to introduce the notion of first-order partial differential equations and [method of characteristics]{.red}. $\,$The problem we will solve is the initial-value problem
 
   $$ a(x,t) u_x +b(x,t) u_t +c(x,t)u=0 $$
 
   $$u(x,0)=\phi(x), \;\; {-\infty<x<\infty,\;\; 0< t < \infty}$$
 
-  The solution to this equation is based on a physical fact, $\,$that <font color="blue">an initial disturbance at some point $\,x\,$ propagates along a line (curve) in the $\,xt$-plane (called a characteristic)</font>
+  The solution to this equation is based on a physical fact, $\,$that [an initial disturbance at some point $\,x\,$ propagates along a line (curve) in the $\,xt$-plane (called a characteristic)]{.blue}
 
   ![](figures/pde02_figure22.svg "characteristics"){width="70%" fig-align="center" fig-alt="General characteristics (s varies along them, tau along the initial curve)"}
 
@@ -2929,7 +2929,7 @@ $~$
 
     $$x = x_0 +g(u)t, \quad\text{characteristic equation}$$
 
-   * Remembering that <font color="blue">the density $\,u(x,t)\,$ will not change along each characteristic</font>, $\,$if we know the initial density $\,u(x_0,0)$, then the characteristic equation for $\,x\,$ can be written
+   * Remembering that [the density $\,u(x,t)\,$ will not change along each characteristic]{.blue}, $\,$if we know the initial density $\,u(x_0,0)$, then the characteristic equation for $\,x\,$ can be written
 
     $$x=x_0+g[u(x_0,0)]t$$
 
@@ -3001,15 +3001,15 @@ $$u(x,t)=
 \end{cases}$$
 
 The difficulty in this example is
-that some characteristic lines will intersect each other. $\,$In other words, $\,$<font color="red">at the intersection point $\,(1,\textstyle \frac{1}{2})\,$ of the two characteristic lines, $\,$the solution becomes multi-valued</font>. $\,$This pathology means that the solution in the usual sense fails to exist after $\,t \geq \textstyle \frac{1}{2}$
+that some characteristic lines will intersect each other. $\,$In other words, $\,$[at the intersection point $\,(1,\textstyle \frac{1}{2})\,$ of the two characteristic lines, $\,$the solution becomes multi-valued]{.red}. $\,$This pathology means that the solution in the usual sense fails to exist after $\,t \geq \textstyle \frac{1}{2}$
 
 ![](figures/pde02_figure28.svg "density of traffic at different values of time"){width="50%" fig-align="center" fig-alt="density of traffic at different values of time"}
 
 **STEP 2**
 
-* Hence, $\,$to find the solution past $\,t=\textstyle \frac{1}{2}$, $\,$we must use another type of analysis. $\,$<font color="red">When characteristics run together, $\,$we have the phenomenon of shock waves (discontinuous solutions)</font>, $\,$and what we must ask is, $\,$how fast does the leading edge of the shock wave propagate along the road?
+* Hence, $\,$to find the solution past $\,t=\textstyle \frac{1}{2}$, $\,$we must use another type of analysis. $\,$[When characteristics run together, $\,$we have the phenomenon of shock waves (discontinuous solutions)]{.red}, $\,$and what we must ask is, $\,$how fast does the leading edge of the shock wave propagate along the road?
 
-* Before proceeding further, $\,$it is necessary to introduce the concept of <font color="red">a jump condition: a condition that holds at a discontinuity or abrupt change</font>. $\,$Consider one dimensional problem where there is a jump in the conserved quantity $\,u$:
+* Before proceeding further, $\,$it is necessary to introduce the concept of [a jump condition: a condition that holds at a discontinuity or abrupt change]{.red}. $\,$Consider one dimensional problem where there is a jump in the conserved quantity $\,u$:
 
   $$u_t +f_x=0$$
 
@@ -3038,7 +3038,7 @@ that some characteristic lines will intersect each other. $\,$In other words, $\
 
   $$ s = \frac{1 -0}{1 -0}=1$$
 
-* <font color="red">Therefore, $\,$a shock is formed at $(x,t)=(1,\textstyle\frac{1}{2})$: </font>
+* [Therefore, $\,$a shock is formed at $(x,t)=(1,\textstyle\frac{1}{2})$: ]{.red}
 
   * After that, $\,$it moves with constant speed $1$, $\,$along the line $\,x=t +\textstyle \frac{1}{2}$, $\,$for $\,t \geq \textstyle \frac{1}{2}$. 
   
@@ -3059,31 +3059,31 @@ $~$
 
   $$ f'(u^+)=f'(0)=0 \;<\; s=1 \;<\; f'(u^-)=f'(1)=2 $$
 
-  The characteristics on both sides <font color="blue">run into</font> the shock: $\,$it absorbs the information carried by the characteristics, $\,$it does not create any
+  The characteristics on both sides [run into]{.blue} the shock: $\,$it absorbs the information carried by the characteristics, $\,$it does not create any
 
 * The jump condition alone is not enough. $\,$Reverse the initial step:
 
   $$ u_t+2uu_x=0, \qquad u(x,0)=\begin{cases} 0 & x<0 \\ 1 & x>0 \end{cases} $$
 
-  The characteristics are $\,x=x_0\,$ ($x_0<0$) and $\,x=x_0+2t\,$ ($x_0>0$): $\,$they move <font color="red">apart</font> and leave the wedge $\,0<x<2t\,$ empty
+  The characteristics are $\,x=x_0\,$ ($x_0<0$) and $\,x=x_0+2t\,$ ($x_0>0$): $\,$they move [apart]{.red} and leave the wedge $\,0<x<2t\,$ empty
 
 $~$
 
-* <font color="blue">A false shock</font> $\,$ The jump with speed $\,s=\dfrac{f(0)-f(1)}{0-1}=1$,
+* [A false shock]{.blue} $\,$ The jump with speed $\,s=\dfrac{f(0)-f(1)}{0-1}=1$,
 
   $$ u=\begin{cases} 0 & x<t \\ 1 & x>t \end{cases} $$
 
-  satisfies the PDE on both sides and the jump condition. $\,$But $\,f'(u^+)=2>s$: $\,$the characteristics come <font color="red">out of</font> the shock, $\,$so the shock creates information. $\,$This solution is rejected
+  satisfies the PDE on both sides and the jump condition. $\,$But $\,f'(u^+)=2>s$: $\,$the characteristics come [out of]{.red} the shock, $\,$so the shock creates information. $\,$This solution is rejected
 
 $~$
 
-* <font color="blue">The rarefaction wave</font> $\,$ Fill the wedge with characteristics that all start at the origin, $\,x=g(u)\,t=2ut$:
+* [The rarefaction wave]{.blue} $\,$ Fill the wedge with characteristics that all start at the origin, $\,x=g(u)\,t=2ut$:
 
   $$ \color{red}{u(x,t)=\begin{cases} 0 & x\leq 0 \\ \dfrac{x}{2t} & 0<x<2t \\ 1 & x\geq 2t \end{cases}} $$
 
-  Check: $\,u_t+2uu_x=-\dfrac{x}{2t^2}+2\cdot\dfrac{x}{2t}\cdot\dfrac{1}{2t}=0$. $\,$The solution is continuous for $\,t>0$, $\,$and the step spreads into a ramp (an <font color="blue">expansion fan</font>)
+  Check: $\,u_t+2uu_x=-\dfrac{x}{2t^2}+2\cdot\dfrac{x}{2t}\cdot\dfrac{1}{2t}=0$. $\,$The solution is continuous for $\,t>0$, $\,$and the step spreads into a ramp (an [expansion fan]{.blue})
 
-* Rule: $\,$where $\,g(u)\,$ decreases from left to right, $\,$the characteristics converge and a <font color="red">shock</font> forms; $\,$where it increases, $\,$they diverge and a <font color="blue">rarefaction wave</font> forms
+* Rule: $\,$where $\,g(u)\,$ decreases from left to right, $\,$the characteristics converge and a [shock]{.red} forms; $\,$where it increases, $\,$they diverge and a [rarefaction wave]{.blue} forms
 
 $~$
 

@@ -223,7 +223,7 @@ $~$
 
 * **General Form**
 
-  A system of <font color="red">$m$ linear equations</font> in <font color="red">$n$ unknowns</font> has the general form
+  A system of [$m$ linear equations]{.red} in [$n$ unknowns]{.red} has the general form
   
   $$
   \begin{aligned}
@@ -294,11 +294,11 @@ $~$
 * In the **Gaussian elimination**, $~$ we row-reduce the augmented matrix until we arrive 
   at a row-equivalent augmented matrix in **row-echelon form**
   
-  * <font color='green'>The first nonzero entry in a nonzero row is a $1$</font>
+  * [The first nonzero entry in a nonzero row is a $1$]{.green}
 
-  * <font color='blue'>In consecutive nonzero rows, $~$the first entry $1$ in the lower row appears to the right of the $1$ in the higher row</font>
+  * [In consecutive nonzero rows, $~$the first entry $1$ in the lower row appears to the right of the $1$ in the higher row]{.blue}
   
-  * <font color='green'>Rows consisting of all zeros are at the bottom of the matrix</font>
+  * [Rows consisting of all zeros are at the bottom of the matrix]{.green}
 
 $~$
 
@@ -513,7 +513,7 @@ $~$
 
 * A **homogeneous system** of linear equations is **always consistent**. The solution consisting of all zeros is called the **trivial solution**. A homogeneous system either possesses only the trivial solution or possesses the trivial solution along with infinitely many nontrivial solutions
 
-* <font color='blue'>**A homogeneous system possesses nontrivial solutions if the number $m$ of equations is less than the number $n$ of unknowns $(m<n)$**</font>
+* [**A homogeneous system possesses nontrivial solutions if the number $m$ of equations is less than the number $n$ of unknowns $(m<n)$**]{.blue}
 
 $~$
 
@@ -656,12 +656,12 @@ $~$
   * the nonzero rows of $\mathbf{B}$ form a basis for the row space of $\mathbf{A}$, $~$and
   * $\mathrm{rank}(\mathbf{A})$ = the number of nonzero rows in $\mathbf{B}$
 
-* <font color='red'>**Consistency of** $~\mathbf{A}\mathbf{x}=\mathbf{b}$</font>
+* [**Consistency of** $~\mathbf{A}\mathbf{x}=\mathbf{b}$]{.red}
 
-  * A linear system of equations $\mathbf{A}\mathbf{x}=\mathbf{b}$ is <font color='red'>consistent if and only if $~\mathrm{rank}(\mathbf{A})=\mathrm{rank}(\mathbf{A}|\mathbf{b})$</font>
+  * A linear system of equations $\mathbf{A}\mathbf{x}=\mathbf{b}$ is [consistent if and only if $~\mathrm{rank}(\mathbf{A})=\mathrm{rank}(\mathbf{A}|\mathbf{b})$]{.red}
 
   * Suppose a linear system $\mathbf{A}\mathbf{x}=\mathbf{b}$ with $m$ equations and $n$ unknowns is consistent.
-  $~$If <font color='blue'>$\mathrm{rank}(\mathbf{A})=r\leq n$</font>, then the solution of the system contains <font color='blue'>$n -r$ parameters</font>. This means that we have the <font color='blue'>unique solution when $r=n$</font>
+  $~$If [$\mathrm{rank}(\mathbf{A})=r\leq n$]{.blue}, then the solution of the system contains [$n -r$ parameters]{.blue}. This means that we have the [unique solution when $r=n$]{.blue}
 
 $${\scriptsize
   \left(\begin{array}{cccc|c}
@@ -905,7 +905,7 @@ $~$
 ## Properties of Determinants {#sec-8-5}
 
 * If $\mathbf{A}^T$ is the transpose of the $n \times n$ matrix $\mathbf{A}$, 
-  $~$then <font color='blue'>$\mathrm{det}(\mathbf{A}^T)=\mathrm{det}(\mathbf{A})$</font>
+  $~$then [$\mathrm{det}(\mathbf{A}^T)=\mathrm{det}(\mathbf{A})$]{.blue}
   
   $${\scriptsize\begin{vmatrix}
    a_{11} & a_{12} & a_{13}\\ 
@@ -918,7 +918,7 @@ $~$
    a_{13} & a_{23} & a_{33}
   \end{vmatrix}}$$
  
-* <font color='blue'>If any two rows (columns) of an $n \times n$ matrix $\mathbf{A}$ are the same, $~$then $\mathrm{det}(\mathbf{A})=0$</font>
+* [If any two rows (columns) of an $n \times n$ matrix $\mathbf{A}$ are the same, $~$then $\mathrm{det}(\mathbf{A})=0$]{.blue}
 
   $${\scriptsize\begin{vmatrix}
    a_{11} & a_{12} & a_{13}\\ 
@@ -926,7 +926,7 @@ $~$
    a_{31} & a_{32} & a_{33}
   \end{vmatrix} = 0}$$
 
-* <font color='blue'>If all the entries in a row (column) of an $n \times n$ matrix $\mathbf{A}$ are zero, $~$then $\mathrm{det}(\mathbf{A})=0$</font>
+* [If all the entries in a row (column) of an $n \times n$ matrix $\mathbf{A}$ are zero, $~$then $\mathrm{det}(\mathbf{A})=0$]{.blue}
 
   $${\scriptsize\begin{vmatrix}
    a_{11} & a_{12} & a_{13}\\ 
@@ -934,7 +934,7 @@ $~$
    a_{31} & a_{32} & a_{33}
   \end{vmatrix} = 0}$$
 
-* <font color='green'>If $\mathbf{B}$ is the matrix obtained by interchanging any two rows (columns) of an $n \times n$ matrix $\mathbf{A}$, $~$then $\mathrm{det}(\mathbf{B})=-\mathrm{det}(\mathbf{A})$</font>
+* [If $\mathbf{B}$ is the matrix obtained by interchanging any two rows (columns) of an $n \times n$ matrix $\mathbf{A}$, $~$then $\mathrm{det}(\mathbf{B})=-\mathrm{det}(\mathbf{A})$]{.green}
 
   $${\scriptsize\begin{vmatrix}
    a_{21} & a_{22} & a_{23}\\ 
@@ -961,7 +961,7 @@ $~$
    a_{31} & a_{32} & a_{33}
   \end{vmatrix}}$$
 
-* <font color='blue'>If $\mathbf{A}$ and $\mathbf{B}$ are both $n \times n$ matrices, $~$then $\mathrm{det}(\mathbf{AB})=\mathrm{det}(\mathbf{A})\cdot \mathrm{det}(\mathbf{B})$</font>
+* [If $\mathbf{A}$ and $\mathbf{B}$ are both $n \times n$ matrices, $~$then $\mathrm{det}(\mathbf{AB})=\mathrm{det}(\mathbf{A})\cdot \mathrm{det}(\mathbf{B})$]{.blue}
   
   $${\scriptsize\begin{vmatrix} 
   \begin{pmatrix}
@@ -987,7 +987,7 @@ $~$
    b_{31} & b_{32} & b_{33}
   \end{vmatrix}}$$
 
-* <font color='blue'>Suppose $\mathbf{B}$ is the matrix obtained from an $n \times n$ matrix $\mathbf{A}$ by multiplying  a row(column) by a nonzero $k$ and adding the result to another row(column). $~$ Then $\mathrm{det}(\mathbf{B})=\mathrm{det}(\mathbf{A})$</font>
+* [Suppose $\mathbf{B}$ is the matrix obtained from an $n \times n$ matrix $\mathbf{A}$ by multiplying  a row(column) by a nonzero $k$ and adding the result to another row(column). $~$ Then $\mathrm{det}(\mathbf{B})=\mathrm{det}(\mathbf{A})$]{.blue}
   
   $${\scriptsize\begin{vmatrix} 
    a_{11} & a_{12} & a_{13}\\ 
@@ -1189,11 +1189,11 @@ $~$
   
   $$\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}$$
   
-  A homogeneous system of $n$ linear equations in $~n$ unknowns <font color='blue'>$\mathbf{A}\mathbf{x}=\mathbf{0}$</font> $~$has
+  A homogeneous system of $n$ linear equations in $~n$ unknowns [$\mathbf{A}\mathbf{x}=\mathbf{0}$]{.blue} $~$has
   
   * only the trivial solution if and only if $\mathbf{A}$ is nonsingular
   
-  * <font color='blue'>a nontrivial solution if and only if $\mathbf{A}$ is singular</font>
+  * [a nontrivial solution if and only if $\mathbf{A}$ is singular]{.blue}
 
 $~$
 
@@ -1974,11 +1974,11 @@ $~$
 
 ## Orthogonal Matrices {#sec-8-10}
 
-* <font color='red'>Let $\mathbf{A}$ be a *symmetric* matrix ($\mathbf{A}=\mathbf{A}^T$) with *real* entries. Then the eigenvalues of $\mathbf{A}$ are *real*</font>
+* [Let $\mathbf{A}$ be a *symmetric* matrix ($\mathbf{A}=\mathbf{A}^T$) with *real* entries. Then the eigenvalues of $\mathbf{A}$ are *real*]{.red}
 
-* <font color='blue'>Let $\mathbf{A}$ be a *symmetric* matrix. Then eigenvectors corresponding to distinct(different) eigenvalues are *orthogonal*</font>
+* [Let $\mathbf{A}$ be a *symmetric* matrix. Then eigenvectors corresponding to distinct(different) eigenvalues are *orthogonal*]{.blue}
 
-* <font color='red'>An $n \times n$ matrix $\mathbf{A}$ is *orthogonal* ($\mathbf{A}^{-1}=\mathbf{A}^T$) $~$if and only if its columns $\mathbf{x}_1,$ $\mathbf{x}_2,$ $\cdots,$ $\mathbf{x}_n$ form an orthonormal set</font>
+* [An $n \times n$ matrix $\mathbf{A}$ is *orthogonal* ($\mathbf{A}^{-1}=\mathbf{A}^T$) $~$if and only if its columns $\mathbf{x}_1,$ $\mathbf{x}_2,$ $\cdots,$ $\mathbf{x}_n$ form an orthonormal set]{.red}
   
   $$\mathbf{x}_i \cdot \mathbf{x}_j=0, \;i \neq j \; \text{and} \;\mathbf{x}_i \cdot \mathbf{x}_i=1$$
 
@@ -3123,7 +3123,7 @@ $~$
 | + | 0 | 1 |
 |---|---|---| 
 | **0** | 0 | 1 |
-| **1** | 1 |<font color='red'> 0 </font>|
+| **1** | 1 |[ 0 ]{.red}|
 :::
 
 ::: {.column width="10%"}

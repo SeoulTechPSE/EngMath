@@ -108,7 +108,7 @@ $~$
 
 * Fourier Series
 
-  The <font color="blue">**Fourier series**</font> of a function $f$ defined on the interval $(-p,p)\,$ is given by
+  The [**Fourier series**]{.blue} of a function $f$ defined on the interval $(-p,p)\,$ is given by
   
   <font color="blue"> $$ f(x)=\frac{a_0}{2} +\sum_{n=1}^\infty \left( a_n\cos\frac{n\pi}{p}x +b_n\sin\frac{n\pi}{p}x \right)$$ </font>
   
@@ -211,7 +211,7 @@ example_plot(rect_wave, ns=[1, 3, 6, 9])
 
 $~$
 
-* The <font color="red">*overshooting*</font> by the partial sums from the functional values near a point of discontinuity does not smooth out but remains fairly constant. This behavior of a Fourier series near a point at which $f$ is discontinuous is known as the <font color="red">*Gibbs phenomenon*</font>
+* The [*overshooting*]{.red} by the partial sums from the functional values near a point of discontinuity does not smooth out but remains fairly constant. This behavior of a Fourier series near a point at which $f$ is discontinuous is known as the [*Gibbs phenomenon*]{.red}
 
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** Computing Fourier coefficients by numerical integration (`scipy.integrate.quad`): @sec-integration-scipy; $~$or exactly with `sympy`: @sec-sympy-integrals
@@ -421,13 +421,13 @@ The eigenvalue problems that arise in separation of variables (@sec-x1-5, @sec-x
 
 * Properties of the Regular Sturm-Liouville problem
 
-  1. There are <font color="blue"> an infinite number of real eigenvalues</font> that can be arranged in increasing order $\lambda_1<\lambda_2<\lambda_3<\cdots<\lambda_n<\cdots\;\;$ such that $\lambda_n \to \infty\;$ as $n\to\infty$
+  1. There are [ an infinite number of real eigenvalues]{.blue} that can be arranged in increasing order $\lambda_1<\lambda_2<\lambda_3<\cdots<\lambda_n<\cdots\;\;$ such that $\lambda_n \to \infty\;$ as $n\to\infty$
 
-  1. For each eigenvalue $\lambda_i$, $~$there is <font color="blue">only one eigenfunction</font> (except for nonzero constant multiples)
+  1. For each eigenvalue $\lambda_i$, $~$there is [only one eigenfunction]{.blue} (except for nonzero constant multiples)
 
-  1. Eigenfunctions corresponding to different eigenvalues are <font color="blue">linearly independent</font>
+  1. Eigenfunctions corresponding to different eigenvalues are [linearly independent]{.blue}
   
-  1. The set of eigenfunctions corresponding to the set of eigenvalues is <font color="blue">orthogonal with respect to the weight function $p(x)$</font> on the interval $[a,b]$
+  1. The set of eigenfunctions corresponding to the set of eigenvalues is [orthogonal with respect to the weight function $p(x)$]{.blue} on the interval $[a,b]$
 
 * **Proof of 4**
 
@@ -597,13 +597,13 @@ $~$
  
   $$ \color{blue}{y=c_1J_n(\alpha x)} +c_2Y_n(\alpha x) $$
 
-* Now $r(0)=0$, $\,$and of two solutions $J_n(\alpha x)$ and $Y_n(\alpha x)$, $\,$ <font color="blue">only $J_n(\alpha x)$ is bounded at $x=0$</font>
+* Now $r(0)=0$, $\,$and of two solutions $J_n(\alpha x)$ and $Y_n(\alpha x)$, $\,$ [only $J_n(\alpha x)$ is bounded at $x=0$]{.blue}
   
 * The eigenvalues $\lambda_i=\alpha_i^2, \;i=1,2,3,\cdots,$ $\,$are defined by means of a boundary condition at $x=b$:
   
   <font color="red"> $$A_2J_n(\alpha b) +B_2\alpha J_n'(\alpha b) = 0 $$ </font>
   
-* For any choice of $A_2$ and $B_2$, $\,$not both zero, $\,$it is known that <font color="blue">the above boundary condition gives an infinite number of roots $x_i=\alpha_i b$. The eigenvalues are then $\lambda_i=\alpha_i^2=(x_i/b)^2$ </font>
+* For any choice of $A_2$ and $B_2$, $\,$not both zero, $\,$it is known that [the above boundary condition gives an infinite number of roots $x_i=\alpha_i b$. The eigenvalues are then $\lambda_i=\alpha_i^2=(x_i/b)^2$ ]{.blue}
 
 * Differential Recurrence Relations
 
@@ -636,7 +636,7 @@ $~$
 
 $~$
 
-* **Case I :** <font color="red"> $~~A_2=1, \,B_2 = 0 \Rightarrow J_n(\alpha b)=0\;$ $\Rightarrow$ $\;\lambda_i=\alpha_i^2 =(x_i/b)^2 >0$</font>
+* **Case I :** [ $~~A_2=1, \,B_2 = 0 \Rightarrow J_n(\alpha b)=0\;$ $\Rightarrow$ $\;\lambda_i=\alpha_i^2 =(x_i/b)^2 >0$]{.red}
     
   $$
   \begin{aligned}
@@ -839,7 +839,7 @@ example_plot4__()
 
 $~$
 
-* **Case III :** $\,$($h=0$ and $n=0$) : <font color="red"> $~~J_0'(\alpha b)=0\;$ </font>
+* **Case III :** $\,$($h=0$ and $n=0$) : [ $~~J_0'(\alpha b)=0\;$ ]{.red}
   
   It is the only situation for which $\lambda=0$ is an eigenvalue
    
@@ -919,7 +919,7 @@ $~$
   
    in which $~r(x)=1-x^2, \,p(x)=1, \,\lambda=n(n+1),$ and $~q(x)=0$
 
-* <font color="red"> The Legendre polynomials $P_n(x)$ are the only solutions that are bounded on the interval $[\text{-}1, \,1]$ </font>
+* [ The Legendre polynomials $P_n(x)$ are the only solutions that are bounded on the interval $[\text{-}1, \,1]$ ]{.red}
 
 $~$
 

@@ -19,11 +19,11 @@ jupyter: python3
 
 ## Introduction to Partial Differential Equations {#sec-x1-1}
 
-* Most physical phenomena, $\,$whether in the domain of fluid dynamics, electricity, magnetism, mechanics, optics, or heat flow, $\,$can be described in general by partial differential equations(PDEs): $\,$in fact, $\,$<font color="red">most of mathematical physics are PDEs</font>
+* Most physical phenomena, $\,$whether in the domain of fluid dynamics, electricity, magnetism, mechanics, optics, or heat flow, $\,$can be described in general by partial differential equations(PDEs): $\,$in fact, $\,$[most of mathematical physics are PDEs]{.red}
 
 * **What Are PDEs?**
 
-  A partial differential equation is an equation that contains partial derivatives. In contrast to ordinary differential equations (ODEs), where the unknown function depends on *only one variable*, <font color="red">**in PDEs, the unknown function depends on several variables**: $\,u(x,t)$ depends both on location $x$ and time $t$</font>
+  A partial differential equation is an equation that contains partial derivatives. In contrast to ordinary differential equations (ODEs), where the unknown function depends on *only one variable*, [**in PDEs, the unknown function depends on several variables**: $\,u(x,t)$ depends both on location $x$ and time $t$]{.red}
 
 * A few well-known PDEs
   
@@ -35,9 +35,9 @@ jupyter: python3
      u_{rr} &+\frac{1}{r}u_r+\frac{1}{r^2}u_{\theta\theta}=0, &&\scriptsize\text{Laplace's equation in polar coordinates}
   \end{aligned}$$
 
-* The unknown function $u$ always depends on more than one variable. $\,$The variable $u$ (which we differentiate) is called the <font color="blue">**dependent** variable</font>, $\,$whereas the ones we differentiate *with respect to* are called the <font color="blue">**independent** variables</font>
+* The unknown function $u$ always depends on more than one variable. $\,$The variable $u$ (which we differentiate) is called the [**dependent** variable]{.blue}, $\,$whereas the ones we differentiate *with respect to* are called the [**independent** variables]{.blue}
 
-* **Classification** is an important concept because the general theory and methods of solution apply only to a given class of equations. $\,$<font color="blue">Six basic classifications are</font>:
+* **Classification** is an important concept because the general theory and methods of solution apply only to a given class of equations. $\,$[Six basic classifications are]{.blue}:
 
   * **Order of the PDE**
 
@@ -74,9 +74,9 @@ jupyter: python3
 
   * **Homogeneity**
 
-    * \eqref{eq:SL} is called <font color="blue">**homogeneous**</font> if the right hand side $G(x,y)$ is identically zero for all $x$ and $y$. 
+    * \eqref{eq:SL} is called [**homogeneous**]{.blue} if the right hand side $G(x,y)$ is identically zero for all $x$ and $y$. 
   
-    * If $G(x,y)$ is not identically zero, then the equation is <font color="blue">**nonhomogeneous**</font>
+    * If $G(x,y)$ is not identically zero, then the equation is [**nonhomogeneous**]{.blue}
 
   * **Kinds of Coefficients**
 
@@ -84,21 +84,21 @@ jupyter: python3
 
   * **Three Basic Types of Linear Equations** 
 
-    * <font color="red">**Parabolic**</font> 
+    * [**Parabolic**]{.red} 
 
-      <font color="blue">$B^2-4AC=0,~$</font> heat flow and diffusion processes
+      [$B^2-4AC=0,~$]{.blue} heat flow and diffusion processes
   
       $u_t=u_{xx}$
   
-    * <font color="red">**Hyperbolic**</font> 
+    * [**Hyperbolic**]{.red} 
     
-      <font color="blue">$B^2-4AC>0,~$</font> vibrating systems and wave motion
+      [$B^2-4AC>0,~$]{.blue} vibrating systems and wave motion
   
       $u_{tt}=u_{xx}, \;u_{\xi\eta}=0$
     
-    * <font color="red">**Elliptic**</font> 
+    * [**Elliptic**]{.red} 
     
-      <font color="blue">$B^2-4AC < 0,~$</font> steady-state phenomena
+      [$B^2-4AC < 0,~$]{.blue} steady-state phenomena
   
       $u_{xx}+u_{yy}=0$
     
@@ -116,13 +116,13 @@ jupyter: python3
 
   The description of our physical problem requires three types of equations
 
-  * The <font color="red">**PDE**</font> describing the physical phenomenon of heat flow
+  * The [**PDE**]{.red} describing the physical phenomenon of heat flow
 
-  * The <font color="red">**boundary conditions**</font> describing the physical nature of our problem on the boundaries
+  * The [**boundary conditions**]{.red} describing the physical nature of our problem on the boundaries
 
-  * The <font color="red">**initial condition**</font> describing the physical phenomenon at the start of the experiment 
+  * The [**initial condition**]{.red} describing the physical phenomenon at the start of the experiment 
 
-* **<font color="blue">The Heat Equation</font>**
+* **[The Heat Equation]{.blue}**
 
   The basic equation of *one-dimensional* heat flow is 
 
@@ -130,7 +130,7 @@ jupyter: python3
 
   This equation is derived from the basic conservation of energy
 
-* **<font color="blue">Boundary Conditions</font>**
+* **[Boundary Conditions]{.blue}**
 
   All physical problems have boundaries of some kind, $\,$so we must describe mathematically what goes on there in order to adequately describe the problem. Since the temperature $\,u\,$ was fixed for all time $t>0~$ at $~T_1$ and $T_2~$ at the two ends $\,x=0~$ and $~x=L$
 
@@ -141,13 +141,13 @@ jupyter: python3
   \end{array}, \;\; 0 < t < \infty 
   \tag{BCs}\label{eq:BCs}$$
 
-* **<font color="blue">Initial Condition</font>**
+* **[Initial Condition]{.blue}**
 
   All physical problems must start from some value of time (generally called $t=0$), $\,$so we must specify the physical apparatus at this time. Since we started monitoring the rod temperature from time the rod has achieved a constant temperature $T_0$, $\,$we have
 
   $$ u(x,0) = T_0, \;\; 0 \leq x \leq L \tag{IC}\label{eq:IC}$$
 
-  By writing \eqref{eq:HE}, \eqref{eq:BCs}, and \eqref{eq:IC} together, $\,$we have what is called an <font color="red">*initial-boundary-value problem*</font>. The interesting thing here, which is not at all obvious, is that there is only one function $u(x,t)$ that satisfies the problem
+  By writing \eqref{eq:HE}, \eqref{eq:BCs}, and \eqref{eq:IC} together, $\,$we have what is called an [*initial-boundary-value problem*]{.red}. The interesting thing here, which is not at all obvious, is that there is only one function $u(x,t)$ that satisfies the problem
 
 * **More Diffusion-Type Equations**
 
@@ -221,7 +221,7 @@ $~$
 
 ## Boundary Conditions for Diffusion-Type Problems {#sec-x1-4}
 
-* When describing the various types of boundary conditions that can occur for heat-flow problems, <font color="blue">three basic types generally come to mind</font>
+* When describing the various types of boundary conditions that can occur for heat-flow problems, [three basic types generally come to mind]{.blue}
 
 * **Type 1 BC (Temperature specified on the boundary)** 
 
@@ -292,7 +292,7 @@ For example, if the circular disc insulated on the boundary, then the BC would b
 
 * Separation of variables is one of the oldest techniques for solving initial-boundary-value problems and applies to problems where
 
-  * The PDE is <font color="blue">linear and homogeneous (not necessarily constant coefficients)</font>
+  * The PDE is [linear and homogeneous (not necessarily constant coefficients)]{.blue}
 
   * The boundary conditions are of the form
 
@@ -302,7 +302,7 @@ For example, if the circular disc insulated on the boundary, then the BC would b
       \gamma u_x(L,t) +\delta u(L,t)&= 0 
     \end{aligned}$$
 
-    where $\alpha$, $\beta$, $\gamma$, and $\delta$ are constants (boundary conditions of this form are called <font color="blue">linear homogeneous BCs</font>)
+    where $\alpha$, $\beta$, $\gamma$, and $\delta$ are constants (boundary conditions of this form are called [linear homogeneous BCs]{.blue})
 
 * We wish to find the function $u(x,t)$ that satisfies the following four conditions:
 
@@ -1094,7 +1094,7 @@ $~$
   2.  Find the system response $u_k$ to $f_k$
   3.  Add(superimpose) the simple responses $u_k$ to get $\,u=\sum u_k$
 
-* It turns out if the system is *linear*, $\,$then the sum $u$ is the response we get if the function $\,f$ were input directly; $\,$this is the <font color="red">**principle of superposition**</font>
+* It turns out if the system is *linear*, $\,$then the sum $u$ is the response we get if the function $\,f$ were input directly; $\,$this is the [**principle of superposition**]{.red}
 
 * **Superposition Used to Break an IBVP into Two Simpler Problems**
 
@@ -1137,11 +1137,11 @@ $~$
 
     $$u(x,t)=\underbrace{\frac{1}{\pi^2} (1 -e^{-\pi^2 t}) \sin\pi x}_{\text{Solution to \eqref{eq:A}}} +\underbrace{e^{-(2\pi)^2 t} \sin 2\pi x}_{\text{Solution to \eqref{eq:B}}}$$
 
-* **<font color="blue">Separation of Variables and Integral Transforms as Superpositions</font>**
+* **[Separation of Variables and Integral Transforms as Superpositions]{.blue}**
 
-  * <font color="red">In separation of variables</font>, $\,$we generally break down the <font color="red">initial conditions</font> into an infinite number of simple parts and find the response to each part. $\,$We then sum these individual responses to find the solution to the problem
+  * [In separation of variables]{.red}, $\,$we generally break down the [initial conditions]{.red} into an infinite number of simple parts and find the response to each part. $\,$We then sum these individual responses to find the solution to the problem
 
-  * On the other hand, $\,$<font color="red">integral transforms</font> also use superposition, $\,$for instance, $\,$let's show how the finite sine transform uses this principle. $\,$Consider the nonhomogeneous heat equation
+  * On the other hand, $\,$[integral transforms]{.red} also use superposition, $\,$for instance, $\,$let's show how the finite sine transform uses this principle. $\,$Consider the nonhomogeneous heat equation
 
     $$
     \begin{aligned}
@@ -1151,7 +1151,7 @@ $~$
     u(x,0) &= 0 && 0 \leq x \leq 1
     \end{aligned}$$
 
-    and its solution by use of the finite sine transform. $\,$What we're really doing is resolving <font color="red">the input $f(x,t)$</font> into components, $\,$finding the response $U_n$ due to each component, $\,$and adding these responses
+    and its solution by use of the finite sine transform. $\,$What we're really doing is resolving [the input $f(x,t)$]{.red} into components, $\,$finding the response $U_n$ due to each component, $\,$and adding these responses
 
   $${
   \begin{aligned}
@@ -1232,9 +1232,9 @@ $~$
 
 * Of course, $\,$if a function is defined only on a *finite interval*, $\,$we could extend the function outside the interval in a periodic way, $\,$so that a Fourier series representation could be obtained for the function inside the interval
 
-* <font color="red">Whereas functions that are *not periodic* must be resolved into a *continuous spectrum* of values</font>
+* [Whereas functions that are *not periodic* must be resolved into a *continuous spectrum* of values]{.red}
 
-* Although a nonperiodic function $f(x)$ cannot be represented by an infinite series of sines and cosines, $\,$<font color="red">we might write it as *continuous analog* of the Fourier series</font>:
+* Although a nonperiodic function $f(x)$ cannot be represented by an infinite series of sines and cosines, $\,$[we might write it as *continuous analog* of the Fourier series]{.red}:
 
   $$\begin{aligned}
   f(x)&= \frac{a_0}{2} +\sum_{n=1}^\infty \left[ a_n\cos \frac{n\pi x}{L} +b_n \sin \frac{n\pi x}{L} \right] \\
@@ -1251,11 +1251,11 @@ $~$
   &\color{blue}{b(\omega)=\frac{1}{\pi} \int_{-\infty}^\infty f(x)\sin \omega x\, dx}
   \end{aligned}$$
 
-  where the functions $a(\omega)$ and $b(\omega)$ are known as <font color="red">the Fourier cosine and sine transforms</font> and measure the cosine and sine component of $\,f(x)$ and
+  where the functions $a(\omega)$ and $b(\omega)$ are known as [the Fourier cosine and sine transforms]{.red} and measure the cosine and sine component of $\,f(x)$ and
 
   $$\color{red}{\sqrt{a^2(\omega) +b^2(\omega)}}$$
 
-  measures the $\omega$ frequency component of $f(x)$ and is called <font color="red">the spectrum of $f(x)$</font>. $\,$With this intuitive explanation of the spectrum of a function, $\,$we now get to the nuts and bolts of integral transforms
+  measures the $\omega$ frequency component of $f(x)$ and is called [the spectrum of $f(x)$]{.red}. $\,$With this intuitive explanation of the spectrum of a function, $\,$we now get to the nuts and bolts of integral transforms
 
 * **The Exponential Fourier Transform**
 
@@ -1284,11 +1284,11 @@ $~$
 
 ## $~$The Fourier Transform and its Application to PDEs {#sec-x1-13}
 
-* The usefulness of the Fourier transform comes from the fact that <font color="green">it changes the operation of differentiation into multiplication</font>; $\,$that is, $\,$partial differential equations are changed into ordinary differential equations
+* The usefulness of the Fourier transform comes from the fact that [it changes the operation of differentiation into multiplication]{.green}; $\,$that is, $\,$partial differential equations are changed into ordinary differential equations
 
   ![](figures/fourier2.jpg "Fourier"){width="35%" fig-align="center" fig-alt="Portrait of Joseph Fourier"}
 
-* <font color="blue">**Useful Properties of the Fourier Transform**</font>
+* [**Useful Properties of the Fourier Transform**]{.blue}
 
   **Property 1** $\,$Fourier Transform Pair
 
@@ -1332,7 +1332,7 @@ $~$
 
 * **Solution of an Initial-Value Problem**
 
-  Consider the heat flow in an <font color="blue">infinite</font> rod where the initial temperature is $\,u(x,0)=\phi(x)$
+  Consider the heat flow in an [infinite]{.blue} rod where the initial temperature is $\,u(x,0)=\phi(x)$
 
   $$
   \begin{aligned}
@@ -1386,7 +1386,7 @@ It can be shown that this impulse-response function $G(x-\xi,t)$ $\,$is the temp
 
 ![](figures/pde01_figure12.svg "impulse response G(x-\xi,t)"){width="75%" fig-align="center" fig-alt="impulse response G(x-\xi,t)"}
 
-<font color="blue">Hence, $\,$the interpretation of solution is that the initial temperature $\,u(x,0)=\phi(x)\,$ is decomposed into a continuum of impulses of $\,\phi(\xi)\,$ at each point $x=\xi$ and the resulting temperature $\,\phi(\xi)G(x-\xi,t)\,$ is found.</font> <font color="red">$\,$These resulting temperatures are then added (integrated) to obtain the solution. This general idea is also superposition</font>
+[Hence, $\,$the interpretation of solution is that the initial temperature $\,u(x,0)=\phi(x)\,$ is decomposed into a continuum of impulses of $\,\phi(\xi)\,$ at each point $x=\xi$ and the resulting temperature $\,\phi(\xi)G(x-\xi,t)\,$ is found.]{.blue} [$\,$These resulting temperatures are then added (integrated) to obtain the solution. This general idea is also superposition]{.red}
 
 $~$
 
@@ -1532,7 +1532,7 @@ does not exist. $\,$Only functions that damp to zero sufficiently fast as $|x| \
 
   ![](figures/pde01_figure11.svg "diffusion problem in a semi-infinite medium"){width="60%" fig-align="center" fig-alt="diffusion problem in a semi-infinite medium"}
 
-  To solve this, $\,$we break into three simple steps. $\,$First our strategy is to transform the <font color="blue">$x$-variable via Fourier sine transform</font> so that we get an ODE in time
+  To solve this, $\,$we break into three simple steps. $\,$First our strategy is to transform the [$x$-variable via Fourier sine transform]{.blue} so that we get an ODE in time
 
 $~$
 
@@ -1758,7 +1758,7 @@ $~$
    \mathcal{L}^{-1}[F(s)] &= \frac{1}{2\pi i}\int_{\gamma-i\infty}^{\gamma+i\infty} F(s)e^{st}\,ds
   \end{aligned}$$
 
-* <font color="blue">The Laplace transform has one major advantage over the Fourier transform in that the damping factor $e^{-st}$ in the integrand allows us to transform a wider class of functions (the factor $e^{-i\omega x}$ in the Fourier transform doesn't do any damping since its absolute value is one)</font> 
+* [The Laplace transform has one major advantage over the Fourier transform in that the damping factor $e^{-st}$ in the integrand allows us to transform a wider class of functions (the factor $e^{-i\omega x}$ in the Fourier transform doesn't do any damping since its absolute value is one)]{.blue} 
 
 * In fact, $\,$the exact conditions that ensure that a function $f(t)$ has a Laplace transform are given by the following theorem:
 
@@ -1830,7 +1830,7 @@ $~$
 
 **NOTES**
 
-<font color="blue">The Laplace transform can also be applied to problems where the PDE is nonhomogeneous (in separation of variables, $\,$the equation had to be homogeneous), $\,$but the Laplace transform will generally work only if the equation has constant coefficients (in separation of variables, $\,$we could have variable coefficients)</font>  
+[The Laplace transform can also be applied to problems where the PDE is nonhomogeneous (in separation of variables, $\,$the equation had to be homogeneous), $\,$but the Laplace transform will generally work only if the equation has constant coefficients (in separation of variables, $\,$we could have variable coefficients)]{.blue}  
 
 $~$
 
@@ -2252,7 +2252,7 @@ $~$
 
   $$ \color{red}{u(x,t)=\psi(0)\,w(x,t)+\int_0^t w(x,t-\tau)\,\psi'(\tau)\,d\tau} $$
 
-  This is <font color="red">Duhamel's principle</font>: $\,$the solution for a time-varying boundary temperature is built from the step response alone
+  This is [Duhamel's principle]{.red}: $\,$the solution for a time-varying boundary temperature is built from the step response alone
 
 * The same idea gives the convolution $\,\mathcal{L}^{-1}[F(s)G(s)]=f*g\,$ for linear ODEs (the response of a linear system to an input is the superposition of its responses to steps or impulses). $\,$If we solve \eqref{eq:D1} and \eqref{eq:D2} side by side by the Laplace transform, $\,$we obtain the same result
 
@@ -2311,7 +2311,7 @@ $~$
 
 **NOTES**
 
-* <font color="red">There is another interesting version of Duhamel's principle</font> that gives the answer to \eqref{eq:D1} in terms of the solution $\,v(x,t)$ of the alternative simple problem
+* [There is another interesting version of Duhamel's principle]{.red} that gives the answer to \eqref{eq:D1} in terms of the solution $\,v(x,t)$ of the alternative simple problem
 
   $$
   \begin{aligned}
@@ -2435,7 +2435,7 @@ $~$
    u(x,0) &= 0 && 0 \leq x \leq 1
   \end{aligned}$$ 
 
-* <font color="red">The heat added during $\,[\tau,\tau+d\tau]\,$ acts like an initial temperature $\,f(x,\tau)\,d\tau\,$ given at time $\,\tau$</font>. $\,$Let $\,\phi(x,t;\tau)\,$ solve the homogeneous problem that starts at $\,t=\tau$:
+* [The heat added during $\,[\tau,\tau+d\tau]\,$ acts like an initial temperature $\,f(x,\tau)\,d\tau\,$ given at time $\,\tau$]{.red}. $\,$Let $\,\phi(x,t;\tau)\,$ solve the homogeneous problem that starts at $\,t=\tau$:
 
   $$ \phi_t=\alpha\phi_{xx}\;\;(t>\tau), \qquad \phi(0,t;\tau)=\phi(1,t;\tau)=0, \qquad \phi(x,\tau;\tau)=f(x,\tau) $$
 

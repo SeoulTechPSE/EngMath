@@ -14,7 +14,7 @@ $~$
 
 ## The Boundary of Iterative Stability
 
-* Formally, $\,$the <font color='red'> Mandelbrot set</font> is the set of complex numbers, $\color{red}{c}$, for which an infinite sequence of numbers, $z_0$, $z_1$, $\cdots$, $z_n$, $\cdots$, remains bounded
+* Formally, $\,$the [ Mandelbrot set]{.red} is the set of complex numbers, $\color{red}{c}$, for which an infinite sequence of numbers, $z_0$, $z_1$, $\cdots$, $z_n$, $\cdots$, remains bounded
 
 $$\begin{aligned}
  z_0 &= 0\\ 
@@ -38,7 +38,7 @@ for n, z in enumerate(sequence(c=1)):
     break
 ```
 
-* Most numbers will make this sequence diverge to infinity. $\,$However, $\,$some will keep it **stable** by either converging the sequence to a single value or staying within a bounded range. Others will make the sequence **periodically stable** by cycling back and forth between the same few values. <font color='blue'>Stable and periodically stable values make up the Mandelbrot set</font>
+* Most numbers will make this sequence diverge to infinity. $\,$However, $\,$some will keep it **stable** by either converging the sequence to a single value or staying within a bounded range. Others will make the sequence **periodically stable** by cycling back and forth between the same few values. [Stable and periodically stable values make up the Mandelbrot set]{.blue}
 
 ```{python}
 for n, z in enumerate(sequence(c=0)):
@@ -56,7 +56,7 @@ for n, z in enumerate(sequence(c=-1)):
 
 * It’s not obvious which numbers are stable and which aren’t, $\,$because the formula is sensitive to even the smallest change of the tested value, $c$
 
-* The <font color='red'>fractal</font> corresponding to the Mandelbrot set has a finite area estimated at `1.506484` square units. Mathematicians haven’t pinpointed the exact number yet and don’t know whether it’s rational or not. On the other hand, the perimeter of the Mandelbrot set is infinite
+* The [fractal]{.red} corresponding to the Mandelbrot set has a finite area estimated at `1.506484` square units. Mathematicians haven’t pinpointed the exact number yet and don’t know whether it’s rational or not. On the other hand, the perimeter of the Mandelbrot set is infinite
 
 ## Plotting the Mandelbrot Set Using Python’s `Matplotlib`
 
@@ -198,9 +198,9 @@ display(image)
 
 ### Measuring Divergence With the Escape Count
 
-* The number of iterations it takes to detect divergence is known as the <font color='green'>escape count</font>. $\,$We can use the escape count to introduce <font color='green'>multiple levels of gray</font>
+* The number of iterations it takes to detect divergence is known as the [escape count]{.green}. $\,$We can use the escape count to introduce [multiple levels of gray]{.green}
 
-* However, $\,$it’s usually more convenient to deal with <font color='green'>normalized escape counts</font> so that their values are on a scale from zero to one regardless of the maximum number of iterations
+* However, $\,$it’s usually more convenient to deal with [normalized escape counts]{.green} so that their values are on a scale from zero to one regardless of the maximum number of iterations
 
 ```{python}
 @dataclass
@@ -276,7 +276,7 @@ display(image)
 
 ### Smoothing Out the Banding Artifacts
 
-* Getting rid of *color banding* from the Mandelbrot set’s exterior boils down to using <font color='green'>fractional escape counts</font>.
+* Getting rid of *color banding* from the Mandelbrot set’s exterior boils down to using [fractional escape counts]{.green}.
 
 * One way to interpolate their intermediate values is to use [logarithms](https://linas.org/art-gallery/escape/smooth.html)
 
@@ -389,7 +389,7 @@ for pixel in Viewport(image, center=-0.7435 +0.1314j, width=0.002):
   pixel.color = int(instability *255)
 ```
 
-* The `viewport` spans `0.002` world units and is centered at `-0.7435 +0.1314j`, $\,$which is close to <font color='red'>a Misiurewicz point</font> that produces a beautiful spiral
+* The `viewport` spans `0.002` world units and is centered at `-0.7435 +0.1314j`, $\,$which is close to [a Misiurewicz point]{.red} that produces a beautiful spiral
 
 ```{python}
 #| fig-align: center

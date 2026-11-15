@@ -15,11 +15,11 @@ jupyter: python3
 
 ## Solution Curves Without a Solution {#sec-2-1}
 
-* <font color="blue">DEs can be analyzed qualitatively</font>, allowing us to approximate a solution curve without solving the problem
+* [DEs can be analyzed qualitatively]{.blue}, allowing us to approximate a solution curve without solving the problem
 * Two approaches are:
   * Direction fields
   * Autonomous first-order DEs
-* <font color="red">Direction fields:</font> 
+* [Direction fields:]{.red} 
   * Slope of the **lineal element** at $(x,y(x))$ on a solution curve is the value of $\,\frac{dy}{dx}\,$ at this point
   * **Direction/slope fields** of $\,\frac{dy}{dx}=f(x,y)\,$ are collections of lineal slope elements that visually suggest the shape of a family of solution curves
 
@@ -91,9 +91,9 @@ Isoclines $y=\pm x$ (slope $0$): solutions rise where $|y|<|x|$ and fall where $
 * The horizontal lines $y=c$ through the critical points divide the $xy$-plane into sub-regions (horizontal strips) $R_i$
 
 * Some conclusions can be drawn about nonconstant solution curves to autonomous DEs
-  * If a solution $y(x)$ passes through $(x_0,y_0)$ in sub-region $R_i$, <font color="blue">$~$then $y(x)$ remains in $R_i$ </font>
-  * By continuity, <font color="blue">$~f(y)$ cannot change signs in a sub-region $R_i$</font>
-  * Since $f(y)$ is either positive or negative in $R_i$, $~$a solution is <font color="blue">either increasing or decreasing</font> and has no relative extremum
+  * If a solution $y(x)$ passes through $(x_0,y_0)$ in sub-region $R_i$, [$~$then $y(x)$ remains in $R_i$ ]{.blue}
+  * By continuity, [$~f(y)$ cannot change signs in a sub-region $R_i$]{.blue}
+  * Since $f(y)$ is either positive or negative in $R_i$, $~$a solution is [either increasing or decreasing]{.blue} and has no relative extremum
 
 $~$
 
@@ -141,7 +141,7 @@ Critical points $y=-1$ (unstable), $y=0$ (semi-stable), $y=1$ (asymptotically st
   * The solution $\displaystyle y=\int f(x) dx = F(x) +c$, $~$where $F(x)$ is an antiderivative (indefinite integral)
   * Some functions, termed **nonelementary**, $~$do not possess an antiderivative that is an elementary function
 
-* A first-order DE of the form $\displaystyle\frac{dy}{dx}=g(x)h(y)$ is said to be <font color="red">**separable**</font>, or have **separable variables**
+* A first-order DE of the form $\displaystyle\frac{dy}{dx}=g(x)h(y)$ is said to be [**separable**]{.red}, or have **separable variables**
   * A separable equation can be rewritten in the form
 
     $$ \color{red}{\frac{1}{h(y)}dy=g(x)dx}$$
@@ -244,7 +244,7 @@ $~$
 
 A first-order DE of the form $\displaystyle a_1(x) \frac{dy}{dx} +a_0(x)y = g(x)~$ is a **linear equation** in the dependent variable $y$
 
-* The DE is <font color="blue">**homogeneous**</font> when $g(x)=0$ ; $~$otherwise, $~$it is <font color="blue">**nonhomogeneous**</font>
+* The DE is [**homogeneous**]{.blue} when $g(x)=0$ ; $~$otherwise, $~$it is [**nonhomogeneous**]{.blue}
 
 * The standard form of a linear DE is obtained by dividing both sides by the lead coefficient
 
@@ -384,7 +384,7 @@ $x^2y-y=c$, $\,$ i.e. $\,y=\dfrac{c}{x^2-1}\ \ (x\ne\pm1)$
 
 $~$
 
-* <font color="blue">**Integrating Factor**</font> of the first-order linear DE
+* [**Integrating Factor**]{.blue} of the first-order linear DE
 
   $$
   \begin{aligned} 
@@ -491,7 +491,7 @@ $e^x(xy+y^2)=c$
 
   <font color="blue">$$\frac{dy}{dx}=f(Ax+By+C)~$$</font>
 
-  by substituting <font color="blue">$\,u=Ax+By+C, \;B \neq 0$</font>
+  by substituting [$\,u=Ax+By+C, \;B \neq 0$]{.blue}
 
 $~$
 
@@ -533,7 +533,7 @@ $~$
   $$\frac{M(x, y)}{N(x, y)}=\frac{M(t x,t y)}{N(t x, t y)} = \frac{M\left(1, \tfrac{y}{x}\right)}{N\left(1,\tfrac{y}{x}\right)}
 =-f\left(\frac{y}{x}\right) = -\frac{dy}{dx}$$
 
-  The change of variables <font color="blue">$y=ux$</font> transforms the original differential equation into the separable form:
+  The change of variables [$y=ux$]{.blue} transforms the original differential equation into the separable form:
 
   $$\frac{du}{f(u)-u}=\frac{dx}{x}$$
 
@@ -555,7 +555,7 @@ $~$
 
   * Bernoulli equations are special because they are nonlinear differential equations with known exact solutions
     
-  * The substitution <font color="blue">$u=y^{1-n}$</font> reduces any Bernoulli equation to a linear differential equation
+  * The substitution [$u=y^{1-n}$]{.blue} reduces any Bernoulli equation to a linear differential equation
 
 $~$
 
@@ -592,13 +592,13 @@ $~$
  
     where $q_0(x)\neq 0$ and $q_2(x)\neq 0$. If $q_0(x)=0$, it is a Bernoulli equation, and if $q_2(x)=0$, it is a linear equation
 
-  * The new variable <font color="blue">$v=yq_2$</font> satisfies an equation
+  * The new variable [$v=yq_2$]{.blue} satisfies an equation
     
     $$v'=v^2+R(x)v+S(x)$$
     
     where $S(x)=q_2 q_0$ and $\displaystyle R(x)=q_{1}+\left({\tfrac{q_{2}'}{q_{2}}}\right)$
 
-  * Substituting <font color="blue">$\displaystyle v=-\tfrac{u'}{u\,}$</font>, $~u$ satisfies the linear 2^nd^ order ODE
+  * Substituting [$\displaystyle v=-\tfrac{u'}{u\,}$]{.blue}, $~u$ satisfies the linear 2^nd^ order ODE
     
     $$u''-R(x)u'+S(x)u=0$$ A solution of this equation will lead to a solution $\displaystyle y=-\tfrac{u'}{q_2u}$ of the original Riccati equation
 

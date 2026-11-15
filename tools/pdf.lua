@@ -3,7 +3,8 @@
   * Collapsed "Answer" callouts would print each answer right under its
     example. They are moved to an "Answers" section at the end of each
     chapter, and the example gets a link "Answer k" to it.
-  * <font color="..."> ... </font> becomes \textcolor{...}{...}, and the text
+  * <font color="..."> ... </font> and [text]{.red} (also .blue, .green)
+    become \textcolor{...}{...}, and the text
     stand-in of a web-only output (an animation video) is dropped.
   * Code of cells folded on the web (#| code-fold: true, the plotting code)
     is dropped; their figures stay.
@@ -92,6 +93,17 @@ local inline_filter = {
     if t ~= s.text then return pandoc.Str(t) end
   end,
   Link = function(l) l.target = absolute(l.target); return l end,
+  -- colored emphasis [text]{.red} (the web page colors it with assets/site.css)
+  Span = function(s)
+    for _, c in ipairs({ 'red', 'blue', 'green' }) do
+      if s.classes:includes(c) then
+        local out = pandoc.Inlines{ pandoc.RawInline('latex', '\\textcolor{' .. c .. '}{') }
+        out:extend(s.content)
+        out:insert(pandoc.RawInline('latex', '}'))
+        return out
+      end
+    end
+  end,
   -- text stand-in for a web-only output (the animation videos)
   CodeBlock = function(cb)
     if cb.text:match('^<IPython%.core%.display%.%w+ object>%s*$') then return {} end

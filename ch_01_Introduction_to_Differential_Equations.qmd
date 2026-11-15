@@ -27,17 +27,17 @@ jupyter: python3
 
 ### Classification by Type
 
-* **Ordinary differential equation (ODE):** $\,$ Derivatives are with respect to <font color="blue">a single independent variable</font>
+* **Ordinary differential equation (ODE):** $\,$ Derivatives are with respect to [a single independent variable]{.blue}
 
   $$\frac{dx}{d\color{blue}{t}} + \frac{dy}{d\color{blue}{t}} = 3x + 2y$$
 
-* **Partial differential equation (PDE):** $\,$ Derivatives are with respect to <font color="blue">two or more independent variables</font>
+* **Partial differential equation (PDE):** $\,$ Derivatives are with respect to [two or more independent variables]{.blue}
 
   $$\frac{\partial u}{\partial \color{blue}{y}} = -\frac{\partial u}{\partial \color{blue}{x}}$$
 
 ### Classification by Order
 
-* The order of an ODE or PDE is the order of the <font color="blue">highest derivative</font> in the equation
+* The order of an ODE or PDE is the order of the [highest derivative]{.blue} in the equation
 
   $$\underbrace{\color{blue}{\frac{d^2y}{dx^2}}}_{\mathrm{highest\; order}} +5\left ( \frac{dy}{dx} \right )^3 - 4y = e^x$$
 
@@ -45,7 +45,7 @@ jupyter: python3
 
 ### Classification by Linearity
 
-* An $n$-th order ODE, $F\left( x, y, y', \cdots, y^{(n)} \right) = 0$, $\,$is **linear** in the variable $y\,$ <font color="blue">if $\,F$ is linear in $y, y',\cdots,y^{(n)}$</font>
+* An $n$-th order ODE, $F\left( x, y, y', \cdots, y^{(n)} \right) = 0$, $\,$is **linear** in the variable $y\,$ [if $\,F$ is linear in $y, y',\cdots,y^{(n)}$]{.blue}
 
 * An ODE is **nonlinear** if
   * The coefficients of $y, y',\cdots,y^{(n)}$ contain the dependent variable $y$ or its derivatives
@@ -84,7 +84,7 @@ jupyter: python3
 
 ## Initial-Value Problems - IVP {#sec-1-2}
 
-In an <font color="red">**IVP**</font>, we seek a solution $y(x)$ of a differential equation so that $y(x)$ satisfies **initial conditions** at $x_0$ 
+In an [**IVP**]{.red}, we seek a solution $y(x)$ of a differential equation so that $y(x)$ satisfies **initial conditions** at $x_0$ 
 
 * $n$-th order differential equation and Initial conditions
    

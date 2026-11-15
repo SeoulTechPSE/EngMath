@@ -158,7 +158,7 @@ managers:
      plt.subplots
   ```  
   Earlier in this appendix, $\,$we already used this function to conveniently
-generate new `Figure` and `Axes` objects <font color='green'>in one function call</font>
+generate new `Figure` and `Axes` objects [in one function call]{.green}
 
 * However, $\,$the `plt.subplots` function is also
 capable of filling a figure with a grid of `Axes` instances, which is specified using the first and the second arguments, or alternatively with the `nrows` and `ncols` arguments, which, as the names imply, create a grid of `Axes` objects, $\,$with the given number of rows and columns

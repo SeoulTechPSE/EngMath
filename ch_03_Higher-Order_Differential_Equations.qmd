@@ -44,7 +44,7 @@ in which the dependent variable $y$ or its derivatives are specified at **differ
      
      $$y(x_0)=y_0, \;y(x_1)=y_1$$
 
-* The sum, or <font color='red'> **superposition** </font>, of two or more solutions of a homogeneous linear DE is also a solution
+* The sum, or [ **superposition** ]{.red}, of two or more solutions of a homogeneous linear DE is also a solution
 
 * Any set of $n$ linearly *independent* solutions $y_1, y_2, \cdots, y_n$ of the $n$^th^ order homogeneous linear DE on interval $~I$ is **a fundamental set of solutions**
 
@@ -59,13 +59,13 @@ in which the dependent variable $y$ or its derivatives are specified at **differ
        y_1^{(n-1)} & y_2^{(n-1)} & \cdots & y_n^{(n-1)}
     \end{vmatrix} \neq 0 $$
 
-* General solution of $~n$^th^ order <font color="blue">*homogeneous*</font> linear DE is
+* General solution of $~n$^th^ order [*homogeneous*]{.blue} linear DE is
 
   <font color="red">$$y(x)=c_1 y_1(x) +c_2 y_2(x) + \cdots + c_n y_n(x)$$</font>
  
   where $\,y_1, y_2, \cdots, y_n\,$ is a fundamental set of solutions and $c_i, \;i=1,2,\cdots,n\;$ are arbitrary constants
 
-* General solution of $n$^th^ order <font color="blue">*nonhomogeneous*</font> linear DE is
+* General solution of $n$^th^ order [*nonhomogeneous*]{.blue} linear DE is
 
   <font color='red'> $$y(x)=c_1 y_1(x) +c_2 y_2(x) + \cdots + c_n y_n(x) +y_p(x)$$ </font>
  
@@ -128,9 +128,9 @@ $x(t)=x_0\cos\omega t+\dfrac{x_1}{\omega}\sin\omega t$
 
 ## Reduction of Order {#sec-3-2}
 
-* **Reduction of order** can be used to reduce a linear *second-order* DE <font color="blue">with known solution $y_1$</font> into a linear *first-order* DE, which can be solved for a second solution $y_2$
+* **Reduction of order** can be used to reduce a linear *second-order* DE [with known solution $y_1$]{.blue} into a linear *first-order* DE, which can be solved for a second solution $y_2$
 
-* Applying reduction of order <font color="red">$y_2 = u(x) y_1$</font> to the standard form of a second-order linear homogeneous DE
+* Applying reduction of order [$y_2 = u(x) y_1$]{.red} to the standard form of a second-order linear homogeneous DE
 
   $$y''+P(x)y' +Q(x)y=0$$
  
@@ -176,17 +176,17 @@ $y_2=e^{2x}$, $\quad y_p=-\dfrac12$, $\quad y=c_1e^{2x}+c_2e^{-2x}-\dfrac12$
 
 ## Homogeneous Linear Equations with Constant Coefficients {#sec-3-3}
 
-The general solution of $ay''+by'+cy=0\,$ is found by substituting <font color="red">$\,y=e^{\,px}$</font> and solving the resulting **characteristic equation** <font color="red">$\,ap^2+bp+c=0\,$</font> for roots $\color{red}{p_1}$ and $\color{red}{p_2}$
+The general solution of $ay''+by'+cy=0\,$ is found by substituting [$\,y=e^{\,px}$]{.red} and solving the resulting **characteristic equation** [$\,ap^2+bp+c=0\,$]{.red} for roots $\color{red}{p_1}$ and $\color{red}{p_2}$
 
-* **Case I** $~$ $p_1$ and $\,p_2$ are <font color="blue">real and distinct</font>
+* **Case I** $~$ $p_1$ and $\,p_2$ are [real and distinct]{.blue}
 
   $$y = c_1 {\color{red}{e^{\,p_1 x}}} +c_2 {\color{red}{e^{\,p_2 x}}}$$
 
-* **Case II** $~$ $p_1$ and $\,p_2$ are <font color="blue">real and equal</font>
+* **Case II** $~$ $p_1$ and $\,p_2$ are [real and equal]{.blue}
 
   $$y=c_1 {\color{red}{e^{\,p_1x}}} +c_2 \color{red}{x e^{\,p_1 x}}$$
 
-* **Case III** $~$ $p_1$ and $\,p_2$ are <font color="blue">complex conjugate</font>: $~p_1, p_2 = \color{red}{\alpha} \pm i\color{red}{\beta}$
+* **Case III** $~$ $p_1$ and $\,p_2$ are [complex conjugate]{.blue}: $~p_1, p_2 = \color{red}{\alpha} \pm i\color{red}{\beta}$
 
   $$y={\color{red}{e^{\alpha x}}} \left(c_1 {\color{red}{\cos\beta x}} +c_2 {\color{red}{\sin\beta x}} \right)$$ 
 
@@ -279,13 +279,13 @@ $~$
 
 ## Undetermined Coefficients {#sec-3-4}
 
-<font color="red">**Method of undetermined coefficients**</font> can be used <font color="blue">to obtain a particular solution $y_p$</font>
+[**Method of undetermined coefficients**]{.red} can be used [to obtain a particular solution $y_p$]{.blue}
 
-* The underlying idea is <font color="blue">a conjecture about the form of $y_p$</font> based on the kinds of functions making up the input function $g(x)$
+* The underlying idea is [a conjecture about the form of $y_p$]{.blue} based on the kinds of functions making up the input function $g(x)$
 
 * Limited to nonhomogeneous linear DEs where
-  * <font color="blue">Coefficients $a_i$</font>, $i=1,\cdots,n$, are <font color="blue">constants</font>
-  * $g(x)$ is <font color="blue">a constant</font>, <font color="blue">a polynomial function</font>, <font color="blue">$e^{\alpha x}$</font>, <font color="blue">$\sin\beta x$ or $\cos\beta x$</font>, or <font color="blue">finite sums and products of these functions</font>
+  * [Coefficients $a_i$]{.blue}, $i=1,\cdots,n$, are [constants]{.blue}
+  * $g(x)$ is [a constant]{.blue}, [a polynomial function]{.blue}, [$e^{\alpha x}$]{.blue}, [$\sin\beta x$ or $\cos\beta x$]{.blue}, or [finite sums and products of these functions]{.blue}
 
 * There are models of $y_p$ for various functions
     
@@ -320,9 +320,9 @@ $y=c_1\cos2x+c_2\sin2x+\dfrac13x\cos x+\dfrac29\sin x$
 
 $~$
 
-* If $g(x)$ consists of a sum of, say, $m$ terms of the kind listed in the table, $~$then the assumption for <font color="blue">a particular solution $y_p$ consists of the sum of the trial forms</font>
+* If $g(x)$ consists of a sum of, say, $m$ terms of the kind listed in the table, $~$then the assumption for [a particular solution $y_p$ consists of the sum of the trial forms]{.blue}
   
-* <font color="blue">If $\,y_p$ contains terms that duplicate terms in $y_h$, $\,$then that $y_p$ must be multiplied by $x^n$</font>,
+* [If $\,y_p$ contains terms that duplicate terms in $y_h$, $\,$then that $y_p$ must be multiplied by $x^n$]{.blue},
   $~$where $n$ is the smallest positive integer that eliminates that duplication
 
 $~$
@@ -389,22 +389,22 @@ $~$
 
 ## Variation of Parameters {#sec-3-5}
 
-The <font color="red">**method of variation of parameters**</font> can be used with linear higher-order DEs
+The [**method of variation of parameters**]{.red} can be used with linear higher-order DEs
 
-* This method <font color="blue">*always* yields a $y_p$ provided the homogeneous equation can be solved</font>
+* This method [*always* yields a $y_p$ provided the homogeneous equation can be solved]{.blue}
 
-* This method <font color="blue">is not limited to the types of input functions</font> constraining the method of undetermined coefficients
+* This method [is not limited to the types of input functions]{.blue} constraining the method of undetermined coefficients
 
 To adapt the method of variation of parameters to a linear second-order DE
 
 $$a_2(x)y'' +a_1(x)y' +a_0(x)y = g(x),$$
 
-we put the above equation <font color="blue">in the standard form</font>
+we put the above equation [in the standard form]{.blue}
 
 $$y'' +P(x)y' +Q(x)y = f(x)$$
 To solve,
 
-* Find the homogeneous solutions <font color="blue">$y_1$</font>, <font color="blue">$y_2$</font>
+* Find the homogeneous solutions [$y_1$]{.blue}, [$y_2$]{.blue}
 
 * Seek a particular solution of the form 
 
@@ -605,7 +605,7 @@ $~$
 
 ## Nonlinear Equations {#sec-3-7}
 
-* <font color="blue">Nonlinear equations do not possess superposability</font>
+* [Nonlinear equations do not possess superposability]{.blue}
 
 $~$
 
@@ -622,9 +622,9 @@ $y_1$, $y_2$ satisfy the equation, but for $y=c_1y_1+c_2y_2$: $\ (y'')^2-y^2=-4c
 $~$
 
 * The major difference between linear and nonlinear DEs of order two or higher lies in the realm of solvability.
-<font color="blue">Nonlinear higher-order DEs virtually defy solution</font>. This means that there are no analytical methods whereby either an explicit or implicit solution can be found
+[Nonlinear higher-order DEs virtually defy solution]{.blue}. This means that there are no analytical methods whereby either an explicit or implicit solution can be found
 
-* There are still things that can be done; $~$we can always analyze a nonlinear DE <font color="blue">qualitatively and numerically</font>
+* There are still things that can be done; $~$we can always analyze a nonlinear DE [qualitatively and numerically]{.blue}
 
 * Nonlinear second-order DE $F(y, y', y'')=0\,$ can be reduced to two first-order equations by means of the substitution $u=y'$ and can sometimes be solved using first-order methods
 
@@ -781,7 +781,7 @@ $u(r)=u_0+(u_1-u_0)\,\dfrac{\ln(r/a)}{\ln(b/a)},\qquad a\le r\le b$
 ### Influence Function
 $~$
 
-* We shall consider the <font color="blue">self-adjoint form</font>
+* We shall consider the [self-adjoint form]{.blue}
 
   $$
    \color{red}{\frac{d}{dx} \left[ p(x)\frac{du}{dx} \right] +q(x)u = -f(x)} \tag{SA}\label{eq:SA}
@@ -795,7 +795,7 @@ $~$
    \frac{d}{dx} \left[ p(x)\frac{dv}{dx} \right] +q(x)v = 0 \tag{SH}\label{eq:SH}
   $$ 
 
-  has exactly two linearly independent solutions <font color="blue">$v_1(x)$</font> and <font color="blue">$v_2(x)$</font>: any solution of \eqref{eq:SH} can be written in the form
+  has exactly two linearly independent solutions [$v_1(x)$]{.blue} and [$v_2(x)$]{.blue}: any solution of \eqref{eq:SH} can be written in the form
 
   <font color="blue">$$v(x) = c_1 v_1(x) +c_2 v_2(x)$$</font>
 
@@ -875,7 +875,7 @@ $~$
       \left. R' \right|_{x=\xi} &= -\frac{1}{p(\xi)} \\ 
   \end{aligned}$$</font>
 
-* <font color="blue">The function $R(x,\xi)$ describes the influence on the value of $u$ at $x$ of a disturbance(impulse) concentrated at $\xi$. It is sometimes called the **influence function**, or the one-sided Green's function</font>
+* [The function $R(x,\xi)$ describes the influence on the value of $u$ at $x$ of a disturbance(impulse) concentrated at $\xi$. It is sometimes called the **influence function**, or the one-sided Green's function]{.blue}
 
 * If the values of $u(\alpha)$ and $u'(\alpha)$ are prescribed to be other than zero, $~$we must simply add a suitable solution $c_1 v_1(x) +c_2 v_2(x)$ to the expression \eqref{eq:IN}
 
@@ -933,7 +933,7 @@ $$
 
 ### Green's Function
 
-* Here, we consider a <font color="blue">two-point boundary value problem:</font>
+* Here, we consider a [two-point boundary value problem:]{.blue}
 
   $$
   \begin{aligned}

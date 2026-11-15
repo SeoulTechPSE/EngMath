@@ -18,8 +18,8 @@ jupyter: python3
 ## Vectors in 2-Space {#sec-7-1}
 
 * We distinguish two important quantities: $~$ **scalars** and **vectors**
-  * A scalar is simply a real number or a quantity that has <font color='red'>*magnitude*</font>
-  * A vector is usually described as a quantity that has both <font color='red'>*magnitude*</font> and <font color='red'>*direction*</font>
+  * A scalar is simply a real number or a quantity that has [*magnitude*]{.red}
+  * A vector is usually described as a quantity that has both [*magnitude*]{.red} and [*direction*]{.red}
 
 * Equal, Scalar Multiplication
 
@@ -181,7 +181,7 @@ $~$
 
 * The dot product of $\mathbf{a}=\left \langle a_1, a_2, a_3 \right \rangle$ and $\mathbf{b}=\left \langle b_1, b_2, b_3 \right \rangle$ is
 
-  <font color="red">$\phantom{x}\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$</font>
+  [$\phantom{x}\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$]{.red}
   
 * Properties of the Dot Product
 
@@ -196,7 +196,7 @@ $~$
 
   The dot product of two vectors $\mathbf{a}$ and $\mathbf{b}$ is
   
-  <font color="red">$\phantom{xx}\mathbf{a}\cdot\mathbf{b} =\left\| \mathbf{a} \right\| \left\| \mathbf{b} \right\| \cos\theta$</font>
+  [$\phantom{xx}\mathbf{a}\cdot\mathbf{b} =\left\| \mathbf{a} \right\| \left\| \mathbf{b} \right\| \cos\theta$]{.red}
   
   where $\theta$ is the angle between the vectors, $\,0 \leq \theta \leq \pi$
 
@@ -214,7 +214,7 @@ $~$
 
 * Orthogonal vectors
 
-  Two nonzero vectors $\mathbf{a}$ and $\mathbf{b}$ are <font color='red'>orthogonal if and only if $~\mathbf{a}\cdot\mathbf{b}=0$</font>
+  Two nonzero vectors $\mathbf{a}$ and $\mathbf{b}$ are [orthogonal if and only if $~\mathbf{a}\cdot\mathbf{b}=0$]{.red}
 
 * Component of $\mathbf{a}$ on $\mathbf{b}$
 
@@ -440,7 +440,7 @@ $~$
 
 * **Vector Space**
 
-  Let $V$ be a set of elements on which two operations called <font color='red'>**vector addition**</font> and <font color='red'>**scalar multiplication**</font> are defined. Then $V$ is said to be a **vector space** if the following 10 properties are satisfied
+  Let $V$ be a set of elements on which two operations called [**vector addition**]{.red} and [**scalar multiplication**]{.red} are defined. Then $V$ is said to be a **vector space** if the following 10 properties are satisfied
 
 * **Axioms for Vector Addition**
  
@@ -529,7 +529,7 @@ $~$
 
 * **Basis**
 
-  Consider a set of vectors $B=\left\{\mathbf{x}_1, \mathbf{x}_2,\cdots,\mathbf{x}_n\right\}\,$ in a vector space $V$. $~$If the set $\,B\,$ is linearly independent and if every vector in $V$ can be expressed as a linear combination of these vectors, $~$<font color='red'>then $B$ is said to be a **basis** in $V$</font>
+  Consider a set of vectors $B=\left\{\mathbf{x}_1, \mathbf{x}_2,\cdots,\mathbf{x}_n\right\}\,$ in a vector space $V$. $~$If the set $\,B\,$ is linearly independent and if every vector in $V$ can be expressed as a linear combination of these vectors, $~$[then $B$ is said to be a **basis** in $V$]{.red}
 
 * **Dimension**
 
@@ -541,7 +541,7 @@ $~$
   
   $$\left\{ k_1\mathbf{x}_1 +k_2\mathbf{x}_2+ \cdots+k_n\mathbf{x}_n\right\}$$
   
-  where the $k_i$ are scalars, $\,$is called the **span** of the vectors and written <font color="blue">$\mathrm{span}(S)$</font> or <font color="blue">$\mathrm{span}(\mathbf{x}_1,\mathbf{x}_2,\cdots,\mathbf{x}_n)$</font>
+  where the $k_i$ are scalars, $\,$is called the **span** of the vectors and written [$\mathrm{span}(S)$]{.blue} or [$\mathrm{span}(\mathbf{x}_1,\mathbf{x}_2,\cdots,\mathbf{x}_n)$]{.blue}
   
   $~$
   

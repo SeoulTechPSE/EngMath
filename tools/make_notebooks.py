@@ -89,6 +89,9 @@ def markdown(lines, sections):
 
         def image(m):
             alt, url, attrs = m[1], absolute(m[2]), m[3] or ''
+            fig_alt = re.search(r'fig-alt="([^"]*)"', attrs)
+            if not alt and fig_alt:
+                alt = fig_alt[1]
             width = re.search(r'width="?([\w.%]+)"?', attrs)
             if width:
                 return f'<img src="{url}" alt="{alt}" width="{width[1]}">'
@@ -102,6 +105,9 @@ def markdown(lines, sections):
                 # "@sec-x (Title)" reads "Section 2.6 (Title)" in the book; here the link text is the title
                 line = re.sub(rf'@{sid}(?![\w-])( \({re.escape(title)}\))?', f'[{title}]({url})', line)
         line = re.sub(r'(\d)\^(st|nd|rd|th)\^', r'\1<sup>\2</sup>', line)   # Pandoc superscript 2^nd^
+        # colored emphasis [text]{.red} (a Pandoc span) -> inline HTML that Jupyter shows
+        line = re.sub(r'\[((?:[^\[\]]|\[[^\[\]]*\])*)\]\{\.(red|blue|green)\}',
+                      r'<span style="color:\2">\1</span>', line)
         out.append(line)
     return out
 

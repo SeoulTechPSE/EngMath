@@ -16,3 +16,4 @@ Seoul National University of Science and Technology
 - Figure sources: the SVG figures are drawn by the scripts in `figures/src/` of the slides repository (EngMath-slides) and copied to `figures/`.
 - Main chapters: cells that draw figures or animations carry `#| code-fold: true`. On the web their code is folded, and `tools/pdf.lua` leaves it out of the PDF, so only the figure is printed. Code meant to be read (SymPy and NumPy examples) stays unfolded.
 - Each chapter's learning-objectives box ends with a **Builds on** line that links to the earlier sections the chapter uses. Keep it up to date when sections move.
+- The FEniCS and Dedalus PDE-solver material (`x_PDE_*.qmd`, `fenicsx/`, `dedalus/`, `projects/`) was not part of the book and now lives on the branch `archive/pde-solvers`.

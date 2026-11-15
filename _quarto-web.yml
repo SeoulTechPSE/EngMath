@@ -31,8 +31,6 @@ book:
         - x_integration.qmd
         - x_ordinary_differential_equations.qmd
         - x_double_pendulum.qmd
-        #- x_PDE_dedalus.qmd
-        #- x_PDE_FEniCS.qmd
         - x_matplotlib.qmd
         - x_Mandelbrot_set.qmd
         - x_hydrogen_orbital.qmd

@@ -53,7 +53,7 @@ jupyter: python3
 
   * If $x=x_0$ is an ordinary point of the DE, $~$we can always find **two linearly independent solutions** in the form of a power series centered at $x_0$
   
-  * A series solution converges at least on some interval defined by $|x -x_0|<R$, $~$where <font color="blue">$R$ is the distance from $x_0$ to the closest singular point</font>
+  * A series solution converges at least on some interval defined by $|x -x_0|<R$, $~$where [$R$ is the distance from $x_0$ to the closest singular point]{.blue}
 
 $~$
 
@@ -116,7 +116,7 @@ $~$
    
     where $r$ is a constant, and the series converges at least on some interval, $~0 < x -x_0 < R$
 
-  * After substituting $y =\sum_{n=0}^\infty c_n (x -x_0)^{n+r}$ into a DE and simplifying, the **indicial equation** is obtained, $~$<font color="blue">a quadratic equation in $r$ that results from equating the total coefficient of the lowest power of $x$ to zero</font>
+  * After substituting $y =\sum_{n=0}^\infty c_n (x -x_0)^{n+r}$ into a DE and simplifying, the **indicial equation** is obtained, $~$[a quadratic equation in $r$ that results from equating the total coefficient of the lowest power of $x$ to zero]{.blue}
    
   * The **indicial roots** are the solutions to the quadratic equation and are then substituted into a recurrence relation
 
@@ -124,7 +124,7 @@ $~$
     
 * **Case I** 
      
-  $r_1$ and $r_2$ are distinct <font color="red"> and do not differ by an integer</font>, 
+  $r_1$ and $r_2$ are distinct [ and do not differ by an integer]{.red}, 
  
   $$
   \begin{aligned}
@@ -134,7 +134,7 @@ $~$
 
 * **Case II**
    
-  $r_1 -r_2 = N$, $~$<font color="red">where $N$ is a positive integer</font>,
+  $r_1 -r_2 = N$, $~$[where $N$ is a positive integer]{.red},
 
   $$   
    \begin{aligned}
@@ -229,11 +229,11 @@ These functions return in the PDE chapters: $\,$Bessel functions for the vibrati
 
 The following DEs occur frequently in advanced studies in applied mathematics, physics, and engineering
 
-* <font color="red">**Bessel's equation of order $\nu$**, $~$solutions are **Bessel functions**</font>
+* [**Bessel's equation of order $\nu$**, $~$solutions are **Bessel functions**]{.red}
 
   $$x^2 y'' +xy' +(x^2 -\nu^2) y =0$$
   
-* <font color="red">**Legendre's equation of order $n$**, $~$solutions are **Legendre polynomials**</font>
+* [**Legendre's equation of order $n$**, $~$solutions are **Legendre polynomials**]{.red}
 
   $$(1 -x^2)y'' -2xy' +n(n +1)y =0$$
 
@@ -255,7 +255,7 @@ $~$
     \sum_{n=0}^\infty c_n x^{n +2} = 0
   \end{aligned}$$
 
-* The indicial equation is <font color="red">$~r^2 -\nu^2=0$</font> $~$so that the indicial roots are <font color="red">$r_1=\nu$ and $r_2=-\nu$</font>. <font color="blue">When $\,r_1=\nu \geq 0$</font>,
+* The indicial equation is [$~r^2 -\nu^2=0$]{.red} $~$so that the indicial roots are [$r_1=\nu$ and $r_2=-\nu$]{.red}. [When $\,r_1=\nu \geq 0$]{.blue},
 
   $$\scriptsize 
   \begin{aligned}
@@ -751,9 +751,9 @@ $~$
   &\qquad \left. -\frac{(n -5)(n -3)(n -1)(n+2)(n +4)(n +6)}{7!} x^7 +\cdots \right]
   \end{aligned}$$
 
-  * <font color="red">If $n$ is an even integer</font>, $~$<font color="blue">the series $y_1(x)$ reduces to a polynomial of degree $n$ with only even powers of $x$</font> <font color="green">and the series $y_2(x)$ is an infinite series that diverges at $x=\pm 1$</font>
+  * [If $n$ is an even integer]{.red}, $~$[the series $y_1(x)$ reduces to a polynomial of degree $n$ with only even powers of $x$]{.blue} [and the series $y_2(x)$ is an infinite series that diverges at $x=\pm 1$]{.green}
 
-  * <font color="red">If $n$ is an odd integer</font>, $~$<font color="blue">the series $y_2(x)$ reduces to a polynomial of degree $n$ with only odd powers of $x$</font> <font color="green">and the series $y_1(x)$ is an infinite series that diverges at $x=\pm 1$</font>
+  * [If $n$ is an odd integer]{.red}, $~$[the series $y_2(x)$ reduces to a polynomial of degree $n$ with only odd powers of $x$]{.blue} [and the series $y_1(x)$ is an infinite series that diverges at $x=\pm 1$]{.green}
 
 * Hence, for a nonnegative integer $n$, one of the two solutions is a **polynomial**
 

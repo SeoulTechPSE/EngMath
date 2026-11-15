@@ -14,3 +14,8 @@
 /* Figures from code cells carry their pixel size as width/height attributes,
    so wide ones would overflow the text column: scale them down to fit */
 .cell-output-display img, .quarto-figure img { max-width: 100%; height: auto; }
+
+/* Colored emphasis: [text]{.red}, [text]{.blue}, [text]{.green} (tools/pdf.lua maps them to \textcolor) */
+span.red { color: red; }
+span.blue { color: blue; }
+span.green { color: green; }

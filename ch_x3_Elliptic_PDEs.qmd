@@ -19,13 +19,13 @@ jupyter: python3
 
 ## The Laplacian (an Intuitive Description) {#sec-x3-31}
 
-* The <font color=red> Laplacian operator </font>
+* The [ Laplacian operator ]{.red}
 
   $$ \nabla^2 =\frac{\partial^2}{\partial x^2} +\frac{\partial^2}{\partial y^2} +\frac{\partial^2}{\partial z^2}$$
 
   is probably the most important operator in mathematical physics. $\,$The question is, $\,$what does it mean and why should the sum of three second derivatives have anything to do with the laws of nature? 
 
-* The answer to this lies in the fact that <font color=red>the Laplacian of a function allows us to compare the function at a point with the function at neighboring points</font>. $\,$It does what the second derivative did in one dimension and might be thought of as <font color=blue>a second derivative generalized to higher dimensions</font>
+* The answer to this lies in the fact that [the Laplacian of a function allows us to compare the function at a point with the function at neighboring points]{.red}. $\,$It does what the second derivative did in one dimension and might be thought of as [a second derivative generalized to higher dimensions]{.blue}
 
 $~$
 
@@ -33,18 +33,18 @@ $~$
 
 $~$
 
-* The heat equation $\,u_t=\alpha\nabla^2 u\,$ measures temperature $\,u$, and the equation can be interpreted to mean that <font color=blue>the change in temperature with respect to time $\,u_t$ is proportional to $\,\nabla^2 u$</font>. $\,$That is, $\,$the temperature at a point is increasing if the temperature at that point is less than the average of the temperature on a circle around the point
+* The heat equation $\,u_t=\alpha\nabla^2 u\,$ measures temperature $\,u$, and the equation can be interpreted to mean that [the change in temperature with respect to time $\,u_t$ is proportional to $\,\nabla^2 u$]{.blue}. $\,$That is, $\,$the temperature at a point is increasing if the temperature at that point is less than the average of the temperature on a circle around the point
 
-* The wave equation $\,u_{tt}=c^2\nabla^2 u\,$ measures the displacement of a drumhead and can be interpreted to mean that <font color=blue>the acceleration (or force) of a point on the drumhead $\,u_{tt}\,$ is proportional to $\,\nabla^2 u$</font>. $\,$That is, $\,$the drumhead at a point is accelerating upward if the drumhead at that point is less than the average of its neighbors
+* The wave equation $\,u_{tt}=c^2\nabla^2 u\,$ measures the displacement of a drumhead and can be interpreted to mean that [the acceleration (or force) of a point on the drumhead $\,u_{tt}\,$ is proportional to $\,\nabla^2 u$]{.blue}. $\,$That is, $\,$the drumhead at a point is accelerating upward if the drumhead at that point is less than the average of its neighbors
 
-* <font color=blue>Laplace equation $\,\nabla^2 u = 0\,$ says that the solution $\,u\,$ is always equal to the average of its neighbors</font>. $\,$For example, $\,$a steady-state, stretched rubber membrane satisfies Laplace equation, $\,$hence, $\,$the height of the membrane at any point is equal to the average height of the membrane on a circle around the point
+* [Laplace equation $\,\nabla^2 u = 0\,$ says that the solution $\,u\,$ is always equal to the average of its neighbors]{.blue}. $\,$For example, $\,$a steady-state, stretched rubber membrane satisfies Laplace equation, $\,$hence, $\,$the height of the membrane at any point is equal to the average height of the membrane on a circle around the point
 
-* <font color=blue>Poisson equation $\,\nabla^2 u=-f$</font>, $\,$where $\,f\,$ is a function that depends only on the space variables
+* [Poisson equation $\,\nabla^2 u=-f$]{.blue}, $\,$where $\,f\,$ is a function that depends only on the space variables
 
   * $\nabla^2 u=-\rho\,$ describes the potential of an electrostatic field where $\,\rho\,$ represents a constant charge density
   * $\nabla^2 u =-g(x,y)\,$ describes the steady-state temperature $\,u(x,y)\,$ due to a heat source $\,g(x,y)$ 
 
-* <font color=blue>$\nabla^2 u +\lambda u =0\,$ is known as the Helmholtz equation</font> which describes the fundamental shapes of a stretched membrane
+* [$\nabla^2 u +\lambda u =0\,$ is known as the Helmholtz equation]{.blue} which describes the fundamental shapes of a stretched membrane
 
 $~$
 
@@ -157,7 +157,7 @@ $~$
 
 **NOTES**
 
-* <font color=blue>The Laplacian in cartesian coordinates is the only one with constant coefficients</font>. $\,$This is one reason why problems in other coordinate systems are harder to solve. $\,$<font color=blue>It is still possible to use the separation of variables for these equations with variable coefficients; $\,$it's just that some of the resulting ordinary differential equations have variable coefficients</font>
+* [The Laplacian in cartesian coordinates is the only one with constant coefficients]{.blue}. $\,$This is one reason why problems in other coordinate systems are harder to solve. $\,$[It is still possible to use the separation of variables for these equations with variable coefficients; $\,$it's just that some of the resulting ordinary differential equations have variable coefficients]{.blue}
 
 * We arrive at a lot of fairly complicated equations, $\,$such as Bessel's equation, $\,$Legendre equation, and other so-called classical equations of physics. $\,$To solve these equations, $\,$we must resort to infinite-series solutions and, $\,$in particular, $\,$the method of Frobenius
 
@@ -185,17 +185,17 @@ $~$
 
 ## General Nature of Boundary-Value Problems {#sec-x3-32}
 
-* <font color=blue>Many important problems whose outcomes do not change with time are described by elliptic boundary-value problems</font>. $\,$There are two common situations in physical problems that give rise to PDEs that don't involve time; $\,$they are:
+* [Many important problems whose outcomes do not change with time are described by elliptic boundary-value problems]{.blue}. $\,$There are two common situations in physical problems that give rise to PDEs that don't involve time; $\,$they are:
 
-  <font color=blue>1. $\;$Steady-state problems</font>
+  [1. $\;$Steady-state problems]{.blue}
 
-  <font color=blue>2. $\;$Problems where we factor out the time component in the solution</font>
+  [2. $\;$Problems where we factor out the time component in the solution]{.blue}
 
 * When studying boundary-value problems (BVPs), $\,$there are three types of BCs that are most common; $\,$we discuss these three types now
 
 * **Dirichlet Problems**
 
-  <font color=blue>Here, $\,$the PDE holds over a given region of space, $\,$and the solution is specified on the boundary of the region</font>. $\,$An example would be to find the steady-state temperature inside a circle with the temperature given on the boundary
+  [Here, $\,$the PDE holds over a given region of space, $\,$and the solution is specified on the boundary of the region]{.blue}. $\,$An example would be to find the steady-state temperature inside a circle with the temperature given on the boundary
 
   $$ u_{rr} +\frac{1}{r}u_r + \frac{1}{r^2} u_{\theta\theta}=0, $$
   $$\;\; u(1,\theta) = \sin\theta, \;\;\;0 < r < 1,\;\;\; 0 \leq \theta < 2\pi$$
@@ -232,23 +232,23 @@ $~$
 
   $$ \int_0^{2\pi} \frac{\partial u}{\partial r}\, d\theta\;=\int_0^{2\pi} \sin\theta \,d\theta = 0$$
 
-  (a condition that must be true for Neumann problems), $\,$we can say that the temperature at each point inside circle does not change with respect to time. $\,$In other words, $\,$<font color=blue>Neumann problems make sense only if the net gain in heat across the boundary is zero</font>
+  (a condition that must be true for Neumann problems), $\,$we can say that the temperature at each point inside circle does not change with respect to time. $\,$In other words, $\,$[Neumann problems make sense only if the net gain in heat across the boundary is zero]{.blue}
 
-  The Neumann problem is somewhat different from other boundary conditions, $\,$<font color=red>in that solutions are not unique</font>. $\,$In other words, $\,$the above Neumann problem has an infinite number of solutions $\,u(r,\theta)$. $\,$<font color=blue>Once we have one solution, $\,$we can get the others just by adding a constant.</font> $\,$For example, $\,$one solution to our Neumann problem is
+  The Neumann problem is somewhat different from other boundary conditions, $\,$[in that solutions are not unique]{.red}. $\,$In other words, $\,$the above Neumann problem has an infinite number of solutions $\,u(r,\theta)$. $\,$[Once we have one solution, $\,$we can get the others just by adding a constant.]{.blue} $\,$For example, $\,$one solution to our Neumann problem is
 
   $$ u(r,\theta)=r\sin\theta$$
 
-  and it is obvious that if we add a constant to this solution, $\,$another one is obtained. $\,$For this reason, $\,$<font color=blue>if we want to find one solution to the Neumann problem, $\,$we must have some additional information (like knowing the solution at one point)</font>
+  and it is obvious that if we add a constant to this solution, $\,$another one is obtained. $\,$For this reason, $\,$[if we want to find one solution to the Neumann problem, $\,$we must have some additional information (like knowing the solution at one point)]{.blue}
 
 * **Robin Problems**
 
-  These problems correspond to the PDEs being given in some region of space, $\,$<font color=blue>but now the condition on the boundary is a mixture of the first two kinds</font>
+  These problems correspond to the PDEs being given in some region of space, $\,$[but now the condition on the boundary is a mixture of the first two kinds]{.blue}
 
   $$ \frac{\partial u}{\partial n} = -h(u -g)$$
 
   where $\,h\,$ is a constant and $\,g\,$ is a given function that can vary over the boundary. $\,$This BC says the inward flux across the boundary is proportional to the difference between the boundary value of $\,u\,$ and specified environment value $\,g\,$ 
 
-  In heat transfer, $\,$this, $\,$of course, $\,$is just Newton's law of cooling. $\,$The constant $\,h\,$ is a physical parameter that measures the amount of flux across the boundary per difference between $\,u\,$ and $\,g$. $\,$<font color="blue">If $\,h\,$ is large, $\,$the solution looks very much like the solution of the Dirichlet problem $\,u=g$. $\,$On the other hand, $\,$if $\,h=0$, then the BC is reduced to the insulated BC</font>
+  In heat transfer, $\,$this, $\,$of course, $\,$is just Newton's law of cooling. $\,$The constant $\,h\,$ is a physical parameter that measures the amount of flux across the boundary per difference between $\,u\,$ and $\,g$. $\,$[If $\,h\,$ is large, $\,$the solution looks very much like the solution of the Dirichlet problem $\,u=g$. $\,$On the other hand, $\,$if $\,h=0$, then the BC is reduced to the insulated BC]{.blue}
 
   $$ \color{blue}{\frac{\partial u}{\partial r}=0} $$
 
@@ -383,7 +383,7 @@ $~$
  &= \color{red}{\frac{1}{2\pi} \int_0^{2\pi}  \left\{ \frac{R^2 -r^2}{R^2 +r^2 -2rR\cos(\theta -\alpha)} \right\}\,g(\alpha)\,d\alpha} 
 \end{aligned}$$
 
-  This last equation is what we were looking for; $\,$it's <font color=blue>the Poisson Integral Formula</font>
+  This last equation is what we were looking for; $\,$it's [the Poisson Integral Formula]{.blue}
 
   * We can interpret the Poisson integral solution as finding the potential $\,u\,$ at $\,(r,\theta)\,$ as a weighted average of the boundary potentials $\,g(\theta)\,$ weighted by the Poisson kernel
 
@@ -409,7 +409,7 @@ $~$
 
   $$\color{red}{u(P)=\frac{1}{2\pi}\int_0^{2\pi} u\left(P+a\,(\cos\alpha,\sin\alpha)\right)d\alpha}$$
 
-  <font color="blue">a harmonic function equals its average over every circle</font> (in 3D, $\,$over every sphere) centered at the point
+  [a harmonic function equals its average over every circle]{.blue} (in 3D, $\,$over every sphere) centered at the point
 
 * This is the precise form of the statement in @sec-x3-31 that the solution of Laplace's equation is the average of its neighbors. $\,$On a square grid of spacing $\,h$,
 
@@ -417,7 +417,7 @@ $~$
      \quad\Longrightarrow\quad
      \color{red}{u_P=\frac{u_E+u_W+u_N+u_S}{4}} $$
 
-  the value at each grid point is the average of its four neighbors (the <font color="blue">five-point stencil</font>)
+  the value at each grid point is the average of its four neighbors (the [five-point stencil]{.blue})
 
 $~$
 
@@ -433,15 +433,15 @@ $~$
 
 **Consequences**
 
-* <font color="blue">Uniqueness</font> $\,$ If $\,u_1\,$ and $\,u_2\,$ solve the same Dirichlet problem, $\,w=u_1-u_2\,$ is harmonic with $\,w=0\,$ on $\,\partial D$. $\,$Its maximum and minimum are $\,0$, $\,$so $\,w\equiv0$
+* [Uniqueness]{.blue} $\,$ If $\,u_1\,$ and $\,u_2\,$ solve the same Dirichlet problem, $\,w=u_1-u_2\,$ is harmonic with $\,w=0\,$ on $\,\partial D$. $\,$Its maximum and minimum are $\,0$, $\,$so $\,w\equiv0$
 
-* <font color="blue">Stability</font> $\,$ For boundary data $\,g_1\,$ and $\,g_2$,
+* [Stability]{.blue} $\,$ For boundary data $\,g_1\,$ and $\,g_2$,
 
   $$ \max_{\overline D}\,|u_1-u_2|\leq\max_{\partial D}\,|g_1-g_2| $$
 
   a small change in the boundary data gives a small change in the solution
 
-* <font color="blue">Neumann problem</font> $\,$ If $\,\nabla^2w=0\,$ and $\,\partial w/\partial n=0\,$ on $\,\partial D$, $\,$the divergence theorem gives
+* [Neumann problem]{.blue} $\,$ If $\,\nabla^2w=0\,$ and $\,\partial w/\partial n=0\,$ on $\,\partial D$, $\,$the divergence theorem gives
 
   $$ \iint_D|\nabla w|^2\,dA=\oint_{\partial D} w\,\frac{\partial w}{\partial n}\,ds-\iint_D w\,\nabla^2w\,dA=0 $$
 
@@ -537,11 +537,11 @@ $~$
 
 **Relaxation** $\,$ The five-point stencil turns the PDE into one equation per grid point, $\,u_P=\frac{1}{4}(u_E+u_W+u_N+u_S)$. $\,$Start from any guess and repeat the averaging:
 
-* <font color="blue">Jacobi</font>: $\,$every new value is the average of the old neighbors
+* [Jacobi]{.blue}: $\,$every new value is the average of the old neighbors
 
-* <font color="blue">Gauss–Seidel</font>: $\,$new values are used as soon as they are available (here in the red–black order of a checkerboard)
+* [Gauss–Seidel]{.blue}: $\,$new values are used as soon as they are available (here in the red–black order of a checkerboard)
 
-* <font color="blue">SOR</font> (successive over-relaxation): $\,u_P\leftarrow u_P+\omega\left(\bar u_P-u_P\right)\,$ with $\,1<\omega<2$; $\,$the best value on a square grid of spacing $\,h\,$ is $\,\omega=\dfrac{2}{1+\sin\pi h}$
+* [SOR]{.blue} (successive over-relaxation): $\,u_P\leftarrow u_P+\omega\left(\bar u_P-u_P\right)\,$ with $\,1<\omega<2$; $\,$the best value on a square grid of spacing $\,h\,$ is $\,\omega=\dfrac{2}{1+\sin\pi h}$
 
 * With $\,h=1/20$, $\,$the change per sweep falls below $\,10^{-6}\,$ after about $\,690$ (Jacobi), $\,370$ (Gauss–Seidel) and $\,50$ (SOR) sweeps. $\,$The Jacobi count grows like $\,1/h^2$, $\,$which is why large problems use SOR, $\,$multigrid or sparse direct solvers
 
@@ -816,7 +816,7 @@ $~$
 
   Note that this spherical Laplacian is written in a different form than those we've seen before. $\,$This form is slightly more compact and easier to use
 
-* Quite often $\,g(\phi,\theta)\,$ has a specific form, $\,$so that it isn't necessary to solve the problem in its most general form. $\,$Two important special cases are considered in this section. $\,$<font color=blue>One is the case when $\,g(\phi,\theta)\,$ is constant, $\,$and the other is when it depends only on the angle $\,\phi\,$ (the angle from the north pole)</font>
+* Quite often $\,g(\phi,\theta)\,$ has a specific form, $\,$so that it isn't necessary to solve the problem in its most general form. $\,$Two important special cases are considered in this section. $\,$[One is the case when $\,g(\phi,\theta)\,$ is constant, $\,$and the other is when it depends only on the angle $\,\phi\,$ (the angle from the north pole)]{.blue}
 
   ![](figures/pde03_figure10.svg "spherical coordinate"){width="45%" fig-align="center" fig-alt="spherical coordinate"}
 
@@ -908,11 +908,11 @@ $~$
 
   * One of the difficulties in this equation is that 
 
-    <font color="blue">the coefficient $\,(1-x^2)$ of $\displaystyle \,\frac{d^2\Phi}{dx^2}$ is zero at the ends of the domain $-1 \leq x \leq 1$ </font>
+    [the coefficient $\,(1-x^2)$ of $\displaystyle \,\frac{d^2\Phi}{dx^2}$ is zero at the ends of the domain $-1 \leq x \leq 1$ ]{.blue}
   
     Equations like this are called singular differential equations. $\,$We arrive at a very interesting conclusion
 
-  * <font color=red>The only bounded solutions of Legendre's equation occur when $\,\lambda=n(n +1)$, $\,n=0,1,2,\cdots\,$ and these solutions are Legendre polynomials $\,P_n(x)$</font> (Legendre polynomials: @sec-5-3; Legendre series: @sec-12-6)
+  * [The only bounded solutions of Legendre's equation occur when $\,\lambda=n(n +1)$, $\,n=0,1,2,\cdots\,$ and these solutions are Legendre polynomials $\,P_n(x)$]{.red} (Legendre polynomials: @sec-5-3; Legendre series: @sec-12-6)
 
     $$\begin{aligned}
       &P_0(x) = 1 \\ 
@@ -1328,7 +1328,7 @@ $~$
 
 $~$
 
-<font color="blue">**Poisson Integral Formula in 2D and 3D — Summary Table**</font>
+[**Poisson Integral Formula in 2D and 3D — Summary Table**]{.blue}
 
 | Dimension | Domain | Poisson Kernel $\mathcal{P}$ | Poisson Integral Formula |
 |----------|--------|-----------------------|---------------------------|
@@ -1347,7 +1347,7 @@ $~$
 
   $$ u(1,\theta) = 0, \;\;\; 0 \leq \theta < 2\pi $$
 
-* Note that we have chosen the boundary values to be zero. $\,$<font color="red">If we wanted to solve the general case, where both the equation and BC were nonhomogeneous, $\,$we could add the Poisson integral formula from @sec-x3-33 to the solution from this section</font>
+* Note that we have chosen the boundary values to be zero. $\,$[If we wanted to solve the general case, where both the equation and BC were nonhomogeneous, $\,$we could add the Poisson integral formula from @sec-x3-33 to the solution from this section]{.red}
 
 * In order to gain a little intuition about nonhomogeneous differential equations, $\,$let's consider graphing the solution to the following Poisson equation:
 
@@ -1361,7 +1361,7 @@ $~$
 
 * **Potentials from Point Sources and Sinks**
 
-  * <font color="blue">In solving a nonhomogeneous linear equation, $\,$it is sufficient to solve the equation with a point source since we can find the solution to the general problem by summing the responses to point sources.</font> $\,$Our goal here is to find the potential in some region of space due to a point source (or sink)
+  * [In solving a nonhomogeneous linear equation, $\,$it is sufficient to solve the equation with a point source since we can find the solution to the general problem by summing the responses to point sources.]{.blue} $\,$Our goal here is to find the potential in some region of space due to a point source (or sink)
 
   * Suppose we have a single point source of magnitude $\,q\,$ located at the origin. $\,$It is clear that the heat will flow outward along radial lines, $\,$and, $\,$hence, $\,$if we compute the total outward flux across a circle of radius $\,r$, $\,$we have
 
@@ -1406,7 +1406,7 @@ is the potential at $\,(r,\theta)\,$ due to a single unit charge at $\,(\rho,\ph
 
 **STEP 2** $\,$ The strategy is to place a sink outside the circle at such a point that the potential due to both is constant on the circle at $\,r=1$. $\,$We can then subtract this constant value to obtain a zero potential on the boundary. $\,$The big question is, $\,$of course, $\,$where do we place the sink outside circle, $\,$so that the potential on the boundary is constant?
 
-Place the sink at the <font color="blue">image point</font> $\,(1/\rho,\phi)$. $\,$On the circle $\,r=1$, $\,$with $\,c=\cos(\theta-\phi)$,
+Place the sink at the [image point]{.blue} $\,(1/\rho,\phi)$. $\,$On the circle $\,r=1$, $\,$with $\,c=\cos(\theta-\phi)$,
 
 $$ R^2=1+\rho^2-2\rho c, \qquad \bar R^2=1+\frac{1}{\rho^2}-\frac{2}{\rho}c=\frac{R^2}{\rho^2}
    \quad\Longrightarrow\quad \frac{\bar R}{R}=\frac{1}{\rho} $$
@@ -1505,7 +1505,7 @@ $~$
 
 **Images for Other Regions**
 
-* <font color="blue">Upper half-plane</font> $\,y>0$: $\,$the image of the source $\,(x_0,y_0)\,$ is its mirror point $\,(x_0,-y_0)$, $\,$and no constant is needed:
+* [Upper half-plane]{.blue} $\,y>0$: $\,$the image of the source $\,(x_0,y_0)\,$ is its mirror point $\,(x_0,-y_0)$, $\,$and no constant is needed:
 
   $$ G=\frac{1}{2\pi}\ln\frac{\bar R}{R}=\frac{1}{4\pi}\ln\frac{(x-x_0)^2+(y+y_0)^2}{(x-x_0)^2+(y-y_0)^2} $$
 
@@ -1519,7 +1519,7 @@ $~$
 
 $~$
 
-* <font color="blue">Unit sphere</font>: $\,$the image is at the inverse point $\,\mathbf{x}_0/\rho^2\,$ with strength $\,1/\rho$:
+* [Unit sphere]{.blue}: $\,$the image is at the inverse point $\,\mathbf{x}_0/\rho^2\,$ with strength $\,1/\rho$:
 
   $$ G=\frac{1}{4\pi R}-\frac{1/\rho}{4\pi\bar R}, \qquad \bar R=\frac{R}{\rho}\;\text{ on }\;|\mathbf{x}|=1 $$
 
@@ -1695,7 +1695,7 @@ $$
 
 This, $\,$then, $\,$is the Green's function for $\,r > \rho$. $\,$It is already symmetric in $\,r\,$ and $\,\rho$, $\,$so that the same formula holds for $\,r < \rho$, and even for $\,r=\rho$. $\,$We note that $\,G=0\,$ for $\,r=R$
 
-<font color="blue">**Green Function in 2D and 3D - Summary Table**</font>
+[**Green Function in 2D and 3D - Summary Table**]{.blue}
 
 | Domain | Green function $\,G(\mathbf{x},\mathbf{y})$ | Solution of $\,\Delta u=-f$ |
 |----------------------------|----------------------------------------|--------------------------------|
@@ -1821,7 +1821,7 @@ $~$
 
   For historical reasons, $\,l\,$ is called the azimuthal quantum number, $\,$and $\,m\,$ the magnetic quantum number
 
-* The normalized angular wave functions are called <font color="red">spherical harmonics</font>:
+* The normalized angular wave functions are called [spherical harmonics]{.red}:
 
   $$ \color{red}{Y_l^{m}(\phi,\theta)=\epsilon \sqrt{\frac{(2l +1)}{4\pi} \frac{(l -|m|)!}{(l +|m|)!}} P_l^{|m|}(\cos\phi) e^{im\theta}} $$
 

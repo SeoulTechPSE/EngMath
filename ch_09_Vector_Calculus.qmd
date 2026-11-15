@@ -131,7 +131,7 @@ jupyter: python3
 
   * The speed is related to arc length $s$ by $s'(t) = \left\| \mathbf{v}(t) \right\|$
 
-  * If a particle moves  with <font color="red">a constant speed $c$</font>, $\,$ then its acceleration vector is perpendicular to the velocity vector $\mathbf{v}$
+  * If a particle moves  with [a constant speed $c$]{.red}, $\,$ then its acceleration vector is perpendicular to the velocity vector $\mathbf{v}$
 
   * To see this, note that $\mathbf{v}\cdot\mathbf{v}=c^2$. $~$ We differentiate both sides with respect to $t$ and obtain
   
@@ -378,7 +378,7 @@ $~$
 
 ## Tangent Planes and Normal Lines {#sec-9-6}
 
-* <font color="blue">$\nabla f$ is orthogonal to the level curve at $P$</font>
+* [$\nabla f$ is orthogonal to the level curve at $P$]{.blue}
 
 ![](figures/ch09_figure12.svg "gradient tangent"){width="40%" fig-align="center" fig-alt="gradient tangent"}
 
@@ -408,7 +408,7 @@ $~$
     =\nabla F \cdot \mathbf{r}'
   \end{aligned}$$
 
-* <font color="blue">$\nabla F$ is normal to the level surface at $P$</font>
+* [$\nabla F$ is normal to the level surface at $P$]{.blue}
 
 ![](figures/ch09_figure13.svg "normal"){width="60%" fig-align="center" fig-alt="Gradient is normal to the level surface F(x,y,z)=c: curves on S through P, tangent plane, grad F (3-D)"}
 
@@ -448,9 +448,9 @@ $~$
     +\frac{\partial \phi}{\partial z}\mathbf{k} 
     \;\Rightarrow\; \delta_{ij} \mathbf{e}_i \frac{\partial \phi}{\partial x_j}$$
   
-  called the <font color="red">**gradient of $\phi$**</font>, $\,$where $\,\delta_{ij}$ $\,$is *Kronecker Delta*
+  called the [**gradient of $\phi$**]{.red}, $\,$where $\,\delta_{ij}$ $\,$is *Kronecker Delta*
 
-* The <font color="red">**curl** of a vector field $~\mathbf{f}=P\,\mathbf{i} +Q\,\mathbf{j} +R\,\mathbf{k}\,$</font> is the vector field
+* The [**curl** of a vector field $~\mathbf{f}=P\,\mathbf{i} +Q\,\mathbf{j} +R\,\mathbf{k}\,$]{.red} is the vector field
 
    $$\nabla \times \mathbf{f}= 
    \mathrm{curl}\, \mathbf{f}=
@@ -463,7 +463,7 @@ $~$
     
    where $\,\varepsilon_{ijk}$ is *Levi-Civita Symbol*
 
-* The <font color="red">**divergence** of a vector field $~\mathbf{f}=P\,\mathbf{i} +Q\,\mathbf{j} + R\,\mathbf{k}~$</font> is the scalar function
+* The [**divergence** of a vector field $~\mathbf{f}=P\,\mathbf{i} +Q\,\mathbf{j} + R\,\mathbf{k}~$]{.red} is the scalar function
 
   $$\nabla \cdot \mathbf{f}=
   \mathrm{div} \,\mathbf{f}=
@@ -732,15 +732,15 @@ $~$
 
 * **Path Independence**
 
-  A line integral $\displaystyle\int_C \mathbf{f}\cdot d\mathbf{r}~$ is <font color="red">independent of the path</font> if 
+  A line integral $\displaystyle\int_C \mathbf{f}\cdot d\mathbf{r}~$ is [independent of the path]{.red} if 
   
   $$\int_{C_1} \mathbf{f}\cdot d\mathbf{r}=\int_{C_2}\mathbf{f}\cdot d\mathbf{r}$$
 
   for any two paths $C_1$ and $C_2$ between $A$ and $B$
 
-* A vector function $\mathbf{f}$ in 2- or 3-space is said to be <font color="red">**conservative**</font>  if $\,\mathbf{f}$ can be written as the gradient of a scalar function $\phi$. $\,$The function $\phi$ is called a <font color="red">**potential function**</font> for $\,\mathbf{f}$
+* A vector function $\mathbf{f}$ in 2- or 3-space is said to be [**conservative**]{.red}  if $\,\mathbf{f}$ can be written as the gradient of a scalar function $\phi$. $\,$The function $\phi$ is called a [**potential function**]{.red} for $\,\mathbf{f}$
 
-* In other words, $\,\mathbf{f}$ is conservative if there exists a function $\phi$ such that <font color="red">$\,\mathbf{f}=\nabla \phi$</font>. $\,$A conservative vector field is also called a **gradient vector field**
+* In other words, $\,\mathbf{f}$ is conservative if there exists a function $\phi$ such that [$\,\mathbf{f}=\nabla \phi$]{.red}. $\,$A conservative vector field is also called a **gradient vector field**
 
 * **Fundamental Theorem**
 

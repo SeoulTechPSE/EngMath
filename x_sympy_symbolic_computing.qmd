@@ -164,7 +164,7 @@ sympy.Integer('12_345_678'), sympy.Integer(12_345_678)
 sympy.igcd(36, 15), sympy.ilcm(7, 34)
 ```
 
-* Integers in `sympy` are <font color='red'>**arbitrary precision**</font>, $\,$meaning that they have <font color='blue'>no fixed lower and upper bounds</font>,
+* Integers in `sympy` are [**arbitrary precision**]{.red}, $\,$meaning that they have [no fixed lower and upper bounds]{.blue},
 $\,$which is the case when representing integers with a specific bit-size, as, for example, in `numpy`
 
 ```{python}
@@ -178,7 +178,7 @@ sympy.factorial(100)
 
 ### Float
 
-* Like `Integer`, $\,$`Float` is <font color='red'>**arbitrary precision**</font>, $\,$in contrast to Python’s built-in `float` type and the `float` types in `numpy`. $\,$This means that any `Float` can represent a `float` with arbitrary number of decimals
+* Like `Integer`, $\,$`Float` is [**arbitrary precision**]{.red}, $\,$in contrast to Python’s built-in `float` type and the `float` types in `numpy`. $\,$This means that any `Float` can represent a `float` with arbitrary number of decimals
 
 * When a `Float` instance is created using its constructor, $\,$there are two arguments: the first argument is **a Python `float` or a string representing a floating-point number**, and the second (optional) argument is the **precision** (number of significant decimal digits) of the `Float` object
 

@@ -54,7 +54,7 @@ $$
 
 * **Plane Autonomous System**
   
-  When $n=2$, the system is called a <font color="blue">**plane autonomous system**</font>, and we write the system as
+  When $n=2$, the system is called a [**plane autonomous system**]{.blue}, and we write the system as
   
   $$
   \begin{aligned}
@@ -216,7 +216,7 @@ for i in range(4):
         ax.set_ylabel(r'$y$')
 ```
 
-* <font color="red">Trajectory behaviors in phase portraits can be explained with eigenvalue-eigenvector of $\mathbf{A}$</font>
+* [Trajectory behaviors in phase portraits can be explained with eigenvalue-eigenvector of $\mathbf{A}$]{.red}
 
 * **Real Distinct Eigenvalues**, $\tau^2 -4\Delta > 0$
 
