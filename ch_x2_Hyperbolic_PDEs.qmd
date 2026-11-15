@@ -1009,31 +1009,69 @@ $\,$The differential equation then becomes
     \end{aligned}
     $$
 
-    This expression shows how every part of the forcing function $F(x,t)$ contributes to the displacement $u(x,t)$ through the wave propagation mechanism described by D’Alembert’s principle
+* This expression shows how every part of the forcing function $\,F(x,t)\,$ contributes to the displacement $\,u(x,t)\,$ through the wave propagation described by D'Alembert's principle
+
+* The inner integral is the total forcing over the spatial region that can influence the point $x$ after the time $t-\tau$ (wave speed $c$); $\,$the outer integral sums these contributions from $\tau=0$ to $t$
+
+* The same formula follows in one line, $\,$without canonical coordinates, $\,$from <font color="red">**Duhamel's principle**</font>
 
 $~$
 
-  * The Green’s function of the one-dimensional wave equation is given by
+**Duhamel's Principle for the Wave Equation**
 
-    $$G(x,t)=\frac{1}{2c} H \left( t - \tfrac{|x|}{c}\right)$$
+* During a short interval $\,[\tau,\tau+d\tau]$, $\,$the force $\,F(x,\tau)\,$ does not move the string yet, $\,$but it changes its velocity by $\,F(x,\tau)\,d\tau\,$ (Newton's second law). $\,$After that, $\,$the string vibrates freely
 
-    where $H(t)$ is the Heaviside step function. According to Duhamel’s principle, the solution $u(x,t)$ can be written as a space–time convolution of the forcing term $F(x,t)$ with the Green’s function $G(x,t)$:
+* So, $\,$for each $\,\tau$, $\,$let $\,v(x,t;\tau)\,$ be the free vibration that starts at time $\,\tau\,$ with zero displacement and velocity $\,F(x,\tau)$:
 
-    $$u(x,t) = \int_0^t \int_{-\infty}^\infty G(x-\beta, t -\tau) \,F(\beta, \tau) \, d\beta \,d\tau$$
+  $$ v_{tt}=c^2 v_{xx} \;\; (t>\tau), \qquad v(x,\tau;\tau)=0, \quad v_t(x,\tau;\tau)=F(x,\tau) $$
 
-    Substituting the form of $G(x,t)$ and simplifying, we obtain the explicit D’Alembert-type integral solution
+  and add up the responses to all the velocity kicks:
 
-  * The inner integral 
-  
-    $$\int_{x - c(t -\tau)}^{x + c(t -\tau)} F(\beta, \tau)\, d\beta$$ 
-    
-    represents the total effect of the forcing term $F$ over the spatial region that influences the point $x$ after time $t-\tau$
-    It accounts for the wave propagation with speed $c$
+  $$\color{red}{u(x,t)=\int_0^t v(x,t;\tau)\,d\tau}$$
 
-  * The outer integral $\displaystyle \int_0^t (\cdots) \, d\tau$ sums up all the contributions over time 
-    from the initial moment $\tau=0$ to the current time $t$
+$~$
 
-  * The factor $\frac{1}{2c}$ arises from the Green’s function normalization in one dimension
+* D'Alembert's formula, $\,$with $\,g=F(\cdot,\tau)\,$ and the elapsed time $\,t-\tau$, $\,$gives at once
+
+  $$ v(x,t;\tau)=\frac{1}{2c}\int_{x-c(t-\tau)}^{x+c(t-\tau)} F(\beta,\tau)\,d\beta
+     \quad\Longrightarrow\quad
+     u=\frac{1}{2c}\int_0^t\left[\int_{x-c(t-\tau)}^{x+c(t-\tau)} F(\beta,\tau)\,d\beta\right]d\tau $$
+
+* <font color="blue">Verification</font> $\,$ by the Leibniz rule, $\,$using $\,v(x,t;t)=0\,$ and $\,v_t(x,t;t)=F(x,t)$:
+
+  $$\begin{aligned}
+    u_t &= \underbrace{v(x,t;t)}_{=\,0}+\int_0^t v_t(x,t;\tau)\,d\tau \\
+    u_{tt} &= \underbrace{v_t(x,t;t)}_{=\,F(x,t)}+\int_0^t v_{tt}(x,t;\tau)\,d\tau
+      = F(x,t)+c^2\int_0^t v_{xx}(x,t;\tau)\,d\tau = F+c^2u_{xx}
+  \end{aligned}$$
+
+  and $\,u(x,0)=0$, $\,u_t(x,0)=0$
+
+$~$
+
+* <font color="blue">Green's function</font> $\,$ The response to a unit kick concentrated at $\,x=0$, $\,t=0\,$ ($\,F=\delta(x)\delta(t)$, $\,$that is, $\,g=\delta(x)$) is
+
+  $$G(x,t)=\frac{1}{2c}\int_{x-ct}^{x+ct}\delta(\beta)\,d\beta=\frac{1}{2c}\, H\!\left( t - \frac{|x|}{c}\right)$$
+
+  and Duhamel's integral is the space–time convolution
+
+  $$u(x,t) = \int_0^t \int_{-\infty}^\infty G(x-\beta, t -\tau) \,F(\beta, \tau) \, d\beta \,d\tau$$
+
+$~$
+
+**One Principle, Three Forms**
+
+| | Free problem starts with | Solution |
+|:-----------|:-----------------------|:--------------------------------------|
+| Duhamel | $v(\tau)=0,\;\; v_t(\tau)=F(\cdot,\tau)$ | $u=\displaystyle\int_0^t v(x,t;\tau)\,d\tau$ |
+| Green's function | $G(0)=0,\;\; G_t(0)=\delta(x)$ | $u=\displaystyle\int_0^t\!\!\int G(x-\beta,t-\tau)F(\beta,\tau)\,d\beta\,d\tau$ |
+| Stokes' rule | $v(0)=0,\;\; v_t(0)=\phi$ | $u=v_t$ |
+
+* Duhamel: source $\,F$; $\,$Stokes' rule (@sec-x2-21): initial position $\,\phi$. $\,$All three use only the solution with <font color="red">zero displacement and a given velocity</font>: $\,$the source acts on $\,u_{tt}$, $\,$so it is a velocity kick
+
+* Compare with the heat equation $\,u_t=\alpha u_{xx}+F\,$ (@sec-x1-17): $\,$there the source acts on $\,u_t$, $\,$so the free problem starts with $\,v(\tau)=F(\cdot,\tau)$. $\,$The rule is the same: $\,$<font color="blue">the source sets the highest time derivative that appears in the initial conditions</font>
+
+$~$
 
 **Example** $~$Solve the infinite string problem
 
@@ -1058,7 +1096,7 @@ $u(x,t)=\dfrac{\sqrt\pi}{4c\sqrt a}\displaystyle\int_0^t e^{-b\tau}\Bigl[\mathrm
 [Solution](files/solutions/sol_13_3b.pdf){target="_blank"}
 
 
-## The Wave Equation in Two and Three Dimensions (Free Space) {#sex-x2-21}
+## The Wave Equation in Two and Three Dimensions (Free Space) {#sec-x2-21}
 
 The problem of this section is to generalize the D'Alembert solution to two and three dimensions
 
@@ -1169,6 +1207,8 @@ The problem of this section is to generalize the D'Alembert solution to two and 
     u(x,y,z,0)&=v_t(x,y,z,0)=\phi, \\
     u_t(x,y,z,0)&=v_{tt}(x,y,z,0)=c^2\nabla^2 v(x,y,z,0)=0
     \end{aligned}$$
+
+    As in Duhamel's principle (@sec-x2-20), $\,$everything is built from the solution with zero displacement and a given velocity
 
   * In other words, $\,$we solve
 
@@ -1307,6 +1347,65 @@ Unlike 3D, the wave leaves a tail that decays slowly instead of vanishing
 
 [Solution](files/solutions/sol_13_4b.pdf){target="_blank"}
 
+
+**Huygens' Principle in Pictures** $\,$ The two examples with $\,u_t(\mathbf{x},0)=1\,$ in the unit ball (3D) or the unit disk (2D), $\,c=1$
+
+```{python}
+#| label: fig-huygens
+#| fig-cap: "Spherical (3D) and cylindrical (2D) waves from the same initial velocity: snapshots $u(r,t)$ and the signal $u(3,t)$ received at $r=3$"
+#| fig-align: center
+def u_3d(r, t, c=1.0):
+    # Kirchhoff: t times the fraction of the sphere |y - x| = ct inside the unit ball
+    r = np.maximum(r, 1e-9)
+    u = np.where(np.abs(r -c *t) < 1, (1 -(r -c *t)**2) /(4 *c *r), 0.0)
+    return np.where(c *t <= 1 -r, t, u)
+
+def u_2d(r, t, c=1.0, M=2000):
+    # Poisson: (1/2 pi c) int_0^ct Theta(rho) rho / sqrt(c^2 t^2 - rho^2) d rho, rho = ct sin(phi)
+    phi = (np.arange(M) +0.5) *(np.pi /2) /M
+    rho = c *t *np.sin(phi)
+    full = rho <= 1 -r
+    with np.errstate(divide='ignore', invalid='ignore'):
+        cosv = np.clip((r**2 +rho**2 -1) /(2 *r *rho), -1, 1)
+    theta = np.where(full, 2 *np.pi, np.where(np.abs(r -rho) < 1, 2 *np.arccos(cosv), 0.0))
+    return np.sum(theta *c *t *np.sin(phi)) *(np.pi /2) /M /(2 *np.pi *c)
+
+r = np.linspace(0, 8, 401)
+fig, axes = plt.subplots(1, 3, figsize=(7.5, 2.8))
+for k, tt in enumerate([0.5, 2, 4, 6]):
+    axes[0].plot(r, u_3d(r, tt), color=f'C{k}', label=f'$t={tt}$')
+    axes[1].plot(r, [u_2d(ri, tt) for ri in r], color=f'C{k}', label=f'$t={tt}$')
+for ax, title in zip(axes[:2], ['3D: $u(r,t)$', '2D: $u(r,t)$']):
+    ax.set_xlim(0, 8)
+    ax.set_ylim(0, 0.55)
+    ax.set_xlabel('$r$')
+    ax.set_title(title, fontsize=10)
+    ax.legend(fontsize=8)
+
+t = np.linspace(0, 12, 601)
+axes[2].plot(t, u_3d(3.0, t), label='3D')
+axes[2].plot(t, [u_2d(3.0, ti) for ti in t], label='2D')
+axes[2].axvspan(2, 4, color='gray', alpha=0.15)
+axes[2].set_xlim(0, 12)
+axes[2].set_ylim(0, 0.3)
+axes[2].set_xlabel('$t$')
+axes[2].set_title('signal at $r=3$: $u(3,t)$', fontsize=10)
+axes[2].legend(fontsize=8)
+plt.tight_layout()
+plt.show()
+```
+
+$~$
+
+* <font color="blue">3D</font>: $\,$the disturbance is a shell of thickness $\,2\,$ that moves outward with speed $\,c$; $\,$its height falls like $\,1/r$. $\,$The point $\,r=3\,$ feels the wave only for $\,2<t<4\,$ (shaded), $\,$when the sphere of radius $\,ct\,$ cuts the unit ball: $\,$a sharp front <font color="red">and a sharp back</font>, $\,$so a sound arrives and then is gone
+
+* <font color="blue">2D</font>: $\,$the front is just as sharp, $\,$but behind it the membrane does not come back to rest. $\,$At $\,r=3\,$ the signal starts at $\,t=2\,$ and then decays slowly, $\,u(3,t)\approx\dfrac{1}{2c^2t}\,$ for large $\,t\,$ (the area $\,\pi\,$ of the disk times $\,\frac{1}{2\pi c\cdot ct}$): $\,$a <font color="red">tail</font>, $\,$like the ripples behind a stone dropped in water
+
+* <font color="blue">1D</font>: $\,$for the same initial velocity, $\,$the string is left displaced, $\,u\to 1/c\,$ behind the fronts (@sec-x2-20): $\,$no trailing edge at all
+
+* So Huygens' principle (sharp back as well as sharp front) holds in three dimensions but not in one or two: $\,$in 2D the whole disk $\,|\mathbf{y}-\mathbf{x}|<ct\,$ contributes, $\,$in 3D only the sphere $\,|\mathbf{y}-\mathbf{x}|=ct$
+
+$~$
 
 **The Dimensional Geometry Summary**
 
@@ -1692,6 +1791,118 @@ $$\begin{aligned}
 u(x,t)&=\left[ \left( \frac{4}{\pi} -\frac{1}{\pi^2 c^2} \right) \,\cos\pi c t +\frac{1}{\pi^2 c^2} \right]\,\sin \pi x \\
 &\quad +\frac{4}{\pi} \sum_{n=1}^\infty \frac{1}{2n +1} \cos(2n +1)\pi c t \, \sin(2n +1)\pi x
 \end{aligned}$$
+
+$~$
+
+**Interpretation**
+
+* The first mode oscillates about $\,\displaystyle\frac{1}{\pi^2c^2}\sin\pi x$, $\,$the <font color="blue">static deflection</font> under the load: $\,$it solves $\,c^2u_s''+\sin\pi x=0$, $\,u_s(0)=u_s(1)=0$. $\,$The other modes are free vibrations, $\,$which the load does not touch, $\,$since $\,S_n=0\,$ for $\,n\geq 2$
+
+* The initial shape $\,u(x,0)=1\,$ does not satisfy the BCs, $\,$so its sine coefficients decay only like $\,1/n$: $\,$the series converges slowly, $\,$with the Gibbs overshoot near $\,x=0,1$
+
+$~$
+
+**General Forcing** $\,F(x,t)$
+
+* For any force, $\,$the sine transform gives for each mode
+
+  $$ \frac{d^2 U_n}{dt^2}+\omega_n^2 U_n=S_n(t), \qquad \omega_n=n\pi c, \qquad S_n(t)=\mathcal{F}_s\left[F(\cdot,t)\right] $$
+
+  and, $\,$by variation of parameters,
+
+  $$\color{red}{U_n(t)=U_n(0)\cos\omega_n t+\frac{U_n'(0)}{\omega_n}\sin\omega_n t
+    +\frac{1}{\omega_n}\int_0^t \sin\omega_n(t-\tau)\,S_n(\tau)\,d\tau}$$
+
+* The last term is Duhamel's principle (@sec-x2-20) for one mode: $\,$the kick $\,S_n(\tau)\,d\tau\,$ in velocity starts the free oscillation $\,\dfrac{S_n(\tau)\,d\tau}{\omega_n}\sin\omega_n(t-\tau)$
+
+* Check: $\,S_1=1\,$ gives $\,\dfrac{1}{\pi c}\displaystyle\int_0^t\sin\pi c(t-\tau)\,d\tau=\frac{1-\cos\pi ct}{\pi^2c^2}$, $\,$the part of $\,U_1(t)\,$ above that comes from the load
+
+$~$
+
+**Example** $\,$ Periodic force and <font color="red">resonance</font>
+
+$$
+\begin{aligned}
+  u_{tt} &=c^2 u_{xx} +\sin\pi x\,\sin\omega t && 0 < x < 1,\;\; 0 < t < \infty \\
+  u(0,t) &=u(1,t)=0, \quad u(x,0)=u_t(x,0)=0
+\end{aligned}$$
+
+* Only the mode $\,n=1\,$ is forced: $\,U_1''+\omega_1^2U_1=\sin\omega t$, $\,\omega_1=\pi c$, $\,U_1(0)=U_1'(0)=0$. $\,$Duhamel's integral gives
+
+  $$
+  u(x,t)=
+  \begin{cases}
+    \displaystyle\frac{\omega_1\sin\omega t-\omega\sin\omega_1 t}{\omega_1\left(\omega_1^2-\omega^2\right)}\,\sin\pi x, & \omega\neq\omega_1 \\[12pt]
+    \displaystyle\color{red}{\frac{\sin\omega_1 t-\omega_1 t\cos\omega_1 t}{2\omega_1^2}\,\sin\pi x}, & \omega=\omega_1
+  \end{cases}$$
+
+  The second line is the limit $\,\omega\to\omega_1\,$ of the first: $\,$at resonance the amplitude grows like $\,t/(2\omega_1)$
+
+$~$
+
+```{python}
+#| label: fig-resonance
+#| fig-cap: "Midpoint displacement $u(1/2,t)$ for $c=1$: formula (lines) and a finite-difference solution (circles)"
+#| fig-align: center
+from scipy.integrate import solve_ivp
+
+def U1(t, omega, c=1.0):
+    w1 = np.pi *c
+    if np.isclose(omega, w1):
+        return (np.sin(w1 *t) -w1 *t *np.cos(w1 *t)) /(2 *w1**2)
+    return (w1 *np.sin(omega *t) -omega *np.sin(w1 *t)) /(w1 *(w1**2 -omega**2))
+
+def u_mid_numerical(t_eval, omega, c=1.0, N=100):
+    # method of lines: central differences in x, then a stiff ODE solver in t
+    x = np.linspace(0, 1, N +1)
+    h = x[1] -x[0]
+    xi = x[1:-1]
+    def rhs(t, y):
+        u, v = y[:N -1], y[N -1:]
+        up = np.concatenate(([0.0], u, [0.0]))
+        uxx = (up[2:] -2 *up[1:-1] +up[:-2]) /h**2
+        return np.concatenate((v, c**2 *uxx +np.sin(np.pi *xi) *np.sin(omega *t)))
+    sol = solve_ivp(rhs, (0, t_eval[-1]), np.zeros(2 *(N -1)), t_eval=t_eval,
+                    rtol=1e-8, atol=1e-10)
+    return sol.y[N //2 -1]
+
+w1 = np.pi
+t = np.linspace(0, 40, 2001)
+t_num = np.linspace(0, 40, 81)
+
+fig, axes = plt.subplots(3, 1, figsize=(7.5, 4.8), sharex=True)
+for ax, r in zip(axes, [0.5, 0.9, 1.0]):
+    omega = r *w1
+    ax.plot(t, U1(t, omega), lw=1.5)
+    ax.plot(t_num, u_mid_numerical(t_num, omega), 'o', color='C1', mfc='none', ms=5)
+    if r == 1.0:
+        ax.plot(t, t /(2 *w1), 'k--', lw=1)
+        ax.plot(t, -t /(2 *w1), 'k--', lw=1)
+        ax.text(0.01, 0.78, r'$\pm\,t/(2\omega_1)$', transform=ax.transAxes, fontsize=10)
+    elif r == 0.9:
+        env = 2 *np.abs(np.sin((w1 -omega) *t /2)) /(w1**2 -omega**2)
+        ax.plot(t, env, 'k--', lw=1)
+        ax.plot(t, -env, 'k--', lw=1)
+    ax.set_ylabel(r'$u(1/2,t)$')
+    ax.set_title(rf'$\omega={r:.1f}\,\omega_1$', fontsize=10, loc='left')
+axes[-1].set_xlabel('$t$')
+axes[-1].set_xlim(0, 40)
+plt.tight_layout()
+plt.show()
+```
+
+$~$
+
+**Physical meaning**
+
+* $\omega=0.5\,\omega_1$: $\,$a bounded mixture of the forcing frequency $\,\omega\,$ and the natural frequency $\,\omega_1$
+
+* $\omega=0.9\,\omega_1$: <font color="blue">beats</font>. $\,$For $\,\omega\approx\omega_1$, $\,$the numerator is $\,\approx 2\omega_1\sin\frac{(\omega-\omega_1)t}{2}\cos\frac{(\omega+\omega_1)t}{2}$, $\,$a fast oscillation inside the slow envelope $\,\dfrac{2\left|\sin\frac{1}{2}(\omega_1-\omega)t\right|}{\omega_1^2-\omega^2}\,$ (dashed) with the beat period $\,2\pi/|\omega_1-\omega|=20$
+
+* $\omega=\omega_1$: $\,$<font color="red">resonance</font>. $\,$The force stays in phase with the velocity of the mode, $\,$so it feeds energy in every cycle and the amplitude grows without bound. $\,$In a real string, $\,$damping (the damped string of @sec-x2-23) limits it
+
+* For a general force $\,F(x)\sin\omega t$, $\,$resonance occurs at every natural frequency $\,\omega_n=n\pi c\,$ with $\,S_n\neq 0$. $\,$A force orthogonal to a mode cannot excite it: $\,\sin\pi x\,$ excites only $\,n=1$, $\,$and a load symmetric about $\,x=\frac{1}{2}\,$ never excites the even modes
+
 
 ## The Vibrating Drumhead (Wave Equation in Polar Coordinates) {#sec-x2-25}
 
@@ -2823,6 +3034,119 @@ $$u(x,t)=
 
 $~$
 
+**Why the Entropy Condition?**
+
+* In our example, $\,f'(u)=2u$, $\,$so
+
+  $$ f'(u^+)=f'(0)=0 \;<\; s=1 \;<\; f'(u^-)=f'(1)=2 $$
+
+  The characteristics on both sides <font color="blue">run into</font> the shock: $\,$it absorbs the information carried by the characteristics, $\,$it does not create any
+
+* The jump condition alone is not enough. $\,$Reverse the initial step:
+
+  $$ u_t+2uu_x=0, \qquad u(x,0)=\begin{cases} 0 & x<0 \\ 1 & x>0 \end{cases} $$
+
+  The characteristics are $\,x=x_0\,$ ($x_0<0$) and $\,x=x_0+2t\,$ ($x_0>0$): $\,$they move <font color="red">apart</font> and leave the wedge $\,0<x<2t\,$ empty
+
+$~$
+
+* <font color="blue">A false shock</font> $\,$ The jump with speed $\,s=\dfrac{f(0)-f(1)}{0-1}=1$,
+
+  $$ u=\begin{cases} 0 & x<t \\ 1 & x>t \end{cases} $$
+
+  satisfies the PDE on both sides and the jump condition. $\,$But $\,f'(u^+)=2>s$: $\,$the characteristics come <font color="red">out of</font> the shock, $\,$so the shock creates information. $\,$This solution is rejected
+
+$~$
+
+* <font color="blue">The rarefaction wave</font> $\,$ Fill the wedge with characteristics that all start at the origin, $\,x=g(u)\,t=2ut$:
+
+  $$ \color{red}{u(x,t)=\begin{cases} 0 & x\leq 0 \\ \dfrac{x}{2t} & 0<x<2t \\ 1 & x\geq 2t \end{cases}} $$
+
+  Check: $\,u_t+2uu_x=-\dfrac{x}{2t^2}+2\cdot\dfrac{x}{2t}\cdot\dfrac{1}{2t}=0$. $\,$The solution is continuous for $\,t>0$, $\,$and the step spreads into a ramp (an <font color="blue">expansion fan</font>)
+
+* Rule: $\,$where $\,g(u)\,$ decreases from left to right, $\,$the characteristics converge and a <font color="red">shock</font> forms; $\,$where it increases, $\,$they diverge and a <font color="blue">rarefaction wave</font> forms
+
+$~$
+
+```{python}
+#| label: fig-shock-rarefaction
+#| fig-cap: "$u_t+(u^2)_x=0$: the rarefaction fan (left, middle) and the shock of the traffic example (right); exact solutions (lines) and an upwind finite-volume solution (circles)"
+#| fig-align: center
+def upwind(u0, x, t_out, cfl=0.4):
+    # conservative upwind scheme for u_t + (u^2)_x = 0 with u >= 0 (f'(u) = 2u >= 0)
+    dx = x[1] -x[0]
+    u, t, out = u0.copy(), 0.0, []
+    for T in t_out:
+        while t < T -1e-12:
+            dt = min(cfl *dx /(2 *max(u.max(), 1e-12)), T -t)
+            f = u**2
+            u[1:] -= dt /dx *(f[1:] -f[:-1])
+            t += dt
+        out.append(u.copy())
+    return out
+
+def u_fan(x, t):
+    return np.clip(x /(2 *t), 0, 1)
+
+def u_traffic(x, t):
+    if t < 0.5:
+        return np.where(x <= 2 *t, 1.0, np.where(x < 1, (1 -x) /(1 -2 *t), 0.0))
+    return np.where(x < t +0.5, 1.0, 0.0)
+
+fig, axes = plt.subplots(1, 3, figsize=(7.5, 2.8))
+
+ax = axes[0]
+for x0 in np.arange(-2, 0, 0.25):
+    ax.plot([x0, x0], [0, 1], 'C0', lw=1)
+for x0 in np.arange(0.25, 2, 0.25):
+    ax.plot([x0, x0 +2], [0, 1], 'C0', lw=1)
+for uu in np.linspace(0, 1, 9):
+    ax.plot([0, 2 *uu], [0, 1], 'C3', lw=1)
+ax.plot([0, 1], [0, 1], 'k--', lw=1.5)
+ax.text(0.55, 0.85, '$x=t$\n(false shock)', fontsize=8)
+ax.set_xlim(-2, 3)
+ax.set_ylim(0, 1)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$t$')
+ax.set_title('characteristics: fan', fontsize=10)
+
+x = np.linspace(-1, 4, 501)
+xc = 0.5 *(x[1:] +x[:-1])               # cell centers
+times = [0.5, 1.0, 1.5]
+num = upwind(np.where(xc > 0, 1.0, 0.0), x, times)
+ax = axes[1]
+for k, (tt, un) in enumerate(zip(times, num)):
+    ax.plot(xc, u_fan(xc, tt), color=f'C{k}', label=f'$t={tt}$')
+    ax.plot(xc[::12], un[::12], 'o', color=f'C{k}', mfc='none', ms=5)
+    ax.plot(xc, np.where(xc > tt, 1.0, 0.0), ':', color=f'C{k}', lw=1)
+ax.set_xlim(-1, 4)
+ax.set_ylim(-0.05, 1.1)
+ax.set_xlabel('$x$')
+ax.set_title('rarefaction ($\\cdots$ false shock)', fontsize=10)
+ax.legend(fontsize=8, loc='lower right')
+
+x = np.linspace(-1, 3, 801)
+xc = 0.5 *(x[1:] +x[:-1])
+times = [0.0, 0.25, 0.5, 1.0]
+num = upwind(np.clip(1 -xc, 0, 1), x, times)
+ax = axes[2]
+for k, (tt, un) in enumerate(zip(times, num)):
+    ax.plot(xc, u_traffic(xc, tt), color=f'C{k}', label=f'$t={tt}$')
+    ax.plot(xc[::20], un[::20], 'o', color=f'C{k}', mfc='none', ms=5)
+ax.set_xlim(-1, 3)
+ax.set_ylim(-0.05, 1.1)
+ax.set_xlabel('$x$')
+ax.set_title('shock: $x_s=t+1/2$', fontsize=10)
+ax.legend(fontsize=8, loc='lower left')
+
+plt.tight_layout()
+plt.show()
+```
+
+* The upwind scheme is written in conservation form, $\,$so it moves the shock at the speed given by the jump condition, $\,$and it picks the rarefaction wave, $\,$not the false shock
+
+$~$
+
 **Example** $\,$ Solve
 
 $$
@@ -3007,14 +3331,19 @@ $~$
 ## Summary {.unnumbered}
 
 | Topic | Key result |
-|:--|:--|
+|:-------------|:------------------------------------------------------------|
 | D'Alembert | $u_{tt}=c^2u_{xx}$, $\,u(x,0)=f$, $\,u_t(x,0)=g$: $\ u=\dfrac12\left[f(x-ct)+f(x+ct)\right]+\dfrac1{2c}\displaystyle\int_{x-ct}^{x+ct}g(\alpha)\,d\alpha$ |
+| 2D and 3D | 3D (Kirchhoff): $\ u=\dfrac{\partial}{\partial t}\left[t\bar\phi\right]+t\bar\psi$, $\,$averages over the sphere $|\mathbf y-\mathbf x|=ct$ (Huygens' principle); $\,$ 2D (Poisson): integrals over the disk $|\mathbf y-\mathbf x|\le ct$ (a tail) |
+| Duhamel | $u_{tt}=c^2u_{xx}+F$, $\,u=u_t=0$: $\ u=\displaystyle\int_0^t v(x,t;\tau)\,d\tau$, $\,v(\tau)=0$, $\,v_t(\tau)=F(\cdot,\tau)$; $\ u=\dfrac1{2c}\displaystyle\int_0^t\!\!\int_{x-c(t-\tau)}^{x+c(t-\tau)}F(\beta,\tau)\,d\beta\,d\tau$ |
 | Vibrating string | fixed ends: $\ u=\displaystyle\sum_{n=1}^\infty\left[a_n\cos\frac{n\pi ct}{L}+b_n\sin\frac{n\pi ct}{L}\right]\sin\frac{n\pi x}{L}$ |
+| Forced string | $U_n''+\omega_n^2U_n=S_n(t)$, $\,\omega_n=\dfrac{n\pi c}{L}$: $\,$forced part $\ \dfrac1{\omega_n}\displaystyle\int_0^t\sin\omega_n(t-\tau)\,S_n(\tau)\,d\tau$; $\,$forcing at $\omega=\omega_n$ (resonance): amplitude grows like $t$ |
 | Drumhead | radially symmetric: $\ u=\sum A_mJ_0(\alpha_{0m}r)\cos(\alpha_{0m}ct)$, $\ J_0(\alpha_{0m})=0$ |
 | Canonical form | characteristics $\dfrac{dy}{dx}=\dfrac{B\pm\sqrt{B^2-4AC}}{2A}$ give $\xi$, $\eta$ and $u_{\xi\eta}+\cdots=0$ |
 | First-order linear | $u_t+vu_x=0$: $\ u=f(x-vt)$, $\,$constant along the characteristics $x-vt=$ const |
 | Conservation law | $u_t+f(u)_x=0$; $\quad u_t+g(u)u_x=0$, $\,u(x,0)=\phi$: $\ u=\phi\big[x-g(u)t\big]$ |
 | Shock speed | $s=\dfrac{dx_s}{dt}=\dfrac{f(u^-)-f(u^+)}{u^--u^+}$, $\quad f'(u^+)<s<f'(u^-)$ |
+| Rarefaction | where $g(u)$ increases from left to right: $\,$fan from the jump, $\ x=g(u)\,t$ (for $f=u^2$, $\ u=x/(2t)$) |
+| Systems | $\mathbf u_t+\mathbf A\mathbf u_x=\mathbf 0$, $\,\mathbf P^{-1}\mathbf A\mathbf P=\boldsymbol\Gamma$: $\ \mathbf u=\mathbf P\mathbf v$, $\,v_i=\phi_i(x-\gamma_i t)$ |
 
 $~$
 

@@ -2363,7 +2363,7 @@ def u_numerical(t_eval, omega, M=100):      # method of lines, 2nd-order differe
     return x[1:-1], sol.y
 
 def example_plot10(omega):
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.5, 3.4))
 
     x = np.linspace(0, 1, 201)
     t_snap = 3.0 +np.arange(4) /4
@@ -2375,7 +2375,7 @@ def example_plot10(omega):
     ax1.set_ylim(-1.1, 1.6)
     ax1.set_xlabel('$x$')
     ax1.set_ylabel('$u(x,t)$')
-    ax1.legend(loc='upper left', fontsize=12, ncol=2)
+    ax1.legend(loc='upper left', fontsize=8, ncol=2)
     ax1.set_title('profiles over one period')
 
     t = np.linspace(0, 4, 401)
@@ -2383,9 +2383,9 @@ def example_plot10(omega):
     for k, xx in enumerate([0.75, 0.5, 0.25]):
         ax2.plot(t, u_duhamel(t, np.array([xx]), omega), color=f'C{k +4}', label=rf'$x={xx}$')
     ax2.set_xlim(0, 4)
-    ax2.set_ylim(-1.1, 1.6)
+    ax2.set_ylim(-1.1, 1.9)
     ax2.set_xlabel('$t$')
-    ax2.legend(loc='upper center', fontsize=12, ncol=4, handlelength=1.2, columnspacing=1.0)
+    ax2.legend(loc='upper center', fontsize=7, ncol=4, handlelength=1.0, columnspacing=0.6)
     ax2.set_title('time history')
 
     plt.tight_layout()
