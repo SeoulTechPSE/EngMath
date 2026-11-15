@@ -11,6 +11,8 @@ jupyter: python3
 * compute Fourier series, $\,$half-range cosine and sine series, $\,$and complex Fourier series, $\,$and describe their convergence and the Gibbs phenomenon
 * formulate regular and singular Sturm-Liouville problems and use the orthogonality of their eigenfunctions
 * expand functions in Fourier-Bessel and Fourier-Legendre series
+
+**Builds on** $\,$ inner products and vector spaces (@sec-7-3, @sec-7-6), boundary-value problems (@sec-3-9) and Bessel and Legendre functions (@sec-5-3)
 :::
 
 
@@ -162,6 +164,7 @@ p.show()
 ```
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams['font.size'] = 10
@@ -257,6 +260,7 @@ $$
 $~$
 
 ```{python}
+#| code-fold: true
 x_t1 = [-4,-2,-2, 2, 2, 4]
 y_t1 = [ 0, 2,-2, 2,-2, 0]
 
@@ -370,6 +374,8 @@ $~$
 
 ## Sturm-Liouville Problem {#sec-12-5}
 
+The eigenvalue problems that arise in separation of variables (@sec-x1-5, @sec-x2-23, @sec-x3-33) are Sturm–Liouville problems
+
 * Self-Adjoint Form
 
   $$\begin{aligned}
@@ -463,6 +469,7 @@ $$
 $~$
 
 ```{python}
+#| code-fold: true
 x = np.linspace(0, 4*np.pi, 1000)  
 y = np.tan(x)
 
@@ -505,6 +512,7 @@ example_plot3(sqrt_eigenvalues)
 ```
 
 ```{python}
+#| code-fold: true
 #| label: fig-eigenfunctions-1
 #| fig-cap: "Eigenfunctions"
 def example_plot3_(x, n_eig, sqrt_eig, eigfunc):
@@ -640,6 +648,7 @@ $~$
 $~$    
 
 ```{python}
+#| code-fold: true
 from scipy.special import jv, jn_zeros
 from mpl_toolkits.axisartist.axislines import SubplotZero
 
@@ -700,6 +709,7 @@ def make_plot(case_no, ax1, ax2, r1, r2, mm, bc_txt, eigfn_txt):
 ```
 
 ```{python}
+#| code-fold: true
 #| fig-cap: 'Case I: $~n=0, A_2 = 1, B_2 = 0, b=1$'
 def eval_eigfn(x):
     return jv(0, x)
@@ -733,6 +743,7 @@ example_plot4()
 ```
 
 ```{python}
+#| code-fold: true
 #| fig-cap: 'Case I: $~n=1, A_2 = 1, B_2 = 0, b=1$'
 
 def eval_eigfn(x):
@@ -785,6 +796,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| fig-cap: "Case II: $~n=0, h = 1, b=1, \\;J_0(\\alpha) + \\alpha J_0' (\\alpha)=0$"
 from scipy.special import j0, j1
 from scipy.optimize import fsolve
@@ -844,6 +856,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| fig-cap: "Case III: $~n=0, h = 0, b=1, \\;J_0'(\\alpha)=0$"
 from scipy.special import jnp_zeros
 
@@ -911,6 +924,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 # | label: fig-Legendre
 # | fig-cap: "Legendre Polynomials"
 from scipy.special import eval_legendre
@@ -1045,6 +1059,7 @@ Then repeated every $2L$
 This shape repeats every $L$ units
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -1718,6 +1733,7 @@ $$\boxed{ \sin(\mu) = \mu \cos(\mu) \quad \text{with } \lambda = \mu^2 }$$
 $$\boxed{ y(x) = \sin(\mu x) - \mu \cos(\mu x) }$$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import fsolve
@@ -1806,6 +1822,7 @@ x^4 = \frac{1}{5} P_0(x) + \frac{4}{7} P_2(x) + \frac{8}{35} P_4(x)
 }$$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -1915,6 +1932,7 @@ $$ f(x) =
 **Solution**
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 

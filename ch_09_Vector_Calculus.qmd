@@ -12,6 +12,8 @@ jupyter: python3
 * evaluate line integrals, $\,$and recognize conservative fields and path independence
 * evaluate double, $\,$triple and surface integrals, $\,$using polar, $\,$cylindrical and spherical coordinates and a change of variables
 * apply Green's theorem, $\,$Stokes' theorem and the divergence theorem
+
+**Builds on** $\,$ vectors, dot and cross products (@sec-7)
 :::
 
 
@@ -1099,6 +1101,8 @@ $~$
 
 ## Divergence Theorem {#sec-9-16}
 
+The divergence theorem gives the Green's-function representation of solutions of Poisson's equation (@sec-x3-36)
+
 * Another Vector Form of Green's Theorem
   
   $$
@@ -1706,6 +1710,7 @@ So, the transformed region is:
 $$S = \left\{ (u, v) \ \middle| \ 0 \le u \le 2,\quad \frac{u^2}{4} - 1 \le v \le 1 - \frac{u^2}{4} \right\}$$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -2467,6 +2472,7 @@ $$\boxed{\;
 * Physically this flow can be seen as an idealized concentrated swirl (azimuthal velocity decaying like $(\text{distance})^{-2}$ for large distance because $u_\theta\sim r/(r^2+z^2)^{3/2}$), and the computed $\boldsymbol\omega$ describes the local twisting/rotation of fluid elements produced by that swirl. The sign pattern indicates opposite vorticity above and below the midplane $z=0$ in the radial component, etc
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors

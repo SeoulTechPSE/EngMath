@@ -12,6 +12,8 @@ jupyter: python3
 * remove nonhomogeneous boundary conditions with a steady-state solution, $\,$and simplify equations by substitutions
 * solve problems with the finite sine and cosine transforms, $\,$the Fourier, $\,$Fourier sine and cosine transforms, $\,$and the Laplace transform
 * treat convection terms, $\,$superposition of sources and time-dependent boundary conditions (Duhamel's principle)
+
+**Builds on** $\,$ Fourier series and Sturm–Liouville problems (@sec-12-2 to @sec-12-5) and the Laplace transform (@sec-4)
 :::
 
 
@@ -392,7 +394,7 @@ Now the problem becomes how to find the coefficients $c_n$. $\,$This is actually
 
 **NOTES**
 
-* Observe that the only difference between the Fourier sine expansion of $\phi(x)$ and the solution is the insertion of the time factor
+* Observe that the only difference between the Fourier sine expansion of $\phi(x)$ and the solution is the insertion of the time factor (Fourier sine series: @sec-12-3; the eigenvalue problem $X''+\lambda X=0$, $X(0)=X(L)=0$ is a Sturm–Liouville problem, @sec-12-5)
 
   $$ e^{-\alpha\left(\frac{n\pi}{L}\right)^2 t} $$
 
@@ -477,6 +479,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 from scipy import optimize
 import matplotlib.pyplot as plt
@@ -546,6 +549,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 def example_plot2(x, n_eig, sqrt_eig, eigfunc):
 
     plt.figure(figsize=(7, 4))
@@ -622,6 +626,7 @@ print(r'$,\;\;$'.join([rf'$c_{i} = {c_i: 6.4f}$'
 ```
 
 ```{python}
+#| code-fold: true
 def example_plot3(alpha, t, x, n_eig, sqrt_eig, eigfunc, u_solution):
     plt.figure(figsize=(7, 4))
     plt.plot(x, x, 'r:', label='$t=0.0$')
@@ -856,6 +861,7 @@ $$\begin{aligned}
 $~$
 
 ```{python}
+#| code-fold: true
 def example_plot4(t, x, n_terms, u_solution):   
     plt.figure(figsize=(6, 4))   
     plt.plot(x, np.exp(x /2.0), 'r:', label='$t=0$')
@@ -1385,6 +1391,7 @@ It can be shown that this impulse-response function $G(x-\xi,t)$ $\,$is the temp
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-impulse-response-function
 #| fig-cap: "Impulse-response function"
 #| fig-align: center
@@ -1572,6 +1579,7 @@ $$ \mathrm{erfc}(\eta)=\frac{2}{\sqrt{\pi}} \int_\eta^\infty e^{-\beta^2}\,d\bet
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-semi-infinite-domain-1
 #| fig-cap: "Heat conduction in semi-infinite domain with fixed temperature at the boundary"
 #| fig-align: center
@@ -1657,6 +1665,7 @@ $u(x,t)=\dfrac2\pi\displaystyle\int_0^\infty\frac{\sin\omega}{\omega}e^{-\alpha\
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-semi-infinite-domain-2
 #| fig-cap: "Heat conduction in semi-infinite domain insulated at the boundary"
 #| fig-align: center
@@ -1730,7 +1739,7 @@ $~$
 
   $$ \mathcal{L}[f(t)]= \int_0^\infty f(t) e^{-st}\,dt $$
 
-  is probably the only integral transform the student has seen before, $\,$since it is a very powerful tool for transforming initial-value problems in ODEs into algebraic equations
+  is probably the only integral transform the student has seen before, $\,$since it is a very powerful tool for transforming initial-value problems in ODEs into algebraic equations (@sec-4)
 
 * Not only is the Laplace transform useful in transforming ODEs into algebraic equations, $\,$but now we will use the Laplace transform to transform PDEs into ODEs
 
@@ -1868,6 +1877,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-semi-infinite-domain-3
 #| fig-cap: "Heat conduction in semi-infinite domain with 3^rd^ kind BC"
 #| fig-align: center
@@ -2039,6 +2049,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-diffusion-convection
 #| fig-cap: "Diffusion-convection on the infinite domain"
 #| fig-align: center
@@ -2121,6 +2132,7 @@ $~$
   Gaussian $*$ Gaussian $=$ Gaussian
 
 ```{python}
+#| code-fold: true
 #| label: fig-diffusion-convection-gaussian
 #| fig-cap: "Diffusion-convection of a Gaussian pulse on the infinite domain"
 #| fig-align: center
@@ -2205,6 +2217,7 @@ $~$
 * Approximate $\,\psi(t)\,$ by a staircase: $\,$a step of height $\,\psi(0)\,$ at $\,t=0$, $\,$then small steps of height $\,\Delta\psi\approx\psi'(\tau)\,\Delta\tau\,$ at the times $\,\tau$
 
 ```{python}
+#| code-fold: true
 #| label: fig-duhamel-staircase
 #| fig-cap: "Boundary temperature as a sum of steps"
 #| fig-align: center
@@ -2340,6 +2353,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-duhamel-periodic
 #| fig-cap: "Periodic boundary temperature: Duhamel's principle (lines) and a finite-difference solution (circles)"
 #| fig-align: center
@@ -2577,6 +2591,7 @@ $$\frac{B_n}{(b-a)} = 2 \int_0^1 \xi(1 - \xi) \sin(n\pi \xi) d\xi =
 \end{cases}$$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -2978,6 +2993,7 @@ $$u(x,t) =
 	+x \cos t$$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import quad
@@ -3167,6 +3183,7 @@ u(x,t) = x + \sum_{n=1}^\infty \frac{2(-1)^n}{n\pi} e^{-(n^2 \pi^2 + 1)t} \sin(n
 }$$
 
 ```{python}
+#| code-fold: true
 # Re-import necessary libraries after kernel reset
 import numpy as np
 import matplotlib.pyplot as plt

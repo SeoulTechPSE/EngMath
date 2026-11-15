@@ -11,6 +11,8 @@ jupyter: python3
 * solve initial-value problems for linear equations with constant coefficients, $\,$including piecewise and impulsive forcing
 * use the translation theorems, $\,$derivatives of transforms, $\,$convolution and the transform of a periodic function
 * solve systems of linear differential equations by the Laplace transform
+
+**Builds on** $\,$ linear equations with constant coefficients (@sec-3-3)
 :::
 
 

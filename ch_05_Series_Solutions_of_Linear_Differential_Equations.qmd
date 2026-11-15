@@ -11,6 +11,8 @@ jupyter: python3
 * classify singular points, $\,$and solve about a regular singular point by the method of Frobenius using the indicial equation
 * solve Bessel's and Legendre's equations and equations reducible to them
 * use the properties of $J_\nu$, $Y_\nu$, $I_\nu$, $K_\nu$ and $P_n$: $\,$recurrence relations, $\,$Rodrigues' formula and orthogonality
+
+**Builds on** $\,$ linear higher-order equations (@sec-3-1) and the Cauchy–Euler equation (@sec-3-6)
 :::
 
 
@@ -223,6 +225,8 @@ $~$
 
 ## Special Functions {#sec-5-3}
 
+These functions return in the PDE chapters: $\,$Bessel functions for the vibrating drumhead (@sec-x2-25) and Legendre polynomials for the sphere (@sec-x3-35)
+
 The following DEs occur frequently in advanced studies in applied mathematics, physics, and engineering
 
 * <font color="red">**Bessel's equation of order $\nu$**, $~$solutions are **Bessel functions**</font>
@@ -291,6 +295,7 @@ $~$
 **Note** $\,$ $\displaystyle\Gamma(\nu)=\;\int_0^\infty x^{\nu -1} e^{-x} \,dx$, $\;\Gamma(\nu +1)=\nu\Gamma(\nu)$
 
 ```{python}
+#| code-fold: true
 # | label: fig-ch03-Gamma-Function 
 # | fig-cap: Gamma Function
 
@@ -406,6 +411,7 @@ $~$
   * $\displaystyle\lim_{x \to 0^+} Y_m(x)=-\infty$
 
 ```{python}
+#| code-fold: true
 # | label: fig-ch05-Bessel-Function
 # | fig-cap: Bessel functions
 from scipy.special import jv, yv
@@ -573,6 +579,7 @@ With $\Gamma\left(\frac12+n\right)=\dfrac{(2n)!}{2^{2n}n!}\sqrt\pi$, $\ $ the se
 [Solution](files/solutions/sol_5_3a.pdf){target="_blank"}
 
 ```{python}
+#| code-fold: true
 # | label: fig-ch05-Spherical-Bessel_Function
 # | fig-cap: Spherical Bessel Function
 from scipy.special import spherical_jn
@@ -787,6 +794,7 @@ specific values for $c_0$ or $c_1$, depending on whether $n$ is an even or odd p
   \end{aligned}$$
 
 ```{python}
+#| code-fold: true
 # | label: fig-ch05-Legendre-Polynomials
 # | fig-cap: Legendre polynomials
 

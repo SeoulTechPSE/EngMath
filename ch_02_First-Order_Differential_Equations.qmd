@@ -39,6 +39,7 @@ For example, $~\displaystyle\frac{dy}{dx}=\sin y$
    \end{aligned}$$
 
 ```{python}
+#| code-fold: true
 #| fig-align: "center"
 import numpy as np
 import matplotlib.pyplot as plt
@@ -711,6 +712,7 @@ $~$
 
 
 ```{python}
+#| code-fold: true
 # | fig-cap: "Euler's Method"
 
 x0 = 2.0
@@ -863,6 +865,7 @@ xy_t = sol.y.T
 * Use the graphs to approximate the period of each population
 
 ```{python}
+#| code-fold: true
 # | fig-cap: "Lotka-Volterra predator-prey model"
 
 fig, ax = plt.subplots(1, 1, figsize=(6, 5))

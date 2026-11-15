@@ -3310,6 +3310,7 @@ $~$
 **Example** $\,$ Nonlinear Least Squares: $\text{ } f(x) = 2.5e^{-1.3x}$
 
 ```{python}
+#| code-fold: true
 # | echo: true
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
@@ -3785,6 +3786,7 @@ $$\color{red}{5v^2 - u = 0}$$
 This is a parabola that opens along the $u$-axis with its vertex at the origin in the $(u, v)$ coordinate system
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -3809,6 +3811,7 @@ plt.show()
 ```
 
 ```{python}
+#| code-fold: true
 # Step 1: Define the (u, v) parabola
 v_vals = np.linspace(-2, 2, 400)
 u_vals = 5 *v_vals**2  # From u = 5v^2

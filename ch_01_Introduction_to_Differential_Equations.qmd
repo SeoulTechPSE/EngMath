@@ -225,6 +225,7 @@ $$
 \end{aligned}$$
 
 ```{python}
+#| code-fold: true
 # | echo: true
 # | fig-cap: "Exercises 1.2: 3"
 import numpy as np

@@ -5,6 +5,8 @@
     chapter, and the example gets a link "Answer k" to it.
   * <font color="..."> ... </font> becomes \textcolor{...}{...}, and the text
     stand-in of a web-only output (an animation video) is dropped.
+  * Code of cells folded on the web (#| code-fold: true, the plotting code)
+    is dropped; their figures stay.
   * Links to files of the site (solution PDFs, ...) and references to the
     appendices, which are not in the PDF, point to the published site.
   * Font-size commands such as \scriptsize and blank lines are dropped inside
@@ -93,6 +95,8 @@ local inline_filter = {
   -- text stand-in for a web-only output (the animation videos)
   CodeBlock = function(cb)
     if cb.text:match('^<IPython%.core%.display%.%w+ object>%s*$') then return {} end
+    -- plotting code is folded on the web (code-fold: true): print only its figure
+    if cb.attributes['code-fold'] then return {} end
   end,
   Cite = function(c)
     local id = c.citations[1].id

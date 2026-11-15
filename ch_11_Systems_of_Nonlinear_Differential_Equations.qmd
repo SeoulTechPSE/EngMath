@@ -12,6 +12,8 @@ jupyter: python3
 * determine local stability by linearization, $\,$and use the phase-plane method when linearization is not decisive
 * analyze models such as the pendulum, $\,$the bead on a wire, $\,$predator-prey and competition
 * rule out periodic solutions (Bendixson, $\,$Dulac) $\,$or show that they exist (Poincaré-Bendixson)
+
+**Builds on** $\,$ homogeneous linear systems (@sec-10-2) and partial derivatives (@sec-9-4)
 :::
 
 ## Autonomous Systems  {#sec-11-1}
@@ -171,6 +173,7 @@ A.eigenvects()
 ```
 
 ```{python}
+#| code-fold: true
 import matplotlib.pyplot as plt
 
 w = 1
@@ -260,6 +263,7 @@ $\mathbf{x}'=\mathbf{A}\mathbf{x}$ as either a stable node, an unstable node, or
 [Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
+#| code-fold: true
 import numpy as np
 
 w = 1
@@ -350,6 +354,7 @@ $(\text{c})$ $\begin{pmatrix} \;\;2 & 4\\ -1 & 6 \end{pmatrix}$
 [Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
+#| code-fold: true
 w = 1
 xp = np.linspace(-w, w, 6)
 yp = np.linspace(-w, w, 6)
@@ -428,6 +433,7 @@ $(\text{b})$ $\begin{pmatrix} -1 & -4\\ \;\;1 & -1 \end{pmatrix}$
 [Solution](files/solutions/sol_8_2.pdf){target="_blank"}
 
 ```{python}
+#| code-fold: true
 w = 1
 xp = np.linspace(-w, w, 6)
 yp = np.linspace(-w, w, 6)
@@ -478,7 +484,7 @@ $\mathbf{x}_0\neq\mathbf{0}$
 
 ## Linearization and Local Stability {#sec-11-3}
 
-Here we will use linearization as a means of analyzing nonlinear DEs and nonlinear systems; the idea is to replace them by linear DEs and linear systems. Let $\mathbf{x}_1$ be a critical point of an autonomous system, and let $\mathbf{x}=\mathbf{x}(t)$ denote the solution that satisfies the initial condition $\mathbf{x}(0)=\mathbf{x}_0$, where $\mathbf{x}_0\neq\mathbf{x}_1$.
+Here we will use linearization as a means of analyzing nonlinear DEs and nonlinear systems; the idea is to replace them by linear DEs and linear systems. The stability test for linear systems (@sec-11-2), $\,$based on the eigenvalues of $\mathbf{x}'=\mathbf{A}\mathbf{x}$ (@sec-10-2), $\,$is applied to the Jacobian matrix. Let $\mathbf{x}_1$ be a critical point of an autonomous system, and let $\mathbf{x}=\mathbf{x}(t)$ denote the solution that satisfies the initial condition $\mathbf{x}(0)=\mathbf{x}_0$, where $\mathbf{x}_0\neq\mathbf{x}_1$.
 
 * $\mathbf{x}_1$ is a **stable critical point**
   
@@ -692,6 +698,7 @@ Note that $y=0$ when $x=-x_0$. In addition, the right-hand side is positive when
 so each $x$ has two corresponding values of $y$. The solution $\mathbf{x}(t)$ that satisfies $\mathbf{x}(0)=(x_0,0)$ is therefore periodic, and so $(0,0)$ is a center
 
 ```{python}
+#| code-fold: true
 from scipy.integrate import solve_ivp
 
 def myODE(t, y):
@@ -774,6 +781,7 @@ Many applications from physics and biology give rise to nonlinear autonomous sec
   Note that $y=0$ when $x=-x_0$, and that $(2g/l)(\cos x -\cos x_0)>0$ for $|x|<|x_0|<\pi$. Thus each such $x$ has two corresponding values of $y$, and so the solution $\mathbf{x}(t)$ that satisfies $\mathbf{x}(0)=(x_0,0)$ is periodic. We may conclude that $(0,0)$ is a center. In the case of large initial velocities, the pendulum spins in complete circles about the pivot  
 
 ```{python}
+#| code-fold: true
 w1 = 2*np.pi
 w2 = np.pi
 xp = np.linspace(-w1, w1, 100)
@@ -889,6 +897,7 @@ Trajectories $y^2=\nu_0^2+2g\left(\operatorname{sech}x-\operatorname{sech}x_0\ri
 [Solution](files/solutions/sol_8_4.pdf){target="_blank"}
 
 ```{python}
+#| code-fold: true
 w = 10
 xp = np.linspace(-w, w, 200)
 yp = np.linspace(-w, w, 200)
@@ -986,6 +995,7 @@ plt.show()
 **Example** $~$ If we let $a=0.1$, $b=0.002$, $c=0.0025$, and $d=0.2$ in the Lotka-Volterra predator-prey model, the critical point in the first quadrant is $(d/c,a/b)=(80,50)$, and we know that this critical point is a center. The eigenvalues of $\mathbf{g}'((80,50))$ are $\lambda=\pm(\sqrt{2}/10)i$, and so the solutions near the critical point have period $p\simeq 10\sqrt{2}\pi$
 
 ```{python}
+#| code-fold: true
 a = 0.1
 b = 0.002
 c = 0.0025
@@ -1064,6 +1074,7 @@ The coexistence point is unstable, so almost every solution tends to $(50,0)$ or
 [Solution](files/solutions/sol_8_4.pdf){target="_blank"}
 
 ```{python}
+#| code-fold: true
 w = 120
 xp = np.linspace(0, w, 200)
 yp = np.linspace(0, w, 200)
@@ -1260,6 +1271,7 @@ $$\begin{aligned}
 Show that the Van der Pol DE has a periodic solution when $\mu>0$
 
 ```{python}
+#| code-fold: true
 w = 3
 xp = np.linspace(-w, w, 100)
 yp = np.linspace(-w, w, 100)
@@ -1308,6 +1320,7 @@ $$
 Therefore, $\tau=\mu$, $\Delta=1$, and $\tau^2 -4\Delta=\mu^2-4$. Since $\mu >0$, the critical point is either an unstable spiral point or an unstable node. By part (a) of **Poincar&eacute;&ndash;Bendixson I**, the system has at least one periodic solution in $\mathbb{R}$
 
 ```{python}
+#| code-fold: true
 td = 15
 w = 5
 mu_ = np.array([1, 2.5])

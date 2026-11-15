@@ -12,6 +12,8 @@ jupyter: python3
 * solve vibrating strings and drumheads by separation of variables, $\,$and nonhomogeneous problems by finite transforms
 * nondimensionalize problems, $\,$classify second-order PDEs and reduce a hyperbolic equation to canonical form
 * solve first-order linear and nonlinear (conservation) equations and hyperbolic systems by the method of characteristics, $\,$including shocks
+
+**Builds on** $\,$ separation of variables and integral transforms (@sec-x1), Fourier–Bessel series (@sec-12-6) and diagonalization (@sec-8-12)
 :::
 
 
@@ -175,6 +177,7 @@ This is what we were aiming for, $\,$and it is called the **D'Alembert solution*
 $~$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation, rc
@@ -185,6 +188,7 @@ plt.rcParams['xtick.direction'] = 'in'
 plt.rcParams['ytick.direction'] = 'in'
 ```
 ```{python}
+#| code-fold: true
 from scipy.special import erf
 
 fig = plt.figure(figsize=(6, 4))
@@ -199,6 +203,7 @@ plt.close()
 ```
 
 ```{python}
+#| code-fold: true
 # | fig-cap: '<center><font size="3px">Initial Velocity Given: $\;u_t(x,0)=e^{-x^2}$</font></center>'
 c = 1
 ax.axhline(np.sqrt(np.pi)/(2.0*c), color='gray', ls=':', lw=1)   # plateau height
@@ -331,6 +336,7 @@ $$\scriptsize \begin{aligned}
 $~$
 
 ```{python}
+#| code-fold: true
 fig = plt.figure(figsize=(6, 4))
 ax = plt.axes(xlim=(-15, 15), ylim=(-0.1, 1.5))
 
@@ -350,6 +356,7 @@ def init():
 ```
 
 ```{python}
+#| code-fold: true
 c = 1
 def animate(t):
     time_text.set_text(f't = {t:3.1f}')    
@@ -381,6 +388,7 @@ def animate(t):
 ```
 
 ```{python}
+#| code-fold: true
 # | fig-cap: '<center><font size="3px">Initial Velocity Given: $\;u_t(x,0)=\begin{cases} 1 & \;-1 < x < 1 \\ 0 & \text{everywhere else} \end{cases}$</font></center>'
 tt = list(np.linspace(0, 20, 50))
 anim = animation.FuncAnimation(fig, animate, init_func=init, 
@@ -507,6 +515,7 @@ $u(x,t)=\tfrac12\,\chi_{(1+ct,\ 2+ct)}(x)+\tfrac12\,\chi_{(1-ct,\ 2-ct)}(x)-\tfr
 $~$
 
 ```{python}
+#| code-fold: true
 fig = plt.figure(figsize=(6, 4))
 ax = plt.axes(xlim=(0, 5), ylim=(-1.0, 1.5))
 
@@ -526,6 +535,7 @@ def init():
 ```
 
 ```{python}
+#| code-fold: true
 c = 1
 def f_i(x):
     if x >= 1 and x <= 2:
@@ -552,6 +562,7 @@ def animate(t):
 ```
 
 ```{python}
+#| code-fold: true
 # | fig-cap: '<center><font size="3px">Semi-infinite String</font></center>'
 tt = list(np.linspace(0, 7, 100))
 anim = animation.FuncAnimation(fig, animate, 
@@ -601,6 +612,7 @@ $$\begin{aligned}
   \end{aligned}$$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -1351,6 +1363,7 @@ Unlike 3D, the wave leaves a tail that decays slowly instead of vanishing
 **Huygens' Principle in Pictures** $\,$ The two examples with $\,u_t(\mathbf{x},0)=1\,$ in the unit ball (3D) or the unit disk (2D), $\,c=1$
 
 ```{python}
+#| code-fold: true
 #| label: fig-huygens
 #| fig-cap: "Spherical (3D) and cylindrical (2D) waves from the same initial velocity: snapshots $u(r,t)$ and the signal $u(3,t)$ received at $r=3$"
 #| fig-align: center
@@ -1841,6 +1854,7 @@ $$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-resonance
 #| fig-cap: "Midpoint displacement $u(1/2,t)$ for $c=1$: formula (lines) and a finite-difference solution (circles)"
 #| fig-align: center
@@ -1999,11 +2013,12 @@ $~$
       R_n(1)\phantom{|} &= 0 
     \end{aligned}}$$
 
-    It is the parameterized Bessel's equation and has two linearly independent solutions $\color{red}{J_n(\sqrt{\lambda}r)}$ and $\color{red}{Y_n(\sqrt{\lambda}r)}$
+    It is the parameterized Bessel's equation and has two linearly independent solutions $\color{red}{J_n(\sqrt{\lambda}r)}$ and $\color{red}{Y_n(\sqrt{\lambda}r)}$ (Bessel functions: @sec-5-3; Fourier–Bessel series: @sec-12-6)
 
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-Bessel-functions
 #| fig-cap: "Bessel's functions"
 #| fig-align: center
@@ -2054,6 +2069,7 @@ $\,$With these roots, $\,$we have just solved the Helmholtz eigenvalue problem
 $~$    
 
 ```{python}
+#| code-fold: true
 #| label: fig-Helmholtz
 #| fig-cap: "Helmholtz Eigenfunctions: $\\,U_{nm}(r, \\theta)$"
 #| fig-align: center
@@ -2151,6 +2167,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| fig-align: center
 from mpl_toolkits.axisartist.axislines import SubplotZero
 
@@ -2205,6 +2222,7 @@ $~$
 * In general, $\,$what we would do is to expand the initial position $\,f(r)\,$ into the sum of these basic shapes $\,J_0(\alpha_{0m} r)$, $\,$observe the vibration for each one and then add them up
 
 ```{python}
+#| code-fold: true
 fig = plt.figure(figsize=(7, 5))
 ax = plt.axes(xlim=(0, 1), ylim=(-1.5, 1.5))
 
@@ -2218,6 +2236,7 @@ plt.close()
 ```
 
 ```{python}
+#| code-fold: true
 #| fig-align: center
 line1, = ax.plot([], [], lw=1, ls=':')
 line2, = ax.plot([], [], lw=1, ls=':')
@@ -3069,6 +3088,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-shock-rarefaction
 #| fig-cap: "$u_t+(u^2)_x=0$: the rarefaction fan (left, middle) and the shock of the traffic example (right); exact solutions (lines) and an upwind finite-volume solution (circles)"
 #| fig-align: center
@@ -3269,7 +3289,7 @@ $~$
     0 & -4 
   \end{bmatrix}\qquad$$
 
-* These are the two uncoupled equations that we can solve independently
+* These are the two uncoupled equations that we can solve independently ($\mathbf{P}$ diagonalizes $\mathbf{A}$ as in @sec-8-12)
 
   $$\begin{aligned}
       &\frac{\partial v_1}{\partial t} +4\frac{\partial v_1}{\partial x} = 0 \\ 
@@ -3528,6 +3548,7 @@ where $c = \sqrt{\rho/T}$
 $~$
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -3630,6 +3651,7 @@ Assuming the initial velocity $u_t(x,0)=0$, describe the solution of this proble
 **Solution**
 
 ```{python}
+#| code-fold: true
 # Re-import libraries due to code state reset
 import numpy as np
 import matplotlib.pyplot as plt
@@ -3661,6 +3683,7 @@ def fb(x):
 ```
 
 ```{python}
+#| code-fold: true
 # Create meshgrid
 x = np.linspace(-10, 10, 400)
 t = np.linspace(0, 6, 200)
@@ -3698,6 +3721,7 @@ plt.show()
 ```
 
 ```{python}
+#| code-fold: true
 # Define u(x, t) = 1/2 [f(x -t) +f(x +t)] at t = 4
 
 t = 4
@@ -3726,6 +3750,7 @@ plt.show()
 ```
 
 ```{python}
+#| code-fold: true
 # Create grid
 x = np.linspace(-10, 10, 400)
 t_vals_light = np.linspace(0, 6, 40)
@@ -3849,6 +3874,7 @@ $$u\left( \frac{3}{8}, 3 \right) = \frac{1}{2} \left[ \tilde{f}\left(\frac{3}{8}
 | $3 \leq x < 4$   | $\phantom{-}(x - 3)^2$   | Odd reflection about $x = 3$ of previous term |
 
 ```{python}
+#| code-fold: true
 import numpy as np
 import matplotlib.pyplot as plt
 

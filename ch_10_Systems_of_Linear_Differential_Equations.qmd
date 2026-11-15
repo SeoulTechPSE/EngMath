@@ -11,6 +11,8 @@ jupyter: python3
 * solve homogeneous systems with distinct, $\,$repeated and complex eigenvalues
 * solve nonhomogeneous systems by undetermined coefficients, $\,$variation of parameters and diagonalization
 * compute the matrix exponential by its series or by the Laplace transform
+
+**Builds on** $\,$ eigenvalues and eigenvectors (@sec-8-8), diagonalization (@sec-8-12) and linear ODEs (@sec-3)
 :::
 
 
@@ -244,6 +246,7 @@ $$\left.\begin{array}{cl}
   $$\mathbf{x}=c_1 \mathbf{x}_1 +c_2\mathbf{x}_2$$
 
 ```{python}
+#| code-fold: true
 # | echo: true
 import numpy as np
 import matplotlib.pyplot as plt
@@ -261,6 +264,7 @@ y_2 = 2/3 *xl
 ```
 
 ```{python}
+#| code-fold: true
 # | echo: true
 # | label: fig-ch10
 # | fig-cap: "Phase Portrait of Saddle-Point System"
@@ -653,6 +657,7 @@ A_.eigenvects()
 ```
 
 ```{python}
+#| code-fold: true
 # | echo: true
 # | label: fig-ch10-defective-system 
 # | fig-cap: "Phase Portrait of Defective System"
@@ -856,6 +861,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 # | echo: true
 # | label: fig-ch10-Times-Series-Complex-Eigenvalues 
 # | fig-cap: "Time Series of System with Complex Eigenvalues"
@@ -882,6 +888,7 @@ ax.set_ylabel('x, y');
 ```
 
 ```{python}
+#| code-fold: true
 # | echo: true
 # | label: fig-ch10-Complex-Eigenvalues 
 # | fig-cap: "Phase Portrait of System with Complex Eigenvalues"
@@ -914,6 +921,8 @@ ax.tick_params(axis='both', direction='in')
 :::
 
 ## Solution by Diagonalization {#sec-10-3}
+
+Diagonalization of a matrix, $\,\mathbf{P}^{-1}\mathbf{A}\mathbf{P}=\mathbf{D}$, $\,$is treated in @sec-8-12
 
 * A homogeneous system
 

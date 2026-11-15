@@ -12,7 +12,21 @@ jupyter: python3
 
 ---
 
+## How to Use These Notes {.unnumbered}
+
+* Each chapter opens with its **learning objectives** and a **Builds on** line that names the earlier sections it uses, $\,$and it ends with a **Summary** table and **Worked Exercises**
+* Some examples are worked out in the text. $\,$The others are for practice: $\,$a collapsed **Answer** box gives the short answer, $\,$and the **Solution** link opens a worked solution (PDF, in Korean)
+* The Python code that draws the figures is folded: $\,$click **Code** above a figure to see it. $\,$The PDF edition prints only the figures, $\,$and its animations are shown as four still frames
+* **Try it in Python** boxes link to the appendices, $\,$which are also available as Colab notebooks
+* Cross-references such as @sec-12-3 are links; $\,$follow them back to the material a step relies on
+
+### Course Map {.unnumbered}
+
+![](figures/index_course_map.svg "Course map"){width="100%" fig-align="center" fig-alt="Course map: in the first semester, introduction, first-order and higher-order ODEs lead to the Laplace transform, series solutions and, with matrices, to linear and then nonlinear systems; in the second semester, vectors lead to vector calculus, and Fourier series lead to parabolic PDEs and then to hyperbolic and elliptic PDEs"}
+
 ::: {.content-visible when-format="html"}
+---
+
 ## Contents {.unnumbered}
 
 ### First Semester

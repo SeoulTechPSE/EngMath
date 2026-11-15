@@ -12,6 +12,8 @@ jupyter: python3
 * find a second solution by reduction of order, $\,$and particular solutions by undetermined coefficients and by variation of parameters
 * solve boundary-value problems with influence and Green's functions
 * model spring-mass systems and recognize resonance, $\,$and treat nonlinear equations by substitution, $\,$Taylor series or numerically
+
+**Builds on** $\,$ first-order linear equations (@sec-2-3)
 :::
 
 
@@ -1242,6 +1244,7 @@ sol2 = solve_ivp(func, [0, tf], [0, -8], t_eval=t_eval)
 ---
 
 ```{python}
+#| code-fold: true
 # | label: fig-ch03-nonlinear
 # | fig-cap: $\displaystyle\frac{d^2x}{dt^2} +\frac{dx}{dt} +x +x^3=0$
 import matplotlib.pyplot as plt
@@ -1298,6 +1301,7 @@ sol = solve_ivp(func, [0, tf], [0, 1, 0, -1], t_eval=t_eval)
 ```
 
 ```{python}
+#| code-fold: true
 # | label: fig-ch03-linear-system
 # | fig-cap: 'Coupled Spring/Mass System'
 

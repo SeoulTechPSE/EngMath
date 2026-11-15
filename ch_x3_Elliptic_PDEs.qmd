@@ -12,6 +12,8 @@ jupyter: python3
 * solve Laplace's equation in spherical coordinates with Legendre functions and spherical harmonics
 * solve a nonhomogeneous Dirichlet problem with a Green's function
 * apply these methods to the hydrogen atom
+
+**Builds on** $\,$ the Laplacian and the divergence theorem (@sec-9-7, @sec-9-16), Bessel and Legendre series (@sec-12-6) and Green's functions for ODEs (@sec-GF)
 :::
 
 
@@ -463,6 +465,7 @@ $$ \nabla^2u=0,\;\; 0<r<1, \qquad u(1,\theta)=\begin{cases} 1 & 0<\theta<\pi \\ 
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-disk-half
 #| fig-cap: "Poisson kernel at $\\theta=0$ (left), the solution with half of the boundary at $1$ (middle), and the series at $r=1$ and $r=0.9$ (right)"
 #| fig-align: center
@@ -545,6 +548,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-relaxation
 #| fig-cap: "Square with the top side at $u=1$: finite differences ($h=1/20$, colors and circles) against the series (black lines), and the convergence of the three relaxation methods"
 #| fig-align: center
@@ -908,7 +912,7 @@ $~$
   
     Equations like this are called singular differential equations. $\,$We arrive at a very interesting conclusion
 
-  * <font color=red>The only bounded solutions of Legendre's equation occur when $\,\lambda=n(n +1)$, $\,n=0,1,2,\cdots\,$ and these solutions are Legendre polynomials $\,P_n(x)$</font>
+  * <font color=red>The only bounded solutions of Legendre's equation occur when $\,\lambda=n(n +1)$, $\,n=0,1,2,\cdots\,$ and these solutions are Legendre polynomials $\,P_n(x)$</font> (Legendre polynomials: @sec-5-3; Legendre series: @sec-12-6)
 
     $$\begin{aligned}
       &P_0(x) = 1 \\ 
@@ -1015,6 +1019,7 @@ $~$
 $~$
 
 ```{python}
+#| code-fold: true
 #| label: fig-hemispheres
 #| fig-cap: "The two examples in a meridian plane (left, middle; $z$ is the polar axis) and the Legendre series of the hemisphere example on the surface and at $r=0.8$ (right)"
 #| fig-align: center
@@ -1336,7 +1341,7 @@ $~$
 
 ## A Nonhomogeneous Dirichlet Problem (Green's Function) {#sec-x3-36}
 
-* A common problem in applied mathematics is to find the potential in some region of space in response to a forcing term $\,f$. $\,$A typical example would be to find the potential inside a circle in two dimensions that satisfies
+* A common problem in applied mathematics is to find the potential in some region of space in response to a forcing term $\,f$. $\,$A typical example would be to find the potential inside a circle in two dimensions that satisfies $\,$Green's functions for boundary-value problems of ODEs were introduced in @sec-GF
 
   $$ u_{rr} +\frac{1}{r}u_r + \frac{1}{r^2} u_{\theta\theta}=-f(r,\theta), \;\;\;0 < r < 1 $$
 
@@ -1435,6 +1440,7 @@ $$ \color{red}{u(r,\theta) = \frac{1}{2\pi} \int_0^{2\pi} \int_0^1 \ln \left(\rh
 This is Green's function solution of Poisson equation inside a circle
 
 ```{python}
+#| code-fold: true
 #| label: fig-green-disk
 #| fig-cap: "Green's function of the unit disk for a source at $(0.5,0)$ with its image at $(2,0)$ (left), and the Green's function solution for $f=q=1$ computed by quadrature (right)"
 #| fig-align: center
