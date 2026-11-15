@@ -12,6 +12,7 @@ jupyter: python3
 * determine local stability by linearization, $\,$and use the phase-plane method when linearization is not decisive
 * analyze models such as the pendulum, $\,$the bead on a wire, $\,$predator-prey and competition
 * rule out periodic solutions (Bendixson, $\,$Dulac) $\,$or show that they exist (Poincaré-Bendixson)
+* find and classify the multiple steady states of a cooled CSTR
 
 **Builds on** $\,$ homogeneous linear systems (@sec-10-2) and partial derivatives (@sec-9-4)
 :::
@@ -1395,6 +1396,102 @@ $\mathbf{x}(0)=\mathbf{x}_0$, use **Poincar&eacute;&ndash;Bendixson II** to find
 :::
 
 [Solution](files/solutions/sol_8_5.pdf){target="_blank"}
+
+## Chemical Engineering Application {#sec-11-6}
+
+**Example** $\,$ Multiple steady states of a cooled CSTR
+
+* An exothermic first-order reaction $A\to B$ runs in a CSTR with a cooling jacket. $\,$In dimensionless form, $\,$with the conversion $x_1$, $\,$the temperature rise $x_2$ above the feed temperature, $\,$and time measured in residence times, $\,$the mole and energy balances are
+
+  $$\begin{aligned}
+    x_1' &= -x_1+\mathrm{Da}\,(1-x_1)\,e^{x_2}\\
+    x_2' &= -(1+\beta)\,x_2+B\,\mathrm{Da}\,(1-x_1)\,e^{x_2}
+  \end{aligned}$$
+
+  $\mathrm{Da}$ is the Damköhler number, $\,B$ the adiabatic temperature rise, $\,\beta$ the cooling capacity, $\,$and $e^{x_2}$ approximates the Arrhenius dependence of the rate on temperature. $\,$We take $\mathrm{Da}=0.072$, $\,B=8$, $\,\beta=0.3$
+
+* At a critical point, $\,x_1=\mathrm{Da}\,e^{x_2}/(1+\mathrm{Da}\,e^{x_2})$, $\,$and the second equation becomes a balance of [heat removed]{.blue} and [heat generated]{.red}:
+
+  $$(1+\beta)\,x_2=\frac{B\,\mathrm{Da}\,e^{x_2}}{1+\mathrm{Da}\,e^{x_2}}$$
+
+  The straight line and the S-shaped curve meet three times (@fig-ch11-cstr, left), $\,$so the reactor has [three steady states]{.blue}
+
+* Linearization (@sec-11-3), $\,$using $\,\mathrm{Da}\,(1-x_1)e^{x_2}=x_1\,$ at a critical point, $\,$gives
+
+  $$\mathbf g'=\begin{pmatrix} -1-\mathrm{Da}\,e^{x_2} & x_1\\ -B\,\mathrm{Da}\,e^{x_2} & -(1+\beta)+Bx_1\end{pmatrix}$$
+
+  | Steady state | $x_1$ | $x_2$ | $\tau$ | $\Delta$ | Type |
+  |:--|:-:|:-:|:-:|:-:|:--|
+  | low (extinction) | $0.171$ | $1.051$ | $-1.14$ | $0.20$ | stable node |
+  | middle | $0.242$ | $1.490$ | $-0.68$ | $-0.22$ | saddle point (unstable) |
+  | high (ignition) | $0.965$ | $5.936$ | $-21.8$ | $29.0$ | stable node |
+
+* Which stable state the reactor reaches depends on how it is started: $\,$the two trajectories that enter the saddle point (its stable separatrix) divide the phase plane into two [basins of attraction]{.blue}. $\,$A small disturbance cannot move the reactor across this curve, $\,$but a large one can ignite or extinguish it
+
+```{python}
+#| code-fold: true
+#| label: fig-ch11-cstr
+#| fig-cap: "Cooled CSTR ($\\mathrm{Da}=0.072$, $\\,B=8$, $\\,\\beta=0.3$): $\\,$heat generation and removal (left) and the phase portrait (right), $\\,$with the separatrix of the saddle point in black"
+#| fig-alt: "Left: an S-shaped heat-generation curve crossing a straight heat-removal line at three points. Right: phase portrait in which trajectories go either to the low or to the high steady state, separated by a black curve through the middle saddle point"
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
+
+Da, B, beta = 0.072, 8.0, 0.3
+
+def f(t, x):
+    r = Da *(1 -x[0]) *np.exp(x[1])
+    return [-x[0] +r, -(1 +beta) *x[1] +B *r]
+
+G = lambda x2: B *Da *np.exp(x2) /(1 +Da *np.exp(x2))
+x2s = [brentq(lambda s: G(s) -(1 +beta) *s, a, b) for a, b in [(0.5, 1.2), (1.2, 2), (5, 7)]]
+x1s = [(1 +beta) *s /B for s in x2s]
+
+fig, axes = plt.subplots(1, 2, figsize=(7.5, 3.4))
+
+ax = axes[0]
+s = np.linspace(0, 7, 301)
+ax.plot(s, G(s), 'r', label='generated')
+ax.plot(s, (1 +beta) *s, 'b', label='removed')
+ax.plot(x2s, [(1 +beta) *v for v in x2s], 'ko', ms=4)
+ax.set_xlim(0, 7)
+ax.set_ylim(0, 9)
+ax.set_xlabel('$x_2$')
+ax.legend(fontsize=9)
+
+ax = axes[1]
+X1, X2 = np.meshgrid(np.linspace(0, 1, 60), np.linspace(0, 7, 60))
+U, V = f(0, [X1, X2])
+ax.streamplot(X1, X2, U, V, density=1.0, linewidth=0.5, color='tab:blue')
+
+# stable separatrix: integrate backward in time from both sides of the saddle
+J = np.array([[-1 -Da *np.exp(x2s[1]), x1s[1]],
+              [-B *Da *np.exp(x2s[1]), -(1 +beta) +B *x1s[1]]])
+lam, vec = np.linalg.eig(J)
+v = vec[:, np.argmin(lam)]
+leave = lambda t, x: min(x[0], 1 -x[0], x[1], 7 -x[1])
+leave.terminal = True
+for sgn in [1, -1]:
+    x0 = np.array([x1s[1], x2s[1]]) +1e-4 *sgn *v
+    back = solve_ivp(f, [0, -20], x0, max_step=0.01, events=leave)
+    ax.plot(back.y[0], back.y[1], 'k', lw=1.5)
+ax.plot(x1s, x2s, 'o', color='tab:red', ms=5)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 7)
+ax.set_xlabel('$x_1$ (conversion)')
+ax.set_ylabel('$x_2$ (temperature)')
+
+plt.tight_layout()
+plt.show()
+```
+
+**Example** $\,$ Show that the middle steady state is a saddle point, $\,$using $\,\mathrm{Da}\,e^{x_2}=0.3195$ and $x_1=0.2422$ there. $\,$Explain from the left panel of @fig-ch11-cstr why it is unstable
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathbf g'=\begin{pmatrix}-1.3195 & 0.2422\\ -2.5563 & 0.6373\end{pmatrix}$, $\,\Delta=-0.841+0.619=-0.222<0$: $\,$a saddle point. $\,$At the middle intersection the generation curve is steeper than the removal line, $\,$so a small rise in temperature raises the heat generated more than the heat removed, $\,$and the temperature keeps rising (a small drop keeps falling)
+:::
 
 ## Summary {.unnumbered}
 

@@ -11,6 +11,7 @@ jupyter: python3
 * solve homogeneous systems with distinct, $\,$repeated and complex eigenvalues
 * solve nonhomogeneous systems by undetermined coefficients, $\,$variation of parameters and diagonalization
 * compute the matrix exponential by its series or by the Laplace transform
+* solve the consecutive reactions $A\to B\to C$ as a linear system
 
 **Builds on** $\,$ eigenvalues and eigenvectors (@sec-8-8), diagonalization (@sec-8-12) and linear ODEs (@sec-3)
 :::
@@ -1583,6 +1584,73 @@ t = sympy.symbols('t', real = True, positive = True)
 sympy.exp(A*t)
 ```
 $~$
+
+## Chemical Engineering Application {#sec-10-6}
+
+**Example** $\,$ Consecutive reactions in a batch reactor
+
+* In a batch reactor the first-order reactions $\,A\xrightarrow{k_1}B\xrightarrow{k_2}C\,$ take place, $\,$and only $A$ is present at the start. $\,$With the concentrations scaled by the initial concentration of $A$, $\,\mathbf x=(c_A,\,c_B,\,c_C)^T/c_{A0}$,
+
+  $$\mathbf x'=\mathbf{Ax},\qquad
+    \mathbf A=\begin{pmatrix} -k_1 & 0 & 0\\ \phantom{-}k_1 & -k_2 & 0\\ 0 & \phantom{-}k_2 & 0\end{pmatrix},\qquad
+    \mathbf x(0)=\begin{pmatrix}1\\0\\0\end{pmatrix}$$
+
+  This is the radioactive series of @sec-2-9, $\,$now solved as a linear system
+
+* $\mathbf A$ is triangular, $\,$so its eigenvalues are its diagonal entries $\,\lambda=-k_1,\,-k_2,\,0$. $\,$For $k_1\neq k_2$ the eigenvectors are
+
+  $$\mathbf k_1=\begin{pmatrix}k_2-k_1\\k_1\\-k_2\end{pmatrix},\qquad
+    \mathbf k_2=\begin{pmatrix}0\\1\\-1\end{pmatrix},\qquad
+    \mathbf k_3=\begin{pmatrix}0\\0\\1\end{pmatrix}$$
+
+  The entries of $\mathbf k_1$ and $\mathbf k_2$ add up to zero: $\,$the decaying modes only move material between species, $\,$and the total $c_A+c_B+c_C$ stays constant. $\,$Fitting $\mathbf x=c_1\mathbf k_1e^{-k_1t}+c_2\mathbf k_2e^{-k_2t}+c_3\mathbf k_3$ to $\mathbf x(0)$ gives $\,c_1=1/(k_2-k_1)$, $\,c_2=-k_1/(k_2-k_1)$, $\,c_3=1$:
+
+  $$\color{red}{\frac{c_B}{c_{A0}}=\frac{k_1}{k_2-k_1}\left(e^{-k_1t}-e^{-k_2t}\right)},\qquad
+    \frac{c_C}{c_{A0}}=1-\frac{k_2e^{-k_1t}-k_1e^{-k_2t}}{k_2-k_1}$$
+
+* The intermediate $B$ is usually the desired product. $\,$Setting $dc_B/dt=0$ gives the best time to stop the reactor and the largest yield:
+
+  $$t_{\max}=\frac{\ln(k_2/k_1)}{k_2-k_1},\qquad
+    \frac{c_{B,\max}}{c_{A0}}=\left(\frac{k_1}{k_2}\right)^{k_2/(k_2-k_1)}$$
+
+  For $k_1=1\ \mathrm h^{-1}$ and $k_2=0.5\ \mathrm h^{-1}$: $\,t_{\max}=2\ln2\approx1.39$ h $\,$and$\,$ $c_{B,\max}=0.5\,c_{A0}$
+
+```{python}
+#| code-fold: true
+#| label: fig-ch10-series
+#| fig-cap: "Consecutive reactions $A\\to B\\to C$ with $k_1=1$, $\\,k_2=0.5\\ \\mathrm{h}^{-1}$: $\\,$solution from the eigenvectors (lines) and from `solve_ivp` (circles)"
+#| fig-alt: "Concentration of A decaying, of B rising to a maximum of 0.5 at 1.39 hours and then decaying, and of C rising toward one; numerical points lie on the analytical curves"
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+k1, k2 = 1.0, 0.5
+A = np.array([[-k1, 0, 0], [k1, -k2, 0], [0, k2, 0]])
+t = np.linspace(0, 8, 401)
+cA = np.exp(-k1 *t)
+cB = k1 /(k2 -k1) *(np.exp(-k1 *t) -np.exp(-k2 *t))
+cC = 1 -cA -cB
+sol = solve_ivp(lambda t, x: A @ x, [0, 8], [1, 0, 0], t_eval=np.arange(0, 8.1, 0.5), rtol=1e-8)
+
+fig, ax = plt.subplots(figsize=(6, 3.6))
+for c, xn, name in zip([cA, cB, cC], sol.y, ['A', 'B', 'C']):
+    line, = ax.plot(t, c, label=f'$c_{name}/c_{{A0}}$')
+    ax.plot(sol.t, xn, 'o', mfc='none', color=line.get_color(), ms=5)
+tm = np.log(k2 /k1) /(k2 -k1)
+ax.plot([tm, tm], [0, 0.5], 'k:', lw=1)
+ax.set_xlim(0, 8)
+ax.set_ylim(0, 1.05)
+ax.set_xlabel('$t$ (h)')
+ax.legend(fontsize=9, loc='center right')
+plt.show()
+```
+
+**Example** $\,$ Solve the same problem when $k_1=k_2=k$. $\,$Find $c_B(t)$, $\,$the time of its maximum and the maximum yield
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\lambda=-k$ is a repeated eigenvalue with only one eigenvector, $\,(0,1,-1)^T$, $\,$so the solution contains $te^{-kt}$ (@sec-10-2). $\,$Solving $c_A'=-kc_A$, $\,$then $c_B'+kc_B=kc_{A0}e^{-kt}$: $\ c_B=c_{A0}\,kt\,e^{-kt}$, $\,$largest at $t=1/k$ with $c_{B,\max}=c_{A0}/e\approx0.368\,c_{A0}$ $\,$(also the limit of the formulas above as $k_2\to k_1$)
+:::
 
 ## Summary {.unnumbered}
 

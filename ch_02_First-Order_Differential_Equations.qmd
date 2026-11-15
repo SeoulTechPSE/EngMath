@@ -11,6 +11,7 @@ jupyter: python3
 * recognize separable, linear, exact, homogeneous, Bernoulli and $y'=f(Ax+By+C)$ equations, $\,$and solve each by its method
 * approximate a solution by Euler's method and see how the step size $h$ affects the error
 * set up and solve first-order models: $\,$growth and decay, series circuits, the logistic equation, radioactive series and predator-prey systems
+* model a stirred-tank reactor by a mole balance, $\,$and find its steady state and start-up time
 :::
 
 ## Solution Curves Without a Solution {#sec-2-1}
@@ -890,6 +891,59 @@ Both populations are periodic with the same period, $T\approx45$ (time units)
 
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** The Lotka-Volterra and Lorenz systems solved with `solve_ivp`, with phase-plane plots: @sec-ode-scipy
+:::
+
+## Chemical Engineering Application {#sec-2-10}
+
+**Example** $\,$ Start-up of a stirred-tank reactor
+
+* A continuous stirred-tank reactor (CSTR) of volume $V$ is fed at the volumetric flow rate $q$ with a solution of $A$ at the concentration $c_{\mathrm{in}}$. $\,$The tank is well mixed, $\,$so the outlet concentration equals the concentration $c(t)$ in the tank, $\,$and $A$ is consumed by the first-order reaction $A\to B$ at the rate $kc$ per unit volume
+
+* A mole balance on $A$, $\,$[accumulation = in $-$ out $-$ consumption]{.blue}, $\,$gives
+
+  $$V\frac{dc}{dt}=q\,c_{\mathrm{in}}-q\,c-kVc
+    \quad\Longrightarrow\quad
+    \frac{dc}{dt}+\left(\frac{1}{\tau}+k\right)c=\frac{c_{\mathrm{in}}}{\tau},
+    \qquad \tau=\frac{V}{q}\;\text{(residence time)}$$
+
+* This is a linear equation with constant coefficients (@sec-2-3). $\,$With the integrating factor $e^{(1/\tau+k)t}$ and $c(0)=c_0$,
+
+  $$\color{red}{c(t)=c_s+\left(c_0-c_s\right)e^{-(1/\tau+k)\,t}},
+    \qquad c_s=\frac{c_{\mathrm{in}}}{1+k\tau}$$
+
+  The steady state $c_s$ is the critical point of the autonomous equation, $\,$and it is an attractor. $\,$The fraction of $A$ converted is $X=1-c_s/c_{\mathrm{in}}=k\tau/(1+k\tau)$, $\,$which depends only on the [Damköhler number]{.blue} $k\tau$
+
+* For $V=100$ L, $\,q=5$ L/min ($\tau=20$ min), $\,k=0.1\,\mathrm{min}^{-1}$, $\,c_{\mathrm{in}}=2$ mol/L and a tank initially filled with solvent ($c_0=0$): $\,c_s=2/3$ mol/L, $\,X=2/3$, $\,$and the time constant is $1/(1/\tau+k)=6.67$ min. $\,$The tank reaches $95\%$ of its steady state after $t=\ln 20/0.15\approx 20$ min, $\,$that is, $\,$after about one residence time. $\,$The reaction makes the start-up faster than mixing alone would ($1/\tau=0.05\,\mathrm{min}^{-1}$)
+
+```{python}
+#| code-fold: true
+#| label: fig-ch02-cstr
+#| fig-cap: "Start-up of a CSTR: $\\,$concentration in the tank for three rate constants ($\\tau=20$ min, $\\,c_{\\mathrm{in}}=2$ mol/L); $\\,$dotted lines are the steady states $c_s$"
+#| fig-alt: "Concentration in the reactor rising from zero to its steady state for k equal to 0, 0.05 and 0.1 per minute; a larger rate constant gives a lower steady state that is reached sooner"
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+
+tau, c_in = 20.0, 2.0
+t = np.linspace(0, 100, 401)
+
+fig, ax = plt.subplots(figsize=(6, 3.6))
+for k, color in zip([0, 0.05, 0.1], ['tab:blue', 'tab:green', 'tab:red']):
+    cs = c_in /(1 +k *tau)
+    ax.plot(t, cs *(1 -np.exp(-(1 /tau +k) *t)), color=color, label=f'$k={k}$ min$^{{-1}}$')
+    ax.axhline(cs, color=color, ls=':', lw=1)
+ax.set_xlim(0, 100)
+ax.set_ylim(0, 2.1)
+ax.set_xlabel('$t$ (min)')
+ax.set_ylabel('$c$ (mol/L)')
+ax.legend(fontsize=9, loc='lower right')
+plt.show()
+```
+
+**Example** $\,$ Repeat the steady-state analysis for a second-order reaction, $\,$consumed at the rate $kc^2$, $\,$with $\tau=20$ min, $\,c_{\mathrm{in}}=2$ mol/L and $k=0.05$ L/(mol$\cdot$min). $\,$Find the critical points of $\,dc/dt=f(c)\,$ and classify them
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\displaystyle\frac{dc}{dt}=\frac{c_{\mathrm{in}}-c}{\tau}-kc^2=-\frac{1}{20}\left(c^2+c-2\right)=-\frac{1}{20}(c-1)(c+2)$. $\,$Critical points $c=1$ and $c=-2$. $\,$Since $f>0$ for $-2<c<1$ and $f<0$ for $c>1$, $\,c_s=1$ mol/L is an attractor (conversion $50\%$); $\,c=-2$ is a repeller and has no physical meaning. $\,$The equation is separable (@sec-2-2), $\,$so $c(t)$ can also be found in closed form
 :::
 
 ## Summary {.unnumbered}

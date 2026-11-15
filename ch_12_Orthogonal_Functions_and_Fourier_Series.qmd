@@ -11,6 +11,7 @@ jupyter: python3
 * compute Fourier series, $\,$half-range cosine and sine series, $\,$and complex Fourier series, $\,$and describe their convergence and the Gibbs phenomenon
 * formulate regular and singular Sturm-Liouville problems and use the orthogonality of their eigenfunctions
 * expand functions in Fourier-Bessel and Fourier-Legendre series
+* expand a function in eigenfunctions with a Robin condition, $\,$as in desorption from a catalyst slab
 
 **Builds on** $\,$ inner products and vector spaces (@sec-7-3, @sec-7-6), boundary-value problems (@sec-3-9) and Bessel and Legendre functions (@sec-5-3)
 :::
@@ -990,6 +991,90 @@ $~$
   $$x(1-x)y'' +[c - (a + b +1)x]\, y' -ab y = 0$$
 
 $~$
+
+## Chemical Engineering Application {#sec-12-7}
+
+**Example** $\,$ Desorption from a catalyst slab: $\,$a preview of separation of variables
+
+* A catalyst slab of thickness $2L$ is saturated with an adsorbed species at the uniform concentration $c_0$ and is then placed in a stream of clean gas. $\,$The species diffuses to the surfaces (diffusivity $D$) and is carried away with the mass-transfer coefficient $k_m$. $\,$By symmetry we use only $0<x<L$:
+
+  $$\frac{\partial c}{\partial t}=D\frac{\partial^2c}{\partial x^2},\qquad
+    \frac{\partial c}{\partial x}(0,t)=0,\qquad
+    -D\frac{\partial c}{\partial x}(L,t)=k_m\,c(L,t),\qquad c(x,0)=c_0$$
+
+* Separation of variables (@sec-x1-5) leads, $\,$with $\xi=x/L$ and the [Biot number]{.blue} $\mathrm{Bi}=k_mL/D$, $\,$to the regular Sturm-Liouville problem
+
+  $$X''+\lambda X=0,\qquad X'(0)=0,\qquad X'(1)+\mathrm{Bi}\,X(1)=0$$
+
+  For $\mathrm{Bi}>0$ there are no eigenvalues $\lambda\leq0$. $\,$With $\lambda=\alpha^2>0$, $\,X=\cos\alpha\xi$ satisfies the first condition, $\,$and the second gives
+
+  $$\color{red}{\alpha\tan\alpha=\mathrm{Bi}}$$
+
+  with one root $\alpha_n$ in each interval $\left((n-1)\pi,\ (n-\tfrac12)\pi\right)$, $\,n=1,2,\dots$
+
+* The eigenfunctions $\cos\alpha_n\xi$ are orthogonal on $[0,1]$ with weight $p=1$ (@sec-12-5), $\,$although the $\alpha_n$ are not equally spaced. $\,$Expanding the initial profile $f(\xi)=1$,
+
+  $$c_n=\frac{\int_0^1\cos\alpha_n\xi\,d\xi}{\int_0^1\cos^2\alpha_n\xi\,d\xi}
+       =\frac{\sin\alpha_n/\alpha_n}{\left(\alpha_n+\sin\alpha_n\cos\alpha_n\right)/(2\alpha_n)}
+       =\frac{2\sin\alpha_n}{\alpha_n+\sin\alpha_n\cos\alpha_n}$$
+
+* Each term then decays at its own rate, $\,$and the solution of @sec-x1 is
+
+  $$\frac{c(x,t)}{c_0}=\sum_{n=1}^\infty c_n\,e^{-\alpha_n^2Dt/L^2}\cos\frac{\alpha_nx}{L}$$
+
+  For $\mathrm{Bi}=1$: $\,\alpha_1=0.8603$, $\,\alpha_2=3.4256$, $\,\alpha_3=6.4373$, $\,$and $c_1=1.1191$, $\,c_2=-0.1517$, $\,c_3=0.0466$. $\,$The terms with $n\geq2$ die out quickly, $\,$so for $Dt/L^2\gtrsim0.2$ one term is enough
+
+```{python}
+#| code-fold: true
+#| label: fig-ch12-slab
+#| fig-cap: "Desorption from a slab with $\\mathrm{Bi}=1$: $\\,$the roots of $\\alpha\\tan\\alpha=\\mathrm{Bi}$ (left) and the concentration profiles from 20 terms of the eigenfunction series (right)"
+#| fig-alt: "Left: branches of alpha tan alpha crossing the horizontal line Bi equal to 1 once in each branch. Right: concentration across the half slab, flat at one at time zero and decreasing with time, lower at the surface than at the center"
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import brentq
+
+Bi, N = 1.0, 20
+alpha = np.array([brentq(lambda a: a *np.tan(a) -Bi, n *np.pi +1e-9, (n +0.5) *np.pi -1e-9)
+                  for n in range(N)])
+cn = 2 *np.sin(alpha) /(alpha +np.sin(alpha) *np.cos(alpha))
+
+fig, axes = plt.subplots(1, 2, figsize=(7.5, 3.4))
+
+ax = axes[0]
+for n in range(4):
+    a = np.linspace(n *np.pi, (n +0.5) *np.pi -0.02, 200)
+    ax.plot(a, a *np.tan(a), 'tab:blue')
+ax.axhline(Bi, color='tab:red', lw=1)
+ax.plot(alpha[:4], Bi *np.ones(4), 'ko', ms=4)
+ax.set_xlim(0, 4 *np.pi)
+ax.set_ylim(-0.5, 4)
+ax.set_xticks(np.pi *np.arange(5), ['0', r'$\pi$', r'$2\pi$', r'$3\pi$', r'$4\pi$'])
+ax.set_xlabel(r'$\alpha$')
+ax.set_title(r'$\alpha\tan\alpha=\mathrm{Bi}$', fontsize=10)
+
+ax = axes[1]
+xi = np.linspace(0, 1, 201)
+for tau in [0, 0.02, 0.1, 0.3, 0.6, 1.0]:
+    u = (cn[:, None] *np.exp(-alpha[:, None]**2 *tau) *np.cos(alpha[:, None] *xi)).sum(axis=0)
+    ax.plot(xi, u, label=f'$Dt/L^2={tau}$')
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1.1)
+ax.set_xlabel('$x/L$')
+ax.set_ylabel('$c/c_0$')
+ax.legend(fontsize=7, loc='lower left')
+
+plt.tight_layout()
+plt.show()
+```
+
+* Unlike the Dirichlet case, $\,$the series converges to $f=1$ uniformly, $\,$even at $\xi=1$: $\,$the Robin condition does not force the eigenfunctions to vanish there, $\,$and $c_n$ falls off like $1/n^2$
+
+**Example** $\,$ Find the first eigenvalue and the leading coefficient in the limit $\mathrm{Bi}\to\infty$ (very fast mass transfer, $\,c(L,t)=0$). $\,$Compare with the half-range cosine series of @sec-12-3
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\tan\alpha\to\infty$, $\,$so $\alpha_n=(n-\tfrac12)\pi$ and $\cos\alpha_n=0$, $\,\sin\alpha_n=(-1)^{n+1}$: $\ c_n=\dfrac{2(-1)^{n+1}}{(n-\frac12)\pi}=\dfrac{4(-1)^{n+1}}{(2n-1)\pi}$. $\,$For $n=1$, $\,\alpha_1=\pi/2$ and $c_1=4/\pi\approx1.273$. $\,$These are the coefficients of $f=1$ in the eigenfunctions of $X'(0)=0$, $\,X(1)=0$, $\,$which contain only odd multiples of $\pi/2$, $\,$unlike the cosine series of @sec-12-3 (multiples of $\pi$)
+:::
 
 ## Summary {.unnumbered}
 

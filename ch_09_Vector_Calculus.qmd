@@ -12,6 +12,7 @@ jupyter: python3
 * evaluate line integrals, $\,$and recognize conservative fields and path independence
 * evaluate double, $\,$triple and surface integrals, $\,$using polar, $\,$cylindrical and spherical coordinates and a change of variables
 * apply Green's theorem, $\,$Stokes' theorem and the divergence theorem
+* derive the continuity equation for a chemical species from the divergence theorem
 
 **Builds on** $\,$ vectors, dot and cross products (@sec-7)
 :::
@@ -1262,6 +1263,38 @@ $~$
    \end{matrix}\right|, \qquad dV = h_1 h_2 h_3\, dq_1 dq_2 dq_3$$
 
 $~$
+
+## Chemical Engineering Application {#sec-9-18}
+
+**Example** $\,$ The continuity equation for a chemical species
+
+* Let $c(x,y,z,t)$ be the concentration of a species (mol/m$^3$), $\,\mathbf J$ its [molar flux]{.blue} (mol/m$^2\cdot$s), $\,$and $R$ its rate of production by reaction per unit volume. $\,$For any fixed region $D$ with outward-oriented boundary $S$, $\,$[accumulation = in $-$ out + production]{.blue}:
+
+  $$\frac{d}{dt}\iiint_D c\,dV=-\iint_S(\mathbf J\cdot\mathbf n)\,dS+\iiint_D R\,dV$$
+
+* By the divergence theorem, $\,$the surface integral equals $\iiint_D\nabla\cdot\mathbf J\,dV$, $\,$so
+
+  $$\iiint_D\left(\frac{\partial c}{\partial t}+\nabla\cdot\mathbf J-R\right)dV=0$$
+
+  Since $D$ is arbitrary and the integrand is continuous, $\,$the integrand must vanish everywhere:
+
+  $$\color{red}{\frac{\partial c}{\partial t}+\nabla\cdot\mathbf J=R}$$
+
+* The flux has a convective part and a diffusive part given by [Fick's law]{.blue}, $\,\mathbf J=c\,\mathbf v-D\nabla c$. $\,$For a constant diffusivity and an incompressible flow ($\nabla\cdot\mathbf v=0$), $\,\nabla\cdot(c\mathbf v)=\mathbf v\cdot\nabla c$ and $\nabla\cdot\nabla c=\nabla^2c$, $\,$so
+
+  $$\frac{\partial c}{\partial t}+\mathbf v\cdot\nabla c=D\nabla^2c+R$$
+
+  the convection-diffusion-reaction equation. $\,$With $\mathbf v=\mathbf 0$ and $R=0$ it is the diffusion (heat) equation, $\,$solved in @sec-x1 (see @sec-x1-3 for the same derivation of the heat equation, $\,$and @sec-x1-16 for the convection term)
+
+**Example** $\,$ A sphere of radius $a$ dissolves slowly in a large stagnant liquid. $\,$At steady state the concentration is $\,c=c_\infty+(c_s-c_\infty)\,a/\rho\,$ for $\rho\ge a$, $\,$where $\rho=\sqrt{x^2+y^2+z^2}$, $\,c_s$ is the saturation concentration at the surface and $c_\infty$ the concentration far away
+
+* Show that $\,\mathbf J=-D\nabla c\,$ satisfies $\,\nabla\cdot\mathbf J=0\,$ for $\rho>a$
+
+* Find the dissolution rate $\,W=\iint_S(\mathbf J\cdot\mathbf n)\,dS\,$ through a sphere $S$ of radius $b\geq a$, $\,$and explain why it does not depend on $b$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\nabla(1/\rho)=-\mathbf r/\rho^3$, $\,$so $\mathbf J=D(c_s-c_\infty)\,a\,\mathbf r/\rho^3$ and $\nabla\cdot(\mathbf r/\rho^3)=3/\rho^3-3\rho^2/\rho^5=0$. $\,$On $\rho=b$, $\,\mathbf n=\mathbf r/b$ and $\mathbf J\cdot\mathbf n=D(c_s-c_\infty)a/b^2$, $\,$so $\,W=4\pi b^2\cdot D(c_s-c_\infty)a/b^2=4\pi Da(c_s-c_\infty)$. $\,$By the divergence theorem applied to the shell between two spheres, $\,$where $\nabla\cdot\mathbf J=0$, $\,$the flux through the two spheres is the same: $\,$what leaves the sphere passes through every larger sphere
+:::
 
 ## Summary {.unnumbered}
 

@@ -12,6 +12,7 @@ jupyter: python3
 * evaluate determinants by cofactor expansion and their properties, $\,$find inverses, $\,$and use Cramer's rule and the LU factorization
 * find eigenvalues and eigenvectors, $\,$compute matrix powers with the Cayley-Hamilton theorem, $\,$and approximate eigenvalues by the power method
 * diagonalize matrices, $\,$orthogonally diagonalize symmetric matrices, $\,$and apply matrices to quadratic forms, $\,$codes, $\,$least squares and compartmental models
+* find the number of independent reactions from the rank of the stoichiometric and atom matrices
 :::
 
 
@@ -3388,6 +3389,57 @@ for month in range(13):
     print(f'{month:5d} {x[0]:9.2f} {x[1]:9.2f} {x[2]:9.2f} {x[3]:9.2f}')  
     x = T @ x 
 ```
+
+### **Chemical Engineering Application: Independent Reactions** {#sec-8-14-5}
+
+* In steam reforming of methane, $\,$the species $\,\mathrm{CH_4},\ \mathrm{H_2O},\ \mathrm{CO},\ \mathrm{CO_2},\ \mathrm{H_2}\,$ take part in three reactions
+
+  $$\begin{aligned}
+    (1)&\quad \mathrm{CH_4}+\mathrm{H_2O}\to\mathrm{CO}+3\,\mathrm{H_2}\\
+    (2)&\quad \mathrm{CO}+\mathrm{H_2O}\to\mathrm{CO_2}+\mathrm{H_2}\\
+    (3)&\quad \mathrm{CH_4}+2\,\mathrm{H_2O}\to\mathrm{CO_2}+4\,\mathrm{H_2}
+  \end{aligned}$$
+
+  Writing the stoichiometric coefficients as a row per reaction (negative for reactants) gives the [stoichiometric matrix]{.blue}
+
+  $$\boldsymbol{\nu}=
+    \begin{pmatrix}
+      -1 & -1 & \phantom{-}1 & 0 & 3\\
+      \phantom{-}0 & -1 & -1 & 1 & 1\\
+      -1 & -2 & \phantom{-}0 & 1 & 4
+    \end{pmatrix}
+    \qquad
+    \begin{matrix}\scriptsize\text{columns: }\mathrm{CH_4},\ \mathrm{H_2O},\ \mathrm{CO},\ \mathrm{CO_2},\ \mathrm{H_2}\end{matrix}$$
+
+* Row reduction gives $\,R_3-R_1-R_2=\mathbf 0$, $\,$so $\,\mathrm{rank}\,\boldsymbol\nu=2$ (@sec-8-3): $\,$reaction (3) is the sum of (1) and (2), $\,$and only [two reactions are independent]{.blue}. $\,$A material balance needs only two extents of reaction
+
+* The same number follows from the atoms. $\,$The [atom matrix]{.blue} $\mathbf A$ lists the atoms C, H, O in each species, $\,$and every reaction conserves atoms, $\,\mathbf A\boldsymbol\nu^T=\mathbf 0$. $\,$The rows of $\boldsymbol\nu$ therefore lie in the null space of $\mathbf A$, $\,$whose dimension is
+
+  $$\text{number of species}-\mathrm{rank}\,\mathbf A=5-3=2$$
+
+```{python}
+# | echo: true
+import sympy
+
+nu = sympy.Matrix([[-1, -1,  1, 0, 3],      # CH4 + H2O -> CO + 3 H2
+                   [ 0, -1, -1, 1, 1],      # CO + H2O -> CO2 + H2
+                   [-1, -2,  0, 1, 4]])     # CH4 + 2 H2O -> CO2 + 4 H2
+A = sympy.Matrix([[1, 0, 1, 1, 0],          # C
+                  [4, 2, 0, 0, 2],          # H
+                  [0, 1, 1, 2, 0]])         # O
+
+print('rank nu =', nu.rank(), '   rank A =', A.rank())
+print('A nu^T =', (A *nu.T).tolist())
+print('basis of the null space of A (times 3):', [list(3 *v) for v in A.nullspace()])
+```
+
+* The basis that `sympy` returns, $\,$times 3, $\,$is reaction (1) and $\,4\,\mathrm{CO}+2\,\mathrm{H_2O}\to\mathrm{CH_4}+3\,\mathrm{CO_2}$. $\,$Any two independent vectors of the null space form an equally valid set of independent reactions; $\,$the chemistry decides which set is convenient
+
+**Example** $\,$ A reformer is fed with $1$ mol $\mathrm{CH_4}$ and $3$ mol $\mathrm{H_2O}$. $\,$The outlet contains $0.2$ mol $\mathrm{CH_4}$ and $0.3$ mol $\mathrm{CO_2}$. $\,$With the extents $\xi_1$, $\xi_2$ of reactions (1) and (2), $\,\mathbf n=\mathbf n_0+\boldsymbol\nu_{12}^T\boldsymbol\xi$, $\,$where $\boldsymbol\nu_{12}$ is the first two rows of $\boldsymbol\nu$. $\,$Find the outlet composition and check the atom balances
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$\mathrm{CH_4}$: $1-\xi_1=0.2$, $\,$so $\xi_1=0.8$; $\ \mathrm{CO_2}$: $\xi_2=0.3$. $\,$Then $\mathrm{H_2O}=3-\xi_1-\xi_2=1.9$, $\ \mathrm{CO}=\xi_1-\xi_2=0.5$, $\ \mathrm{H_2}=3\xi_1+\xi_2=2.7$ mol. $\,$Check: C $\,0.2+0.5+0.3=1$, $\ $H $\,0.8+3.8+5.4=10$, $\ $O $\,1.9+0.5+0.6=3$, $\,$the same as in the feed
+:::
 
 ## Summary {.unnumbered}
 

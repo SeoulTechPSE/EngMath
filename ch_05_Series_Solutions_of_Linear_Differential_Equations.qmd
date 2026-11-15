@@ -11,6 +11,7 @@ jupyter: python3
 * classify singular points, $\,$and solve about a regular singular point by the method of Frobenius using the indicial equation
 * solve Bessel's and Legendre's equations and equations reducible to them
 * use the properties of $J_\nu$, $Y_\nu$, $I_\nu$, $K_\nu$ and $P_n$: $\,$recurrence relations, $\,$Rodrigues' formula and orthogonality
+* solve diffusion with reaction in a cylindrical catalyst pellet with modified Bessel functions
 
 **Builds on** $\,$ linear higher-order equations (@sec-3-1) and the Cauchy–Euler equation (@sec-3-6)
 :::
@@ -988,6 +989,72 @@ $m$ even: $\,P_n^m$ is a polynomial of degree $n$; $\quad m>n$: $\,P_n^m\equiv0$
 
 ::: {.callout-tip appearance="simple" icon="false"}
 **Try it in Python:** Legendre and Chebyshev polynomials as `numpy.polynomial` classes: @sec-interp-polynomials
+:::
+
+## Chemical Engineering Application {#sec-5-4}
+
+**Example** $\,$ Diffusion and reaction in a cylindrical catalyst pellet
+
+* A long cylindrical catalyst pellet of radius $R$ sits in a gas of reactant concentration $c_s$. $\,$The reactant diffuses into the pores (effective diffusivity $D$) and is consumed by a first-order reaction at the rate $kc$ per unit volume. $\,$At steady state, $\,$a mole balance on a thin cylindrical shell gives
+
+  $$\frac{D}{r}\frac{d}{dr}\left(r\frac{dc}{dr}\right)=kc,\qquad c(R)=c_s,\qquad c(0)\;\text{finite}$$
+
+* With $x=r/R$ and the [Thiele modulus]{.blue} $\phi=R\sqrt{k/D}$, $\,$this becomes
+
+  $$x^2c''+xc'-\phi^2x^2c=0$$
+
+  the parametric form of the modified Bessel equation of order $0$, $\,$with the general solution $c=c_1I_0(\phi x)+c_2K_0(\phi x)$ (@sec-5-3-1). $\,$Since $K_0\to\infty$ as $x\to0$, $\,c_2=0$, $\,$and
+
+  $$\color{red}{\frac{c(r)}{c_s}=\frac{I_0(\phi r/R)}{I_0(\phi)}}$$
+
+* The [effectiveness factor]{.blue} $\eta$ is the actual reaction rate in the pellet divided by the rate if the whole pellet were at $c_s$. $\,$Using $\dfrac{d}{dx}\left[xI_1(x)\right]=xI_0(x)$,
+
+  $$\eta=\frac{\int_0^R kc\,2\pi r\,dr}{kc_s\,\pi R^2}
+       =\frac{2}{I_0(\phi)}\int_0^1 xI_0(\phi x)\,dx
+       =\color{red}{\frac{2I_1(\phi)}{\phi\,I_0(\phi)}}$$
+
+  For a slow reaction or a small pellet ($\phi\ll1$), $\,\eta\to1$; $\,$for a fast reaction ($\phi\gg1$), $\,$the reactant is used up near the surface and $\eta\approx2/\phi$
+
+```{python}
+#| code-fold: true
+#| label: fig-ch05-pellet
+#| fig-cap: "Cylindrical catalyst pellet: $\\,$concentration profiles $I_0(\\phi r/R)/I_0(\\phi)$ (left) and the effectiveness factor (right)"
+#| fig-alt: "Left: concentration across the pellet radius, nearly flat for Thiele modulus 0.5 and dropping to almost zero at the center for modulus 10. Right: effectiveness factor near one for small modulus, falling like 2 over phi for large modulus"
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import iv
+
+fig, axes = plt.subplots(1, 2, figsize=(7.5, 3.4))
+
+ax = axes[0]
+x = np.linspace(0, 1, 201)
+for phi in [0.5, 2, 5, 10]:
+    ax.plot(x, iv(0, phi *x) /iv(0, phi), label=fr'$\phi={phi}$')
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1.05)
+ax.set_xlabel('$r/R$')
+ax.set_ylabel('$c/c_s$')
+ax.legend(fontsize=9)
+
+ax = axes[1]
+phi = np.logspace(-1, 2, 300)
+ax.loglog(phi, 2 *iv(1, phi) /(phi *iv(0, phi)), label='$\\eta$')
+ax.loglog(phi[phi > 2], 2 /phi[phi > 2], 'k--', lw=1, label='$2/\\phi$')
+ax.set_xlim(0.1, 100)
+ax.set_ylim(0.01, 1.5)
+ax.set_xlabel(r'$\phi$')
+ax.set_ylabel(r'$\eta$')
+ax.legend(fontsize=9)
+
+plt.tight_layout()
+plt.show()
+```
+
+**Example** $\,$ For $\phi=2$, $\,$find the concentration at the center of the pellet and the effectiveness factor. $\,$Use $I_0(2)=2.2796$ and $I_1(2)=1.5906$
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$c(0)/c_s=1/I_0(2)\approx0.439$ $\,$and$\,$ $\eta=\dfrac{2I_1(2)}{2I_0(2)}=\dfrac{1.5906}{2.2796}\approx0.698$: $\,$only about $70\%$ of the catalyst's capacity is used
 :::
 
 ## Summary {.unnumbered}

@@ -11,6 +11,7 @@ jupyter: python3
 * solve initial-value problems for linear equations with constant coefficients, $\,$including piecewise and impulsive forcing
 * use the translation theorems, $\,$derivatives of transforms, $\,$convolution and the transform of a periodic function
 * solve systems of linear differential equations by the Laplace transform
+* find the transfer function and the step and pulse responses of mixing tanks in series
 
 **Builds on** $\,$ linear equations with constant coefficients (@sec-3-3)
 :::
@@ -621,6 +622,60 @@ $$
 :::
 
 [Solution](files/solutions/sol_4_6.pdf){target="_blank"}
+
+## Chemical Engineering Application {#sec-4-7}
+
+**Example** $\,$ Step response of two mixing tanks in series
+
+* Two well-mixed tanks are connected in series. $\,$A tank with residence time $\tau$ obeys $\,\tau\,dc/dt=c_{\mathrm{in}}-c\,$ (@sec-2-10 without reaction). $\,$Let $u(t)$, $\,y_1(t)$ and $y_2(t)$ be the [deviation variables]{.blue}: $\,$the feed and the two outlet concentrations minus their initial steady values, $\,$so that all initial conditions are zero
+
+  $$\tau_1\frac{dy_1}{dt}+y_1=u(t),\qquad
+    \tau_2\frac{dy_2}{dt}+y_2=y_1(t),\qquad y_1(0)=y_2(0)=0$$
+
+* Transforming both equations, $\,(\tau_1s+1)Y_1=U$ and $(\tau_2s+1)Y_2=Y_1$, $\,$so
+
+  $$\color{red}{Y_2(s)=G(s)\,U(s),\qquad G(s)=\frac{1}{(\tau_1s+1)(\tau_2s+1)}}$$
+
+  In process control $G(s)$ is the [transfer function]{.blue} of the two tanks: $\,$a product of the transfer functions $1/(\tau s+1)$ of the single tanks. $\,$By the convolution theorem, $\,y_2=g*u$, $\,$where $g=\mathcal{L}^{-1}\{G\}$ is the response to a unit impulse $u=\delta(t)$
+
+* A unit step in the feed at $t=0$, $\,u=\mathcal{U}(t)$, $\,U=1/s$. $\,$With $\tau_1=2$ min and $\tau_2=1$ min, $\,$partial fractions give
+
+  $$Y_2(s)=\frac{1}{s(2s+1)(s+1)}=\frac{1}{s}-\frac{4}{2s+1}+\frac{1}{s+1}
+    \quad\Longrightarrow\quad
+    y_2(t)=1-2e^{-t/2}+e^{-t}$$
+
+  Unlike the single tank, $\,$whose response $1-e^{-t/\tau}$ rises at once, $\,y_2$ starts with zero slope and has an inflection point at $t=2\ln2$: $\,$the [S-shaped]{.blue} response typical of higher-order processes
+
+```{python}
+#| code-fold: true
+#| label: fig-ch04-tanks
+#| fig-cap: "Unit-step response of one tank ($\\tau=2$ min) and of two tanks in series ($\\tau_1=2$, $\\,\\tau_2=1$ min), $\\,$and the response of the two tanks to a pulse of length 1 min"
+#| fig-alt: "Outlet concentration of one tank rising exponentially, of two tanks rising in an S-shaped curve, and of two tanks after a one-minute pulse rising to about 0.24 and decaying"
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0, 12, 601)
+step2 = lambda t: np.where(t > 0, 1 -2 *np.exp(-t /2) +np.exp(-t), 0.0)
+
+fig, ax = plt.subplots(figsize=(6, 3.6))
+ax.plot(t, 1 -np.exp(-t /2), label='one tank, step')
+ax.plot(t, step2(t), label='two tanks, step')
+ax.plot(t, step2(t) -step2(t -1), label='two tanks, pulse')
+ax.plot(2 *np.log(2), 0.25, 'ko', ms=4)
+ax.set_xlim(0, 12)
+ax.set_ylim(0, 1.05)
+ax.set_xlabel('$t$ (min)')
+ax.set_ylabel('deviation in concentration')
+ax.legend(fontsize=9, loc='center right')
+plt.show()
+```
+
+**Example** $\,$ The feed of the two tanks above is raised by one unit for one minute and then returned to its original value, $\,u(t)=\mathcal{U}(t)-\mathcal{U}(t-1)$. $\,$Find $y_2(t)$ and its maximum
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+By the second translation theorem, $\,y_2(t)=f(t)-f(t-1)\,\mathcal{U}(t-1)$ with $f(t)=1-2e^{-t/2}+e^{-t}$. $\,$For $t>1$, $\,y_2=2(\sqrt e-1)e^{-t/2}-(e-1)e^{-t}$, $\,$which is largest at $t=2\ln(1+\sqrt e)\approx1.95$ min, $\,$where $y_2=\dfrac{\sqrt e-1}{\sqrt e+1}=\tanh\dfrac14\approx0.245$
+:::
 
 ## Summary {.unnumbered}
 
