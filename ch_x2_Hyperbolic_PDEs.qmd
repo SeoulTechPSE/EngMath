@@ -863,6 +863,31 @@ $$V_p(x,s)=\frac{1}{2cs}\int_{0}^{\infty} e^{-\frac{s}{c}|x-y|}\,(s f(y)+g(y))\,
 
 is a standard particular solution for the half-line
 
+::: {.callout-note collapse="true" title="Note: the details of Step 1"}
+* **Transforming the equation.** $\,x$ is a parameter, $\,$so $\mathcal L\{u_{xx}\}=U_{xx}$, $\,$while the initial data enter through
+  $$\mathcal L\{u_{tt}\}=s^2U-s\,u(x,0)-u_t(x,0)=s^2U-sf(x)-g(x)$$
+  The initial conditions become the source term of an ODE in $x$ with the parameter $s$
+
+* **The homogeneous solution.** $\,c^2U''-s^2U=0$ has the solutions $e^{\pm sx/c}$. $\,$For $\mathrm{Re}\,s>0$, $\,e^{+sx/c}$ grows without bound as $x\to\infty$, $\,$so it is discarded for a bounded $u$. $\,$By the shift theorem, $\,\mathcal L\{h(t-x/c)H(t-x/c)\}=e^{-sx/c}\mathcal L\{h\}$, $\,$so $A(s)e^{-sx/c}$ is a signal that [leaves the boundary]{.blue} and reaches $x$ after the delay $x/c$: $\,$the reflected wave
+
+* **The particular solution.** $\,$The whole-line Green's function of $c^2\frac{d^2}{dx^2}-s^2$ satisfies $c^2G''-s^2G=\delta(x-y)$ and decays on both sides, $\,$so $G=K\,e^{-\frac{s}{c}|x-y|}$. $\,$The jump of $G'$ at $x=y$ is $-2\frac{s}{c}K$, $\,$and $c^2$ times it must equal $1$, $\,$so $K=-\frac{1}{2cs}$. $\,$Then
+  $$V_p(x,s)=\int_0^\infty G(x,y)\,\bigl(-(sf(y)+g(y))\bigr)\,dy$$
+  which is the formula above. $\,$The integral starts at $0$ because $f$ and $g$ are extended by zero to $x<0$
+
+* **Why $V_p$ is the free solution.** $\,$Term by term,
+  $$\mathcal L^{-1}\left\{\tfrac{1}{2c}e^{-\frac{s}{c}|x-y|}\right\}=\tfrac{1}{2c}\,\delta\!\left(t-\tfrac{|x-y|}{c}\right)$$
+  $$\mathcal L^{-1}\left\{\tfrac{1}{2cs}e^{-\frac{s}{c}|x-y|}\right\}=\tfrac{1}{2c}\,H\!\left(t-\tfrac{|x-y|}{c}\right)$$
+  and the integration over $y$ gives
+  $$\mathcal L^{-1}\{V_p\}=\frac{f(x-ct)+f(x+ct)}{2}+\frac{1}{2c}\int_{x-ct}^{x+ct}g(y)\,dy$$
+  the D'Alembert solution of the zero-extended data on the whole line, $\,$as if there were no boundary
+
+* **Behavior near the boundary.** $\,$For $x<y$, $\,|x-y|=y-x$, $\,$so near $x=0$
+  $$V_p(x,s)=\frac{e^{sx/c}}{2cs}\int_0^\infty e^{-sy/c}\,(sf+g)\,dy$$
+  so that $\,V_{p,x}(0,s)=\dfrac{s}{c}\,V_p(0,s)$, $\,$the identity used in Step 2
+
+  Near $x=0$, $\,V_p\propto e^{+sx/c}$ is a wave [arriving at the boundary]{.blue}. $\,$Thus $U=A(s)e^{-sx/c}+V_p$ is "reflected + incident", $\,$and Step 2 fixes their ratio from the boundary condition
+:::
+
 **STEP 2:** $~$ Enforcing the Robin Boundary Condition
 
 Transforming the boundary condition gives
@@ -913,6 +938,21 @@ a causal kernel consisting of
 
 *	an instantaneous reflection ($-\delta$),
 *	an exponentially weighted memory term
+
+::: {.callout-note collapse="true" title="Note: the details of Step 3"}
+* **Splitting $M(s)$.** $\,$Numerator and denominator have the same degree in $s$, $\,$so we first divide:
+  $$M(s)=-\frac{\beta s+\alpha c}{\beta s-\alpha c}=-\frac{(\beta s-\alpha c)+2\alpha c}{\beta s-\alpha c}
+       =-1-\frac{2\alpha c/\beta}{s-\alpha c/\beta}$$
+  With $\mathcal L\{\delta(t)\}=1$ and $\mathcal L\{e^{at}H(t)\}=\dfrac{1}{s-a}$, $\,a=\alpha c/\beta$, $\,$each term inverts directly to $m(t)$
+
+* **Why the inverse is needed.** $\,$In $U=V_p(x,s)-M(s)\,\bigl[V_p(0,s)\,e^{-sx/c}\bigr]$, $\,$the factor $e^{-sx/c}$ delays by $x/c$, $\,$and the product with $M(s)$ becomes a convolution with $m(t)$. $\,$With $T=t-x/c$:
+  * $-\delta$ convolves to $+v_{\mathrm{free}}(0,T)$: $\,$the incident wave is reflected at once, $\,$as at a free (Neumann) end
+  * the exponential gives $\dfrac{2\alpha c}{\beta}\displaystyle\int_0^T e^{\frac{\alpha c}{\beta}(T-s)}\,v_{\mathrm{free}}(0,s)\,ds$, $\,$a weighted sum of what reached the boundary earlier: $\,$the [memory]{.blue} of the boundary
+
+* **Checks.** $\,\alpha=0$ (Neumann): $\,m=-\delta$, $\,$the even reflection. $\,\beta\to0$ with $\alpha/\beta<0$ (Dirichlet): $\,\frac{2\alpha c}{\beta}e^{\frac{\alpha c}{\beta}t}H(t)\to-2\delta(t)$, $\,$so $m\to\delta$, $\,$the odd reflection
+
+* **The sign of $\alpha/\beta$.** $\,$A string attached to a spring at the end has $u_x(0,t)=k\,u(0,t)$ with $k>0$, $\,$that is, $\alpha=k$, $\,\beta=-1$ and $\alpha/\beta<0$: $\,$the memory decays on the time scale $|\beta|/(|\alpha|c)$. $\,$Indeed $E=\frac12\int_0^\infty(u_t^2+c^2u_x^2)\,dx$ satisfies $\frac{dE}{dt}=-c^2u_t(0,t)\,u_x(0,t)$, $\,$so $E+\frac12c^2k\,u(0,t)^2$ is conserved. $\,$For $\alpha/\beta>0$ (a "negative spring" that feeds energy in), $\,M(s)$ has a pole in the right half-plane and the reflected wave grows exponentially
+:::
 
 Let
 
