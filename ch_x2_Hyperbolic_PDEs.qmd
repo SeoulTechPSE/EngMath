@@ -1445,7 +1445,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
     u_t(&x,y,z,0)=0 
     \end{aligned}} \tag{3Dp}\label{eq:3Dp}$$
 
-    This is easy: $\,$A famous theorem developed by *Stokes* says all we have to do to solve this problem is to change the ICs to $\,v=0$, $\,v_t=\phi$, $\,$and then differentiate this solution with respect to time. $\,$Indeed, $\,$if $\,v\,$ solves the wave equation with $\,v=0,\ v_t=\phi\,$ at $\,t=0$, $\,$then $\,u=v_t\,$ also solves the wave equation and
+    This is easy by [**Stokes' rule**]{.red}: $\,$all we have to do is to change the ICs to $\,v=0$, $\,v_t=\phi$, $\,$solve, $\,$and then differentiate the solution with respect to time. $\,$Indeed, $\,$if $\,v\,$ solves the wave equation with $\,v=0,\ v_t=\phi\,$ at $\,t=0$, $\,$then $\,u=v_t\,$ also solves it (the coefficients do not depend on $t$) and
 
     $$\begin{aligned}
     u(x,y,z,0)&=v_t(x,y,z,0)=\phi, \\
@@ -1454,7 +1454,7 @@ The problem of this section is to generalize the D'Alembert solution to two and 
 
     As in Duhamel's principle (@sec-x2-20), $\,$everything is built from the solution with zero displacement and a given velocity
 
-  * In other words, $\,$we solve
+  * Applying Stokes' rule, $\,$we solve
 
     $$\begin{aligned}
     v_{tt}&=c^2(v_{xx} +v_{yy} +v_{zz}),\quad (x,y,z) \in \mathbb{R}^3 \\ 
@@ -1462,15 +1462,15 @@ The problem of this section is to generalize the D'Alembert solution to two and 
     v_t(&x,y,z,0)=\phi(x,y,z) 
     \end{aligned}$$
 
-    to get $v=t\bar{\phi}\,$ and then differentiate with respect to time. $\,$This gives us the solution 
+    to get $v=t\bar{\phi}\,$ (the solution of \eqref{eq:3Dv} with $\psi$ replaced by $\phi$) and then differentiate with respect to time. $\,$This gives us the solution 
     
     $$\color{red}{u=\frac{\partial}{\partial t} \left[ t\bar{\phi} \right]}$$
     
     to problem \eqref{eq:3Dp}
 
-  * We now have the solution to our general three-dimensional problem \eqref{eq:3D}. $\,$It's just
+  * Adding the solutions of \eqref{eq:3Dp} and \eqref{eq:3Dv}, $\,$we have the solution to our general three-dimensional problem \eqref{eq:3D}. $\,$It's just
 
-    $$ \color{red}{u(x,y,z,t)=\frac{\partial}{\partial t} \left[ t\bar{\phi} \right]+t\bar{\psi}}$$
+    $$ \color{red}{u(x,y,z,t)=\underbrace{\frac{\partial}{\partial t} \left[ t\bar{\phi} \right]}_{\text{Stokes' rule}}+t\bar{\psi}}$$
 
     where $\,\bar{\phi}\,$ and $\,\bar{\psi}\,$ are the averages of the functions $\,\phi\,$ and $\,\psi\,$ over the sphere of radius $\,ct\,$ centered at $\,(x,y,z)$
 
@@ -1532,7 +1532,7 @@ $~$
 
   $$ u = \frac{\partial}{\partial t} [t\bar{\phi}] +t\bar{\psi} $$
 
-  for $\,u\,$ will describe [cylindrical waves]{.red} and, $\,$hence, $\,$give us the solution for the two-dimensional problem
+  (its first term comes from Stokes' rule) for $\,u\,$ will describe [cylindrical waves]{.red} and, $\,$hence, $\,$give us the solution for the two-dimensional problem
 
   * This technique is called the method of descent. $\,$Carrying out the computations, $\,$we get
 
@@ -1563,7 +1563,7 @@ $~$
   \bar{\phi}(x,t) &= \frac{1}{2ct} \int_{x-ct}^{x+ct} \phi(x)\,dx
   \end{aligned}$$
 
-  to the well-known D'Alembert solution. $\,$Note in the D'Alembert solution, $\,$the initial position $\,\phi\,$ gives rise to sharp trailing edges, $\,$but the initial velocity $\,\psi\,$ does not. $\,$In other words, $\,$one dimension is a little unusual in that the initial position satisfies Huygens' principle, $\,$but the initial velocity does not
+  to the well-known D'Alembert solution. $\,$In particular, $\,$Stokes' rule gives its first term: $\,\frac{\partial}{\partial t}[t\bar{\phi}]=\frac{\partial}{\partial t}\frac{1}{2c}\int_{x-ct}^{x+ct}\phi\,dx=\frac12[\phi(x+ct)+\phi(x-ct)]$. $\,$Note in the D'Alembert solution, $\,$the initial position $\,\phi\,$ gives rise to sharp trailing edges, $\,$but the initial velocity $\,\psi\,$ does not. $\,$In other words, $\,$one dimension is a little unusual in that the initial position satisfies Huygens' principle, $\,$but the initial velocity does not
 
 $~$
 
