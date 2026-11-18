@@ -779,6 +779,98 @@ Define $v(x,t) = u(x,t) - w(x,t)$. Then $v$ satisfies:
 
 Thus, the original nonhomogeneous boundary-value problem is transformed into a standard homogeneous Dirichlet problem on a half-line, which can then be solved by odd reflection and the usual D’Alembert formula
 
+$~$
+
+**Example** $\,$ A pulse sent in from the boundary. $\,$Solve, with $c=1$ and $g=0$,
+
+$$u_{tt}=u_{xx},\quad x>0,\ t>0$$
+
+$$u(0,t)=h(t),\qquad u(x,0)=f(x),\quad u_t(x,0)=0$$
+
+where
+
+$$f(x)=\begin{cases}2\cos^2\dfrac{\pi(x-6)}{3}, & |x-6|\le\frac32\\[4pt] 0, & \text{otherwise}\end{cases}$$
+
+$$h(t)=\begin{cases}\sin^2\dfrac{\pi t}{2}, & 0\le t\le2\\[4pt] 0, & \text{otherwise}\end{cases}$$
+
+Here $h(0)=f(0)=0$ and $h'(0)=g(0)=0$, $\,$so the boundary and initial data fit together smoothly
+
+* The boundary wave is $\,w(x,t)=H(t-x)$, $\,$with $H(s)=h(s)$ for $s\ge0$ and $H(s)=0$ for $s<0$
+
+* $v=u-w$ solves the homogeneous Dirichlet problem with the same initial data. $\,$The odd extension of $f$ and the D'Alembert formula give
+
+  $$v(x,t)=\begin{cases}\frac12\big[f(x+t)+f(x-t)\big], & x\ge t\\[4pt] \frac12\big[f(x+t)-f(t-x)\big], & x<t\end{cases}$$
+
+* Therefore
+
+  $$\color{red}{u(x,t)=v(x,t)+H(t-x)}$$
+
+  and on the boundary $\,u(0,t)=\frac12[f(t)-f(t)]+h(t)=h(t)$
+
+The animation shows what each term does:
+
+* For $0\le t\le2$ the end of the string moves and sends a pulse of height $1$ to the right, $\,$while the initial pulse splits into two pulses of height $1$
+* At $t=3.5$ the boundary pulse and the left-going pulse meet at $x=2.5$. $\,$They add up to height $2$ and pass through each other unchanged
+* For $4.5\le t\le7.5$ the left-going pulse reaches the end, $\,$which is at rest by then, $\,$and is reflected upside down
+* At $t=12$ there are three pulses: $\,$the reflected one at $x=6$ (height $-1$), $\,$the boundary pulse at $x=11$ and the right-going pulse at $x=18$
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+def boundary_wave_animation():
+    f = lambda s: np.where(np.abs(s -6) <= 1.5, 2 *np.cos(np.pi *(s -6) /3)**2, 0.0)
+    H = lambda s: np.where((s >= 0) & (s <= 2), np.sin(np.pi *s /2)**2, 0.0)
+
+    x = np.linspace(0, 20, 1001)
+    fig, ax = plt.subplots(figsize=FIGSIZE)
+    ax.set_xlim(0, 20)
+    ax.set_ylim(-1.5, 3)
+    ax.axhline(0, color='0.8', lw=0.8)
+    ax.set_xlabel('$x$')
+    ax.set_ylabel('$u(x,t)$')
+
+    line_u, = ax.plot([], [], color='0.7', lw=5, label='$u=v+w$')
+    line_v, = ax.plot([], [], color='tab:blue', lw=1.5, label='$v$ (initial data)')
+    line_w, = ax.plot([], [], color='tab:red', lw=1.5, label='$w$ (boundary)')
+    dot, = ax.plot([], [], 'o', color='tab:red', ms=8, clip_on=False)
+    time_text = ax.text(0.98, 0.06, '', transform=ax.transAxes, ha='right')
+    ax.legend(loc='upper center', ncols=3, fontsize=LEGEND, frameon=False)
+    fig.tight_layout()
+    plt.close(fig)
+
+    artists = (line_u, line_v, line_w, dot, time_text)
+
+    def init():
+        for line in artists[:3]:
+            line.set_data([], [])
+        dot.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(t):
+        v = 0.5 *(f(x +t) +np.where(x >= t, f(x -t), -f(t -x)))
+        w = H(t -x)
+        line_u.set_data(x, v +w)
+        line_v.set_data(x, v)
+        line_w.set_data(x, w)
+        dot.set_data([0], [float(H(np.array(t)))])
+        time_text.set_text(f't = {t:.1f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=np.linspace(0, 12, 121), interval=100, blit=True)
+
+boundary_anim = boundary_wave_animation()
+HTML('<center>' + boundary_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-20)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim5.png){width=95%}
+:::
+
+$~$
+
 **Example** $\,$ Solve the wave equation on the half-line $x \ge 0$:
 
 $$u_{tt} = c^{2} u_{xx}, \quad x>0,\; t>0$$
@@ -825,6 +917,20 @@ Define $v(x,t)=u(x,t)-w(x,t)$. Then $v$ satisfies
   $$v(x,0)=f(x), \qquad v_t(x,0)=g(x)$$
 
 Thus the original nonhomogeneous Neumann problem is transformed into a standard homogeneous Neumann half-line problem, which can then be solved by an even extension of the initial data and the classical D’Alembert formula
+
+**Example** $\,$ Take $c=1$, $\,g=0$ and the pulse $f$ of the previous Dirichlet example, $\,$with the boundary condition
+
+$$u_x(0,t)=p(t)=\begin{cases}\dfrac{\pi}{2}\sin\pi t, & 0\le t\le2\\[4pt] 0, & \text{otherwise}\end{cases}$$
+
+Find $u(x,t)$. $\,$What is $u(2.5,\,3.5)$, $\,$and which pulses are present at $t=12$?
+
+::: {.callout-note collapse="true" title="Answer" appearance="simple"}
+$P(s)=\int_0^s p\,d\tau=\sin^2\dfrac{\pi s}{2}$ for $0\le s\le2$ and $P(s)=0$ otherwise, $\,$so $w=-P(t-x)$. $\,$With the even extension of $f$,
+
+$$u(x,t)=\begin{cases}\frac12\big[f(x+t)+f(x-t)\big], & x\ge t\\[4pt] \frac12\big[f(x+t)+f(t-x)\big]-P(t-x), & x<t\end{cases}$$
+
+At $(2.5,\,3.5)$: $\,u=\frac12[f(6)+f(1)]-P(1)=1+0-1=0$: $\,$the boundary pulse now has height $-1$ and cancels the left-going pulse at that instant. $\,$At $t=12$ the pulses are at $x=6$ (reflected without a change of sign, $\,$height $1$), $\,x=11$ (height $-1$) and $x=18$ (height $1$)
+:::
 
 $~$
 
@@ -2315,7 +2421,7 @@ HTML('<center>' + anim.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-25)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim5.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-25)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim6.png){width=95%}
 :::
 
 $~$
@@ -3836,7 +3942,7 @@ HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim6.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim7.png){width=95%}
 :::
 
 $~$
