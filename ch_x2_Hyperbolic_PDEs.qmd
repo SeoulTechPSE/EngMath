@@ -1086,6 +1086,92 @@ This formula expresses the solution as:
 
 $~$
 
+**Example** $\,$ A string whose end is attached to a spring. $\,$Take $c=1$, $\,g=0$ and the pulse $f$ of the Dirichlet example above, $\,$with
+
+$$u_x(0,t)=k\,u(0,t),\qquad k\ge0$$
+
+so that $\alpha=k$ and $\beta=-1$. $\,$How does the reflected wave depend on $k$?
+
+* The wave arriving at the end is $\,I(t)=v_{\mathrm{free}}(0,t)=\frac12f(t)$, $\,$and $\,v_{\mathrm{free}}(x,t)=\frac12[f(x+t)+f(x-t)]$ with $f=0$ for $x<0$
+
+* The formula above, $\,$with $\alpha c/\beta=-k$, $\,$gives
+
+  $$\color{red}{u(x,t)=v_{\mathrm{free}}(x,t)+R(t-x)}$$
+
+  $$R(T)=I(T)-2k\int_0^T e^{-k(T-s)}\,I(s)\,ds$$
+
+  for $T\ge0$, $\,$and $R(T)=0$ for $T<0$
+
+* The limits are the two reflections we know: $\,k=0$ gives $R=I$ (Neumann), $\,$and $k\to\infty$ gives $R=-I$ (Dirichlet)
+
+The animation compares $k=0$, $\,k=1$ and $k\to\infty$, $\,$with the integral evaluated numerically:
+
+* **Between Neumann and Dirichlet.** $\,$At first the spring gives way, $\,$so the reflection starts with the sign of $I$. $\,$As the spring is stretched it pulls back, $\,$and the reflection turns negative. $\,$For $k=1$, $\,R$ runs from a maximum of $0.30$ to a minimum of $-0.94$
+* **The memory term.** $\,$Once the pulse has passed ($T>7.5$), $\,I=0$ and $R$ is a tail proportional to $e^{-kT}$: $\,$the spring is still relaxing
+* **The area.** $\,$Integrating $R$ over $T$ gives $\int R\,dT=-\int I\,dT$ for every $k>0$, $\,$which is $-M(0)\int I\,dT$ with $M(0)=1$: $\,$for slow changes, $\,$a spring acts like a fixed end
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+from scipy.integrate import cumulative_trapezoid
+
+def robin_reflection_animation():
+    f = lambda s: np.where(np.abs(s -6) <= 1.5, 2 *np.cos(np.pi *(s -6) /3)**2, 0.0)
+
+    # reflected wave R(T) = I(T) - 2k * int_0^T exp(-k(T-s)) I(s) ds, with I = f/2
+    T = np.linspace(0, 12, 2401)
+    I = 0.5 *f(T)
+    k = 1.0
+    memory = np.exp(-k *T) *cumulative_trapezoid(np.exp(k *T) *I, T, initial=0)
+    R_robin = I -2 *k *memory
+
+    x = np.linspace(0, 20, 1001)
+    fig, ax = plt.subplots(figsize=FIGSIZE)
+    ax.set_xlim(0, 20)
+    ax.set_ylim(-1.5, 3)
+    ax.axhline(0, color='0.8', lw=0.8)
+    ax.set_xlabel('$x$')
+    ax.set_ylabel('$u(x,t)$')
+
+    line_n, = ax.plot([], [], color='tab:blue', lw=1.5, label='$k=0$ (Neumann)')
+    line_d, = ax.plot([], [], color='tab:green', lw=1.5, label=r'$k\to\infty$ (Dirichlet)')
+    line_r, = ax.plot([], [], color='tab:red', lw=2.5, label='$k=1$ (Robin)')
+    time_text = ax.text(0.98, 0.06, '', transform=ax.transAxes, ha='right')
+    ax.legend(loc='upper center', ncols=3, fontsize=LEGEND, frameon=False)
+    fig.tight_layout()
+    plt.close(fig)
+
+    artists = (line_n, line_d, line_r, time_text)
+
+    def init():
+        for line in artists[:3]:
+            line.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(t):
+        free = 0.5 *(f(x +t) +f(x -t))
+        incident = np.interp(t -x, T, I, left=0)
+        line_n.set_data(x, free +incident)
+        line_d.set_data(x, free -incident)
+        line_r.set_data(x, free +np.interp(t -x, T, R_robin, left=0))
+        time_text.set_text(f't = {t:.1f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=np.linspace(0, 12, 121), interval=100, blit=True)
+
+robin_anim = robin_reflection_animation()
+HTML('<center>' + robin_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-20)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim6.png){width=95%}
+:::
+
+$~$
+
 [**The Nonhomogeneous Wave Equation**]{.blue}
 
   * We consider now the pure nonhomogeneous wave equation:
@@ -2421,7 +2507,7 @@ HTML('<center>' + anim.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-25)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim6.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-25)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim7.png){width=95%}
 :::
 
 $~$
@@ -3942,7 +4028,7 @@ HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim7.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim8.png){width=95%}
 :::
 
 $~$
