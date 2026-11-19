@@ -11,7 +11,7 @@ jupyter: python3
 * solve the wave equation in two and three dimensions in free space, $\,$and explain Huygens' principle
 * solve vibrating strings and drumheads by separation of variables, $\,$and nonhomogeneous problems by finite transforms
 * nondimensionalize problems, $\,$classify second-order PDEs and reduce a hyperbolic equation to canonical form
-* solve first-order linear and nonlinear (conservation) equations and hyperbolic systems by the method of characteristics, $\,$including shocks, $\,$and apply them to fixed-bed adsorption and water hammer
+* solve first-order linear and nonlinear (conservation) equations and hyperbolic systems by the method of characteristics, $\,$including shocks, $\,$and apply them to plug-flow reactors, $\,$fixed-bed adsorption, $\,$batch settling and water hammer
 
 **Builds on** $\,$ separation of variables and integral transforms (@sec-x1), Fourier–Bessel series (@sec-12-6) and diagonalization (@sec-8-12)
 :::
@@ -3582,6 +3582,98 @@ $~$
 
 ## Chemical Engineering Application {#sec-x2-31}
 
+**Example** $\,$ A plug-flow reactor: $\,$a pulse carried along the characteristics
+
+* A fluid flows with velocity $v$ through a tubular reactor of length $L$, $\,$with no axial mixing, $\,$and a species is consumed by the first-order reaction with rate constant $k$:
+
+  $$c_t+v\,c_z=-kc$$
+
+* With $u=c/c_0$, $\,x=z/L$, $\,\tau=vt/L$ and the [Damköhler number]{.blue} $\mathrm{Da}=kL/v$, $\,$take an empty reactor and a given inlet signal:
+
+  $$\color{red}{u_\tau+u_x=-\mathrm{Da}\,u}$$
+
+  $$u(x,0)=0,\qquad u(0,\tau)=\phi(\tau)$$
+
+* By the method of characteristics (@sec-x2-28), $\,$along $\,dx/d\tau=1\,$ the PDE becomes the ODE $\,du/d\tau=-\mathrm{Da}\,u$. $\,$The characteristic that leaves the inlet at time $\tau_0=\tau-x$ carries $\phi(\tau_0)$, $\,$and it has spent the time $x$ in the reactor:
+
+  $$\color{red}{u(x,\tau)=\phi(\tau-x)\,e^{-\mathrm{Da}\,x}}\qquad(\phi=0\ \text{ for }\ \tau<x)$$
+
+* At the outlet, $\,$in dimensional form,
+
+  $$c(L,t)=c_{\mathrm{in}}\!\left(t-\frac Lv\right)e^{-kL/v}$$
+
+  The signal is [delayed by the residence time]{.blue} $L/v$ and [scaled by]{.blue} $e^{-\mathrm{Da}}$, $\,$so the conversion is $\,X=1-e^{-\mathrm{Da}}\,$ for every inlet signal
+
+The animation follows the pulse $\phi=\sin^2 2\pi\tau$ on $0\le\tau\le\frac12$:
+
+* A tracer ($\mathrm{Da}=0$) leaves with its shape unchanged, $\,$and for $\mathrm{Da}=1$ the pulse shrinks under the envelope $e^{-x}$ and leaves with the factor $e^{-1}=0.37$, $\,$a conversion of $63\%$
+* In a real tube, $\,$axial dispersion adds a term $Dc_{zz}$, $\,$and the pulse also spreads, $\,$as in the convection-diffusion problems of @sec-x1-16
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+def plug_flow_animation():
+    phi = lambda s: np.where((s >= 0) & (s <= 0.5), np.sin(2 *np.pi *s)**2, 0.0)
+    u = lambda x, tau, Da: phi(tau -x) *np.exp(-Da *x)
+
+    x = np.linspace(0, 1, 501)
+    taus = np.linspace(0, 2, 801)
+    out_0, out_1 = u(1.0, taus, 0), u(1.0, taus, 1)
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=FIGSIZE)
+    ax1.set_xlim(0, 1)
+    ax1.set_xlabel('$x=z/L$')
+    ax1.set_ylabel('$u=c/c_0$')
+    ax1.set_title('inside the reactor', fontsize=LEGEND +1)
+    ax2.set_xlim(0, 2)
+    ax2.set_xlabel(r'$\tau=vt/L$')
+    ax2.set_ylabel(r'$u(1,\tau)$')
+    ax2.set_title('at the outlet', fontsize=LEGEND +1)
+    for ax in (ax1, ax2):
+        ax.set_ylim(-0.05, 1.2)
+
+    envelope, = ax1.plot(x, np.exp(-x), 'k--', lw=1, label='$e^{-x}$')
+    line_0, = ax1.plot([], [], color='tab:blue', lw=2, label=r'tracer, $\mathrm{Da}=0$')
+    line_1, = ax1.plot([], [], color='tab:red', lw=2.5, label=r'reaction, $\mathrm{Da}=1$')
+    hist_0, = ax2.plot([], [], color='tab:blue', lw=2)
+    hist_1, = ax2.plot([], [], color='tab:red', lw=2.5)
+    time_text = ax2.text(0.97, 0.92, '', transform=ax2.transAxes, ha='right')
+    fig.legend(handles=[line_0, line_1, envelope], loc='upper center', ncols=3,
+               fontsize=LEGEND, frameon=False)
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    plt.close(fig)
+
+    artists = (line_0, line_1, hist_0, hist_1, time_text)
+
+    def init():
+        for line in artists[:4]:
+            line.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(tau):
+        line_0.set_data(x, u(x, tau, 0))
+        line_1.set_data(x, u(x, tau, 1))
+        past = taus <= tau +1e-9
+        hist_0.set_data(taus[past], out_0[past])
+        hist_1.set_data(taus[past], out_1[past])
+        time_text.set_text(rf'$\tau$ = {tau:.2f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=np.linspace(0, 2, 101), interval=100, blit=True)
+
+pfr_anim = plug_flow_animation()
+HTML('<center>' + pfr_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim8.png){width=95%}
+:::
+
+$~$
+
 **Example** $\,$ Fixed-bed adsorption: $\,$a shock and a rarefaction wave in a column
 
 * A dilute solute of concentration $c$ flows with interstitial velocity $v$ through a packed bed of length $L$ and voidage $\varepsilon$. $\,$Neglecting axial dispersion and assuming local equilibrium with the Langmuir isotherm, $\,$the mass balance on a slice of the bed is
@@ -3688,7 +3780,125 @@ HTML('<center>' + bed_anim.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim8.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim9.png){width=95%}
+:::
+
+$~$
+
+**Example** $\,$ Batch settling: $\,$Kynch's theory of a settling test
+
+* A suspension of volume fraction $\phi_0$ fills a cylinder to the height $H_0$. $\,$The particles settle with a velocity that depends only on the local concentration, $\,$and we take the simple hindered-settling law
+
+  $$V=v_0\left(1-\frac{\phi}{\phi_m}\right)^2$$
+
+  where $\phi_m$ is the packed concentration. $\,$(Fitted exponents are usually larger, $\,$but $2$ keeps the algebra simple)
+
+* With $u=\phi/\phi_m$, $\,y=$ height$/H_0$ and $\tau=v_0t/H_0$, $\,$the particle balance is a conservation equation for a downward flux $f$:
+
+  $$\color{red}{u_\tau-f(u)_y=0},\qquad f(u)=u(1-u)^2$$
+
+  so a concentration $u$ moves with the velocity $\,dy/d\tau=-f'(u)$, $\,$where $\,f'(u)=(1-u)(1-3u)$. $\,$There is no flux through the top of the suspension or through the bottom =0 , =11 , $u(y,0)=u_0=0.2$
+
+* [Top of the suspension]{.blue} $\,$ Clear liquid ($u=0$) lies above $u_0$, $\,$and the jump condition gives a shock falling with the speed
+
+  $$\frac{f(u_0)}{u_0}=(1-u_0)^2=0.64,\qquad y_t=1-0.64\,\tau$$
+
+* [Top of the sediment]{.blue} $\,$ $f$ is not convex, $\,$and a single jump from $u_0$ to $1$ is not allowed, $\,$because characteristics would leave it. $\,$Instead, $\,$a shock joins $u_0$ to the value $u^*$ where its chord is tangent to $f$. $\,$Then $f(u)$ minus the chord has the roots $u_0,u^*,u^*$, $\,$whose sum is $2$:
+
+  $$u^*=1-\frac{u_0}{2}=0.9,\qquad y_b=-f'(u^*)\,\tau=0.17\,\tau$$
+
+* [Below that shock]{.blue} $\,$ A fan from the bottom, $\,y=-f'(u)\,\tau$, $\,$raises $u$ from $0.9$ to $1$:
+
+  $$u(y,\tau)=\frac13\left[2+\sqrt{1-\frac{3y}{\tau}}\,\right],\qquad 0\le y<y_b$$
+
+* [After the fronts meet]{.blue} $\,$ They meet at $\tau_m=1/0.81=1.23$, $\,y=0.21$. $\,$Later, $\,$the clear liquid lies directly on the fan. $\,$If $u_s$ is the value just below the interface, $\,$particle conservation gives
+
+  $$2\tau\,u_s^2(1-u_s)=u_0,\qquad y_t=-f'(u_s)\,\tau$$
+
+  and $y_t\to u_0=0.2$, $\,$the height of the packed sediment
+
+* [Kynch's construction]{.blue} $\,$ The tangent to the settling curve $y_t(\tau)$ meets the $y$-axis at $y_i=y_t-\tau\,y_t'=2\tau u_s(1-u_s)$, $\,$so that
+
+  $$u_s\,y_i=u_0$$
+
+  A single batch test thus gives the concentration and the settling flux at the interface, $\,$which is the classical basis of thickener design
+
+The animation shows the concentration in the cylinder and the settling curve. $\,$The interface falls at a constant rate until $\tau_m$, $\,$and then slows down as the sediment consolidates
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+def batch_settling_animation():
+    u0, tau_m = 0.2, 1 /0.81            # tau_m: the two fronts meet
+    us = np.linspace(0.9, 1 -1e-6, 20001)
+    tau_us = u0 /(2 *us**2 *(1 -us))    # u at the top of the sediment, after tau_m
+
+    def fronts(tau):
+        if tau <= tau_m:
+            return 1 -0.64 *tau, 0.17 *tau
+        s = np.interp(tau, tau_us, us)
+        return -tau *(1 -s) *(1 -3 *s), np.nan
+
+    def profile(y, tau):
+        tau = max(tau, 1e-9)
+        top, bottom = fronts(tau)
+        fan = (2 +np.sqrt(np.maximum(1 -3 *y /tau, 0))) /3
+        if tau <= tau_m:
+            return np.where(y > top, 0.0, np.where(y > bottom, u0, fan))
+        return np.where(y > top, 0.0, fan)
+
+    y = np.linspace(0, 1, 2001)
+    taus = np.linspace(0, 2.5, 1001)
+    tops, bottoms = np.array([fronts(t) for t in taus]).T
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=FIGSIZE)
+    ax1.set_xlim(-0.05, 1.1)
+    ax1.set_ylim(0, 1.05)
+    ax1.set_xlabel(r'$u=\phi/\phi_m$')
+    ax1.set_ylabel('height $y$')
+    ax1.set_title('inside the cylinder', fontsize=LEGEND +1)
+    ax2.set_xlim(0, 2.5)
+    ax2.set_ylim(0, 1.05)
+    ax2.set_xlabel(r'$\tau=v_0t/H_0$')
+    ax2.set_ylabel('height $y$')
+    ax2.set_title('settling curve', fontsize=LEGEND +1)
+    ax2.axhline(u0, color='0.7', ls=':', lw=1)
+
+    line_u, = ax1.plot([], [], color='tab:green', lw=2.5, label='concentration')
+    hist_t, = ax2.plot([], [], color='tab:red', lw=2.5, label='top of the suspension')
+    hist_b, = ax2.plot([], [], color='tab:blue', lw=2, label='top of the sediment')
+    time_text = ax2.text(0.97, 0.92, '', transform=ax2.transAxes, ha='right')
+    fig.legend(handles=[line_u, hist_t, hist_b], loc='upper center', ncols=3,
+               fontsize=LEGEND, frameon=False)
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    plt.close(fig)
+
+    artists = (line_u, hist_t, hist_b, time_text)
+
+    def init():
+        for line in artists[:3]:
+            line.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(tau):
+        line_u.set_data(profile(y, tau), y)
+        past = taus <= tau +1e-9
+        hist_t.set_data(taus[past], tops[past])
+        hist_b.set_data(taus[past], bottoms[past])
+        time_text.set_text(rf'$\tau$ = {tau:.1f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=np.linspace(0, 2.5, 101), interval=100, blit=True)
+
+settling_anim = batch_settling_animation()
+HTML('<center>' + settling_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim10.png){width=95%}
 :::
 
 $~$
@@ -3811,7 +4021,7 @@ HTML('<center>' + hammer_anim.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim9.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim11.png){width=95%}
 :::
 
 $~$
@@ -3832,7 +4042,9 @@ $~$
 | Shock speed | $s=\dfrac{dx_s}{dt}=\dfrac{f(u^-)-f(u^+)}{u^--u^+}$, $\quad f'(u^+)<s<f'(u^-)$ |
 | Rarefaction | where $g(u)$ increases from left to right: $\,$fan from the jump, $\ x=g(u)\,t$ (for $f=u^2$, $\ u=x/(2t)$) |
 | Systems | $\mathbf u_t+\mathbf A\mathbf u_x=\mathbf 0$, $\,\mathbf P^{-1}\mathbf A\mathbf P=\boldsymbol\Gamma$: $\ \mathbf u=\mathbf P\mathbf v$, $\,v_i=\phi_i(x-\gamma_i t)$ |
+| Plug-flow reactor | $u_\tau+u_x=-\mathrm{Da}\,u$, $\,u(0,\tau)=\phi$: $\ u=\phi(\tau-x)\,e^{-\mathrm{Da}\,x}$, $\ X=1-e^{-\mathrm{Da}}$ |
 | Fixed-bed adsorption | $\partial_\tau U(u)+\partial_xu=0$, $\,U=u+\dfrac{Hu}{1+bu}$: $\,$shock on adsorption, $\,$rarefaction on desorption; $\ t_b=\dfrac Lv\left[1+F\dfrac{q(c_F)}{c_F}\right]$ |
+| Batch settling | $u_\tau-f(u)_y=0$, $\,f=u(1-u)^2$: $\,$shocks at the top of the suspension and of the sediment; $\,$Kynch: $\ u_s\,y_i=u_0$ |
 | Water hammer | $P_{tt}=a^2P_{zz}$; $\ P_{\max}=\rho aV_0$ for $t_c\le2L/a$, $\ P_{\max}=2\rho LV_0/t_c$ for a slower linear closure |
 
 $~$
@@ -4266,7 +4478,7 @@ HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim10.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim12.png){width=95%}
 :::
 
 $~$
