@@ -12,6 +12,7 @@ jupyter: python3
 * remove nonhomogeneous boundary conditions with a steady-state solution, $\,$and simplify equations by substitutions
 * solve problems with the finite sine and cosine transforms, $\,$the Fourier, $\,$Fourier sine and cosine transforms, $\,$and the Laplace transform
 * treat convection terms, $\,$superposition of sources and time-dependent boundary conditions (Duhamel's principle)
+* find the speed of a traveling reaction front
 
 **Builds on** $\,$ Fourier series and Sturm–Liouville problems (@sec-12-2 to @sec-12-5) and the Laplace transform (@sec-4)
 :::
@@ -2490,6 +2491,139 @@ $~$
 
 $~$
 
+## Chemical Engineering Application {#sec-x1-18}
+
+**Example** $\,$ An autocatalytic reaction front
+
+* In a long tube of still solution, $\,$the reaction $\,A+B\to2B\,$ has the rate $ka\,b$. $\,$If both species have the same diffusivity $D$, $\,$then $a+b$ obeys the heat equation, $\,$and it stays equal to $a_0$ when it starts uniform. $\,$With $u=b/a_0$ and $r=ka_0$,
+
+  $$u_t=D\,u_{zz}+r\,u(1-u)$$
+
+  With $x=z\sqrt{r/D}$ and $\tau=rt$, $\,$this is the [Fisher–KPP equation]{.blue}
+
+  $$\color{red}{u_\tau=u_{xx}+u(1-u)}$$
+
+  $u=0$ (no $B$) is unstable and $u=1$ (all $B$) is stable, $\,$so a small seed of $B$ converts the solution. $\,$How fast does the conversion spread?
+
+* [Traveling wave]{.blue} $\,$ Put $u=U(\xi)$, $\,\xi=x-c\tau$. $\,$The PDE becomes an ODE:
+
+  $$U''+cU'+U(1-U)=0,\qquad U(-\infty)=1,\quad U(\infty)=0$$
+
+* [Possible speeds]{.blue} $\,$ Far ahead of the front $U$ is small, $\,$so $U''+cU'+U\approx0$. $\,$With $U\sim e^{-\lambda\xi}$,
+
+  $$\lambda^2-c\lambda+1=0\quad\Longrightarrow\quad c=\lambda+\frac1\lambda\ge2$$
+
+  For $c<2$ the roots are complex and $U$ oscillates about $0$, $\,$which a concentration cannot do
+
+* [The selected speed]{.blue} $\,$ For a localized seed, $\,$drop $u^2$ and substitute $u=e^{\tau}w$ as in @sec-x1-8. $\,$Then $w_\tau=w_{xx}$, $\,$and the fundamental solution of @sec-x1-13 gives
+
+  $$u\approx\frac{1}{2\sqrt{\pi\tau}}\,\exp\left(\tau-\frac{x^2}{4\tau}\right)$$
+
+  The exponent stays bounded along $x=2\tau$, $\,$so the front moves with the minimum speed $c=2$, $\,$that is,
+
+  $$\color{red}{v=2\sqrt{Dr}=2\sqrt{Dka_0}}$$
+
+  The approach is slow: $\,$the nonlinear theory (Bramson) gives $\,x_f\approx2\tau-\frac32\ln\tau$, $\,$so the speed is about $2-\dfrac{3}{2\tau}$
+
+* [An exact wave]{.blue} $\,$ For one speed the ODE can be solved in closed form (Ablowitz and Zeppetella):
+
+  $$c=\frac{5}{\sqrt6}\approx2.041,\qquad U(\xi)=\left[1+e^{\xi/\sqrt6}\right]^{-2}$$
+
+  Its tail is $e^{-2\xi/\sqrt6}$, $\,$so $\lambda=2/\sqrt6$, $\,$and indeed $\lambda+1/\lambda=5/\sqrt6$. $\,$An initial profile with this slowly decaying tail keeps its own speed
+
+* [Magnitude]{.blue} $\,$ For $D=10^{-9}$ m$^2$/s and $r=0.1$ s$^{-1}$, $\,v=20\ \mu$m/s, $\,$and the front travels $7.2$ cm in one hour. $\,$Diffusion alone covers only about $\sqrt{Dt}\approx2$ mm in that time: $\,$reaction turns the $\sqrt t$ spreading of @sec-x1-13 into a wave with a constant speed
+
+The animation solves the PDE by finite differences. $\,$The localized seed approaches the speed $2$ from below, $\,$following $2-3/(2\tau)$, $\,$and the exact wave keeps $5/\sqrt6$ and its shape. $\,$The same mechanism underlies frontal polymerization, $\,$and with heat release in place of $B$, $\,$the propagation of flames
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from IPython.display import HTML
+
+def reaction_front_animation():
+    # explicit finite differences for u_t = u_xx + u(1-u), zero flux at both ends
+    dx, dt = 0.05, 0.05**2 /4
+    x = np.arange(0, 110 +dx /2, dx)
+    c_exact = 5 /np.sqrt(6)
+    u = np.array([np.where(x < 5, 1.0, 0.0),                    # localized seed
+                  (1 +np.exp((x -10) /np.sqrt(6)))**(-2)])      # exact wave
+
+    taus = np.linspace(0, 40, 81)
+    steps = int(round((taus[1] -taus[0]) /dt))
+    profiles, fronts = [], []
+    for _ in taus:
+        profiles.append(u.copy())
+        pos = []
+        for v in u:                                             # position where u = 1/2
+            i = np.nonzero(v >= 0.5)[0][-1]
+            pos.append(x[i] +dx *(v[i] -0.5) /(v[i] -v[i +1]))
+        fronts.append(pos)
+        for _ in range(steps):
+            lap = np.zeros_like(u)
+            lap[:, 1:-1] = u[:, 2:] -2 *u[:, 1:-1] +u[:, :-2]
+            lap[:, 0], lap[:, -1] = 2 *(u[:, 1] -u[:, 0]), 2 *(u[:, -2] -u[:, -1])
+            u = u +dt *(lap /dx**2 +u *(1 -u))
+    speeds = np.gradient(np.array(fronts), taus, axis=0)
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=FIGSIZE)
+    ax1.set_xlim(0, 100)
+    ax1.set_ylim(-0.05, 1.15)
+    ax1.set_xlabel(r'$x=z\sqrt{r/D}$')
+    ax1.set_ylabel('$u=b/a_0$')
+    ax1.set_title('concentration', fontsize=LEGEND +1)
+    ax2.set_xlim(0, 40)
+    ax2.set_ylim(1.5, 2.15)
+    ax2.set_xlabel(r'$\tau=rt$')
+    ax2.set_ylabel('front speed')
+    ax2.set_title('speed of the point $u=1/2$', fontsize=LEGEND +1)
+    ax2.axhline(2, color='0.7', lw=1)
+
+    tt = np.linspace(3, 40, 200)
+    bramson, = ax2.plot(tt, 2 -1.5 /tt, 'k--', lw=1, label=r'$2-3/(2\tau)$')
+    line_s, = ax1.plot([], [], color='tab:red', lw=2.5, label='localized seed')
+    line_e, = ax1.plot([], [], color='tab:blue', lw=2, label=r'exact wave, $c=5/\sqrt{6}$')
+    speed_s, = ax2.plot([], [], color='tab:red', lw=2.5)
+    speed_e, = ax2.plot([], [], color='tab:blue', lw=2)
+    time_text = ax2.text(0.97, 0.06, '', transform=ax2.transAxes, ha='right')
+    fig.legend(handles=[line_s, line_e, bramson], loc='upper center', ncols=3,
+               fontsize=LEGEND, frameon=False)
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    plt.close(fig)
+
+    artists = (line_s, line_e, speed_s, speed_e, time_text)
+
+    def init():
+        for line in artists[:4]:
+            line.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(k):
+        line_s.set_data(x[::4], profiles[k][0, ::4])
+        line_e.set_data(x[::4], profiles[k][1, ::4])
+        shown = (taus >= 3) & (taus <= taus[k])
+        speed_s.set_data(taus[shown], speeds[shown, 0])
+        speed_e.set_data(taus[shown], speeds[shown, 1])
+        time_text.set_text(rf'$\tau$ = {taus[k]:.1f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=len(taus), interval=100, blit=True)
+
+front_anim = reaction_front_animation()
+HTML('<center>' + front_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x1_Parabolic_PDEs.html#sec-x1-18)](figures/pdf/ch_x1_Parabolic_PDEs_anim1.png){width=95%}
+:::
+
+$~$
+
 ## Summary {.unnumbered}
 
 | Topic | Key result |
@@ -2504,6 +2638,7 @@ $~$
 | Fourier transform | $\mathcal F[f]=\dfrac1{\sqrt{2\pi}}\displaystyle\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx$, $\quad\mathcal F[f_x]=i\omega\mathcal F[f]$, $\ \mathcal F[f_{xx}]=-\omega^2\mathcal F[f]$ |
 | Infinite rod | $u(x,t)=\dfrac{1}{2\sqrt{\alpha\pi t}}\displaystyle\int_{-\infty}^\infty\phi(\xi)\,e^{-(x-\xi)^2/4\alpha t}\,d\xi$ |
 | Duhamel's principle | $u(1,t)=\psi(t)$: $\,u=\psi(0)\,w(x,t)+\displaystyle\int_0^t w(x,t-\tau)\,\psi'(\tau)\,d\tau$, $\,$where $w$ solves the problem with the constant boundary value $1$; $\quad$source $f(x,t)$: $\,u=\displaystyle\int_0^t\phi(x,t;\tau)\,d\tau$, $\,\phi(x,\tau;\tau)=f(x,\tau)$ |
+| Reaction front | $u_\tau=u_{xx}+u(1-u)$: $\,$traveling waves need $c\ge2$; $\,$a localized seed selects $c=2$, $\ v=2\sqrt{Dr}$ |
 
 $~$
 
@@ -3247,7 +3382,7 @@ HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x1_Parabolic_PDEs.html#sec-x1-17)](figures/pdf/ch_x1_Parabolic_PDEs_anim1.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x1_Parabolic_PDEs.html#sec-x1-17)](figures/pdf/ch_x1_Parabolic_PDEs_anim2.png){width=95%}
 :::
 
 $~$
