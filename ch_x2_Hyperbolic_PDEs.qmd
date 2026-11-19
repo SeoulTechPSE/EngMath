@@ -11,7 +11,7 @@ jupyter: python3
 * solve the wave equation in two and three dimensions in free space, $\,$and explain Huygens' principle
 * solve vibrating strings and drumheads by separation of variables, $\,$and nonhomogeneous problems by finite transforms
 * nondimensionalize problems, $\,$classify second-order PDEs and reduce a hyperbolic equation to canonical form
-* solve first-order linear and nonlinear (conservation) equations and hyperbolic systems by the method of characteristics, $\,$including shocks
+* solve first-order linear and nonlinear (conservation) equations and hyperbolic systems by the method of characteristics, $\,$including shocks, $\,$and apply them to fixed-bed adsorption and water hammer
 
 **Builds on** $\,$ separation of variables and integral transforms (@sec-x1), Fourier–Bessel series (@sec-12-6) and diagonalization (@sec-8-12)
 :::
@@ -3580,6 +3580,242 @@ $\begin{bmatrix}u_1\\u_2\end{bmatrix}=\phi(x-3t)\begin{bmatrix}1\\2\end{bmatrix}
 
 $~$
 
+## Chemical Engineering Application {#sec-x2-31}
+
+**Example** $\,$ Fixed-bed adsorption: $\,$a shock and a rarefaction wave in a column
+
+* A dilute solute of concentration $c$ flows with interstitial velocity $v$ through a packed bed of length $L$ and voidage $\varepsilon$. $\,$Neglecting axial dispersion and assuming local equilibrium with the Langmuir isotherm, $\,$the mass balance on a slice of the bed is
+
+  $$\varepsilon\,c_t+(1-\varepsilon)\,q_t+\varepsilon v\,c_z=0,\qquad q(c)=\frac{q_mKc}{1+Kc}$$
+
+* With $u=c/c_F$ ($c_F$ the feed concentration), $\,x=z/L$, $\,\tau=vt/L$, $\,F=(1-\varepsilon)/\varepsilon$, $\,H=Fq_mK$ and $b=Kc_F$, $\,$this is a conservation equation (@sec-x2-29) for the total holdup $U$, $\,$with flux $u$:
+
+  $$\color{red}{\frac{\partial U(u)}{\partial\tau}+\frac{\partial u}{\partial x}=0},\qquad U(u)=u+\frac{Hu}{1+bu}$$
+
+* By the chain rule, $\,u_\tau+g(u)\,u_x=0$ with the wave speed
+
+  $$g(u)=\frac{1}{U'(u)}=\frac{1}{1+\dfrac{H}{(1+bu)^2}}$$
+
+  which [increases with $u$]{.blue}: $\,$high concentrations travel faster. $\,$Take $H=4$ and $b=1$, $\,$so that $g(0)=\frac15$, $\,g(1)=\frac12$ and $U(1)=3$
+
+* [Adsorption]{.blue} $\,$ A clean bed is fed with solute: $\,u(x,0)=0$, $\,u(0,\tau)=1$. $\,$Here $g$ decreases from left to right, $\,$so a shock forms. $\,$The jump condition, $\,$with $U$ as the conserved quantity, $\,$gives
+
+  $$s=\frac{1-0}{U(1)-U(0)}=\frac13,\qquad g(0)=\frac15<s<g(1)=\frac12$$
+
+  $$\color{red}{u(x,\tau)=\begin{cases}1 & x<\tau/3\\ 0 & x>\tau/3\end{cases}}$$
+
+  The front reaches the outlet at $\tau=3$. $\,$In general, $\,$the [breakthrough time]{.blue} is
+
+  $$t_b=\frac{L}{v}\left[1+F\,\frac{q(c_F)}{c_F}\right]$$
+
+* [Desorption]{.blue} $\,$ A saturated bed is washed with clean fluid: $\,u(x,0)=1$, $\,u(0,\tau)=0$. $\,$Now $g$ increases from left to right, $\,$and the rarefaction fan $\,x=g(u)\,\tau$ gives
+
+  $$\color{red}{u(x,\tau)=\begin{cases}0 & x\le\tau/5\\[2pt] 2\sqrt{\dfrac{x}{\tau-x}}-1 & \tau/5<x<\tau/2\\[2pt] 1 & x\ge\tau/2\end{cases}}$$
+
+  At the outlet, $\,u=1$ until $\tau=2$, $\,$then $u=2/\sqrt{\tau-1}-1$, $\,$and the bed is clean at $\tau=5$
+
+* [Check]{.blue} $\,$ The solute leaving the bed equals the holdup $U(1)=3$:
+
+  $$\begin{aligned}
+    \int_0^5u(1,\tau)\,d\tau&=2+\int_2^5\left(\frac{2}{\sqrt{\tau-1}}-1\right)d\tau\\
+    &=2+4-3=3
+  \end{aligned}$$
+
+The animation shows the two runs, $\,$with the same isotherm:
+
+* Adsorption takes a sharp front, $\,$while desorption of the same bed takes longer and has a long tail. $\,$This is why regenerating a bed with a favorable isotherm is slow
+* In a real column, $\,$mass-transfer resistance and dispersion round the shock into an S-shaped breakthrough curve, $\,$but the favorable isotherm keeps it from spreading indefinitely
+* For a linear isotherm ($b\to0$), $\,$every concentration moves at the same speed $1/(1+H)$, $\,$and a pulse keeps its shape: $\,$this is the retention factor of linear chromatography
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+def fixed_bed_animation():
+    # H = 4, b = 1: shock x = tau/3 and fan u = 2 sqrt(x/(tau-x)) - 1
+    adsorb = lambda x, tau: np.where(x < tau /3, 1.0, 0.0)
+    desorb = lambda x, tau: np.clip(2 *np.sqrt(x /np.maximum(tau -x, 1e-12)) -1, 0, 1)
+
+    x = np.linspace(0, 1, 1001)
+    taus = np.linspace(0, 6, 1201)
+    out_a, out_d = adsorb(1.0, taus), desorb(1.0, taus)
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=FIGSIZE)
+    ax1.set_xlim(0, 1)
+    ax1.set_xlabel('$x=z/L$')
+    ax1.set_ylabel('$u=c/c_F$')
+    ax1.set_title('inside the bed', fontsize=LEGEND +1)
+    ax2.set_xlim(0, 6)
+    ax2.set_xlabel(r'$\tau=vt/L$')
+    ax2.set_ylabel('$u(1,\\tau)$')
+    ax2.set_title('at the outlet', fontsize=LEGEND +1)
+    ax2.axvline(3, color='0.7', ls=':', lw=1)
+    for ax in (ax1, ax2):
+        ax.set_ylim(-0.05, 1.15)
+
+    bed_a, = ax1.plot([], [], color='tab:red', lw=2.5, label='adsorption (shock)')
+    bed_d, = ax1.plot([], [], color='tab:blue', lw=2.5, label='desorption (rarefaction)')
+    hist_a, = ax2.plot([], [], color='tab:red', lw=2.5)
+    hist_d, = ax2.plot([], [], color='tab:blue', lw=2.5)
+    time_text = ax2.text(0.97, 0.55, '', transform=ax2.transAxes, ha='right')
+    fig.legend(handles=[bed_a, bed_d], loc='upper center', ncols=2,
+               fontsize=LEGEND, frameon=False)
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    plt.close(fig)
+
+    artists = (bed_a, bed_d, hist_a, hist_d, time_text)
+
+    def init():
+        for line in artists[:4]:
+            line.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(tau):
+        bed_a.set_data(x, adsorb(x, tau))
+        bed_d.set_data(x, desorb(x, tau))
+        past = taus <= tau +1e-9
+        hist_a.set_data(taus[past], out_a[past])
+        hist_d.set_data(taus[past], out_d[past])
+        time_text.set_text(rf'$\tau$ = {tau:.1f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=np.linspace(0, 6, 121), interval=100, blit=True)
+
+bed_anim = fixed_bed_animation()
+HTML('<center>' + bed_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim8.png){width=95%}
+:::
+
+$~$
+
+**Example** $\,$ Water hammer: $\,$closing a valve at the end of a pipeline
+
+* Water flows with velocity $V_0$ from a large reservoir ($z=0$) through a pipe of length $L$ to a valve ($z=L$), $\,$and the valve is closed. $\,$For small changes, $\,$without friction, $\,$the pressure rise $P$ and the velocity $V$ obey
+
+  $$P_t+\rho a^2V_z=0,\qquad \rho V_t+P_z=0$$
+
+  where $a$ is the speed of sound in the pipe, $\,$about $1000$ m/s for water in a steel pipe. $\,$Eliminating $V$ gives the wave equation $\,P_{tt}=a^2P_{zz}$
+
+* With $p=P/(\rho aV_0)$, $\,w=V/V_0$, $\,x=z/L$ and $\tau=at/L$:
+
+  $$p_\tau+w_x=0,\qquad w_\tau+p_x=0$$
+
+  $$p(x,0)=0,\qquad w(x,0)=1$$
+
+  $$p(0,\tau)=0,\qquad w(1,\tau)=1-h(\tau)$$
+
+  where $h(\tau)$ is the fraction of the flow that the valve has stopped, $\,$with $h=0$ for $\tau\le0$ and $h=1$ for $\tau\ge\tau_c$. $\,$In terms of $p$, $\,$the valve is a nonhomogeneous Neumann condition $\,p_x(1,\tau)=h'(\tau)$, $\,$as in @sec-x2-20
+
+* As in @sec-x2-30, $\,$the system has the speeds $\pm1$, $\,$and $p+w$ and $p-w$ are its traveling waves. $\,$A wave $\Phi$ leaves the valve, $\,$and it changes sign when it reflects from the reservoir, $\,$where $p=0$:
+
+  $$\color{red}{p=\Phi(\tau+x-1)-\Phi(\tau-x-1)}$$
+
+  $$w=1-\Phi(\tau+x-1)-\Phi(\tau-x-1)$$
+
+  with $\Phi(s)=0$ for $s\le0$. $\,$These satisfy the equations, $\,$the initial conditions and $p(0,\tau)=0$
+
+* The valve condition gives $\,\Phi(\tau)+\Phi(\tau-2)=h(\tau)$, $\,$so each round trip of duration $2$ adds a term:
+
+  $$\Phi(\tau)=h(\tau)-h(\tau-2)+h(\tau-4)-\cdots$$
+
+  $$\color{red}{\begin{aligned}
+    p(1,\tau)&=\Phi(\tau)-\Phi(\tau-2)\\
+    &=h(\tau)-2h(\tau-2)+2h(\tau-4)-\cdots
+  \end{aligned}}$$
+
+* For a linear closure, $\,h=\tau/\tau_c$ on $[0,\tau_c]$, $\,$the peak at the valve is
+
+  $$p_{\max}=\begin{cases}1 & \tau_c\le2\\[2pt] 2/\tau_c & \tau_c>2\end{cases}$$
+
+  or, $\,$in dimensional form,
+
+  $$P_{\max}=\begin{cases}\rho aV_0 & t_c\le 2L/a\quad\text{(Joukowsky)}\\[2pt] 2\rho LV_0/t_c & t_c>2L/a\end{cases}$$
+
+  A closure faster than the round trip $2L/a$ cannot be helped by the reflected wave. $\,$For $L=500$ m, $\,a=1000$ m/s and $V_0=2$ m/s, $\,$the Joukowsky rise is $\rho aV_0=20$ bar for any closure shorter than $1$ s, $\,$and closing in $t_c=2$ s ($\tau_c=4$) halves it to $10$ bar
+
+The animation compares a sudden closure with $\tau_c=4$:
+
+* **Sudden closure.** $\,$The pressure at the valve is a square wave between $+1$ and $-1$ with period $4$, $\,$that is, $\,4L/a$, $\,$and without friction it never decays
+* **Slow closure.** $\,$The peak is $\frac12$, $\,$and since the closure lasts exactly one period, $\,$the pipe is quiet afterwards
+* In practice, $\,$friction damps the oscillation. $\,$A negative $p$ can also bring the pressure down to the vapor pressure, $\,$and the cavitation that follows is not described by this linear model
+
+```{python}
+#| code-fold: true
+FIGSIZE, LEGEND = (7.5, 3.6), 9
+
+def water_hammer_animation():
+    def h(s, tc):                       # fraction of the flow that has been stopped
+        return np.where(s > 0, 1.0, 0.0) if tc == 0 else np.clip(s /tc, 0, 1)
+
+    def Phi(s, tc):                     # Phi(s) = h(s) - h(s-2) + h(s-4) - ...
+        return sum((-1)**n *h(s -2 *n, tc) for n in range(6))
+
+    def p(x, tau, tc):
+        return Phi(tau +x -1, tc) -Phi(tau -x -1, tc)
+
+    x = np.linspace(0, 1, 1001)
+    taus = np.linspace(0, 8, 3201)
+    valve_0, valve_4 = p(1.0, taus, 0), p(1.0, taus, 4)
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=FIGSIZE)
+    ax1.set_xlim(0, 1)
+    ax1.set_xlabel('$x=z/L$  (reservoir to valve)')
+    ax1.set_ylabel(r'$p=P/(\rho aV_0)$')
+    ax1.set_title('along the pipe', fontsize=LEGEND +1)
+    ax2.set_xlim(0, 8)
+    ax2.set_xticks(range(0, 9, 2))
+    ax2.set_xlabel(r'$\tau=at/L$')
+    ax2.set_ylabel(r'$p(1,\tau)$')
+    ax2.set_title('at the valve', fontsize=LEGEND +1)
+    for ax in (ax1, ax2):
+        ax.set_ylim(-1.3, 1.3)
+        ax.axhline(0, color='0.8', lw=0.8)
+
+    pipe_0, = ax1.plot([], [], color='tab:blue', lw=2, label=r'sudden closure, $\tau_c=0$')
+    pipe_4, = ax1.plot([], [], color='tab:red', lw=2.5, label=r'slow closure, $\tau_c=4$')
+    hist_0, = ax2.plot([], [], color='tab:blue', lw=2)
+    hist_4, = ax2.plot([], [], color='tab:red', lw=2.5)
+    time_text = ax2.text(0.97, 0.92, '', transform=ax2.transAxes, ha='right')
+    fig.legend(handles=[pipe_0, pipe_4], loc='upper center', ncols=2,
+               fontsize=LEGEND, frameon=False)
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    plt.close(fig)
+
+    artists = (pipe_0, pipe_4, hist_0, hist_4, time_text)
+
+    def init():
+        for line in artists[:4]:
+            line.set_data([], [])
+        time_text.set_text('')
+        return artists
+
+    def animate(tau):
+        pipe_0.set_data(x, p(x, tau, 0))
+        pipe_4.set_data(x, p(x, tau, 4))
+        past = taus <= tau +1e-9
+        hist_0.set_data(taus[past], valve_0[past])
+        hist_4.set_data(taus[past], valve_4[past])
+        time_text.set_text(rf'$\tau$ = {tau:.1f}')
+        return artists
+
+    return animation.FuncAnimation(fig, animate, init_func=init,
+                                   frames=np.linspace(0, 8, 161), interval=100, blit=True)
+
+hammer_anim = water_hammer_animation()
+HTML('<center>' + hammer_anim.to_html5_video() + '</center>')
+```
+
+::: {.content-visible when-format="pdf"}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-31)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim9.png){width=95%}
+:::
+
+$~$
+
 ## Summary {.unnumbered}
 
 | Topic | Key result |
@@ -3596,6 +3832,8 @@ $~$
 | Shock speed | $s=\dfrac{dx_s}{dt}=\dfrac{f(u^-)-f(u^+)}{u^--u^+}$, $\quad f'(u^+)<s<f'(u^-)$ |
 | Rarefaction | where $g(u)$ increases from left to right: $\,$fan from the jump, $\ x=g(u)\,t$ (for $f=u^2$, $\ u=x/(2t)$) |
 | Systems | $\mathbf u_t+\mathbf A\mathbf u_x=\mathbf 0$, $\,\mathbf P^{-1}\mathbf A\mathbf P=\boldsymbol\Gamma$: $\ \mathbf u=\mathbf P\mathbf v$, $\,v_i=\phi_i(x-\gamma_i t)$ |
+| Fixed-bed adsorption | $\partial_\tau U(u)+\partial_xu=0$, $\,U=u+\dfrac{Hu}{1+bu}$: $\,$shock on adsorption, $\,$rarefaction on desorption; $\ t_b=\dfrac Lv\left[1+F\dfrac{q(c_F)}{c_F}\right]$ |
+| Water hammer | $P_{tt}=a^2P_{zz}$; $\ P_{\max}=\rho aV_0$ for $t_c\le2L/a$, $\ P_{\max}=2\rho LV_0/t_c$ for a slower linear closure |
 
 $~$
 
@@ -4028,7 +4266,7 @@ HTML('<center>' + ani.to_html5_video() + '</center>')
 ```
 
 ::: {.content-visible when-format="pdf"}
-![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim8.png){width=95%}
+![Four frames of the animation; $\,$[play it on the web page](https://seoultechpse.github.io/EngMath/ch_x2_Hyperbolic_PDEs.html#sec-x2-30)](figures/pdf/ch_x2_Hyperbolic_PDEs_anim10.png){width=95%}
 :::
 
 $~$
